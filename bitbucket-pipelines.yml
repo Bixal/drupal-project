@@ -8,11 +8,11 @@ image: wodby/drupal-php:7.2-dev-4.8.5
 pipelines:
   default:
     - step:
-        caches:
-          - composer
+
         script:
           - pwd
           - ls -la
           - apt-get update && apt-get install -y unzip
           - composer --version
+          - composer install
 

@@ -23,6 +23,7 @@
         "drupal/content_moderation_notifications": "^3.0@RC",
         "drupal/core": "^8.6.0",
         "drupal/drupal-extension": "^3.4",
+        "drupal/field_permissions": "^1.0@RC",
         "drupal/group": "^1.0@RC",
         "drupal/masquerade": "^2.0@beta",
         "drupal/uswds": "^1.0@beta",

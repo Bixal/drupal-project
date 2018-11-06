@@ -16,6 +16,6 @@ pipelines:
           - export PATH="$PATH:$HOME/.composer/vendor/bin"
           - composer install
           - phpcs -i
-          - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/
+          - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/*
 
 

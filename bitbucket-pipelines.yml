@@ -8,24 +8,12 @@ image: wodby/drupal-php:7.2-dev-4.8.5
 pipelines:
   default:
     - step:
-        name: Composer install and Code Sniffer setup
+        name: Composer install and Code Standards check
         script:
-          - echo "Composer prep"
           - composer global require drupal/coder:^8.2.12
           - composer global require dealerdirect/phpcodesniffer-composer-installer
-          - composer global show -P
           - export PATH="$PATH:$HOME/.composer/vendor/bin"
           - composer install
-          - phpcs -i
-    - step:
-        name: Check Drupal coding standards on web/modules/custom/
-        script:
           - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom/*
-    - step:
-        name: Check Drupal best practices on web/modules/custom/
-        script:
           - phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom/*
-    - step:
-        name: Check Drupal coding standards on web/themes/custom/
-        script:
-          - phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom/*
+          - phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom/*

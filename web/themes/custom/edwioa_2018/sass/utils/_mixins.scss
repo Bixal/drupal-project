@@ -1,0 +1,50 @@
+// Mixins
+
+// Example:
+// .foo {
+//   width: 100%;
+//   @include bp(sm) {
+//     width: 50%;
+//   }
+// }
+@mixin bp($breakpoint) {
+  // Goes to $breakpoints map and gets each $breakpoint value (if it has any)
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Create media query based on that $breakpoint value
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+
+  }
+  @else {
+    // sass-lint:disable no-warn
+    // Preventing the linter from interpretting this as a warning just
+    // beacuse it exists in this file, haha.
+    @warn "Breakpoint doesn't exist; please check breakpoints map.";
+    // sass-lint:enable no-warn
+  }
+}
+
+// Icons
+@mixin icon($icon) {
+  @extend %icon;
+  content: $icon;
+}
+
+// Gradients
+// Autoprefixer will add all the many other versions
+@mixin gradient-vert($color1, $color2) {
+  background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+}
+
+@mixin gradient-hor($color1, $color2) {
+  background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+// Placeholder text
+@mixin placeholder {
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}

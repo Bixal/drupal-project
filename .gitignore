@@ -12,6 +12,7 @@
 
 # Ignore directories by node/npm
 /node_modules/
+web/themes/custom/edwioa_2018/node_modules
 
 # Ignore sensitive information
 /web/sites/*/settings.local.php

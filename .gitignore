@@ -12,7 +12,7 @@
 
 # Ignore directories by node/npm
 /node_modules/
-web/themes/custom/edwioa_2018/node_modules
+/web/themes/custom/uswds_wioa/node_modules
 
 # Ignore sensitive information
 /web/sites/*/settings.local.php
@@ -35,3 +35,6 @@ web/themes/custom/edwioa_2018/node_modules
 # Databases
 /*.sql
 /*.sql.gz
+
+# Ignore generated directories from USWDS
+/web/themes/custom/uswds_wioa/assets

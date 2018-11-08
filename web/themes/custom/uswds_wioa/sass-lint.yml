@@ -1,0 +1,49 @@
+#########################
+## Sass Lint File
+#########################
+# Linter Options
+options:
+  # Don't merge default rules
+  merge-default-rules: false
+  # Set the formatter to 'stylish'
+  formatter: stylish
+  # Raise an error if more than 50 warnings are generated
+  max-warnings: 1
+# File Options
+files:
+  include: 'scss/**/*.scss'
+  ignore:
+    - 'scss/templates/**/*.*'
+    - 'scss/global/_icons.scss'
+# Rule Configuration
+rules:
+  extends-before-mixins: 1
+  extends-before-declarations: 1
+  placeholder-in-extend: 2
+  one-declaration-per-line: 1
+  url-quotes: 1
+  mixins-before-declarations:
+    - 2
+    -
+      exclude:
+        - breakpoint
+        - mq
+        - bp
+        - placeholder
+        - is-active
+
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  no-important: 2
+  indentation:
+    - 2
+    -
+      size: 2
+  property-sort-order:
+    - 1
+    -
+      order:
+        - 'alphabetical'
+      ignore-custom-properties: true
+  pseudo-element: false

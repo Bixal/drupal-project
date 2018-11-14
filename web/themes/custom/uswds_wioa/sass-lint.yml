@@ -11,10 +11,10 @@ options:
   max-warnings: 1
 # File Options
 files:
-  include: 'scss/**/*.scss'
+  include: 'sass/**/*.scss'
   ignore:
-    - 'scss/templates/**/*.*'
-    - 'scss/global/_icons.scss'
+    - 'sass/templates/**/*.*'
+    - 'sass/global/_icons.scss'
 # Rule Configuration
 rules:
   extends-before-mixins: 1

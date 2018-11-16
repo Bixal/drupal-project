@@ -1,0 +1,142 @@
+// Global typography defaults. If these need to be overridden in a specific
+// instance, it should be done in a "components" partial
+html {
+  box-sizing: border-box;
+  // You should ALWAYS have this line, unchanged.
+  // The px-to-rem function depends on it.
+  font-size: ($font-size-base/16) * 100%;
+  // Prevent adjustments of font size after orientation changes in iOS
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  // Will probably declare fonts, colors, etc. as desired. Examples:
+  // font-family: $font-family-sans;
+  // font-weight: $font-weight-normal;
+  // line-height: 1.4;
+  // color: $c-black;
+}
+
+// Adding the h1-style, etc. classes for use in cases when the design doesn't
+// match what the tag ought to be, semantically.
+h1,
+%h1-style {
+
+}
+
+h2,
+%h2-style {
+
+}
+
+h3,
+%h3-style {
+
+}
+
+h4,
+%h4-style {
+
+}
+
+h5,
+%h5-style {
+
+}
+
+h6,
+%h6-style {
+
+}
+
+blockquote {
+
+}
+
+cite {
+
+}
+
+code {
+
+}
+
+dl {
+
+}
+
+dt {
+
+}
+
+dd {
+
+}
+
+b,
+strong {
+  // font-weight: $font-weight-bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+p {
+
+}
+
+// Prevents bullet styling applying to menus, etc.
+// Using .main as example; scope selectors as needed
+.main ul {
+  @extend %bullets;
+}
+
+.main ol {
+  @extend %numbers;
+}
+
+sup {
+  position: relative;
+  font-size: 0.8em;
+  top: -0.2em;
+}
+
+sub {
+  position: relative;
+  font-size: 0.8em;
+  top: 0.2em;
+}
+
+small {
+
+}
+
+// Undoing the ugly blue glow that defaults when you focus on a link or anything
+// with a tabindex. Put focus state back on links below.
+:focus {
+  outline: none;
+}
+
+a {
+
+  &:hover,
+  &:focus {
+
+  }
+
+  &:focus {
+
+  }
+}

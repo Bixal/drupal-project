@@ -12,6 +12,7 @@
 
 # Ignore directories by node/npm
 /node_modules/
+/web/themes/custom/uswds_wioa/node_modules
 
 # Ignore sensitive information
 /web/sites/*/settings.local.php
@@ -34,3 +35,6 @@
 # Databases
 /*.sql
 /*.sql.gz
+
+# Ignore generated directories from USWDS
+/web/themes/custom/uswds_wioa/assets

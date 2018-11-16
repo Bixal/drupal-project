@@ -1,0 +1,86 @@
+%clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%visuallyhidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  overflow: hidden;
+}
+
+// Icons
+// Use the mixin for this; this is for the mixin to call ONLY
+%icon {
+  font-family: $font-family-icons;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  speak: none;
+}
+
+// Recreating bullets and numbers because we undo them in the reset;
+// This method is preferable to changing the "display" value back because
+// it allows us more granular and cross-browser control over spacing,
+// plus the ability to style the bullets and numbers.
+// Don't use %list dirctly; use %bullets or %numbers (below)
+%list {
+  padding-left: px-to-rem(50);
+  margin-bottom: px-to-rem(20);
+
+  li {
+    position: relative;
+    margin-bottom: px-to-rem(20);
+
+    &:before {
+      margin-left: px-to-rem(-30);
+      position: absolute;
+      // can add a color or something to your numbers/bullets if desired
+    }
+
+    ul,
+    ol { // less spacing when nested
+      margin-top: px-to-rem(20);
+      padding-left: px-to-rem(35);
+    }
+  } //li
+} //list
+
+// Bullets - apply to a <ul>
+%bullets {
+  @extend %list;
+
+  li:before {
+    content: '\2022'; // bullets
+  }
+} //bullets
+
+// Numbers - apply to an <ol>
+%numbers {
+  @extend %list;
+  counter-reset: li;
+
+  li:before {
+    content: counter(li)')'; // numbers
+    counter-increment: li;
+  }
+
+  ul li:before { // don't let uls nested inside ols inherit ol behavior
+    content: '\2022';
+    counter-increment: none;
+  }
+} //numbers

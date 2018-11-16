@@ -1,0 +1,28 @@
+// px-to-rem() takes an number (without units) as a parameter and calculates
+// the correct number of rems for the desired size in pixels
+//
+// Example 1
+// font-size: px-to-rem(24);
+//
+// Example 2
+// max-width: px-to-rem(1200);
+
+@function px-to-rem($number) {
+  $raw: $number/$font-size-base;
+  $rounded: ceil($raw * 1000)/1000;
+  @return $rounded * 1rem;
+}
+
+// Based off $z-layers map found int _variables.scss
+// Use like `z-index: z(under)`;
+@function z($layer) {
+  @if not map-has-key($z-layers, $layer) {
+    // sass-lint:disable no-warn
+    // Preventing the linter from interpretting this as a warning just
+    // beacuse it exists in this file, haha.
+    @warn "No layer found for `#{$layer}` in $z-layers map.";
+    // sass-lint:enable no-warn
+  }
+
+  @return map-get($z-layers, $layer);
+}

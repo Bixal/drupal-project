@@ -1,0 +1,42 @@
+//
+// Color Variables
+//
+
+$c-black: #000; // rgb(0, 0, 0)
+$c-white: #fff; // rgb(255, 255, 255)
+
+// Commonly used - social media colors
+$social-colors: (
+  twitter: #4099ff,
+  linkedin: #0077b5,
+  facebook: #3B5998,
+  googleplus: #C63D2D,
+  pinterest: #cb2027,
+  youtube: #cd201f,
+  instagram: #fb3958
+);
+
+$font-family-icons: 'icons';
+$font-size-base: 16; // The default font size for your site. This gets used in
+// the px-to-em() function used sitewide.
+$font-weight-normal: 400; // Usually
+$font-weight-bold: 700; // Usually
+
+// Breakpoints
+// Used in bp mixin in _mixins.scss
+$breakpoints: (
+  sm: 30em, // 480px
+  md: 48em, // 768px
+  lg: 60em  // 960px
+);
+
+// Z-index variables
+// Use with z() function like this:
+// z-index: z(under);
+$z-layers: (
+  under: -1,
+  default: 1,
+  layer-2: 2,
+  layer-3: 3,
+  overlay: 900
+);

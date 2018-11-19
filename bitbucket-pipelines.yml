@@ -17,3 +17,17 @@ pipelines:
           - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom
           - phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom
           - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/themes/custom
+  branches:
+    add-image-bulder:
+      - step:
+          #python image with aws-cli installed
+          image: tstrohmeier/awscli:3.6.4
+          script:
+            # aws login
+            - eval $(aws ecr get-login --region ${AWS_DEFAULT_REGION} --no-include-email)
+            # docker
+            - export BUILD_ID=$BITBUCKET_BRANCH_$BITBUCKET_COMMIT_$BITBUCKET_BUILD_NUMBER
+            - docker build -t ${AWS_REGISTRY_URL}:$BUILD_ID -f docker/php/Dockerfile .
+            - docker push ${AWS_REGISTRY_URL}:$BUILD_ID
+            - docker tag ${AWS_REGISTRY_URL}:$BUILD_ID ${AWS_REGISTRY_URL}:development
+            - docker push ${AWS_REGISTRY_URL}:development

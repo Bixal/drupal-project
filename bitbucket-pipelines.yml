@@ -3,6 +3,9 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
+options:
+  docker: true
+  
 image: wodby/drupal-php:7.2-dev-4.8.5
 
 pipelines:
@@ -21,6 +24,7 @@ pipelines:
           - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/themes/custom
   branches:
     feature/*:
+        # enable Docker for your repository
       - step:
           #python image with aws-cli installed
           image: tstrohmeier/awscli:3.6.4

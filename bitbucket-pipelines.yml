@@ -9,6 +9,8 @@ pipelines:
   default:
     - step:
         name: Composer install and Code Standards check
+        caches:
+          - composer
         script:
           - composer global require drupal/coder:^8.2.12
           - composer global require dealerdirect/phpcodesniffer-composer-installer

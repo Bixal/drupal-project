@@ -1,7 +1,7 @@
+// Import the USWDS source.
+@import "../node_modules/uswds/src/stylesheets/uswds.scss";
+
 // Import overrides of USWDS variables.
 @import "settings/**/*.scss";
 @import "utils/**/*.scss";
 @import "global/**/*.scss";
-
-// Import the USWDS source.
-@import "../node_modules/uswds/src/stylesheets/uswds.scss";

@@ -4,7 +4,6 @@ html {
   box-sizing: border-box;
   // You should ALWAYS have this line, unchanged.
   // The px-to-rem function depends on it.
-  font-size: ($font-size-base/16) * 100%;
   // Prevent adjustments of font size after orientation changes in iOS
   -webkit-text-size-adjust: 100%;
 }
@@ -16,67 +15,96 @@ html {
 }
 
 body {
-  // Will probably declare fonts, colors, etc. as desired. Examples:
-  // font-family: $font-family-sans;
-  // font-weight: $font-weight-normal;
-  // line-height: 1.4;
-  // color: $c-black;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+%h1-style,
+%h2-style,
+%h3-style,
+%h4-style,
+%h5-style,
+%h6-style {
+  font-family: $font-sans;
+  font-weight: $font-weight-bold;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+%display-1 {
+  font-size: px-to-rem(52);
+  font-weight: $font-weight-bold;
+}
+
+%display-2 {
+  font-weight: $font-weight-light;
+  font-size: px-to-rem(44);
 }
 
 // Adding the h1-style, etc. classes for use in cases when the design doesn't
 // match what the tag ought to be, semantically.
 h1,
 %h1-style {
-
+  font-size: px-to-rem(44);
+  margin-bottom: px-to-rem(25);
 }
 
 h2,
 %h2-style {
-
+  font-size: px-to-rem(34);
+  margin-bottom: px-to-rem(32);
+  margin-top: px-to-rem(48);
 }
 
 h3,
 %h3-style {
-
+  font-size: px-to-rem(24);
+  margin-bottom: px-to-rem(20);
+  margin-top: px-to-rem(32);
 }
 
 h4,
 %h4-style {
-
+  font-size: px-to-rem(19);
+  margin-bottom: px-to-rem(20);
+  margin-top: px-to-rem(32);
 }
 
 h5,
 %h5-style {
-
+  font-size: px-to-rem(15);
+  margin-bottom: px-to-rem(20);
+  margin-top: px-to-rem(37);
 }
 
 h6,
 %h6-style {
-
+  font-size: px-to-rem(13);
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
 }
 
 blockquote {
-
 }
 
 cite {
-
 }
 
 code {
-
 }
 
 dl {
-
 }
 
 dt {
-
 }
 
 dd {
-
 }
 
 b,
@@ -93,18 +121,24 @@ u {
   text-decoration: underline;
 }
 
-p {
+%p--large,
+.usa-font-lead {
+  font-weight: $font-weight-light;
+  font-size: px-to-rem(22);
+  line-height: 1.5;
+  margin-bottom: px-to-rem(48);
+}
 
+p {
+  margin-bottom: px-to-rem(27);
 }
 
 // Prevents bullet styling applying to menus, etc.
 // Using .main as example; scope selectors as needed
-.main ul {
-  @extend %bullets;
+.uswds-main-content-wrapper ul {
 }
 
-.main ol {
-  @extend %numbers;
+.uswds-main-content-wrapper ol {
 }
 
 sup {
@@ -120,7 +154,6 @@ sub {
 }
 
 small {
-
 }
 
 // Undoing the ugly blue glow that defaults when you focus on a link or anything
@@ -130,13 +163,10 @@ small {
 }
 
 a {
-
   &:hover,
   &:focus {
-
   }
 
   &:focus {
-
   }
 }

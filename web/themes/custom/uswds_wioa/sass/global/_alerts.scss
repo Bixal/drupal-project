@@ -1,0 +1,29 @@
+.usa-alert {
+  background-size: px-to-rem(24);
+  background-position-y: center;
+}
+
+.usa-alert-success {
+  background-image: url("../../../images/svg/icon-check.svg");
+}
+
+.usa-alert-warning {
+  background-image: url("../../../images/svg/icon-alert-triangle.svg");
+}
+
+.usa-alert-error {
+  background-image: url("../../../images/svg/icon-alert.svg");
+}
+
+.usa-alert-info {
+  background-image: url("../../../images/svg/icon-info.svg");
+}
+
+.usa-alert-paragraph {
+  background-position-y: px-to-rem(25);
+}
+
+.usa-alert-slim {
+  padding-top: px-to-rem(7);
+  padding-bottom: px-to-rem(8);
+}

@@ -1,0 +1,14 @@
+.usa-search-input,
+[type="search"] {
+  height: px-to-rem(32);
+}
+
+.usa-search.usa-search-small .usa-search-submit,
+.usa-search.usa-search-small [type="submit"] {
+  height: px-to-rem(32);
+}
+
+.usa-search.usa-search-big .usa-search-submit,
+.usa-search.usa-search-big [type="submit"] {
+  height: px-to-rem(40);
+}

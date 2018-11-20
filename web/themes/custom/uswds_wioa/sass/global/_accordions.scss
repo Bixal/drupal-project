@@ -1,0 +1,26 @@
+$accordion-border: 1px solid $color-gray-lightest;
+
+.usa-accordion-button {
+  background-color: $color-aqua-lightest;
+
+  &:hover,
+  &:focus {
+    background-color: $color-aqua-light;
+  }
+}
+
+.usa-accordion-button {
+  background-image: url("../../../images/svg/icon-minus.svg");
+
+  &[aria-expanded="false"] {
+    background-image: url("../../../images/svg/icon-plus.svg");
+  }
+}
+
+.usa-accordion-bordered {
+  .usa-accordion-content {
+    border-bottom: $accordion-border;
+    border-left: $accordion-border;
+    border-right: $accordion-border;
+  }
+}

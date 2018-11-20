@@ -1,0 +1,13 @@
+services:
+  sp_expire.expire_state_plan:
+    class: Drupal\sp_expire\ExpireStatePlanService
+    arguments: ['@sp_expire.content', '@entity_type.manager', '@logger.sp_expire']
+
+  sp_expire.content:
+    class: Drupal\sp_expire\ContentService
+    arguments: ['@entity_type.manager']
+
+  logger.sp_expire:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['sp_expire']

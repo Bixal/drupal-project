@@ -36,10 +36,8 @@ services:
 #      PHP_XDEBUG_REMOTE_HOST: host.docker.internal # Docker 18.03+ & Linux/Mac/Win
 #      PHP_XDEBUG_REMOTE_HOST: 172.17.0.1 # Linux, Docker < 18.03
     volumes:
-      - ./config/sync/:/var/www/html/config/sync:cached
-      - ./web/sites/default/files/:/var/www/html/web/sites/default/files:cached
-## For Xdebug profiler files
-#      - files:/mnt/files
+      - ./config/sync/:/var/www/html/config/sync
+      - ./web/sites/default/files/:/var/www/html/web/sites/default/files
 
   nginx:
     build:
@@ -57,8 +55,7 @@ services:
       NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
 #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
-# For macOS users (https://wodby.com/stacks/drupal/docs/local/docker-for-mac/)
-      - ./web/sites/default/files/:/var/www/html/web/sites/default/files:cached
+      - ./web/sites/default/files/:/var/www/html/web/sites/default/files
     labels:
       - 'traefik.backend=nginx'
       - 'traefik.port=80'

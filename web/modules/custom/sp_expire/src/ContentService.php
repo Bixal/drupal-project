@@ -52,10 +52,8 @@ class ContentService {
    *
    * @param string $latestOrCurrentRevision
    *   A constant from this class of self::MODERATION_STATE_REVISION_*.
-   * @param string $moderationState
-   *   Usually this is 'published' self::MODERATION_STATE_PUBLISHED
-   * @param string $moderationStateOperator
-   *   An operator like in a query condition: =, <>, etc.
+   * @param array $moderationStates
+   *   An array keyed by a moderation state ID with values of the operator.
    * @param string $contentEntityTypeId
    *   This is the entity type of the moderated content (node, user, etc).
    * @param string $workflowId
@@ -123,10 +121,16 @@ class ContentService {
   }
 
   /**
+   * Retrieve all the latest revisions of nodes.
+   *
    * @param string $contentEntityTypeId
+   *   This is the entity type of the moderated content (node, user, etc).
    * @param string $workflowId
+   *   The default workflow ID is 'editorial', nothing to get all.
    *
    * @return array
+   *   An array keyed by revision_id with a value of id.
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -134,98 +138,94 @@ class ContentService {
     return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [], $contentEntityTypeId, $workflowId);
   }
 
+  /**
+   * Retrieve all the latest revisions of nodes that are published.
+   *
+   * @param string $contentEntityTypeId
+   *   This is the entity type of the moderated content (node, user, etc).
+   * @param string $workflowId
+   *   The default workflow ID is 'editorial', nothing to get all.
+   *
+   * @return array
+   *   An array keyed by revision_id with a value of id.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function latestRevisionPublished($contentEntityTypeId = '', $workflowId = '') {
     return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [self::MODERATION_STATE_PUBLISHED => '=' ], $contentEntityTypeId, $workflowId);
   }
 
+  /**
+   * Retrieve all the latest revisions of nodes that are unpublished.
+   *
+   * @param string $contentEntityTypeId
+   *   This is the entity type of the moderated content (node, user, etc).
+   * @param string $workflowId
+   *   The default workflow ID is 'editorial', nothing to get all.
+   *
+   * @return array
+   *   An array keyed by revision_id with a value of id.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function latestRevisionUnPublished($contentEntityTypeId = '', $workflowId = '') {
     return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [self::MODERATION_STATE_PUBLISHED => '<>' ], $contentEntityTypeId, $workflowId);
   }
 
+  /**
+   * Retrieve all the current revisions of nodes.
+   *
+   * @param string $contentEntityTypeId
+   *   This is the entity type of the moderated content (node, user, etc).
+   * @param string $workflowId
+   *   The default workflow ID is 'editorial', nothing to get all.
+   *
+   * @return array
+   *   An array keyed by revision_id with a value of id.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function currentRevision($contentEntityTypeId = '', $workflowId = '') {
     return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [], $contentEntityTypeId, $workflowId);
   }
 
+  /**
+   * Retrieve all the current revisions of nodes that are published.
+   *
+   * @param string $contentEntityTypeId
+   *   This is the entity type of the moderated content (node, user, etc).
+   * @param string $workflowId
+   *   The default workflow ID is 'editorial', nothing to get all.
+   *
+   * @return array
+   *   An array keyed by revision_id with a value of id.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function currentRevisionPublished($contentEntityTypeId = '', $workflowId = '') {
     return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [self::MODERATION_STATE_PUBLISHED => '=' ], $contentEntityTypeId, $workflowId);
   }
 
+  /**
+   * Retrieve all the current revisions of nodes that are unpublished.
+   *
+   * @param string $contentEntityTypeId
+   *   This is the entity type of the moderated content (node, user, etc).
+   * @param string $workflowId
+   *   The default workflow ID is 'editorial', nothing to get all.
+   *
+   * @return array
+   *   An array keyed by revision_id with a value of id.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function currentRevisionUnPublished($contentEntityTypeId = '', $workflowId = '') {
     return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [self::MODERATION_STATE_PUBLISHED => '<>' ], $contentEntityTypeId, $workflowId);
   }
 
-  public function latestRevisions() {
-    $result = $this->latestRevisionPublished();
-    $this->getContentEntity($result);
-    dpm($result,'latest version is published');
-    $result = $this->latestRevisionUnPublished();
-    $this->getContentEntity($result);
-    dpm($result,'latest version is unpublished');
-    $result = $this->currentRevisionPublished();
-    $this->getContentEntity($result);
-    dpm($result,'current version is published');
-    $result = $this->currentRevisionUnPublished();
-    $this->getContentEntity($result);
-    dpm($result,'current version is published');
-    return;
-    $query = $this->entityTypeManager->getStorage('content_moderation_state')->getQuery()
-      ->latestRevision()
-      //->condition('content_entity_type_id', $this->entityTypeId)
-      //->condition('moderation_state', self::MODERATION_STATE_PUBLISHED, '<>')
-      ->sort('id', 'DESC');
-
-    $result = $query->execute();
-    //dpm($result,'latest versions');
-    //dpm($this->entityTypeManager->getStorage('content_moderation_state')->load($result[63]));
-//return;
-    $query = $this->entityTypeManager->getStorage('content_moderation_state')->getQuery()
-      ->latestRevision()
-      //->condition('content_entity_type_id', $this->entityTypeId)
-      ->condition('moderation_state', self::MODERATION_STATE_PUBLISHED, '<>')
-      ->sort('id', 'DESC');
-
-    $result = $query->execute();
-    dpm($result,'latest version is not published');
-    $this->latestRevisionPublished();
-
-
-
-
-
-    return;
-    $query = $this->entityTypeManager->getStorage('content_moderation_state')->getAggregateQuery()
-      ->aggregate('content_entity_id', 'MAX')
-      ->groupBy('content_entity_revision_id')
-      //->condition('content_entity_type_id', $this->entityTypeId)
-      //->condition('moderation_state', self::MODERATION_STATE_PUBLISHED, '<>')
-      ->sort('content_entity_revision_id', 'DESC');
-
-    $result = $query->execute();
-    dpm($result,'res');
-    return;
-    //$result ? array_column($result, 'content_entity_revision_id') : [];
-    $content_entity_revision_id = $result ? array_column($result, 'content_entity_revision_id') : [];
-    dpm($content_entity_revision_id, 'ceri');
-
-    $query = $this->entityTypeManager->getStorage('content_moderation_state')->getQuery()
-      //->condition('content_entity_type_id', $this->entityTypeId)
-      ->condition('moderation_state', self::MODERATION_STATE_PUBLISHED, '<>')
-      ->condition('content_entity_revision_id', $content_entity_revision_id, 'in')
-      ->sort('content_entity_revision_id', 'DESC');
-
-    $result = $query->execute();
-    dpm($result,'res2');
-    //$result ? array_column($result, 'content_entity_revision_id') : [];
-    $content_entity_revision_id_unpub = $result ? array_column($result, 'content_entity_id_max') : [];
-    dpm($content_entity_revision_id_unpub, 'ceri2');
-return;
-    // Only add the pager if a limit is specified.
-    /*if ($this->limit) {
-      $query->pager($this->limit);
-    }*/
-
-    $result = $query->execute();
-    dpm($result,'res');
-    return $result ? array_column($result, 'content_entity_revision_id') : [];
-  }
 }

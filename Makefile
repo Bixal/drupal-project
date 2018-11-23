@@ -86,3 +86,11 @@ phpcs:
 phpcbf:
 	@echo "Beautifying custom code"
 	docker-compose run php vendor/bin/phpcbf --standard=vendor/drupal/coder/coder_sniffer/Drupal web/modules/custom --ignore=*.min.js --ignore=*.min.css
+
+fresh:
+	@echo "Installing a fresh Drupal 8 site"
+	docker-compose run --rm php drupal si --force --no-interaction standard --account-pass="admin"
+	@echo "Installing configuration from file"
+	docker-compose run --rm php drupal config:import
+	make cr
+	make uli

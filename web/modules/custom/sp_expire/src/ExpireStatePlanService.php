@@ -120,9 +120,10 @@ class ExpireStatePlanService {
         throw new \Exception($message);
       }
 
-      $timestamp = time();
       $query = $contentEntityStorage->getQuery();
       $query
+        // Allows unpublished revisions to be returned.
+        ->accessCheck(FALSE)
         ->latestRevision()
         ->condition('nid', array_values($nids), 'in')
         ->condition('changed', $timestamp, '<=');
@@ -166,9 +167,7 @@ class ExpireStatePlanService {
           $node->setChangedTime($time);
           // This is REQUIRED and I'm not sure why. If this is this flag is not
           // set, the revision will not show in the revisions tab.
-          if ($node->isRevisionTranslationAffected()) {
-            $node->setRevisionTranslationAffected(TRUE);
-          }
+          $node->setRevisionTranslationAffected(TRUE);
           // Set a new moderation state. This does not need to follow the normal
           // workflow, it can go from transitions that do not exist. However,
           // it's probably good to set up a new transition that only 'admins'

@@ -47,7 +47,20 @@ class ExpireStatePlanService {
     $this->logger = $logger;
   }
 
-  public function log($message, $context, $debugInfo) {
+  /**
+   * Log to watchdog conditionally but always return the message.
+   *
+   * @param string $message
+   *   The text to output with replacements in it.
+   * @param array $context
+   *   The replacements for $message.
+   * @param bool $debugInfo
+   *   If true, will output to watchdog.
+   *
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+   *   The message as a translated markup.
+   */
+  public function log($message, array $context, $debugInfo) {
     if ($debugInfo) {
       $this->logger->debug($message, $context);
     }
@@ -55,6 +68,8 @@ class ExpireStatePlanService {
   }
 
   /**
+   * Expire moderated state plan content that has not been updated in 90 days.
+   *
    * @param string|null $daysAgo
    *   The number of days ago to check expiring content, pass null for 90 days.
    * @param bool $debugInfo
@@ -64,7 +79,7 @@ class ExpireStatePlanService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
-   * @throw \Exception
+   * @throws \Exception
    *
    * @return array
    *   An array of string messages.
@@ -83,7 +98,7 @@ class ExpireStatePlanService {
     $moderationStates = [
       $this->contentService::MODERATION_STATE_PUBLISHED => '<>',
       'draft' => '<>',
-      'expired' => '<>'
+      'expired' => '<>',
     ];
     $workflowId = 'editorial';
     $states = [];
@@ -107,7 +122,8 @@ class ExpireStatePlanService {
         ['@content_moderated_state_ids' => print_r($content_moderated_state_ids, 1)],
         $debugInfo
       );
-      // Retrieve the corresponding entity IDs (node IDs, instead of moderated state entity IDs).
+      // Retrieve the corresponding entity IDs (node IDs, instead of moderated
+      // state entity IDs).
       $nids = $this->contentService->getContentEntity($content_moderated_state_ids);
       $messages[] = $this->log('Corresponding nodes (key: revision_id value: nid): @nids', ['@nids' => print_r($nids, 1)], $debugInfo);
       $messages[] = $this->log('Checking that the nodes were last modified more than @days ago.', ['@days' => $daysAgo], $debugInfo);

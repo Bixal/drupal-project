@@ -5,7 +5,6 @@ namespace Drupal\sp_expire\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Drupal\Console\Core\Command\ContainerAwareCommand;
-use Drupal\Console\Annotations\DrupalCommand;
 use Drupal\sp_expire\ExpireStatePlanService;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,7 +12,7 @@ use Symfony\Component\Console\Input\InputArgument;
 /**
  * Class ExpireCommand.
  *
- * @DrupalCommand (
+ * @Drupal\Console\Annotations\DrupalCommand (
  *     extension="sp_expire",
  *     extensionType="module"
  * )
@@ -47,7 +46,7 @@ class ExpireCommand extends ContainerAwareCommand {
       ->setDescription($this->trans('commands.sp.expire.description'))
       ->addOption(
         'log',
-        null,
+        NULL,
         InputOption::VALUE_OPTIONAL,
         $this->trans('commands.sp.expire.options.log'),
         1
@@ -72,4 +71,5 @@ class ExpireCommand extends ContainerAwareCommand {
       $this->getIo()->info($message);
     }
   }
+
 }

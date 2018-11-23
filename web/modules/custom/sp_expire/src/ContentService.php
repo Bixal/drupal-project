@@ -65,11 +65,12 @@ class ContentService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getContentModeratedStateEntity($latestOrCurrentRevision = '', $moderationStates = [], $contentEntityTypeId = '', $workflowId = '') {
+  public function getContentModeratedStateEntity($latestOrCurrentRevision = '', array $moderationStates = [], $contentEntityTypeId = '', $workflowId = '') {
     $query = $this->entityTypeManager->getStorage('content_moderation_state')->getQuery();
     if ($latestOrCurrentRevision === self::MODERATION_STATE_REVISION_CURRENT) {
       $query->currentRevision();
-    } elseif ($latestOrCurrentRevision === self::MODERATION_STATE_REVISION_LATEST) {
+    }
+    elseif ($latestOrCurrentRevision === self::MODERATION_STATE_REVISION_LATEST) {
       $query->latestRevision();
     }
     if (!empty($moderationStates)) {
@@ -153,7 +154,7 @@ class ContentService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function latestRevisionPublished($contentEntityTypeId = '', $workflowId = '') {
-    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [self::MODERATION_STATE_PUBLISHED => '=' ], $contentEntityTypeId, $workflowId);
+    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [self::MODERATION_STATE_PUBLISHED => '='], $contentEntityTypeId, $workflowId);
   }
 
   /**
@@ -171,7 +172,7 @@ class ContentService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function latestRevisionUnPublished($contentEntityTypeId = '', $workflowId = '') {
-    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [self::MODERATION_STATE_PUBLISHED => '<>' ], $contentEntityTypeId, $workflowId);
+    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_LATEST, [self::MODERATION_STATE_PUBLISHED => '<>'], $contentEntityTypeId, $workflowId);
   }
 
   /**
@@ -207,7 +208,7 @@ class ContentService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function currentRevisionPublished($contentEntityTypeId = '', $workflowId = '') {
-    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [self::MODERATION_STATE_PUBLISHED => '=' ], $contentEntityTypeId, $workflowId);
+    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [self::MODERATION_STATE_PUBLISHED => '='], $contentEntityTypeId, $workflowId);
   }
 
   /**
@@ -225,7 +226,7 @@ class ContentService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function currentRevisionUnPublished($contentEntityTypeId = '', $workflowId = '') {
-    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [self::MODERATION_STATE_PUBLISHED => '<>' ], $contentEntityTypeId, $workflowId);
+    return $this->getContentModeratedStateEntity(self::MODERATION_STATE_REVISION_CURRENT, [self::MODERATION_STATE_PUBLISHED => '<>'], $contentEntityTypeId, $workflowId);
   }
 
 }

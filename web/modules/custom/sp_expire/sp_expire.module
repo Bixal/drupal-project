@@ -22,16 +22,3 @@ function sp_expire_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
-
-/**
- * Implements hook_page_attachments_alter().
- */
-function sp_expire_page_attachments_alter(array &$attachments) {
-  return;
-  // For some reason, calling from the front end instead of from a command
-  // causes the entity query to retrieve node 9 as well (line 124).
-  $service = \Drupal::getContainer()->get('sp_expire.expire_state_plan');
-  foreach ($service->expireModeratedContent(1, FALSE) as $message) {
-    dpm($message->render());
-  }
-}

@@ -1,0 +1,74 @@
+uuid:
+  -
+    value: f4a1d659-94c7-4417-b7b0-d5d87ac45c34
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state_plan
+    target_type: node_type
+    target_uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
+revision_timestamp:
+  -
+    value: '2018-11-02T21:18:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 214221ea-826e-4481-a217-c38c068bf048
+revision_log:
+  -
+    value: Rtr1111
+status:
+  -
+    value: false
+title:
+  -
+    value: 'For virginia 1'
+uid:
+  -
+    target_type: user
+    target_uuid: b8137230-0671-4239-b62d-a42139784db7
+created:
+  -
+    value: '2018-11-02T13:20:36+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-02T21:18:04+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+moderation_state:
+  -
+    value: ready_for_review
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+body:
+  -
+    value: "<p>Test1</p>\r\n"
+    format: basic_html
+    processed: '<p>Test1</p>'
+    summary: ''
+    summary_processed: ''
+field_reviewer_comments: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.214221ea-826e-4481-a217-c38c068bf048
+      - user.user.b8137230-0671-4239-b62d-a42139784db7

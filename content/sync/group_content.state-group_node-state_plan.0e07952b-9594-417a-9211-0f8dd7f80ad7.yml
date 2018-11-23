@@ -1,0 +1,51 @@
+uuid:
+  -
+    value: 0e07952b-9594-417a-9211-0f8dd7f80ad7
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state-group_node-state_plan
+    target_type: group_content_type
+    target_uuid: 1fc75bf5-6d04-4ebd-9d1b-ac74bd70e1a5
+gid:
+  -
+    target_type: group
+    target_uuid: 18172ff5-6487-4b7a-beb2-3b958bccf993
+entity_id:
+  -
+    target_type: node
+    target_uuid: 433ad275-63d2-46a6-97d6-0c8ef99b66fe
+label:
+  -
+    value: 'for florida 2'
+uid:
+  -
+    target_type: user
+    target_uuid: 88093ebe-5b0c-46de-b569-89128adb2280
+created:
+  -
+    value: '2018-11-01T19:55:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-01T19:55:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: group_content
+  entity_dependencies:
+    group:
+      - group.state.18172ff5-6487-4b7a-beb2-3b958bccf993
+    node:
+      - node.state_plan.433ad275-63d2-46a6-97d6-0c8ef99b66fe
+    user:
+      - user.user.88093ebe-5b0c-46de-b569-89128adb2280

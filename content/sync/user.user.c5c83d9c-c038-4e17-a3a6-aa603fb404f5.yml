@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: c5c83d9c-c038-4e17-a3a6-aa603fb404f5
+langcode:
+  -
+    value: en
+preferred_langcode:
+  -
+    value: en
+preferred_admin_langcode:
+  -
+    value: en
+name:
+  -
+    value: completer
+mail:
+  value: completer@example.com
+timezone:
+  -
+    value: UTC
+status:
+  value: '1'
+created:
+  -
+    value: '2018-10-31T18:05:19+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-10-31T18:05:19+00:00'
+    format: 'Y-m-d\TH:i:sP'
+access:
+  -
+    value: '2018-10-31T21:13:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+login:
+  -
+    value: '2018-10-31T19:47:34+00:00'
+    format: 'Y-m-d\TH:i:sP'
+init:
+  -
+    value: completer@example.com
+roles:
+  - authenticated
+  - completer
+default_langcode:
+  -
+    value: true
+user_picture: {  }
+_content_sync:
+  entity_type: user
+  entity_dependencies: {  }
+pass:
+  -
+    value: $S$EnesHojlvGTSy1o8HAannNeT/nr1W8J3zcGppGWb.791enpe4VJe
+    pre_hashed: true

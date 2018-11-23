@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bef6d86c776cdfddea678369ef0aed8",
+    "content-hash": "3f84d693ffb956bf574ebba7d085e481",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2491,6 +2491,65 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/content_moderation_notifications",
                 "issues": "https://www.drupal.org/project/issues/content_moderation_notifications"
+            }
+        },
+        {
+            "name": "drupal/content_sync",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/content_sync",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_sync-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "8382a422c907f353bdbaad13ea788390a13038eb"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1514473985",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Blanca.Esqueda",
+                    "homepage": "https://www.drupal.org/user/3082389"
+                },
+                {
+                    "name": "chris.smith",
+                    "homepage": "https://www.drupal.org/user/1812018"
+                },
+                {
+                    "name": "dabito",
+                    "homepage": "https://www.drupal.org/user/2400660"
+                },
+                {
+                    "name": "david4lim",
+                    "homepage": "https://www.drupal.org/user/934262"
+                }
+            ],
+            "description": "Allows to import/export content using YAML files",
+            "homepage": "https://www.drupal.org/project/content_sync",
+            "support": {
+                "source": "http://cgit.drupalcode.org/content_sync"
             }
         },
         {

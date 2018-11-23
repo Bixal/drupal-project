@@ -82,6 +82,14 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "patches": {
+            "drupal/content_sync": {
+                "Password cannot hold more than 1 values": "https://www.drupal.org/files/issues/content_sync-drush_commands-2941748-1-8.patch",
+                "Dependency resolver fix": "https://www.drupal.org/files/issues/2018-06-19/content_sync-dependency_resolver-0-D8.patch",
+                "Error when enabling this module": "https://www.drupal.org/files/issues/2018-11-14/content_sync-compatible-2942575-11-D8.patch",
+                "Breaks on import of Single item": "./patches/content_sync-breaks-on-import-of-single-item-2988394.patch"
+            }
         }
     }
 }

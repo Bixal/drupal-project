@@ -105,7 +105,7 @@ class ContentService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    */
-  public function getContentEntity($content_moderated_state_result) {
+  public function getContentEntity(array $content_moderated_state_result) {
     $ids = [];
     foreach ($content_moderated_state_result as $revision_id => $id) {
       /** @var \Drupal\content_moderation\Entity\ContentModerationState $content_moderated_state_entity */

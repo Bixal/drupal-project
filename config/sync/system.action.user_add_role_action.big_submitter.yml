@@ -1,0 +1,14 @@
+uuid: 93f24ec3-36e7-4ba9-89e5-bbd5caeae229
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.big_submitter
+  module:
+    - user
+id: user_add_role_action.big_submitter
+label: 'Add the Big Submitter role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: big_submitter

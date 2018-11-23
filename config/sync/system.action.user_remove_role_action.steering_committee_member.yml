@@ -1,0 +1,14 @@
+uuid: aa0bc037-fbd6-4349-82a4-036b37145bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.steering_committee_member
+  module:
+    - user
+id: user_remove_role_action.steering_committee_member
+label: 'Remove the Steering Committee Member role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: steering_committee_member

@@ -1,0 +1,17 @@
+uuid: 026d09cf-b000-4ddd-878e-599479c2cc2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.system
+id: state-67d4388cc
+label: System
+weight: 9
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

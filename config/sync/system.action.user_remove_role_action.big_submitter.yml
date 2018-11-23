@@ -1,0 +1,14 @@
+uuid: e7359071-ba2b-4d73-ae29-23123402618f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.big_submitter
+  module:
+    - user
+id: user_remove_role_action.big_submitter
+label: 'Remove the Big Submitter role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: big_submitter

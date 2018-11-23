@@ -1,0 +1,17 @@
+uuid: 4e1e8acb-b477-49dc-baa1-ed530ca481a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.sys_admin
+id: state-178091589
+label: 'Sys Admin'
+weight: 10
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

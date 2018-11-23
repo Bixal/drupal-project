@@ -1,0 +1,17 @@
+uuid: 22169091-573f-4826-af64-0907d28c6dbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.steering_committee_member
+id: state-ac19d173a
+label: 'Steering Committee Member'
+weight: 8
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

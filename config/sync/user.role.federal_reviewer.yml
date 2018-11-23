@@ -1,0 +1,25 @@
+uuid: a20763e9-2c57-4d2d-8c6d-556f4416d12a
+langcode: en
+status: true
+dependencies: {  }
+id: federal_reviewer
+label: 'Federal Reviewer'
+weight: 6
+is_admin: null
+permissions:
+  - 'access any state_plan workflow_transion overview'
+  - 'access content overview'
+  - 'access state_plan workflow_transition form'
+  - 'create field_reviewer_comments'
+  - 'create state_plan workflow_transition'
+  - 'edit field_reviewer_comments'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition back_to_review_queue'
+  - 'use editorial transition publish'
+  - 'use editorial transition review_failed'
+  - 'use editorial transition start_review'
+  - 'view any unpublished content'
+  - 'view field_reviewer_comments'
+  - 'view latest version'
+  - 'view state_plan revisions'

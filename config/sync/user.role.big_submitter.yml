@@ -1,0 +1,12 @@
+uuid: 1a9777a0-3092-49d7-b430-18ead5c7115f
+langcode: en
+status: true
+dependencies: {  }
+id: big_submitter
+label: 'Big Submitter'
+weight: 5
+is_admin: null
+permissions:
+  - 'access any state_plan workflow_transion overview'
+  - 'access state_plan workflow_transition form'
+  - 'create state_plan workflow_transition'

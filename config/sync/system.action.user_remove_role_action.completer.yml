@@ -1,0 +1,14 @@
+uuid: 1087888e-d7e3-4136-8d3f-bb4f80985932
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.completer
+  module:
+    - user
+id: user_remove_role_action.completer
+label: 'Remove the Completer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: completer

@@ -64,7 +64,9 @@ class ExpireStatePlanService {
     if ($debugInfo) {
       $this->logger->debug($message, $context);
     }
+    // @codingStandardsIgnoreStart
     return t($message, $context);
+    // @codingStandardsIgnoreEnd
   }
 
   /**
@@ -152,7 +154,9 @@ class ExpireStatePlanService {
           $message = 'Retrieved the wrong vid (%d) for node %d.';
           $context = ['@vid' => $vid, '@nid' => $nid];
           $this->logger->critical($message, $context);
+          // @codingStandardsIgnoreStart
           throw new \Exception(t($message, $context));
+          // @codingStandardsIgnoreEnd
         }
       }
       // Only use the nids in the correct status that were also updated at the
@@ -189,12 +193,14 @@ class ExpireStatePlanService {
           // it's probably good to set up a new transition that only 'admins'
           // have access to so that we can create a workflow transition message
           // for this change.
-          $node->moderation_state->value = 'expired';
+          $node->set('moderation_state', 'expired');
           $node->save();
           $message = 'The node of ID @nid was expired because it was updated more than @days days ago.';
           $context = ['@nid' => $node->id(), '@days' => $daysAgo];
           $this->logger->info($message, $context);
+          // @codingStandardsIgnoreStart
           $messages[] = t($message, $context);
+          // @codingStandardsIgnoreEnd
         }
       }
       else {

@@ -41,6 +41,7 @@ module:
   search: 0
   serialization: 0
   shortcut: 0
+  sp_create: 0
   sp_expire: 0
   system: 0
   taxonomy: 0

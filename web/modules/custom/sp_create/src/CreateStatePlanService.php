@@ -3,6 +3,7 @@
 namespace Drupal\sp_create;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\group\Entity\Group;
 use Drupal\user\Entity\User;
 use Drupal\Core\Entity\EntityStorageException;
 use Psr\Log\LoggerInterface;
@@ -60,17 +61,11 @@ class CreateStatePlanService {
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    */
   public function createFromStateGroups($planYear, $io = NULL, $debugInfo = FALSE) {
-    // Force plan year to 0 if it's not year like.
-    $planYear = (int) $planYear;
-    if (strlen((string) $planYear) !== 4) {
-      $planYear = 0;
-    }
+    $this->massagePlanYear($planYear);
     // Run time logger that needs the IO object to allow printing to the
     // console.
     $logger = new DebugLogger($this->logger, $debugInfo, $io);
     $group_storage = $this->entityTypeManager->getStorage('group');
-    $group_content_storage = $this->entityTypeManager->getStorage('group_content');
-    $node_storage = $this->entityTypeManager->getStorage('node');
     $state_groups = $group_storage
       ->getQuery()
       ->condition('type', 'state')
@@ -92,38 +87,14 @@ class CreateStatePlanService {
       $skipped = [];
       // Process each state group node.
       foreach ($state_groups as $state_gid) {
-        // Retrieve all state plan group content relations for this state group.
-        $state_group_content = $group_content_storage->getQuery()
-          ->condition('gid', $state_gid, '=')
-          // @see table group_content_field_data column of type.
-          ->condition('type', 'state-group_node-state_plan')
-          ->execute();
-        $state_plan_nids = [];
-        // Get all the state plan nids in the current group that correspond to
-        // the group relations.
-        foreach ($state_group_content as $state_group_content_id) {
-          /** @var \Drupal\group\Entity\GroupContent $state_group_content_entity */
-          $state_group_content_entity = $group_content_storage->load($state_group_content_id);
-          // Retrieve the entity ID that this group content 'relates'.
-          $state_plan_nids[] = $state_group_content_entity->get('entity_id')->get(0)->getValue()['target_id'];
-        }
-        // Determine if there is already a state plan node for the current plan
-        // year for the current state group.
-        $state_plan_current_plan_year_nids = $node_storage->getQuery()
-          ->accessCheck(FALSE)
-          ->latestRevision()
-          ->condition('nid', $state_plan_nids, 'in')
-          ->condition('field_plan_year', $planYear, '=')
-          ->execute();
-
         /** @var \Drupal\group\Entity\Group $state_group_entity */
         $state_group_entity = $group_storage->load($state_gid);
         // Get the title of the group node, this will be used for the state
         // plan title.
         $state_group_title = $state_group_entity->label();
-        if (empty($state_plan_current_plan_year_nids)) {
+        if (empty($this->getStatePlanByPlanYear($state_group_entity, $planYear))) {
           /** @var \Drupal\node\Entity\Node $state_plan_entity */
-          $state_plan_entity = $node_storage->create([
+          $state_plan_entity = $this->entityTypeManager->getStorage('node')->create([
             'type'        => 'state_plan',
             'title'       => sprintf('%s - %d', $state_group_title, $planYear),
             'field_plan_year' => $planYear,
@@ -180,6 +151,68 @@ class CreateStatePlanService {
       $logger->info('No state plans will be created for plan year @plan_year, no state groups were found.', [
         '@plan_year' => $planYear,
       ]);
+    }
+  }
+
+  /**
+   * Retrieve the node ID of the state plan in the given group and plan year.
+   *
+   * @param \Drupal\group\Entity\Group $stateGroup
+   *   The current state group.
+   * @param string|int $planYear
+   *   A four character year.
+   *
+   * @return int
+   *   The nid of the state plan for the current year, 0 if none exists.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   * @throws \Exception
+   */
+  public function getStatePlanByPlanYear(Group $stateGroup, $planYear) {
+    $this->massagePlanYear($planYear);
+    $state_plan_nids = [];
+    // Get all the state plan nids in the current group that correspond to
+    // the group relations.
+    /** @var \Drupal\group\Entity\GroupContent $state_group_content_entity */
+    foreach ($stateGroup->getContent('group_node:state_plan') as $state_group_content_entity) {
+      $state_plan_nids[] = $state_group_content_entity->get('entity_id')->get(0)->getValue()['target_id'];
+    }
+    // There is no need to check by plan year if a group has no state plans.
+    if (empty($state_plan_nids)) {
+      $return = [];
+    }
+    else {
+      // Determine if there is already a state plan node for the current plan
+      // year for the current state group.
+      $return = $this->entityTypeManager->getStorage('node')->getQuery()
+        ->accessCheck(FALSE)
+        ->latestRevision()
+        ->condition('nid', $state_plan_nids, 'in')
+        ->condition('field_plan_year', $planYear, '=')
+        ->execute();
+    }
+    if (count($return) > 1) {
+      throw new \Exception(sprintf('There is more than one state plan for plan year %d in group %s (%d).', $planYear, $stateGroup->label(), $stateGroup->id()));
+    }
+    elseif (empty($return)) {
+      return 0;
+    }
+    return current($return);
+  }
+
+  /**
+   * Force plan year to be a 4 digit year or 0 on invalid.
+   *
+   * @param string|int $planYear
+   *   A four character year.
+   */
+  protected function massagePlanYear(&$planYear) {
+    // Force plan year to 0 if it's not year like.
+    $planYear = (int) $planYear;
+    if (strlen((string) $planYear) !== 4) {
+      $planYear = 0;
     }
   }
 

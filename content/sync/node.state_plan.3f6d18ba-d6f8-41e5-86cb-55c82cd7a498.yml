@@ -1,0 +1,74 @@
+uuid:
+  -
+    value: 3f6d18ba-d6f8-41e5-86cb-55c82cd7a498
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state_plan
+    target_type: node_type
+    target_uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
+revision_timestamp:
+  -
+    value: '2018-11-02T16:00:10+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
+revision_log:
+  -
+    value: 'Publishing for the second time.'
+status:
+  -
+    value: true
+title:
+  -
+    value: 'For virginia 3'
+uid:
+  -
+    target_type: user
+    target_uuid: b8137230-0671-4239-b62d-a42139784db7
+created:
+  -
+    value: '2018-11-02T15:38:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-02T15:50:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+moderation_state:
+  -
+    value: published
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+body:
+  -
+    value: "<p>STuff.</p>\r\n\r\n<p>Fixed changes.</p>\r\n\r\n<p>Re-opening for some new changes.</p>\r\n"
+    format: basic_html
+    processed: "<p>STuff.</p>\n\n<p>Fixed changes.</p>\n\n<p>Re-opening for some new changes.</p>"
+    summary: ''
+    summary_processed: ''
+field_reviewer_comments: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
+      - user.user.b8137230-0671-4239-b62d-a42139784db7

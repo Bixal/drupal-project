@@ -1,0 +1,21 @@
+uuid: 56b62a72-4302-4421-87e8-3b8dde3fbfb6
+langcode: en
+status: true
+dependencies: {  }
+id: transition
+workflow: editorial
+transitions:
+  create_new_draft: create_new_draft
+  publish: publish
+  ready_for_review: ready_for_review
+  start_review: start_review
+  back_to_review_queue: back_to_review_queue
+  review_failed: review_failed
+roles: {  }
+author: false
+emails: matt.poole@bixal.com
+subject: 'Transition happened'
+body:
+  value: "<p>transition.</p>\r\n"
+  format: basic_html
+label: Transition

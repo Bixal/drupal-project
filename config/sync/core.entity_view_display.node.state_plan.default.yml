@@ -1,0 +1,41 @@
+uuid: 7102c6f5-4e45-4c31-a47c-c955cf09d1da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.state_plan.body
+    - field.field.node.state_plan.field_reviewer_comments
+    - node.type.state_plan
+  module:
+    - text
+    - user
+id: node.state_plan.default
+targetEntityType: node
+bundle: state_plan
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_reviewer_comments:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

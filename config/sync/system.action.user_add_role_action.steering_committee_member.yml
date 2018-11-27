@@ -1,0 +1,14 @@
+uuid: 1a74d43c-822f-4e1e-ad23-b5c46b2c6b34
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.steering_committee_member
+  module:
+    - user
+id: user_add_role_action.steering_committee_member
+label: 'Add the Steering Committee Member role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: steering_committee_member

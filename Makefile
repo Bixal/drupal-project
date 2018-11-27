@@ -33,7 +33,7 @@ dbdump:
 
 dbrestore:
 	@echo "Restoring database..."
-	docker-compose run php drupal database:connect < db/restore.sql.gz
+	docker-compose run php drupal database:restore --file='/var/www/html/db/restore.sql.gz'
 
 uli:
 	@echo "Getting admin login"
@@ -86,3 +86,15 @@ phpcs:
 phpcbf:
 	@echo "Beautifying custom code"
 	docker-compose run php vendor/bin/phpcbf --standard=vendor/drupal/coder/coder_sniffer/Drupal web/modules/custom --ignore=*.min.js --ignore=*.min.css
+
+fresh:
+	@echo "Ensure composer is up to date"
+	docker-compose run --rm php composer install
+	@echo "Installing a fresh Drupal 8 site"
+	docker-compose run --rm php drupal si --force --no-interaction standard --account-pass="admin"
+	@echo "Installing configuration from file"
+	docker-compose run --rm php drupal config:import
+	@echo "Rebuilding content access"
+	docker-compose run --rm php drupal node:access:rebuild
+	make cr
+	make uli

@@ -1,0 +1,17 @@
+uuid: fa4fa56d-00c2-47e0-a944-96cc6990f4df
+langcode: en
+status: true
+dependencies: {  }
+id: expired
+workflow: editorial
+transitions:
+  expired: expired
+roles:
+  federal_reviewer: federal_reviewer
+author: false
+emails: ''
+subject: 'State Plan Expired'
+body:
+  value: "<p>State plan was not updated in the last 90 days.</p>\r\n"
+  format: basic_html
+label: Expired

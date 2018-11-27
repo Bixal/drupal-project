@@ -1,0 +1,17 @@
+uuid: a7961d3d-a143-4ae9-8e8e-1787bcb57ecc
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.federal_panel_lead
+id: state-b7d59122a
+label: 'Federal Panel Lead'
+weight: 7
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

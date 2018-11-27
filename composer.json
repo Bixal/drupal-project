@@ -19,9 +19,16 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/admin_menu_search": "^1.0",
         "drupal/console": "^1.0.2",
+        "drupal/content_moderation_notifications": "^3.0@RC",
+        "drupal/content_sync": "^2.0",
         "drupal/core": "^8.6.0",
+        "drupal/devel": "^1.2",
         "drupal/drupal-extension": "^3.4",
+        "drupal/field_permissions": "^1.0@RC",
+        "drupal/group": "^1.0@RC",
+        "drupal/masquerade": "^2.0@beta",
         "drupal/uswds": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
@@ -76,6 +83,14 @@
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
+            }
+        },
+        "patches": {
+            "drupal/content_sync": {
+                "Password cannot hold more than 1 values": "https://www.drupal.org/files/issues/content_sync-drush_commands-2941748-1-8.patch",
+                "Dependency resolver fix": "https://www.drupal.org/files/issues/2018-06-19/content_sync-dependency_resolver-0-D8.patch",
+                "Error when enabling this module": "https://www.drupal.org/files/issues/2018-11-14/content_sync-compatible-2942575-11-D8.patch",
+                "Breaks on import of Single item": "./patches/content_sync-breaks-on-import-of-single-item-2988394.patch"
             }
         }
     }

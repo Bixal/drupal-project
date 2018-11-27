@@ -1,0 +1,17 @@
+uuid: 22697431-f748-40e5-96ee-b4ce45036cf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.administrator
+id: state-a416e6833
+label: Administrator
+weight: 2
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

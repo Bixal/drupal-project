@@ -1,0 +1,30 @@
+uuid: bd0ac279-6842-4c41-9101-dd065671cdb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.state-group_node-state_plan
+  module:
+    - path
+id: group_content.state-group_node-state_plan.default
+targetEntityType: group_content
+bundle: state-group_node-state_plan
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

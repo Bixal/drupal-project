@@ -1,0 +1,14 @@
+uuid: a9ecfc8f-6d7b-4626-8d78-7d7383c638f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.state_staff
+  module:
+    - user
+id: user_remove_role_action.state_staff
+label: 'Remove the State Staff role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: state_staff

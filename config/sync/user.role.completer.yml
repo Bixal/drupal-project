@@ -1,0 +1,12 @@
+uuid: 0e2dc5d5-360a-4e3e-b986-1145947baf65
+langcode: en
+status: true
+dependencies: {  }
+id: completer
+label: Completer
+weight: 4
+is_admin: null
+permissions:
+  - 'access any state_plan workflow_transion overview'
+  - 'access state_plan workflow_transition form'
+  - 'create state_plan workflow_transition'

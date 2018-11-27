@@ -1,0 +1,93 @@
+uuid: 510fe207-12f0-4bf1-931e-f5b22a4e27a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+    - node.type.state_plan
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T_JxNjYlfoRBi7Bj1zs5Xv9xv1btuBkKp5C1tNrjMhI
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -3
+    expired:
+      published: false
+      default_revision: false
+      label: Expired
+      weight: 2
+    in_review:
+      published: false
+      default_revision: false
+      label: 'In Review'
+      weight: -1
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 1
+    ready_for_review:
+      published: false
+      default_revision: false
+      label: 'Ready for Review'
+      weight: -2
+  transitions:
+    back_to_review_queue:
+      label: 'Back to Review Queue'
+      from:
+        - in_review
+      to: ready_for_review
+      weight: 7
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: 0
+      from:
+        - draft
+        - expired
+        - published
+        - ready_for_review
+    expired:
+      label: Expired
+      from:
+        - expired
+        - in_review
+        - ready_for_review
+      to: expired
+      weight: 9
+    publish:
+      label: Publish
+      to: published
+      weight: 1
+      from:
+        - in_review
+    ready_for_review:
+      label: 'Ready for Review'
+      from:
+        - draft
+      to: ready_for_review
+      weight: 5
+    review_failed:
+      label: 'Review Failed'
+      from:
+        - in_review
+      to: draft
+      weight: 8
+    start_review:
+      label: 'Start Review'
+      from:
+        - ready_for_review
+      to: in_review
+      weight: 6
+  entity_types:
+    node:
+      - page
+      - state_plan

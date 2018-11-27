@@ -1,0 +1,14 @@
+uuid: 4780c023-ab9f-4ec9-8df9-fb922a29a9a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.state-group_node-state_plan
+id: group_content.state-group_node-state_plan.default
+targetEntityType: group_content
+bundle: state-group_node-state_plan
+mode: default
+content: {  }
+hidden:
+  entity_id: true
+  uid: true

@@ -1,0 +1,74 @@
+uuid:
+  -
+    value: be084a04-2542-49a9-a38a-378fbceeb08c
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state_plan
+    target_type: node_type
+    target_uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
+revision_timestamp:
+  -
+    value: '2018-11-02T17:53:38+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
+revision_log:
+  -
+    value: 'Publish second version.'
+status:
+  -
+    value: true
+title:
+  -
+    value: 'State Plan VA Demo'
+uid:
+  -
+    target_type: user
+    target_uuid: b8137230-0671-4239-b62d-a42139784db7
+created:
+  -
+    value: '2018-11-02T17:45:37+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-02T17:52:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+moderation_state:
+  -
+    value: published
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+body:
+  -
+    value: "<p>Stuff 2 more stuff.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Good stuff.</p>\r\n\r\n<p>MOre stuff.</p>\r\n"
+    format: basic_html
+    processed: "<p>Stuff 2 more stuff.</p>\n\n<p>\_</p>\n\n<p>Good stuff.</p>\n\n<p>MOre stuff.</p>"
+    summary: ''
+    summary_processed: ''
+field_reviewer_comments: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
+      - user.user.b8137230-0671-4239-b62d-a42139784db7

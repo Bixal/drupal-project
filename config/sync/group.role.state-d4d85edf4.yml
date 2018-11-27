@@ -1,0 +1,22 @@
+uuid: f918a9d8-85e8-4c83-b4fa-e87bc670abf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.federal_reviewer
+id: state-d4d85edf4
+label: 'Federal Reviewer'
+weight: 6
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions:
+  0: 'view group_node:state_plan entity'
+  1: 'view unpublished group_node:state_plan entity'
+  2: 'view group'
+  3: 'access group_node overview'
+  6: 'update any group_node:state_plan entity'

@@ -1,0 +1,14 @@
+uuid: 25363aa8-8877-4e2d-9b85-25de6ae23726
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.completer
+  module:
+    - user
+id: user_add_role_action.completer
+label: 'Add the Completer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: completer

@@ -68,7 +68,6 @@ class ExpireStatePlanService {
     // Run time logger that needs the IO object to allow printing to the
     // console.
     $logger = new DebugLogger($this->logger, $debugInfo, $io);
-    $messages = [];
     // Default to expiring content that was last updated 90 or more days ago.
     if (NULL === $daysAgo) {
       $daysAgo = 90;

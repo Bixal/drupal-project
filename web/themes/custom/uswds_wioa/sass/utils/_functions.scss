@@ -7,9 +7,10 @@
 // Example 2
 // max-width: px-to-rem(1200);
 
+// Divided by 10, because USWDS because em base is set to 10px
 @function px-to-rem($number) {
-  $raw: $number/$font-size-base;
-  $rounded: ceil($raw * 1000)/1000;
+  $raw: $number/10;
+  $rounded: ceil($raw * 1000) / 1000;
   @return $rounded * 1rem;
 }
 

@@ -1,0 +1,60 @@
+.usa-button,
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="image"] {
+  padding-top: px-to-rem(11);
+  padding-bottom: px-to-rem(12);
+
+  &:focus {
+    outline: 2px dotted $color-focus;
+  }
+}
+
+.usa-button-primary,
+.usa-button-primary:visited {
+  &:focus {
+    background-color: $color-blue;
+  }
+
+  &:hover {
+    background-color: $color-blue-darker;
+  }
+
+  &:active {
+    background-color: $color-blue-darkest;
+  }
+
+  &[disabled],
+  &.disabled {
+    background-color: $color-gray-lighter;
+  }
+}
+
+.usa-button-secondary,
+.usa-button-secondary:visited {
+  &:focus {
+    color: $c-blue-darkest;
+    border-color: $c-blue-darkest;
+  }
+
+  &:active {
+    color: $c-black;
+    border-color: $c-black;
+  }
+}
+
+.usa-button-secondary-inverse,
+.usa-button-secondary-inverse:visted {
+  &[disabled],
+  &:disabled {
+    color: $color-gray;
+    border-color: $color-gray;
+  }
+}
+
+button.usa-button-big {
+  font-size: px-to-rem(26);
+  padding: px-to-rem(16) px-to-rem(55);
+}

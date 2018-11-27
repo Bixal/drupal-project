@@ -4,6 +4,7 @@ namespace Drupal\sp_expire;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Psr\Log\LoggerInterface;
+use Drupal\sp_create\DebugLogger;
 
 /**
  * Class ExpireStatePlanService.
@@ -48,32 +49,12 @@ class ExpireStatePlanService {
   }
 
   /**
-   * Log to watchdog conditionally but always return the message.
-   *
-   * @param string $message
-   *   The text to output with replacements in it.
-   * @param array $context
-   *   The replacements for $message.
-   * @param bool $debugInfo
-   *   If true, will output to watchdog.
-   *
-   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
-   *   The message as a translated markup.
-   */
-  public function log($message, array $context, $debugInfo) {
-    if ($debugInfo) {
-      $this->logger->debug($message, $context);
-    }
-    // @codingStandardsIgnoreStart
-    return t($message, $context);
-    // @codingStandardsIgnoreEnd
-  }
-
-  /**
    * Expire moderated state plan content that has not been updated in 90 days.
    *
    * @param string|null $daysAgo
    *   The number of days ago to check expiring content, pass null for 90 days.
+   * @param null|\Drupal\Console\Core\Style\DrupalStyle $io
+   *   Optional object to allow for console output.
    * @param bool $debugInfo
    *   Turns on or off extra debug info in watchdog.
    *
@@ -82,11 +63,11 @@ class ExpireStatePlanService {
    * @throws \Drupal\Core\Entity\EntityStorageException
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    * @throws \Exception
-   *
-   * @return array
-   *   An array of string messages.
    */
-  public function expireModeratedContent($daysAgo = NULL, $debugInfo = FALSE) {
+  public function expireModeratedContent($daysAgo = NULL, $io = NULL, $debugInfo = FALSE) {
+    // Run time logger that needs the IO object to allow printing to the
+    // console.
+    $logger = new DebugLogger($this->logger, $debugInfo, $io);
     $messages = [];
     // Default to expiring content that was last updated 90 or more days ago.
     if (NULL === $daysAgo) {
@@ -107,35 +88,31 @@ class ExpireStatePlanService {
     foreach ($moderationStates as $moderationState => $moderationStateOperator) {
       $states[] = "($moderationState operator $moderationStateOperator)";
     }
-    if ($debugInfo) {
-      $messages[] = $this->log('Retrieving moderated state entities latest revisions with states of: @states type of: @type and workflow ID of: @workflow',
-        [
-          '@states' => implode(', ', $states),
-          '@type' => $contentEntityTypeId ? $contentEntityTypeId : 'ALL',
-          '@workflow' => $workflowId ? $workflowId : 'ALL',
-        ],
-        $debugInfo
-      );
-    }
+    $logger->debug('Retrieving moderated state entities latest revisions with states of: @states type of: @type and workflow ID of: @workflow',
+      [
+        '@states' => implode(', ', $states),
+        '@type' => $contentEntityTypeId ? $contentEntityTypeId : 'ALL',
+        '@workflow' => $workflowId ? $workflowId : 'ALL',
+      ]
+    );
     $content_moderated_state_ids = $this->contentService->getContentModeratedStateEntity($this->contentService::MODERATION_STATE_REVISION_LATEST, $moderationStates, $contentEntityTypeId, $workflowId);
     if (!empty($content_moderated_state_ids)) {
-      $messages[] = $this->log(
+      $logger->debug(
         'Found moderated state entities of (key: revision_id value: id): @content_moderated_state_ids',
-        ['@content_moderated_state_ids' => print_r($content_moderated_state_ids, 1)],
-        $debugInfo
+        ['@content_moderated_state_ids' => print_r($content_moderated_state_ids, 1)]
       );
       // Retrieve the corresponding entity IDs (node IDs, instead of moderated
       // state entity IDs).
       $nids = $this->contentService->getContentEntity($content_moderated_state_ids);
-      $messages[] = $this->log('Corresponding nodes (key: revision_id value: nid): @nids', ['@nids' => print_r($nids, 1)], $debugInfo);
-      $messages[] = $this->log('Checking that the nodes were last modified more than @days ago.', ['@days' => $daysAgo], $debugInfo);
+      $logger->debug('Corresponding nodes (key: revision_id value: nid): @nids', ['@nids' => print_r($nids, 1)]);
+      $logger->debug('Checking that the nodes were last modified more than @days ago.', ['@days' => $daysAgo]);
       // Check that that the latest revision of this node was changed more than
       // 90 days ago.
       $timestamp = strtotime(sprintf('%d days ago', $daysAgo));
       if (-1 === $timestamp) {
         $message = 'Invalid value given for days ago, it did not give a valid timestamp with strtotime().';
-        $this->logger->critical($message, []);
-        throw new \Exception($message);
+        $logger->critical($message, []);
+        return;
       }
 
       $query = $contentEntityStorage->getQuery();
@@ -153,10 +130,8 @@ class ExpireStatePlanService {
         if (!isset($nids[$vid])) {
           $message = 'Retrieved the wrong vid (%d) for node %d.';
           $context = ['@vid' => $vid, '@nid' => $nid];
-          $this->logger->critical($message, $context);
-          // @codingStandardsIgnoreStart
-          throw new \Exception(t($message, $context));
-          // @codingStandardsIgnoreEnd
+          $logger->critical($message, $context);
+          return;
         }
       }
       // Only use the nids in the correct status that were also updated at the
@@ -164,10 +139,9 @@ class ExpireStatePlanService {
       $nids = $nids_changed;
 
       if (!empty($nids)) {
-        $messages[] = $this->log(
+        $logger->debug(
           'Of those nodes, the following were updated more than @days days ago (key: revision_id value: nid): @nids',
-          ['@days' => $daysAgo, '@nids' => print_r($nids, 1)],
-          $debugInfo
+          ['@days' => $daysAgo, '@nids' => print_r($nids, 1)]
         );
         foreach ($nids as $vid => $nid) {
           // Load each node by it's version ID load() gets the current version
@@ -195,22 +169,19 @@ class ExpireStatePlanService {
           // for this change.
           $node->set('moderation_state', 'expired');
           $node->save();
-          $message = 'The node of ID @nid was expired because it was updated more than @days days ago.';
-          $context = ['@nid' => $node->id(), '@days' => $daysAgo];
-          $this->logger->info($message, $context);
-          // @codingStandardsIgnoreStart
-          $messages[] = t($message, $context);
-          // @codingStandardsIgnoreEnd
+          $logger->debug('The node of ID @nid was expired because it was updated more than @days days ago.', [
+            '@nid' => $node->id(),
+            '@days' => $daysAgo,
+          ]);
         }
       }
       else {
-        $messages[] = $this->log('Of those nodes, none were updated more than @days days ago.', ['@days' => $daysAgo], $debugInfo);
+        $logger->debug('Of those nodes, none were updated more than @days days ago.', ['@days' => $daysAgo]);
       }
     }
     else {
-      $messages[] = $this->log('No nodes were updated more than @days days ago.', ['@days' => $daysAgo], $debugInfo);
+      $logger->debug('No nodes were updated more than @days days ago.', ['@days' => $daysAgo]);
     }
-    return $messages;
   }
 
 }

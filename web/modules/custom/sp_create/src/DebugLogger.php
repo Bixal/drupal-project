@@ -60,7 +60,7 @@ class DebugLogger {
    * @param array $context
    *   Replacement token values.
    */
-  public function log($level, $message, array $context = array()) {
+  public function log($level, $message, array $context = []) {
     if (NULL !== $this->io) {
       // @codingStandardsIgnoreStart
       $this->io->info(t($message, $context));

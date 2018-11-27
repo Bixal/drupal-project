@@ -1,0 +1,9 @@
+services:
+  sp_create.state_plan:
+    class: Drupal\sp_create\CreateStatePlanService
+    arguments: ['@entity_type.manager', '@logger.sp_create']
+
+  logger.sp_create:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['sp_create']

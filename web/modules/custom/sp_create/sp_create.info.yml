@@ -1,0 +1,5 @@
+name: 'State Plan - Create'
+type: module
+description: 'Handles the creation of content.'
+core: 8.x
+package: 'Custom'

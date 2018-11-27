@@ -1,0 +1,6 @@
+services:
+  sp_create.sp_create_state_plan:
+    class: Drupal\sp_create\Command\CreateStatePlanCommand
+    arguments: ['@sp_create.state_plan']
+    tags:
+      - { name: drupal.command }

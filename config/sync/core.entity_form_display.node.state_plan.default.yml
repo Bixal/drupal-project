@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.state_plan.body
+    - field.field.node.state_plan.field_plan_year
     - field.field.node.state_plan.field_reviewer_comments
     - node.type.state_plan
   module:
@@ -30,6 +31,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_plan_year:
+    weight: 123
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_reviewer_comments:
     weight: 122
     settings:

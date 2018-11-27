@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.state_plan.body
+    - field.field.node.state_plan.field_plan_year
     - field.field.node.state_plan.field_reviewer_comments
     - node.type.state_plan
   module:
@@ -25,6 +26,15 @@ content:
     weight: -20
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_plan_year:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_reviewer_comments:
     weight: 102

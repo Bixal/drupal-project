@@ -78,7 +78,7 @@ class CreateStatePlanService {
       ]);
       // The moderation state constraint validator will fail if we don't
       // log in a user that has access to save from draft > draft.
-      $author = User::load(4);
+      $author = User::load(1);
       user_login_finalize($author);
       // Keep track of all state groups that had a state plan created for them.
       $created = [];

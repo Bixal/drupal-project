@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  php:
+    volumes:
+      - wioa-sp-php-sync:/var/www/html:nocopy
+
+  nginx:
+    volumes:
+      - wioa-sp-php-sync:/var/www/html:nocopy
+
+volumes:
+  wioa-sp-php-sync:
+    external: true

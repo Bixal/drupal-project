@@ -122,3 +122,28 @@ export_content:
 standards:
 	@echo "Running coding standards checks on host machine"
 	phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*,*vendor/*,*.min.js,*.min.css web/modules/custom & phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*,*vendor/*,*.min.js,*.min.css web/themes/custom & phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*,*vendor/*,*.min.js,*.min.css web/modules/custom
+
+sync-stop:
+	@echo "Stopping synced directories"
+	@echo "See http://docker-sync.io/ for more information (Easy install: gem install docker-sync). Make any changes to docker-sync.yml? Run docker-sync clean."
+	docker-sync stop
+
+up-sync:
+	make sync-stop
+	@echo "Starting docker-sync directories, this can take a while..."
+	docker-sync start
+	@echo "Starting up containers for for $(PROJECT_NAME)..."
+	docker-compose pull
+	docker-compose -f docker-compose.yml -f docker-compose.sync.yml up -d --remove-orphans
+
+down-sync:
+	make sync-stop
+	make down
+
+stop-sync:
+	make sync-stop
+	make stop
+
+prune-sync:
+	make sync-stop
+	make prune

@@ -1,14 +1,14 @@
-# This is a sample build configuration for PHP.
-# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
+options:
+  docker: true
+
 image: wodby/drupal-php:7.2-dev-4.8.5
 
 pipelines:
   default:
     - step:
         name: Composer install and Code Standards check
+        caches:
+          - composer
         script:
           - composer global require drupal/coder:^8.2.12
           - composer global require dealerdirect/phpcodesniffer-composer-installer
@@ -17,3 +17,20 @@ pipelines:
           - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom
           - phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom
           - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/themes/custom
+  branches:
+    integration:
+      - step:
+          name: Create development image.
+          caches:
+            - docker
+          #python image with aws-cli installed
+          image: tstrohmeier/awscli:3.6.4
+          script:
+            # aws login
+            - eval $(aws ecr get-login --region ${AWS_DEFAULT_REGION} --no-include-email)
+            # docker
+            - export BUILD_ID=$BITBUCKET_BRANCH_$BITBUCKET_COMMIT_$BITBUCKET_BUILD_NUMBER
+            - docker build -t ${AWS_REGISTRY_URL}:$BUILD_ID -f docker/php/Dockerfile .
+            - docker push ${AWS_REGISTRY_URL}:$BUILD_ID
+            - docker tag ${AWS_REGISTRY_URL}:$BUILD_ID ${AWS_REGISTRY_URL}:development
+            - docker push ${AWS_REGISTRY_URL}:development

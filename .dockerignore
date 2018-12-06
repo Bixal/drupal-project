@@ -1,5 +1,8 @@
 vendor/*
-.circleci/*
-.github/*
 db/*
 .env
+web/sites/default/files
+web/sites/default/files/*
+config/sync
+config/sync/*
+

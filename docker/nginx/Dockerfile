@@ -1,3 +1,6 @@
 FROM wodby/nginx:1.15-5.0.3
 
-COPY --from=project_php:latest --chown=nginx:nginx /var/www/html /var/www/html
+ENV NGINX_VHOST_PRESET=wioa
+
+COPY --chown=wodby:wodby docker/nginx/vhost.conf.tmpl /etc/gotpl/presets/
+COPY --from=wioa-state-plan_php:latest --chown=nginx:nginx /var/www/html /var/www/html

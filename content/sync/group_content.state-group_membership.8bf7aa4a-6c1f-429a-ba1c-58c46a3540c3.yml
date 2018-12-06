@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: 8bf7aa4a-6c1f-429a-ba1c-58c46a3540c3
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state-group_membership
+    target_type: group_content_type
+    target_uuid: 53441341-cc4b-43ae-84ce-3a52956e6430
+gid:
+  -
+    target_type: group
+    target_uuid: 2c5d9d9c-49c3-4f3c-a70a-7b5944f06291
+entity_id:
+  -
+    target_type: user
+    target_uuid: b8137230-0671-4239-b62d-a42139784db7
+label:
+  -
+    value: va_state
+uid:
+  -
+    target_type: user
+    target_uuid: 214221ea-826e-4481-a217-c38c068bf048
+created:
+  -
+    value: '2018-11-01T16:28:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-01T16:28:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+default_langcode:
+  -
+    value: true
+group_roles:
+  -
+    target_id: state-state_staff
+    target_type: group_role
+    target_uuid: a4f1e485-782a-4ea0-b1c0-c12f6c5dc660
+_content_sync:
+  entity_type: group_content
+  entity_dependencies:
+    group:
+      - group.state.2c5d9d9c-49c3-4f3c-a70a-7b5944f06291
+    user:
+      - user.user.b8137230-0671-4239-b62d-a42139784db7
+      - user.user.214221ea-826e-4481-a217-c38c068bf048

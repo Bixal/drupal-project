@@ -1,0 +1,6 @@
+services:
+  sp_expire.expire:
+    class: Drupal\sp_expire\Command\ExpireCommand
+    arguments: ['@sp_expire.expire_state_plan']
+    tags:
+      - { name: drupal.command }

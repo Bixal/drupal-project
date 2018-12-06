@@ -1,0 +1,14 @@
+uuid: 54512245-0242-41c2-bfd3-f9adc7114a9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.federal_panel_lead
+  module:
+    - user
+id: user_add_role_action.federal_panel_lead
+label: 'Add the Federal Panel Lead role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: federal_panel_lead

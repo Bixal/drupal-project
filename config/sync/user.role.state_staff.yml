@@ -1,0 +1,21 @@
+uuid: 36fd6159-2281-4d4d-9268-5cf71f47989e
+langcode: en
+status: true
+dependencies: {  }
+id: state_staff
+label: 'State Staff'
+weight: 3
+is_admin: null
+permissions:
+  - 'access any state_plan workflow_transion overview'
+  - 'access content overview'
+  - 'access state_plan workflow_transition form'
+  - 'create body'
+  - 'create state_plan workflow_transition'
+  - 'edit body'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition ready_for_review'
+  - 'view any unpublished content'
+  - 'view body'
+  - 'view latest version'
+  - 'view state_plan revisions'

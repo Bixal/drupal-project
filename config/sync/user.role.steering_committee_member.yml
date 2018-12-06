@@ -1,0 +1,9 @@
+uuid: d5213243-f9b1-41b8-b349-c056f5aaacc2
+langcode: en
+status: true
+dependencies: {  }
+id: steering_committee_member
+label: 'Steering Committee Member'
+weight: 8
+is_admin: null
+permissions: {  }

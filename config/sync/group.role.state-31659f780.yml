@@ -1,0 +1,17 @@
+uuid: 8cda9995-fef8-4437-9214-456b6a5bdf12
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.state_staff
+id: state-31659f780
+label: 'State Staff'
+weight: 3
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

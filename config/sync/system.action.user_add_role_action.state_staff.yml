@@ -1,0 +1,14 @@
+uuid: 02f0749e-f2c8-43f9-8c0e-94a17e454cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.state_staff
+  module:
+    - user
+id: user_add_role_action.state_staff
+label: 'Add the State Staff role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: state_staff

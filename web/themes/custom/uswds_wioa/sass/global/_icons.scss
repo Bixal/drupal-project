@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'wioa-icons';
+  src: url('../assets/dist/fonts/wioa-icons.eot');
+  src: url('../assets/dist/fonts/wioa-icons.eot?#iefix') format('eot'),
+  url('../assets/dist/fonts/wioa-icons.woff2') format('woff2'),
+  url('../assets/dist/fonts/wioa-icons.woff') format('woff'),
+  url('../assets/dist/fonts/wioa-icons.ttf') format('truetype'),
+  url('../assets/dist/fonts/wioa-icons.svg#wioa-icons') format('svg');
+}
+
+
+  $i-icon-alert-triangle: "\E001";
+
+  $i-icon-alert: "\E002";
+
+  $i-icon-check: "\E003";
+
+  $i-icon-close: "\E004";
+
+  $i-icon-external-link: "\E005";
+
+  $i-icon-info: "\E006";
+
+  $i-icon-minus: "\E007";
+
+  $i-icon-plus: "\E008";
+
+  $i-icon-search: "\E009";

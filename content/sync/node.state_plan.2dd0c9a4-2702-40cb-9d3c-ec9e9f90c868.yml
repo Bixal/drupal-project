@@ -1,0 +1,74 @@
+uuid:
+  -
+    value: 2dd0c9a4-2702-40cb-9d3c-ec9e9f90c868
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state_plan
+    target_type: node_type
+    target_uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
+revision_timestamp:
+  -
+    value: '2018-11-01T17:02:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 88093ebe-5b0c-46de-b569-89128adb2280
+revision_log:
+  -
+    value: 'updated the body to have ''moo'' in it.'
+status:
+  -
+    value: false
+title:
+  -
+    value: 'for florida'
+uid:
+  -
+    target_type: user
+    target_uuid: 88093ebe-5b0c-46de-b569-89128adb2280
+created:
+  -
+    value: '2018-11-01T17:01:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-01T17:02:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+moderation_state:
+  -
+    value: draft
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+body:
+  -
+    value: "<p>the initial body.</p>\r\n\r\n<p>moo</p>\r\n"
+    format: basic_html
+    processed: "<p>the initial body.</p>\n\n<p>moo</p>"
+    summary: ''
+    summary_processed: ''
+field_reviewer_comments: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.88093ebe-5b0c-46de-b569-89128adb2280
+      - user.user.88093ebe-5b0c-46de-b569-89128adb2280

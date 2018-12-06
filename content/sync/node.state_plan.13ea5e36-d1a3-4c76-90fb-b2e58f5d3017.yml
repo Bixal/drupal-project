@@ -1,0 +1,70 @@
+uuid:
+  -
+    value: 13ea5e36-d1a3-4c76-90fb-b2e58f5d3017
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state_plan
+    target_type: node_type
+    target_uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
+revision_timestamp:
+  -
+    value: '2018-11-01T19:57:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: 88093ebe-5b0c-46de-b569-89128adb2280
+revision_log: {  }
+status:
+  -
+    value: false
+title:
+  -
+    value: 'for florida 3'
+uid:
+  -
+    target_type: user
+    target_uuid: 88093ebe-5b0c-46de-b569-89128adb2280
+created:
+  -
+    value: '2018-11-01T19:57:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-01T19:57:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected: {  }
+moderation_state:
+  -
+    value: draft
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+body:
+  -
+    value: "<p>asdfs</p>\r\n"
+    format: basic_html
+    processed: '<p>asdfs</p>'
+    summary: ''
+    summary_processed: ''
+field_reviewer_comments: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.88093ebe-5b0c-46de-b569-89128adb2280
+      - user.user.88093ebe-5b0c-46de-b569-89128adb2280

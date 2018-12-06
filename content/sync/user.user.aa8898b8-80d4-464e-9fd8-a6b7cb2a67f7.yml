@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
+langcode:
+  -
+    value: en
+preferred_langcode:
+  -
+    value: en
+preferred_admin_langcode:
+  -
+    value: en
+name:
+  -
+    value: fedreviewer
+mail:
+  value: fedreviewer@example.com
+timezone:
+  -
+    value: UTC
+status:
+  value: '1'
+created:
+  -
+    value: '2018-10-31T18:06:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-10-31T18:06:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+access:
+  -
+    value: '2018-11-06T21:20:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+login:
+  -
+    value: '2018-11-02T17:24:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+init:
+  -
+    value: fedreviewer@example.com
+roles:
+  - authenticated
+  - federal_reviewer
+default_langcode:
+  -
+    value: true
+user_picture: {  }
+_content_sync:
+  entity_type: user
+  entity_dependencies: {  }
+pass:
+  -
+    value: $S$ET6ygdU7IS85sgFZWit3sdjmLe7mWSXTSBU.hbDTHEercji8DMSV
+    pre_hashed: true

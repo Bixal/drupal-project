@@ -1,0 +1,15 @@
+uuid: 4cf98832-17ad-4d19-8c6e-6d8031fa0e48
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+id: state-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: true
+permissions:
+  - 'view group_node:state_plan entity'

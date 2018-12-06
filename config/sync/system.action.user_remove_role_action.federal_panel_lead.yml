@@ -1,0 +1,14 @@
+uuid: 7b94dfcc-3e99-40b6-b7bb-99acf2eee030
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.federal_panel_lead
+  module:
+    - user
+id: user_remove_role_action.federal_panel_lead
+label: 'Remove the Federal Panel Lead role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: federal_panel_lead

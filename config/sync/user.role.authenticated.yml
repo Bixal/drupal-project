@@ -1,0 +1,16 @@
+uuid: e55cff87-21e5-4383-8669-0b73a54c9781
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access shortcuts'
+  - 'search content'
+  - 'use text format basic_html'
+  - 'view body'

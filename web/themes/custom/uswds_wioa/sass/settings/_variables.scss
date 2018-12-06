@@ -4,30 +4,36 @@
 
 $c-black: #000; // rgb(0, 0, 0)
 $c-white: #fff; // rgb(255, 255, 255)
+$c-blue-darkest: #1f5593; // rgb(31, 85, 147)
 
 // Commonly used - social media colors
 $social-colors: (
   twitter: #4099ff,
   linkedin: #0077b5,
-  facebook: #3B5998,
-  googleplus: #C63D2D,
+  facebook: #3b5998,
+  googleplus: #c63d2d,
   pinterest: #cb2027,
   youtube: #cd201f,
   instagram: #fb3958
 );
 
-$font-family-icons: 'icons';
-$font-size-base: 16; // The default font size for your site. This gets used in
+$font-family-icons: "wioa-icons";
+$font-size-base: 17; // The default font size for your site. This gets used in
 // the px-to-em() function used sitewide.
-$font-weight-normal: 400; // Usually
-$font-weight-bold: 700; // Usually
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
 
 // Breakpoints
 // Used in bp mixin in _mixins.scss
+// sm - 481px
+// md - 600px
+// lg - 1201px
 $breakpoints: (
-  sm: 30em, // 480px
-  md: 48em, // 768px
-  lg: 60em  // 960px
+  sm: 30.0625em,
+  md: 37.5em,
+  lg: 75.0625em
 );
 
 // Z-index variables
@@ -40,3 +46,18 @@ $z-layers: (
   layer-3: 3,
   overlay: 900
 );
+
+// Overriding USWDS Variables
+$site-max-width: 1024px;
+$site-margins: 2rem;
+
+$grid-columns-medium: 16;
+$grid-columns-large: 16;
+
+// Imported from USWDS
+$font-sans: "Source Sans Pro", $helvetica !default;
+$font-serif: "Merriweather", $georgia !default;
+
+$text-max-width: 75ch !default; // 66 characters per line
+
+$color-focus: #aeb0b5;

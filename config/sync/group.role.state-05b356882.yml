@@ -1,0 +1,17 @@
+uuid: 0b8f876a-eb76-4f0b-953e-80bb36b828b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.big_submitter
+id: state-05b356882
+label: 'Big Submitter'
+weight: 5
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions: {  }

@@ -778,6 +778,10 @@ try {
 }
 $settings['install_profile'] = 'standard';
 
+// Required by content_sync module to specify where to import content from.
+global $content_directories;
+$content_directories['sync'] = $app_root.'/../content/sync';
+
 /**
  * Load local development override configuration, if available.
  *
@@ -788,7 +792,7 @@ $settings['install_profile'] = 'standard';
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}

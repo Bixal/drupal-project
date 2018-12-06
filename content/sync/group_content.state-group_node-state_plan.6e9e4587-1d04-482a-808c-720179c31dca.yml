@@ -1,0 +1,51 @@
+uuid:
+  -
+    value: 6e9e4587-1d04-482a-808c-720179c31dca
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state-group_node-state_plan
+    target_type: group_content_type
+    target_uuid: 1fc75bf5-6d04-4ebd-9d1b-ac74bd70e1a5
+gid:
+  -
+    target_type: group
+    target_uuid: 2c5d9d9c-49c3-4f3c-a70a-7b5944f06291
+entity_id:
+  -
+    target_type: node
+    target_uuid: 2bc043e9-1f83-44e7-8e4e-51c170cc841b
+label:
+  -
+    value: 'For virginia'
+uid:
+  -
+    target_type: user
+    target_uuid: b8137230-0671-4239-b62d-a42139784db7
+created:
+  -
+    value: '2018-11-02T13:23:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-02T13:23:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: group_content
+  entity_dependencies:
+    group:
+      - group.state.2c5d9d9c-49c3-4f3c-a70a-7b5944f06291
+    node:
+      - node.state_plan.2bc043e9-1f83-44e7-8e4e-51c170cc841b
+    user:
+      - user.user.b8137230-0671-4239-b62d-a42139784db7

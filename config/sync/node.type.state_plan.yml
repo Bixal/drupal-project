@@ -1,0 +1,17 @@
+uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'State Plan'
+type: state_plan
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,10 @@
+uuid: d82dc7e8-0ca9-49f8-b2b3-1247156212c4
+langcode: en
+status: true
+dependencies: {  }
+id: state
+label: State
+description: 'This represents a state with its own staff that will create state plans for review.'
+creator_membership: false
+creator_wizard: true
+creator_roles: {  }

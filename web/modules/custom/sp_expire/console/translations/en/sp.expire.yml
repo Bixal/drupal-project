@@ -1,0 +1,7 @@
+description: 'Expire moderated state plan content that has not been updated in 90 days.'
+options:
+    log: 'Log messages to watchdog.'
+arguments:
+    daysago: 'Optionally change the number of days ago from 90 to something else'
+messages:
+    success: 'Finished expiring moderated state plan content. Check the watchdog messages for info.'

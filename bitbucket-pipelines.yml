@@ -18,7 +18,7 @@ pipelines:
           - phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/modules/custom
           - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor web/themes/custom
   branches:
-    feature/add-image-builder:
+    integration:
       - step:
           name: Create development image.
           caches:

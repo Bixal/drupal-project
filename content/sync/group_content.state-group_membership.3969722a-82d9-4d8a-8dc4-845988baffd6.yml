@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: 3969722a-82d9-4d8a-8dc4-845988baffd6
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state-group_membership
+    target_type: group_content_type
+    target_uuid: 53441341-cc4b-43ae-84ce-3a52956e6430
+gid:
+  -
+    target_type: group
+    target_uuid: 18172ff5-6487-4b7a-beb2-3b958bccf993
+entity_id:
+  -
+    target_type: user
+    target_uuid: f1eea3b1-4c99-4781-b753-ea59a77918a1
+label:
+  -
+    value: fl_state_non_owner
+uid:
+  -
+    target_type: user
+    target_uuid: 214221ea-826e-4481-a217-c38c068bf048
+created:
+  -
+    value: '2018-11-29T15:07:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-29T15:07:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+default_langcode:
+  -
+    value: true
+group_roles:
+  -
+    target_id: state-state_staff
+    target_type: group_role
+    target_uuid: a4f1e485-782a-4ea0-b1c0-c12f6c5dc660
+_content_sync:
+  entity_type: group_content
+  entity_dependencies:
+    group:
+      - group.state.18172ff5-6487-4b7a-beb2-3b958bccf993
+    user:
+      - user.user.f1eea3b1-4c99-4781-b753-ea59a77918a1
+      - user.user.214221ea-826e-4481-a217-c38c068bf048

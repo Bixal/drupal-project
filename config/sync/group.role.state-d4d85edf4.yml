@@ -15,8 +15,7 @@ audience: outsider
 group_type: state
 permissions_ui: false
 permissions:
-  0: 'view group_node:state_plan entity'
-  1: 'view unpublished group_node:state_plan entity'
-  2: 'view group'
-  3: 'access group_node overview'
-  6: 'update any group_node:state_plan entity'
+  0: 'access group_node overview'
+  2: 'update any group_node:state_plan entity'
+  3: 'view group_node:state_plan entity'
+  4: 'view unpublished group_node:state_plan entity'

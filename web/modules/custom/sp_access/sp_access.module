@@ -1,0 +1,140 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_access.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\content_moderation\EntityTypeInfo;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function sp_access_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_access module.
+    case 'help.page.sp_access':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Alter access to pages on the site.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_top().
+ */
+function sp_access_page_top(array &$page_top) {
+  // Display user information about the current logged in user. Their name,
+  // group, group roles, and Drupal permissions.
+  /** @var \Drupal\Core\Session\AccountInterface $user */
+  $user = \Drupal::getContainer()->get('current_user');
+  $messenger = \Drupal::messenger();
+  $messenger->addMessage('Current User: ' . ($user->getAccountName() ? $user->getAccountName() : 'Anon'), $messenger::TYPE_STATUS);
+  $grp_membership_service = \Drupal::service('group.membership_loader');
+  $grps = $grp_membership_service->loadByUser($user);
+  $group_roles = [];
+  /** @var \Drupal\group\GroupMembership $grp */
+  foreach ($grps as $grp) {
+    $group_entity = $grp->getGroup();
+    /** @var \Drupal\group\Entity\GroupRole $groupRole */
+    foreach ($group_entity->getMember($user)->getRoles() as $group_role) {
+      $group_roles[$group_entity->label()][] = $group_role->get('label');
+    }
+  }
+  if (!empty($group_roles)) {
+    foreach ($group_roles as $group_label => $group_role_labels) {
+      $messenger->addMessage(
+        t(
+          'Member of group @group_label with roles @group_role_labels', [
+            '@group_label' => $group_label,
+            '@group_role_labels' => implode(', ', $group_role_labels),
+          ]
+        ), $messenger::TYPE_STATUS
+      );
+    }
+  }
+  else {
+    $messenger->addMessage('No group memberships.', $messenger::TYPE_STATUS);
+  }
+  $drupal_roles = [];
+  $role_ids = $user->getRoles();
+  /** @var \Drupal\user\RoleStorage $user_role_service */
+  $user_role_service = \Drupal::entityTypeManager()->getStorage('user_role');
+  /** @var \Drupal\user\Entity\Role $role */
+  foreach ($user_role_service->loadMultiple($role_ids) as $role) {
+    $drupal_roles[] = $role->label();
+  }
+  $messenger->addMessage(
+    t(
+      'Drupal roles: @drupal_roles',
+      ['@drupal_roles' => !empty($drupal_roles) ? implode(', ', $drupal_roles) : 'None']
+    ), $messenger::TYPE_STATUS
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function sp_access_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (empty($form['actions']['submit']['#submit'])) {
+    return;
+  }
+  foreach ($form['actions']['submit']['#submit'] as &$submit_action) {
+    $content_moderation_submit_action = [EntityTypeInfo::class, 'bundleFormRedirect'];
+    if (is_array($submit_action) && $submit_action === $content_moderation_submit_action) {
+      // Remove the content moderation's redirect to the 'latest version' tab.
+      // They do not check if the current user has access to it before
+      // sending them there. Group content editors cannot have access to the
+      // latest version tab because that REQUIRES the view all unpublished
+      // content permission which will allow them to view any group content
+      // regardless of membership. Also, content moderation state transitions
+      // will be available even though they don't have edit access to it
+      // since that permission does NOT respect group membership.
+      $submit_action = '_sp_access_content_moderation_entity_redirect';
+    }
+  }
+}
+
+/**
+ * Redirect content entity edit forms on save, if there is a pending revision.
+ *
+ * When saving their changes, editors should see those changes displayed on
+ * the next page.
+ *
+ * @param array $form
+ *   An associative array containing the structure of the form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ */
+function _sp_access_content_moderation_entity_redirect(array &$form, FormStateInterface $form_state) {
+  /* @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+  $entity = $form_state->getFormObject()->getEntity();
+  $entity_type_id = $entity->getEntityTypeId();
+
+  $moderation_info = \Drupal::getContainer()->get('content_moderation.moderation_information');
+  /** @var \Drupal\Core\Path\PathValidator $validator */
+  $validator = \Drupal::service('path.validator');
+  $latest_version_route = "entity.$entity_type_id.latest_version";
+  $latest_version_params = [$entity_type_id => $entity->id()];
+  if ($moderation_info->hasPendingRevision($entity) && $entity->hasLinkTemplate('latest-version')) {
+    // Ensure that the user has access to the latest version tab before
+    // routing them there.
+    if (!$validator->isValid(Url::fromRoute($latest_version_route, $latest_version_params)->getInternalPath())) {
+      // Take them to the revisions tab.
+      $form_state->setRedirect("entity.$entity_type_id.version_history", [$entity_type_id => $entity->id()]);
+      // This will take them to the exact revision.
+      // $form_state->setRedirect("entity.$entity_type_id.revision",
+      // [$entity_type_id => $entity->id(), "{$entity_type_id}_revision" =>
+      // $entity->getRevisionId()]);
+    }
+    else {
+      $form_state->setRedirect($latest_version_route, $latest_version_params);
+    }
+  }
+}

@@ -13,3 +13,6 @@ group_type: state
 permissions_ui: true
 permissions:
   - 'view group_node:state_plan entity'
+  - 'view group'
+  - 'access group_node overview'
+  - 'view unpublished group_node:state_plan entity'

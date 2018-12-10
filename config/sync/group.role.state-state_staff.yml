@@ -12,9 +12,4 @@ audience: member
 group_type: state
 permissions_ui: true
 permissions:
-  0: 'create group_node:state_plan entity'
-  1: 'update any group_node:state_plan entity'
-  2: 'view group_node:state_plan entity'
-  3: 'view unpublished group_node:state_plan entity'
-  4: 'view group'
-  6: 'access group_node overview'
+  - 'update any group_node:state_plan entity'

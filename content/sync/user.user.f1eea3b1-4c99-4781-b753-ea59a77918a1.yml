@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: f1eea3b1-4c99-4781-b753-ea59a77918a1
+langcode:
+  -
+    value: en
+preferred_langcode:
+  -
+    value: en
+preferred_admin_langcode:
+  -
+    value: en
+name:
+  -
+    value: fl_state_non_owner
+mail:
+  value: fl_state_non_owner@example.com
+timezone:
+  -
+    value: UTC
+status:
+  value: '1'
+created:
+  -
+    value: '2018-11-29T15:05:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2018-11-29T15:05:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+access:
+  -
+    value: '2018-11-29T15:32:34+00:00'
+    format: 'Y-m-d\TH:i:sP'
+login:
+  -
+    value: '2018-11-29T15:06:19+00:00'
+    format: 'Y-m-d\TH:i:sP'
+init:
+  -
+    value: fl_state_non_owner@example.com
+roles:
+  - authenticated
+  - state_staff
+default_langcode:
+  -
+    value: true
+user_picture: {  }
+_content_sync:
+  entity_type: user
+  entity_dependencies: {  }
+pass:
+  -
+    value: $S$E45a8DBTgBNkCcYt0hQqDq2AjhBlfullpZp4s7kuhN7a6jtpgkoC
+    pre_hashed: true

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_create.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sp_create_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_create module.
+    case 'help.page.sp_create':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Handles the creation of content.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

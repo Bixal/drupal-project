@@ -28,4 +28,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_plan_year: true
   field_reviewer_comments: true

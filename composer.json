@@ -20,6 +20,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_menu_search": "^1.0",
+        "drupal/auto_entitylabel": "^2.1@beta",
         "drupal/console": "^1.0.2",
         "drupal/content_moderation_notifications": "^3.0@RC",
         "drupal/content_sync": "^2.0",
@@ -29,6 +30,7 @@
         "drupal/field_permissions": "^1.0@RC",
         "drupal/group": "^1.0@RC",
         "drupal/masquerade": "^2.0@beta",
+        "drupal/token": "^1.5",
         "drupal/uswds": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
@@ -91,6 +93,10 @@
                 "Dependency resolver fix": "https://www.drupal.org/files/issues/2018-06-19/content_sync-dependency_resolver-0-D8.patch",
                 "Error when enabling this module": "https://www.drupal.org/files/issues/2018-11-14/content_sync-compatible-2942575-11-D8.patch",
                 "Breaks on import of Single item": "./patches/content_sync-breaks-on-import-of-single-item-2988394.patch"
+            },
+            "drupal/group": {
+                "Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2018-10-29/group_add-node-group-tokens-2774827-40.patch",
+                "node grants not applied for advanced outsider permissions": "https://www.drupal.org/files/issues/group-node_grants_advanced_outsider-2929037-5-D8.patch"
             }
         }
     }

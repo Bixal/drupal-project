@@ -1,6 +1,6 @@
 uuid:
   -
-    value: 3f6d18ba-d6f8-41e5-86cb-55c82cd7a498
+    value: 9381111f-9cd1-4d3d-b74d-b1c624140f12
 langcode:
   -
     value: en
@@ -11,7 +11,7 @@ type:
     target_uuid: 27da9113-a10f-4f19-a09e-46123cfe8480
 revision_timestamp:
   -
-    value: '2018-11-02T16:00:10+00:00'
+    value: '2018-11-29T22:08:18+00:00'
     format: 'Y-m-d\TH:i:sP'
 revision_uid:
   -
@@ -19,24 +19,24 @@ revision_uid:
     target_uuid: aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
 revision_log:
   -
-    value: 'Publishing for the second time.'
+    value: 'This looks good.'
 status:
   -
     value: true
 title:
   -
-    value: 'For virginia 3'
+    value: 'Florida - 2016'
 uid:
   -
     target_type: user
-    target_uuid: b8137230-0671-4239-b62d-a42139784db7
+    target_uuid: fac8dee4-089f-459d-a1e0-22307d411b3a
 created:
   -
-    value: '2018-11-02T15:38:08+00:00'
+    value: '2018-11-29T21:08:59+00:00'
     format: 'Y-m-d\TH:i:sP'
 changed:
   -
-    value: '2018-11-02T15:50:22+00:00'
+    value: '2018-11-29T22:08:18+00:00'
     format: 'Y-m-d\TH:i:sP'
 promote:
   -
@@ -58,17 +58,21 @@ path:
     alias: null
     pid: null
     langcode: en
+menu_link: {  }
 body:
   -
-    value: "<p>STuff.</p>\r\n\r\n<p>Fixed changes.</p>\r\n\r\n<p>Re-opening for some new changes.</p>\r\n"
+    value: "<p>The content for plan year 2016.</p>\r\n"
     format: basic_html
-    processed: "<p>STuff.</p>\n\n<p>Fixed changes.</p>\n\n<p>Re-opening for some new changes.</p>"
+    processed: '<p>The content for plan year 2016.</p>'
     summary: ''
     summary_processed: ''
+field_plan_year:
+  -
+    value: 2016
 field_reviewer_comments: {  }
 _content_sync:
   entity_type: node
   entity_dependencies:
     user:
       - user.user.aa8898b8-80d4-464e-9fd8-a6b7cb2a67f7
-      - user.user.b8137230-0671-4239-b62d-a42139784db7
+      - user.user.fac8dee4-089f-459d-a1e0-22307d411b3a

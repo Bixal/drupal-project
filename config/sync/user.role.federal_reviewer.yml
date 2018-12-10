@@ -19,7 +19,5 @@ permissions:
   - 'use editorial transition publish'
   - 'use editorial transition review_failed'
   - 'use editorial transition start_review'
-  - 'view any unpublished content'
   - 'view field_reviewer_comments'
-  - 'view latest version'
   - 'view state_plan revisions'

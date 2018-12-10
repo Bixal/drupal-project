@@ -15,7 +15,5 @@ permissions:
   - 'edit body'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition ready_for_review'
-  - 'view any unpublished content'
   - 'view body'
-  - 'view latest version'
   - 'view state_plan revisions'

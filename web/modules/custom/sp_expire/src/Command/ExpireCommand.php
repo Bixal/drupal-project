@@ -65,11 +65,8 @@ class ExpireCommand extends ContainerAwareCommand {
   protected function execute(InputInterface $input, OutputInterface $output) {
     $log = $input->getOption('log');
     $daysAgo = $input->getArgument('days-ago');
-    $messages = $this->expireStatePlan->expireModeratedContent($daysAgo, $log);
+    $this->expireStatePlan->expireModeratedContent($daysAgo, $this->getIo(), $log);
     $this->getIo()->info($this->trans('commands.sp.expire.messages.success'));
-    foreach ($messages as $message) {
-      $this->getIo()->info($message);
-    }
   }
 
 }

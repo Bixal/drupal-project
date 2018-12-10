@@ -1,0 +1,7 @@
+description: 'Create a new state plan for each state group.'
+options:
+    log: 'Log messages to watchdog.'
+arguments:
+    daysago: 'Set the plan year to create.'
+messages:
+    success: 'State plan node creation script finished'

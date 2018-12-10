@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.state_plan.body
+    - field.field.node.state_plan.field_plan_year
     - field.field.node.state_plan.field_reviewer_comments
     - node.type.state_plan
   module:
@@ -17,25 +18,34 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_plan_year:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_reviewer_comments:
-    weight: 102
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   links:
-    weight: 100
+    weight: 4
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

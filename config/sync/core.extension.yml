@@ -45,6 +45,7 @@ module:
   sp_access: 0
   sp_create: 0
   sp_expire: 0
+  sp_moderate: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -53,6 +54,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  views_bulk_operations: 0
   views_ui: 0
   workflows: 0
   menu_link_content: 1

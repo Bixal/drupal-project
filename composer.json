@@ -32,6 +32,7 @@
         "drupal/masquerade": "^2.0@beta",
         "drupal/token": "^1.5",
         "drupal/uswds": "^1.0@beta",
+        "drupal/views_bulk_operations": "^2.4",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",

@@ -36,6 +36,15 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_plan_year:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
   field_reviewer_comments:
     weight: 3
     label: above

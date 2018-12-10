@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_moderate.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sp_moderate_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_moderate module.
+    case 'help.page.sp_moderate':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Handles content moderation and workflows tasks.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

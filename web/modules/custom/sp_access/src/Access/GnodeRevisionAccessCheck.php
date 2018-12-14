@@ -25,6 +25,13 @@ class GnodeRevisionAccessCheck implements AccessInterface {
   protected $nodeStorage;
 
   /**
+   * The group content storage.
+   *
+   * @var \Drupal\node\NodeStorageInterface
+   */
+  protected $groupContentStorage;
+
+  /**
    * A static cache of access checks.
    *
    * @var array
@@ -42,6 +49,7 @@ class GnodeRevisionAccessCheck implements AccessInterface {
    */
   public function __construct(EntityTypeManagerInterface $entity_manager) {
     $this->nodeStorage = $entity_manager->getStorage('node');
+    $this->groupContentStorage = $entity_manager->getStorage('group_content');
   }
 
   /**
@@ -99,9 +107,6 @@ class GnodeRevisionAccessCheck implements AccessInterface {
    *
    * @return bool
    *   TRUE if the operation may be performed, FALSE otherwise.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function checkAccess(NodeInterface $node, AccountInterface $account, $op = 'view') {
     if (!$node || $op !== 'view') {
@@ -130,8 +135,7 @@ class GnodeRevisionAccessCheck implements AccessInterface {
       }
 
       // Load all the group content for this node.
-      $group_contents = \Drupal::entityTypeManager()
-        ->getStorage('group_content')
+      $group_contents = $this->groupContentStorage
         ->loadByProperties([
           'type' => array_keys($group_content_types),
           'entity_id' => $node->id(),

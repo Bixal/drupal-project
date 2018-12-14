@@ -1,0 +1,15 @@
+diff --git a/src/Plugin/GroupContentEnablerBase.php b/src/Plugin/GroupContentEnablerBase.php
+index c3583ff..55bf601 100644
+--- a/src/Plugin/GroupContentEnablerBase.php
++++ b/src/Plugin/GroupContentEnablerBase.php
+@@ -275,6 +275,10 @@ abstract class GroupContentEnablerBase extends PluginBase implements GroupConten
+       'title' => "$prefix View %entity_type entities",
+     ] + $defaults;
+ 
++    $permissions["view revisions $plugin_id entity"] = [
++      'title' => "$prefix View %entity_type revisions of entities",
++    ] + $defaults;
++
+     $permissions["create $plugin_id entity"] = [
+       'title' => "$prefix Add %entity_type entities",
+       'description' => 'Allows you to add a new %entity_type entity and add it to the group.',

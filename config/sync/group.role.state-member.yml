@@ -12,7 +12,8 @@ audience: member
 group_type: state
 permissions_ui: true
 permissions:
-  - 'view group_node:state_plan entity'
-  - 'view group'
-  - 'access group_node overview'
-  - 'view unpublished group_node:state_plan entity'
+  0: 'view group_node:state_plan entity'
+  1: 'view group'
+  2: 'access group_node overview'
+  3: 'view unpublished group_node:state_plan entity'
+  7: 'view revisions group_node:state_plan entity'

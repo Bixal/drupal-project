@@ -30,6 +30,7 @@
         "drupal/field_permissions": "^1.0@RC",
         "drupal/group": "^1.0@RC",
         "drupal/masquerade": "^2.0@beta",
+        "drupal/permissions_filter": "^1.0",
         "drupal/token": "^1.5",
         "drupal/uswds": "^1.0@beta",
         "drupal/views_bulk_operations": "^2.4",
@@ -97,7 +98,8 @@
             },
             "drupal/group": {
                 "Get a token of a node's parent group to create a pathauto pattern": "https://www.drupal.org/files/issues/2018-10-29/group_add-node-group-tokens-2774827-40.patch",
-                "node grants not applied for advanced outsider permissions": "https://www.drupal.org/files/issues/group-node_grants_advanced_outsider-2929037-5-D8.patch"
+                "node grants not applied for advanced outsider permissions": "https://www.drupal.org/files/issues/group-node_grants_advanced_outsider-2929037-5-D8.patch",
+                "Added group permission for revision access per content type": "./patches/group-restrict-node-revisions-across-groups.patch"
             }
         }
     }

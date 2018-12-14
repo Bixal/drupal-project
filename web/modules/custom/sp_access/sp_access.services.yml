@@ -1,0 +1,6 @@
+services:
+  access_check.gnode.revision:
+    class: Drupal\sp_access\Access\GnodeRevisionAccessCheck
+    arguments: ['@entity.manager']
+    tags:
+      - { name: access_check, applies_to: _access_node_revision }

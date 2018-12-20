@@ -24,47 +24,47 @@ class SectionEntryItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
-    return array(
+    return [
       // Columns contains the values that the field will store.
-      'columns' => array(
+      'columns' => [
         // List the values that the field will save.
-        'entity_type_bundle' => array(
+        'entity_type_bundle' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
-        ),
-        'section' => array(
+        ],
+        'section' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
-        ),
-        'extra_text' => array(
+        ],
+        'extra_text' => [
           'type' => 'text',
           'size' => 'normal',
           'not null' => FALSE,
-        ),
-        'term_field_uuid' => array(
+        ],
+        'term_field_uuid' => [
           'type' => 'varchar',
           'length' => 36,
           'not null' => FALSE,
-        ),
-        'access_option' => array(
+        ],
+        'access_option' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
-        ),
-        'access_term_field_uuid' => array(
+        ],
+        'access_term_field_uuid' => [
           'type' => 'varchar',
           'length' => 36,
           'not null' => FALSE,
-        ),
-        'access_value' => array(
+        ],
+        'access_value' => [
           'type' => 'text',
           'size' => 'normal',
           'not null' => FALSE,
-        ),
-      ),
-    );
+        ],
+      ],
+    ];
   }
 
   /**

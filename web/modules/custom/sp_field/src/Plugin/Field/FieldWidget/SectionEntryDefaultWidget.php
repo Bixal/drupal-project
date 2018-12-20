@@ -7,6 +7,10 @@ use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Uuid\Uuid;
 use Drupal\sp_field\Sections;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Component\Uuid\Php;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Plugin implementation of the 'field_section_entry_default_widget' widget.
@@ -20,7 +24,29 @@ use Drupal\sp_field\Sections;
  *   }
  * )
  */
-class SectionEntryDefaultWidget extends WidgetBase {
+class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The UUID service.
+   *
+   * @var \Drupal\Component\Uuid\Php
+   */
+  protected $uuid;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, Php $uuid) {
+    parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
+    $this->uuid = $uuid;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static($plugin_id, $plugin_definition, $configuration['field_definition'], $configuration['settings'], $configuration['third_party_settings'], $container->get('uuid'));
+  }
 
   /**
    * {@inheritdoc}
@@ -37,8 +63,6 @@ class SectionEntryDefaultWidget extends WidgetBase {
     $access_option = isset($items[$delta]->access_option) ? $items[$delta]->access_option : '';
     $access_term_field_uuid = isset($items[$delta]->access_term_field_uuid) ? $items[$delta]->access_term_field_uuid : '';
     $access_value = isset($items[$delta]->access_value) ? $items[$delta]->access_value : '';
-    /* @var \Drupal\Component\Uuid\Php $uuid_service */
-    $uuid_service = \Drupal::service('uuid');
     /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
     $item = $items[$delta];
     $props = $item->getProperties();
@@ -93,7 +117,7 @@ class SectionEntryDefaultWidget extends WidgetBase {
       ];
     }
     else {
-      $term_field_uuid = $uuid_service->generate();
+      $term_field_uuid = $this->uuid->generate();
     }
     $element['term_field_uuid'] = [
       '#type' => 'hidden',

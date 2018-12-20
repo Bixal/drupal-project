@@ -24,18 +24,18 @@ class UuidItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
-    return array(
+    return [
       // Columns contains the values that the field will store.
-      'columns' => array(
+      'columns' => [
         // List the values that the field will save. This
         // field will only save a single value, 'value'.
-        'value' => array(
+        'value' => [
           'type' => 'varchar',
           'length' => 36,
           'not null' => FALSE,
-        ),
-      ),
-    );
+        ],
+      ],
+    ];
   }
 
   /**

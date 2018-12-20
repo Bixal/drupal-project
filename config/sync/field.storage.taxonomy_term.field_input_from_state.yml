@@ -1,0 +1,23 @@
+uuid: b63a2bc2-7983-40e7-a534-6506ad33d64c
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - sp_field
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: taxonomy_term.field_input_from_state
+field_name: field_input_from_state
+entity_type: taxonomy_term
+type: field_section_entry
+settings: {  }
+module: sp_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

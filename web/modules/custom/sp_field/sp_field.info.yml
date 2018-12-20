@@ -1,0 +1,5 @@
+name: 'State Plan - Field'
+type: module
+description: 'Alter or create fields on the site.'
+core: 8.x
+package: 'Custom'

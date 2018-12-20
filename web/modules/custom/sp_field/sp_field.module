@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_field.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sp_field_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_field module.
+    case 'help.page.sp_field':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Alter or create fields on the site.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

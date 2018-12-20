@@ -1,0 +1,23 @@
+uuid: 3dfd6170-f8f5-4d02-b3c9-0fb524b325a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - sp_field
+    - taxonomy
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: taxonomy_term.field_section_uuid
+field_name: field_section_uuid
+entity_type: taxonomy_term
+type: field_uuid
+settings: {  }
+module: sp_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

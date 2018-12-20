@@ -1,0 +1,49 @@
+uuid: 03edd0a2-42a2-4d07-bd4c-a7dac6f1873a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.section_base.field_input_from_state
+    - field.field.taxonomy_term.section_base.field_section_uuid
+    - field.field.taxonomy_term.section_base.field_shown_on_toc
+    - taxonomy.vocabulary.section_base
+  module:
+    - sp_field
+    - text
+id: taxonomy_term.section_base.default
+targetEntityType: taxonomy_term
+bundle: section_base
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_input_from_state:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: field_section_entry_default_widget
+    region: content
+  field_shown_on_toc:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_section_uuid: true
+  path: true

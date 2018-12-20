@@ -1,0 +1,27 @@
+uuid: f48326c1-fce5-47dd-8541-c0aad692faed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.section_base.field_input_from_state
+    - field.field.taxonomy_term.section_base.field_section_uuid
+    - field.field.taxonomy_term.section_base.field_shown_on_toc
+    - taxonomy.vocabulary.section_base
+  module:
+    - text
+id: taxonomy_term.section_base.default
+targetEntityType: taxonomy_term
+bundle: section_base
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_input_from_state: true
+  field_section_uuid: true
+  field_shown_on_toc: true

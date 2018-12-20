@@ -1,0 +1,9 @@
+uuid: 0abdefb6-6b7f-45f4-9338-adf57c524e59
+langcode: en
+status: true
+dependencies: {  }
+name: 'Section Base'
+vid: section_base
+description: 'Comes with the all the fields and functionality that can be copied into the next plan year.'
+hierarchy: 0
+weight: 0

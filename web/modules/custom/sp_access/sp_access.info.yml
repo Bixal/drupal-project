@@ -3,3 +3,5 @@ type: module
 description: 'Alter access to pages on the site.'
 core: 8.x
 package: 'Custom'
+dependencies:
+  - gnode

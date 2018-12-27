@@ -14,7 +14,7 @@ use Drupal\sp_create\Form\SpCreateEntityCloneForm;
 class CloneService {
 
   /**
-   * All bundle info
+   * All bundle info.
    *
    * @var array
    */
@@ -56,7 +56,7 @@ class CloneService {
    *   A bundle ID.
    * @param string $cloned_bundle_id
    *   The bundle ID of the cloned bundle.
-   * @param $cloned_label
+   * @param string $cloned_label
    *   The label of the cloned bundle.
    *
    * @return \Drupal\Core\Entity\EntityInterface
@@ -138,7 +138,6 @@ class CloneService {
    *
    * @return \Drupal\Core\StringTranslation\TranslatableMarkup[]
    *   An array of error messages if any occurred.
-   *
    */
   protected function submit(FormStateInterface $form_state) {
     \Drupal::formBuilder()->submitForm(SpCreateEntityCloneForm::class, $form_state);
@@ -164,4 +163,5 @@ class CloneService {
     }
     return '';
   }
+
 }

@@ -49,6 +49,7 @@ class SpCreateEntityCloneForm extends EntityCloneForm {
    * Set the entity.
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   The entity that is being cloned.
    *
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
@@ -79,4 +80,5 @@ class SpCreateEntityCloneForm extends EntityCloneForm {
     // it can be retrieved.
     $form_state->set('cloned_entity', $entity);
   }
+
 }

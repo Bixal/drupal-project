@@ -81,9 +81,11 @@ class CloneBundleCommand extends ContainerAwareCommand {
     try {
       $cloned_entity = $this->cloneService->cloneBundle($entity, $bundle, $clone_bundle, $clone_label);
       $this->getIo()->info("New bundle {$cloned_entity->label()} ({$cloned_entity->id()}) created.");
-    } catch (\Exception $exception) {
+    }
+    catch (\Exception $exception) {
       $this->getIo()->error($exception->getMessage());
     }
     $this->getIo()->info($this->trans('commands.sp_create.clone_bundle.messages.success'));
   }
+
 }

@@ -20,6 +20,7 @@ module:
   devel: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_clone: 0
   field: 0
   field_permissions: 0
   field_ui: 0
@@ -45,8 +46,8 @@ module:
   shortcut: 0
   sp_access: 0
   sp_create: 0
-  sp_field: 0
   sp_expire: 0
+  sp_field: 0
   sp_moderate: 0
   system: 0
   taxonomy: 0

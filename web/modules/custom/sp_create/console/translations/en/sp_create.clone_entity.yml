@@ -1,0 +1,9 @@
+description: 'Clone an entity.'
+options:
+    log: 'Log messages to watchdog.'
+arguments:
+    entity: 'The entity type ID you want to clone (node, taxonomy_term, ...)'
+    bundle: 'The bundle ID you want to clone (article, tags, ...)'
+    id: 'An entity ID'
+messages:
+    success: 'Clone entity has finished'

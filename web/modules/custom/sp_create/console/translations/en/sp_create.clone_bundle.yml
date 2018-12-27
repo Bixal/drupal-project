@@ -1,0 +1,10 @@
+description: 'Clone a bundle.'
+options:
+    log: 'Log messages to watchdog.'
+arguments:
+    entity: 'The entity type ID you want to clone (node, taxonomy_term, ...)'
+    bundle: 'The bundle ID you want to clone (article, tags, ...)'
+    clone_bundle: 'The new bundle ID to be cloned'
+    clone_label: 'The new label of the cloned bundle'
+messages:
+    success: 'Clone bundle has finished'

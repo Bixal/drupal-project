@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\entity_clone\EntityClone\Config\ConfigWithFieldEntityClone;
+use Drupal\entity_clone\EntityClone\Config\ConfigEntityCloneFormBase;
 
 /**
  * Implements hook_help().
@@ -20,5 +22,29 @@ function sp_create_help($route_name, RouteMatchInterface $route_match) {
       return $output;
 
     default:
+  }
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function sp_create_entity_type_build(array &$entity_types) {
+  // Taxonomy vocabulary was not set in the entity_build module to be a config
+  // with field entity, so fields are not copied over.
+  $specific_handler = [
+    'taxonomy_vocabulary' => [
+      'entity_clone' => ConfigWithFieldEntityClone::class,
+      'entity_clone_form' => ConfigEntityCloneFormBase::class,
+    ],
+  ];
+
+  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+  foreach ($entity_types as &$entity_type) {
+    if (isset($specific_handler[$entity_type->id()])) {
+      $entity_type->setHandlerClass('entity_clone', $specific_handler[$entity_type->id()]['entity_clone']);
+      if (isset($specific_handler[$entity_type->id()]['entity_clone_form'])) {
+        $entity_type->setHandlerClass('entity_clone_form', $specific_handler[$entity_type->id()]['entity_clone_form']);
+      }
+    }
   }
 }

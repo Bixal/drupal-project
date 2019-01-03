@@ -1,0 +1,67 @@
+uuid: 49767039-998f-4c3a-bc4c-9e146b217b3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bool_sp_content_base.field_section_year_term
+    - field.field.node.bool_sp_content_base.field_state_plan_year_section
+    - field.field.node.bool_sp_content_base.field_yes_or_no
+    - node.type.bool_sp_content_base
+id: node.bool_sp_content_base.default
+targetEntityType: node
+bundle: bool_sp_content_base
+mode: default
+content:
+  field_section_year_term:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_state_plan_year_section:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_yes_or_no:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  moderation_state:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

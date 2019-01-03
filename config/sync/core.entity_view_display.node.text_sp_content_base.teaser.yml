@@ -1,0 +1,30 @@
+uuid: 77d589e8-f51a-4385-b3e8-7ea945c6ef8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.text_sp_content_base.body
+    - field.field.node.text_sp_content_base.field_section_year_term
+    - field.field.node.text_sp_content_base.field_state_plan_year_section
+    - node.type.text_sp_content_base
+  module:
+    - text
+    - user
+id: node.text_sp_content_base.teaser
+targetEntityType: node
+bundle: text_sp_content_base
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_section_year_term: true
+  field_state_plan_year_section: true
+  links: true

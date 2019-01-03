@@ -1,0 +1,22 @@
+uuid: fb030ce6-7067-44c1-aa42-c17ded2e23e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.text_sp_content_base
+id: node.text_sp_content_base.status
+field_name: status
+entity_type: node
+bundle: text_sp_content_base
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

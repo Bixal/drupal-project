@@ -1,0 +1,28 @@
+uuid: cac3700f-8270-4726-8fa8-3e8a28210a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.text_sp_content_base.body
+    - field.field.node.text_sp_content_base.field_section_year_term
+    - field.field.node.text_sp_content_base.field_state_plan_year_section
+    - node.type.text_sp_content_base
+  module:
+    - text
+    - user
+id: node.text_sp_content_base.default
+targetEntityType: node
+bundle: text_sp_content_base
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_section_year_term: true
+  field_state_plan_year_section: true
+  links: true

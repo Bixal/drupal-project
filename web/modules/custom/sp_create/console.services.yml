@@ -4,3 +4,13 @@ services:
     arguments: ['@sp_create.state_plan']
     tags:
       - { name: drupal.command }
+  sp_create.sp_create_clone_bundle:
+    class: Drupal\sp_create\Command\CloneBundleCommand
+    arguments: ['@sp_create.clone']
+    tags:
+      - { name: drupal.command }
+  sp_create.sp_create_clone_entity:
+    class: Drupal\sp_create\Command\CloneEntityCommand
+    arguments: ['@sp_create.clone']
+    tags:
+      - { name: drupal.command }

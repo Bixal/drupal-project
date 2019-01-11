@@ -16,7 +16,12 @@ group_type: state
 permissions_ui: false
 permissions:
   0: 'access group_node overview'
-  1: 'update any group_node:state_plan entity'
-  2: 'view group_node:state_plan entity'
-  3: 'view unpublished group_node:state_plan entity'
-  7: 'view revisions group_node:state_plan entity'
+  6: 'view group_node:state_plan_year entity'
+  7: 'view revisions group_node:state_plan_year entity'
+  8: 'view unpublished group_node:state_plan_year entity'
+  9: 'view group_node:text_sp_content entity'
+  10: 'view revisions group_node:text_sp_content entity'
+  11: 'view unpublished group_node:text_sp_content entity'
+  12: 'view group_node:bool_sp_content entity'
+  13: 'view revisions group_node:bool_sp_content entity'
+  14: 'view unpublished group_node:bool_sp_content entity'

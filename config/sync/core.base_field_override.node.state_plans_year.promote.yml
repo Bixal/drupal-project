@@ -1,0 +1,22 @@
+uuid: 9b34a9cb-4ff7-4d5d-9092-ab0578e6afe3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.state_plans_year
+id: node.state_plans_year.promote
+field_name: promote
+entity_type: node
+bundle: state_plans_year
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

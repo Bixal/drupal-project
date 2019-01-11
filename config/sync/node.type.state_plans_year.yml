@@ -1,0 +1,17 @@
+uuid: 933e4785-307c-4867-98fd-ce9fdd96c02d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'State Plans Year'
+type: state_plans_year
+description: 'A single State Plans Year is created for each new state plan year. This content is made in order to signify that EVERY state’s plan for this year is ready or not.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

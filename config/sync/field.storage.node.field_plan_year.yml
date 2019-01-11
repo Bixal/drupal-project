@@ -1,20 +1,20 @@
-uuid: dac81215-3633-405a-95e5-44ba480d3f69
+uuid: d3a0574b-491f-4d11-9b5f-55c6d8375095
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - node
+    - sp_plan_year
 third_party_settings:
   field_permissions:
-    permission_type: custom
+    permission_type: private
 id: node.field_plan_year
 field_name: field_plan_year
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: plan_year
 module: core
 locked: false
 cardinality: 1

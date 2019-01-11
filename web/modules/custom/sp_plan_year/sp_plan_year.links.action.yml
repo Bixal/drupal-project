@@ -1,0 +1,6 @@
+entity.plan_year.add_form:
+  route_name: entity.plan_year.add_form
+  title: 'Add Plan Year'
+  appears_on:
+    - entity.plan_year.collection
+

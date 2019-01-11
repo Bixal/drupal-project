@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_plan_year.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sp_plan_year_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_plan_year module.
+    case 'help.page.sp_plan_year':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creates the Plan Year entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}

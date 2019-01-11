@@ -11,6 +11,4 @@ internal: true
 audience: anonymous
 group_type: state
 permissions_ui: true
-permissions:
-  - 'view group'
-  - 'view group_node:state_plan entity'
+permissions: {  }

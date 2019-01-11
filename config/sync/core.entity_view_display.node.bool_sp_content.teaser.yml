@@ -1,0 +1,49 @@
+uuid: 84cc9620-e9b7-4a0e-bc10-65dca0ff8ad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.bool_sp_content.field_plan_year
+    - field.field.node.bool_sp_content.field_section
+    - field.field.node.bool_sp_content.field_section_year_term
+    - field.field.node.bool_sp_content.field_state_plan_year_section
+    - field.field.node.bool_sp_content.field_yes_or_no
+    - node.type.bool_sp_content
+  module:
+    - options
+    - user
+id: node.bool_sp_content.teaser
+targetEntityType: node
+bundle: bool_sp_content
+mode: teaser
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_state_plan_year_section:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_yes_or_no:
+    type: list_default
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_plan_year: true
+  field_section: true
+  field_section_year_term: true

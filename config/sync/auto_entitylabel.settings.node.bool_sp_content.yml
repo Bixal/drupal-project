@@ -1,0 +1,7 @@
+status: '1'
+pattern: '<?php echo $entity->field_section_year_term->entity->label(); ?>'
+php: 1
+escape: 0
+dependencies:
+  config:
+    - node.type.bool_sp_content

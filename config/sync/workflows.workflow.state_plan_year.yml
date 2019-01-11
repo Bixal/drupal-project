@@ -1,0 +1,41 @@
+uuid: 2fad47fd-5c68-4e10-a3cc-838b4d96e6a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.state_plan_year
+  module:
+    - content_moderation
+id: state_plan_year
+label: 'State Plan Year'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: 0
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 1
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: 0
+      from:
+        - draft
+        - published
+    publish:
+      label: Publish
+      to: published
+      weight: 1
+      from:
+        - draft
+        - published
+  entity_types:
+    node:
+      - state_plan_year

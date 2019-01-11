@@ -1,0 +1,22 @@
+sp_plan_year.plan_year.*:
+  type: config_entity
+  label: 'Plan Year config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    sections:
+      type: sequence
+      label: 'Sections'
+      sequence:
+        type: sequence
+        label: 'Section'
+        mapping:
+          target_id:
+            type: string
+            label: 'Target ID'
+    uuid:
+      type: string

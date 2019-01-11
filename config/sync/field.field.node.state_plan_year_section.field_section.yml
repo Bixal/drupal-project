@@ -1,0 +1,23 @@
+uuid: 9a52b1e2-72a5-4463-90ea-7240dd6231ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.state_plan_year_section
+id: node.state_plan_year_section.field_section
+field_name: field_section
+entity_type: node
+bundle: state_plan_year_section
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

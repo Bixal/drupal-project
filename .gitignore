@@ -27,14 +27,17 @@
 /.idea/
 
 # OSX
-/.DS_Store
+.DS_Store
 
 # Ignore .env files as they are personal
 /.env
 
 # Databases
-/*.sql
-/*.sql.gz
+*.sql
+*.sql.gz
 
 # Ignore generated directories from USWDS
 /web/themes/custom/uswds_wioa/assets
+
+# Ignore Docker-Sync log
+.docker-sync

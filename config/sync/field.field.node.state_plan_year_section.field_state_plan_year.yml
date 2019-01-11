@@ -1,0 +1,28 @@
+uuid: 60057e37-01dd-4f6e-a2cd-f2ade24ee270
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state_plan_year
+    - node.type.state_plan_year
+    - node.type.state_plan_year_section
+id: node.state_plan_year_section.field_state_plan_year
+field_name: field_state_plan_year
+entity_type: node
+bundle: state_plan_year_section
+label: 'State Plan Year'
+description: 'There will be a State Plan Year Section created for each section in the current Plan Year. This content has a workflow that allows someone with section level access to submit the entire section for completion.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      state_plan_year: state_plan_year
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

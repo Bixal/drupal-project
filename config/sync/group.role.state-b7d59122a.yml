@@ -14,4 +14,14 @@ internal: true
 audience: outsider
 group_type: state
 permissions_ui: false
-permissions: {  }
+permissions:
+  - 'access group_node overview'
+  - 'view group_node:state_plan_year entity'
+  - 'view revisions group_node:state_plan_year entity'
+  - 'view unpublished group_node:state_plan_year entity'
+  - 'view group_node:text_sp_content entity'
+  - 'view revisions group_node:text_sp_content entity'
+  - 'view unpublished group_node:text_sp_content entity'
+  - 'view group_node:bool_sp_content entity'
+  - 'view revisions group_node:bool_sp_content entity'
+  - 'view unpublished group_node:bool_sp_content entity'

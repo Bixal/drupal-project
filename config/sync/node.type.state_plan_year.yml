@@ -1,0 +1,17 @@
+uuid: 680575a7-d09f-4716-add7-2d5333c1dda0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'State Plan Year'
+type: state_plan_year
+description: 'A new State Plan Year node will be created for each state (group) for this state plan year. This is “Group” content, meaning it explicitly belongs to the group. This content has a workflow that will allow someone to submit the state plan on a state basis.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

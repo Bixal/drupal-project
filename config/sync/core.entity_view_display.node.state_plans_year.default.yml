@@ -1,0 +1,28 @@
+uuid: c8808a9e-7abc-45a8-a796-beedc43f03e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.state_plans_year.field_plan_year
+    - node.type.state_plans_year
+  module:
+    - user
+id: node.state_plans_year.default
+targetEntityType: node
+bundle: state_plans_year
+mode: default
+content:
+  field_plan_year:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

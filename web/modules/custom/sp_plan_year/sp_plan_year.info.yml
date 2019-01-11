@@ -1,0 +1,5 @@
+name: 'State Plan - Plan Year Entity'
+type: module
+description: 'Creates the Plan Year entity'
+core: 8.x
+package: 'Custom'

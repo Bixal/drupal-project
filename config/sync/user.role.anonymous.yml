@@ -13,4 +13,3 @@ permissions:
   - 'search content'
   - 'use text format restricted_html'
   - 'view body'
-  - 'view field_plan_year'

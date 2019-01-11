@@ -1,0 +1,9 @@
+
+# Plan Year menu items definition
+entity.plan_year.collection:
+  title: 'Plan Year'
+  route_name: entity.plan_year.collection
+  description: 'List Plan Year (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

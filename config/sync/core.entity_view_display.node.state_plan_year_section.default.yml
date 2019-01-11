@@ -1,0 +1,37 @@
+uuid: e6468d9a-d7fd-48e3-9e33-4aeeecf0ae26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.state_plan_year_section.field_section
+    - field.field.node.state_plan_year_section.field_state_plan_year
+    - node.type.state_plan_year_section
+  module:
+    - user
+id: node.state_plan_year_section.default
+targetEntityType: node
+bundle: state_plan_year_section
+mode: default
+content:
+  field_section:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_state_plan_year:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

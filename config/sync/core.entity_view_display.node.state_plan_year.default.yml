@@ -1,0 +1,21 @@
+uuid: 81660bb3-06a9-41ec-ae3a-84f990894224
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.state_plan_year.field_state_plans_year
+    - node.type.state_plan_year
+  module:
+    - user
+id: node.state_plan_year.default
+targetEntityType: node
+bundle: state_plan_year
+mode: default
+content:
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_state_plans_year: true

@@ -1,0 +1,7 @@
+status: '1'
+pattern: '[node:group:title] - <?php echo $entity->field_state_plan_year->entity->field_state_plans_year->entity->field_plan_year->entity->label(); ?> - <?php echo $entity->field_section->entity->label(); ?>'
+php: 1
+escape: 0
+dependencies:
+  config:
+    - node.type.state_plan_year_section

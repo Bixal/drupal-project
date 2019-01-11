@@ -1,0 +1,49 @@
+form_settings:
+  block_content:
+    default_value: false
+    disable: false
+    hidden: false
+  comment:
+    default_value: false
+    disable: false
+    hidden: false
+  contact_message:
+    default_value: false
+    disable: false
+    hidden: false
+  content_moderation_state:
+    default_value: false
+    disable: false
+    hidden: false
+  file:
+    default_value: false
+    disable: false
+    hidden: false
+  group:
+    default_value: false
+    disable: false
+    hidden: false
+  group_content:
+    default_value: false
+    disable: false
+    hidden: false
+  node:
+    default_value: false
+    disable: false
+    hidden: false
+  shortcut:
+    default_value: false
+    disable: false
+    hidden: false
+  taxonomy_term:
+    default_value: false
+    disable: false
+    hidden: false
+  user:
+    default_value: false
+    disable: false
+    hidden: false
+  menu_link_content:
+    default_value: false
+    disable: false
+    hidden: false

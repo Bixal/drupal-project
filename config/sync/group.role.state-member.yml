@@ -12,8 +12,17 @@ audience: member
 group_type: state
 permissions_ui: true
 permissions:
-  0: 'view group_node:state_plan entity'
   1: 'view group'
   2: 'access group_node overview'
-  3: 'view unpublished group_node:state_plan entity'
-  7: 'view revisions group_node:state_plan entity'
+  7: 'view group_node:state_plan_year_section entity'
+  8: 'view revisions group_node:state_plan_year_section entity'
+  9: 'view unpublished group_node:state_plan_year_section entity'
+  10: 'view group_node:state_plan_year entity'
+  11: 'view revisions group_node:state_plan_year entity'
+  12: 'view unpublished group_node:state_plan_year entity'
+  13: 'view group_node:text_sp_content entity'
+  14: 'view revisions group_node:text_sp_content entity'
+  15: 'view unpublished group_node:text_sp_content entity'
+  16: 'view group_node:bool_sp_content entity'
+  17: 'view revisions group_node:bool_sp_content entity'
+  18: 'view unpublished group_node:bool_sp_content entity'

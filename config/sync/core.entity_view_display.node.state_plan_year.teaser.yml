@@ -1,0 +1,21 @@
+uuid: 6ba20d43-7dd8-4874-b358-f7be8ee349db
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.state_plan_year
+  module:
+    - user
+id: node.state_plan_year.teaser
+targetEntityType: node
+bundle: state_plan_year
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_state_plans_year: true

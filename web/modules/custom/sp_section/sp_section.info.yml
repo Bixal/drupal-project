@@ -1,0 +1,5 @@
+name: 'State Plan - Section Entity'
+type: module
+description: 'Creates the Section entity'
+core: 8.x
+package: 'Custom'

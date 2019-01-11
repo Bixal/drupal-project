@@ -11,28 +11,4 @@ internal: false
 audience: member
 group_type: state
 permissions_ui: true
-permissions:
-  0: 'access content overview'
-  1: 'administer group'
-  2: 'delete group'
-  3: 'edit group'
-  4: 'view group'
-  5: 'administer members'
-  6: 'update own group_membership content'
-  7: 'leave group'
-  8: 'view group_membership content'
-  9: 'view group_node:state_plan entity'
-  10: 'access group_node overview'
-  11: 'create group_node:state_plan entity'
-  12: 'delete any group_node:state_plan entity'
-  13: 'delete own group_node:state_plan entity'
-  14: 'update any group_node:state_plan entity'
-  15: 'update own group_node:state_plan entity'
-  16: 'view unpublished group_node:state_plan entity'
-  17: 'create group_node:state_plan content'
-  18: 'delete any group_node:state_plan content'
-  19: 'delete own group_node:state_plan content'
-  20: 'update any group_node:state_plan content'
-  21: 'update own group_node:state_plan content'
-  22: 'view group_node:state_plan content'
-  39: 'view revisions group_node:state_plan entity'
+permissions: {  }

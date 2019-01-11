@@ -1,0 +1,17 @@
+uuid: 01abc9d3-7870-4e11-aeb8-9ca2f72665dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'State Plan Year Section'
+type: state_plan_year_section
+description: 'There will be a State Plan Year Section created for each section in the current Plan Year. This content has a workflow that allows someone with section level access to submit the entire section for completion.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

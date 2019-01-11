@@ -1,0 +1,50 @@
+uuid: b8a28d81-3ae4-4137-a6b9-2db93ff0d756
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.state_plans_year.field_plan_year
+    - node.type.state_plans_year
+  module:
+    - content_moderation
+id: node.state_plans_year.default
+targetEntityType: node
+bundle: state_plans_year
+mode: default
+content:
+  field_plan_year:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 2
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

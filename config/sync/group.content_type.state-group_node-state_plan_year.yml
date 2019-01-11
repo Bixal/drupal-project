@@ -1,0 +1,19 @@
+uuid: 1c8e859e-e486-444d-b595-5f9ff0c97a63
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+    - node.type.state_plan_year
+  module:
+    - gnode
+    - node
+id: state-group_node-state_plan_year
+label: 'State: Group node (State Plan Year)'
+description: 'Adds <em class="placeholder">State Plan Year</em> content to groups both publicly and privately.'
+group_type: state
+content_plugin: 'group_node:state_plan_year'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

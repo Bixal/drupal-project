@@ -1,0 +1,7 @@
+status: '1'
+pattern: 'State Plans - <?php echo $entity->field_plan_year->entity->label(); ?>'
+php: 1
+escape: 0
+dependencies:
+  config:
+    - node.type.state_plans_year

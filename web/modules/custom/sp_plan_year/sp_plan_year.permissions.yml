@@ -1,0 +1,10 @@
+add plan year:
+  title: 'Create a new plan year entity'
+edit plan year:
+  title: 'Edit any plan year entity'
+use plan year wizard:
+  title: 'Use the plan year entity wizard'
+delete plan year:
+  title: 'Delete any plan year entity'
+list plan year:
+  title: 'View plan year entity listing page'

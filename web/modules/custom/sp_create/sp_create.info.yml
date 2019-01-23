@@ -5,3 +5,4 @@ core: 8.x
 package: 'Custom'
 dependencies:
   - drupal:entity_clone
+  - drupal:sp_retrieve

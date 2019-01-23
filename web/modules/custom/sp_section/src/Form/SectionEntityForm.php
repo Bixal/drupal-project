@@ -4,6 +4,7 @@ namespace Drupal\sp_section\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\sp_section\Entity\SectionEntity;
 
 /**
  * Class SectionEntityForm.
@@ -16,28 +17,34 @@ class SectionEntityForm extends EntityForm {
   public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
 
+    /** @var \Drupal\sp_section\Entity\SectionEntity $section */
     $section = $this->entity;
     $form['label'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Label'),
-      '#maxlength' => 19,
+      '#maxlength' => 255,
       '#default_value' => $section->label(),
       '#description' => $this->t("Label for the Section."),
       '#required' => TRUE,
     ];
 
     $form['id'] = [
-      '#type' => 'machine_name',
-      '#default_value' => $section->id(),
-      '#machine_name' => [
-        'exists' => '\Drupal\sp_section\Entity\SectionEntity::load',
-      ],
+      '#type' => 'value',
+      '#value' => $section->isNew() ? SectionEntity::getRandomId() : $section->id(),
       '#disabled' => !$section->isNew(),
     ];
 
-    /* You will need additional form elements for your custom properties. */
-
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    // Ensure that ID is unique.
+    if ($this->entity->isNew() && NULL !== SectionEntity::load($form_state->getValue('id'))) {
+      $form_state->setErrorByName('id', $this->t('The entity ID must be unique.'));
+    }
   }
 
   /**

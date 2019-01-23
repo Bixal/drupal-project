@@ -1,0 +1,4 @@
+services:
+  sp_retrieve.custom_entities:
+    class: Drupal\sp_retrieve\CustomEntitiesService
+    arguments: ['@entity_type.manager']

@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_help().
@@ -20,5 +21,34 @@ function sp_plan_year_help($route_name, RouteMatchInterface $route_match) {
       return $output;
 
     default:
+  }
+}
+
+/**
+ * Implements hook_entity_operation().
+ */
+function sp_plan_year_entity_operation(EntityInterface $entity) {
+  if ($entity->hasLinkTemplate('wizard')) {
+    return [
+      'wizard' => [
+        'title' => t('Wizard'),
+        'weight' => 50,
+        'url' => $entity->toUrl('wizard'),
+      ],
+    ];
+  }
+
+  return [];
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function sp_plan_year_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\EntityType[] $entity_types */
+  foreach ($entity_types as $entity_type_id => $entity_type) {
+    if ($entity_type_id === 'plan_year') {
+      $entity_type->setLinkTemplate('wizard', '/admin/structure/plan_year/{plan_year}/wizard');
+    }
   }
 }

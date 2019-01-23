@@ -18,5 +18,8 @@ sp_plan_year.plan_year.*:
           target_id:
             type: string
             label: 'Target ID'
+    copy_from_plan_year_section:
+      type: string
+      label: 'Copy from plan year section'
     uuid:
       type: string

@@ -1,0 +1,8 @@
+name: 'State Plan - Retrieve'
+type: module
+description: 'Retrieve entities'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - sp_plan_year
+  - sp_section

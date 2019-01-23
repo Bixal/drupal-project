@@ -1,4 +1,7 @@
 services:
+  sp_create.update_plan_year:
+    class: Drupal\sp_create\UpdatePlanYearService
+    arguments: ['@entity_type.manager', '@logger.sp_create', '@sp_create.clone', '@sp_retrieve.custom_entities']
   sp_create.state_plan:
     class: Drupal\sp_create\CreateStatePlanService
     arguments: ['@entity_type.manager', '@logger.sp_create']

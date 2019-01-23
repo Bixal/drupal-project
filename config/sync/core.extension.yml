@@ -50,6 +50,7 @@ module:
   sp_field: 0
   sp_moderate: 0
   sp_plan_year: 0
+  sp_retrieve: 0
   sp_section: 0
   system: 0
   taxonomy: 0

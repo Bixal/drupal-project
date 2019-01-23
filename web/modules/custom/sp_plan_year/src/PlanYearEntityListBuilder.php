@@ -15,7 +15,7 @@ class PlanYearEntityListBuilder extends ConfigEntityListBuilder {
    */
   public function buildHeader() {
     $header['label'] = $this->t('Plan Year');
-    $header['id'] = $this->t('Machine name');
+    $header['sections'] = $this->t('Sections Added to Plan Year');
     return $header + parent::buildHeader();
   }
 
@@ -24,8 +24,8 @@ class PlanYearEntityListBuilder extends ConfigEntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     $row['label'] = $entity->label();
-    $row['id'] = $entity->id();
-    // You probably want a few more properties here...
+    /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $entity */
+    $row['sections'] = count($entity->getSections());
     return $row + parent::buildRow($entity);
   }
 

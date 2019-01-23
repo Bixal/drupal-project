@@ -3,6 +3,7 @@
 namespace Drupal\sp_section\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\Component\Utility\Random;
 
 /**
  * Defines the Section entity.
@@ -53,5 +54,16 @@ class SectionEntity extends ConfigEntityBase implements SectionEntityInterface {
    * @var string
    */
   protected $label;
+
+  /**
+   * Retrieve a new ID if it is new, otherwise the current.
+   *
+   * @return string
+   *   The ID.
+   */
+  public static function getRandomId() {
+    $random = new Random();
+    return strtolower($random->name(19));
+  }
 
 }

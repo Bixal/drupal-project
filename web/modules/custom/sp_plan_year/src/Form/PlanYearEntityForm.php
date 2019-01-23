@@ -4,11 +4,39 @@ namespace Drupal\sp_plan_year\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class PlanYearEntityForm.
  */
 class PlanYearEntityForm extends EntityForm {
+
+  /**
+   * The current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
+   * SystemBrandingOffCanvasForm constructor.
+   *
+   * @param \Drupal\Core\Session\AccountInterface $current_user
+   *   The current user.
+   */
+  public function __construct(AccountInterface $current_user) {
+    $this->currentUser = $current_user;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('current_user')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -23,8 +51,9 @@ class PlanYearEntityForm extends EntityForm {
       '#title' => $this->t('Label'),
       '#maxlength' => 4,
       '#default_value' => $plan_year->label(),
-      '#description' => $this->t("Label for the Plan Year."),
+      '#description' => $this->t("This is the 4 digit year of the plan."),
       '#required' => TRUE,
+      '#disabled' => !$this->entity->isNew(),
     ];
 
     $form['id'] = [
@@ -36,16 +65,24 @@ class PlanYearEntityForm extends EntityForm {
       '#disabled' => !$plan_year->isNew(),
     ];
 
-    $form['sections'] = [
-      '#type' => 'entity_autocomplete',
-      '#target_type' => 'section',
-      '#title' => $this->t('Sections'),
-      '#description' => $this->t('Choose 1 or more sections to add to this plan year. Separate with commas.'),
-      '#default_value' => $plan_year->getSections(),
-      '#tags' => TRUE,
-    ];
+    if ($this->currentUser->hasPermission('administer site configuration')) {
+      $this->messenger()->addWarning($this->t('You are logged in with an account that has the Administer Site Configuration permission and have access to the Sections and Copy from plan year section fields. These are not available to normal users and should only be set using the wizard.'));
+      $form['sections'] = [
+        '#type' => 'entity_autocomplete',
+        '#target_type' => 'section',
+        '#title' => $this->t('Sections'),
+        '#description' => $this->t('Choose 1 or more sections to add to this plan year. Separate with commas.'),
+        '#default_value' => $plan_year->getSections(),
+        '#tags' => TRUE,
+      ];
 
-    /* You will need additional form elements for your custom properties. */
+      $form['copy_from_plan_year_section'] = [
+        '#type' => 'textfield',
+        '#title' => $this->t('Copy from plan year section'),
+        '#default_value' => $plan_year->getCopyFromPlanYearSection(),
+        '#description' => $this->t('A comma separated section ID to plan year ID list.'),
+      ];
+    }
 
     return $form;
   }
@@ -70,7 +107,7 @@ class PlanYearEntityForm extends EntityForm {
           '%label' => $plan_year->label(),
         ]));
     }
-    $form_state->setRedirectUrl($plan_year->toUrl('collection'));
+    $form_state->setRedirectUrl($plan_year->toUrl('wizard'));
   }
 
   /**

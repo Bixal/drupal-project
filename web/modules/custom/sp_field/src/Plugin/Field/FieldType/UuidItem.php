@@ -45,7 +45,7 @@ class UuidItem extends FieldItemBase {
     $properties = [];
     $properties['value'] = DataDefinition::create('string')
       ->setLabel('UUID')
-      ->setDescription('A Universally unique identifier that will be automaticaly create.');
+      ->setDescription('A Universally unique identifier that will be automatically create.');
 
     return $properties;
   }

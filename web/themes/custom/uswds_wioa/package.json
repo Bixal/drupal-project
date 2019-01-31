@@ -1,5 +1,5 @@
 {
-  "name": "ED-WIOA-subtheme",
+  "name": "edwioasubtheme",
   "version": "1.0.0",
   "repository": {
     "type": "git",
@@ -18,19 +18,19 @@
     "@babel/core": "^7.1.5",
     "@babel/preset-env": "^7.1.5",
     "ansi-colors": "^3.2.1",
-    "autoprefixer": "^7.1.1",
+    "autoprefixer": "^9.4.7",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.3",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.1.8",
     "fancy-log": "^1.3.2",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-cssnano": "^2.1.3",
     "gulp-eslint": "^5.0.0",
     "gulp-iconfont": "^10.0.2",
-    "gulp-iconfont-css": "^2.3.0",
+    "gulp-iconfont-css": "^3.0.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
@@ -40,9 +40,9 @@
     "gulp-sass-lint": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4",
     "node-sass": "^4.5.3",
-    "postcss": "^6.0.2",
-    "postcss-cli": "^4.1.0",
-    "uswds": "^1.4.2",
+    "postcss": "^7.0.14",
+    "postcss-cli": "^6.1.1",
+    "uswds": "^1.6.9",
     "watch": "^1.0.2"
   }
 }

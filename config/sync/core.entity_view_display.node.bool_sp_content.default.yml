@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.bool_sp_content.field_field_unique_id_reference
     - field.field.node.bool_sp_content.field_plan_year
     - field.field.node.bool_sp_content.field_section
     - field.field.node.bool_sp_content.field_section_year_term
@@ -22,6 +23,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_field_unique_id_reference:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_state_plan_year_section:
     type: entity_reference_label
     weight: 3

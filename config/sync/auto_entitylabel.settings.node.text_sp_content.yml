@@ -1,5 +1,5 @@
 status: '1'
-pattern: '<?php echo $entity->field_section_year_term->entity->label(); ?>'
+pattern: '[node:group:title] - <?php echo substr($entity->field_plan_year->entity->label() . '' - '' . $entity->field_section->entity->label() . '' - '' . $entity->field_section_year_term->entity->label() . '' - '' . $entity->field_field_unique_id_reference->get(0)->getValue()[''value''], 0, 205); ?>'
 php: 1
 escape: 0
 dependencies:

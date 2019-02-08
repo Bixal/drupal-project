@@ -12,7 +12,6 @@ permissions:
   - 'access toolbar'
   - 'add plan year'
   - 'delete plan year'
-  - 'edit plan year'
   - 'edit plan year content'
   - 'list plan year'
   - 'use plan year wizard'

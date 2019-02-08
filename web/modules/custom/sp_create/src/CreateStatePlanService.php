@@ -69,6 +69,7 @@ class CreateStatePlanService {
     $state_groups = $group_storage
       ->getQuery()
       ->condition('type', 'state')
+      ->accessCheck(FALSE)
       ->execute();
 
     if (!empty($state_groups)) {
@@ -195,6 +196,7 @@ class CreateStatePlanService {
         ->latestRevision()
         ->condition('nid', $state_plan_nids, 'in')
         ->condition('field_plan_year', $planYear, '=')
+        ->accessCheck(FALSE)
         ->execute();
     }
     if (count($return) > 1) {

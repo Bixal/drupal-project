@@ -10,3 +10,5 @@ list plan year:
   title: 'View plan year entity listing page'
 edit plan year content:
   title: 'Edit any plan year entity content'
+view plan year overview helper:
+  title: 'View the plan year overview helper'

@@ -6,3 +6,4 @@ package: 'Custom'
 dependencies:
   - drupal:entity_clone
   - drupal:sp_retrieve
+  - drupal:sp_plan_year

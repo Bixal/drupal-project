@@ -76,8 +76,8 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         // nodes so that permissions can be given per section. E.g.,
         // node-yes_no_tanf. So, entered here without prefix, then determine
         // who this vocab belongs to and add suffix.
-        'node-yes_no' => $this->t('Node - Yes/No'),
-        'node-text' => $this->t('Node - Text'),
+        'node-bool_sp_content' => $this->t('Node - Yes/No'),
+        'node-text_sp_content' => $this->t('Node - Text'),
       ],
       '#empty_option' => $this->t('- Choose an entity -'),
       '#default_value' => $entity_type_bundle,
@@ -85,6 +85,8 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         ->getDescription(),
     ];
 
+    // @TODO: This needs to get sections in the current plan year by context.
+    // @TODO: What happens if they remove a section they added?
     $element['section'] = [
       '#title' => $props['section']->getDataDefinition()->getLabel(),
       '#type' => 'select',

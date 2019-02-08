@@ -3,6 +3,7 @@
 namespace Drupal\sp_create;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\group\Entity\GroupContent;
 use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
 use Psr\Log\LoggerInterface;
@@ -206,9 +207,7 @@ class UpdatePlanYearContentService {
   }
 
   /**
-   * Remove all content and tagged with this plan year section.
-   *
-   * This will remove the plan year section nodes as well.
+   * Remove state plan year content tagged with terms from this vocab.
    *
    * @param string $plan_year_id
    *   A plan year ID.
@@ -218,29 +217,49 @@ class UpdatePlanYearContentService {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
    */
-  public function removeSectionContent($plan_year_id, $section_id) {
+  public function removeStatePlanYearContentBySection($plan_year_id, $section_id) {
     $section_vocabulary_id = PlanYearInfo::createSectionVocabularyId($plan_year_id, $section_id);
     $section_vocabulary = $this->taxonomyService->getVocabulary($section_vocabulary_id);
-    if (NULL !== $section_vocabulary) {
-      // Remove all section content that is tagged with this section vocabulary.
-      $node_storage = $this->entityTypeManager->getStorage('node');
-      foreach ($this->taxonomyService->getVocabularyTids($section_vocabulary_id) as $tid) {
-        // Get all content tagged with this term.
-        $node_query = $this->database->select('taxonomy_index', 'ti');
-        $node_query->fields('ti', ['nid']);
-        $node_query->condition('ti.tid', $tid);
-        foreach ($node_query->execute() as $node_record) {
-          $node_storage->load($node_record->nid)->delete();
-        }
-      }
-      // Remove all state plan year section nodes in this plan year and section
-      // id.
-      foreach ($this->nodeService->getStatePlanYearSectionsByPlanYearAndSectionId($plan_year_id, $section_id) as $state_plan_year_section_nid) {
-        $node_storage->load($state_plan_year_section_nid)->delete();
-      }
+    if (NULL === $section_vocabulary) {
+      throw new \Exception(sprintf('Unable to delete state plan year content in section %s if the vocabulary (%s) is already deleted', $section_id, $section_vocabulary_id));
     }
+    // Remove all section content that is tagged with this section vocabulary.
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    $query = $this->entityTypeManager->getStorage('node')->getQuery();
+    foreach ($query->condition('type', ['bool_sp_content', 'text_sp_content'], 'in')
+      ->condition('field_plan_year', $plan_year_id)
+      ->condition('field_section', $section_id)
+      ->accessCheck(FALSE)
+      ->execute() as $nid) {
+      $node_storage->load($nid)->delete();
+    }
+  }
 
+  /**
+   * Remove all state plan year section nodes in this plan year and section ID.
+   *
+   * @param string $plan_year_id
+   *   A plan year ID.
+   * @param string $section_id
+   *   A section ID.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
+   */
+  public function removeStatePlanYearSection($plan_year_id, $section_id) {
+    $section_vocabulary_id = PlanYearInfo::createSectionVocabularyId($plan_year_id, $section_id);
+    $section_vocabulary = $this->taxonomyService->getVocabulary($section_vocabulary_id);
+    if (NULL === $section_vocabulary) {
+      throw new \Exception(sprintf('Unable to delete state plan year section (%s) if the vocabulary (%s) is already deleted', $section_id, $section_vocabulary_id));
+    }
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    foreach ($this->nodeService->getStatePlanYearSectionsByPlanYearAndSectionId($plan_year_id, $section_id) as $state_plan_year_section_nid) {
+      $node_storage->load($state_plan_year_section_nid)->delete();
+    }
   }
 
   /**
@@ -265,6 +284,7 @@ class UpdatePlanYearContentService {
         'type' => 'state_plans_year',
         'field_plan_year' => [['target_id' => $plan_year_id]],
       ]);
+      $state_plans_year->setOwnerId(1);
       $state_plans_year->save();
       return $state_plans_year;
     }
@@ -307,6 +327,7 @@ class UpdatePlanYearContentService {
       'type' => 'state_plan_year',
       'field_state_plans_year' => [['target_id' => $state_plans_year_nid]],
     ]);
+    $state_plan_year->setOwnerId(1);
     $state_plan_year->save();
     /** @var \Drupal\group\Entity\Group $group */
     $group = $this->entityTypeManager->getStorage('group')->load($group_id);
@@ -354,6 +375,7 @@ class UpdatePlanYearContentService {
       'field_section' => [['target_id' => $section_id]],
       'field_state_plan_year' => [['target_id' => $state_plan_year_nid]],
     ]);
+    $state_plan_year_section->setOwnerId(1);
     $state_plan_year_section->save();
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $state_group_entity = $this->entityTypeManager->getStorage('group')->load($group_id);
@@ -375,7 +397,7 @@ class UpdatePlanYearContentService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function removeStatePlanYearSection($plan_year_id, $group_id, $section_id) {
+  public function removeStatePlanYearSectionGroup($plan_year_id, $group_id, $section_id) {
     // Be care that section ID is set, otherwise all state plan year sections
     // for this plan year and group will be removed.
     if (NULL === $section_id) {
@@ -386,6 +408,80 @@ class UpdatePlanYearContentService {
       return;
     }
     $this->entityTypeManager->getStorage('node')->load($state_plan_year_section_nid)->delete();
+  }
+
+  /**
+   * Remove a state plan year content node.
+   *
+   * @param string $state_plan_year_content_nid
+   *   A state plan year content node ID.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function removeStatePlanYearContent($state_plan_year_content_nid) {
+    $state_plan_year_section = $this->entityTypeManager->getStorage('node')->load($state_plan_year_content_nid);
+    if (NULL === $state_plan_year_section) {
+      return;
+    }
+    $state_plan_year_section->delete();
+  }
+
+  /**
+   * Add a piece of state plan year content.
+   *
+   * @param string $node_type
+   *   The node type.
+   * @param string $field_unique_id_reference
+   *   The UUID that uniquiely identifies a term field between years.
+   * @param string $plan_year_id
+   *   The plan year ID that this content belongs to.
+   * @param string $section_id
+   *   The section ID that this content belongs to.
+   * @param string $section_year_term_tid
+   *   The term that this piece of content is based on.
+   * @param string $state_plan_year_section_nid
+   *   The state plan year section NID that this piece of content belongs to.
+   *
+   * @return \Drupal\node\Entity\Node
+   *   Either the created state plan year content or the already existing.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function addStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid) {
+    $state_plan_year_content_nid = $this->nodeService->getStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid);
+    $node_storage = $this->entityTypeManager->getStorage('node');
+    /** @var \Drupal\node\Entity\Node $state_plan_year_content */
+    if (!empty($state_plan_year_content_nid)) {
+      $state_plan_year_content = $node_storage->load($state_plan_year_content_nid);
+      return $state_plan_year_content;
+    }
+    /** @var \Drupal\node\Entity\Node $state_plan_year_section */
+    $state_plan_year_section = $node_storage->load($state_plan_year_section_nid);
+    if (NULL === $state_plan_year_section) {
+      throw new \Exception('The state plan year content to be created had an invalid state plan year section to save to it.');
+    }
+    $group_content = GroupContent::loadByEntity($state_plan_year_section);
+    $group_content = current($group_content);
+    $group_id = $group_content->getGroup()->id();
+    /** @var \Drupal\node\Entity\Node $state_plan_year_content */
+    $state_plan_year_content = $node_storage->create([
+      'type' => $node_type,
+      'field_field_unique_id_reference' => $field_unique_id_reference,
+      'field_plan_year' => [['target_id' => $plan_year_id]],
+      'field_section' => [['target_id' => $section_id]],
+      'field_section_year_term' => [['target_id' => $section_year_term_tid]],
+      'field_state_plan_year_section' => [['target_id' => $state_plan_year_section_nid]],
+    ]);
+    $state_plan_year_content->setOwnerId(1);
+    $state_plan_year_content->save();
+    /** @var \Drupal\group\Entity\Group $state_group_entity */
+    $state_group_entity = $this->entityTypeManager->getStorage('group')->load($group_id);
+    $state_group_entity->addContent($state_plan_year_content, 'group_node:' . $state_plan_year_content->getType());
+    return $state_plan_year_content;
   }
 
 }

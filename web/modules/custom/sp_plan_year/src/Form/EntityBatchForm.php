@@ -108,9 +108,32 @@ abstract class EntityBatchForm extends EntityForm {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function batchRemoveSectionContent($section_id) {
+  protected function batchRemoveStatePlanYearSection($section_id) {
     return [
-      [UpdatePlanYearBatch::class, 'removeSectionContent'],
+      [UpdatePlanYearBatch::class, 'removeStatePlanYearSection'],
+      [
+        $this->entity->id(),
+        $section_id,
+        $this->getSectionLabel($section_id),
+      ],
+    ];
+  }
+
+  /**
+   * Remove state plan year content tagged with terms from this vocab.
+   *
+   * @param string $section_id
+   *   A section ID.
+   *
+   * @return array
+   *   A batch operation.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  protected function batchRemoveStatePlanYearContentBySection($section_id) {
+    return [
+      [UpdatePlanYearBatch::class, 'removeStatePlanYearContentBySection'],
       [
         $this->entity->id(),
         $section_id,
@@ -289,9 +312,9 @@ abstract class EntityBatchForm extends EntityForm {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function batchRemoveStatePlanYearSection($section_id, $group_id) {
+  protected function batchRemoveStatePlanYearSectionGroup($section_id, $group_id) {
     return [
-      [UpdatePlanYearBatch::class, 'removeStatePlanYearSection'],
+      [UpdatePlanYearBatch::class, 'removeStatePlanYearSectionGroup'],
       [
         $this->entity->id(),
         $section_id,
@@ -325,6 +348,57 @@ abstract class EntityBatchForm extends EntityForm {
         $this->getSectionLabel($section_id),
         $group_id,
         $this->getGroupLabel($group_id),
+      ],
+    ];
+  }
+
+  /**
+   * Remove a state plan year content node.
+   *
+   * @param string $state_plan_year_content_nid
+   *   A state plan year content node ID.
+   *
+   * @return array
+   *   A batch operation.
+   */
+  protected function batchRemoveStatePlanYearContent($state_plan_year_content_nid) {
+    return [
+      [UpdatePlanYearBatch::class, 'removeStatePlanYearContent'],
+      [
+        $state_plan_year_content_nid,
+      ],
+    ];
+  }
+
+  /**
+   * Add a piece of state plan year content.
+   *
+   * @param string $node_type
+   *   The node type.
+   * @param string $field_unique_id_reference
+   *   The UUID that uniquiely identifies a term field between years.
+   * @param string $plan_year_id
+   *   The plan year ID that this content belongs to.
+   * @param string $section_id
+   *   The section ID that this content belongs to.
+   * @param string $section_year_term_tid
+   *   The term that this piece of content is based on.
+   * @param string $state_plan_year_section_nid
+   *   The state plan year section NID that this piece of content belongs to.
+   *
+   * @return array
+   *   A batch operation.
+   */
+  public function batchAddStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid) {
+    return [
+      [UpdatePlanYearBatch::class, 'addStatePlanYearContent'],
+      [
+        $node_type,
+        $field_unique_id_reference,
+        $plan_year_id,
+        $section_id,
+        $section_year_term_tid,
+        $state_plan_year_section_nid,
       ],
     ];
   }

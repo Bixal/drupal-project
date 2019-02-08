@@ -45,6 +45,7 @@ class CustomEntitiesService {
   public function all($entity_type, $entities_or_ids = 'entities') {
     $storage = $this->entityTypeManager->getStorage($entity_type);
     $entity_ids = $storage->getQuery()
+      ->accessCheck(FALSE)
       ->execute();
     if (empty($entity_ids)) {
       return [];

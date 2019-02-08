@@ -4,6 +4,7 @@ namespace Drupal\sp_section\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\Component\Utility\Random;
+use Drupal\sp_create\PlanYearInfo;
 
 /**
  * Defines the Section entity.
@@ -63,7 +64,7 @@ class SectionEntity extends ConfigEntityBase implements SectionEntityInterface {
    */
   public static function getRandomId() {
     $random = new Random();
-    return strtolower($random->name(19));
+    return strtolower($random->name(PlanYearInfo::$sectionIdLength));
   }
 
 }

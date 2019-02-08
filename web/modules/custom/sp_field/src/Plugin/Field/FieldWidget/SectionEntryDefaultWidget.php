@@ -134,9 +134,6 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#title' => $this->t('Access'),
       '#description' => $this->t('Change the access to this entry depending on previous values entered by the state.'),
       '#open' => FALSE,
-      '#element_validate' => [
-        [static::class, 'validateAccess'],
-      ],
       '#prefix' => '<hr />',
     ];
     $element['access_option'] = [

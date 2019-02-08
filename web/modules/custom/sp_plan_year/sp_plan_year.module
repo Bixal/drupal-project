@@ -28,17 +28,23 @@ function sp_plan_year_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_entity_operation().
  */
 function sp_plan_year_entity_operation(EntityInterface $entity) {
+  $operations = [];
   if ($entity->hasLinkTemplate('wizard')) {
-    return [
-      'wizard' => [
-        'title' => t('Wizard'),
-        'weight' => 50,
-        'url' => $entity->toUrl('wizard'),
-      ],
+    $operations['wizard'] = [
+      'title' => t('Wizard'),
+      'weight' => 50,
+      'url' => $entity->toUrl('wizard'),
+    ];
+  }
+  if ($entity->hasLinkTemplate('content')) {
+    $operations['content'] = [
+      'title' => t('Content'),
+      'weight' => 50,
+      'url' => $entity->toUrl('content'),
     ];
   }
 
-  return [];
+  return $operations;
 }
 
 /**
@@ -49,6 +55,30 @@ function sp_plan_year_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type_id => $entity_type) {
     if ($entity_type_id === 'plan_year') {
       $entity_type->setLinkTemplate('wizard', '/admin/structure/plan_year/{plan_year}/wizard');
+      $entity_type->setLinkTemplate('content', '/admin/structure/plan_year/{plan_year}/content');
     }
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function sp_plan_year_plan_year_insert(EntityInterface $entity) {
+  /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
+  $update_plan_year_content = \Drupal::getContainer()
+    ->get('sp_create.update_plan_year_content');
+  $update_plan_year_content->createStatePlansYear($entity->id());
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete().
+ *
+ * This needs to happen before delete, otherwise the state plans year
+ * referencing this entity will have already been deleted.
+ */
+function sp_plan_year_plan_year_predelete(EntityInterface $entity) {
+  /** @var \Drupal\sp_create\UpdatePlanYearConfigService $update_plan_year_config */
+  $update_plan_year_config = \Drupal::getContainer()
+    ->get('sp_create.update_plan_year_config');
+  $update_plan_year_config->removeStatePlan($entity->id());
 }

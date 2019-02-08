@@ -5,6 +5,7 @@ namespace Drupal\sp_plan_year\Form;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\sp_create\UpdatePlanYearContentService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -20,13 +21,23 @@ class PlanYearEntityForm extends EntityForm {
   protected $currentUser;
 
   /**
+   * The plan year content service.
+   *
+   * @var \Drupal\sp_create\UpdatePlanYearContentService
+   */
+  protected $planYearContentService;
+
+  /**
    * SystemBrandingOffCanvasForm constructor.
    *
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
+   * @param \Drupal\sp_create\UpdatePlanYearContentService $plan_year_content_service
+   *   The plan year content service.
    */
-  public function __construct(AccountInterface $current_user) {
+  public function __construct(AccountInterface $current_user, UpdatePlanYearContentService $plan_year_content_service) {
     $this->currentUser = $current_user;
+    $this->planYearContentService = $plan_year_content_service;
   }
 
   /**
@@ -34,7 +45,8 @@ class PlanYearEntityForm extends EntityForm {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('sp_create.update_plan_year_content')
     );
   }
 

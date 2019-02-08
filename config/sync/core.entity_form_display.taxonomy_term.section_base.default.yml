@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.section_base.field_cross_year_uuid
     - field.field.taxonomy_term.section_base.field_input_from_state
-    - field.field.taxonomy_term.section_base.field_section_uuid
     - field.field.taxonomy_term.section_base.field_shown_on_toc
     - taxonomy.vocabulary.section_base
   module:
@@ -22,6 +22,12 @@ content:
     settings:
       placeholder: ''
       rows: 5
+    third_party_settings: {  }
+  field_cross_year_uuid:
+    type: field_uuid_additional_default_widget
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_input_from_state:
     weight: 3
@@ -45,5 +51,4 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  field_section_uuid: true
   path: true

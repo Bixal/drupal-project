@@ -39,6 +39,8 @@ class CustomEntitiesService {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   *
+   * @TODO: Move this to a new service that is more generic.
    */
   public function all($entity_type, $entities_or_ids = 'entities') {
     $storage = $this->entityTypeManager->getStorage($entity_type);
@@ -64,6 +66,8 @@ class CustomEntitiesService {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   *
+   * @TODO: Move this to a new service that is more generic.
    */
   public function labels($entity_type) {
     $key = md5(__CLASS__ . __METHOD__ . $entity_type);
@@ -71,6 +75,7 @@ class CustomEntitiesService {
     if (NULL !== $labels) {
       return $labels;
     }
+    $labels = [];
     $entities = $this->all($entity_type, 'entities');
     foreach ($entities as $entity) {
       $labels[$entity->id()] = $entity->label();
@@ -91,6 +96,8 @@ class CustomEntitiesService {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   *
+   * @TODO: Move this to a new service that is more generic.
    */
   public function getLabel($entity_type, $entity_id) {
     $all_labels = $this->labels($entity_type);
@@ -113,6 +120,8 @@ class CustomEntitiesService {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   *
+   * @TODO: Move this to a new service that is more generic.
    */
   public function single($entity_type, $entity_id) {
     $storage = $this->entityTypeManager->getStorage($entity_type);

@@ -2,3 +2,9 @@ services:
   sp_retrieve.custom_entities:
     class: Drupal\sp_retrieve\CustomEntitiesService
     arguments: ['@entity_type.manager']
+  sp_retrieve.taxonomy:
+    class: Drupal\sp_retrieve\TaxonomyService
+    arguments: ['@entity_type.manager']
+  sp_retrieve.node:
+    class: Drupal\sp_retrieve\NodeService
+    arguments: ['@entity_type.manager', '@sp_expire.content', '@sp_retrieve.custom_entities']

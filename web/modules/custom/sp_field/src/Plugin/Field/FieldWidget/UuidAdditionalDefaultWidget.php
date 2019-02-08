@@ -14,15 +14,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Plugin implementation of the 'field_uuid_default_widget' widget.
  *
  * @FieldWidget(
- *   id = "field_uuid_default_widget",
+ *   id = "field_uuid_additional_default_widget",
  *   module = "sp_field",
- *   label = @Translation("UUID"),
+ *   label = @Translation("UUID (Additional)"),
  *   field_types = {
- *     "field_uuid"
+ *     "field_uuid_additional"
  *   }
  * )
  */
-class UuidDefaultWidget extends WidgetBase implements ContainerFactoryPluginInterface {
+class UuidAdditionalDefaultWidget extends WidgetBase implements ContainerFactoryPluginInterface {
 
   /**
    * The UUID service.
@@ -51,15 +51,9 @@ class UuidDefaultWidget extends WidgetBase implements ContainerFactoryPluginInte
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = isset($items[$delta]->value) ? $items[$delta]->value : '';
-
+    $entity = $items->getEntity();
     // Don't show the UUID until after the save.
-    if (strlen($value)) {
-      $element += [
-        '#type' => 'item',
-        '#markup' => $value,
-      ];
-    }
-    else {
+    if (TRUE === $entity->isNew()) {
       $value = $this->uuid->generate();
     }
     $element['value'] = [
@@ -68,6 +62,7 @@ class UuidDefaultWidget extends WidgetBase implements ContainerFactoryPluginInte
       '#size' => 36,
       '#value' => $value,
     ];
+
     return $element;
   }
 

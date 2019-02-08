@@ -31,6 +31,10 @@ class PlanYearAccessControlHandler extends EntityAccessControlHandler {
         $permission = 'use plan year wizard';
         break;
 
+      case 'content':
+        $permission = 'edit plan year content';
+        break;
+
     }
     if (!empty($permission)) {
       if ($account->hasPermission($permission)) {

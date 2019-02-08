@@ -8,3 +8,5 @@ delete plan year:
   title: 'Delete any plan year entity'
 list plan year:
   title: 'View plan year entity listing page'
+edit plan year content:
+  title: 'Edit any plan year entity content'

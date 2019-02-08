@@ -5,20 +5,21 @@ namespace Drupal\sp_field\Plugin\Field\FieldType;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\Core\Field\FieldDefinitionInterface;
 
 /**
  * Plugin implementation of the 'field_uuid' field type.
  *
  * @FieldType(
- *   id = "field_uuid",
- *   label = @Translation("UUID"),
+ *   id = "field_uuid_additional",
+ *   label = @Translation("UUID (Additional)"),
  *   module = "sp_field",
  *   description = @Translation("Automatically create a UUID."),
- *   default_widget = "field_uuid_default_widget",
+ *   default_widget = "field_uuid_additional_default_widget",
  *   default_formatter = "string"
  * )
  */
-class UuidItem extends FieldItemBase {
+class UuidAdditionalItem extends FieldItemBase {
 
   /**
    * {@inheritdoc}
@@ -53,9 +54,19 @@ class UuidItem extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public function isEmpty() {
-    $value = $this->get('value')->getValue();
-    return $value === NULL || $value === '';
+  public function applyDefaultValue($notify = TRUE) {
+    // Default to one field item with a generated UUID.
+    $uuid = \Drupal::service('uuid');
+    $this->setValue(['value' => $uuid->generate()], $notify);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function generateSampleValue(FieldDefinitionInterface $field_definition) {
+    $values['value'] = \Drupal::service('uuid')->generate();
+    return $values;
   }
 
 }

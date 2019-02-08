@@ -2,12 +2,12 @@
 
 namespace Drupal\sp_plan_year\Form;
 
-use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Entity\EntityFormBuilderInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\TempStore\SharedTempStoreFactory;
 use Drupal\sp_create\UpdatePlanYearBatch;
 use Drupal\sp_retrieve\CustomEntitiesService;
+use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_section\Entity\SectionEntity;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Link;
@@ -15,14 +15,14 @@ use Drupal\Core\Link;
 /**
  * Class PlanYearEntityForm.
  */
-class PlanYearEntityWizardForm extends EntityForm {
+class PlanYearEntityWizardForm extends EntityBatchForm {
 
   /**
-   * The custom entities retrieval service.
+   * The node retrieval service.
    *
-   * @var \Drupal\sp_retrieve\CustomEntitiesService
+   * @var \Drupal\sp_retrieve\NodeService
    */
-  protected $customEntitiesRetrieval;
+  protected $nodeService;
 
   /**
    * The shared temporary store instance.
@@ -50,13 +50,16 @@ class PlanYearEntityWizardForm extends EntityForm {
    *
    * @param \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_retrieval
    *   Service used to retrieve data on custom entities.
+   * @param \Drupal\sp_retrieve\NodeService $node_service
+   *   The node retrieval service.
    * @param \Drupal\Core\TempStore\SharedTempStoreFactory $temp_store_factory
    *   Service used to create a shared temporary store.
    * @param \Drupal\Core\Entity\EntityFormBuilderInterface $entity_form_builder
    *   The entity builder service.
    */
-  public function __construct(CustomEntitiesService $custom_entities_retrieval, SharedTempStoreFactory $temp_store_factory, EntityFormBuilderInterface $entity_form_builder) {
-    $this->customEntitiesRetrieval = $custom_entities_retrieval;
+  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_service, SharedTempStoreFactory $temp_store_factory, EntityFormBuilderInterface $entity_form_builder) {
+    parent::__construct($custom_entities_retrieval);
+    $this->nodeService = $node_service;
     $this->store = $temp_store_factory->get('plan_year_wizard');
     $this->entityFormBuilder = $entity_form_builder;
   }
@@ -67,6 +70,7 @@ class PlanYearEntityWizardForm extends EntityForm {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('sp_retrieve.custom_entities'),
+      $container->get('sp_retrieve.node'),
       $container->get('tempstore.shared'),
       $container->get('entity.form_builder')
     );
@@ -622,8 +626,9 @@ class PlanYearEntityWizardForm extends EntityForm {
    * This usually has the submit and delete button.
    */
   protected function actions(array $form, FormStateInterface $form_state) {
+    $actions = [];
     if ($form_state->get('disable_actions')) {
-      return [];
+      return $actions;
     }
     if (FALSE === $form_state->get('disable_next')) {
       $actions['submit'] = [
@@ -768,8 +773,18 @@ class PlanYearEntityWizardForm extends EntityForm {
           'operations' => [],
           'finished' => [UpdatePlanYearBatch::class, 'finished'],
         ];
+        // Create state plans year if missing.
+        if (empty($this->nodeService->getStatePlansYearByPlanYear($this->entity->id()))) {
+          $batch['operations'][] = $this->batchAddStatePlansYear();
+        }
+        $all_group_ids = $this->customEntitiesRetrieval->all('group', 'ids');
+        // Retrieve all groups without state plan year nodes created yet.
+        foreach ($this->nodeService->getGroupsMissingPlanYear($this->entity->id()) as $group_id) {
+          $batch['operations'][] = $this->batchAddStatePlanYear($group_id);
+        }
         foreach ($this->getChanges() as $action => $change) {
           switch ($action) {
+            // Removing sections already saved to this plan year.
             case 'removed_section_ids':
               foreach ($change as $section_id) {
                 // Remove section and plan year copied from plan year.
@@ -783,6 +798,7 @@ class PlanYearEntityWizardForm extends EntityForm {
               }
               break;
 
+            // Adding brand new sections.
             case 'added_sections':
               foreach ($change as $item) {
                 $plan_year_id_to_copy = !empty($item['plan_year_id_to_copy']) ? $item['plan_year_id_to_copy'] : '';
@@ -790,6 +806,10 @@ class PlanYearEntityWizardForm extends EntityForm {
                 $batch['operations'][] = $this->batchUpdateSectionMeta($item['section_id'], $plan_year_id_to_copy);
                 // Create a section vocabulary.
                 $batch['operations'][] = $this->batchAddSection($item['section_id']);
+                // Add all State Plan Year Section nodes.
+                foreach ($all_group_ids as $group_id) {
+                  $batch['operations'][] = $this->batchAddStatePlanYearSection($item['section_id'], $group_id);
+                }
                 // Copy hierarchy from a different plan year if exists.
                 if ($plan_year_id_to_copy) {
                   $batch['operations'][] = $this->batchCopySectionHierarchy($item['section_id'], $plan_year_id_to_copy);
@@ -797,6 +817,7 @@ class PlanYearEntityWizardForm extends EntityForm {
               }
               break;
 
+            // Sections already exists, changing what plan year to copy from.
             case 'copied_plan_year_changes':
               foreach ($change as $section_id => $new_plan_year_id_to_copy) {
                 // Update plan year copied on the plan year for this section.
@@ -805,6 +826,10 @@ class PlanYearEntityWizardForm extends EntityForm {
                 $batch['operations'][] = $this->batchRemoveSectionContent($section_id);
                 // Remove terms from section vocabulary.
                 $batch['operations'][] = $this->batchRemoveSectionHierarchy($section_id);
+                // Create missing plan year sections if needed.
+                foreach ($this->nodeService->getGroupsMissingPlanYearSection($this->entity->id(), $section_id) as $group_id) {
+                  $batch['operations'][] = $this->batchAddStatePlanYearSection($section_id, $group_id);
+                }
                 // Copy hierarchy from a different plan year if exists.
                 if ($new_plan_year_id_to_copy) {
                   $batch['operations'][] = $this->batchCopySectionHierarchy($section_id, $new_plan_year_id_to_copy);
@@ -827,6 +852,8 @@ class PlanYearEntityWizardForm extends EntityForm {
           // Send them back to the listing page.
           $form_state->setRedirectUrl($this->entity->toUrl('collection'));
         }
+        break;
+
     }
   }
 
@@ -866,165 +893,6 @@ class PlanYearEntityWizardForm extends EntityForm {
    */
   protected function getTriggerElement(FormStateInterface $form_state) {
     return $form_state->getTriggeringElement()['#parents'][0];
-  }
-
-  /**
-   * Retrieve the label of a section.
-   *
-   * @param string $section_id
-   *   A section ID.
-   *
-   * @return string
-   *   A section label.
-   */
-  protected function getSectionLabel($section_id) {
-    return $this->customEntitiesRetrieval->getLabel('section', $section_id);
-  }
-
-  /**
-   * Add or update section and plan year copied to the plan year.
-   *
-   * @param string $section_id
-   *   A section ID.
-   * @param string $plan_year_id_to_copy
-   *   A plan year ID to copy from.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchUpdateSectionMeta($section_id, $plan_year_id_to_copy = '') {
-    return [
-      [UpdatePlanYearBatch::class, 'updateSectionMeta'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-        $plan_year_id_to_copy,
-      ],
-    ];
-  }
-
-  /**
-   * Remove section content tagged with terms from this vocab.
-   *
-   * @param string $section_id
-   *   A section ID.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchRemoveSectionContent($section_id) {
-    return [
-      [UpdatePlanYearBatch::class, 'removeSectionContent'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-      ],
-    ];
-  }
-
-  /**
-   * Remove terms from section vocabulary.
-   *
-   * @param string $section_id
-   *   A section ID.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchRemoveSectionHierarchy($section_id) {
-    return [
-      [UpdatePlanYearBatch::class, 'removeSectionHierarchy'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-      ],
-    ];
-  }
-
-  /**
-   * Copy hierarchy from a different plan year if exists.
-   *
-   * @param string $section_id
-   *   A section ID.
-   * @param string $plan_year_id_to_copy
-   *   A plan year ID to copy from.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchCopySectionHierarchy($section_id, $plan_year_id_to_copy) {
-    return [
-      [UpdatePlanYearBatch::class, 'copySectionHierarchy'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-        $plan_year_id_to_copy,
-      ],
-    ];
-  }
-
-  /**
-   * Create a section vocabulary.
-   *
-   * @param string $section_id
-   *   A section ID.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchAddSection($section_id) {
-    return [
-      [UpdatePlanYearBatch::class, 'addSection'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-      ],
-    ];
-  }
-
-  /**
-   * Remove section vocabulary.
-   *
-   * @param string $section_id
-   *   A section ID.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchRemoveSection($section_id) {
-    return [
-      [UpdatePlanYearBatch::class, 'removeSection'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-      ],
-    ];
-  }
-
-  /**
-   * Remove section and plan year copied from plan year.
-   *
-   * @param string $section_id
-   *   A section ID.
-   *
-   * @return array
-   *   A batch operation.
-   */
-  protected function batchRemoveSectionMeta($section_id) {
-    return [
-      [UpdatePlanYearBatch::class, 'removeSectionMeta'],
-      [
-        $this->entity->id(),
-        $section_id,
-        $this->getSectionLabel($section_id),
-      ],
-    ];
   }
 
 }

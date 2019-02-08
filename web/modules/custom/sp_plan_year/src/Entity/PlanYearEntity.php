@@ -18,6 +18,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *       "add" = "Drupal\sp_plan_year\Form\PlanYearEntityForm",
  *       "edit" = "Drupal\sp_plan_year\Form\PlanYearEntityForm",
  *       "wizard" = "Drupal\sp_plan_year\Form\PlanYearEntityWizardForm",
+ *       "content" = "Drupal\sp_plan_year\Form\PlanYearEntityContentForm",
  *       "delete" = "Drupal\sp_plan_year\Form\PlanYearEntityDeleteForm"
  *     },
  *     "route_provider" = {
@@ -36,6 +37,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "add-form" = "/admin/structure/plan_year/add",
  *     "edit-form" = "/admin/structure/plan_year/{plan_year}/edit",
  *     "wizard-form" = "/admin/structure/plan_year/{plan_year}/wizard",
+ *     "content-form" = "/admin/structure/plan_year/{plan_year}/content",
  *     "delete-form" = "/admin/structure/plan_year/{plan_year}/delete",
  *     "collection" = "/admin/structure/plan_year"
  *   }

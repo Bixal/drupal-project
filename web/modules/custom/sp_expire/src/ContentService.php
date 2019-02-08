@@ -10,6 +10,28 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 class ContentService {
 
   /**
+   * Workflow ID that is used for state plans year nodes.
+   */
+  public const WORKFLOW_ID_STATE_PLANS_YEAR = 'state_plans_year';
+
+  /**
+   * Workflow ID that is used for state plan year nodes.
+   */
+  public const WORKFLOW_ID_STATE_PLAN_YEAR = 'state_plan_year';
+
+  /**
+   * Workflow ID that is used for state plan year section nodes.
+   */
+  public const WORKFLOW_ID_STATE_PLAN_YEAR_SECTION = 'state_plan_year_section';
+
+  /**
+   * Workflow ID that is used for state plan content nodes.
+   *
+   * This holds multiple types: yes / no and text input.
+   */
+  public const WORKFLOW_ID_STATE_PLAN_CONTENT = 'state_plan_content';
+
+  /**
    * The workflow state for published.
    *
    * @var string

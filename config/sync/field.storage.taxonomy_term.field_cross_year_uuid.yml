@@ -1,4 +1,4 @@
-uuid: 3dfd6170-f8f5-4d02-b3c9-0fb524b325a6
+uuid: a953b467-7c82-4e85-9306-925f7f4905f1
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
 third_party_settings:
   field_permissions:
     permission_type: public
-id: taxonomy_term.field_section_uuid
-field_name: field_section_uuid
+id: taxonomy_term.field_cross_year_uuid
+field_name: field_cross_year_uuid
 entity_type: taxonomy_term
-type: field_uuid
+type: field_uuid_additional
 settings: {  }
 module: sp_field
 locked: false

@@ -24,6 +24,10 @@ class PlanYearEntityHtmlRouteProvider extends AdminHtmlRouteProvider {
       $collection->add("entity.plan_year.wizard", $wizard_route);
     }
 
+    if ($wizard_route = $this->getContentRoute($entity_type)) {
+      $collection->add("entity.plan_year.content", $wizard_route);
+    }
+
     /** @var \Symfony\Component\Routing\Route $route */
     foreach ($collection as $route_name => $route) {
       switch ($route_name) {
@@ -51,6 +55,25 @@ class PlanYearEntityHtmlRouteProvider extends AdminHtmlRouteProvider {
     $route->setDefault('_entity_form', 'plan_year.wizard');
     $route->setDefault('_title', 'Wizard');
     $route->setRequirement('_entity_access', 'plan_year.wizard');
+    $route->setOption('_admin_route', TRUE);
+
+    return $route;
+  }
+
+  /**
+   * Gets the wizard route.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+   *   The entity type.
+   *
+   * @return \Symfony\Component\Routing\Route|null
+   *   The generated route, if available.
+   */
+  protected function getContentRoute(EntityTypeInterface $entity_type) {
+    $route = new Route('/admin/structure/plan_year/{plan_year}/content');
+    $route->setDefault('_entity_form', 'plan_year.content');
+    $route->setDefault('_title', 'Content');
+    $route->setRequirement('_entity_access', 'plan_year.content');
     $route->setOption('_admin_route', TRUE);
 
     return $route;

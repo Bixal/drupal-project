@@ -228,7 +228,7 @@ class UpdatePlanYearContentService {
     // Remove all section content that is tagged with this section vocabulary.
     $node_storage = $this->entityTypeManager->getStorage('node');
     $query = $this->entityTypeManager->getStorage('node')->getQuery();
-    foreach ($query->condition('type', ['bool_sp_content', 'text_sp_content'], 'in')
+    foreach ($query->condition('type', PlanYearInfo::getSpycEntityBundles('node'), 'in')
       ->condition('field_plan_year', $plan_year_id)
       ->condition('field_section', $section_id)
       ->accessCheck(FALSE)
@@ -281,7 +281,7 @@ class UpdatePlanYearContentService {
     /** @var \Drupal\node\Entity\Node $state_plans_year */
     if (empty($state_plans_year_nid)) {
       $state_plans_year = $node_storage->create([
-        'type' => 'state_plans_year',
+        'type' => PlanYearInfo::SPZY_BUNDLE,
         'field_plan_year' => [['target_id' => $plan_year_id]],
       ]);
       $state_plans_year->setOwnerId(1);
@@ -324,7 +324,7 @@ class UpdatePlanYearContentService {
     }
     /** @var \Drupal\node\Entity\Node $state_plan_year */
     $state_plan_year = $node_storage->create([
-      'type' => 'state_plan_year',
+      'type' => PlanYearInfo::SPY_BUNDLE,
       'field_state_plans_year' => [['target_id' => $state_plans_year_nid]],
     ]);
     $state_plan_year->setOwnerId(1);
@@ -371,7 +371,7 @@ class UpdatePlanYearContentService {
     }
     /** @var \Drupal\node\Entity\Node $state_plan_year_section */
     $state_plan_year_section = $node_storage->create([
-      'type' => 'state_plan_year_section',
+      'type' => PlanYearInfo::SPYS_BUNDLE,
       'field_section' => [['target_id' => $section_id]],
       'field_state_plan_year' => [['target_id' => $state_plan_year_nid]],
     ]);

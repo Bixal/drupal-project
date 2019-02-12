@@ -3,6 +3,7 @@
 namespace Drupal\sp_plan_year\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\sp_section\Entity\SectionEntity;
 
 /**
  * Defines the Plan Year entity.
@@ -44,6 +45,13 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  * )
  */
 class PlanYearEntity extends ConfigEntityBase implements PlanYearEntityInterface {
+
+  /**
+   * The entity type.
+   *
+   * @var string
+   */
+  const ENTITY = 'plan_year';
 
   /**
    * The Plan Year ID.
@@ -89,7 +97,7 @@ class PlanYearEntity extends ConfigEntityBase implements PlanYearEntityInterface
         $sections[] = $section['target_id'];
       }
       return $this->entityTypeManager()
-        ->getStorage('section')
+        ->getStorage(SectionEntity::ENTITY)
         ->loadMultiple($sections);
     }
     return [];

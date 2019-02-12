@@ -18,14 +18,95 @@ class PlanYearInfo {
    *
    * @var string
    */
-  public static $sectionBaseVocabularyName = 'section_base';
+  const SECTION_BASE_VOCABULARY_NAME = 'section_base';
 
   /**
    * The length of the random string created for section ID.
    *
    * @var int
    */
-  public static $sectionIdLength = 19;
+  const SECTION_ID_LENGTH = 19;
+
+  /**
+   * The state plan year content type bundle.
+   *
+   * @var string
+   */
+  const SPY_BUNDLE = 'state_plan_year';
+
+  /**
+   * The state plans year content type bundle.
+   *
+   * @var string
+   */
+  const SPZY_BUNDLE = 'state_plans_year';
+
+  /**
+   * The state plan year section content type bundle.
+   *
+   * @var string
+   */
+  const SPYS_BUNDLE = 'state_plan_year_section';
+
+  /**
+   * The state plan year content bool content type bundle.
+   *
+   * @var string
+   */
+  const SPYC_BOOL_BUNDLE = 'bool_sp_content';
+
+  /**
+   * Yes or no state plan content.
+   *
+   * @var string
+   */
+  const SPYC_BOOL_EB = 'node-' . self::SPYC_BOOL_BUNDLE;
+
+
+  /**
+   * The state plan year content text content type bundle.
+   *
+   * @var string
+   */
+  const SPYC_TEXT_BUNDLE = 'text_sp_content';
+
+  /**
+   * Text state plan content.
+   *
+   * @var string
+   */
+  const SPYC_TEXT_EB = 'node-' . self::SPYC_TEXT_BUNDLE;
+
+  /**
+   * Get ID and labels for state plan content type bundles.
+   *
+   * @return array
+   *   An array keyed by the entity type bundle with the label as the value.
+   */
+  public static function getSpycEntityTypeBundles() {
+    return [self::SPYC_BOOL_EB => 'Node - Yes/No', self::SPYC_TEXT_EB => 'Node - Text'];
+  }
+
+  /**
+   * Get just the bundles from the entity type bundles.
+   *
+   * @param string $entity_type
+   *   An entity type.
+   *
+   * @return array
+   *   Get an array of bundles.
+   */
+  public static function getSpycEntityBundles($entity_type) {
+    $return = [];
+    foreach (self::getSpycEntityTypeBundles() as $entity_type_bundle => $label) {
+      $etb_array = explode('-', $entity_type_bundle);
+      if ($etb_array[0] !== $entity_type) {
+        continue;
+      }
+      $return[] = $etb_array[1];
+    }
+    return $return;
+  }
 
   /**
    * Create the string to be used for a section vocabulary ID.
@@ -54,7 +135,7 @@ class PlanYearInfo {
    */
   public static function getPlanYearIdAndSectionIdFromVid($vid) {
     list($prefix, $plan_year_id, $section_id) = explode('_', $vid);
-    if ('section' === $prefix && 4 === strlen($plan_year_id) && self::$sectionIdLength === strlen($section_id)) {
+    if ('section' === $prefix && 4 === strlen($plan_year_id) && self::SECTION_ID_LENGTH === strlen($section_id)) {
       return ['plan_year_id' => $plan_year_id, 'section_id' => $section_id];
     }
     return FALSE;
@@ -79,23 +160,23 @@ class PlanYearInfo {
     }
     elseif ($entity instanceof Node) {
       switch ($entity->bundle()) {
-        case 'state_plan_year_section':
+        case self::SPYS_BUNDLE:
           if (!empty($entity->field_state_plan_year)) {
             break;
           }
           $plan_year_id = $entity->field_state_plan_year->entity->field_state_plans_year->entity->field_plan_year->entity->id();
           break;
 
-        case 'state_plan_year':
+        case self::SPY_BUNDLE:
           if (!empty($entity->field_state_plans_year)) {
             break;
           }
           $plan_year_id = $entity->field_state_plans_year->entity->field_plan_year->entity->id();
           break;
 
-        case 'state_plans_year':
-        case 'text_sp_content':
-        case 'bool_sp_content':
+        case self::SPZY_BUNDLE:
+        case self::SPYC_TEXT_BUNDLE:
+        case self::SPYC_BOOL_BUNDLE:
           if (!empty($entity->field_plan_year)) {
             break;
           }

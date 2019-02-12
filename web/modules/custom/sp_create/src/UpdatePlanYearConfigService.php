@@ -7,6 +7,8 @@ use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
 use Psr\Log\LoggerInterface;
 use Drupal\sp_retrieve\CustomEntitiesService;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
+use Drupal\sp_section\Entity\SectionEntity;
 
 /**
  * Class UpdatePlanYearConfigService.
@@ -108,7 +110,7 @@ class UpdatePlanYearConfigService {
   public function removeStatePlan($plan_year_id) {
     $node_storage = $this->entityTypeManager->getStorage('node');
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-    $plan_year = $this->customEntitiesRetrieval->single('plan_year', $plan_year_id);
+    $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_id);
     // Remove all section based information.
     /** @var \Drupal\node\Entity\Node $state_plans_year */
     foreach ($plan_year->getSections() as $section) {
@@ -151,7 +153,7 @@ class UpdatePlanYearConfigService {
    */
   public function removeSectionMeta($plan_year_id, $section_id) {
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-    $plan_year = $this->entityTypeManager->getStorage('plan_year')->load($plan_year_id);
+    $plan_year = $this->entityTypeManager->getStorage(PlanYearEntity::ENTITY)->load($plan_year_id);
     $plan_year->removeSection($section_id);
     $plan_year->save();
   }
@@ -172,7 +174,7 @@ class UpdatePlanYearConfigService {
    */
   public function updateSectionMeta($plan_year_id, $section_id, $plan_year_id_to_copy = '') {
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-    $plan_year = $this->entityTypeManager->getStorage('plan_year')->load($plan_year_id);
+    $plan_year = $this->entityTypeManager->getStorage(PlanYearEntity::ENTITY)->load($plan_year_id);
     $plan_year->addSection($section_id, $plan_year_id_to_copy);
     $plan_year->save();
   }
@@ -212,10 +214,10 @@ class UpdatePlanYearConfigService {
     $section_vocabulary_id = PlanYearInfo::createSectionVocabularyId($plan_year_id, $section_id);
     $section_vocabulary = $this->taxonomyService->getVocabulary($section_vocabulary_id);
     if (NULL === $section_vocabulary) {
-      $new_label = $this->customEntitiesRetrieval->getLabel('plan_year', $plan_year_id) . ' - ' . $this->customEntitiesRetrieval->getLabel('section', $section_id);
+      $new_label = $this->customEntitiesRetrieval->getLabel(PlanYearEntity::ENTITY, $plan_year_id) . ' - ' . $this->customEntitiesRetrieval->getLabel(SectionEntity::ENTITY, $section_id);
       $this->clone->cloneBundle(
         'taxonomy_term',
-        PlanYearInfo::$sectionBaseVocabularyName,
+        PlanYearInfo::SECTION_BASE_VOCABULARY_NAME,
         $section_vocabulary_id,
         $new_label
       );

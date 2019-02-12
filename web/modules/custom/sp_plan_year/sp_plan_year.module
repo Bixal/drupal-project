@@ -7,6 +7,7 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
  * Implements hook_help().
@@ -53,7 +54,7 @@ function sp_plan_year_entity_operation(EntityInterface $entity) {
 function sp_plan_year_entity_type_alter(array &$entity_types) {
   /** @var \Drupal\Core\Entity\EntityType[] $entity_types */
   foreach ($entity_types as $entity_type_id => $entity_type) {
-    if ($entity_type_id === 'plan_year') {
+    if ($entity_type_id === PlanYearEntity::ENTITY) {
       $entity_type->setLinkTemplate('wizard', '/admin/structure/plan_year/{plan_year}/wizard');
       $entity_type->setLinkTemplate('content', '/admin/structure/plan_year/{plan_year}/content');
     }

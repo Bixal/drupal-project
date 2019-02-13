@@ -4,8 +4,10 @@ namespace Drupal\sp_create;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\group\Entity\GroupContent;
+use Drupal\node\Entity\Node;
 use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
+use Drupal\user\Entity\User;
 use Psr\Log\LoggerInterface;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Drupal\Core\Database\Connection as Database;
@@ -284,8 +286,7 @@ class UpdatePlanYearContentService {
         'type' => PlanYearInfo::SPZY_BUNDLE,
         'field_plan_year' => [['target_id' => $plan_year_id]],
       ]);
-      $state_plans_year->setOwnerId(1);
-      $state_plans_year->save();
+      $this->nodeSave($state_plans_year);
       return $state_plans_year;
     }
     $state_plans_year = $node_storage->load($state_plans_year_nid);
@@ -327,13 +328,36 @@ class UpdatePlanYearContentService {
       'type' => PlanYearInfo::SPY_BUNDLE,
       'field_state_plans_year' => [['target_id' => $state_plans_year_nid]],
     ]);
-    $state_plan_year->setOwnerId(1);
-    $state_plan_year->save();
+    $this->nodeSave($state_plan_year);
     /** @var \Drupal\group\Entity\Group $group */
     $group = $this->entityTypeManager->getStorage('group')->load($group_id);
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $group->addContent($state_plan_year, 'group_node:' . $state_plan_year->getType());
     return $state_plan_year;
+  }
+
+  /**
+   * Save a node and enforce a revision message.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node to be saved.
+   * @param bool $new
+   *   Whether the node is new or not.
+   * @param string $revisionMessage
+   *   A message to log in the revision.
+   *
+   * @return int
+   *   SAVED_NEW or SAVED_UPDATED.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  protected function nodeSave(Node $node, $new = TRUE, $revisionMessage = 'Content created by automated process.') {
+    $author = User::load(1);
+    $node->setOwner($author);
+    $node->enforceIsNew($new);
+    $node->setRevisionLogMessage($revisionMessage);
+    $node->setRevisionTranslationAffected(TRUE);
+    return $node->save();
   }
 
   /**
@@ -375,8 +399,7 @@ class UpdatePlanYearContentService {
       'field_section' => [['target_id' => $section_id]],
       'field_state_plan_year' => [['target_id' => $state_plan_year_nid]],
     ]);
-    $state_plan_year_section->setOwnerId(1);
-    $state_plan_year_section->save();
+    $this->nodeSave($state_plan_year_section);
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $state_group_entity = $this->entityTypeManager->getStorage('group')->load($group_id);
     $state_group_entity->addContent($state_plan_year_section, 'group_node:' . $state_plan_year_section->getType());
@@ -476,8 +499,7 @@ class UpdatePlanYearContentService {
       'field_section_year_term' => [['target_id' => $section_year_term_tid]],
       'field_state_plan_year_section' => [['target_id' => $state_plan_year_section_nid]],
     ]);
-    $state_plan_year_content->setOwnerId(1);
-    $state_plan_year_content->save();
+    $this->nodeSave($state_plan_year_content);
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $state_group_entity = $this->entityTypeManager->getStorage('group')->load($group_id);
     $state_group_entity->addContent($state_plan_year_content, 'group_node:' . $state_plan_year_content->getType());

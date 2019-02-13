@@ -188,4 +188,26 @@ class PlanYearInfo {
     return $plan_year_id;
   }
 
+  /**
+   * Retrieve the field that holds an answer by the state.
+   *
+   * @param \Drupal\node\Entity\Node $entity
+   *   A piece of state plan year content.
+   *
+   * @return \Drupal\Core\Field\FieldItemListInterface
+   *   The field that holds the answer by the state.
+   *
+   * @throws \Exception
+   */
+  public static function getStatePlanYearContentValueField(Node $entity) {
+    switch ($entity->bundle()) {
+      case self::SPYC_TEXT_BUNDLE:
+        return $entity->get('body');
+
+      case self::SPYC_BOOL_BUNDLE:
+        return $entity->get('field_yes_or_no');
+    }
+    throw new \Exception(sprintf('The entity %s of bundle %s was not a valid state plan content node.', $entity->id(), $entity->bundle()));
+  }
+
 }

@@ -161,14 +161,14 @@ class PlanYearInfo {
     elseif ($entity instanceof Node) {
       switch ($entity->bundle()) {
         case self::SPYS_BUNDLE:
-          if (!empty($entity->field_state_plan_year)) {
+          if (empty($entity->field_state_plan_year)) {
             break;
           }
           $plan_year_id = $entity->field_state_plan_year->entity->field_state_plans_year->entity->field_plan_year->entity->id();
           break;
 
         case self::SPY_BUNDLE:
-          if (!empty($entity->field_state_plans_year)) {
+          if (empty($entity->field_state_plans_year)) {
             break;
           }
           $plan_year_id = $entity->field_state_plans_year->entity->field_plan_year->entity->id();
@@ -177,7 +177,7 @@ class PlanYearInfo {
         case self::SPZY_BUNDLE:
         case self::SPYC_TEXT_BUNDLE:
         case self::SPYC_BOOL_BUNDLE:
-          if (!empty($entity->field_plan_year)) {
+          if (empty($entity->field_plan_year)) {
             break;
           }
           $plan_year_id = $entity->field_plan_year->entity->id();

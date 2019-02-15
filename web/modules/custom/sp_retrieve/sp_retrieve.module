@@ -9,30 +9,27 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\Core\Cache\Cache;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_entity_insert().
  */
 function sp_retrieve_entity_insert(EntityInterface $entity) {
-  sp_retrieve_invalidate_plan_content_cache($entity);
+  sp_retrieve_invalidate_plan_content_cache($entity, 'insert');
 }
 
 /**
  * Implements hook_entity_update().
  */
 function sp_retrieve_entity_update(EntityInterface $entity) {
-  // Only section terms being updated can affect the missingness of a node
-  // content, as they could have changed what type of node is referenced.
-  if ($entity instanceof Term) {
-    sp_retrieve_invalidate_plan_content_cache($entity);
-  }
+  sp_retrieve_invalidate_plan_content_cache($entity, 'update');
 }
 
 /**
  * Implements hook_entity_delete().
  */
 function sp_retrieve_entity_delete(EntityInterface $entity) {
-  sp_retrieve_invalidate_plan_content_cache($entity);
+  sp_retrieve_invalidate_plan_content_cache($entity, 'insert');
 }
 
 /**
@@ -40,24 +37,54 @@ function sp_retrieve_entity_delete(EntityInterface $entity) {
  *
  * @param \Drupal\Core\Entity\EntityInterface $entity
  *   The entity that triggered the cache clear.
- *
- * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
- * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ * @param string $op
+ *   Either insert, update, or delete.
  */
-function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity) {
-  $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($entity);
+function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op) {
+  // Caches whether there are state plan * nodes that haven't been created yet.
+  $clear_missing_content_cache = FALSE;
+  // Caches whether there are answers that can be copied.
+  $clear_copy_answer_cache = FALSE;
   /** @var \Drupal\sp_retrieve\NodeService $node_service */
   $node_service = \Drupal::getContainer()
     ->get('sp_retrieve.node');
-  if (FALSE !== $plan_year_id) {
-    // All plan years caches.
-    Cache::invalidateTags($node_service->getCacheTags());
-    // Specific plan year cache.
-    Cache::invalidateTags($node_service->getCacheTags($plan_year_id));
+  // Only clear cache based on section terms or state plan year nodes.
+  if (
+    ($entity instanceof Term && PlanYearInfo::getPlanYearIdAndSectionIdFromVid($entity->bundle())) ||
+    ($entity instanceof Node && in_array($entity->bundle(), PlanYearInfo::getSpyEntityBundles()))
+  ) {
+    // Only section terms being updated can affect the missingness of a node
+    // content, as they could have changed what type of node is referenced.
+    // Any state plan year node type being inserted or deleted can change
+    // the missingness of content. The only nodes that are updated, state
+    // plan year content, do nothing about missingness.
+    if ((in_array($op, ['insert', 'delete'], TRUE)) || ($op === 'update' && $entity instanceof Term)) {
+      $clear_missing_content_cache = TRUE;
+    }
+    // Anytime a state plan year content node is updated, inserted, or deleted
+    // clear the copy cache answer cache. This could happen from a state plan
+    // year being modified or any state answer answering a question.
+    // ** IMPORTANT **
+    // Updating a term could cause a state plan year content to change
+    // but only after it has been deleted and re-created. Don't allow admins
+    // to copy answers if there are outstanding state plan year content orphans
+    // to be create / removed.
+    if (in_array($entity->bundle(), PlanYearInfo::getSpycEntityBundles('node'))) {
+      $clear_copy_answer_cache = TRUE;
+    }
   }
-  else {
-    // Something went haywire with getting plan year ID from the entity,
-    // clear everything.
-    Cache::invalidateTags($node_service->getAllCacheTags());
+
+  if (TRUE === $clear_missing_content_cache) {
+    // All plan years caches (getOrphansStatePlanYearContent is for 'all' plan
+    // years).
+    Cache::invalidateTags($node_service->getMissingContentCacheTags());
+    // Specific plan year cache.
+    $state_plan_id = PlanYearInfo::getPlanYearIdFromEntity($entity);
+    Cache::invalidateTags($node_service->getMissingContentCacheTags($state_plan_id));
+  }
+  if (TRUE === $clear_copy_answer_cache) {
+    // Specific state plan year cache.
+    $state_plan_year_nid = PlanYearInfo::getStatePlanYearNidFromEntity($entity);
+    Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid));
   }
 }

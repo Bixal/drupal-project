@@ -109,6 +109,23 @@ class PlanYearInfo {
   }
 
   /**
+   * Get all node types that make up state plan year nodes.
+   *
+   * @return array
+   *   An array of node types.
+   */
+  public static function getSpyEntityBundles() {
+    return array_merge(
+      PlanYearInfo::getSpycEntityBundles('node'),
+      [
+        PlanYearInfo::SPY_BUNDLE,
+        PlanYearInfo::SPYS_BUNDLE,
+        PlanYearInfo::SPZY_BUNDLE,
+      ]
+    );
+  }
+
+  /**
    * Create the string to be used for a section vocabulary ID.
    *
    * @param string $plan_year_id
@@ -186,6 +203,43 @@ class PlanYearInfo {
       }
     }
     return $plan_year_id;
+  }
+
+  /**
+   * Get the state plan year node ID that the entity belongs to.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   A node.
+   *
+   * @return bool|string
+   *   False if no state plan year node ID can be found, otherwise the node ID.
+   */
+  public static function getStatePlanYearNidFromEntity(EntityInterface $entity) {
+    $state_plan_year_nid = FALSE;
+    if ($entity instanceof Node) {
+      switch ($entity->bundle()) {
+        case self::SPYS_BUNDLE:
+          if (empty($entity->field_state_plan_year)) {
+            break;
+          }
+          $state_plan_year_nid = $entity->field_state_plan_year->entity->id();
+          break;
+
+        case self::SPY_BUNDLE:
+          $state_plan_year_nid = $entity->id();
+          break;
+
+        case self::SPYC_TEXT_BUNDLE:
+        case self::SPYC_BOOL_BUNDLE:
+          if (empty($entity->field_state_plan_year_section)) {
+            break;
+          }
+          $state_plan_year_nid = $entity->field_state_plan_year_section->entity->field_state_plan_year->entity->id();
+          break;
+
+      }
+    }
+    return $state_plan_year_nid;
   }
 
   /**

@@ -644,7 +644,7 @@ class NodeService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getMissingPlanYearContent($plan_year_id) {
-    $cid = __METHOD__;
+    $cid = __METHOD__ . $plan_year_id;
     $cache = $this->cache->get($cid);
     if (FALSE !== $cache) {
       return $cache->data;

@@ -938,6 +938,55 @@ class NodeService {
   }
 
   /**
+   * Retrieve the state plan year node IDs that the given year is a source of.
+   *
+   * A state plan year can have a single source to copy from but can be the
+   * source itself of multiple other state plan years.
+   * For example, if 2000 is copying from 1996 and a piece of state plan content
+   * in 1996 gets edited, we have to know all the state plan years that 1996
+   * could be the "source of". The plan year 2000 has the reference to 1996
+   * but the opposite needs to be known as well since the value of the from
+   * and to need to be known.
+   *
+   * This function is cached based on 'missing content' ie, the plan year not
+   * the state plan year node ID. It's contents can only change if a state plans
+   * sections are updated, not if state plan content is updated.
+   *
+   * @param string $state_plan_year_nid
+   *   A state plan year node ID.
+   *
+   * @return array
+   *   An array of state plan year node IDs that this state plan year is a
+   *   source of.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getStatePlanYearsCopyingTo($state_plan_year_nid) {
+    $state_plan_year_copy_from = [];
+    $plan_year_copy_to = $this->customEntitiesRetrieval->allPlanYearCopyTo();
+    /** @var \Drupal\node\Entity\Node $state_plan_year */
+    $state_plan_year = $this->customEntitiesRetrieval->single('node', $state_plan_year_nid);
+    $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($state_plan_year);
+    $cid = __METHOD__ . $plan_year_id;
+    $cache = $this->cache->get($cid);
+    if (FALSE !== $cache) {
+      return $cache->data;
+    }
+    if (!empty($plan_year_copy_to[$plan_year_id])) {
+      /** @var \Drupal\group\Entity\GroupContent $group_content */
+      $group_content = GroupContent::loadByEntity($state_plan_year);
+      $group_content = current($group_content);
+      $group_id = $group_content->getGroup()->id();
+      foreach ($plan_year_copy_to[$plan_year_id] as $plan_year_id) {
+        $state_plan_year_copy_from[] = $this->getStatePlanYearByPlanYearAndGroupId($plan_year_id, $group_id);
+      }
+    }
+    $this->cache->set($cid, $state_plan_year_copy_from, Cache::PERMANENT, $this->getMissingContentCacheTags($plan_year_id));
+    return $state_plan_year_copy_from;
+  }
+
+  /**
    * Retrieve all state plan year content that can be copied in this plan year.
    *
    * Since this is using a state plan year node ID, this will retrieve only

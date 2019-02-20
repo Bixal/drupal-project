@@ -10,6 +10,7 @@ use Drupal\sp_create\PlanYearInfo;
 use Drupal\Core\Cache\Cache;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_entity_insert().
@@ -99,4 +100,58 @@ function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op)
       Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid_to));
     }
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sp_retrieve_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // If not the view we are looking, move on.
+  if ($form['#id'] != 'views-exposed-form-manage-plans-moderated-content') {
+    return FALSE;
+  }
+
+  // Get all state plans year nodes.
+  /** @var \Drupal\node\NodeStorage $storage */
+  $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
+  $nids = $storage->getQuery()->condition('type', PlanYearInfo::SPZY_BUNDLE)
+    ->sort('title', 'DESC')
+    ->execute();
+
+  /** @var \Drupal\Core\Messenger\Messenger $messenger */
+  $messenger = Drupal::getContainer()->get('messenger');
+  // If there are no nodes, move on.
+  if (!$nids) {
+    $messenger->addError('There are no state plan years created yet.');
+    return FALSE;
+  }
+
+  // On initial load, set latest year.
+  $input = $form_state->getUserInput();
+  if (empty($input['plan-year'])) {
+    $input['plan-year'] = current($nids);
+    $form_state->setUserInput($input);
+  }
+
+  // Start building out the options for our select list.
+  $options = [];
+  $nodes = $storage->loadMultiple($nids);
+
+  // Push titles into select list.
+  /** @var \Drupal\node\Entity\Node $node */
+  foreach ($nodes as $node) {
+    $options[$node->id()] = $node->getTitle();
+  }
+  // Change the text input to a select.
+  $field = 'plan-year';
+  $form[$field]['#type'] = 'select';
+  $form[$field]['#default_value'];
+  $form[$field]['#multiple'] = FALSE;
+
+  // Specify the empty option for our select list.
+  $form[$field]['#empty_option'] = t('Plan Year');
+
+  // Add the $options from above to our select list.
+  $form[$field]['#options'] = $options;
+  unset($form[$field]['#size']);
 }

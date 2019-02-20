@@ -150,6 +150,9 @@ class PlanYearOverview extends FormBase {
       if ($show_remove_orphans_links) {
         $quick_links[] = Link::createFromRoute($this->t('There are orphan state plan year content in this plan year, remove here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
       }
+      if (empty($show_missing_content_link) && empty($show_remove_orphans_links) && $state_plans_year_nid = $this->nodeService->getStatePlansYearByPlanYear($plan_year->id())) {
+        $quick_links[] = Link::createFromRoute($this->t('Manage State Plans'), 'view.manage_plans.moderated_content', [], ['query' => ['plan-year' => $state_plans_year_nid]])->toString();
+      }
 
     }
     $form['wrapper']['quick_links'] = [

@@ -8,6 +8,7 @@ weight: 10
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access manage state plans'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add plan year'

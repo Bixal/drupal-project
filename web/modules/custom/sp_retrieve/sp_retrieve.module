@@ -116,6 +116,7 @@ function sp_retrieve_form_views_exposed_form_alter(&$form, FormStateInterface $f
   $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
   $nids = $storage->getQuery()->condition('type', PlanYearInfo::SPZY_BUNDLE)
     ->sort('title', 'DESC')
+    ->accessCheck(FALSE)
     ->execute();
 
   /** @var \Drupal\Core\Messenger\Messenger $messenger */

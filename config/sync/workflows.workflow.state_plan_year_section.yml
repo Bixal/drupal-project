@@ -2,6 +2,8 @@ uuid: 7d72bccb-f125-49e4-9d8f-52f7dfd807ff
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.state_plan_year_section
   module:
     - content_moderation
 id: state_plan_year_section
@@ -34,4 +36,6 @@ type_settings:
       from:
         - draft
         - published
-  entity_types: {  }
+  entity_types:
+    node:
+      - state_plan_year_section

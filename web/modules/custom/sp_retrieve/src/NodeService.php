@@ -963,7 +963,7 @@ class NodeService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getStatePlanYearsCopyingTo($state_plan_year_nid) {
-    $state_plan_year_copy_from = [];
+    $state_plan_year_copy_to = [];
     $plan_year_copy_to = $this->customEntitiesRetrieval->allPlanYearCopyTo();
     /** @var \Drupal\node\Entity\Node $state_plan_year */
     $state_plan_year = $this->customEntitiesRetrieval->single('node', $state_plan_year_nid);
@@ -978,12 +978,12 @@ class NodeService {
       $group_content = GroupContent::loadByEntity($state_plan_year);
       $group_content = current($group_content);
       $group_id = $group_content->getGroup()->id();
-      foreach ($plan_year_copy_to[$plan_year_id] as $plan_year_id) {
-        $state_plan_year_copy_from[] = $this->getStatePlanYearByPlanYearAndGroupId($plan_year_id, $group_id);
+      foreach ($plan_year_copy_to[$plan_year_id] as $plan_year_id_to) {
+        $state_plan_year_copy_to[] = $this->getStatePlanYearByPlanYearAndGroupId($plan_year_id_to, $group_id);
       }
     }
-    $this->cache->set($cid, $state_plan_year_copy_from, Cache::PERMANENT, $this->getMissingContentCacheTags($plan_year_id));
-    return $state_plan_year_copy_from;
+    $this->cache->set($cid, $state_plan_year_copy_to, Cache::PERMANENT, $this->getMissingContentCacheTags($plan_year_id));
+    return $state_plan_year_copy_to;
   }
 
   /**

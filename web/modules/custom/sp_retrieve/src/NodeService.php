@@ -955,7 +955,7 @@ class NodeService {
    * @throws \Exception
    */
   public function getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year_nid) {
-    $cid = __METHOD__;
+    $cid = __METHOD__ . $state_plan_year_nid;
     $cache = $this->cache->get($cid);
     if (FALSE !== $cache) {
       return $cache->data;
@@ -1016,9 +1016,12 @@ class NodeService {
           continue;
         }
         if (empty($return[$section_id])) {
-          $return[$section_id] = [];
+          $return[$section_id] = [
+            'state_plan_year_section_from' => $state_plan_year_section_from_nid,
+            'state_plan_year_content' => [],
+          ];
         }
-        $return[$section_id][] = ['from' => $state_plan_year_content_from_nid, 'to' => $state_plan_year_content_to_nid];
+        $return[$section_id]['state_plan_year_content'][] = ['from' => $state_plan_year_content_from_nid, 'to' => $state_plan_year_content_to_nid];
       }
     }
     $this->cache->set($cid, $return, Cache::PERMANENT, $this->getCopyAnswersCacheTags($state_plan_year_nid));

@@ -39,6 +39,9 @@ function sp_retrieve_entity_delete(EntityInterface $entity) {
  *   The entity that triggered the cache clear.
  * @param string $op
  *   Either insert, update, or delete.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
 function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op) {
   // Caches whether there are state plan * nodes that haven't been created yet.
@@ -68,7 +71,10 @@ function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op)
     // Updating a term could cause a state plan year content to change
     // but only after it has been deleted and re-created. Don't allow admins
     // to copy answers if there are outstanding state plan year content orphans
-    // to be create / removed.
+    // to be create / removed. This could be fine tuned even further to not
+    // clear cache if the state plan year content was being updated and not
+    // changing value state. For example, empty -> empty, not empty -> not
+    // empty will not change if the content can be copied or not.
     if (in_array($entity->bundle(), PlanYearInfo::getSpycEntityBundles('node'))) {
       $clear_copy_answer_cache = TRUE;
     }
@@ -86,5 +92,11 @@ function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op)
     // Specific state plan year cache.
     $state_plan_year_nid = PlanYearInfo::getStatePlanYearNidFromEntity($entity);
     Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid));
+    // This will clear the cache of state plan years that this state plan year
+    // is a source of, ie it's getting copied to this year, not that it's
+    // copying from.
+    foreach ($node_service->getStatePlanYearsCopyingTo($state_plan_year_nid) as $state_plan_year_nid_to) {
+      Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid_to));
+    }
   }
 }

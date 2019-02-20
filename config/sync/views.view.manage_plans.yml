@@ -32,7 +32,7 @@ display:
         options:
           perm: 'access manage state plans'
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query

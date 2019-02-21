@@ -15,27 +15,38 @@ type_settings:
       label: Draft
       published: false
       default_revision: false
-      weight: 0
+      weight: -1
+    new_not_available:
+      published: false
+      default_revision: false
+      label: 'New, not available'
+      weight: -2
     published:
       label: Published
       published: true
       default_revision: true
-      weight: 1
+      weight: 0
   transitions:
     create_new_draft:
       label: 'Create New Draft'
       to: draft
-      weight: 0
+      weight: -1
       from:
         - draft
         - published
     publish:
       label: Publish
       to: published
-      weight: 1
+      weight: 0
       from:
         - draft
         - published
+    start_plan:
+      label: 'Start Plan'
+      from:
+        - new_not_available
+      to: draft
+      weight: -2
   entity_types:
     node:
       - state_plan_year

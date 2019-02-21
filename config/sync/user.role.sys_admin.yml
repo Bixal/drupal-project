@@ -16,5 +16,6 @@ permissions:
   - 'edit plan year content'
   - 'list plan year'
   - 'use plan year wizard'
+  - 'use state_plan_year transition start_plan'
   - 'view plan year overview helper'
   - 'view the administration theme'

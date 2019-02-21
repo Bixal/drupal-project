@@ -4,8 +4,10 @@ namespace Drupal\sp_create;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\group\Entity\GroupContent;
+use Drupal\node\Entity\Node;
 use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
+use Drupal\user\Entity\User;
 use Psr\Log\LoggerInterface;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Drupal\Core\Database\Connection as Database;
@@ -263,6 +265,71 @@ class UpdatePlanYearContentService {
   }
 
   /**
+   * Remove all state plan year section nodes in this plan year and section ID.
+   *
+   * This will not copy if:
+   *   * The given nodes don't exist.
+   *   * The plan years of both nodes match.
+   *   * The field that determines that the contents are the 'same' just from
+   *      different years does not match.
+   *   * Any of the given nodes are orphans and are to be deleted.
+   *   * There is no value to copy from.
+   *   * There is already a value saved to.
+   *
+   * @param string $from_state_plan_year_content_nid
+   *   A state plan year content node ID to copy the value from.
+   * @param string $to_state_plan_year_content_nid
+   *   A state plan year content node ID to copy the value to.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
+   */
+  public function copyStatePlanYearContent($from_state_plan_year_content_nid, $to_state_plan_year_content_nid) {
+    /** @var \Drupal\node\Entity\Node $from */
+    $from = $this->customEntitiesRetrieval->single('node', $from_state_plan_year_content_nid);
+    if (NULL === $from) {
+      throw new \Exception(sprintf('The "from" state plan year content node did not exist (%d)', $from_state_plan_year_content_nid));
+    }
+    /** @var \Drupal\node\Entity\Node $to */
+    $to = $this->customEntitiesRetrieval->single('node', $to_state_plan_year_content_nid);
+    if (NULL === $to) {
+      throw new \Exception(sprintf('The "to" state plan year content node did not exist (%d)', $to_state_plan_year_content_nid));
+    }
+    $plan_year_id_from = PlanYearInfo::getPlanYearIdFromEntity($from);
+    $plan_year_id_to = PlanYearInfo::getPlanYearIdFromEntity($to);
+    if ($plan_year_id_from === $plan_year_id_to) {
+      throw new \Exception(sprintf('The "to" (%d) and "from" (%d) plan year IDs cannot copy from the same year (%s).', $to->id(), $from->id(), PlanYearInfo::getPlanYearIdFromEntity($to)));
+    }
+    if ($from->get('field_field_unique_id_reference')->getString() !== $to->get('field_field_unique_id_reference')->getString()) {
+      throw new \Exception(sprintf('The "to" (%d) and "from" (%d) state plan year content nodes are not descended from the same term in a different year.', $to->id(), $from->id()));
+    }
+    $orphans = $this->nodeService->getOrphansStatePlanYearContent();
+    // If either the from or to are orphans (to be deleted) do not copy their
+    // value.
+    if (in_array($to->id(), $orphans, TRUE)) {
+      return;
+    }
+    if (in_array($from->id(), $orphans, TRUE)) {
+      return;
+    }
+    $from_value_field = PlanYearInfo::getStatePlanYearContentValueField($from);
+    // There is nothing to copy from, no answer was given.
+    if ($from_value_field->isEmpty()) {
+      return;
+    }
+    $to_value_field = PlanYearInfo::getStatePlanYearContentValueField($to);
+    // The state already answered this question, do not overwrite.
+    if (!$to_value_field->isEmpty()) {
+      return;
+    }
+    // Copy the value from the from year to the to year and save.
+    $to_value_field->setValue($from_value_field->getValue());
+    $this->nodeSave($to, FALSE, sprintf('Answer copied from plan year %s to %s.', $plan_year_id_from, $plan_year_id_to));
+  }
+
+  /**
    * Create a state plans year node that references the state plan year given.
    *
    * @param string $plan_year_id
@@ -284,8 +351,7 @@ class UpdatePlanYearContentService {
         'type' => PlanYearInfo::SPZY_BUNDLE,
         'field_plan_year' => [['target_id' => $plan_year_id]],
       ]);
-      $state_plans_year->setOwnerId(1);
-      $state_plans_year->save();
+      $this->nodeSave($state_plans_year);
       return $state_plans_year;
     }
     $state_plans_year = $node_storage->load($state_plans_year_nid);
@@ -327,13 +393,36 @@ class UpdatePlanYearContentService {
       'type' => PlanYearInfo::SPY_BUNDLE,
       'field_state_plans_year' => [['target_id' => $state_plans_year_nid]],
     ]);
-    $state_plan_year->setOwnerId(1);
-    $state_plan_year->save();
+    $this->nodeSave($state_plan_year);
     /** @var \Drupal\group\Entity\Group $group */
     $group = $this->entityTypeManager->getStorage('group')->load($group_id);
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $group->addContent($state_plan_year, 'group_node:' . $state_plan_year->getType());
     return $state_plan_year;
+  }
+
+  /**
+   * Save a node and enforce a revision message.
+   *
+   * @param \Drupal\node\Entity\Node $node
+   *   The node to be saved.
+   * @param bool $new
+   *   Whether the node is new or not.
+   * @param string $revisionMessage
+   *   A message to log in the revision.
+   *
+   * @return int
+   *   SAVED_NEW or SAVED_UPDATED.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  protected function nodeSave(Node $node, $new = TRUE, $revisionMessage = 'Content created by automated process.') {
+    $author = User::load(1);
+    $node->setOwner($author);
+    $node->enforceIsNew($new);
+    $node->setRevisionLogMessage($revisionMessage);
+    $node->setRevisionTranslationAffected(TRUE);
+    return $node->save();
   }
 
   /**
@@ -375,8 +464,7 @@ class UpdatePlanYearContentService {
       'field_section' => [['target_id' => $section_id]],
       'field_state_plan_year' => [['target_id' => $state_plan_year_nid]],
     ]);
-    $state_plan_year_section->setOwnerId(1);
-    $state_plan_year_section->save();
+    $this->nodeSave($state_plan_year_section);
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $state_group_entity = $this->entityTypeManager->getStorage('group')->load($group_id);
     $state_group_entity->addContent($state_plan_year_section, 'group_node:' . $state_plan_year_section->getType());
@@ -476,8 +564,7 @@ class UpdatePlanYearContentService {
       'field_section_year_term' => [['target_id' => $section_year_term_tid]],
       'field_state_plan_year_section' => [['target_id' => $state_plan_year_section_nid]],
     ]);
-    $state_plan_year_content->setOwnerId(1);
-    $state_plan_year_content->save();
+    $this->nodeSave($state_plan_year_content);
     /** @var \Drupal\group\Entity\Group $state_group_entity */
     $state_group_entity = $this->entityTypeManager->getStorage('group')->load($group_id);
     $state_group_entity->addContent($state_plan_year_content, 'group_node:' . $state_plan_year_content->getType());

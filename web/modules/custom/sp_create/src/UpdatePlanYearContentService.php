@@ -5,6 +5,7 @@ namespace Drupal\sp_create;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\group\Entity\GroupContent;
 use Drupal\node\Entity\Node;
+use Drupal\sp_expire\ContentService;
 use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
 use Drupal\user\Entity\User;
@@ -381,7 +382,20 @@ class UpdatePlanYearContentService {
    *
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  protected function nodeSave(Node $node, $new = TRUE, $revisionMessage = 'Content created by automated process.') {
+  public function nodeSave(Node $node, $new = TRUE, $revisionMessage = 'Content created by automated process.') {
+    if (TRUE === $new) {
+      // These node types start in 'New, not available' so that admins can turn
+      // on plans for editorial when they are ready.
+      switch ($node->getType()) {
+        case PlanYearInfo::SPY_BUNDLE:
+        case PlanYearInfo::SPYS_BUNDLE:
+        case PlanYearInfo::SPYC_TEXT_BUNDLE:
+        case PlanYearInfo::SPYC_BOOL_BUNDLE:
+          $node->set('moderation_state', ContentService::MODERATION_STATE_NEW);
+          break;
+
+      }
+    }
     $author = User::load(1);
     $node->setOwner($author);
     $node->enforceIsNew($new);

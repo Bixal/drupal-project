@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.text_sp_content.body
+    - field.field.node.text_sp_content.field_field_unique_id_reference
     - field.field.node.text_sp_content.field_plan_year
     - field.field.node.text_sp_content.field_section
     - field.field.node.text_sp_content.field_section_year_term
@@ -25,6 +26,14 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  field_field_unique_id_reference:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_plan_year:
     weight: 3

@@ -6,4 +6,14 @@ id: sys_admin
 label: 'Sys Admin'
 weight: 10
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'add plan year'
+  - 'delete plan year'
+  - 'edit plan year content'
+  - 'list plan year'
+  - 'use plan year wizard'
+  - 'view plan year overview helper'
+  - 'view the administration theme'

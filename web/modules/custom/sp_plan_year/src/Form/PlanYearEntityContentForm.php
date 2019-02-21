@@ -84,15 +84,32 @@ class PlanYearEntityContentForm extends EntityBatchForm {
         }
       }
     }
-    if (!empty($group_content_message)) {
-      $group_content_message = implode('</li><li>', $group_content_message);
-    }
+    $group_content_message = implode('</li><li>', $group_content_message);
     $form['create_plans_and_sections'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Create plans and sections'),
       '#description' => $group_content_message ? '<ul><li>' . $group_content_message . '</li></ul>' : $this->t('All plans and sections have been created.'),
       '#disabled' => !strlen($group_content_message),
+      '#default_value' => !empty($group_content_message),
     ];
+    $orphans = [];
+    $create = [];
+    $modify_state_plan_year_content_message['orphans'] = $this->t('State plan content must be created before checking for state plan year content orphans.');
+    $modify_state_plan_year_content_message['create'] = $this->t('State plan content must be created before creating state plan year content.');
+    if (empty($group_content_message)) {
+      $orphans = $this->nodeRetrieval->getOrphansStatePlanYearContent();
+      $create = $this->nodeRetrieval->getMissingPlanYearContent($current_plan_year->id());
+      $modify_state_plan_year_content_message['orphans'] = $this->t('There are %orphans state plan year content orphans to be deleted.', ['%orphans' => count($orphans)]);
+      $modify_state_plan_year_content_message['create'] = $this->t('There are %create state plan year content items to be created.', ['%create' => count($create)]);
+    }
+    $form['modify_state_plan_year_content'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Update state plan year content'),
+      '#description' => '<li>' . implode('</li><li>', $modify_state_plan_year_content_message) . '</li>',
+      '#disabled' => empty($orphans) && empty($create),
+      '#default_value' => !empty($orphans) || !empty($create),
+    ];
+
     // @TODO: Make sure that all these groups don't have an in-progress plan year if any sections are being copied from any plan year.
     // Allow them to copy answers from previous years if they copied hierarchy.
     return $form;
@@ -149,6 +166,28 @@ class PlanYearEntityContentForm extends EntityBatchForm {
             $batch['operations'][] = $this->batchAddStatePlanYearSection($section_id, $group_id);
           }
         }
+      }
+    }
+    elseif ($form_state->getValue('modify_state_plan_year_content')) {
+      $batch = [
+        'title' => $this->t('Updating state plan year content'),
+        'operations' => [],
+        'finished' => [UpdatePlanYearBatch::class, 'finished'],
+      ];
+      $orphan_content = $this->nodeRetrieval->getOrphansStatePlanYearContent();
+      foreach ($orphan_content as $state_plan_year_content_nid) {
+        $batch['operations'][] = $this->batchRemoveStatePlanYearContent($state_plan_year_content_nid);
+      }
+      $create = $this->nodeRetrieval->getMissingPlanYearContent($current_plan_year->id());
+      foreach ($create as $info) {
+        $batch['operations'][] = $this->batchAddStatePlanYearContent(
+          $info['node_type'],
+          $info['field_unique_id_reference'],
+          $info['plan_year'],
+          $info['section'],
+          $info['section_year_term'],
+          $info['state_plan_year_section']
+        );
       }
     }
 

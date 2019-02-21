@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\entity_clone\EntityClone\Config\ConfigWithFieldEntityClone;
 use Drupal\entity_clone\EntityClone\Config\ConfigEntityCloneFormBase;
+use Drupal\sp_plan_year\Form\PlanYearOverview;
 
 /**
  * Implements hook_help().
@@ -46,5 +47,17 @@ function sp_create_entity_type_build(array &$entity_types) {
         $entity_type->setHandlerClass('entity_clone_form', $specific_handler[$entity_type->id()]['entity_clone_form']);
       }
     }
+  }
+}
+
+/**
+ * Implements hook_page_top().
+ */
+function sp_create_page_top(array &$page_top) {
+  if (!\Drupal::currentUser()->hasPermission('view plan year overview helper')) {
+    return;
+  }
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $page_top['state_plan_overview'] = \Drupal::formBuilder()->getForm(PlanYearOverview::class);
   }
 }

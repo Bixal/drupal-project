@@ -9,6 +9,9 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\content_moderation\EntityTypeInfo;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\user\Entity\Role;
+use Drupal\sp_create\PlanYearInfo;
 
 /**
  * Implements hook_help().
@@ -135,6 +138,52 @@ function _sp_access_content_moderation_entity_redirect(array &$form, FormStateIn
     }
     else {
       $form_state->setRedirect($latest_version_route, $latest_version_params);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function sp_access_taxonomy_vocabulary_insert(Vocabulary $entity) {
+  // Only do this for plan year section vocabularies.
+  if (FALSE === PlanYearInfo::getPlanYearIdAndSectionIdFromVid($entity->id())) {
+    return;
+  }
+  $role = Role::load('sys_admin');
+  foreach (
+    [
+      'create terms in ' . $entity->id(),
+      'delete terms in ' . $entity->id(),
+      'edit terms in ' . $entity->id(),
+    ] as $permission
+  ) {
+    if (!$role->hasPermission($permission)) {
+      $role->grantPermission($permission);
+      $role->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function sp_access_taxonomy_vocabulary_delete(Vocabulary $entity) {
+  // Only do this for plan year section vocabularies.
+  if (FALSE === PlanYearInfo::getPlanYearIdAndSectionIdFromVid($entity->id())) {
+    return;
+  }
+  $role = Role::load('sys_admin');
+  foreach (
+    [
+      'create terms in ' . $entity->id(),
+      'delete terms in ' . $entity->id(),
+      'edit terms in ' . $entity->id(),
+    ] as $permission
+  ) {
+    if ($role->hasPermission($permission)) {
+      $role->revokePermission($permission);
+      $role->save();
     }
   }
 }

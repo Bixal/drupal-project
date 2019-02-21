@@ -112,8 +112,10 @@ class UpdatePlanYearConfigService {
     // Remove all section based information.
     /** @var \Drupal\node\Entity\Node $state_plans_year */
     foreach ($plan_year->getSections() as $section) {
-      // Remove content and state plan year section nodes for this section.
-      $this->updatePlanYearContentService->removeSectionContent($plan_year_id, $section->id());
+      // Remove state plan year content nodes for this section.
+      $this->updatePlanYearContentService->removeStatePlanYearContentBySection($plan_year_id, $section->id());
+      // Remove all section nodes in this section.
+      $this->updatePlanYearContentService->removeStatePlanYearSection($plan_year_id, $section->id());
       // Remove all terms in the plan year section vocabulary.
       $this->updatePlanYearContentService->removeSectionHierarchy($plan_year_id, $section->id());
       // Remove the plan year section vocabulary.
@@ -127,9 +129,12 @@ class UpdatePlanYearConfigService {
       }
     }
     // Get the state plans year node for this plan year and remove it.
+    // This content might not be created yet.
     $state_plans_year_nid = $this->nodeService->getStatePlansYearByPlanYear($plan_year_id);
-    $state_plans_year = $node_storage->load($state_plans_year_nid);
-    $state_plans_year->delete();
+    if (!empty($state_plan_year_nid)) {
+      $state_plans_year = $node_storage->load($state_plans_year_nid);
+      $state_plans_year->delete();
+    }
   }
 
   /**

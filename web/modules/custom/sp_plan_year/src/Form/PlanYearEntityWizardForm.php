@@ -789,8 +789,11 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
               foreach ($change as $section_id) {
                 // Remove section and plan year copied from plan year.
                 $batch['operations'][] = $this->batchRemoveSectionMeta($section_id);
-                // Remove section content tagged with terms from this vocab.
-                $batch['operations'][] = $this->batchRemoveSectionContent($section_id);
+                // Remove state plan year content tagged with terms from this
+                // vocab.
+                $batch['operations'][] = $this->batchRemoveStatePlanYearContentBySection($section_id);
+                // Remove the state plan year section node.
+                $batch['operations'][] = $this->batchRemoveStatePlanYearSection($section_id);
                 // Remove terms from section vocabulary.
                 $batch['operations'][] = $this->batchRemoveSectionHierarchy($section_id);
                 // Remove section vocabulary.
@@ -822,8 +825,11 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
               foreach ($change as $section_id => $new_plan_year_id_to_copy) {
                 // Update plan year copied on the plan year for this section.
                 $batch['operations'][] = $this->batchUpdateSectionMeta($section_id, $new_plan_year_id_to_copy);
-                // Remove section content tagged with terms from this vocab.
-                $batch['operations'][] = $this->batchRemoveSectionContent($section_id);
+                // Remove state plan year content tagged with terms from this
+                // vocab. Be sure to leave the state plan year section nodes
+                // because it's just the terms and content changing, not the
+                // sections themselves.
+                $batch['operations'][] = $this->batchRemoveStatePlanYearContentBySection($section_id);
                 // Remove terms from section vocabulary.
                 $batch['operations'][] = $this->batchRemoveSectionHierarchy($section_id);
                 // Create missing plan year sections if needed.
@@ -850,7 +856,7 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
             '%label' => $this->entity->label(),
           ]));
           // Send them back to the listing page.
-          $form_state->setRedirectUrl($this->entity->toUrl('collection'));
+          $form_state->setRedirectUrl($this->entity->toUrl('content'));
         }
         break;
 

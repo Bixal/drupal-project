@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_retrieve.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\sp_create\PlanYearInfo;
+use Drupal\Core\Cache\Cache;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function sp_retrieve_entity_insert(EntityInterface $entity) {
+  sp_retrieve_invalidate_plan_content_cache($entity);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function sp_retrieve_entity_update(EntityInterface $entity) {
+  // Only section terms being updated can affect the missingness of a node
+  // content, as they could have changed what type of node is referenced.
+  if ($entity instanceof Term) {
+    sp_retrieve_invalidate_plan_content_cache($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function sp_retrieve_entity_delete(EntityInterface $entity) {
+  sp_retrieve_invalidate_plan_content_cache($entity);
+}
+
+/**
+ * Invalidate the caches used to retrieve state plan content.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   The entity that triggered the cache clear.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity) {
+  $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($entity);
+  /** @var \Drupal\sp_retrieve\NodeService $node_service */
+  $node_service = \Drupal::getContainer()
+    ->get('sp_retrieve.node');
+  if (FALSE !== $plan_year_id) {
+    // All plan years caches.
+    Cache::invalidateTags($node_service->getCacheTags());
+    // Specific plan year cache.
+    Cache::invalidateTags($node_service->getCacheTags($plan_year_id));
+  }
+  else {
+    // Something went haywire with getting plan year ID from the entity,
+    // clear everything.
+    Cache::invalidateTags($node_service->getAllCacheTags());
+  }
+}

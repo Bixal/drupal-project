@@ -9,6 +9,7 @@ use Drupal\group\Entity\GroupContent;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
  * Class CustomEntitiesService.
@@ -118,7 +119,7 @@ class NodeService {
    */
   public function getStatePlanYearSectionByStatePlanYearAndSection($state_plan_year_nid, $section_id) {
     $state_plan_year_section_nid = $this->entityTypeManager->getStorage('node')->getQuery()
-      ->condition('type', 'state_plan_year_section')
+      ->condition('type', PlanYearInfo::SPYS_BUNDLE)
       ->condition('field_section', $section_id)
       ->condition('field_state_plan_year', $state_plan_year_nid)
       ->accessCheck(FALSE)
@@ -142,7 +143,7 @@ class NodeService {
    */
   public function getStatePlanYearSectionsByStatePlanYearAndSection($state_plan_year_nid) {
     return $this->entityTypeManager->getStorage('node')->getQuery()
-      ->condition('type', 'state_plan_year_section')
+      ->condition('type', PlanYearInfo::SPYS_BUNDLE)
       ->condition('field_state_plan_year', $state_plan_year_nid)
       ->accessCheck(FALSE)
       ->execute();
@@ -162,7 +163,7 @@ class NodeService {
    */
   public function getStatePlanYearsByStatePlansYear($state_plans_year_nid) {
     $query = $this->entityTypeManager->getStorage('node')->getQuery()
-      ->condition('type', 'state_plan_year')
+      ->condition('type', PlanYearInfo::SPY_BUNDLE)
       ->condition('field_state_plans_year', $state_plans_year_nid)
       ->accessCheck(FALSE);
     return $query->execute();
@@ -182,7 +183,7 @@ class NodeService {
    */
   public function getStatePlansYearByPlanYear($plan_year_id) {
     $state_plans_year_nid = $this->entityTypeManager->getStorage('node')->getQuery()
-      ->condition('type', 'state_plans_year')
+      ->condition('type', PlanYearInfo::SPZY_BUNDLE)
       ->condition('field_plan_year', $plan_year_id)
       ->accessCheck(FALSE)
       ->range(0, 1)
@@ -271,7 +272,7 @@ class NodeService {
    */
   public function getAllCacheTags() {
     $cache_tags = $this->getCacheTags();
-    foreach ($this->customEntitiesRetrieval->all('plan_year', 'ids') as $plan_year_id) {
+    foreach ($this->customEntitiesRetrieval->all(PlanYearEntity::ENTITY, 'ids') as $plan_year_id) {
       $cache_tags = array_merge($cache_tags, $this->getCacheTags($plan_year_id));
     }
     return $cache_tags;
@@ -303,7 +304,7 @@ class NodeService {
       return $return;
     }
     if (NULL === $plan_year_id) {
-      $plan_years = $this->customEntitiesRetrieval->all('plan_year', 'ids');
+      $plan_years = $this->customEntitiesRetrieval->all(PlanYearEntity::ENTITY, 'ids');
     }
     else {
       $plan_years[] = $plan_year_id;
@@ -311,7 +312,7 @@ class NodeService {
     $node_storage = $this->entityTypeManager->getStorage('node');
     /** @var string $plan_year_id */
     foreach ($plan_years as $plan_year_id) {
-      $plan_year = $this->customEntitiesRetrieval->single('plan_year', $plan_year_id);
+      $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_id);
       $plan_year_sections = $plan_year->getSections();
       $return[$plan_year_id] = [];
       // This value will be true if there is any missing plan years, plan year,
@@ -485,7 +486,7 @@ class NodeService {
     $node_storage = $this->entityTypeManager->getStorage('node');
     $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
     $orphans = [];
-    foreach (['bool_sp_content', 'text_sp_content'] as $state_plan_year_content_type) {
+    foreach (PlanYearInfo::getSpycEntityBundles('node') as $state_plan_year_content_type) {
       foreach ($node_storage->getQuery()
         ->condition('type', $state_plan_year_content_type)
         ->accessCheck(FALSE)
@@ -508,8 +509,8 @@ class NodeService {
           $orphans[] = $state_plan_year_content_nid;
           continue;
         }
-        // Ensure that the node type matches between the node and the term.
         $state_plan_year_content_info = $this->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
+        // Ensure that the node type matches between the node and the term.
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $plan_year_field */
         $plan_year_field = $state_plan_year_content->get('field_plan_year');
         // If there is no plan year referenced, this piece of content is in a
@@ -552,6 +553,12 @@ class NodeService {
           $orphans[] = $state_plan_year_content_nid;
           continue;
         }
+        // Odds are that this referenced term changed from a 'node' to be shown
+        // to states to a 'section' placeholder.
+        if (!empty($state_plan_year_content_info['content'][$field_unique_id_reference]['section'])) {
+          $orphans[] = $state_plan_year_content_nid;
+          continue;
+        }
         if ($state_plan_year_content_info['content'][$field_unique_id_reference]['content_type'] !== 'node') {
           throw new \Exception('Only nodes can be referenced at this time.');
         }
@@ -584,6 +591,7 @@ class NodeService {
     $return['plan_year_id'] = !empty($plan_year_id_and_section_id['plan_year_id']) ? $plan_year_id_and_section_id['plan_year_id'] : '';
     $return['section_id'] = !empty($plan_year_id_and_section_id['section_id']) ? $plan_year_id_and_section_id['section_id'] : '';
     $return['content'] = [];
+    $return['section'] = [];
     if (!$section_year_term->get('field_input_from_state')->isEmpty()) {
       /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
       foreach ($section_year_term->get('field_input_from_state') as $item) {
@@ -656,7 +664,7 @@ class NodeService {
     // This array will be keyed by section ID and created as needed.
     $state_plan_year_section_nids = [];
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-    $plan_year = $this->customEntitiesRetrieval->single('plan_year', $plan_year_id);
+    $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_id);
     foreach ($plan_year->getSections() as $section) {
       // Get all the terms in this section vocabulary.
       $plan_year_vid = PlanYearInfo::createSectionVocabularyId($plan_year_id, $section->id());
@@ -772,7 +780,7 @@ class NodeService {
       return NULL;
     }
     return current($node_storage->getQuery()
-      ->condition('type', 'state_plan_year')
+      ->condition('type', PlanYearInfo::SPY_BUNDLE)
       ->condition('field_state_plans_year', $state_plans_year_nid)
       ->condition('nid', $groups_state_plan_years, 'in')
       ->range(0, 1)
@@ -809,7 +817,7 @@ class NodeService {
     }
     $node_storage = $this->entityTypeManager->getStorage('node');
     $query = $node_storage->getQuery()
-      ->condition('type', 'state_plan_year_section')
+      ->condition('type', PlanYearInfo::SPYS_BUNDLE)
       ->condition('field_state_plan_year', $state_plan_year_nid)
       ->accessCheck(FALSE);
     if (NULL !== $section_id) {

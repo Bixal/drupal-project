@@ -9,6 +9,7 @@ use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Drupal\sp_retrieve\NodeService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
  * Class PlanYearOverview.
@@ -65,13 +66,13 @@ class PlanYearOverview extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $plan_year = NULL;
     if (!empty($form_state->getValue('plan_years'))) {
-      $plan_year = $this->customEntitiesRetrieval->single('plan_year', $form_state->getValue('plan_years'));
+      $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $form_state->getValue('plan_years'));
     }
-    $plan_year_labels = $this->customEntitiesRetrieval->labels('plan_year');
+    $plan_year_labels = $this->customEntitiesRetrieval->labels(PlanYearEntity::ENTITY);
     $route_match = $this->getRouteMatch();
     if (NULL === $plan_year) {
       /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-      $plan_year = $route_match->getParameter('plan_year');
+      $plan_year = $route_match->getParameter(PlanYearEntity::ENTITY);
     }
     $plan_year_info = FALSE;
     if (NULL === $plan_year) {
@@ -89,13 +90,13 @@ class PlanYearOverview extends FormBase {
       }
     }
     if (FALSE !== $plan_year_info) {
-      $plan_year = $this->customEntitiesRetrieval->single('plan_year', $plan_year_info['plan_year_id']);
+      $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_info['plan_year_id']);
     }
     asort($plan_year_labels);
     $plan_year_labels = array_reverse($plan_year_labels, TRUE);
     if (!empty($plan_year_labels)) {
       if (NULL === $plan_year) {
-        $plan_year = $this->customEntitiesRetrieval->single('plan_year', current(array_keys($plan_year_labels)));
+        $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, current(array_keys($plan_year_labels)));
       }
       $form['wrapper'] = [
         '#type' => 'container',
@@ -129,7 +130,7 @@ class PlanYearOverview extends FormBase {
         '#markup' => !empty($sections) ? '<strong>Add, remove, and rearrange the hierarchy in a plan year section</strong><ul><li>' . implode('</li><li>', $sections) . '</li></ul><small>The above allows one to create the questions and hierarchy of the plan. Modifying these will cause content that is required to be created. One can finish adding large chunks of a section, then come back and create it all or create it one at a time.</small>' : $this->t('No sections added yet.'),
       ];
       $link_text = empty($sections) ? $this->t('No sections in this plan year, add sections here') : $this->t('Add or remove sections from this plan year');
-      $quick_links[] = Link::createFromRoute($link_text, 'entity.plan_year.wizard', ['plan_year' => $plan_year->id()], empty($sections) ? $red_link : [])->toString();
+      $quick_links[] = Link::createFromRoute($link_text, 'entity.plan_year.wizard', [PlanYearEntity::ENTITY => $plan_year->id()], empty($sections) ? $red_link : [])->toString();
       $show_remove_orphans_links = FALSE;
       $missing_parent_content = $this->nodeService->getGroupsMissingStatePlanYearsAndStatePlanYearSections($plan_year->id());
       $show_missing_content_link = empty($missing_parent_content) ? TRUE : !empty($missing_parent_content) && $missing_parent_content['at_least_one_missing'];
@@ -144,10 +145,10 @@ class PlanYearOverview extends FormBase {
         }
       }
       if ($show_missing_content_link) {
-        $quick_links[] = Link::createFromRoute($this->t('There is missing content in this plan year, create here'), 'entity.plan_year.content', ['plan_year' => $plan_year->id()], $red_link)->toString();
+        $quick_links[] = Link::createFromRoute($this->t('There is missing content in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
       }
       if ($show_remove_orphans_links) {
-        $quick_links[] = Link::createFromRoute($this->t('There are orphan state plan year content in this plan year, remove here'), 'entity.plan_year.content', ['plan_year' => $plan_year->id()], $red_link)->toString();
+        $quick_links[] = Link::createFromRoute($this->t('There are orphan state plan year content in this plan year, remove here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
       }
 
     }

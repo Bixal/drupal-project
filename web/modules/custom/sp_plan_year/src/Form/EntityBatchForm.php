@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityForm;
 use Drupal\sp_create\UpdatePlanYearBatch;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\sp_section\Entity\SectionEntity;
 
 /**
  * Class EntityBatchForm.
@@ -51,7 +52,7 @@ abstract class EntityBatchForm extends EntityForm {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   protected function getSectionLabel($section_id) {
-    return $this->customEntitiesRetrieval->getLabel('section', $section_id);
+    return $this->customEntitiesRetrieval->getLabel(SectionEntity::ENTITY, $section_id);
   }
 
   /**

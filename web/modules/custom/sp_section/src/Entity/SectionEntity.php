@@ -43,6 +43,13 @@ use Drupal\sp_create\PlanYearInfo;
 class SectionEntity extends ConfigEntityBase implements SectionEntityInterface {
 
   /**
+   * The entity type.
+   *
+   * @var string
+   */
+  const ENTITY = 'section';
+
+  /**
    * The Section ID.
    *
    * @var string
@@ -64,7 +71,7 @@ class SectionEntity extends ConfigEntityBase implements SectionEntityInterface {
    */
   public static function getRandomId() {
     $random = new Random();
-    return strtolower($random->name(PlanYearInfo::$sectionIdLength));
+    return strtolower($random->name(PlanYearInfo::SECTION_ID_LENGTH));
   }
 
 }

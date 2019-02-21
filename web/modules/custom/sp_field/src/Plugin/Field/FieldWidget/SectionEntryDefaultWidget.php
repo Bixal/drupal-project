@@ -6,11 +6,13 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Uuid\Uuid;
-use Drupal\sp_field\Sections;
+use Drupal\sp_create\PlanYearInfo;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Component\Uuid\Php;
+use Drupal\sp_retrieve\CustomEntitiesService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
  * Plugin implementation of the 'field_section_entry_default_widget' widget.
@@ -34,25 +36,36 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
   protected $uuid;
 
   /**
+   * Custom entities service.
+   *
+   * @var \Drupal\sp_retrieve\CustomEntitiesService
+   */
+  protected $customEntitiesService;
+
+  /**
    * {@inheritdoc}
    */
-  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, Php $uuid) {
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, Php $uuid, CustomEntitiesService $custom_entities_service) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
     $this->uuid = $uuid;
+    $this->customEntitiesService = $custom_entities_service;
   }
 
   /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static($plugin_id, $plugin_definition, $configuration['field_definition'], $configuration['settings'], $configuration['third_party_settings'], $container->get('uuid'));
+    return new static($plugin_id, $plugin_definition, $configuration['field_definition'], $configuration['settings'], $configuration['third_party_settings'], $container->get('uuid'), $container->get('sp_retrieve.custom_entities'));
   }
 
   /**
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $sectionsObject = new Sections();
+    $plan_year_info = PlanYearInfo::getPlanYearIdAndSectionIdFromVid($items->getEntity()->bundle());
+    if (FALSE === $plan_year_info) {
+      throw new \Exception('This field can only be added to state plan year section term.');
+    }
     $element['#element_validate'] = [
       [static::class, 'validateAll'],
     ];
@@ -69,28 +82,24 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $element['entity_type_bundle'] = [
       '#title' => $props['entity_type_bundle']->getDataDefinition()->getLabel(),
       '#type' => 'select',
-      '#options' => [
-        // These options should come from a class and be hardcoded. Each value
-        // is a entity type - entity bundle pair that provides input for states.
-        // Per the new discussion, i would recommend that these section specific
-        // nodes so that permissions can be given per section. E.g.,
-        // node-yes_no_tanf. So, entered here without prefix, then determine
-        // who this vocab belongs to and add suffix.
-        'node-bool_sp_content' => $this->t('Node - Yes/No'),
-        'node-text_sp_content' => $this->t('Node - Text'),
-      ],
+      '#options' => PlanYearInfo::getSpycEntityTypeBundles(),
       '#empty_option' => $this->t('- Choose an entity -'),
       '#default_value' => $entity_type_bundle,
       '#description' => $props['entity_type_bundle']->getDataDefinition()
         ->getDescription(),
     ];
-
+    /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
+    $plan_year = $this->customEntitiesService->single(PlanYearEntity::ENTITY, $plan_year_info['plan_year_id']);
+    $sectionOptions = [];
+    foreach ($plan_year->getSections() as $selected_section) {
+      $sectionOptions[$selected_section->id()] = $selected_section->label();
+    }
     // @TODO: This needs to get sections in the current plan year by context.
     // @TODO: What happens if they remove a section they added?
     $element['section'] = [
       '#title' => $props['section']->getDataDefinition()->getLabel(),
       '#type' => 'select',
-      '#options' => $sectionsObject->getSections(),
+      '#options' => $sectionOptions,
       '#empty_option' => $this->t('- Choose a section -'),
       '#default_value' => $section,
       '#description' => $props['section']->getDataDefinition()

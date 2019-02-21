@@ -11,6 +11,7 @@ use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_section\Entity\SectionEntity;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Link;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
  * Class PlanYearEntityForm.
@@ -218,7 +219,7 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
     $form_state->set('disable_actions', FALSE);
     if (!empty($this->getModifyingEntity()) && $current_plan_year->id() !== $this->getModifyingEntity()) {
       // This is the entity that they are already working with.
-      $modifying_entity = $this->entityTypeManager->getStorage('plan_year')->load($this->getModifyingEntity());
+      $modifying_entity = $this->entityTypeManager->getStorage(PlanYearEntity::ENTITY)->load($this->getModifyingEntity());
       $this->messenger()->addError(
         $this->t(
           'There is already a plan year wizard form in progress, please %wizard_url before continuing.',
@@ -238,10 +239,10 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
     $form_state->set('disable_next', FALSE);
 
     // Get variables that are shared by the different steps.
-    $all_plan_year_labels = $this->customEntitiesRetrieval->labels('plan_year');
+    $all_plan_year_labels = $this->customEntitiesRetrieval->labels(PlanYearEntity::ENTITY);
     // Don't include the current plan year in any label.
     unset($all_plan_year_labels[$current_plan_year->id()]);
-    $all_section_labels = $this->customEntitiesRetrieval->labels('section');
+    $all_section_labels = $this->customEntitiesRetrieval->labels(SectionEntity::ENTITY);
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity[] $current_sections */
     $current_sections = $current_plan_year->getSections();
     $current_plan_year_section = $current_plan_year->getCopyFromPlanYearSectionArray();
@@ -316,7 +317,7 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
         $choose_plan_year_previous = $this->getStepValue('choose_plan_year_previous');
         if (!empty($choose_plan_year_previous['plan_year_previous'])) {
           /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $previous_plan_year */
-          $previous_plan_year = $this->customEntitiesRetrieval->single('plan_year', $choose_plan_year_previous['plan_year_previous']);
+          $previous_plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $choose_plan_year_previous['plan_year_previous']);
           foreach ($previous_plan_year->getSections() as $section) {
             $selected_sections[$section->id()] = !empty($choose_plan_year_previous['copy_hierarchy']) ? $previous_plan_year->id() : '';
           }

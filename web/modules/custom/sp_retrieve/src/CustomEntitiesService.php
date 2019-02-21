@@ -3,6 +3,7 @@
 namespace Drupal\sp_retrieve;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
  * Class CustomEntitiesService.
@@ -142,7 +143,7 @@ class CustomEntitiesService {
   public function allSectionsByPlanYear() {
     $return = [];
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-    foreach ($this->all('plan_year', 'entities') as $plan_year) {
+    foreach ($this->all(PlanYearEntity::ENTITY, 'entities') as $plan_year) {
       foreach ($plan_year->getSections() as $section) {
         $return[$plan_year->id()][$section->id()] = $section->label();
       }
@@ -166,7 +167,7 @@ class CustomEntitiesService {
   public function allPlanYearsBySection($hide_plan_year) {
     $return = [];
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
-    foreach ($this->all('plan_year', 'entities') as $plan_year) {
+    foreach ($this->all(PlanYearEntity::ENTITY, 'entities') as $plan_year) {
       if ($plan_year->id() === $hide_plan_year) {
         continue;
       }

@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\sp_create\UpdatePlanYearContentService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\sp_section\Entity\SectionEntity;
 
 /**
  * Class PlanYearEntityForm.
@@ -81,7 +82,7 @@ class PlanYearEntityForm extends EntityForm {
       $this->messenger()->addWarning($this->t('You are logged in with an account that has the Administer Site Configuration permission and have access to the Sections and Copy from plan year section fields. These are not available to normal users and should only be set using the wizard.'));
       $form['sections'] = [
         '#type' => 'entity_autocomplete',
-        '#target_type' => 'section',
+        '#target_type' => SectionEntity::ENTITY,
         '#title' => $this->t('Sections'),
         '#description' => $this->t('Choose 1 or more sections to add to this plan year. Separate with commas.'),
         '#default_value' => $plan_year->getSections(),

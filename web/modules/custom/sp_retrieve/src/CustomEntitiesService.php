@@ -199,4 +199,57 @@ class CustomEntitiesService {
     return $return;
   }
 
+  /**
+   * Retrieve all the plan years that each plan year is copying from.
+   *
+   * @return array
+   *   An array keyed by plan year with a value of all plan years it is copying
+   *   from.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function allPlanYearCopyFrom() {
+    $return = [];
+    /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
+    foreach ($this->all(PlanYearEntity::ENTITY, 'entities') as $plan_year) {
+      $plan_year[$plan_year->id()] = [];
+      foreach ($plan_year->getCopyFromPlanYearSectionArray() as $copy_from_plan_year_id) {
+        // Since the sections can be copying from the same year, don't add the
+        // same year twice.
+        if (!in_array($copy_from_plan_year_id, $return[$plan_year->id()])) {
+          $return[$plan_year->id()][] = $copy_from_plan_year_id;
+        }
+      }
+    }
+    return $return;
+  }
+
+  /**
+   * Retrieve all the plan years that each plan year is copying to.
+   *
+   * This is all plan years that each plan year is a source to as opposed to the
+   * above which is all plan years that a plan year is a source from.
+   *
+   * @return array
+   *   An array keyed by plan year with a value of all plan years it is copying
+   *   to.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function allPlanYearCopyTo() {
+    $return = [];
+    /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
+    foreach ($this->all(PlanYearEntity::ENTITY, 'entities') as $plan_year) {
+      foreach ($plan_year->getCopyFromPlanYearSectionArray() as $copy_from_plan_year_id) {
+        // A plan year can be being copied to by the same year multiple times.
+        if (!in_array($plan_year->id(), $return[$copy_from_plan_year_id])) {
+          $return[$copy_from_plan_year_id][] = $plan_year->id();
+        }
+      }
+    }
+    return $return;
+  }
+
 }

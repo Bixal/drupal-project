@@ -3,3 +3,7 @@ type: module
 description: 'Alter or create fields on the site.'
 core: 8.x
 package: 'Custom'
+dependencies:
+  - drupal:sp_create
+  - drupal:sp_plan_year
+  - drupal:sp_retrieve

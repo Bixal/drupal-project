@@ -3,3 +3,7 @@ type: module
 description: 'Creates the Plan Year entity'
 core: 8.x
 package: 'Custom'
+dependencies:
+  - drupal:sp_create
+  - drupal:sp_retrieve
+  - drupal:sp_section

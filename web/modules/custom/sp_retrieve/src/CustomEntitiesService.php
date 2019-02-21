@@ -144,9 +144,30 @@ class CustomEntitiesService {
     $return = [];
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     foreach ($this->all(PlanYearEntity::ENTITY, 'entities') as $plan_year) {
-      foreach ($plan_year->getSections() as $section) {
-        $return[$plan_year->id()][$section->id()] = $section->label();
+      $sections = $this->allSectionsInPlanYear($plan_year);
+      if (!empty($sections)) {
+        $return[$plan_year->id()] = $sections;
       }
+    }
+    return $return;
+  }
+
+  /**
+   * Retrieve an array of sections in a plan year keyed by section ID.
+   *
+   * @param \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year
+   *   A plan year entity.
+   *
+   * @return array
+   *   An array of sections in a plan year keyed by section ID.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function allSectionsInPlanYear(PlanYearEntity $plan_year) {
+    $return = [];
+    foreach ($plan_year->getSections() as $section) {
+      $return[$section->id()] = $section->label();
     }
     return $return;
   }

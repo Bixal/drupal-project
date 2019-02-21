@@ -265,16 +265,10 @@ class UpdatePlanYearContentService {
   }
 
   /**
-   * Remove all state plan year section nodes in this plan year and section ID.
+   * Copy a state plan year content value from one year to another.
    *
-   * This will not copy if:
-   *   * The given nodes don't exist.
-   *   * The plan years of both nodes match.
-   *   * The field that determines that the contents are the 'same' just from
-   *      different years does not match.
-   *   * Any of the given nodes are orphans and are to be deleted.
-   *   * There is no value to copy from.
-   *   * There is already a value saved to.
+   * Make sure to run NodeService::canCopyStatePlanYearContent() before calling
+   * this method.
    *
    * @param string $from_state_plan_year_content_nid
    *   A state plan year content node ID to copy the value from.
@@ -289,41 +283,12 @@ class UpdatePlanYearContentService {
   public function copyStatePlanYearContent($from_state_plan_year_content_nid, $to_state_plan_year_content_nid) {
     /** @var \Drupal\node\Entity\Node $from */
     $from = $this->customEntitiesRetrieval->single('node', $from_state_plan_year_content_nid);
-    if (NULL === $from) {
-      throw new \Exception(sprintf('The "from" state plan year content node did not exist (%d)', $from_state_plan_year_content_nid));
-    }
     /** @var \Drupal\node\Entity\Node $to */
     $to = $this->customEntitiesRetrieval->single('node', $to_state_plan_year_content_nid);
-    if (NULL === $to) {
-      throw new \Exception(sprintf('The "to" state plan year content node did not exist (%d)', $to_state_plan_year_content_nid));
-    }
     $plan_year_id_from = PlanYearInfo::getPlanYearIdFromEntity($from);
     $plan_year_id_to = PlanYearInfo::getPlanYearIdFromEntity($to);
-    if ($plan_year_id_from === $plan_year_id_to) {
-      throw new \Exception(sprintf('The "to" (%d) and "from" (%d) plan year IDs cannot copy from the same year (%s).', $to->id(), $from->id(), PlanYearInfo::getPlanYearIdFromEntity($to)));
-    }
-    if ($from->get('field_field_unique_id_reference')->getString() !== $to->get('field_field_unique_id_reference')->getString()) {
-      throw new \Exception(sprintf('The "to" (%d) and "from" (%d) state plan year content nodes are not descended from the same term in a different year.', $to->id(), $from->id()));
-    }
-    $orphans = $this->nodeService->getOrphansStatePlanYearContent();
-    // If either the from or to are orphans (to be deleted) do not copy their
-    // value.
-    if (in_array($to->id(), $orphans, TRUE)) {
-      return;
-    }
-    if (in_array($from->id(), $orphans, TRUE)) {
-      return;
-    }
     $from_value_field = PlanYearInfo::getStatePlanYearContentValueField($from);
-    // There is nothing to copy from, no answer was given.
-    if ($from_value_field->isEmpty()) {
-      return;
-    }
     $to_value_field = PlanYearInfo::getStatePlanYearContentValueField($to);
-    // The state already answered this question, do not overwrite.
-    if (!$to_value_field->isEmpty()) {
-      return;
-    }
     // Copy the value from the from year to the to year and save.
     $to_value_field->setValue($from_value_field->getValue());
     $this->nodeSave($to, FALSE, sprintf('Answer copied from plan year %s to %s.', $plan_year_id_from, $plan_year_id_to));

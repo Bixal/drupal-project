@@ -4,5 +4,6 @@ description: 'Retrieve entities'
 core: 8.x
 package: 'Custom'
 dependencies:
+  - sp_create
   - sp_plan_year
-  - sp_section
+  - sp_expire

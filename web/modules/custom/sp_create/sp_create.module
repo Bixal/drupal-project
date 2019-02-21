@@ -9,6 +9,11 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\entity_clone\EntityClone\Config\ConfigWithFieldEntityClone;
 use Drupal\entity_clone\EntityClone\Config\ConfigEntityCloneFormBase;
 use Drupal\sp_plan_year\Form\PlanYearOverview;
+use Drupal\Core\Entity\TranslatableInterface;
+use Drupal\content_moderation\Entity\ContentModerationState;
+use Drupal\node\Entity\Node;
+use Drupal\sp_create\PlanYearInfo;
+use Drupal\sp_expire\ContentService;
 
 /**
  * Implements hook_help().
@@ -59,5 +64,87 @@ function sp_create_page_top(array &$page_top) {
   }
   if (\Drupal::service('router.admin_context')->isAdminRoute()) {
     $page_top['state_plan_overview'] = \Drupal::formBuilder()->getForm(PlanYearOverview::class);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function sp_create_content_moderation_state_insert($entity) {
+  sp_create_moderation_state_was_changed($entity);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function sp_create_content_moderation_state_update($entity) {
+  sp_create_moderation_state_was_changed($entity);
+}
+
+/**
+ * Respond to changes in moderation states.
+ *
+ * @param \Drupal\content_moderation\Entity\ContentModerationState $entity
+ *   A content moderation state entity.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ *
+ * @see https://www.drupal.org/project/drupal/issues/2873287#comment-12619624
+ */
+function sp_create_moderation_state_was_changed(ContentModerationState $entity) {
+  $language = $entity->language()->getId();
+  $moderated_entity = \Drupal::entityTypeManager()
+    ->getStorage($entity->content_entity_type_id->value)
+    ->loadRevision($entity->content_entity_revision_id->value);
+  if ($moderated_entity instanceof TranslatableInterface) {
+    $moderated_entity = $moderated_entity->getTranslation($language);
+  }
+
+  if (!$entity->getLoadedRevisionId()) {
+    $original_state = FALSE;
+  }
+  else {
+    $original_content_moderation_state = \Drupal::entityTypeManager()
+      ->getStorage($entity->getEntityTypeId())
+      ->loadRevision($entity->getLoadedRevisionId());
+    if (!$entity->isDefaultTranslation() && $original_content_moderation_state->hasTranslation($language)) {
+      $original_content_moderation_state = $original_content_moderation_state->getTranslation($language);
+    }
+    $original_state = $original_content_moderation_state->moderation_state->value;
+  }
+  $new_state = $entity->moderation_state->value;
+  $workflow = $entity->workflow->target_id;
+  // When a state plan year is started, move all it's children content to
+  // started as well.
+  if (
+    $moderated_entity instanceof Node &&
+    $moderated_entity->getType() === PlanYearInfo::SPY_BUNDLE &&
+    $original_state === ContentService::MODERATION_STATE_NEW &&
+    $new_state === ContentService::MODERATION_STATE_DRAFT &&
+    $workflow === ContentService::WORKFLOW_ID_STATE_PLAN_YEAR
+  ) {
+    $revision_log_message = $moderated_entity->getRevisionLogMessage();
+    if (empty($revision_log_message)) {
+      $revision_log_message = 'Starting Plan Year';
+    }
+    /** @var \Drupal\sp_retrieve\NodeService $node_service */
+    $node_service = \Drupal::getContainer()->get('sp_retrieve.node');
+    /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content_service */
+    $update_plan_year_content_service = \Drupal::getContainer()->get('sp_create.update_plan_year_content');
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+    foreach ($node_service->getStatePlanYearSectionsByStatePlanYearAndSection($moderated_entity->id()) as $state_plan_year_section_nid) {
+      /** @var \Drupal\node\Entity\Node $state_plan_year_section */
+      $state_plan_year_section = $node_storage->load($state_plan_year_section_nid);
+      $state_plan_year_section->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
+      $update_plan_year_content_service->nodeSave($state_plan_year_section, FALSE, $revision_log_message);
+      foreach ($node_service->getStatePlanYearContentByStatePlanYearSection($state_plan_year_section_nid) as $state_plan_year_content_nid) {
+        /** @var \Drupal\node\Entity\Node $state_plan_year_content */
+        $state_plan_year_content = $node_storage->load($state_plan_year_content_nid);
+        $state_plan_year_content->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
+        $update_plan_year_content_service->nodeSave($state_plan_year_content, FALSE, $revision_log_message);
+      }
+    }
   }
 }

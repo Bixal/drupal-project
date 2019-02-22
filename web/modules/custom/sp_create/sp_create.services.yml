@@ -4,7 +4,7 @@ services:
     arguments: ['@entity_type.manager', '@logger.sp_create', '@sp_create.clone', '@sp_retrieve.custom_entities', '@sp_retrieve.taxonomy', '@sp_retrieve.node', '@sp_create.update_plan_year_content']
   sp_create.update_plan_year_content:
     class: Drupal\sp_create\UpdatePlanYearContentService
-    arguments: ['@entity_type.manager', '@logger.sp_create', '@sp_create.clone', '@sp_retrieve.custom_entities', '@sp_retrieve.taxonomy', '@sp_retrieve.node', '@database']
+    arguments: ['@entity_type.manager', '@logger.sp_create', '@sp_create.clone', '@sp_retrieve.custom_entities', '@sp_retrieve.taxonomy', '@sp_retrieve.node', '@database', '@current_user']
   sp_create.state_plan:
     class: Drupal\sp_create\CreateStatePlanService
     arguments: ['@entity_type.manager', '@logger.sp_create']

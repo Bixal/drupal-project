@@ -788,8 +788,6 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
             // Removing sections already saved to this plan year.
             case 'removed_section_ids':
               foreach ($change as $section_id) {
-                // Remove section and plan year copied from plan year.
-                $batch['operations'][] = $this->batchRemoveSectionMeta($section_id);
                 // Remove state plan year content tagged with terms from this
                 // vocab.
                 $batch['operations'][] = $this->batchRemoveStatePlanYearContentBySection($section_id);
@@ -797,6 +795,8 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
                 $batch['operations'][] = $this->batchRemoveStatePlanYearSection($section_id);
                 // Remove terms from section vocabulary.
                 $batch['operations'][] = $this->batchRemoveSectionHierarchy($section_id);
+                // Remove section and plan year copied from plan year.
+                $batch['operations'][] = $this->batchRemoveSectionMeta($section_id);
                 // Remove section vocabulary.
                 $batch['operations'][] = $this->batchRemoveSection($section_id);
               }

@@ -50,7 +50,27 @@ class ContentService {
    *
    * @var string
    */
-  public  const MODERATION_STATE_REVISION_CURRENT = 'current';
+  public const MODERATION_STATE_REVISION_CURRENT = 'current';
+
+  /**
+   * The workflow state for a brand new piece of content.
+   *
+   * Applies for workflows: state_plan_year, state_plan_year_section, or
+   * state_plan_content.
+   *
+   * @var string
+   */
+  public const MODERATION_STATE_NEW = 'new_not_available';
+
+  /**
+   * The workflow state for a piece of content ready for editorial.
+   *
+   * Applies for workflows: state_plans_year, state_plan_year,
+   * state_plan_year_section, or state_plan_content.
+   *
+   * @var string
+   */
+  public const MODERATION_STATE_DRAFT = 'draft';
 
   /**
    * Entity type manager.

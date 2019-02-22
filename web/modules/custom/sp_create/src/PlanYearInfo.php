@@ -161,6 +161,8 @@ class PlanYearInfo {
   /**
    * Get the plan year ID that the entity belongs to.
    *
+   * Recursion is used in this method to follow the chain of references.
+   *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   A term or node.
    *
@@ -178,26 +180,27 @@ class PlanYearInfo {
     elseif ($entity instanceof Node) {
       switch ($entity->bundle()) {
         case self::SPYS_BUNDLE:
-          if (empty($entity->field_state_plan_year)) {
+          $field = $entity->get('field_state_plan_year');
+          if ($field->isEmpty()) {
             break;
           }
-          $plan_year_id = $entity->field_state_plan_year->entity->field_state_plans_year->entity->field_plan_year->entity->id();
-          break;
+          return self::getPlanYearIdFromEntity($field->entity);
 
         case self::SPY_BUNDLE:
-          if (empty($entity->field_state_plans_year)) {
+          $field = $entity->get('field_state_plans_year');
+          if ($field->isEmpty()) {
             break;
           }
-          $plan_year_id = $entity->field_state_plans_year->entity->field_plan_year->entity->id();
-          break;
+          return self::getPlanYearIdFromEntity($field->entity);
 
         case self::SPZY_BUNDLE:
         case self::SPYC_TEXT_BUNDLE:
         case self::SPYC_BOOL_BUNDLE:
-          if (empty($entity->field_plan_year)) {
+          $field = $entity->get('field_plan_year');
+          if ($field->isEmpty()) {
             break;
           }
-          $plan_year_id = $entity->field_plan_year->entity->id();
+          $plan_year_id = $field->entity->id();
           break;
 
       }
@@ -207,6 +210,8 @@ class PlanYearInfo {
 
   /**
    * Get the state plan year node ID that the entity belongs to.
+   *
+   * Recursion is used in this method to follow the chain of references.
    *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   A node.
@@ -219,22 +224,22 @@ class PlanYearInfo {
     if ($entity instanceof Node) {
       switch ($entity->bundle()) {
         case self::SPYS_BUNDLE:
-          if (empty($entity->field_state_plan_year)) {
+          $field = $entity->get('field_state_plan_year');
+          if ($field->isEmpty()) {
             break;
           }
-          $state_plan_year_nid = $entity->field_state_plan_year->entity->id();
-          break;
-
-        case self::SPY_BUNDLE:
-          $state_plan_year_nid = $entity->id();
-          break;
+          return self::getStatePlanYearNidFromEntity($field->entity);
 
         case self::SPYC_TEXT_BUNDLE:
         case self::SPYC_BOOL_BUNDLE:
-          if (empty($entity->field_state_plan_year_section)) {
+          $field = $entity->get('field_state_plan_year_section');
+          if ($field->isEmpty()) {
             break;
           }
-          $state_plan_year_nid = $entity->field_state_plan_year_section->entity->field_state_plan_year->entity->id();
+          return self::getStatePlanYearNidFromEntity($field->entity);
+
+        case self::SPY_BUNDLE:
+          $state_plan_year_nid = $entity->id();
           break;
 
       }

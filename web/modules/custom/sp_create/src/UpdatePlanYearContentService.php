@@ -5,12 +5,14 @@ namespace Drupal\sp_create;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\group\Entity\GroupContent;
 use Drupal\node\Entity\Node;
+use Drupal\sp_expire\ContentService;
 use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
 use Drupal\user\Entity\User;
 use Psr\Log\LoggerInterface;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Drupal\Core\Database\Connection as Database;
+use Drupal\Core\Session\AccountProxy;
 
 /**
  * Class UpdatePlanYearContentService.
@@ -70,6 +72,13 @@ class UpdatePlanYearContentService {
   protected $database;
 
   /**
+   * The current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
    * Constructs a new CreateStatePlanService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -86,8 +95,10 @@ class UpdatePlanYearContentService {
    *   The node retrieval service.
    * @param \Drupal\Core\Database\Connection $database
    *   The database connection.
+   * @param \Drupal\Core\Session\AccountProxy $current_user
+   *   The current user.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, CloneService $clone, CustomEntitiesService $custom_entities_retrieval, TaxonomyService $taxonomy_service, NodeService $node_service, Database $database) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, CloneService $clone, CustomEntitiesService $custom_entities_retrieval, TaxonomyService $taxonomy_service, NodeService $node_service, Database $database, AccountProxy $current_user) {
     $this->entityTypeManager = $entity_type_manager;
     $this->logger = $logger;
     $this->clone = $clone;
@@ -95,6 +106,7 @@ class UpdatePlanYearContentService {
     $this->taxonomyService = $taxonomy_service;
     $this->nodeService = $node_service;
     $this->database = $database;
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -381,9 +393,28 @@ class UpdatePlanYearContentService {
    *
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  protected function nodeSave(Node $node, $new = TRUE, $revisionMessage = 'Content created by automated process.') {
-    $author = User::load(1);
-    $node->setOwner($author);
+  public function nodeSave(Node $node, $new = TRUE, $revisionMessage = 'Content created by automated process.') {
+    if (TRUE === $new) {
+      // These node types start in 'New, not available' so that admins can turn
+      // on plans for editorial when they are ready.
+      switch ($node->getType()) {
+        case PlanYearInfo::SPY_BUNDLE:
+        case PlanYearInfo::SPYS_BUNDLE:
+        case PlanYearInfo::SPYC_TEXT_BUNDLE:
+        case PlanYearInfo::SPYC_BOOL_BUNDLE:
+          $node->set('moderation_state', ContentService::MODERATION_STATE_NEW);
+          break;
+
+      }
+    }
+    // Owner should ALWAYS be admin. Grab the revision user as the currently
+    // logged in user if available. It won't be in CLI.
+    $owner_user = $revision_user = User::load(1);
+    if (!$this->currentUser->isAnonymous()) {
+      $revision_user = User::load($this->currentUser->id());
+    }
+    $node->setOwner($owner_user);
+    $node->setRevisionUser($revision_user);
     $node->enforceIsNew($new);
     $node->setRevisionLogMessage($revisionMessage);
     $node->setRevisionTranslationAffected(TRUE);

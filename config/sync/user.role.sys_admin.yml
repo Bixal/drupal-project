@@ -12,6 +12,7 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add plan year'
+  - 'copy state plan year answers'
   - 'delete plan year'
   - 'edit plan year content'
   - 'list plan year'

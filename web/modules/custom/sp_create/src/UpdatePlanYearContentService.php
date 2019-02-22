@@ -12,6 +12,7 @@ use Drupal\user\Entity\User;
 use Psr\Log\LoggerInterface;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Drupal\Core\Database\Connection as Database;
+use Drupal\Core\Session\AccountProxy;
 
 /**
  * Class UpdatePlanYearContentService.
@@ -71,6 +72,13 @@ class UpdatePlanYearContentService {
   protected $database;
 
   /**
+   * The current user.
+   *
+   * @var \Drupal\Core\Session\AccountInterface
+   */
+  protected $currentUser;
+
+  /**
    * Constructs a new CreateStatePlanService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
@@ -87,8 +95,10 @@ class UpdatePlanYearContentService {
    *   The node retrieval service.
    * @param \Drupal\Core\Database\Connection $database
    *   The database connection.
+   * @param \Drupal\Core\Session\AccountProxy $current_user
+   *   The current user.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, CloneService $clone, CustomEntitiesService $custom_entities_retrieval, TaxonomyService $taxonomy_service, NodeService $node_service, Database $database) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, LoggerInterface $logger, CloneService $clone, CustomEntitiesService $custom_entities_retrieval, TaxonomyService $taxonomy_service, NodeService $node_service, Database $database, AccountProxy $current_user) {
     $this->entityTypeManager = $entity_type_manager;
     $this->logger = $logger;
     $this->clone = $clone;
@@ -96,6 +106,7 @@ class UpdatePlanYearContentService {
     $this->taxonomyService = $taxonomy_service;
     $this->nodeService = $node_service;
     $this->database = $database;
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -396,8 +407,14 @@ class UpdatePlanYearContentService {
 
       }
     }
-    $author = User::load(1);
-    $node->setOwner($author);
+    // Owner should ALWAYS be admin. Grab the revision user as the currently
+    // logged in user if available. It won't be in CLI.
+    $owner_user = $revision_user = User::load(1);
+    if (!$this->currentUser->isAnonymous()) {
+      $revision_user = User::load($this->currentUser->id());
+    }
+    $node->setOwner($owner_user);
+    $node->setRevisionUser($revision_user);
     $node->enforceIsNew($new);
     $node->setRevisionLogMessage($revisionMessage);
     $node->setRevisionTranslationAffected(TRUE);

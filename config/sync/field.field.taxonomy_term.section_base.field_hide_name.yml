@@ -1,0 +1,23 @@
+uuid: a0a83fc8-9076-4439-9842-c8790d4a2e0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_name
+    - taxonomy.vocabulary.section_base
+id: taxonomy_term.section_base.field_hide_name
+field_name: field_hide_name
+entity_type: taxonomy_term
+bundle: section_base
+label: 'Hide Name'
+description: 'Hide the name and hierarchical heading for this section item when displayed. All siblings above it will also be shown as context when states input the answer.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

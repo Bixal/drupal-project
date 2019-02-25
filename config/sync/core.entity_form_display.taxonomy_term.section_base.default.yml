@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.section_base.field_cross_year_uuid
+    - field.field.taxonomy_term.section_base.field_hide_hierarchical_heading
+    - field.field.taxonomy_term.section_base.field_hide_name
     - field.field.taxonomy_term.section_base.field_input_from_state
     - field.field.taxonomy_term.section_base.field_shown_on_toc
     - taxonomy.vocabulary.section_base
@@ -25,18 +27,32 @@ content:
     third_party_settings: {  }
   field_cross_year_uuid:
     type: field_uuid_additional_default_widget
-    weight: 4
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_input_from_state:
+  field_hide_hierarchical_heading:
     weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_hide_name:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_input_from_state:
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: field_section_entry_default_widget
     region: content
   field_shown_on_toc:
-    weight: 2
+    weight: 5
     settings:
       display_label: true
     third_party_settings: {  }

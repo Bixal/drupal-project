@@ -6,5 +6,5 @@ Feature: Demo feature
 
   Scenario: Visit the homepage
     Given I visit "/"
-    Then I should see "Welcome to Drupal 8"
+    Then I should see "Welcome to State Plan"
 

@@ -44,7 +44,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_field_unique_id_reference: true
   field_plan_year: true
   field_section: true
   field_section_year_term: true

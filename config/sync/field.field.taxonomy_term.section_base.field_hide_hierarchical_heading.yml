@@ -1,0 +1,23 @@
+uuid: 5b6cda13-8630-49d1-aff1-6be1696186fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hide_hierarchical_heading
+    - taxonomy.vocabulary.section_base
+id: taxonomy_term.section_base.field_hide_hierarchical_heading
+field_name: field_hide_hierarchical_heading
+entity_type: taxonomy_term
+bundle: section_base
+label: 'Hide Hierarchical Heading'
+description: 'When a new section item is added, it would normally add a new roman numeral, letter, or, digit depending on its place in the hierarchy. With this selected, when the term is displayed it will not display.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

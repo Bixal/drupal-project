@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.section_base.field_cross_year_uuid
+    - field.field.taxonomy_term.section_base.field_hide_hierarchical_heading
+    - field.field.taxonomy_term.section_base.field_hide_name
     - field.field.taxonomy_term.section_base.field_input_from_state
     - field.field.taxonomy_term.section_base.field_shown_on_toc
     - taxonomy.vocabulary.section_base
@@ -23,5 +25,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_cross_year_uuid: true
+  field_hide_hierarchical_heading: true
+  field_hide_name: true
   field_input_from_state: true
   field_shown_on_toc: true

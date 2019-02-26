@@ -2,9 +2,6 @@
 
 namespace Drupal\sp_retrieve\Plugin\views\field;
 
-use Drupal\Core\Link;
-use Drupal\sp_create\PlanYearInfo;
-use Drupal\sp_plan_year\Entity\PlanYearEntity;
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\sp_retrieve\NodeService;
@@ -94,16 +91,9 @@ class CopyAnswers extends FieldPluginBase {
   public function render(ResultRow $values) {
     /** @var \Drupal\node\Entity\Node $node */
     $state_plan_year = $values->_entity;
-    if ($state_plan_year->bundle() !== PlanYearInfo::SPY_BUNDLE) {
-      return $this->t('Field only supported on state plan year nodes.');
-    }
-    $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($state_plan_year);
-    if (!empty($this->nodeService->getOrphansStatePlanYearContent()) || !empty($this->nodeService->getMissingPlanYearContent($plan_year_id))) {
-      return Link::createFromRoute($this->t('Please update content before continuing'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year_id])->toString();
-    }
-    $copiable_answers_by_section = $this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year->id());
-    if (empty($copiable_answers_by_section)) {
-      return $this->t('No eligible answers to copy a previous plan year');
+    $summary = $this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYearSummary($state_plan_year->id());
+    if (empty($summary['count'])) {
+      return $summary['message'];
     }
     $output['copy'] = [
       '#type' => 'table',
@@ -115,7 +105,7 @@ class CopyAnswers extends FieldPluginBase {
       ],
     ];
 
-    foreach ($copiable_answers_by_section as $section_id => $copiable_answers_section) {
+    foreach ($this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year->id()) as $section_id => $copiable_answers_section) {
       $state_plan_year_section = $this->customEntitiesRetrieval->single('node', $copiable_answers_section['state_plan_year_section_from']);
       $plan_year_label = $state_plan_year_section->get('field_state_plan_year')->entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label();
       $section_label = $state_plan_year_section->get('field_section')->entity->label();

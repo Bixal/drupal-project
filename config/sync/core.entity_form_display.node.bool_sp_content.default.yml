@@ -10,6 +10,8 @@ dependencies:
     - field.field.node.bool_sp_content.field_state_plan_year_section
     - field.field.node.bool_sp_content.field_yes_or_no
     - node.type.bool_sp_content
+  module:
+    - content_moderation
 id: node.bool_sp_content.default
 targetEntityType: node
 bundle: bool_sp_content
@@ -66,12 +68,10 @@ content:
     type: options_buttons
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 6
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

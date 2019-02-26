@@ -14,7 +14,10 @@ default:
   extensions:
     Behat\MinkExtension:
       goutte: ~
-      selenium2: ~
+      browser_name: chrome
+      selenium2:
+        wd_host: http://browser:4444/wd/hub
+        capabilities: { "browser": "chrome", "version": "*" }
       base_url: 'http://nginx'
     Drupal\DrupalExtension:
       blackbox: ~

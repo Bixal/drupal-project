@@ -5,6 +5,8 @@ namespace Drupal\sp_retrieve;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\group\Entity\GroupContent;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
@@ -15,6 +17,8 @@ use Drupal\sp_plan_year\Entity\PlanYearEntity;
  * Class CustomEntitiesService.
  */
 class NodeService {
+
+  use StringTranslationTrait;
 
   /**
    * Entity type manager.
@@ -984,6 +988,53 @@ class NodeService {
     }
     $this->cache->set($cid, $state_plan_year_copy_to, Cache::PERMANENT, $this->getMissingContentCacheTags($plan_year_id));
     return $state_plan_year_copy_to;
+  }
+
+  /**
+   * Retrieve count of the total state plan year content to copy and a message.
+   *
+   * @param string $state_plan_year_nid
+   *   A state plan year node ID.
+   *
+   * @return array
+   *   'Count' will be greater than 0 if there is plan year content to copy and
+   *   'message' will hold the corresponding supported or unsupported message.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public function getStatePlanYearContentWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid) {
+    $return = [
+      'count' => 0,
+      'message' => '',
+    ];
+    /** @var \Drupal\node\Entity\Node $state_plan_year */
+    $state_plan_year = $this->entityTypeManager->getStorage('node')->load($state_plan_year_nid);
+    if (PlanYearInfo::SPY_BUNDLE !== $state_plan_year->getType()) {
+      $return['message'] = $this->t('%title is not a a state plan year, %type are not supported.', [
+        '%title' => $state_plan_year->getTitle(),
+        '%type' => $state_plan_year->getType(),
+      ]);
+      return $return;
+    }
+    $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($state_plan_year);
+    if (!empty($this->getOrphansStatePlanYearContent()) || !empty($this->getMissingPlanYearContent($plan_year_id))) {
+      $return['message'] = Link::createFromRoute($this->t('%title must update content before copying answers.', ['%title' => $state_plan_year->getTitle()]), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year_id])
+        ->toString();
+    }
+    $copiable_answers_by_section = $this->getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year->id());
+    if (empty($copiable_answers_by_section)) {
+      $return['message'] = $this->t('%title has no eligible answers to copy from a previous plan year.', ['%title' => $state_plan_year->getTitle()]);
+      return $return;
+    }
+    $copiable_answers_total = 0;
+    foreach (array_column($copiable_answers_by_section, 'state_plan_year_content') as $state_plan_year_content) {
+      $copiable_answers_total += count($state_plan_year_content);
+    };
+    $return['message'] = $this->formatPlural($copiable_answers_total, '%title can copy %count answer from a previous plan year.', '%title can copy %count answers from a previous plan year.', ['%count' => $copiable_answers_total, '%title' => $state_plan_year->getTitle()]);
+    $return['count'] = $copiable_answers_total;
+    return $return;
   }
 
   /**

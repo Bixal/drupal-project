@@ -151,7 +151,12 @@ class PlanYearInfo {
    *   string.
    */
   public static function getPlanYearIdAndSectionIdFromVid($vid) {
-    list($prefix, $plan_year_id, $section_id) = explode('_', $vid);
+    $array = explode('_', $vid);
+    // Ensure there are 3 portions separated by '_'.
+    if (count($array) !== 3) {
+      return FALSE;
+    }
+    list($prefix, $plan_year_id, $section_id) = $array;
     if ('section' === $prefix && 4 === strlen($plan_year_id) && self::SECTION_ID_LENGTH === strlen($section_id)) {
       return ['plan_year_id' => $plan_year_id, 'section_id' => $section_id];
     }

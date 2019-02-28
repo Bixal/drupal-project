@@ -79,6 +79,11 @@ function sp_access_page_top(array &$page_top) {
       ['@drupal_roles' => !empty($drupal_roles) ? implode(', ', $drupal_roles) : 'None']
     ), $messenger::TYPE_STATUS
   );
+  if (\Drupal::service('module_handler')->moduleExists('admin_menu_search') && $user->hasPermission('access toolbar') && !in_array('administrator', $role_ids)) {
+    $messenger->addWarning(
+      t('You need the role "Administrator" in order for the admin search menu to appear, "Access Toolbar" is not enough.')
+    );
+  }
 }
 
 /**

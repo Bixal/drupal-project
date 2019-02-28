@@ -265,8 +265,28 @@ class NodeService {
       return ['missing_content_' . $plan_year_id];
     }
     else {
+      // This is missing content cache that isn't specific to any year.
       return ['missing_content_all'];
     }
+  }
+
+  /**
+   * Create cache tags for all 'missing' content retrieval.
+   *
+   * @return array
+   *   The cache tags.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getMissingContentAllCacheTags() {
+    $plan_year_ids = $this->customEntitiesRetrieval->all(PlanYearEntity::ENTITY, 'ids');
+    // Get the 'all'.
+    $cache_tags = $this->getMissingContentCacheTags();
+    foreach ($plan_year_ids as $plan_year_id) {
+      $cache_tags = array_merge($cache_tags, $this->getMissingContentCacheTags($plan_year_id));
+    }
+    return array_filter($cache_tags);
   }
 
   /**
@@ -282,6 +302,25 @@ class NodeService {
    */
   public function getCopyAnswersCacheTags($state_plan_year_nid) {
     return ['copy_answers_' . $state_plan_year_nid];
+  }
+
+  /**
+   * Create cache tags for all copying answers retrieval.
+   *
+   * @return array
+   *   The cache tags.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getCopyAnswersAllCacheTags() {
+    $cache_tags = [];
+    foreach ($this->customEntitiesRetrieval->all(PlanYearEntity::ENTITY, 'ids') as $plan_year_id) {
+      foreach ($this->getStatePlanYearsByPlansYear($plan_year_id) as $state_plan_year_nid) {
+        $cache_tags = array_merge($cache_tags, $this->getCopyAnswersCacheTags($state_plan_year_nid));
+      }
+    }
+    return array_filter($cache_tags);
   }
 
   /**
@@ -456,21 +495,20 @@ class NodeService {
   }
 
   /**
-   * Find all pieces of state plan content that are referenced by section terms.
+   * Find all pieces of state plan answers that are referenced by section terms.
    *
-   * If a term is updated and the type of state plan content is changed or
+   * If a term is updated and the type of state plan answer is changed or
    * removed, this will be used to find that "orphan" content that needs to
    * go away.
    *
    * @return array
-   *   An array state plan year content node IDs.
+   *   An array state plan year answer node IDs.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    * @throws \Exception
    */
-  public function getOrphansStatePlanYearContent() {
+  public function getOrphansStatePlanYearAnswers() {
     $cid = __METHOD__;
     $cache = $this->cache->get($cid);
     if (FALSE !== $cache) {
@@ -479,19 +517,19 @@ class NodeService {
     $node_storage = $this->entityTypeManager->getStorage('node');
     $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
     $orphans = [];
-    foreach (PlanYearInfo::getSpycEntityBundles('node') as $state_plan_year_content_type) {
+    foreach (PlanYearInfo::getSpyaNodeBundles() as $state_plan_year_node_bundle) {
       foreach ($node_storage->getQuery()
-        ->condition('type', $state_plan_year_content_type)
+        ->condition('type', $state_plan_year_node_bundle)
         ->accessCheck(FALSE)
-        ->execute() as $state_plan_year_content_nid) {
+        ->execute() as $state_plan_year_answer_nid) {
         /** @var \Drupal\node\Entity\Node $state_plan_year_content */
-        $state_plan_year_content = $node_storage->load($state_plan_year_content_nid);
+        $state_plan_year_answer = $node_storage->load($state_plan_year_answer_nid);
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $section_year_term_field */
-        $section_year_term_field = $state_plan_year_content->get('field_section_year_term')->get(0);
+        $section_year_term_field = $state_plan_year_answer->get('field_section_year_term')->get(0);
         // If there is no term referenced, this piece of content is in a bad
         // state.
         if (empty($section_year_term_field)) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         $section_year_term_tid = $section_year_term_field->getValue()['target_id'];
@@ -499,7 +537,7 @@ class NodeService {
         $section_year_term = $term_storage->load($section_year_term_tid);
         // Make sure the referenced term still exists.
         if (NULL === $section_year_term) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         $state_plan_year_content_info = $this->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
@@ -509,13 +547,13 @@ class NodeService {
         // If there is no plan year referenced, this piece of content is in a
         // bad state.
         if ($plan_year_field->isEmpty()) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         $plan_year_id = $plan_year_field->getString();
         // The plan year from the node and term don't line up.
         if ($state_plan_year_content_info['plan_year_id'] !== $plan_year_id) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $section_field */
@@ -523,13 +561,13 @@ class NodeService {
         // If there is no section referenced, this piece of content is in a
         // bad state.
         if ($section_field->isEmpty()) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         $section_id = $section_field->getString();
         // The section from the node and term don't line up.
         if ($state_plan_year_content_info['section_id'] !== $section_id) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         /** @var \Drupal\Core\Field\FieldItemList $field_unique_id_reference_field */
@@ -537,28 +575,25 @@ class NodeService {
         // If there is no field unique ID referenced, this piece of content is
         // in a bad state.
         if ($field_unique_id_reference_field->isEmpty()) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         $field_unique_id_reference = $field_unique_id_reference_field->getString();
         // The section from the node and term don't line up.
         if (empty($state_plan_year_content_info['content'][$field_unique_id_reference])) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
         // Odds are that this referenced term changed from a 'node' to be shown
         // to states to a 'section' placeholder.
         if (!empty($state_plan_year_content_info['content'][$field_unique_id_reference]['section'])) {
-          $orphans[] = $state_plan_year_content_nid;
+          $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
-        if ($state_plan_year_content_info['content'][$field_unique_id_reference]['content_type'] !== 'node') {
-          throw new \Exception('Only nodes can be referenced at this time.');
-        }
-        // The content type bundle to be created in the term does not match
+        // The node type to be created if the term does not match
         // the node type created.
-        if ($state_plan_year_content_type !== $state_plan_year_content_info['content'][$field_unique_id_reference]['bundle']) {
-          $orphans[] = $state_plan_year_content_nid;
+        if ($state_plan_year_node_bundle !== $state_plan_year_content_info['content'][$field_unique_id_reference]['node_bundle']) {
+          $orphans[] = $state_plan_year_answer_nid;
         }
       }
     };
@@ -589,9 +624,6 @@ class NodeService {
       /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
       foreach ($section_year_term->get('field_input_from_state') as $item) {
         $value = $item->getValue();
-        // Separate the shared data of entity type bundle into content type and
-        // bundle keys.
-        list($value['content_type'], $value['bundle']) = explode('-', $value['entity_type_bundle']);
         $return['content'][$value['term_field_uuid']] = $value;
 
       }
@@ -600,29 +632,29 @@ class NodeService {
   }
 
   /**
-   * Retrieve a single state plan year content.
+   * Retrieve a single state plan year answer.
    *
    * @param string $node_type
    *   The node type.
    * @param string $field_unique_id_reference
    *   The UUID that uniquiely identifies a term field between years.
    * @param string $plan_year_id
-   *   The plan year ID that this content belongs to.
+   *   The plan year ID that this answer belongs to.
    * @param string $section_id
-   *   The section ID that this content belongs to.
+   *   The section ID that this answer belongs to.
    * @param string $section_year_term_tid
-   *   The term that this piece of content is based on.
+   *   The term that this piece of answer is based on.
    * @param string $state_plan_year_section_nid
-   *   The state plan year section NID that this piece of content belongs to.
+   *   The state plan year section NID that this piece of answer belongs to.
    *
    * @return string
-   *   A node ID or empty string if no matching state plan year content is
+   *   A node ID or empty string if no matching state plan year answer is
    *   found.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid) {
+  public function getStatePlanYearAnswer($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid) {
     $query = $this->entityTypeManager->getStorage('node')->getQuery();
     return current($query->condition('type', $node_type)
       ->condition('field_field_unique_id_reference', $field_unique_id_reference)
@@ -636,18 +668,25 @@ class NodeService {
   }
 
   /**
-   * Get all groups that are missing plan year content in the given plan year.
+   * Get all groups that are missing plan year answers in the given plan year.
+   *
+   * Plan year content is ALL nodes (including answers) while answers is just
+   * the plan year answer nodes.
+   *
+   * This cache is based off of all 'missing' content and is only effected
+   * if new terms are added or removed, not the 'copy answers' cache that is
+   * effected whenever a term is updated.
    *
    * @param string $plan_year_id
    *   A plan year ID.
    *
    * @return array
-   *   An array of group IDs.
+   *   An array fields for missing answers that can be used to create them.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getMissingPlanYearContent($plan_year_id) {
+  public function getMissingPlanYearAnswers($plan_year_id) {
     $cid = __METHOD__ . $plan_year_id;
     $cache = $this->cache->get($cid);
     if (FALSE !== $cache) {
@@ -670,7 +709,7 @@ class NodeService {
         foreach ($state_plan_year_content_info['content'] as $content_info) {
           // If this term field is not referencing a bundle to be created, skip
           // it.
-          if (empty($content_info['bundle'])) {
+          if (empty($content_info['node_bundle'])) {
             continue;
           }
           // Wait till the last minute to get all the state plan section node
@@ -678,11 +717,11 @@ class NodeService {
           if (!isset($state_plan_year_section_nids[$section_id])) {
             $state_plan_year_section_nids[$section_id] = $this->getStatePlanYearSectionsByPlanYearAndSectionId($plan_year_id, $section_id);
           }
-          // Check that this referenced piece of content already exists for each
+          // Check that this referenced answer already exists for each
           // groups state plan year section node.
           foreach ($state_plan_year_section_nids[$section_id] as $state_plan_year_section_nid) {
-            if (empty($this->getStatePlanYearContent(
-              $content_info['bundle'],
+            if (empty($this->getStatePlanYearAnswer(
+              $content_info['node_bundle'],
               $content_info['term_field_uuid'],
               $plan_year_id,
               $section_id,
@@ -690,7 +729,7 @@ class NodeService {
               $state_plan_year_section_nid
             ))) {
               $return[] = [
-                'node_type' => $content_info['bundle'],
+                'node_bundle' => $content_info['node_bundle'],
                 'field_unique_id_reference' => $content_info['term_field_uuid'],
                 'plan_year' => $plan_year_id,
                 'section' => $section_id,
@@ -707,7 +746,7 @@ class NodeService {
   }
 
   /**
-   * Get all state plan year content tagged with a section term and unique ID.
+   * Get all state plan year answers tagged with a section term and unique ID.
    *
    * This will get many states content.
    *
@@ -717,13 +756,13 @@ class NodeService {
    *   The Field Unique ID value of a content reference.
    *
    * @return array
-   *   An array of state plan year content node IDs.
+   *   An array of state plan year answer node IDs.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Exception
    */
-  public function getStatePlanYearContentBySectionTidAndFieldUniqueId($section_tid, $field_unique_id) {
+  public function getStatePlanYearAnswersBySectionTidAndFieldUniqueId($section_tid, $field_unique_id) {
     $section_term = $this->customEntitiesRetrieval->single('taxonomy_term', $section_tid);
     if (NULL === $section_term) {
       throw new \Exception(sprintf('There is no term with TID %s', $section_tid));
@@ -736,33 +775,33 @@ class NodeService {
     // Get all nodes that are tagged with this section term and unique field
     // ID.
     return $query->condition('field_field_unique_id_reference', $field_unique_id)
-      ->condition('type', PlanYearInfo::getSpycEntityBundles('node'), 'in')
+      ->condition('type', PlanYearInfo::getSpyaNodeBundles(), 'in')
       ->condition('field_section_year_term', $section_tid)
       ->accessCheck(FALSE)
       ->execute();
   }
 
   /**
-   * Get a state plan year content assigned to a section and unique ID.
+   * Get a state plan year answer assigned to a section and unique ID.
    *
-   * This will get many states content.
+   * This will get a single state's plan year answer.
    *
    * @param string $state_plan_year_section_nid
    *   A state plan year section node ID.
    * @param string $field_unique_id
-   *   The Field Unique ID value of a content reference.
+   *   The Field Unique ID value of a answer reference.
    *
    * @return int|bool
-   *   A state plan year content node ID.
+   *   A state plan year answer node ID.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Exception
    */
-  public function getStatePlanYearContentByStatePlanYearSectionAndFieldUniqueId($state_plan_year_section_nid, $field_unique_id) {
+  public function getStatePlanYearAnswerByStatePlanYearSectionAndFieldUniqueId($state_plan_year_section_nid, $field_unique_id) {
     $query = $this->entityTypeManager->getStorage('node')->getQuery();
     return current($query->condition('field_field_unique_id_reference', $field_unique_id)
-      ->condition('type', PlanYearInfo::getSpycEntityBundles('node'), 'in')
+      ->condition('type', PlanYearInfo::getSpyaNodeBundles(), 'in')
       ->condition('field_state_plan_year_section', $state_plan_year_section_nid)
       ->accessCheck(FALSE)
       ->range(0, 1)
@@ -770,13 +809,13 @@ class NodeService {
   }
 
   /**
-   * Get all state plan year content in the given state plan year section.
+   * Get all state plan year answers in the given state plan year section.
    *
    * Since state plan year section is group specific, this will be all the
-   * groups content in section in that year.
+   * groups answers in section in that year.
    *
    * @param string $state_plan_year_section_nid
-   *   A state plan year content node ID.
+   *   A state plan year answer node ID.
    *
    * @return array
    *   An array of group IDs.
@@ -785,10 +824,10 @@ class NodeService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Exception
    */
-  public function getStatePlanYearContentByStatePlanYearSection($state_plan_year_section_nid) {
+  public function getStatePlanYearAnswersByStatePlanYearSection($state_plan_year_section_nid) {
     $query = $this->entityTypeManager->getStorage('node')->getQuery();
     return $query
-      ->condition('type', PlanYearInfo::getSpycEntityBundles('node'), 'in')
+      ->condition('type', PlanYearInfo::getSpyaNodeBundles(), 'in')
       ->condition('field_state_plan_year_section', $state_plan_year_section_nid)
       ->accessCheck(FALSE)
       ->execute();
@@ -877,39 +916,39 @@ class NodeService {
   }
 
   /**
-   * Can a state plan year content value be copied from one year to another?
+   * Can a state plan year answer value be copied from one year to another?
    *
    * This will not copy if:
    *   * The given nodes don't exist.
    *   * The plan years of both nodes match.
-   *   * The field that determines that the contents are the 'same' just from
+   *   * The field that determines that the answers are the 'same' just from
    *      different years does not match.
    *   * Any of the given nodes are orphans and are to be deleted.
    *   * There is no value to copy from.
    *   * There is already a value saved to.
    *
-   * @param string $from_state_plan_year_content_nid
-   *   A state plan year content node ID to copy the value from.
-   * @param string $to_state_plan_year_content_nid
-   *   A state plan year content node ID to copy the value to.
+   * @param string $from_state_plan_year_answer_nid
+   *   A state plan year answer node ID to copy the value from.
+   * @param string $to_state_plan_year_answer_nid
+   *   A state plan year answer node ID to copy the value to.
    *
    * @return bool
-   *   True if this piece of content can be copied.
+   *   True if this answer can be copied.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Exception
    */
-  public function canCopyStatePlanYearContent($from_state_plan_year_content_nid, $to_state_plan_year_content_nid) {
+  public function canCopyStatePlanYearAnswer($from_state_plan_year_answer_nid, $to_state_plan_year_answer_nid) {
     /** @var \Drupal\node\Entity\Node $from */
-    $from = $this->customEntitiesRetrieval->single('node', $from_state_plan_year_content_nid);
+    $from = $this->customEntitiesRetrieval->single('node', $from_state_plan_year_answer_nid);
     if (NULL === $from) {
-      throw new \Exception(sprintf('The "from" state plan year content node did not exist (%d)', $from_state_plan_year_content_nid));
+      throw new \Exception(sprintf('The "from" state plan year answer node did not exist (%d)', $from_state_plan_year_answer_nid));
     }
     /** @var \Drupal\node\Entity\Node $to */
-    $to = $this->customEntitiesRetrieval->single('node', $to_state_plan_year_content_nid);
+    $to = $this->customEntitiesRetrieval->single('node', $to_state_plan_year_answer_nid);
     if (NULL === $to) {
-      throw new \Exception(sprintf('The "to" state plan year content node did not exist (%d)', $to_state_plan_year_content_nid));
+      throw new \Exception(sprintf('The "to" state plan year answer node did not exist (%d)', $to_state_plan_year_answer_nid));
     }
     $plan_year_id_from = PlanYearInfo::getPlanYearIdFromEntity($from);
     $plan_year_id_to = PlanYearInfo::getPlanYearIdFromEntity($to);
@@ -917,9 +956,9 @@ class NodeService {
       throw new \Exception(sprintf('The "to" (%d) and "from" (%d) plan year IDs cannot copy from the same year (%s).', $to->id(), $from->id(), PlanYearInfo::getPlanYearIdFromEntity($to)));
     }
     if ($from->get('field_field_unique_id_reference')->getString() !== $to->get('field_field_unique_id_reference')->getString()) {
-      throw new \Exception(sprintf('The "to" (%d) and "from" (%d) state plan year content nodes are not descended from the same term in a different year.', $to->id(), $from->id()));
+      throw new \Exception(sprintf('The "to" (%d) and "from" (%d) state plan year answer nodes are not descended from the same term in a different year.', $to->id(), $from->id()));
     }
-    $orphans = $this->getOrphansStatePlanYearContent();
+    $orphans = $this->getOrphansStatePlanYearAnswers();
     // If either the from or to are orphans (to be deleted) do not copy their
     // value.
     if (in_array($to->id(), $orphans, TRUE)) {
@@ -928,12 +967,12 @@ class NodeService {
     if (in_array($from->id(), $orphans, TRUE)) {
       return FALSE;
     }
-    $from_value_field = PlanYearInfo::getStatePlanYearContentValueField($from);
+    $from_value_field = PlanYearInfo::getStatePlanYearAnswerValueField($from);
     // There is nothing to copy from, no answer was given.
     if ($from_value_field->isEmpty()) {
       return FALSE;
     }
-    $to_value_field = PlanYearInfo::getStatePlanYearContentValueField($to);
+    $to_value_field = PlanYearInfo::getStatePlanYearAnswerValueField($to);
     // The state already answered this question, do not overwrite.
     if (!$to_value_field->isEmpty()) {
       return FALSE;
@@ -991,20 +1030,20 @@ class NodeService {
   }
 
   /**
-   * Retrieve count of the total state plan year content to copy and a message.
+   * Retrieve count of the total state plan year answers to copy and a message.
    *
    * @param string $state_plan_year_nid
    *   A state plan year node ID.
    *
    * @return array
-   *   'Count' will be greater than 0 if there is plan year content to copy and
+   *   'Count' will be greater than 0 if there is plan year answer to copy and
    *   'message' will hold the corresponding supported or unsupported message.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    */
-  public function getStatePlanYearContentWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid) {
+  public function getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid) {
     $return = [
       'count' => 0,
       'message' => '',
@@ -1019,18 +1058,18 @@ class NodeService {
       return $return;
     }
     $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($state_plan_year);
-    if (!empty($this->getOrphansStatePlanYearContent()) || !empty($this->getMissingPlanYearContent($plan_year_id))) {
+    if (!empty($this->getOrphansStatePlanYearAnswers()) || !empty($this->getMissingPlanYearAnswers($plan_year_id))) {
       $return['message'] = Link::createFromRoute($this->t('%title must update content before copying answers.', ['%title' => $state_plan_year->getTitle()]), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year_id])
         ->toString();
     }
-    $copiable_answers_by_section = $this->getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year->id());
+    $copiable_answers_by_section = $this->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($state_plan_year->id());
     if (empty($copiable_answers_by_section)) {
       $return['message'] = $this->t('%title has no eligible answers to copy from a previous plan year.', ['%title' => $state_plan_year->getTitle()]);
       return $return;
     }
     $copiable_answers_total = 0;
-    foreach (array_column($copiable_answers_by_section, 'state_plan_year_content') as $state_plan_year_content) {
-      $copiable_answers_total += count($state_plan_year_content);
+    foreach (array_column($copiable_answers_by_section, 'state_plan_year_answers') as $state_plan_year_answers) {
+      $copiable_answers_total += count($state_plan_year_answers);
     };
     $return['message'] = $this->formatPlural($copiable_answers_total, '%title can copy %count answer from a previous plan year.', '%title can copy %count answers from a previous plan year.', ['%count' => $copiable_answers_total, '%title' => $state_plan_year->getTitle()]);
     $return['count'] = $copiable_answers_total;
@@ -1038,7 +1077,7 @@ class NodeService {
   }
 
   /**
-   * Retrieve all state plan year content that can be copied in this plan year.
+   * Retrieve all state plan year answers that can be copied in this plan year.
    *
    * Since this is using a state plan year node ID, this will retrieve only
    * a single groups content.
@@ -1054,7 +1093,7 @@ class NodeService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Exception
    */
-  public function getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year_nid) {
+  public function getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($state_plan_year_nid) {
     $cid = __METHOD__ . $state_plan_year_nid;
     $cache = $this->cache->get($cid);
     if (FALSE !== $cache) {
@@ -1084,10 +1123,9 @@ class NodeService {
       if (empty($state_plan_year_section_nid)) {
         continue;
       }
-      // All state plan year content for a this state in the section.
-      /** @var \Drupal\node\Entity\Node $state_plan_year_content */
-      $state_plan_year_content_to_nids = $this->getStatePlanYearContentByStatePlanYearSection($state_plan_year_section_nid);
-      if (empty($state_plan_year_content_to_nids)) {
+      // All state plan year answers for a this state in the section.
+      $state_plan_year_answers_to_nids = $this->getStatePlanYearAnswersByStatePlanYearSection($state_plan_year_section_nid);
+      if (empty($state_plan_year_answers_to_nids)) {
         continue;
       }
       // Get the state plan year that is being copied from.
@@ -1095,33 +1133,33 @@ class NodeService {
       if (empty($state_plan_year_from_nid)) {
         continue;
       }
-      // Get the state plan year section that the state plan year content to be
+      // Get the state plan year section that the state plan year answer to be
       // copied from belongs to.
       $state_plan_year_section_from_nid = $this->getStatePlanYearSectionByStatePlanYearAndSection($state_plan_year_from_nid, $section_id);
-      foreach ($state_plan_year_content_to_nids as $state_plan_year_content_to_nid) {
-        /** @var \Drupal\node\Entity\Node $state_plan_year_content_to */
-        $state_plan_year_content_to = $this->customEntitiesRetrieval->single('node', $state_plan_year_content_to_nid);
+      foreach ($state_plan_year_answers_to_nids as $state_plan_year_answer_to_nid) {
+        /** @var \Drupal\node\Entity\Node $state_plan_year_answer_to */
+        $state_plan_year_answer_to = $this->customEntitiesRetrieval->single('node', $state_plan_year_answer_to_nid);
         // The to and from should share this same unique ID.
-        $shared_field_field_unique_id_reference = $state_plan_year_content_to->get('field_field_unique_id_reference')->getString();
-        // Retrieve the state plan content that will be copied from.
-        $state_plan_year_content_from_nid = $this->getStatePlanYearContentByStatePlanYearSectionAndFieldUniqueId($state_plan_year_section_from_nid, $shared_field_field_unique_id_reference);
+        $shared_field_field_unique_id_reference = $state_plan_year_answer_to->get('field_field_unique_id_reference')->getString();
+        // Retrieve the state plan answer that will be copied from.
+        $state_plan_year_answer_from_nid = $this->getStatePlanYearAnswerByStatePlanYearSectionAndFieldUniqueId($state_plan_year_section_from_nid, $shared_field_field_unique_id_reference);
         // Make sure that the from piece of state plan year content can be
         // found.
-        if (empty($state_plan_year_content_from_nid)) {
+        if (empty($state_plan_year_answer_from_nid)) {
           continue;
         }
         // Now that all the information needed is found, determine if copying
         // is possible.
-        if (TRUE !== $this->canCopyStatePlanYearContent($state_plan_year_content_from_nid, $state_plan_year_content_to_nid)) {
+        if (TRUE !== $this->canCopyStatePlanYearAnswer($state_plan_year_answer_from_nid, $state_plan_year_answer_to_nid)) {
           continue;
         }
         if (empty($return[$section_id])) {
           $return[$section_id] = [
             'state_plan_year_section_from' => $state_plan_year_section_from_nid,
-            'state_plan_year_content' => [],
+            'state_plan_year_answers' => [],
           ];
         }
-        $return[$section_id]['state_plan_year_content'][] = ['from' => $state_plan_year_content_from_nid, 'to' => $state_plan_year_content_to_nid];
+        $return[$section_id]['state_plan_year_answers'][] = ['from' => $state_plan_year_answer_from_nid, 'to' => $state_plan_year_answer_to_nid];
       }
     }
     $this->cache->set($cid, $return, Cache::PERMANENT, $this->getCopyAnswersCacheTags($state_plan_year_nid));

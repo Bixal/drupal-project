@@ -28,7 +28,7 @@ class SectionEntryItem extends FieldItemBase {
       // Columns contains the values that the field will store.
       'columns' => [
         // List the values that the field will save.
-        'entity_type_bundle' => [
+        'node_bundle' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
@@ -72,9 +72,9 @@ class SectionEntryItem extends FieldItemBase {
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties = [];
-    $properties['entity_type_bundle'] = DataDefinition::create('string')
+    $properties['node_bundle'] = DataDefinition::create('string')
       ->setLabel('Content')
-      ->setDescription('The type of content that will be created for the state to fill out');
+      ->setDescription('The type of node that will be created for the state to fill out');
     $properties['section'] = DataDefinition::create('string')
       ->setLabel('Section')
       ->setDescription('The section that will be displayed to the user');
@@ -101,9 +101,9 @@ class SectionEntryItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public function isEmpty() {
-    $entity_type_bundle = $this->get('entity_type_bundle')->getValue();
+    $node_bundle = $this->get('node_bundle')->getValue();
     $section = $this->get('section')->getValue();
-    return ($entity_type_bundle === NULL || $entity_type_bundle === '') && ($section === NULL || $section === '');
+    return ($node_bundle === NULL || $node_bundle === '') && ($section === NULL || $section === '');
   }
 
 }

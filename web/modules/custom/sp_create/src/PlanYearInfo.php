@@ -49,63 +49,46 @@ class PlanYearInfo {
   const SPYS_BUNDLE = 'state_plan_year_section';
 
   /**
-   * The state plan year content bool content type bundle.
+   * The state plan year answer bool required content type bundle.
    *
    * @var string
    */
-  const SPYC_BOOL_BUNDLE = 'bool_sp_content';
+  const SPYA_BOOL_BUNDLE_REQUIRED = 'bool_sp_answer_required';
 
   /**
-   * Yes or no state plan content.
+   * The state plan year answer bool optional content type bundle.
    *
    * @var string
    */
-  const SPYC_BOOL_EB = 'node-' . self::SPYC_BOOL_BUNDLE;
-
+  const SPYA_BOOL_BUNDLE_OPTIONAL = 'bool_sp_answer_optional';
 
   /**
-   * The state plan year content text content type bundle.
+   * The state plan year answer text required content type bundle.
    *
    * @var string
    */
-  const SPYC_TEXT_BUNDLE = 'text_sp_content';
+  const SPYA_TEXT_BUNDLE_REQUIRED = 'text_sp_answer_required';
 
   /**
-   * Text state plan content.
+   * The state plan year answer text optional content type bundle.
    *
    * @var string
    */
-  const SPYC_TEXT_EB = 'node-' . self::SPYC_TEXT_BUNDLE;
+  const SPYA_TEXT_BUNDLE_OPTIONAL = 'text_sp_answer_optional';
 
   /**
-   * Get ID and labels for state plan content type bundles.
+   * Get ID and labels for state plan answer node bundles.
    *
    * @return array
    *   An array keyed by the entity type bundle with the label as the value.
    */
-  public static function getSpycEntityTypeBundles() {
-    return [self::SPYC_BOOL_EB => 'Node - Yes/No', self::SPYC_TEXT_EB => 'Node - Text'];
-  }
-
-  /**
-   * Get just the bundles from the entity type bundles.
-   *
-   * @param string $entity_type
-   *   An entity type.
-   *
-   * @return array
-   *   Get an array of bundles.
-   */
-  public static function getSpycEntityBundles($entity_type) {
-    $return = [];
-    foreach (self::getSpycEntityTypeBundles() as $entity_type_bundle => $label) {
-      $etb_array = explode('-', $entity_type_bundle);
-      if ($etb_array[0] !== $entity_type) {
-        continue;
-      }
-      $return[] = $etb_array[1];
-    }
-    return $return;
+  public static function getSpyaNodeBundles() {
+    return [
+      self::SPYA_BOOL_BUNDLE_OPTIONAL => 'Yes/No (Optional)',
+      self::SPYA_BOOL_BUNDLE_REQUIRED => 'Yes/No (Required)',
+      self::SPYA_TEXT_BUNDLE_OPTIONAL => 'Text (Optional)',
+      self::SPYA_TEXT_BUNDLE_REQUIRED => 'Text (Required)',
+    ];
   }
 
   /**
@@ -114,9 +97,9 @@ class PlanYearInfo {
    * @return array
    *   An array of node types.
    */
-  public static function getSpyEntityBundles() {
+  public static function getSpyNodeBundles() {
     return array_merge(
-      PlanYearInfo::getSpycEntityBundles('node'),
+      PlanYearInfo::getSpyaNodeBundles(),
       [
         PlanYearInfo::SPY_BUNDLE,
         PlanYearInfo::SPYS_BUNDLE,
@@ -198,16 +181,12 @@ class PlanYearInfo {
           }
           return self::getPlanYearIdFromEntity($field->entity);
 
-        case self::SPZY_BUNDLE:
-        case self::SPYC_TEXT_BUNDLE:
-        case self::SPYC_BOOL_BUNDLE:
-          $field = $entity->get('field_plan_year');
-          if ($field->isEmpty()) {
-            break;
-          }
+      }
+      if (in_array($entity->bundle(), array_merge(self::getSpyaNodeBundles(), [self::SPZY_BUNDLE]))) {
+        $field = $entity->get('field_plan_year');
+        if (!$field->isEmpty()) {
           $plan_year_id = $field->entity->id();
-          break;
-
+        }
       }
     }
     return $plan_year_id;
@@ -235,18 +214,16 @@ class PlanYearInfo {
           }
           return self::getStatePlanYearNidFromEntity($field->entity);
 
-        case self::SPYC_TEXT_BUNDLE:
-        case self::SPYC_BOOL_BUNDLE:
-          $field = $entity->get('field_state_plan_year_section');
-          if ($field->isEmpty()) {
-            break;
-          }
-          return self::getStatePlanYearNidFromEntity($field->entity);
-
         case self::SPY_BUNDLE:
           $state_plan_year_nid = $entity->id();
           break;
 
+      }
+      if (in_array($entity->bundle(), self::getSpyaNodeBundles())) {
+        $field = $entity->get('field_state_plan_year_section');
+        if (!$field->isEmpty()) {
+          return self::getStatePlanYearNidFromEntity($field->entity);
+        }
       }
     }
     return $state_plan_year_nid;
@@ -256,19 +233,21 @@ class PlanYearInfo {
    * Retrieve the field that holds an answer by the state.
    *
    * @param \Drupal\node\Entity\Node $entity
-   *   A piece of state plan year content.
+   *   A single state plan year answer.
    *
    * @return \Drupal\Core\Field\FieldItemListInterface
    *   The field that holds the answer by the state.
    *
    * @throws \Exception
    */
-  public static function getStatePlanYearContentValueField(Node $entity) {
+  public static function getStatePlanYearAnswerValueField(Node $entity) {
     switch ($entity->bundle()) {
-      case self::SPYC_TEXT_BUNDLE:
+      case self::SPYA_TEXT_BUNDLE_OPTIONAL:
+      case self::SPYA_TEXT_BUNDLE_REQUIRED:
         return $entity->get('body');
 
-      case self::SPYC_BOOL_BUNDLE:
+      case self::SPYA_BOOL_BUNDLE_OPTIONAL:
+      case self::SPYA_BOOL_BUNDLE_REQUIRED:
         return $entity->get('field_yes_or_no');
     }
     throw new \Exception(sprintf('The entity %s of bundle %s was not a valid state plan content node.', $entity->id(), $entity->bundle()));

@@ -13,7 +13,7 @@ function sp_retrieve_views_data_alter(array &$data) {
     'title' => t('Copy Answers'),
     'field' => [
       'title' => t('Copy Answers'),
-      'help' => t('Shows if a state plan has any copiable state plan year content.'),
+      'help' => t('Shows if a state plan has any copiable state plan year answers.'),
       'id' => 'copy_answers',
     ],
   ];

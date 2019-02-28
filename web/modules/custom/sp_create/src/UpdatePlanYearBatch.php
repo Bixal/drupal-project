@@ -248,7 +248,7 @@ class UpdatePlanYearBatch {
   }
 
   /**
-   * Remove state plan year content tagged with terms from this vocab.
+   * Remove state plan year answers tagged with terms from this vocab.
    *
    * @param string $plan_year_id
    *   A plan year ID.
@@ -263,11 +263,11 @@ class UpdatePlanYearBatch {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeStatePlanYearContentBySection($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function removeStatePlanYearAnswersBySection($plan_year_id, $section_id, $section_label, array &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
-    $update_plan_year_content->removeStatePlanYearContentBySection($plan_year_id, $section_id);
-    $context['message'] = 'Removing state plan year content for ' . $plan_year_id . ' in section ' . $section_label;
+    $update_plan_year_content->removeStatePlanYearAnswersBySection($plan_year_id, $section_id);
+    $context['message'] = 'Removing state plan year answers for ' . $plan_year_id . ' in section ' . $section_label;
   }
 
   /**
@@ -298,10 +298,10 @@ class UpdatePlanYearBatch {
   }
 
   /**
-   * Remove a state plan year content node.
+   * Remove a state plan year answer node.
    *
-   * @param string $state_plan_year_content_nid
-   *   A state plan year content node ID.
+   * @param string $state_plan_year_answer_nid
+   *   A state plan year answer node ID.
    * @param array $context
    *   Keys of message and results to communicate with batch.
    *
@@ -309,20 +309,20 @@ class UpdatePlanYearBatch {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeStatePlanYearContent($state_plan_year_content_nid, array &$context = []) {
+  public static function removeStatePlanYearAnswer($state_plan_year_answer_nid, array &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
-    $update_plan_year_content->removeStatePlanYearContent($state_plan_year_content_nid);
-    $context['message'] = 'Removing state plan year content item ' . $state_plan_year_content_nid;
+    $title = $update_plan_year_content->removeStatePlanYearAnswer($state_plan_year_answer_nid);
+    $context['message'] = 'Removing state plan year answer ' . $title;
   }
 
   /**
-   * Create a state plan year content node.
+   * Create a state plan year answer node.
    *
-   * @param string $node_type
+   * @param string $node_bundle
    *   The node type.
    * @param string $field_unique_id_reference
-   *   The UUID that uniquiely identifies a term field between years.
+   *   The UUID that uniquely identifies a term field between years.
    * @param string $plan_year_id
    *   The plan year ID that this content belongs to.
    * @param string $section_id
@@ -338,11 +338,12 @@ class UpdatePlanYearBatch {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function addStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid, array &$context = []) {
-    /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
+  public static function addStatePlanYearAnswer($node_bundle, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid, array &$context = []) {
+    /* @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
-    $update_plan_year_content->addStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid);
-    $context['message'] = 'Adding state plan year content item';
+    /* @var \Drupal\node\Entity\Node */
+    $state_plan_answer = $update_plan_year_content->addStatePlanYearAnswer($node_bundle, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid);
+    $context['message'] = 'Adding state plan year answer item ' . $state_plan_answer->getTitle();
   }
 
   /**

@@ -139,11 +139,11 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
       $state_plan_year_section = $node_storage->load($state_plan_year_section_nid);
       $state_plan_year_section->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
       $update_plan_year_content_service->nodeSave($state_plan_year_section, FALSE, $revision_log_message);
-      foreach ($node_service->getStatePlanYearContentByStatePlanYearSection($state_plan_year_section_nid) as $state_plan_year_content_nid) {
-        /** @var \Drupal\node\Entity\Node $state_plan_year_content */
-        $state_plan_year_content = $node_storage->load($state_plan_year_content_nid);
-        $state_plan_year_content->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
-        $update_plan_year_content_service->nodeSave($state_plan_year_content, FALSE, $revision_log_message);
+      foreach ($node_service->getStatePlanYearAnswersByStatePlanYearSection($state_plan_year_section_nid) as $state_plan_year_answer_nid) {
+        /** @var \Drupal\node\Entity\Node $state_plan_year_answer */
+        $state_plan_year_answer = $node_storage->load($state_plan_year_answer_nid);
+        $state_plan_year_answer->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
+        $update_plan_year_content_service->nodeSave($state_plan_year_answer, FALSE, $revision_log_message);
       }
     }
   }

@@ -69,7 +69,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $element['#element_validate'] = [
       [static::class, 'validateAll'],
     ];
-    $entity_type_bundle = isset($items[$delta]->entity_type_bundle) ? $items[$delta]->entity_type_bundle : '';
+    $node_bundle = isset($items[$delta]->node_bundle) ? $items[$delta]->node_bundle : '';
     $section = isset($items[$delta]->section) ? $items[$delta]->section : '';
     $extra_text = isset($items[$delta]->extra_text) ? $items[$delta]->extra_text : '';
     $term_field_uuid = isset($items[$delta]->term_field_uuid) ? $items[$delta]->term_field_uuid : '';
@@ -79,13 +79,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
     $item = $items[$delta];
     $props = $item->getProperties();
-    $element['entity_type_bundle'] = [
-      '#title' => $props['entity_type_bundle']->getDataDefinition()->getLabel(),
+    $element['node_bundle'] = [
+      '#title' => $props['node_bundle']->getDataDefinition()->getLabel(),
       '#type' => 'select',
-      '#options' => PlanYearInfo::getSpycEntityTypeBundles(),
-      '#empty_option' => $this->t('- Choose an entity -'),
-      '#default_value' => $entity_type_bundle,
-      '#description' => $props['entity_type_bundle']->getDataDefinition()
+      '#options' => PlanYearInfo::getSpyaNodeBundles(),
+      '#empty_option' => $this->t('- Choose an answer type -'),
+      '#default_value' => $node_bundle,
+      '#description' => $props['node_bundle']->getDataDefinition()
         ->getDescription(),
     ];
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
@@ -210,7 +210,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
    *   The form state.
    */
   public static function validateAll(array $element, FormStateInterface $form_state) {
-    $entity_type_bundle = strlen($element['entity_type_bundle']['#value']);
+    $node_bundle = strlen($element['node_bundle']['#value']);
     $section = strlen($element['section']['#value']);
     $extra_text = strlen($element['extra_text']['#value']);
     $access_option = strlen($element['access_option']['#value']);
@@ -218,9 +218,9 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $access_value = strlen($element['access_value']['#value']);
 
     // Can't choose both section & and a content entity..
-    if ($entity_type_bundle && $section) {
-      $form_state->setError($element['entity_type_bundle'], t("You may not choose both @etb and @section at the same time.", [
-        '@etb' => $element['entity_type_bundle']['#title'],
+    if ($node_bundle && $section) {
+      $form_state->setError($element['node_bundle'], t("You may not choose both @etb and @section at the same time.", [
+        '@etb' => $element['node_bundle']['#title'],
         '@section' => $element['section']['#title'],
       ]));
       $form_state->setError($element['section']);
@@ -228,9 +228,9 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
 
     // If they entered any other portion of the form but not section or content
     // entity.
-    if (!$entity_type_bundle && !$section && ($entity_type_bundle || $extra_text || $access_option || $access_term_field_uuid || $access_value)) {
-      $form_state->setError($element['entity_type_bundle'], t("You must select either @etb and @section as well.", [
-        '@etb' => $element['entity_type_bundle']['#title'],
+    if (!$node_bundle && !$section && ($node_bundle || $extra_text || $access_option || $access_term_field_uuid || $access_value)) {
+      $form_state->setError($element['node_bundle'], t("You must select either @etb and @section as well.", [
+        '@etb' => $element['node_bundle']['#title'],
         '@section' => $element['section']['#title'],
       ]));
       $form_state->setError($element['section']);

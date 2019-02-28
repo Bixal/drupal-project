@@ -754,9 +754,12 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
           // New sections never have a year, hence setting equal to ''.
           $selected_sections[$step_value['new_section']] = '';
         }
-        foreach ($form_state->getValue('copy_sections', []) as $section_id => $options) {
-          if ($options['copy']) {
-            $selected_sections[$section_id] = !empty($options['plan_year_to_copy']) ? $options['plan_year_to_copy'] : '';
+        $copy_sections = $form_state->getValue('copy_sections', []);
+        if (!empty($copy_sections)) {
+          foreach ($copy_sections as $section_id => $options) {
+            if ($options['copy']) {
+              $selected_sections[$section_id] = !empty($options['plan_year_to_copy']) ? $options['plan_year_to_copy'] : '';
+            }
           }
         }
         $this->setStepValue($current_step_info['name'], [
@@ -790,7 +793,7 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
               foreach ($change as $section_id) {
                 // Remove state plan year content tagged with terms from this
                 // vocab.
-                $batch['operations'][] = $this->batchRemoveStatePlanYearContentBySection($section_id);
+                $batch['operations'][] = $this->batchRemoveStatePlanYearAnswersBySection($section_id);
                 // Remove the state plan year section node.
                 $batch['operations'][] = $this->batchRemoveStatePlanYearSection($section_id);
                 // Remove terms from section vocabulary.
@@ -830,7 +833,7 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
                 // vocab. Be sure to leave the state plan year section nodes
                 // because it's just the terms and content changing, not the
                 // sections themselves.
-                $batch['operations'][] = $this->batchRemoveStatePlanYearContentBySection($section_id);
+                $batch['operations'][] = $this->batchRemoveStatePlanYearAnswersBySection($section_id);
                 // Remove terms from section vocabulary.
                 $batch['operations'][] = $this->batchRemoveSectionHierarchy($section_id);
                 // Create missing plan year sections if needed.

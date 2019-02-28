@@ -108,14 +108,17 @@ class UpdatePlanYearConfigService {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function removeStatePlan($plan_year_id) {
+    // TODO: Use customEntitiesRetrieval->allPlanYearCopyTo() to figure out what
+    // other plan years are referencing this plan year and remove this plan year
+    // from their meta data (sections to copy + year).
     $node_storage = $this->entityTypeManager->getStorage('node');
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_id);
     // Remove all section based information.
     /** @var \Drupal\node\Entity\Node $state_plans_year */
     foreach ($plan_year->getSections() as $section) {
-      // Remove state plan year content nodes for this section.
-      $this->updatePlanYearContentService->removeStatePlanYearContentBySection($plan_year_id, $section->id());
+      // Remove state plan year answer nodes for this section.
+      $this->updatePlanYearContentService->removeStatePlanYearAnswersBySection($plan_year_id, $section->id());
       // Remove all section nodes in this section.
       $this->updatePlanYearContentService->removeStatePlanYearSection($plan_year_id, $section->id());
       // Remove all terms in the plan year section vocabulary.

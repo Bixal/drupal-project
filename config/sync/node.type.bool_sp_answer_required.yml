@@ -1,0 +1,17 @@
+uuid: e418db24-86bb-446d-824e-3c0255cc4693
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Yes / No Question State Plan Answer (Required)'
+type: bool_sp_answer_required
+description: 'This is the yes or no questions content that state editors will enter. There will be a content type of this for each section for granularity. This content type will NEVER be seen or entered, only the cloned versions of it per section.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

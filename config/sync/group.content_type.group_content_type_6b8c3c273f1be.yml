@@ -1,0 +1,19 @@
+uuid: 45b0af69-0c7d-4eeb-bcad-df5b45662efa
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+    - node.type.text_sp_answer_required
+  module:
+    - gnode
+    - node
+id: group_content_type_6b8c3c273f1be
+label: 'State: Group node (Text Question State Plan Content (Required))'
+description: 'Adds <em class="placeholder">Text Question State Plan Content (Required)</em> content to groups both publicly and privately.'
+group_type: state
+content_plugin: 'group_node:text_sp_answer_required'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

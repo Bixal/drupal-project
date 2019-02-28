@@ -1,0 +1,28 @@
+uuid: dcb4c5d6-9d77-488b-b182-34f4d3bdf4b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state_plan_year_section
+    - node.type.bool_sp_answer_required
+    - node.type.state_plan_year_section
+id: node.bool_sp_answer_required.field_state_plan_year_section
+field_name: field_state_plan_year_section
+entity_type: node
+bundle: bool_sp_answer_required
+label: 'State Plan Year Section'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      state_plan_year_section: state_plan_year_section
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

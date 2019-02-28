@@ -1,0 +1,19 @@
+uuid: 66916fc6-bc9b-4aa2-886e-895a0517bb18
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+    - node.type.bool_sp_answer_required
+  module:
+    - gnode
+    - node
+id: group_content_type_c7f74ccfc52e9
+label: 'State: Group node (Yes / No Question State Plan Answer (Required))'
+description: 'Adds <em class="placeholder">Yes / No Question State Plan Answer (Required)</em> content to groups both publicly and privately.'
+group_type: state
+content_plugin: 'group_node:bool_sp_answer_required'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

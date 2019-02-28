@@ -1,0 +1,57 @@
+uuid: d61a9c8d-9bc5-43d5-bc95-cdf7a94e0615
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.bool_sp_answer_optional.field_field_unique_id_reference
+    - field.field.node.bool_sp_answer_optional.field_plan_year
+    - field.field.node.bool_sp_answer_optional.field_section
+    - field.field.node.bool_sp_answer_optional.field_section_year_term
+    - field.field.node.bool_sp_answer_optional.field_state_plan_year_section
+    - field.field.node.bool_sp_answer_optional.field_yes_or_no
+    - node.type.bool_sp_answer_optional
+  module:
+    - options
+    - user
+id: node.bool_sp_answer_optional.default
+targetEntityType: node
+bundle: bool_sp_answer_optional
+mode: default
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_field_unique_id_reference:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_state_plan_year_section:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_yes_or_no:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_plan_year: true
+  field_section: true
+  field_section_year_term: true

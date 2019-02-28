@@ -1,0 +1,19 @@
+uuid: d6fbf436-eba9-46ab-b16c-34f9d1bc83eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+    - node.type.bool_sp_answer_optional
+  module:
+    - gnode
+    - node
+id: group_content_type_b946a85fa50a5
+label: 'State: Group node (Yes / No Question State Plan Answer (Optional))'
+description: 'Adds <em class="placeholder">Yes / No Question State Plan Answer (Optional)</em> content to groups both publicly and privately.'
+group_type: state
+content_plugin: 'group_node:bool_sp_answer_optional'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

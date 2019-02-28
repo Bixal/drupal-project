@@ -1,0 +1,22 @@
+uuid: 5ba8b7fd-9987-456b-9dba-62c85ed6fa38
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bool_sp_answer_optional
+id: node.bool_sp_answer_optional.promote
+field_name: promote
+entity_type: node
+bundle: bool_sp_answer_optional
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

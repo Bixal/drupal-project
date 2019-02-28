@@ -1,0 +1,58 @@
+uuid: d48b3153-b4cd-4fc4-8d70-58d30bcab729
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bool_sp_answer_optional
+    - node.type.bool_sp_answer_required
+    - node.type.text_sp_answer_optional
+    - node.type.text_sp_answer_required
+  module:
+    - content_moderation
+id: state_plan_answer
+label: 'State Plan Answer'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -1
+    new_not_available:
+      published: false
+      default_revision: false
+      label: 'New, not available'
+      weight: -2
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 0
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: 0
+      from:
+        - draft
+        - published
+    publish:
+      label: Publish
+      to: published
+      weight: 1
+      from:
+        - draft
+        - published
+    start_plan:
+      label: 'Start Plan'
+      from:
+        - new_not_available
+      to: draft
+      weight: 2
+  entity_types:
+    node:
+      - bool_sp_answer_optional
+      - bool_sp_answer_required
+      - text_sp_answer_optional
+      - text_sp_answer_required

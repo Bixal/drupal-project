@@ -1,0 +1,22 @@
+uuid: fa772450-a152-4173-99fe-5b27f5c55778
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.bool_sp_answer_required
+id: node.bool_sp_answer_required.status
+field_name: status
+entity_type: node
+bundle: bool_sp_answer_required
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

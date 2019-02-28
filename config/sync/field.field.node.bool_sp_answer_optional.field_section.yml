@@ -1,0 +1,23 @@
+uuid: bb6c7ea2-3a6a-432f-8aef-6912a36e4487
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.bool_sp_answer_optional
+id: node.bool_sp_answer_optional.field_section
+field_name: field_section
+entity_type: node
+bundle: bool_sp_answer_optional
+label: Section
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

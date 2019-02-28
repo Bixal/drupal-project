@@ -1,0 +1,19 @@
+uuid: 33384b36-459f-4645-b843-9032ccc8c0bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_unique_id_reference
+    - node.type.text_sp_answer_optional
+id: node.text_sp_answer_optional.field_field_unique_id_reference
+field_name: field_field_unique_id_reference
+entity_type: node
+bundle: text_sp_answer_optional
+label: 'Field Unique ID Reference'
+description: 'Each section vocabulary term can cause multiple pieces of State Plan Content to be created. It depends how many ''Input From State'' ''Content'' selections are made on the term. The term''s ID is unique to that plan year but the ''Field Unique ID'' on ''Input From State'' is the same between multiple years if the hierarchy is copied. Therefore, it will take a combination of term TID + Field Unique ID to determine what each piece of State Plan Content references. This is an internal field that will only be populated by scripts.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

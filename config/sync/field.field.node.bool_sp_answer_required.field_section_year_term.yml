@@ -1,0 +1,25 @@
+uuid: 67b7eef7-307f-4f45-bbdd-098b1359383f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_year_term
+    - node.type.bool_sp_answer_required
+id: node.bool_sp_answer_required.field_section_year_term
+field_name: field_section_year_term
+entity_type: node
+bundle: bool_sp_answer_required
+label: 'Section Year Term'
+description: 'This is hidden to states and automatically set to the section vocab and term it belongs to during the “creation” script. This field will need to update to the new section year on clone. This term reference will help place this in the correct order in the plan.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: entity_reference_any_vocab
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

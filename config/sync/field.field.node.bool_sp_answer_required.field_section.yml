@@ -1,0 +1,23 @@
+uuid: db3db749-1334-4be7-b77f-7ab287ee9e47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.bool_sp_answer_required
+id: node.bool_sp_answer_required.field_section
+field_name: field_section
+entity_type: node
+bundle: bool_sp_answer_required
+label: Section
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

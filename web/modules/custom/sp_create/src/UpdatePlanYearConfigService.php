@@ -111,6 +111,8 @@ class UpdatePlanYearConfigService {
     // TODO: Use customEntitiesRetrieval->allPlanYearCopyTo() to figure out what
     // other plan years are referencing this plan year and remove this plan year
     // from their meta data (sections to copy + year).
+    // TODO: Remove config split and config split dir for this plan year if it
+    // was created.
     $node_storage = $this->entityTypeManager->getStorage('node');
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_id);
@@ -140,6 +142,11 @@ class UpdatePlanYearConfigService {
       $state_plans_year = $node_storage->load($state_plans_year_nid);
       $state_plans_year->delete();
     }
+
+    // Now that all configuration is removed for this plan year, remove the
+    // configuration split.
+    /* @var \Drupal\config_split\Entity\ConfigSplitEntity $config_split */
+    $this->customEntitiesRetrieval->single('config_split', 'plan_year_' . $plan_year_id)->delete();
   }
 
   /**

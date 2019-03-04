@@ -49,7 +49,20 @@ class ConfigSplitsCreateCommand extends ContainerAwareCommand {
    * {@inheritdoc}
    */
   protected function execute(InputInterface $input, OutputInterface $output) {
+    $absolute_all_splits_path = DRUPAL_ROOT . '/../config/plan_years';
+    $directories = glob($absolute_all_splits_path . '/*', GLOB_ONLYDIR);
     $plan_year_labels = $this->customEntitiesService->labels('plan_year');
+    $plan_year_directories = [];
+    if (!empty($directories)) {
+      foreach ($directories as $directory) {
+        $plan_year_directories[substr($directory, -4)] = $directory;
+      }
+      $plan_year_directories_remove = array_diff(array_keys($plan_year_directories), array_keys($plan_year_labels));
+      foreach ($plan_year_directories_remove as $plan_year_id) {
+        $this->getIo()
+          ->warning('The configuration directory for deleted plan year ' . $plan_year_id . ' (' . $plan_year_directories[$plan_year_id] . ') is no longer being used for configuration and should be deleted.');
+      }
+    }
     $config_splits_created = 0;
     $config_splits_dirs_needed_to_be_created = 0;
     foreach ($plan_year_labels as $plan_year_id => $plan_year_label) {
@@ -88,7 +101,7 @@ class ConfigSplitsCreateCommand extends ContainerAwareCommand {
       $this->getIo()->info('No config splits have been created.');
     }
     if ($config_splits_dirs_needed_to_be_created > 0) {
-      $this->getIo()->info('There are ' . $config_splits_dirs_needed_to_be_created . ' config splits directories that were not created. They must be created before exporting configuration.');
+      $this->getIo()->warning('There are ' . $config_splits_dirs_needed_to_be_created . ' config splits directories that were not created. They must be created before exporting configuration.');
     }
     elseif ($config_splits_created > 0) {
       $this->getIo()->info('Please run configuration export now.');

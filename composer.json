@@ -21,6 +21,8 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_menu_search": "^1.0",
         "drupal/auto_entitylabel": "^2.1@beta",
+        "drupal/config_filter": "^1.4",
+        "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/content_moderation_notifications": "^3.0@RC",
         "drupal/core": "^8.6.0",

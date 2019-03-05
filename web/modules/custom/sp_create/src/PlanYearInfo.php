@@ -218,7 +218,7 @@ class PlanYearInfo {
    * @return bool|string
    *   False if no state plan year node ID can be found, otherwise the node ID.
    */
-  public static function getStatePlanYearNidFromEntity(EntityInterface $entity) {
+  public static function getStatePlanYearNidFromEntity(EntityInterface $entity = NULL) {
     $state_plan_year_nid = FALSE;
     if ($entity instanceof Node) {
       switch ($entity->bundle()) {

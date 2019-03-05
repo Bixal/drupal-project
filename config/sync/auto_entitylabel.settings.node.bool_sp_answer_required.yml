@@ -4,4 +4,4 @@ php: 1
 escape: 0
 dependencies:
   config:
-    - node.type.state_plan_year
+    - node.type.bool_sp_answer_required

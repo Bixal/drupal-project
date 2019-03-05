@@ -1,5 +1,5 @@
 status: '1'
-pattern: 'State Plans - <?php echo $entity->field_plan_year->entity->label(); ?>'
+pattern: 'State Plans - <?php echo sp_create_auto_label($entity); ?>'
 php: 1
 escape: 0
 dependencies:

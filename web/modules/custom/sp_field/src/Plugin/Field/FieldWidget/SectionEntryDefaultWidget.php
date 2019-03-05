@@ -71,7 +71,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     ];
     $node_bundle = isset($items[$delta]->node_bundle) ? $items[$delta]->node_bundle : '';
     $section = isset($items[$delta]->section) ? $items[$delta]->section : '';
-    $extra_text = isset($items[$delta]->extra_text) ? $items[$delta]->extra_text : '';
+    $extra_text = isset($items[$delta]->extra_text) ? $items[$delta]->extra_text : ['value' => '', 'format' => filter_default_format()];
     $term_field_uuid = isset($items[$delta]->term_field_uuid) ? $items[$delta]->term_field_uuid : '';
     $access_option = isset($items[$delta]->access_option) ? $items[$delta]->access_option : '';
     $access_term_field_uuid = isset($items[$delta]->access_term_field_uuid) ? $items[$delta]->access_term_field_uuid : '';
@@ -105,15 +105,14 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#description' => $props['section']->getDataDefinition()
         ->getDescription(),
     ];
-
     $element['extra_text'] = [
       '#title' => $props['extra_text']->getDataDefinition()->getLabel(),
-      '#type' => 'textarea',
-      '#default_value' => $extra_text,
+      '#type' => 'text_format',
+      '#default_value' => $extra_text['value'],
       '#description' => $props['extra_text']->getDataDefinition()
         ->getDescription(),
       '#rows' => 3,
-      '#format' => 'plain_text',
+      '#format' => $extra_text['format'],
     ];
 
     // Don't show the UUID until after the save.
@@ -212,7 +211,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
   public static function validateAll(array $element, FormStateInterface $form_state) {
     $node_bundle = strlen($element['node_bundle']['#value']);
     $section = strlen($element['section']['#value']);
-    $extra_text = strlen($element['extra_text']['#value']);
+    $extra_text = strlen($element['extra_text']['value']['#value']);
     $access_option = strlen($element['access_option']['#value']);
     $access_term_field_uuid = strlen($element['access_term_field_uuid']['#value']);
     $access_value = strlen($element['access_value']['#value']);

@@ -5,6 +5,7 @@ namespace Drupal\sp_field\Plugin\Field\FieldType;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\Core\TypedData\MapDataDefinition;
 
 /**
  * Plugin implementation of the 'field_section_entry' field type.
@@ -42,6 +43,7 @@ class SectionEntryItem extends FieldItemBase {
           'type' => 'text',
           'size' => 'normal',
           'not null' => FALSE,
+          'serialize' => TRUE,
         ],
         'term_field_uuid' => [
           'type' => 'varchar',
@@ -78,7 +80,7 @@ class SectionEntryItem extends FieldItemBase {
     $properties['section'] = DataDefinition::create('string')
       ->setLabel('Section')
       ->setDescription('The section that will be displayed to the user');
-    $properties['extra_text'] = DataDefinition::create('string')
+    $properties['extra_text'] = MapDataDefinition::create()
       ->setLabel('Extra Text')
       ->setDescription('Helpful text to place next to the input content or section (like a question)');
     $properties['term_field_uuid'] = DataDefinition::create('string')

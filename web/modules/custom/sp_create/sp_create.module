@@ -148,3 +148,37 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
     }
   }
 }
+
+/**
+ * Helps create a portion of the title for auto-entity label.
+ *
+ * @param \Drupal\node\Entity\Node $entity
+ *   The node whose title is being set.
+ *
+ * @return string
+ *   The portion of the title needed for auto-entity label.
+ *
+ * @throws \Exception
+ */
+function sp_create_auto_label(Node $entity) {
+  if (in_array($entity->getType(), PlanYearInfo::getSpyaNodeBundles())) {
+    $string = sprintf('%s - %s - %s - %s', $entity->get('field_plan_year')->entity->label(), $entity->get('field_section')->entity->label(), $entity->get('field_section_year_term')->entity->label(), $entity->get('field_field_unique_id_reference')->getString());
+    return substr($string, 0, 205);
+  }
+  else {
+    switch ($entity->getType()) {
+      case PlanYearInfo::SPY_BUNDLE:
+        return $entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label();
+
+      case PlanYearInfo::SPYS_BUNDLE:
+        $string = sprintf('%s - %s', $entity->get('field_state_plan_year')->entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label(), $entity->get('field_section')->entity->label());
+        return substr($string, 0, 205);
+
+      case PlanYearInfo::SPZY_BUNDLE:
+        return $entity->get('field_plan_year')->entity->label();
+
+    }
+  }
+
+  throw new \Exception('Node bundle ' . $entity->getType() . ' is not supported in ' . __FUNCTION__);
+}

@@ -77,12 +77,27 @@ class PlanYearInfo {
   const SPYA_TEXT_BUNDLE_OPTIONAL = 'text_sp_answer_optional';
 
   /**
-   * Get ID and labels for state plan answer node bundles.
+   * Get node bundles for state plan answer nodes.
    *
    * @return array
    *   An array keyed by the entity type bundle with the label as the value.
    */
   public static function getSpyaNodeBundles() {
+    return [
+      self::SPYA_BOOL_BUNDLE_OPTIONAL,
+      self::SPYA_BOOL_BUNDLE_REQUIRED,
+      self::SPYA_TEXT_BUNDLE_OPTIONAL,
+      self::SPYA_TEXT_BUNDLE_REQUIRED,
+    ];
+  }
+
+  /**
+   * Get node bundles and labels for state plan answer nodes.
+   *
+   * @return array
+   *   An array keyed by the entity type bundle with the label as the value.
+   */
+  public static function getSpyaLabels() {
     return [
       self::SPYA_BOOL_BUNDLE_OPTIONAL => 'Yes/No (Optional)',
       self::SPYA_BOOL_BUNDLE_REQUIRED => 'Yes/No (Required)',

@@ -82,7 +82,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $element['node_bundle'] = [
       '#title' => $props['node_bundle']->getDataDefinition()->getLabel(),
       '#type' => 'select',
-      '#options' => PlanYearInfo::getSpyaNodeBundles(),
+      '#options' => PlanYearInfo::getSpyaLabels(),
       '#empty_option' => $this->t('- Choose an answer type -'),
       '#default_value' => $node_bundle,
       '#description' => $props['node_bundle']->getDataDefinition()

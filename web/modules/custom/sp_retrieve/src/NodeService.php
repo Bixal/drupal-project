@@ -517,12 +517,12 @@ class NodeService {
     $node_storage = $this->entityTypeManager->getStorage('node');
     $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
     $orphans = [];
-    foreach (PlanYearInfo::getSpyaNodeBundles() as $state_plan_year_node_bundle) {
+    foreach (PlanYearInfo::getSpyaNodeBundles() as $node_bundle) {
       foreach ($node_storage->getQuery()
-        ->condition('type', $state_plan_year_node_bundle)
+        ->condition('type', $node_bundle)
         ->accessCheck(FALSE)
         ->execute() as $state_plan_year_answer_nid) {
-        /** @var \Drupal\node\Entity\Node $state_plan_year_content */
+        /** @var \Drupal\node\Entity\Node $state_plan_year_answer */
         $state_plan_year_answer = $node_storage->load($state_plan_year_answer_nid);
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $section_year_term_field */
         $section_year_term_field = $state_plan_year_answer->get('field_section_year_term')->get(0);
@@ -543,7 +543,7 @@ class NodeService {
         $state_plan_year_content_info = $this->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
         // Ensure that the node type matches between the node and the term.
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $plan_year_field */
-        $plan_year_field = $state_plan_year_content->get('field_plan_year');
+        $plan_year_field = $state_plan_year_answer->get('field_plan_year');
         // If there is no plan year referenced, this piece of content is in a
         // bad state.
         if ($plan_year_field->isEmpty()) {
@@ -557,7 +557,7 @@ class NodeService {
           continue;
         }
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $section_field */
-        $section_field = $state_plan_year_content->get('field_section');
+        $section_field = $state_plan_year_answer->get('field_section');
         // If there is no section referenced, this piece of content is in a
         // bad state.
         if ($section_field->isEmpty()) {
@@ -571,7 +571,7 @@ class NodeService {
           continue;
         }
         /** @var \Drupal\Core\Field\FieldItemList $field_unique_id_reference_field */
-        $field_unique_id_reference_field = $state_plan_year_content->get('field_field_unique_id_reference');
+        $field_unique_id_reference_field = $state_plan_year_answer->get('field_field_unique_id_reference');
         // If there is no field unique ID referenced, this piece of content is
         // in a bad state.
         if ($field_unique_id_reference_field->isEmpty()) {
@@ -592,7 +592,7 @@ class NodeService {
         }
         // The node type to be created if the term does not match
         // the node type created.
-        if ($state_plan_year_node_bundle !== $state_plan_year_content_info['content'][$field_unique_id_reference]['node_bundle']) {
+        if ($node_bundle !== $state_plan_year_content_info['content'][$field_unique_id_reference]['node_bundle']) {
           $orphans[] = $state_plan_year_answer_nid;
         }
       }

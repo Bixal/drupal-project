@@ -31,7 +31,7 @@ function sp_retrieve_entity_update(EntityInterface $entity) {
  * Implements hook_entity_delete().
  */
 function sp_retrieve_entity_delete(EntityInterface $entity) {
-  sp_retrieve_invalidate_plan_content_cache($entity, 'insert');
+  sp_retrieve_invalidate_plan_content_cache($entity, 'delete');
 }
 
 /**

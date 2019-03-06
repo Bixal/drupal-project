@@ -87,31 +87,29 @@ class PlanYearEntityContentForm extends EntityBatchForm {
     $group_content_message = implode('</li><li>', $group_content_message);
     $form['create_plans_and_sections'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Create plans and sections'),
+      '#title' => $this->t('Create missing plans and sections'),
       '#description' => $group_content_message ? '<ul><li>' . $group_content_message . '</li></ul>' : $this->t('All plans and sections have been created.'),
       '#disabled' => !strlen($group_content_message),
       '#default_value' => !empty($group_content_message),
     ];
     $orphans = [];
-    $create = [];
-    $modify_state_plan_year_content_message['orphans'] = $this->t('State plan content must be created before checking for state plan year content orphans.');
-    $modify_state_plan_year_content_message['create'] = $this->t('State plan content must be created before creating state plan year content.');
+    $missing_answers = [];
+    $modify_answers_message['orphans'] = $this->t('Plans and sections must be created before checking for answer orphans.');
+    $modify_answers_message['missing_answers'] = $this->t('Plans and sections must be created before creating answers.');
     if (empty($group_content_message)) {
-      $orphans = $this->nodeRetrieval->getOrphansStatePlanYearContent();
-      $create = $this->nodeRetrieval->getMissingPlanYearContent($current_plan_year->id());
-      $modify_state_plan_year_content_message['orphans'] = $this->t('There are %orphans state plan year content orphans to be deleted.', ['%orphans' => count($orphans)]);
-      $modify_state_plan_year_content_message['create'] = $this->t('There are %create state plan year content items to be created.', ['%create' => count($create)]);
+      $orphans = $this->nodeRetrieval->getOrphansStatePlanYearAnswers();
+      $missing_answers = $this->nodeRetrieval->getMissingPlanYearAnswers($current_plan_year->id());
+      $modify_answers_message['orphans'] = $this->t('There are %orphans orphan answers to be deleted.', ['%orphans' => count($orphans)]);
+      $modify_answers_message['missing_answers'] = $this->t('There are %create answers to be created.', ['%create' => count($missing_answers)]);
     }
-    $form['modify_state_plan_year_content'] = [
+    $form['modify_answers'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Update state plan year content'),
-      '#description' => '<li>' . implode('</li><li>', $modify_state_plan_year_content_message) . '</li>',
-      '#disabled' => empty($orphans) && empty($create),
-      '#default_value' => !empty($orphans) || !empty($create),
+      '#title' => $this->t('Remove or create answers'),
+      '#description' => '<li>' . implode('</li><li>', $modify_answers_message) . '</li>',
+      '#disabled' => empty($orphans) && empty($missing_answers),
+      '#default_value' => !empty($orphans) || !empty($missing_answers),
     ];
 
-    // @TODO: Make sure that all these groups don't have an in-progress plan year if any sections are being copied from any plan year.
-    // Allow them to copy answers from previous years if they copied hierarchy.
     return $form;
   }
 
@@ -168,20 +166,20 @@ class PlanYearEntityContentForm extends EntityBatchForm {
         }
       }
     }
-    elseif ($form_state->getValue('modify_state_plan_year_content')) {
+    elseif ($form_state->getValue('modify_answers')) {
       $batch = [
         'title' => $this->t('Updating state plan year content'),
         'operations' => [],
         'finished' => [UpdatePlanYearBatch::class, 'finished'],
       ];
-      $orphan_content = $this->nodeRetrieval->getOrphansStatePlanYearContent();
-      foreach ($orphan_content as $state_plan_year_content_nid) {
-        $batch['operations'][] = $this->batchRemoveStatePlanYearContent($state_plan_year_content_nid);
+      $orphan_answers = $this->nodeRetrieval->getOrphansStatePlanYearAnswers();
+      foreach ($orphan_answers as $orphan_answer_nid) {
+        $batch['operations'][] = $this->batchRemoveStatePlanYearAnswer($orphan_answer_nid);
       }
-      $create = $this->nodeRetrieval->getMissingPlanYearContent($current_plan_year->id());
-      foreach ($create as $info) {
-        $batch['operations'][] = $this->batchAddStatePlanYearContent(
-          $info['node_type'],
+      $missing_answers = $this->nodeRetrieval->getMissingPlanYearAnswers($current_plan_year->id());
+      foreach ($missing_answers as $info) {
+        $batch['operations'][] = $this->batchAddStatePlanYearAnswer(
+          $info['node_bundle'],
           $info['field_unique_id_reference'],
           $info['plan_year'],
           $info['section'],

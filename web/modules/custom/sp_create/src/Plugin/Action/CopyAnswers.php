@@ -86,19 +86,19 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
   public function execute(Node $entity = NULL) {
     // Since ALL entities are still passed to execute, they need to be checked
     // that they can still be copied to.
-    $summary = $this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYearSummary($entity->id());
+    $summary = $this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($entity->id());
     if (empty($summary['count'])) {
       return;
     }
 
     // Go through each state plan year section and then all content in that
     // section that can be copied to.
-    foreach ($this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYear($entity->id()) as $copiable_answers_section) {
-      if (empty($copiable_answers_section['state_plan_year_content'])) {
+    foreach ($this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($entity->id()) as $copiable_answers_section) {
+      if (empty($copiable_answers_section['state_plan_year_answers'])) {
         continue;
       }
-      foreach ($copiable_answers_section['state_plan_year_content'] as $state_plan_year_nid_from_and_to) {
-        $this->updatePlanYearContentService->copyStatePlanYearContent($state_plan_year_nid_from_and_to['from'], $state_plan_year_nid_from_and_to['to'], TRUE);
+      foreach ($copiable_answers_section['state_plan_year_answers'] as $answer_nid_from_and_to) {
+        $this->updatePlanYearContentService->copyStatePlanYearAnswer($answer_nid_from_and_to['from'], $answer_nid_from_and_to['to'], TRUE);
       }
     }
     $this->messenger->addStatus($this->formatPlural($summary['count'], 'Copied %count piece of content into %title', 'Copied %count pieces of content into %title', ['%count' => $summary['count'], '%title' => $entity->getTitle()]));
@@ -149,7 +149,7 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
       $entity_ids_to_load[] = $entity_ids[3];
     }
     foreach ($entity_ids_to_load as $state_plan_year_nid) {
-      $summary = $this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid);
+      $summary = $this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid);
       if (!empty($summary['count'])) {
         $supported[] = $summary['message'];
       }

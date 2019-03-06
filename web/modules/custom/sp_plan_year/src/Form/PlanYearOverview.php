@@ -131,26 +131,38 @@ class PlanYearOverview extends FormBase {
       ];
       $link_text = empty($sections) ? $this->t('No sections in this plan year, add sections here') : $this->t('Add or remove sections from this plan year');
       $quick_links[] = Link::createFromRoute($link_text, 'entity.plan_year.wizard', [PlanYearEntity::ENTITY => $plan_year->id()], empty($sections) ? $red_link : [])->toString();
+      // @TODO: Create a method canCreateStatePlanContent() that encompasses
+      // all the logic below, just like
+      // nodeService->canCopyStatePlanYearAnswer().
       $show_remove_orphans_links = FALSE;
-      $missing_parent_content = $this->nodeService->getGroupsMissingStatePlanYearsAndStatePlanYearSections($plan_year->id());
-      $show_missing_content_link = empty($missing_parent_content) ? TRUE : !empty($missing_parent_content) && $missing_parent_content['at_least_one_missing'];
-      if (FALSE === $show_missing_content_link) {
-        $orphans = $this->nodeService->getOrphansStatePlanYearContent();
+      $show_missing_answers = FALSE;
+      $missing_plans_and_sections = $this->nodeService->getGroupsMissingStatePlanYearsAndStatePlanYearSections($plan_year->id());
+      // If empty, there is nothing made yet, if some is returned, there might
+      // be some created and some still missing.
+      $show_missing_plans_and_sections_link = empty($missing_plans_and_sections) ? TRUE : !empty($missing_plans_and_sections) && $missing_plans_and_sections['at_least_one_missing'];
+      // Don't show orphans or answers if content is not created yet.
+      if (FALSE === $show_missing_plans_and_sections_link) {
+        $orphans = $this->nodeService->getOrphansStatePlanYearAnswers();
         if (!empty($orphans)) {
           $show_remove_orphans_links = TRUE;
         }
-        $create = $this->nodeService->getMissingPlanYearContent($plan_year->id());
-        if (!empty($create)) {
-          $show_missing_content_link = TRUE;
+        $missing_answers = $this->nodeService->getMissingPlanYearAnswers($plan_year->id());
+        if (!empty($missing_answers)) {
+          $show_missing_answers = TRUE;
         }
       }
-      if ($show_missing_content_link) {
-        $quick_links[] = Link::createFromRoute($this->t('There is missing content in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
+      if ($show_missing_plans_and_sections_link) {
+        $quick_links[] = Link::createFromRoute($this->t('There is missing plans or sections in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
+      }
+      if ($show_missing_answers) {
+        $quick_links[] = Link::createFromRoute($this->t('There are missing answers in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
       }
       if ($show_remove_orphans_links) {
-        $quick_links[] = Link::createFromRoute($this->t('There are orphan state plan year content in this plan year, remove here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
+        $quick_links[] = Link::createFromRoute($this->t('There are orphan answers in this plan year, remove here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
       }
-      if (empty($show_missing_content_link) && empty($show_remove_orphans_links) && $state_plans_year_nid = $this->nodeService->getStatePlansYearByPlanYear($plan_year->id())) {
+      // If all content, orphans, and answers are created, show the manage state
+      // plans view.
+      if (empty($show_missing_plans_and_sections_link) && empty($show_remove_orphans_links) && empty($show_missing_answers) && $state_plans_year_nid = $this->nodeService->getStatePlansYearByPlanYear($plan_year->id())) {
         $quick_links[] = Link::createFromRoute($this->t('Manage State Plans'), 'view.manage_plans.moderated_content', [], ['query' => ['plan-year' => $state_plans_year_nid]])->toString();
       }
 

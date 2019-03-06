@@ -14,3 +14,8 @@ services:
     arguments: ['@sp_create.clone']
     tags:
       - { name: drupal.command }
+  sp_create.sp_create.config_splits_create:
+    class: Drupal\sp_create\Command\ConfigSplitsCreateCommand
+    arguments: ['@sp_retrieve.custom_entities']
+    tags:
+      - { name: drupal.command }

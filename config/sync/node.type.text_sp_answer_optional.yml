@@ -1,0 +1,17 @@
+uuid: 34890244-59cb-4609-abdc-6c6e33cec7dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Text Question State Plan Content (Optional)'
+type: text_sp_answer_optional
+description: 'This is the textual content that state editors will enter. There will be a content type of this for each section for granularity. This content type will NEVER be seen or entered, only the cloned versions of it per section.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -121,7 +121,7 @@ abstract class EntityBatchForm extends EntityForm {
   }
 
   /**
-   * Remove state plan year content tagged with terms from this vocab.
+   * Remove state plan year answers tagged with terms from this vocab.
    *
    * @param string $section_id
    *   A section ID.
@@ -132,9 +132,9 @@ abstract class EntityBatchForm extends EntityForm {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  protected function batchRemoveStatePlanYearContentBySection($section_id) {
+  protected function batchRemoveStatePlanYearAnswersBySection($section_id) {
     return [
-      [UpdatePlanYearBatch::class, 'removeStatePlanYearContentBySection'],
+      [UpdatePlanYearBatch::class, 'removeStatePlanYearAnswersBySection'],
       [
         $this->entity->id(),
         $section_id,
@@ -354,47 +354,47 @@ abstract class EntityBatchForm extends EntityForm {
   }
 
   /**
-   * Remove a state plan year content node.
+   * Remove a state plan year answer node.
    *
-   * @param string $state_plan_year_content_nid
-   *   A state plan year content node ID.
+   * @param string $state_plan_year_answer_nid
+   *   A state plan year answer node ID.
    *
    * @return array
    *   A batch operation.
    */
-  protected function batchRemoveStatePlanYearContent($state_plan_year_content_nid) {
+  protected function batchRemoveStatePlanYearAnswer($state_plan_year_answer_nid) {
     return [
-      [UpdatePlanYearBatch::class, 'removeStatePlanYearContent'],
+      [UpdatePlanYearBatch::class, 'removeStatePlanYearAnswer'],
       [
-        $state_plan_year_content_nid,
+        $state_plan_year_answer_nid,
       ],
     ];
   }
 
   /**
-   * Add a piece of state plan year content.
+   * Add state plan year answer.
    *
-   * @param string $node_type
+   * @param string $node_bundle
    *   The node type.
    * @param string $field_unique_id_reference
-   *   The UUID that uniquiely identifies a term field between years.
+   *   The UUID that uniquely identifies a term field between years.
    * @param string $plan_year_id
-   *   The plan year ID that this content belongs to.
+   *   The plan year ID that this answer belongs to.
    * @param string $section_id
-   *   The section ID that this content belongs to.
+   *   The section ID that this answer belongs to.
    * @param string $section_year_term_tid
-   *   The term that this piece of content is based on.
+   *   The term that this piece of answer is based on.
    * @param string $state_plan_year_section_nid
-   *   The state plan year section NID that this piece of content belongs to.
+   *   The state plan year section NID that this piece of answer belongs to.
    *
    * @return array
    *   A batch operation.
    */
-  public function batchAddStatePlanYearContent($node_type, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid) {
+  public function batchAddStatePlanYearAnswer($node_bundle, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid) {
     return [
-      [UpdatePlanYearBatch::class, 'addStatePlanYearContent'],
+      [UpdatePlanYearBatch::class, 'addStatePlanYearAnswer'],
       [
-        $node_type,
+        $node_bundle,
         $field_unique_id_reference,
         $plan_year_id,
         $section_id,

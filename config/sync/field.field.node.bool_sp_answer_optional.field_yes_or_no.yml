@@ -1,0 +1,21 @@
+uuid: ba3b1a6b-01ab-45df-a91c-bdc3a1709b55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_yes_or_no
+    - node.type.bool_sp_answer_optional
+  module:
+    - options
+id: node.bool_sp_answer_optional.field_yes_or_no
+field_name: field_yes_or_no
+entity_type: node
+bundle: bool_sp_answer_optional
+label: 'Yes or No'
+description: 'The question comes from the term this is tagged with.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

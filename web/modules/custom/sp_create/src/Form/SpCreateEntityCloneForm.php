@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslationManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Drupal\Core\Messenger\Messenger;
 
 /**
  * Implements an entity Clone form.
@@ -27,11 +28,14 @@ class SpCreateEntityCloneForm extends EntityCloneForm {
    *   The string translation manager.
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher
    *   The event dispatcher service.
+   * @param \Drupal\Core\Messenger\Messenger $messenger
+   *   The messenger service.
    */
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, TranslationManager $string_translation, EventDispatcherInterface $eventDispatcher) {
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, TranslationManager $string_translation, EventDispatcherInterface $eventDispatcher, Messenger $messenger) {
     $this->entityTypeManager = $entity_type_manager;
     $this->stringTranslationManager = $string_translation;
     $this->eventDispatcher = $eventDispatcher;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -41,8 +45,16 @@ class SpCreateEntityCloneForm extends EntityCloneForm {
     return new static(
       $container->get('entity_type.manager'),
       $container->get('string_translation'),
-      $container->get('event_dispatcher')
+      $container->get('event_dispatcher'),
+      $container->get('messenger')
     );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'sp_create_entity_clone_form';
   }
 
   /**

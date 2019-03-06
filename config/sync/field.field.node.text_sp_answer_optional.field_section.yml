@@ -1,0 +1,23 @@
+uuid: 48f12679-0f51-450c-932d-38f92d4407a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.text_sp_answer_optional
+id: node.text_sp_answer_optional.field_section
+field_name: field_section
+entity_type: node
+bundle: text_sp_answer_optional
+label: Section
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

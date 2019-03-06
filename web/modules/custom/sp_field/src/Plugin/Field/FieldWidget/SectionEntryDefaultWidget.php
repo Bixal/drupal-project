@@ -69,9 +69,10 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $element['#element_validate'] = [
       [static::class, 'validateAll'],
     ];
-    $entity_type_bundle = isset($items[$delta]->entity_type_bundle) ? $items[$delta]->entity_type_bundle : '';
+    $node_bundle = isset($items[$delta]->node_bundle) ? $items[$delta]->node_bundle : '';
     $section = isset($items[$delta]->section) ? $items[$delta]->section : '';
-    $extra_text = isset($items[$delta]->extra_text) ? $items[$delta]->extra_text : '';
+    $default_value = isset($items[$delta]->default_value) ? $items[$delta]->default_value : '';
+    $extra_text = isset($items[$delta]->extra_text) ? $items[$delta]->extra_text : ['value' => '', 'format' => filter_default_format()];
     $term_field_uuid = isset($items[$delta]->term_field_uuid) ? $items[$delta]->term_field_uuid : '';
     $access_option = isset($items[$delta]->access_option) ? $items[$delta]->access_option : '';
     $access_term_field_uuid = isset($items[$delta]->access_term_field_uuid) ? $items[$delta]->access_term_field_uuid : '';
@@ -79,15 +80,32 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
     $item = $items[$delta];
     $props = $item->getProperties();
-    $element['entity_type_bundle'] = [
-      '#title' => $props['entity_type_bundle']->getDataDefinition()->getLabel(),
+    $element['node_bundle'] = [
+      '#title' => $props['node_bundle']->getDataDefinition()->getLabel(),
       '#type' => 'select',
-      '#options' => PlanYearInfo::getSpycEntityTypeBundles(),
-      '#empty_option' => $this->t('- Choose an entity -'),
-      '#default_value' => $entity_type_bundle,
-      '#description' => $props['entity_type_bundle']->getDataDefinition()
+      '#options' => PlanYearInfo::getSpyaLabels(),
+      '#empty_option' => $this->t('- Choose an answer type -'),
+      '#default_value' => $node_bundle,
+      '#description' => $props['node_bundle']->getDataDefinition()
         ->getDescription(),
+      '#states' => [
+        'visible' => [
+          'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+        ],
+      ],
     ];
+
+    $element['node_bundle_or_section'] = [
+      '#type' => 'item',
+      '#title' => 'OR',
+      '#states' => [
+        'visible' => [
+          'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+          'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+        ],
+      ],
+    ];
+
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     $plan_year = $this->customEntitiesService->single(PlanYearEntity::ENTITY, $plan_year_info['plan_year_id']);
     $sectionOptions = [];
@@ -104,16 +122,60 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#default_value' => $section,
       '#description' => $props['section']->getDataDefinition()
         ->getDescription(),
+      '#states' => [
+        'visible' => [
+          'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+        ],
+      ],
+    ];
+
+    $element['default_value'] = [
+      '#title' => $props['default_value']->getDataDefinition()->getLabel(),
+      '#type' => 'select',
+      '#default_value' => $default_value,
+      '#empty_option' => $this->t('- Choose a value -'),
+      '#description' => $props['default_value']->getDataDefinition()
+        ->getDescription(),
+      '#options' => ['yes' => 'Yes', 'no' => 'No'],
+      '#states' => [
+        'visible' => [
+          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => PlanYearInfo::SPYA_BOOL_BUNDLE_OPTIONAL]],
+          ['or'],
+          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => PlanYearInfo::SPYA_BOOL_BUNDLE_REQUIRED]],
+        ],
+      ],
+    ];
+
+    $element['show_extra_text'] = [
+      '#title' => $this->t('Do you want to add additional text, like a question, before the input?'),
+      '#type' => 'checkbox',
+      '#default_value' => !empty($extra_text['value']),
+      '#states' => [
+        'invisible' => [
+          'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+          'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+        ],
+      ],
     ];
 
     $element['extra_text'] = [
       '#title' => $props['extra_text']->getDataDefinition()->getLabel(),
-      '#type' => 'textarea',
-      '#default_value' => $extra_text,
+      '#type' => 'text_format',
+      '#default_value' => $extra_text['value'],
       '#description' => $props['extra_text']->getDataDefinition()
         ->getDescription(),
       '#rows' => 3,
-      '#format' => 'plain_text',
+      '#format' => $extra_text['format'],
+      '#states' => [
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_extra_text]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
+        ],
+      ],
     ];
 
     // Don't show the UUID until after the save.
@@ -136,6 +198,19 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#size' => 36,
       '#value' => $term_field_uuid,
     ];
+    $element['show_access'] = [
+      '#title' => $this->t('Do you want to conditionally show this section or question based on another question?'),
+      '#type' => 'checkbox',
+      '#default_value' => !empty($access_option) || !empty($access_term_field_uuid) || !empty($access_value),
+      '#states' => [
+        'invisible' => [
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
+        ],
+      ],
+    ];
     // This section will be the same for term and term field fields. Bring it
     // in from a common file.
     $element['access'] = [
@@ -144,18 +219,40 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#description' => $this->t('Change the access to this entry depending on previous values entered by the state.'),
       '#open' => FALSE,
       '#prefix' => '<hr />',
+      '#states' => [
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
+        ],
+      ],
     ];
     $element['access_option'] = [
       '#title' => $props['access_option']->getDataDefinition()->getLabel(),
       '#type' => 'select',
       '#options' => [
-        'hide' => $this->t('Hide: The content will not be shown for entry'),
-        'disallow' => $this->t('Disallow: The content will be shown but disabled and the defaults entered'),
+        PlanYearInfo::ANSWER_ACCESS_SHOWN => $this->t('Initialized to be hidden, shown if access value is met'),
+        PlanYearInfo::ANSWER_ACCESS_HIDE => $this->t('Initialized to be shown, hidden if access value is met'),
+        PlanYearInfo::ANSWER_ACCESS_DISALLOW => $this->t('Initialized to be allowed, disallowed if access value is met'),
+        PlanYearInfo::ANSWER_ACCESS_ALLOW => $this->t('Initialized to be disallowed, allowed if access value is met'),
       ],
       '#empty_option' => $this->t('- Choose an option -'),
       '#default_value' => $access_option,
       '#description' => $props['access_option']->getDataDefinition()
         ->getDescription(),
+      '#states' => [
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
+        ],
+      ],
     ];
     $element['access_term_field_uuid'] = [
       '#title' => $props['access_term_field_uuid']->getDataDefinition()
@@ -169,15 +266,35 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         ->getDescription(),
       '#maxlength' => 36,
       '#size' => 36,
+      '#states' => [
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
+        ],
+      ],
     ];
     $element['access_value'] = [
       '#title' => $props['access_value']->getDataDefinition()->getLabel(),
-      '#type' => 'textarea',
+      '#type' => 'select',
+      '#empty_option' => $this->t('- Choose a value -'),
+      '#options' => ['yes' => 'Yes', 'no' => 'No'],
       '#default_value' => $access_value,
       '#description' => $props['access_value']->getDataDefinition()
         ->getDescription(),
-      '#rows' => 3,
-      '#format' => 'plain_text',
+      '#states' => [
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
+        ],
+      ],
     ];
     return $element;
   }
@@ -210,17 +327,16 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
    *   The form state.
    */
   public static function validateAll(array $element, FormStateInterface $form_state) {
-    $entity_type_bundle = strlen($element['entity_type_bundle']['#value']);
+    $node_bundle = strlen($element['node_bundle']['#value']);
     $section = strlen($element['section']['#value']);
-    $extra_text = strlen($element['extra_text']['#value']);
+    $extra_text = strlen($element['extra_text']['value']['#value']);
     $access_option = strlen($element['access_option']['#value']);
     $access_term_field_uuid = strlen($element['access_term_field_uuid']['#value']);
     $access_value = strlen($element['access_value']['#value']);
-
-    // Can't choose both section & and a content entity..
-    if ($entity_type_bundle && $section) {
-      $form_state->setError($element['entity_type_bundle'], t("You may not choose both @etb and @section at the same time.", [
-        '@etb' => $element['entity_type_bundle']['#title'],
+    // Can't choose both section and a content entity.
+    if ($node_bundle && $section) {
+      $form_state->setError($element['node_bundle'], t("You may not choose both @etb and @section at the same time.", [
+        '@etb' => $element['node_bundle']['#title'],
         '@section' => $element['section']['#title'],
       ]));
       $form_state->setError($element['section']);
@@ -228,11 +344,8 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
 
     // If they entered any other portion of the form but not section or content
     // entity.
-    if (!$entity_type_bundle && !$section && ($entity_type_bundle || $extra_text || $access_option || $access_term_field_uuid || $access_value)) {
-      $form_state->setError($element['entity_type_bundle'], t("You must select either @etb and @section as well.", [
-        '@etb' => $element['entity_type_bundle']['#title'],
-        '@section' => $element['section']['#title'],
-      ]));
+    if (!$node_bundle && !$section && ($node_bundle || $extra_text || $access_option || $access_term_field_uuid || $access_value)) {
+      $form_state->setError($element['node_bundle'], t("Please remove all selected / filled fields if you are trying to remove this entire entry."));
       $form_state->setError($element['section']);
     }
 

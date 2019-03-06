@@ -1,0 +1,23 @@
+uuid: 6ea477a9-5e6a-4843-bf2c-8c927ee18811
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_plan_year
+    - node.type.bool_sp_answer_required
+id: node.bool_sp_answer_required.field_plan_year
+field_name: field_plan_year
+entity_type: node
+bundle: bool_sp_answer_required
+label: 'Plan Year'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:plan_year'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

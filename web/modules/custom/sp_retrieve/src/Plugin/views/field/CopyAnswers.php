@@ -91,7 +91,7 @@ class CopyAnswers extends FieldPluginBase {
   public function render(ResultRow $values) {
     /** @var \Drupal\node\Entity\Node $node */
     $state_plan_year = $values->_entity;
-    $summary = $this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYearSummary($state_plan_year->id());
+    $summary = $this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year->id());
     if (empty($summary['count'])) {
       return $summary['message'];
     }
@@ -105,7 +105,7 @@ class CopyAnswers extends FieldPluginBase {
       ],
     ];
 
-    foreach ($this->nodeService->getStatePlanYearContentWithCopiableAnswersByStatePlanYear($state_plan_year->id()) as $section_id => $copiable_answers_section) {
+    foreach ($this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($state_plan_year->id()) as $section_id => $copiable_answers_section) {
       $state_plan_year_section = $this->customEntitiesRetrieval->single('node', $copiable_answers_section['state_plan_year_section_from']);
       $plan_year_label = $state_plan_year_section->get('field_state_plan_year')->entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label();
       $section_label = $state_plan_year_section->get('field_section')->entity->label();
@@ -118,7 +118,7 @@ class CopyAnswers extends FieldPluginBase {
       $output['copy'][$section_id]['section'] = ['#markup' => $section_label];
       $output['copy'][$section_id]['from_year'] = ['#markup' => $plan_year_label];
       $output['copy'][$section_id]['section_status'] = ['#markup' => $moderation_state_label];
-      $output['copy'][$section_id]['num_to_copy'] = ['#markup' => count($copiable_answers_section['state_plan_year_content'])];
+      $output['copy'][$section_id]['num_to_copy'] = ['#markup' => count($copiable_answers_section['state_plan_year_answers'])];
     }
     return $output;
   }

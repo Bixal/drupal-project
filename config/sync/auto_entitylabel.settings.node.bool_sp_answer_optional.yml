@@ -1,0 +1,7 @@
+status: '1'
+pattern: '[node:group:title] - <?php echo sp_create_auto_label($entity); ?>'
+php: 1
+escape: 0
+dependencies:
+  config:
+    - node.type.bool_sp_answer_optional

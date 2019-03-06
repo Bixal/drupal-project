@@ -1,0 +1,22 @@
+uuid: 83133271-2e0d-4490-8748-1a9e41f74207
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.text_sp_answer_required
+  module:
+    - text
+id: node.text_sp_answer_required.body
+field_name: body
+entity_type: node
+bundle: text_sp_answer_required
+label: Body
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

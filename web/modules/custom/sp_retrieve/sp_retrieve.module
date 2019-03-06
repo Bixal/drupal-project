@@ -11,6 +11,7 @@ use Drupal\Core\Cache\Cache;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\group\Entity\Group;
 
 /**
  * Implements hook_entity_insert().
@@ -30,7 +31,7 @@ function sp_retrieve_entity_update(EntityInterface $entity) {
  * Implements hook_entity_delete().
  */
 function sp_retrieve_entity_delete(EntityInterface $entity) {
-  sp_retrieve_invalidate_plan_content_cache($entity, 'insert');
+  sp_retrieve_invalidate_plan_content_cache($entity, 'delete');
 }
 
 /**
@@ -55,49 +56,66 @@ function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op)
   // Only clear cache based on section terms or state plan year nodes.
   if (
     ($entity instanceof Term && PlanYearInfo::getPlanYearIdAndSectionIdFromVid($entity->bundle())) ||
-    ($entity instanceof Node && in_array($entity->bundle(), PlanYearInfo::getSpyEntityBundles()))
+    ($entity instanceof Node && in_array($entity->bundle(), PlanYearInfo::getSpyNodeBundles())) ||
+    $entity instanceof Group
   ) {
     // Only section terms being updated can affect the missingness of a node
     // content, as they could have changed what type of node is referenced.
     // Any state plan year node type being inserted or deleted can change
     // the missingness of content. The only nodes that are updated, state
     // plan year content, do nothing about missingness.
-    if ((in_array($op, ['insert', 'delete'], TRUE)) || ($op === 'update' && $entity instanceof Term)) {
+    // If any group is inserted, updated, or deleted, that will result in
+    // missing plan content.
+    if ($entity instanceof Group || (in_array($op, ['insert', 'delete'], TRUE)) || ($op === 'update' && $entity instanceof Term)) {
       $clear_missing_content_cache = TRUE;
     }
-    // Anytime a state plan year content node is updated, inserted, or deleted
+    // Anytime a state plan year answer node is updated, inserted, or deleted
     // clear the copy cache answer cache. This could happen from a state plan
     // year being modified or any state answer answering a question.
     // ** IMPORTANT **
-    // Updating a term could cause a state plan year content to change
+    // Updating a term could cause a state plan year answer to change
     // but only after it has been deleted and re-created. Don't allow admins
-    // to copy answers if there are outstanding state plan year content orphans
+    // to copy answers if there are outstanding state plan year answer orphans
     // to be create / removed. This could be fine tuned even further to not
     // clear cache if the state plan year content was being updated and not
     // changing value state. For example, empty -> empty, not empty -> not
     // empty will not change if the content can be copied or not.
-    if (in_array($entity->bundle(), PlanYearInfo::getSpycEntityBundles('node'))) {
+    // If any group is inserted, updated, or deleted, that will result in the
+    // copy answer content.
+    if ($entity instanceof Group || in_array($entity->bundle(), PlanYearInfo::getSpyaNodeBundles())) {
       $clear_copy_answer_cache = TRUE;
     }
   }
 
   if (TRUE === $clear_missing_content_cache) {
-    // All plan years caches (getOrphansStatePlanYearContent is for 'all' plan
-    // years).
-    Cache::invalidateTags($node_service->getMissingContentCacheTags());
-    // Specific plan year cache.
-    $state_plan_id = PlanYearInfo::getPlanYearIdFromEntity($entity);
-    Cache::invalidateTags($node_service->getMissingContentCacheTags($state_plan_id));
+    // Use the entity to determine if it is specific to a plan year.
+    $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($entity);
+    if (FALSE !== $plan_year_id) {
+      // All plan years caches (getOrphansStatePlanYearAnswers is for 'all' plan
+      // years).
+      Cache::invalidateTags($node_service->getMissingContentCacheTags());
+      Cache::invalidateTags($node_service->getMissingContentCacheTags($plan_year_id));
+    }
+    else {
+      // Groups are not specific to a single year, for example.
+      Cache::invalidateTags($node_service->getMissingContentAllCacheTags());
+    }
   }
   if (TRUE === $clear_copy_answer_cache) {
-    // Specific state plan year cache.
+    // Use the entity to determine if it is specific to a state plan year node.
     $state_plan_year_nid = PlanYearInfo::getStatePlanYearNidFromEntity($entity);
-    Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid));
-    // This will clear the cache of state plan years that this state plan year
-    // is a source of, ie it's getting copied to this year, not that it's
-    // copying from.
-    foreach ($node_service->getStatePlanYearsCopyingTo($state_plan_year_nid) as $state_plan_year_nid_to) {
-      Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid_to));
+    if (FALSE !== $state_plan_year_nid) {
+      Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid));
+      // This will clear the cache of state plan years that this state plan year
+      // is a source of, ie it's getting copied to this year, not that it's
+      // copying from.
+      foreach ($node_service->getStatePlanYearsCopyingTo($state_plan_year_nid) as $state_plan_year_nid_to) {
+        Cache::invalidateTags($node_service->getCopyAnswersCacheTags($state_plan_year_nid_to));
+      }
+    }
+    else {
+      // Groups are not specific to a single year, for example.
+      Cache::invalidateTags($node_service->getCopyAnswersAllCacheTags());
     }
   }
 }

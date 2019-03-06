@@ -1,5 +1,5 @@
 status: '1'
-pattern: '[node:group:title] - <?php echo $entity->field_state_plans_year->entity->field_plan_year->entity->label(); ?>'
+pattern: '[node:group:title] - <?php echo sp_create_auto_label($entity); ?>'
 php: 1
 escape: 0
 dependencies:

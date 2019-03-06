@@ -25,11 +25,11 @@ class ContentService {
   public const WORKFLOW_ID_STATE_PLAN_YEAR_SECTION = 'state_plan_year_section';
 
   /**
-   * Workflow ID that is used for state plan content nodes.
+   * Workflow ID that is used for state plan answer nodes.
    *
-   * This holds multiple types: yes / no and text input.
+   * This holds multiple types: yes / no and text input (required and optional).
    */
-  public const WORKFLOW_ID_STATE_PLAN_CONTENT = 'state_plan_content';
+  public const WORKFLOW_ID_STATE_PLAN_ANSWER = 'state_plan_answer';
 
   /**
    * The workflow state for published.

@@ -71,6 +71,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     ];
     $node_bundle = isset($items[$delta]->node_bundle) ? $items[$delta]->node_bundle : '';
     $section = isset($items[$delta]->section) ? $items[$delta]->section : '';
+    $default_value = isset($items[$delta]->default_value) ? $items[$delta]->default_value : '';
     $extra_text = isset($items[$delta]->extra_text) ? $items[$delta]->extra_text : ['value' => '', 'format' => filter_default_format()];
     $term_field_uuid = isset($items[$delta]->term_field_uuid) ? $items[$delta]->term_field_uuid : '';
     $access_option = isset($items[$delta]->access_option) ? $items[$delta]->access_option : '';
@@ -128,6 +129,23 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       ],
     ];
 
+    $element['default_value'] = [
+      '#title' => $props['default_value']->getDataDefinition()->getLabel(),
+      '#type' => 'select',
+      '#default_value' => $default_value,
+      '#empty_option' => $this->t('- Choose a value -'),
+      '#description' => $props['default_value']->getDataDefinition()
+        ->getDescription(),
+      '#options' => ['yes' => 'Yes', 'no' => 'No'],
+      '#states' => [
+        'visible' => [
+          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => PlanYearInfo::SPYA_BOOL_BUNDLE_OPTIONAL]],
+          ['or'],
+          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => PlanYearInfo::SPYA_BOOL_BUNDLE_REQUIRED]],
+        ],
+      ],
+    ];
+
     $element['show_extra_text'] = [
       '#title' => $this->t('Do you want to add additional text, like a question, before the input?'),
       '#type' => 'checkbox',
@@ -139,6 +157,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         ],
       ],
     ];
+
     $element['extra_text'] = [
       '#title' => $props['extra_text']->getDataDefinition()->getLabel(),
       '#type' => 'text_format',

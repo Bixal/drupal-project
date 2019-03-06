@@ -87,7 +87,7 @@ class SectionEntryItem extends FieldItemBase {
       ->setDescription('The section that will be displayed to the user');
     $properties['default_value'] = DataDefinition::create('string')
       ->setLabel('Default Value')
-      ->setDescription('For a yes / no content item, optionally provide a default value that will be displayed to the end user if the state was disallowed from setting this value. There is no the default value when a state is editing an item.');
+      ->setDescription('For a yes / no content item, optionally provide a default value that will be displayed to the end user if the state was disallowed from setting this value. This is not the default value when a state is editing an item.');
     $properties['extra_text'] = MapDataDefinition::create()
       ->setLabel('Extra Text')
       ->setDescription('Helpful text to place next to the input content or section (like a question)');

@@ -93,6 +93,18 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         ],
       ],
     ];
+
+    $element['node_bundle_or_section'] = [
+      '#type' => 'item',
+      '#title' => 'OR',
+      '#states' => [
+        'visible' => [
+          'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+          'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+        ],
+      ],
+    ];
+
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     $plan_year = $this->customEntitiesService->single(PlanYearEntity::ENTITY, $plan_year_info['plan_year_id']);
     $sectionOptions = [];
@@ -121,10 +133,9 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#type' => 'checkbox',
       '#default_value' => !empty($extra_text['value']),
       '#states' => [
-        'visible' => [
-          ['select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => '']],
-          'xor',
-          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => '']],
+        'invisible' => [
+          'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+          'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
         ],
       ],
     ];
@@ -137,8 +148,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#rows' => 3,
       '#format' => $extra_text['format'],
       '#states' => [
-        'visible' => [
-          ':input[name="field_input_from_state[' . $delta . '][show_extra_text]"]' => ['checked' => TRUE],
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_extra_text]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
         ],
       ],
     ];
@@ -166,12 +182,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $element['show_access'] = [
       '#title' => $this->t('Do you want to conditionally show this section or question based on another question?'),
       '#type' => 'checkbox',
-      '#default_value' => !empty($access_option),
+      '#default_value' => !empty($access_option) || !empty($access_term_field_uuid) || !empty($access_value),
       '#states' => [
-        'visible' => [
-          ['select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => '']],
-          'xor',
-          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => '']],
+        'invisible' => [
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
         ],
       ],
     ];
@@ -184,8 +201,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#open' => FALSE,
       '#prefix' => '<hr />',
       '#states' => [
-        'visible' => [
-          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
         ],
       ],
     ];
@@ -203,8 +225,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#description' => $props['access_option']->getDataDefinition()
         ->getDescription(),
       '#states' => [
-        'visible' => [
-          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
         ],
       ],
     ];
@@ -221,8 +248,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#maxlength' => 36,
       '#size' => 36,
       '#states' => [
-        'visible' => [
-          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
         ],
       ],
     ];
@@ -235,8 +267,13 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#description' => $props['access_value']->getDataDefinition()
         ->getDescription(),
       '#states' => [
-        'visible' => [
-          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        'invisible' => [
+          [':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => FALSE]],
+          ['or'],
+          [
+            'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+            'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+          ],
         ],
       ],
     ];
@@ -277,8 +314,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     $access_option = strlen($element['access_option']['#value']);
     $access_term_field_uuid = strlen($element['access_term_field_uuid']['#value']);
     $access_value = strlen($element['access_value']['#value']);
-
-    // Can't choose both section & and a content entity..
+    // Can't choose both section and a content entity.
     if ($node_bundle && $section) {
       $form_state->setError($element['node_bundle'], t("You may not choose both @etb and @section at the same time.", [
         '@etb' => $element['node_bundle']['#title'],
@@ -290,10 +326,7 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
     // If they entered any other portion of the form but not section or content
     // entity.
     if (!$node_bundle && !$section && ($node_bundle || $extra_text || $access_option || $access_term_field_uuid || $access_value)) {
-      $form_state->setError($element['node_bundle'], t("You must select either @etb and @section as well.", [
-        '@etb' => $element['node_bundle']['#title'],
-        '@section' => $element['section']['#title'],
-      ]));
+      $form_state->setError($element['node_bundle'], t("Please remove all selected / filled fields if you are trying to remove this entire entry."));
       $form_state->setError($element['section']);
     }
 

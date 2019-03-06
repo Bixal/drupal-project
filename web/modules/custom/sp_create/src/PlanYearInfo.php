@@ -77,6 +77,34 @@ class PlanYearInfo {
   const SPYA_TEXT_BUNDLE_OPTIONAL = 'text_sp_answer_optional';
 
   /**
+   * Initialized to be hidden, shown if access value is met.
+   *
+   * @var string
+   */
+  const ANSWER_ACCESS_SHOWN = 'shown';
+
+  /**
+   * Initialized to be shown, hidden if access value is met.
+   *
+   * @var string
+   */
+  const ANSWER_ACCESS_HIDE = 'hide';
+
+  /**
+   * Initialized to be allowed, disallowed if access value is met.
+   *
+   * @var string
+   */
+  const ANSWER_ACCESS_DISALLOW = 'disallow';
+
+  /**
+   * Initialized to be disallowed, allowed if access value is met.
+   *
+   * @var string
+   */
+  const ANSWER_ACCESS_ALLOW = 'allow';
+
+  /**
    * Get node bundles for state plan answer nodes.
    *
    * @return array

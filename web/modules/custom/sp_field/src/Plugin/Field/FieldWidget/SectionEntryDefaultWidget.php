@@ -87,6 +87,11 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#default_value' => $node_bundle,
       '#description' => $props['node_bundle']->getDataDefinition()
         ->getDescription(),
+      '#states' => [
+        'visible' => [
+          'select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => ''],
+        ],
+      ],
     ];
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     $plan_year = $this->customEntitiesService->single(PlanYearEntity::ENTITY, $plan_year_info['plan_year_id']);
@@ -104,6 +109,24 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#default_value' => $section,
       '#description' => $props['section']->getDataDefinition()
         ->getDescription(),
+      '#states' => [
+        'visible' => [
+          'select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => ''],
+        ],
+      ],
+    ];
+
+    $element['show_extra_text'] = [
+      '#title' => $this->t('Do you want to add additional text, like a question, before the input?'),
+      '#type' => 'checkbox',
+      '#default_value' => !empty($extra_text['value']),
+      '#states' => [
+        'visible' => [
+          ['select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => '']],
+          'xor',
+          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => '']],
+        ],
+      ],
     ];
     $element['extra_text'] = [
       '#title' => $props['extra_text']->getDataDefinition()->getLabel(),
@@ -113,6 +136,11 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         ->getDescription(),
       '#rows' => 3,
       '#format' => $extra_text['format'],
+      '#states' => [
+        'visible' => [
+          ':input[name="field_input_from_state[' . $delta . '][show_extra_text]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
 
     // Don't show the UUID until after the save.
@@ -135,6 +163,18 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#size' => 36,
       '#value' => $term_field_uuid,
     ];
+    $element['show_access'] = [
+      '#title' => $this->t('Do you want to conditionally show this section or question based on another question?'),
+      '#type' => 'checkbox',
+      '#default_value' => !empty($access_option),
+      '#states' => [
+        'visible' => [
+          ['select[name="field_input_from_state[' . $delta . '][section]"]' => ['value' => '']],
+          'xor',
+          ['select[name="field_input_from_state[' . $delta . '][node_bundle]"]' => ['value' => '']],
+        ],
+      ],
+    ];
     // This section will be the same for term and term field fields. Bring it
     // in from a common file.
     $element['access'] = [
@@ -143,18 +183,30 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
       '#description' => $this->t('Change the access to this entry depending on previous values entered by the state.'),
       '#open' => FALSE,
       '#prefix' => '<hr />',
+      '#states' => [
+        'visible' => [
+          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $element['access_option'] = [
       '#title' => $props['access_option']->getDataDefinition()->getLabel(),
       '#type' => 'select',
       '#options' => [
-        'hide' => $this->t('Hide: The content will not be shown for entry'),
-        'disallow' => $this->t('Disallow: The content will be shown but disabled and the defaults entered'),
+        PlanYearInfo::ANSWER_ACCESS_SHOWN => $this->t('Initialized to be hidden, shown if access value is met'),
+        PlanYearInfo::ANSWER_ACCESS_HIDE => $this->t('Initialized to be shown, hidden if access value is met'),
+        PlanYearInfo::ANSWER_ACCESS_DISALLOW => $this->t('Initialized to be allowed, disallowed if access value is met'),
+        PlanYearInfo::ANSWER_ACCESS_ALLOW => $this->t('Initialized to be disallowed, allowed if access value is met'),
       ],
       '#empty_option' => $this->t('- Choose an option -'),
       '#default_value' => $access_option,
       '#description' => $props['access_option']->getDataDefinition()
         ->getDescription(),
+      '#states' => [
+        'visible' => [
+          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $element['access_term_field_uuid'] = [
       '#title' => $props['access_term_field_uuid']->getDataDefinition()
@@ -168,15 +220,25 @@ class SectionEntryDefaultWidget extends WidgetBase implements ContainerFactoryPl
         ->getDescription(),
       '#maxlength' => 36,
       '#size' => 36,
+      '#states' => [
+        'visible' => [
+          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     $element['access_value'] = [
       '#title' => $props['access_value']->getDataDefinition()->getLabel(),
-      '#type' => 'textarea',
+      '#type' => 'select',
+      '#empty_option' => $this->t('- Choose a value -'),
+      '#options' => ['yes' => 'Yes', 'no' => 'No'],
       '#default_value' => $access_value,
       '#description' => $props['access_value']->getDataDefinition()
         ->getDescription(),
-      '#rows' => 3,
-      '#format' => 'plain_text',
+      '#states' => [
+        'visible' => [
+          ':input[name="field_input_from_state[' . $delta . '][show_access]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
     return $element;
   }

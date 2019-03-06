@@ -88,10 +88,10 @@ class SectionEntryItem extends FieldItemBase {
       ->setDescription('A unique ID for this field. Use this field in other term\'s access sections to change access based on the value of the referenced content.');
     $properties['access_option'] = DataDefinition::create('string')
       ->setLabel('Option')
-      ->setDescription('Will cause this field to displayed differently to the state');
+      ->setDescription('Will cause this field to displayed differently to the state. Hidden means that the either the content or section will not be shown until the access value changes. Disallow means that either the content or section is shown but cannot be answered until the access value changes.');
     $properties['access_term_field_uuid'] = DataDefinition::create('string')
       ->setLabel('Access Term Field ID')
-      ->setDescription('The Field Unique ID from another term that holds the value below');
+      ->setDescription('The Field Unique ID from another term that holds the value below. Only Yes / No type content can be used as a trigger.');
     $properties['access_value'] = DataDefinition::create('string')
       ->setLabel('Access Value')
       ->setDescription('The value entered by the state in the referenced Field Unique ID content entity');

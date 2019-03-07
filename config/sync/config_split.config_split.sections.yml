@@ -1,0 +1,16 @@
+uuid: 14f2eea5-f51a-47be-96ef-5166b52143d9
+langcode: en
+status: true
+dependencies: {  }
+id: sections
+label: Sections
+description: 'All sections created belong in this split as they can be added to any year.'
+folder: ../config/sections
+module: {  }
+theme: {  }
+blacklist:
+  - 'sp_section.*'
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

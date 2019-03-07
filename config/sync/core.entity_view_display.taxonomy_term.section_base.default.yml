@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.section_base.field_cross_year_uuid
+    - field.field.taxonomy_term.section_base.field_display_name
     - field.field.taxonomy_term.section_base.field_hide_hierarchical_heading
     - field.field.taxonomy_term.section_base.field_hide_name
     - field.field.taxonomy_term.section_base.field_input_from_state
@@ -19,10 +20,18 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_display_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
 hidden:
   field_cross_year_uuid: true
   field_hide_hierarchical_heading: true

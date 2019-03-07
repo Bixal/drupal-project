@@ -10,7 +10,7 @@ field_name: field_display_name
 entity_type: taxonomy_term
 bundle: section_base
 label: 'Display Name'
-description: 'This optional field will override the ''Name'' field if entered and be shown as the ''Display'' version of this term. If it is not entered, the ''Name'' field will be used for editors or reviewers when looking at this field and when viewing the plan or section. This field also helps bypass the 255 character limit on the ''Name'' field. This field has a limit of 510 characters.'
+description: 'This optional field will override the ''Name'' field if entered and be shown as the ''Display'' version of this term. If it is not entered, the ''Name'' field will be used for editors or reviewers when looking at this field and when viewing the plan or section. This field also helps bypass the 255 character limit on the ''Name'' field. This field has a limit of 1200 characters.'
 required: false
 translatable: false
 default_value: {  }

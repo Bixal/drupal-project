@@ -14,6 +14,7 @@ use Drupal\content_moderation\Entity\ContentModerationState;
 use Drupal\node\Entity\Node;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_help().
@@ -79,6 +80,71 @@ function sp_create_content_moderation_state_insert($entity) {
  */
 function sp_create_content_moderation_state_update($entity) {
   sp_create_moderation_state_was_changed($entity);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function sp_create_taxonomy_term_presave(Term $entity) {
+  // Ensure taxonomy term names are title case.
+  foreach (['name', 'field_display_name'] as $field_name) {
+    if (!$entity->hasField($field_name)) {
+      continue;
+    }
+    $current_string = $entity->get($field_name)->getString();
+    if (preg_match("/[a-z]/i", $current_string) && $current_string === strtoupper($current_string)) {
+      \Drupal::messenger()->addWarning(Drupal::translation()
+        ->translate('The name and display name field cannot contain only uppercase letters. Your string has been automatically converted to a "Title Case" version. Feel free to update it if any of the words were not capitalized correctly.'));
+      $smallwordsarray = [
+        'of',
+        'a',
+        'the',
+        'and',
+        'an',
+        'or',
+        'nor',
+        'but',
+        'is',
+        'if',
+        'then',
+        'else',
+        'when',
+        'at',
+        'from',
+        'by',
+        'on',
+        'off',
+        'for',
+        'in',
+        'to',
+        'into',
+        'with',
+        'it',
+        'as',
+      ];
+      $allcapswordsarray = [
+        'wioa',
+        'usa',
+      ];
+
+      // Split the string into separate words.
+      $words = explode(' ', $current_string);
+      foreach ($words as $key => $word) {
+        $word = strtolower($word);
+        if (in_array($word, $allcapswordsarray)) {
+          $word = strtoupper($word);
+        }
+        elseif (!in_array($word, $smallwordsarray)) {
+          $word = ucfirst($word);
+        }
+        $words[$key] = $word;
+      }
+
+      // Join the words back into a string.
+      $new_string = implode(' ', $words);
+      $entity->set($field_name, $new_string);
+    }
+  }
 }
 
 /**

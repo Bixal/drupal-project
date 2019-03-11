@@ -86,6 +86,14 @@ function sp_create_content_moderation_state_update($entity) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function sp_create_taxonomy_term_presave(Term $entity) {
+  // Ensure that a section base term does not have more than one parent. The
+  // serializer inexplicably duplicates the parent field of taxonomy terms
+  // for the export files.
+  if (FALSE !== PlanYearInfo::getPlanYearIdAndSectionIdFromVid($entity->getVocabularyId()) && $parents = $entity->get('parent')->getString()) {
+    $parents = explode(', ', $parents);
+    $parents = array_unique($parents);
+    $entity->set('parent', $parents);
+  }
   // Ensure taxonomy term names are title case.
   foreach (['name', 'field_display_name'] as $field_name) {
     if (!$entity->hasField($field_name)) {

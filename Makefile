@@ -42,6 +42,7 @@ uli:
 cim:
 	@echo "Importing Configuration"
 	docker-compose run php drupal config:import -y
+	docker-compose run php drupal csim -y
 
 cex:
 	@echo "Exporting Configuration"
@@ -94,6 +95,7 @@ fresh:
 	docker-compose run --rm php drupal si --force --no-interaction standard --account-pass="admin"
 	@echo "Installing configuration from file"
 	docker-compose run --rm php drupal config:import
+	docker-compose run --rm php drupal csim -y
 	@echo "Rebuilding content access"
 	docker-compose run --rm php drupal node:access:rebuild
 	make cr

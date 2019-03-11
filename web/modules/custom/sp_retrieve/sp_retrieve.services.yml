@@ -1,7 +1,7 @@
 services:
   sp_retrieve.custom_entities:
     class: Drupal\sp_retrieve\CustomEntitiesService
-    arguments: ['@entity_type.manager']
+    arguments: ['@entity_type.manager', '@entity.repository']
   sp_retrieve.taxonomy:
     class: Drupal\sp_retrieve\TaxonomyService
     arguments: ['@entity_type.manager']

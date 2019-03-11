@@ -2,6 +2,7 @@
 
 namespace Drupal\sp_retrieve;
 
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
@@ -18,13 +19,23 @@ class CustomEntitiesService {
   protected $entityTypeManager;
 
   /**
+   * The entity repository.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
+   */
+  protected $entityRepository;
+
+  /**
    * Constructs a new CreateStatePlanService object.
    *
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   Entity type manager.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository.
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
-    $this->entityTypeManager = $entityTypeManager;
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository) {
+    $this->entityTypeManager = $entity_type_manager;
+    $this->entityRepository = $entity_repository;
   }
 
   /**
@@ -128,6 +139,23 @@ class CustomEntitiesService {
   public function single($entity_type, $entity_id) {
     $storage = $this->entityTypeManager->getStorage($entity_type);
     return $storage->load($entity_id);
+  }
+
+  /**
+   * Load a single entity by UUID.
+   *
+   * @param string $entity_type
+   *   An entity type.
+   * @param string $uuid
+   *   An entity UUID.
+   *
+   * @return \Drupal\Core\Entity\EntityInterface|null
+   *   The entity.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function uuid($entity_type, $uuid) {
+    return $this->entityRepository->loadEntityByUuid($entity_type, $uuid);
   }
 
   /**

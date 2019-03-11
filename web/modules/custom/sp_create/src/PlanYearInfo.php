@@ -105,6 +105,13 @@ class PlanYearInfo {
   const ANSWER_ACCESS_ALLOW = 'allow';
 
   /**
+   * The UUID of the user that should be created or modifying content.
+   *
+   * @var string
+   */
+  const UUID_USER_AUTOMATED = 'cd0e9470-88d2-4291-86a7-b8a2d9baed4e';
+
+  /**
    * Get node bundles for state plan answer nodes.
    *
    * @return array

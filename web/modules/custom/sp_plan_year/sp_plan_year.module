@@ -65,10 +65,14 @@ function sp_plan_year_entity_type_alter(array &$entity_types) {
  * Implements hook_ENTITY_TYPE_insert().
  */
 function sp_plan_year_plan_year_insert(EntityInterface $entity) {
+  // Stop inserting the state plans year node when a plan year entity is
+  // created. Instead rely on wizard for initial creation and content sync
+  // for subsequent.
+  return;
   /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
-  $update_plan_year_content = \Drupal::getContainer()
-    ->get('sp_create.update_plan_year_content');
-  $update_plan_year_content->createStatePlansYear($entity->id());
+  // $update_plan_year_content = \Drupal::getContainer()
+  // ->get('sp_create.update_plan_year_content');
+  // $update_plan_year_content->createStatePlansYear($entity->id());
 }
 
 /**

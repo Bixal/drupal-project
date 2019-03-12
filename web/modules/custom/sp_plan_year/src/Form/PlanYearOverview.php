@@ -10,6 +10,7 @@ use Drupal\sp_retrieve\CustomEntitiesService;
 use Drupal\sp_retrieve\NodeService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
+use Drupal\sp_retrieve\TaxonomyService;
 
 /**
  * Class PlanYearOverview.
@@ -31,16 +32,26 @@ class PlanYearOverview extends FormBase {
   protected $nodeService;
 
   /**
+   * The taxonomy service.
+   *
+   * @var \Drupal\sp_retrieve\TaxonomyService
+   */
+  protected $taxonomyService;
+
+  /**
    * PlanYearEntityWizardForm constructor.
    *
    * @param \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_retrieval
    *   Service used to retrieve data on custom entities.
    * @param \Drupal\sp_retrieve\NodeService $node_service
    *   The node retrieval service.
+   * @param \Drupal\sp_retrieve\TaxonomyService $taxonomy_service
+   *   The taxonomy service.
    */
-  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_service) {
+  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_service, TaxonomyService $taxonomy_service) {
     $this->customEntitiesRetrieval = $custom_entities_retrieval;
     $this->nodeService = $node_service;
+    $this->taxonomyService = $taxonomy_service;
   }
 
   /**
@@ -49,7 +60,8 @@ class PlanYearOverview extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('sp_retrieve.custom_entities'),
-      $container->get('sp_retrieve.node')
+      $container->get('sp_retrieve.node'),
+      $container->get('sp_retrieve.taxonomy')
     );
   }
 
@@ -123,7 +135,8 @@ class PlanYearOverview extends FormBase {
       $sections = [];
       /** @var \Drupal\sp_section\Entity\SectionEntity $section */
       foreach ($plan_year->getSections() as $section) {
-        $sections[] = Link::createFromRoute($section->label(), 'entity.taxonomy_vocabulary.overview_form', ['taxonomy_vocabulary' => PlanYearInfo::createSectionVocabularyId($plan_year->id(), $section->id())])->toString();
+        $count = count($this->taxonomyService->getVocabularyTids(PlanYearInfo::createSectionVocabularyId($plan_year->id(), $section->id())));
+        $sections[] = Link::createFromRoute($section->label() . " ($count)", 'entity.taxonomy_vocabulary.overview_form', ['taxonomy_vocabulary' => PlanYearInfo::createSectionVocabularyId($plan_year->id(), $section->id())])->toString();
       }
       $form['wrapper']['sections'] = [
         '#type' => 'markup',
@@ -152,7 +165,7 @@ class PlanYearOverview extends FormBase {
         }
       }
       if ($show_missing_plans_and_sections_link) {
-        $quick_links[] = Link::createFromRoute($this->t('There is missing plans or sections in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
+        $quick_links[] = Link::createFromRoute($this->t('There are missing plans or sections in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();
       }
       if ($show_missing_answers) {
         $quick_links[] = Link::createFromRoute($this->t('There are missing answers in this plan year, create here'), 'entity.plan_year.content', [PlanYearEntity::ENTITY => $plan_year->id()], $red_link)->toString();

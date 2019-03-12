@@ -142,7 +142,8 @@ function sp_create_taxonomy_term_presave(Term $entity) {
         if (in_array($word, $allcapswordsarray)) {
           $word = strtoupper($word);
         }
-        elseif (!in_array($word, $smallwordsarray)) {
+        // If this is the first word or NOT a small word, capitalize the first.
+        elseif ($key === 0 || !in_array($word, $smallwordsarray)) {
           $word = ucfirst($word);
         }
         $words[$key] = $word;

@@ -1,0 +1,55 @@
+uuid:
+  -
+    value: cd0e9470-88d2-4291-86a7-b8a2d9baed4e
+langcode:
+  -
+    value: en
+preferred_langcode:
+  -
+    value: en
+preferred_admin_langcode:
+  -
+    value: en
+name:
+  -
+    value: Automated
+mail:
+  value: automated@example.org
+timezone:
+  -
+    value: America/New_York
+status:
+  value: '1'
+created:
+  -
+    value: '2019-03-11T14:14:58+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2019-03-11T14:14:58+00:00'
+    format: 'Y-m-d\TH:i:sP'
+access:
+  -
+    value: '1970-01-01T00:00:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+login:
+  -
+    value: '1970-01-01T00:00:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+init:
+  -
+    value: automated@example.org
+roles:
+  - authenticated
+  - administrator
+default_langcode:
+  -
+    value: true
+user_picture: {  }
+_content_sync:
+  entity_type: user
+  entity_dependencies: {  }
+pass:
+  -
+    value: $S$EXiLz9y00ZQMhyaCorbrCr2P85jbW.fJ1xUTsVI5qtq0CbXct2ka
+    pre_hashed: true

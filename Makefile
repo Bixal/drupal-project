@@ -42,11 +42,14 @@ uli:
 cim:
 	@echo "Importing Configuration"
 	docker-compose run php drupal config:import -y
+	@echo "Importing Configuration Splits"
 	docker-compose run php drupal csim -y
 
 cex:
 	@echo "Exporting Configuration"
 	docker-compose run php drupal config:export -y
+	@echo "Exporting Configuration Splits"
+	docker-compose run php drupal csex -y
 
 gm:
 	@echo "Displaying Generate Module UI"
@@ -95,6 +98,7 @@ fresh:
 	docker-compose run --rm php drupal si --force --no-interaction standard --account-pass="admin"
 	@echo "Installing configuration from file"
 	docker-compose run --rm php drupal config:import
+	@echo "Installing configuration splits from file"
 	docker-compose run --rm php drupal csim -y
 	@echo "Rebuilding content access"
 	docker-compose run --rm php drupal node:access:rebuild

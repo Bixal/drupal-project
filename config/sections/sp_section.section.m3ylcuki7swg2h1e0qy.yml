@@ -1,0 +1,8 @@
+uuid: d490c94b-aa23-4636-80a6-d90764bd219d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: NfIBHYWozqDRpVa06buRmzWwCKegfK02Z3XEwG5UGuE
+id: m3ylcuki7swg2h1e0qy
+label: 'Unemployment Insurance Programs'

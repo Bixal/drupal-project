@@ -1,0 +1,17 @@
+uuid: feca0b3f-cb74-4a1f-bb81-eb3ad58f7b5c
+langcode: en
+status: true
+dependencies: {  }
+id: plan_year_2018
+label: 'Plan Year 2018'
+description: 'All the configuration specific to the plan year 2018.'
+folder: ../config/plan_years/plan_year_2018
+module: {  }
+theme: {  }
+blacklist:
+  - sp_plan_year.plan_year.2018
+  - '*_2018_*'
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

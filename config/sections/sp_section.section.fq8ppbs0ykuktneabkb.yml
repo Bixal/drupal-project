@@ -1,0 +1,8 @@
+uuid: 9e782d28-a160-4430-a5e5-34f5ae6bd5e4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: wkLQQSLrMtMaKnE8K_1hNsze2yra0O4PB07sLBTg5VU
+id: fq8ppbs0ykuktneabkb
+label: 'Jobs for Veterans State Grants Program'

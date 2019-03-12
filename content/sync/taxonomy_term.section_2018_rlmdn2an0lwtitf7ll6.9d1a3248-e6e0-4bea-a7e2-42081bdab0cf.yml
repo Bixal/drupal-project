@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'for Title I Programs'
+description:
+  -
+    value: 'For Title I programs, provide a description of the written policies that establish the State''s methods and factors used to distribute funds to local areas for—'
+    format: basic_html
+    processed: 'For Title I programs, provide a description of the written policies that establish the State''s methods and factors used to distribute funds to local areas for—'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0f6519c5-e4e8-47c7-84fb-cc0091dccde0
+  -
+    target_type: taxonomy_term
+    target_uuid: 0f6519c5-e4e8-47c7-84fb-cc0091dccde0
+changed:
+  -
+    value: '2019-03-11T17:17:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 87209cb0-a921-4fb3-9331-98d27f185e18
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 54434269-2bf3-4ede-b84a-024f84f0de1a
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.0f6519c5-e4e8-47c7-84fb-cc0091dccde0
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.0f6519c5-e4e8-47c7-84fb-cc0091dccde0

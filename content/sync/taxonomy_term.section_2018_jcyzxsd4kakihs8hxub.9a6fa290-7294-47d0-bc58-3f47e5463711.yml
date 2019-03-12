@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 9a6fa290-7294-47d0-bc58-3f47e5463711
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describes the Individuals Affected by the Waiver, Including How the Waiver Will Impact Services for Disadvantaged Populations or Individuals with Multiple Barriers to Employment; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 453907ef-3323-4320-b756-283e986158e0
+  -
+    target_type: taxonomy_term
+    target_uuid: 453907ef-3323-4320-b756-283e986158e0
+changed:
+  -
+    value: '2019-03-11T21:03:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 9b0969ac-54f7-4977-a1ae-039598b8e0c0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.453907ef-3323-4320-b756-283e986158e0
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.453907ef-3323-4320-b756-283e986158e0

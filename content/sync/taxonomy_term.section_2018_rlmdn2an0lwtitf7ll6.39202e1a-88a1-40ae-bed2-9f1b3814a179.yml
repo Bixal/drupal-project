@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 39202e1a-88a1-40ae-bed2-9f1b3814a179
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Adult and Training Activities in Accordance with WIOA Section 133(b)(2) or (b)(3),'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+  -
+    target_type: taxonomy_term
+    target_uuid: 9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+changed:
+  -
+    value: '2019-03-11T17:17:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c1f5596f-e0ea-4b6c-bf48-f29fc9172285
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: d5e7c226-4e5b-4017-98de-19e73d6d116d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.9d1a3248-e6e0-4bea-a7e2-42081bdab0cf

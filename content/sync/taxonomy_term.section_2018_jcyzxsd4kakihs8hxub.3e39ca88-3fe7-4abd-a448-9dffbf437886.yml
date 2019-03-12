@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 3e39ca88-3fe7-4abd-a448-9dffbf437886
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Ensure Meaningful Public Comment, Including Comment by Business and Organized Labor, on the Waiver.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5a32068b-dc54-4388-a60a-8e22ba792183
+  -
+    target_type: taxonomy_term
+    target_uuid: 5a32068b-dc54-4388-a60a-8e22ba792183
+changed:
+  -
+    value: '2019-03-11T21:03:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 08666e7e-4b08-40d7-b57e-516b92a71d83
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.5a32068b-dc54-4388-a60a-8e22ba792183
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.5a32068b-dc54-4388-a60a-8e22ba792183

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: f70945f4-a398-49eb-aca5-163abf12e01c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Previous Assessment Results'
+description:
+  -
+    value: 'Beginning with the state plan modification in 2018 and for subsequent state plans and state plan modifications, provide the results of an assessment of the effectiveness of the core programs and other one-stop partner programs and Combined State Plan partner programs included in the Unified or Combined State plan during the preceding 2-year period (i.e. the 2-year period of the plan modification cycle). Describe how the State is adapting its strategies based on these assessments.'
+    format: basic_html
+    processed: 'Beginning with the state plan modification in 2018 and for subsequent state plans and state plan modifications, provide the results of an assessment of the effectiveness of the core programs and other one-stop partner programs and Combined State Plan partner programs included in the Unified or Combined State plan during the preceding 2-year period (i.e. the 2-year period of the plan modification cycle). Describe how the State is adapting its strategies based on these assessments.'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+  -
+    target_type: taxonomy_term
+    target_uuid: a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+changed:
+  -
+    value: '2019-03-07T19:09:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a47d523c-d3ed-4f8f-b137-ec579dd8a71a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: e6295171-3d4b-44c2-a8e5-fb446f37fe77
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.a38931b7-3e28-48fe-8fe2-e9be4b0f9b01

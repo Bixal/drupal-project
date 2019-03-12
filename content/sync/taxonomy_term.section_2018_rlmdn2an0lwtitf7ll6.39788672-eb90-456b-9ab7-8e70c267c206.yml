@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 39788672-eb90-456b-9ab7-8e70c267c206
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: Assessment
+description:
+  -
+    value: 'Describe how the State will assess the overall effectiveness of the workforce development system in the State in relation to the strategic vision and goals stated above in sections (b)(1), (2), and (3) and how it will use the results of this assessment and other feedback to make continuous or quality improvements.'
+    format: basic_html
+    processed: 'Describe how the State will assess the overall effectiveness of the workforce development system in the State in relation to the strategic vision and goals stated above in sections (b)(1), (2), and (3) and how it will use the results of this assessment and other feedback to make continuous or quality improvements.'
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 8fa9a93e-2c54-4516-8a6d-1cc813129acd
+  -
+    target_type: taxonomy_term
+    target_uuid: 8fa9a93e-2c54-4516-8a6d-1cc813129acd
+changed:
+  -
+    value: '2019-03-07T14:30:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: fb128f5f-e84d-4888-a1df-dde7f610daa9
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 9c30ea2e-3ef3-483d-b8b4-38fc90612929
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.8fa9a93e-2c54-4516-8a6d-1cc813129acd
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.8fa9a93e-2c54-4516-8a6d-1cc813129acd

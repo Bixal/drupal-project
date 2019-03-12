@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 10e0a9c5-7d5a-411d-8efe-2847595a5d63
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Youth Program Requirements - 5'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 745293f2-7609-4320-9063-b34cec938b15
+field_display_name:
+  -
+    value: 'Include the State Definition, as Defined in Law, for Not Attending School and Attending School as Specified in WIOA Section 129(a)(1)(b)(i) and Section 129(a)(1)(c)(i). if State Law Does Not Define “not Attending School” or “attending School” Indicate That is the Case. '
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 590835c8-1f8a-4a82-8e9a-f3b610a081d1
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40

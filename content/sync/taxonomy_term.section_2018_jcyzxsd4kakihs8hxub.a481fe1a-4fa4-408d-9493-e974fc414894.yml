@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: a481fe1a-4fa4-408d-9493-e974fc414894
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Single-area State Requirements - 7'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+changed:
+  -
+    value: '2019-03-11T20:46:42+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5f14fc42-e702-45a7-ba58-16c886fb62f3
+field_display_name:
+  -
+    value: 'How the State Board, in Fulfilling Local Board Functions, Will Coordinate Title I Activities with Those Activities Under Title Ii. Describe How the State Board Will Carry Out the Review of Local Applications Submitted Under Title Ii Consistent with WIOA Secs. 107(d)(11)(a) and (b)(i) and WIOA Sec. 232.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3ebe1def-f189-4710-a19a-0f37871f7103
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 9038ca42-54d7-4a69-a14f-a532bf4ac78b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Emerging Industry Sectors and Occupation'
+description:
+  -
+    value: "<p>Provide an analysis of the industries and occupations for which demand is emerging.</p>\r\n"
+    format: basic_html
+    processed: '<p>Provide an analysis of the industries and occupations for which demand is emerging.</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2b06c318-3106-4313-82d1-4f3f347cf772
+  -
+    target_type: taxonomy_term
+    target_uuid: 2b06c318-3106-4313-82d1-4f3f347cf772
+changed:
+  -
+    value: '2019-03-06T20:53:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 81368a88-97b2-48e7-bae8-cb4342b3971a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.2b06c318-3106-4313-82d1-4f3f347cf772
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.2b06c318-3106-4313-82d1-4f3f347cf772

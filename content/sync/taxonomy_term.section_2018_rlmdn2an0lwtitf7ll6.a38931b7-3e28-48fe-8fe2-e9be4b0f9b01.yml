@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessment and Evaluation of Programs and One-stop Program Partners'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+changed:
+  -
+    value: '2019-03-07T19:09:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c9ac000d-db82-439c-901d-5b846b90e61d
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100

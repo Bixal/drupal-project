@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: bb7a8afc-c5d0-4976-b696-4e95b1270ab1
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Operational Planning Elements'
+description:
+  -
+    value: 'The Unified or Combined State Plan must include an Operational Planning Elements section that support the State’s strategy and the system-wide vision described in Section II.(c) above. Unless otherwise noted, all Operational Planning Elements apply to Combined State Plan partner programs included in the plan as well as to core programs. This section must include—'
+    format: basic_html
+    processed: 'The Unified or Combined State Plan must include an Operational Planning Elements section that support the State’s strategy and the system-wide vision described in Section II.(c) above. Unless otherwise noted, all Operational Planning Elements apply to Combined State Plan partner programs included in the plan as well as to core programs. This section must include—'
+weight:
+  -
+    value: 80
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-11T18:55:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4438ccec-4d0e-4c53-8a2c-0b61e809b4ec
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 9d4b6c62-f327-4b79-ac2c-d7dab18890c6
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Strengths and Weaknesses of Workforce Development Activities'
+description:
+  -
+    value: 'Provide an analysis of the strengths and weaknesses of the workforce development activities identified in (A) above.'
+    format: basic_html
+    processed: 'Provide an analysis of the strengths and weaknesses of the workforce development activities identified in (A) above.'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: fef9add7-ed39-4f86-a751-844a52956a77
+  -
+    target_type: taxonomy_term
+    target_uuid: fef9add7-ed39-4f86-a751-844a52956a77
+changed:
+  -
+    value: '2019-03-06T22:09:29+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c2836bc3-5c39-49f7-8528-ef101850e09c
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b4cff351-d9f4-43be-9a4f-218404658ee0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.fef9add7-ed39-4f86-a751-844a52956a77
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.fef9add7-ed39-4f86-a751-844a52956a77

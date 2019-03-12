@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 5fc4d09a-22a8-47c8-ba77-cd02c573934e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Single-area State Requirements - 6'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+changed:
+  -
+    value: '2019-03-11T20:46:42+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ea788b90-9e39-4409-b0ea-539b44cb32ee
+field_display_name:
+  -
+    value: 'How Training Services Outlined in Section 134 Will Be Provided Through Individual Training Accounts And/or Through Contracts, and How Such Training Approaches Will Be Coordinated. Describe How the State Will Meet Informed Customer Choice Requirements Regardless of Training Approach.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 417ec8b1-bb55-4b8d-b914-49729eb934bc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4

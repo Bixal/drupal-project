@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 7cb00fca-c8b4-44b0-b6f5-d1388ea69813
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'the State Operating Systems That Will Support the Implementation of the State’s Strategies. This Must Include a Description Of–'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+changed:
+  -
+    value: '2019-03-07T19:01:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: b6f5399a-58c3-4b87-8b0a-c42da5d788c8
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100

@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: cb771c89-d3d1-4acd-969a-263f07274b31
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Strategy - 1'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: fa47219b-824d-4bb9-a221-8d542fd150f7
+  -
+    target_type: taxonomy_term
+    target_uuid: fa47219b-824d-4bb9-a221-8d542fd150f7
+changed:
+  -
+    value: '2019-03-07T16:17:36+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5cb19ca9-4bce-4e9d-95ef-16607a9578cf
+field_display_name:
+  -
+    value: 'Describe the Strategies the State Will Implement, Including Industry or Sector Partnerships Related to In-demand Industry Sectors and Occupations and Career Pathways, as Required by WIOA Section 101(d)(3)(b), (d). “career Pathway” is Defined at WIOA Section 3(7). “in-demand Industry Sector or Occupation” is Defined at WIOA Section 3(23).'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: eb950485-bfef-467b-80a7-7d4afe5ad683
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.fa47219b-824d-4bb9-a221-8d542fd150f7
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.fa47219b-824d-4bb9-a221-8d542fd150f7

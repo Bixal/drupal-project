@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: a00f4b2b-d5b6-476a-949e-13881a002d90
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statewide Activities - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 39bc52af-9182-4527-8a5a-89c4e93393a9
+  -
+    target_type: taxonomy_term
+    target_uuid: 39bc52af-9182-4527-8a5a-89c4e93393a9
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 97414fe6-2121-40e8-84c8-1838250db34a
+field_display_name:
+  -
+    value: 'Describe How the State Intends to Use Governor’s Set Aside Funding. Describe How the State Will Utilize Rapid Response Funds to Respond to Layoffs and Plant Closings and Coordinate Services to Quickly Aid Companies and Their Affected Workers. States Also Should Describe Any Layoff Aversion Strategies They Have Implemented to Address at Risk Companies and Workers'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b4398428-8402-4b76-bfdc-5464e21ec361
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.39bc52af-9182-4527-8a5a-89c4e93393a9
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.39bc52af-9182-4527-8a5a-89c4e93393a9

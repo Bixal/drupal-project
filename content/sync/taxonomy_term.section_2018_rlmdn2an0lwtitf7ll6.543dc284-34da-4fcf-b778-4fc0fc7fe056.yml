@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 543dc284-34da-4fcf-b778-4fc0fc7fe056
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Workforce Analysis (B.I - B.IV)'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: e9710ae7-0f42-411f-8963-705bcf92187c
+  -
+    target_type: taxonomy_term
+    target_uuid: e9710ae7-0f42-411f-8963-705bcf92187c
+changed:
+  -
+    value: '2019-03-06T21:11:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1a6d098d-04a3-456f-870f-37a5d592c687
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: true
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 36db23d0-e358-411e-be65-992f47004cbc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.e9710ae7-0f42-411f-8963-705bcf92187c
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.e9710ae7-0f42-411f-8963-705bcf92187c

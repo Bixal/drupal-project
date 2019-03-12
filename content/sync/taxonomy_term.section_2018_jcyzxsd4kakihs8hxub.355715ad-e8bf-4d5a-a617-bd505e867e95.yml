@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 355715ad-e8bf-4d5a-a617-bd505e867e95
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Waiver Requests (optional) (e1-e6)'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 453907ef-3323-4320-b756-283e986158e0
+  -
+    target_type: taxonomy_term
+    target_uuid: 453907ef-3323-4320-b756-283e986158e0
+changed:
+  -
+    value: '2019-03-11T21:03:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 37302417-44bd-4562-87e4-712634082e6f
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: true
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: dfcc3a3f-69c9-47c4-88db-bb5bb6e05a42
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.453907ef-3323-4320-b756-283e986158e0
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.453907ef-3323-4320-b756-283e986158e0

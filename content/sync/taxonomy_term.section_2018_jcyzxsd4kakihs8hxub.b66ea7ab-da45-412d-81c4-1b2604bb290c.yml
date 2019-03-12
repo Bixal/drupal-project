@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: b66ea7ab-da45-412d-81c4-1b2604bb290c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Youth Program Requirements - 4'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 77b03400-d217-4fa8-9512-52c22802f2a9
+field_display_name:
+  -
+    value: 'Provide the Language Contained in the State Policy for  “requiring Additional Assistance to Enter or Complete an Educational Program, or to Secure and Hold Employment” Criterion for Out-of-school Youth Specified in WIOA Section 129(a)(1)(b)(iii)(viii) and for “requiring Additional Assistance to Complete an Education Program, or to Secure and Hold Employment” Criterion for In- School Youth Specified in WIOA Section 129(a)(1)(c)(iv)(vii).'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: a962a5cf-06e0-4492-9353-84eec33416dc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40

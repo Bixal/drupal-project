@@ -1,0 +1,68 @@
+uuid:
+  -
+    value: f23152a5-286b-44db-9c93-048c8796d911
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Coordination with State Plan Programs'
+description:
+  -
+    value: 'Describe the methods used for joint planning and coordination among the core programs, and with the required one-stop partner programs and other programs and activities included in the Unified or Combined State Plan.'
+    format: basic_html
+    processed: 'Describe the methods used for joint planning and coordination among the core programs, and with the required one-stop partner programs and other programs and activities included in the Unified or Combined State Plan.'
+weight:
+  -
+    value: 81
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-11T18:55:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 926b348d-a3a8-4da5-ab59-317aef4e8c36
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: bab508e6-72b9-4152-83e0-9f9c1ba4ea21
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

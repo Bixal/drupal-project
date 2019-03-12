@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: a783baa8-aa2b-4e8b-b157-6b6e3c87285e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Supporting Employer Engagement;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b6bf093c-67f4-45f8-a921-2d48922d0225
+  -
+    target_type: taxonomy_term
+    target_uuid: b6bf093c-67f4-45f8-a921-2d48922d0225
+changed:
+  -
+    value: '2019-03-11T21:03:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: bb295163-c74d-4779-8135-0191808267d1
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.b6bf093c-67f4-45f8-a921-2d48922d0225
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.b6bf093c-67f4-45f8-a921-2d48922d0225

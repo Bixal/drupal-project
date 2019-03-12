@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 3fa423f3-e11b-4d66-af1b-bfee0a2246bf
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Economic and Workforce Analysis'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9584133e-1d7c-4fb7-af31-ce37d3ee361f
+  -
+    target_type: taxonomy_term
+    target_uuid: 9584133e-1d7c-4fb7-af31-ce37d3ee361f
+changed:
+  -
+    value: '2019-03-06T20:53:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c5314500-19d7-4809-b553-a2db28677b0a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.9584133e-1d7c-4fb7-af31-ce37d3ee361f
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.9584133e-1d7c-4fb7-af31-ce37d3ee361f

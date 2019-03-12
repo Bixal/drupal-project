@@ -1,0 +1,79 @@
+uuid:
+  -
+    value: d659c913-258b-4d27-a1a4-389d532cae3d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'WIOA State Plan Type'
+description:
+  -
+    value: "<p><span><span><span><strong><span><span><span>Unified or Combined State Plan</span></span></span></strong><span><span>. Select whether the State is submitting a Unified or Combined State Plan. At a minimum, a State must submit a Unified State Plan that covers the six core programs. </span></span></span></span></span></p>\r\n"
+    format: basic_html
+    processed: '<p><span><span><span><strong><span><span><span>Unified or Combined State Plan</span></span></span></strong><span><span>. Select whether the State is submitting a Unified or Combined State Plan. At a minimum, a State must submit a Unified State Plan that covers the six core programs. </span></span></span></span></span></p>'
+weight:
+  -
+    value: 62
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-11T18:55:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ab1b29f6-3fbf-429e-ba2d-ceee17040c4b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_optional
+    section: ''
+    default_value: 'yes'
+    extra_text:
+      value: "<p><strong>Unified State Plan</strong>. This plan includes the Adult Program, Dislocated Worker Program, Youth Program, Wagner-Peyser Act Program, Adult Education and Family Literacy Act Program, and Vocational Rehabilitation Program.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 83142b77-f6d4-4782-9885-21eb75217c68
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p><strong>Combined State Plan</strong>. This plan includes the Adult Worker Program, Dislocated Worker Program, Youth Program, Wagner-Peyser Act Program, Adult Education and Family Literacy Act Program, and Vocational Rehabilitation Program as well as one or more of the optional combined State Plan partner programs identified below.</p>\r\n"
+      format: basic_html
+    term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 666aa96e-4543-487b-8229-109c02760188
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Use of Unemployment Insurance (ui) Wage Record Data'
+description:
+  -
+    value: 'Explain how the State will meet the requirements to utilize quarterly UI wage records for performance accountability, evaluations, and as a source for workforce and labor market information, consistent with Federal and State law. (This Operational Planning element applies to core programs.)'
+    format: basic_html
+    processed: 'Explain how the State will meet the requirements to utilize quarterly UI wage records for performance accountability, evaluations, and as a source for workforce and labor market information, consistent with Federal and State law. (This Operational Planning element applies to core programs.)'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4b3db48c-5a4f-47c3-9df7-9e9feeaf5bec
+  -
+    target_type: taxonomy_term
+    target_uuid: 4b3db48c-5a4f-47c3-9df7-9e9feeaf5bec
+changed:
+  -
+    value: '2019-03-11T17:30:07+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 85235f78-8b96-4943-89d7-6d4f3a6188b9
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: cca4b265-9ae9-42c9-866e-3865574a63bb
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4b3db48c-5a4f-47c3-9df7-9e9feeaf5bec
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4b3db48c-5a4f-47c3-9df7-9e9feeaf5bec

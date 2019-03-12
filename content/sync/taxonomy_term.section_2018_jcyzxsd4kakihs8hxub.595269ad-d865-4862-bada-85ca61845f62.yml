@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 595269ad-d865-4862-bada-85ca61845f62
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Adult and Dislocated Workers Program Requirements'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 3e26350c-6b60-4da0-b5a3-1383439f9093
+  -
+    target_type: taxonomy_term
+    target_uuid: 3e26350c-6b60-4da0-b5a3-1383439f9093
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d99f75bd-2fee-41c3-a83c-20ec02807bd3
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.3e26350c-6b60-4da0-b5a3-1383439f9093
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.3e26350c-6b60-4da0-b5a3-1383439f9093

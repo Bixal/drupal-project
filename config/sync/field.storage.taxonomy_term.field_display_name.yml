@@ -13,7 +13,7 @@ field_name: field_display_name
 entity_type: taxonomy_term
 type: string
 settings:
-  max_length: 510
+  max_length: 1200
   is_ascii: false
   case_sensitive: false
 module: core

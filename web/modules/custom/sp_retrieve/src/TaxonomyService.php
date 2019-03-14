@@ -104,7 +104,7 @@ class TaxonomyService {
    *   A nested array.
    */
   public function makeNested(array $source) {
-    $nested = array();
+    $nested = [];
     foreach ($source as &$s) {
       // No parent_id so we put it in the root of the array.
       if (empty($s['parent'])) {

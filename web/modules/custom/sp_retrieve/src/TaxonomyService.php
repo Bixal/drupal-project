@@ -66,4 +66,63 @@ class TaxonomyService {
     return $query->execute();
   }
 
+  /**
+   * Get a vocabulary as a nested structure instead a long list.
+   *
+   * @param string $vid
+   *   A vocabulary ID.
+   *
+   * @return array
+   *   A nested array.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getNestedSortedTerms($vid) {
+    /** @var \Drupal\taxonomy\TermStorage $term_storage */
+    $term_storage = $this->entityTypeManager->getStorage('taxonomy_term');
+    $tree = $term_storage->loadTree($vid);
+    $items = [];
+    foreach ($tree as $item) {
+      $items[$item->tid]['tid'] = $item->tid;
+      $items[$item->tid]['name'] = $item->name;
+      $items[$item->tid]['weight'] = $item->weight;
+      $items[$item->tid]['parent'] = $item->parents[0];
+
+    }
+    $items = $this->makeNested($items);
+    return $items;
+  }
+
+  /**
+   * Create a nested array from an array of terms.
+   *
+   * @param array $source
+   *   This needs to be an array keyed term ID with a parent term ID key.
+   *
+   * @return array
+   *   A nested array.
+   */
+  public function makeNested(array $source) {
+    $nested = array();
+    foreach ($source as &$s) {
+      // No parent_id so we put it in the root of the array.
+      if (empty($s['parent'])) {
+        $nested[] = &$s;
+      }
+      else {
+        $pid = $s['parent'];
+        if (!empty($source[$pid])) {
+          // If the parent ID exists in the source array, add it to the
+          // 'children' array of the parent after initializing it.
+          if (!isset($source[$pid]['children'])) {
+            $source[$pid]['children'] = [];
+          }
+          $source[$pid]['children'][] = &$s;
+        }
+      }
+    }
+    return $nested;
+  }
+
 }

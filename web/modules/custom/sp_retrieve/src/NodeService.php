@@ -619,7 +619,6 @@ class NodeService {
     $return['plan_year_id'] = !empty($plan_year_id_and_section_id['plan_year_id']) ? $plan_year_id_and_section_id['plan_year_id'] : '';
     $return['section_id'] = !empty($plan_year_id_and_section_id['section_id']) ? $plan_year_id_and_section_id['section_id'] : '';
     $return['content'] = [];
-    $return['section'] = [];
     if (!$section_year_term->get('field_input_from_state')->isEmpty()) {
       /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
       foreach ($section_year_term->get('field_input_from_state') as $item) {

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: dda81c69-43fb-4582-9d91-5d7c34a9240a
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Partner Engagement with Other Education and Training Providers.'
+description:
+  -
+    value: 'Describe how the State’s Strategies will engage the State’s other education and training providers, including providers on the state’s eligible training provider list, as partners in the workforce development system to create a job-driven education and training system.'
+    format: basic_html
+    processed: 'Describe how the State’s Strategies will engage the State’s other education and training providers, including providers on the state’s eligible training provider list, as partners in the workforce development system to create a job-driven education and training system.'
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+changed:
+  -
+    value: '2019-03-07T18:34:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4cbee2c0-e6e4-4523-8fcf-d09863ee5a9e
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: efe2fcc4-05af-4edf-a4d9-46fd0e956ecd
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487

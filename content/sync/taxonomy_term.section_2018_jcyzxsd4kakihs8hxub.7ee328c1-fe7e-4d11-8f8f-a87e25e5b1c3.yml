@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 7ee328c1-fe7e-4d11-8f8f-a87e25e5b1c3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'If Not Using the Basic Skills Deficient Definition Contained in WIOA Section 3(5)(b), Include the Specific State Definition.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 626a6f92-5a7a-478f-9b21-289e7f272a82
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 91b421cb-402e-4211-a22f-7f83a707f3e4
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40

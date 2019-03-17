@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 824848b3-8d96-4a93-828e-6412439570d4
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Single-area State Requirements'
+description:
+  -
+    value: 'In States where there is only one local workforce investment area, the governor serves as both the State and local chief elected official. In such cases, the State must submit any information required in the local plan (WIOA section 106(d)(2)). States with a single workforce area must also include:'
+    format: basic_html
+    processed: 'In States where there is only one local workforce investment area, the governor serves as both the State and local chief elected official. In such cases, the State must submit any information required in the local plan (WIOA section 106(d)(2)). States with a single workforce area must also include:'
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 3e26350c-6b60-4da0-b5a3-1383439f9093
+  -
+    target_type: taxonomy_term
+    target_uuid: 3e26350c-6b60-4da0-b5a3-1383439f9093
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4d06d2cd-c364-4f86-bed1-936db55b3f64
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.3e26350c-6b60-4da0-b5a3-1383439f9093
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.3e26350c-6b60-4da0-b5a3-1383439f9093

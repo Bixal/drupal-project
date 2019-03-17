@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 4f8b70df-ebaa-4252-862f-447eb1163100
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Operating Systems and Policies'
+description:
+  -
+    value: 'The Unified or Combined State Plan must include a description of the State operating systems and policies that will support the implementation of the State strategy described in Section II Strategic Elements . This includes—'
+    format: basic_html
+    processed: 'The Unified or Combined State Plan must include a description of the State operating systems and policies that will support the implementation of the State strategy described in Section II Strategic Elements . This includes—'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: bb7a8afc-c5d0-4976-b696-4e95b1270ab1
+  -
+    target_type: taxonomy_term
+    target_uuid: bb7a8afc-c5d0-4976-b696-4e95b1270ab1
+changed:
+  -
+    value: '2019-03-07T18:34:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 0703b4f5-5ecc-4de8-8228-4f096633a61a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 2374aeba-b9f5-4304-84e9-6d4cdb44a5aa
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.bb7a8afc-c5d0-4976-b696-4e95b1270ab1
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.bb7a8afc-c5d0-4976-b696-4e95b1270ab1

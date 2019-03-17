@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 5525ed70-68a9-4b4a-9aef-6d6e1a5d5aa3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Board'
+description:
+  -
+    value: 'Provide a description of the State Board, including—'
+    format: basic_html
+    processed: 'Provide a description of the State Board, including—'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7d4eb3b8-88bd-4e98-aa56-4e1b1c29ae70
+  -
+    target_type: taxonomy_term
+    target_uuid: 7d4eb3b8-88bd-4e98-aa56-4e1b1c29ae70
+changed:
+  -
+    value: '2019-03-07T19:06:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4ea5f8d4-b3c8-4f3d-a8d3-4313f667c3d2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 85badacd-8b59-4096-8388-45812961c541
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.7d4eb3b8-88bd-4e98-aa56-4e1b1c29ae70
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.7d4eb3b8-88bd-4e98-aa56-4e1b1c29ae70

@@ -1,0 +1,39 @@
+uuid:
+  -
+    value: 7a294601-e9d6-4e10-bdda-69737d3e326c
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: state
+    target_type: group_type
+    target_uuid: d82dc7e8-0ca9-49f8-b2b3-1247156212c4
+label:
+  -
+    value: Virginia
+uid:
+  -
+    target_type: user
+    target_uuid: cd0e9470-88d2-4291-86a7-b8a2d9baed4e
+created:
+  -
+    value: '2019-02-27T21:51:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2019-02-27T21:51:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: group
+  entity_dependencies:
+    user:
+      - user.user.cd0e9470-88d2-4291-86a7-b8a2d9baed4e

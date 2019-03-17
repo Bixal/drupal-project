@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 5d4892e9-b6bc-49ab-b330-04749de26c53
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describes the Goals of the Waiver and the Expected Programmatic Outcomes if the Request is Granted;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 453907ef-3323-4320-b756-283e986158e0
+  -
+    target_type: taxonomy_term
+    target_uuid: 453907ef-3323-4320-b756-283e986158e0
+changed:
+  -
+    value: '2019-03-11T21:03:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5956b75d-7e12-4973-9bc2-a4274590cc97
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.453907ef-3323-4320-b756-283e986158e0
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.453907ef-3323-4320-b756-283e986158e0

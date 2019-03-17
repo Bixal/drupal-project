@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 73840cac-5eaa-45fb-a9e2-57278c8a73c7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Single-area State Requirements (D1-D4)'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+changed:
+  -
+    value: '2019-03-11T19:01:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 79f1c39b-97eb-4a2a-84e1-6e11277f3b60
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: true
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c03ba9ec-ee90-4d63-8b37-7ab83fc19fc9
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4

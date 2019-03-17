@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: db27c180-1889-4e28-a516-89d0a1408648
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Improving Access to Postsecondary Credentials'
+description:
+  -
+    value: 'Describe how the State’s strategies will improve access to activities leading to recognized postsecondary credentials, including Registered Apprenticeship certificates. This includes credentials that are industry-recognized certificates, licenses or certifications, and that are portable and stackable.'
+    format: basic_html
+    processed: 'Describe how the State’s strategies will improve access to activities leading to recognized postsecondary credentials, including Registered Apprenticeship certificates. This includes credentials that are industry-recognized certificates, licenses or certifications, and that are portable and stackable.'
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+changed:
+  -
+    value: '2019-03-07T18:34:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d2028ae7-8fec-42aa-a690-ab8800334147
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 73107f29-bb34-4a75-a477-04cb6c15b16f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487

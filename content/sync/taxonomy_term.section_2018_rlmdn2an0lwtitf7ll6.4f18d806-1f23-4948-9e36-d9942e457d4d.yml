@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 4f18d806-1f23-4948-9e36-d9942e457d4d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessment of Core Programs'
+description:
+  -
+    value: 'Describe how the core programs will be assessed each year based on State performance accountability measures described in section 116(b) of WIOA. This State assessment must include the quality, effectiveness, and improvement of programs broken down by local area or provider. Such state assessments should take into account local and regional planning goals.'
+    format: basic_html
+    processed: 'Describe how the core programs will be assessed each year based on State performance accountability measures described in section 116(b) of WIOA. This State assessment must include the quality, effectiveness, and improvement of programs broken down by local area or provider. Such state assessments should take into account local and regional planning goals.'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+  -
+    target_type: taxonomy_term
+    target_uuid: a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+changed:
+  -
+    value: '2019-03-07T19:09:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ff36860b-3ad8-4643-9405-d927984acc00
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 5c0b5889-1bd8-4c81-b106-346493fc0574
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.a38931b7-3e28-48fe-8fe2-e9be4b0f9b01
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.a38931b7-3e28-48fe-8fe2-e9be4b0f9b01

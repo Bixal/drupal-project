@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: d98bd3c9-6f55-4db2-9731-861bde800389
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Program-specific Requirements for Core Programs'
+description:
+  -
+    value: 'The State must address all program-specific requirements in this section for the WIOA core programs regardless of whether the State submits either a Unified or Combined State Plan.'
+    format: basic_html
+    processed: 'The State must address all program-specific requirements in this section for the WIOA core programs regardless of whether the State submits either a Unified or Combined State Plan.'
+weight:
+  -
+    value: 83
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-11T18:55:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ff67cabc-d4d4-457d-a23c-dbda7bd89a17
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

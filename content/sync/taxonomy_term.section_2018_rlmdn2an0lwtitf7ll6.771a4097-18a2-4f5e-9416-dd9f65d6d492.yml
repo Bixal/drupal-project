@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 771a4097-18a2-4f5e-9416-dd9f65d6d492
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Addressing the Accessibility of the One-stop Delivery System for Individuals with Disabilities'
+description:
+  -
+    value: 'Describe how the one-stop delivery system (including one-stop center operators and the one-stop delivery system partners), will comply with section 188 of WIOA (if applicable) and applicable provisions of the Americans with Disabilities Act of 1990 (42 U.S.C. 12101 et seq.) with regard to the physical and programmatic accessibility of facilities, programs, services, technology, and materials for individuals with disabilities. This also must include a description of compliance through providing staff training and support for addressing the needs of individuals with disabilities. Describe the State’s one-stop center certification policy, particularly the accessibility criteria.'
+    format: basic_html
+    processed: 'Describe how the one-stop delivery system (including one-stop center operators and the one-stop delivery system partners), will comply with section 188 of WIOA (if applicable) and applicable provisions of the Americans with Disabilities Act of 1990 (42 U.S.C. 12101 et seq.) with regard to the physical and programmatic accessibility of facilities, programs, services, technology, and materials for individuals with disabilities. This also must include a description of compliance through providing staff training and support for addressing the needs of individuals with disabilities. Describe the State’s one-stop center certification policy, particularly the accessibility criteria.'
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+changed:
+  -
+    value: '2019-03-11T17:33:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 05c9e8fa-7549-452c-8e26-479187c7e5c9
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 5c69af70-956e-4038-bf66-608183da2887
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100

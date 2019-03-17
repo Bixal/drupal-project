@@ -1,0 +1,79 @@
+uuid: 6cadb8cf-ce3c-42c5-88e9-bc7539191205
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.field_cross_year_uuid
+    - field.field.taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.field_display_name
+    - field.field.taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.field_hide_hierarchical_heading
+    - field.field.taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.field_hide_name
+    - field.field.taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.field_input_from_state
+    - field.field.taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.field_shown_on_toc
+    - taxonomy.vocabulary.section_2018_rlmdn2an0lwtitf7ll6
+  module:
+    - sp_field
+    - text
+id: taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.default
+targetEntityType: taxonomy_term
+bundle: section_2018_rlmdn2an0lwtitf7ll6
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_cross_year_uuid:
+    type: field_uuid_additional_default_widget
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_name:
+    weight: 1
+    settings:
+      size: 200
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hide_hierarchical_heading:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_hide_name:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_input_from_state:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: field_section_entry_default_widget
+    region: content
+  field_shown_on_toc:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  path: true

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 8fa9a93e-2c54-4516-8a6d-1cc813129acd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Strategic Vision and Goals'
+description:
+  -
+    value: "<p>The Unified or Combined State Plan must include the State’s strategic vision and goals for developing its workforce and meeting employer needs in order to support economic growth and economic self-sufficiency. This must include—</p>\r\n"
+    format: basic_html
+    processed: '<p>The Unified or Combined State Plan must include the State’s strategic vision and goals for developing its workforce and meeting employer needs in order to support economic growth and economic self-sufficiency. This must include—</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 224ce398-febd-4593-a5b7-504bf7120388
+  -
+    target_type: taxonomy_term
+    target_uuid: 224ce398-febd-4593-a5b7-504bf7120388
+changed:
+  -
+    value: '2019-03-12T13:33:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: aff7c6c4-4d30-46e7-9ac3-50ca28ed5237
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.224ce398-febd-4593-a5b7-504bf7120388
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.224ce398-febd-4593-a5b7-504bf7120388

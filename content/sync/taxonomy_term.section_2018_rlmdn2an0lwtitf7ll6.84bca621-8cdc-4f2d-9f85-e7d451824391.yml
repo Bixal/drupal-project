@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 84bca621-8cdc-4f2d-9f85-e7d451824391
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Dislocated Worker Employment and Training Activities in Accordance with WIOA Section 133(b)(2) and Based on Data and Weights Assigned.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+  -
+    target_type: taxonomy_term
+    target_uuid: 9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+changed:
+  -
+    value: '2019-03-11T17:17:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 35f13e75-f9a0-4d40-ae02-2bd7f2d4e9bd
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7dc64739-5a0a-4b36-b181-ea3af8e3a4be
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.9d1a3248-e6e0-4bea-a7e2-42081bdab0cf
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.9d1a3248-e6e0-4bea-a7e2-42081bdab0cf

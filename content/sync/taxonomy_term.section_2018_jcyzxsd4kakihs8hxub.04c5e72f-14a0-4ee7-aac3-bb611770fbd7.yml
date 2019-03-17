@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 04c5e72f-14a0-4ee7-aac3-bb611770fbd7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provide the Appeals Process Referred to in Section 106(b)(5) of WIOA Relating to Designation of Local Areas.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c7dd9d32-92d9-4e78-8575-edbfa773700f
+  -
+    target_type: taxonomy_term
+    target_uuid: c7dd9d32-92d9-4e78-8575-edbfa773700f
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8502b7d0-5c19-4447-bb76-4474c95b1863
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f83f9e67-fc02-4645-88ac-f1fe795866ae
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.c7dd9d32-92d9-4e78-8575-edbfa773700f
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.c7dd9d32-92d9-4e78-8575-edbfa773700f

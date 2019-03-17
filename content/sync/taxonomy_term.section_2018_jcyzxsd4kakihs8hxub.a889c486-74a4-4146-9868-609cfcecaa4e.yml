@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: a889c486-74a4-4146-9868-609cfcecaa4e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describe How the State Will Ensure That All 14 Program Elements Described in WIOA Section 129(c)(2) Are Made Available and Effectively Implemented.*'
+description:
+  -
+    value: '* Sec. 102(b)(2)(D)(i)(I)'
+    format: basic_html
+    processed: '* Sec. 102(b)(2)(D)(i)(I)'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f52cdc80-659e-4ec2-93f4-070d66d31951
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: e67b6944-4910-4698-b119-f9d002df0a37
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40

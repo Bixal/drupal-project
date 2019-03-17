@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: fa47219b-824d-4bb9-a221-8d542fd150f7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Strategy'
+description:
+  -
+    value: "<p>The Unified or Combined State Plan must include the State's strategies to achieve its strategic vision and goals. These strategies must take into account the State’s economic, workforce, and workforce development, education and training activities and analysis provided in Section (a) above. Include discussion of specific strategies to address the needs of populations provided in Section (a).</p>\r\n"
+    format: basic_html
+    processed: '<p>The Unified or Combined State Plan must include the State''s strategies to achieve its strategic vision and goals. These strategies must take into account the State’s economic, workforce, and workforce development, education and training activities and analysis provided in Section (a) above. Include discussion of specific strategies to address the needs of populations provided in Section (a).</p>'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 224ce398-febd-4593-a5b7-504bf7120388
+  -
+    target_type: taxonomy_term
+    target_uuid: 224ce398-febd-4593-a5b7-504bf7120388
+changed:
+  -
+    value: '2019-03-12T13:33:21+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6b5783b4-6b73-4857-bfc0-b550578b01bc
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.224ce398-febd-4593-a5b7-504bf7120388
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.224ce398-febd-4593-a5b7-504bf7120388

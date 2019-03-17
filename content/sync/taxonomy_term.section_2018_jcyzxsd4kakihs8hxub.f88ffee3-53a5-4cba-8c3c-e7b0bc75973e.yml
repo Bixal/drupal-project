@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: f88ffee3-53a5-4cba-8c3c-e7b0bc75973e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Regions and Local Workforce Development Areas - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c7dd9d32-92d9-4e78-8575-edbfa773700f
+  -
+    target_type: taxonomy_term
+    target_uuid: c7dd9d32-92d9-4e78-8575-edbfa773700f
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4b97ad9e-c9e3-457d-b37e-04832c038e5f
+field_display_name:
+  -
+    value: 'Describe the Process Used for Designating Local Areas, Including Procedures for Determining Whether the Local Area Met the Criteria for “performed Successfully” and “sustained Fiscal Integrity” in Accordance with 106(b)(2) and (3) of Wioa. Describe the Process Used for Identifying Regions and Planning Regions Under Section 106(a) of Wioa. This Must Include a Description of How the State Consulted with the Local Boards and Chief Elected Officials in Identifying the Regions.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 9986c4bd-9427-4b7d-8894-62eb0c12d8e7
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.c7dd9d32-92d9-4e78-8575-edbfa773700f
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.c7dd9d32-92d9-4e78-8575-edbfa773700f

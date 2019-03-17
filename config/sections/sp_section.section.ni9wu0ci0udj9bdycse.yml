@@ -1,0 +1,8 @@
+uuid: 6545ae5e-b856-4473-afab-21d042840077
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GBGJxyBaoNdsT6jX_UC1KLRAzU_gZGRoR3Q_GKj5Gh0
+id: ni9wu0ci0udj9bdycse
+label: 'HUD Employment and training activities'

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: d5f1c3f2-a016-49cc-b9f2-548c5468dd7e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Core Program Activities to Implement the State’s Strategy'
+description:
+  -
+    value: 'Describe the activities the entities carrying out the respective core programs will fund to implement the State’s strategies. Also describe how such activities will be aligned across the core programs and Combined State Plan partner programs included in this plan and among the entities administering the programs, including using co-enrollment and other strategies.'
+    format: basic_html
+    processed: 'Describe the activities the entities carrying out the respective core programs will fund to implement the State’s strategies. Also describe how such activities will be aligned across the core programs and Combined State Plan partner programs included in this plan and among the entities administering the programs, including using co-enrollment and other strategies.'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+changed:
+  -
+    value: '2019-03-07T18:34:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d282f5cf-1c28-4d89-9b13-7168a979d248
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c30dca72-4d7d-4ef2-b7f2-e55445631021
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 4bbca2ee-730a-4d3b-8f17-b31e7ceb7b92
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Leveraging Resources to Increase Educational Access'
+description:
+  -
+    value: 'Describe how the State’s strategies will enable the State to leverage other Federal, State, and local investments that have enhanced access to workforce development programs at the above institutions, described in section (E).'
+    format: basic_html
+    processed: 'Describe how the State’s strategies will enable the State to leverage other Federal, State, and local investments that have enhanced access to workforce development programs at the above institutions, described in section (E).'
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+  -
+    target_type: taxonomy_term
+    target_uuid: 663e0b96-1170-4173-8e5d-0104c1e7f487
+changed:
+  -
+    value: '2019-03-07T18:34:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: b2c051a8-7996-43d1-b1b1-3ca75f6bbd67
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ecb0e8a5-2e92-4682-9d05-f38a77070a89
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.663e0b96-1170-4173-8e5d-0104c1e7f487

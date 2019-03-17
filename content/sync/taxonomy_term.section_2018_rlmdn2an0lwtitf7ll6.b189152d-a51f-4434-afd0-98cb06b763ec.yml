@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: b189152d-a51f-4434-afd0-98cb06b763ec
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Priority of Service for Veterans'
+description:
+  -
+    value: 'Describe how the State will implement and monitor the priority of service provisions for veterans in accordance with the requirements of the Jobs for Veterans Act, codified at section 4215 of 38 U.S.C., which applies to all employment and training programs funded in whole or in part by the Department of Labor. States should also describe the referral process for veterans determined to have a significant barrier to employment to receive services from the Jobs for Veterans State Grants (JVSG) program’s Disabled Veterans’ Outreach Program (DVOP) specialist.'
+    format: basic_html
+    processed: 'Describe how the State will implement and monitor the priority of service provisions for veterans in accordance with the requirements of the Jobs for Veterans Act, codified at section 4215 of 38 U.S.C., which applies to all employment and training programs funded in whole or in part by the Department of Labor. States should also describe the referral process for veterans determined to have a significant barrier to employment to receive services from the Jobs for Veterans State Grants (JVSG) program’s Disabled Veterans’ Outreach Program (DVOP) specialist.'
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+changed:
+  -
+    value: '2019-03-11T17:33:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 936d72a7-be3d-4d46-a019-518fc6f336de
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: d480f993-db6b-4fb7-8505-348b9a8a7b2d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100

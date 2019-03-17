@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 304083fb-02df-4d30-afa9-4c9c2fb35a5f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Entity Responsible for the Disbursal of Grant Funds, as Determined by the Governor, if Different from That for the State. (wioa Section 108(b)(15).)'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+  -
+    target_type: taxonomy_term
+    target_uuid: 824848b3-8d96-4a93-828e-6412439570d4
+changed:
+  -
+    value: '2019-03-11T18:58:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 601e2aa0-240c-4011-ad77-33319e616d45
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.824848b3-8d96-4a93-828e-6412439570d4

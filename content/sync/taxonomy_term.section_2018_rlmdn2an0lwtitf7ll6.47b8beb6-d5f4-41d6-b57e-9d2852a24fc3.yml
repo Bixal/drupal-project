@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 47b8beb6-d5f4-41d6-b57e-9d2852a24fc3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Board Functions'
+description:
+  -
+    value: 'Describe how the State board will implement its functions under section 101(d) of WIOA (i.e. provide a description of Board operational structures and decision making processes to ensure such functions are carried out).'
+    format: basic_html
+    processed: 'Describe how the State board will implement its functions under section 101(d) of WIOA (i.e. provide a description of Board operational structures and decision making processes to ensure such functions are carried out).'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 56f776e5-347b-4f27-b9d2-c43607678885
+  -
+    target_type: taxonomy_term
+    target_uuid: 56f776e5-347b-4f27-b9d2-c43607678885
+changed:
+  -
+    value: '2019-03-07T18:28:10+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7323b35c-02d5-4aa5-ba25-38b0ca075cbb
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 13468393-3e92-4c7f-80e1-a80c42ae7e23
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.56f776e5-347b-4f27-b9d2-c43607678885
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.56f776e5-347b-4f27-b9d2-c43607678885

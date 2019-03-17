@@ -1,0 +1,8 @@
+uuid: 88482e02-2bc3-4bc3-987a-0dc78804d968
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yjy9TagmQkgpSeOGH7qY4vzCqGT4jg0ckOEaL1v-SQA
+id: rlmdn2an0lwtitf7ll6
+label: 'WIOA State Plan Common Elements'

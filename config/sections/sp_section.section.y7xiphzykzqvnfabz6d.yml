@@ -1,0 +1,8 @@
+uuid: 7bedb391-19fe-4bdf-b966-dc0a9de0dfd2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 0vzMWenYIGYVdqMdsKbxZtdHhdjfkiCt6f-1GyfGJ2M
+id: y7xiphzykzqvnfabz6d
+label: 'Wagner-Peyser Act (as amended by title III)'

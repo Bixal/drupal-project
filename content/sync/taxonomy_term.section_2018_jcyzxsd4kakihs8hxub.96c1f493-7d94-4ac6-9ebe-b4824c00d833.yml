@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 96c1f493-7d94-4ac6-9ebe-b4824c00d833
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Monitor the Progress in Implementing the Waiver;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5a32068b-dc54-4388-a60a-8e22ba792183
+  -
+    target_type: taxonomy_term
+    target_uuid: 5a32068b-dc54-4388-a60a-8e22ba792183
+changed:
+  -
+    value: '2019-03-11T21:03:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6b182044-c733-4269-a34c-95fae9a50437
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.5a32068b-dc54-4388-a60a-8e22ba792183
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.5a32068b-dc54-4388-a60a-8e22ba792183

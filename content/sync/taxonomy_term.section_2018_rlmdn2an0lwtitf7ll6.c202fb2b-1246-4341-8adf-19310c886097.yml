@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c202fb2b-1246-4341-8adf-19310c886097
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Section Reference - Adult, Dislocated Worker, and Youth Activities under Title I-B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: d98bd3c9-6f55-4db2-9731-861bde800389
+  -
+    target_type: taxonomy_term
+    target_uuid: d98bd3c9-6f55-4db2-9731-861bde800389
+changed:
+  -
+    value: '2019-03-11T18:55:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 859772bb-3649-465d-90fe-ed63962db714
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: true
+field_input_from_state:
+  -
+    node_bundle: ''
+    section: jcyzxsd4kakihs8hxub
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: bd8a12bb-7dbb-4f0e-a89a-473ecfab3c6d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.d98bd3c9-6f55-4db2-9731-861bde800389
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.d98bd3c9-6f55-4db2-9731-861bde800389

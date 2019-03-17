@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 87377533-5250-494d-a73b-91220dbecaba
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Addressing the Accessibility of the One-stop Delivery System for English Language Learners'
+description:
+  -
+    value: 'Describe how the one-stop delivery system (including one-stop center operators and the one-stop delivery system partners) will ensure that each one-stop center is able to meet the needs of English language learners, such as through established procedures, staff training, resources, and other materials.'
+    format: basic_html
+    processed: 'Describe how the one-stop delivery system (including one-stop center operators and the one-stop delivery system partners) will ensure that each one-stop center is able to meet the needs of English language learners, such as through established procedures, staff training, resources, and other materials.'
+weight:
+  -
+    value: 8
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+  -
+    target_type: taxonomy_term
+    target_uuid: 4f8b70df-ebaa-4252-862f-447eb1163100
+changed:
+  -
+    value: '2019-03-11T17:33:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a9e5916f-2cbc-4ad0-85bb-e5e7c954ece5
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 2a65b0a4-7ae9-41d6-a62a-f2dd2e22e754
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.4f8b70df-ebaa-4252-862f-447eb1163100

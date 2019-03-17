@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 42a6727b-9698-4da9-808a-3c87fdd08431
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Data Alignment and Integration - 3'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: ca58a7f0-cd72-41a1-afef-ed1c6ba8c620
+  -
+    target_type: taxonomy_term
+    target_uuid: ca58a7f0-cd72-41a1-afef-ed1c6ba8c620
+changed:
+  -
+    value: '2019-03-11T17:30:07+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 9368cf6f-8a89-472a-ba06-5b2b1a213bb8
+field_display_name:
+  -
+    value: 'Explain How the State Board Will Assist the Governor in Aligning Technology and Data Systems Across Required One-stop Partner Programs (including Design and Implementation of Common Intake, Data Collection, Etc.) and How Such Alignment Will Improve Service Delivery to Individuals, Including Unemployed Individuals. '
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3604fcca-e17d-460c-8271-0a7f41a26c9e
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.ca58a7f0-cd72-41a1-afef-ed1c6ba8c620
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.ca58a7f0-cd72-41a1-afef-ed1c6ba8c620

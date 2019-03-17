@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 39bc52af-9182-4527-8a5a-89c4e93393a9
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statewide Activities'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9e46c43e-56de-43f4-a334-a87e7dfbe2ef
+  -
+    target_type: taxonomy_term
+    target_uuid: 9e46c43e-56de-43f4-a334-a87e7dfbe2ef
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ecf99e0f-d272-4cf7-84cb-9b301b69e30b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.9e46c43e-56de-43f4-a334-a87e7dfbe2ef
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.9e46c43e-56de-43f4-a334-a87e7dfbe2ef

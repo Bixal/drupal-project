@@ -1,0 +1,8 @@
+uuid: c606f4d4-380b-4801-b275-76c28d7dabfe
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-zYLZWMaDriBAiTcscyZ4b9R13d4z76ZZyDDc-UX1gI'
+id: rvnjkuz2gvxltemle2g
+label: 'Temporary Assistance for Needy Families Program'

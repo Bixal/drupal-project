@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: fc596247-5155-4676-8d3d-36b7b05d022d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Multi-year Grants or Contracts'
+description:
+  -
+    value: 'Describe how the eligible agency will award multi-year grants or contracts on a competitive basis to eligible providers in the State, including how eligible agencies will establish that eligible providers are organizations of demonstrated effectiveness.'
+    format: basic_html
+    processed: 'Describe how the eligible agency will award multi-year grants or contracts on a competitive basis to eligible providers in the State, including how eligible agencies will establish that eligible providers are organizations of demonstrated effectiveness.'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 8242f292-89bc-423c-b504-ce5cb09e93d5
+  -
+    target_type: taxonomy_term
+    target_uuid: 8242f292-89bc-423c-b504-ce5cb09e93d5
+changed:
+  -
+    value: '2019-03-11T17:17:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4c29d411-e476-4378-a38d-ba66a926b1d8
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c6497b66-86e0-444e-990e-e0c516c55bf2
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.8242f292-89bc-423c-b504-ce5cb09e93d5
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.8242f292-89bc-423c-b504-ce5cb09e93d5

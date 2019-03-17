@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 4900c0c9-d310-4fa0-853e-21f1d4442239
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Adult and Dislocated Workers Program Requirements - 4'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 595269ad-d865-4862-bada-85ca61845f62
+  -
+    target_type: taxonomy_term
+    target_uuid: 595269ad-d865-4862-bada-85ca61845f62
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: aade2000-f5f2-47ac-bc7c-cfa58ccd5edc
+field_display_name:
+  -
+    value: 'Describe How the State Will Implement and Monitor the Priority for Public Assistance Recipients, Other Low-income Individuals, and Individuals Who Are Basic Skills Deficient in Accordance with the Requirements of WIOA Sec. 134(c)(3)(e), Which Applies to Individualized Career Services and Training Services Funding by the Adult Formula Program.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f1d9b8da-6c1b-4e29-a551-1a94109a0163
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.595269ad-d865-4862-bada-85ca61845f62
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.595269ad-d865-4862-bada-85ca61845f62

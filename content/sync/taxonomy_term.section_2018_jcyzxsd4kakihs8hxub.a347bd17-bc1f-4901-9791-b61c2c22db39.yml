@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: a347bd17-bc1f-4901-9791-b61c2c22db39
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Youth Program Requirements - 1'
+description:
+  -
+    value: '* Sec. 102(b)(2)(D)(i)(V)'
+    format: basic_html
+    processed: '* Sec. 102(b)(2)(D)(i)(V)'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+  -
+    target_type: taxonomy_term
+    target_uuid: 7962916f-87fb-4ee0-80d5-71576ea5ca40
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 177e86f1-b630-411d-8fb2-52685be235c7
+field_display_name:
+  -
+    value: 'Identify the State-developed Criteria to Be Used by Local Boards in Awarding Grants for Youth Workforce Investment Activities and Describe How the Local Boards Will Take into Consideration the Ability of the Providers to Meet Performance Accountability Measures Based on Primary Indicators of Performance for the Youth Program as Described in Section 116(b)(2)(a)(ii) of WIOA in Awarding Such Grants.*'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 4ab7b387-53e1-49d3-b95b-26b485df54c0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.7962916f-87fb-4ee0-80d5-71576ea5ca40

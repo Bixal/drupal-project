@@ -1,0 +1,12 @@
+uuid: 19de53ed-9415-440b-95f1-38c8628609de
+langcode: en
+status: true
+dependencies: {  }
+id: '2018'
+label: '2018'
+sections:
+  -
+    target_id: rlmdn2an0lwtitf7ll6
+  -
+    target_id: jcyzxsd4kakihs8hxub
+copy_from_plan_year_section: ''

@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: a011261f-ac7c-4da1-b934-111c45eeba00
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_jcyzxsd4kakihs8hxub
+    target_type: taxonomy_vocabulary
+    target_uuid: 99b90866-b4d7-4a4e-b3d5-a00e67310393
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Adult and Dislocated Workers Program Requirements - 1'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 595269ad-d865-4862-bada-85ca61845f62
+  -
+    target_type: taxonomy_term
+    target_uuid: 595269ad-d865-4862-bada-85ca61845f62
+changed:
+  -
+    value: '2019-03-11T18:47:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a3fd2780-483a-4ca0-9843-60d4b9b29a1b
+field_display_name:
+  -
+    value: 'If the State is Utilizing Work-based Training Models (e.g. On-the- Job Training, Incumbent Worker Training, Transitional Jobs, and Customized Training) as Part of Its Training Strategy and These Strategies Are Not Already Discussed in Other Sections of the Plan, Describe the State’s Strategies for How These Models Ensure High Quality Training for Both the Participant and the Employer. '
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 151ef573-d130-4298-972f-d7669e4cf8bc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.595269ad-d865-4862-bada-85ca61845f62
+      - taxonomy_term.section_2018_jcyzxsd4kakihs8hxub.595269ad-d865-4862-bada-85ca61845f62

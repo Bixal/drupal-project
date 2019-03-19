@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.state_plan_year_section.field_section
+    - field.field.node.state_plan_year_section.field_state_plan_year
     - node.type.state_plan_year_section
   module:
     - user
@@ -12,11 +14,17 @@ targetEntityType: node
 bundle: state_plan_year_section
 mode: teaser
 content:
-  links:
-    weight: 100
+  content_moderation_control:
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
+  links:
+    weight: 1
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_section: true
   field_state_plan_year: true
+  plan_year_section_view: true

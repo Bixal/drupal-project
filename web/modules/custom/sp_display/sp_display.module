@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_display.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sp_display_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_display module.
+    case 'help.page.sp_display':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Handles displaying content.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sp_display_theme() {
+  $base = [
+    'file' => 'sp_display.theme.inc',
+  ];
+  $themes = [
+    'sp_display_plan_year_view' => [
+      'variables' => ['node' => NULL],
+    ],
+    'sp_display_plan_year_section_view' => [
+      'variables' => ['node' => NULL],
+    ],
+  ];
+  foreach ($themes as &$theme) {
+    $theme += $base;
+  }
+  return $themes;
+}

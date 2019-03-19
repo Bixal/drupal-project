@@ -48,6 +48,7 @@ module:
   shortcut: 0
   sp_access: 0
   sp_create: 0
+  sp_display: 0
   sp_expire: 0
   sp_field: 0
   sp_moderate: 0

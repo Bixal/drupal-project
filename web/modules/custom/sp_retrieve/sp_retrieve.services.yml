@@ -4,7 +4,7 @@ services:
     arguments: ['@entity_type.manager', '@entity.repository']
   sp_retrieve.taxonomy:
     class: Drupal\sp_retrieve\TaxonomyService
-    arguments: ['@entity_type.manager']
+    arguments: ['@entity_type.manager', '@sp_retrieve.custom_entities']
   sp_retrieve.node:
     class: Drupal\sp_retrieve\NodeService
     arguments: ['@entity_type.manager', '@sp_expire.content', '@sp_retrieve.custom_entities', '@sp_retrieve.taxonomy', '@cache.sp_retrieve']

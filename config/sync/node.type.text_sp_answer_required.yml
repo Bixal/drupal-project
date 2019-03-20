@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: 'Text Question State Plan Content (Required)'
+name: 'Text Question State Plan Answer (Required)'
 type: text_sp_answer_required
 description: 'This is the textual content that state editors will enter. There will be a content type of this for each section for granularity. This content type will NEVER be seen or entered, only the cloned versions of it per section.'
 help: ''

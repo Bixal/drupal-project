@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\sp_create\PlanYearInfo;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
  * Implements hook_help().
@@ -20,5 +23,44 @@ function sp_field_help($route_name, RouteMatchInterface $route_match) {
       return $output;
 
     default:
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function sp_field_entity_extra_field_info() {
+  $extra = [];
+  $extra['node'][PlanYearInfo::SPY_BUNDLE]['display']['plan_year_view'] = [
+    'label' => t('View a plan year'),
+    'description' => t('Allows the display of an entire plan year.'),
+    'weight' => 100,
+    'visible' => TRUE,
+  ];
+  $extra['node'][PlanYearInfo::SPYS_BUNDLE]['display']['plan_year_section_view'] = [
+    'label' => t('View a plan year section'),
+    'description' => t('Allows the display of a plan year section.'),
+    'weight' => 101,
+    'visible' => TRUE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function sp_field_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('plan_year_view')) {
+    $build['plan_year_view'] = [
+      '#theme' => 'sp_display_plan_year_view',
+      '#node' => $entity,
+    ];
+  }
+  if ($display->getComponent('plan_year_section_view')) {
+    $build['plan_year_section_view'] = [
+      '#theme' => 'sp_display_plan_year_section_view',
+      '#node' => $entity,
+    ];
   }
 }

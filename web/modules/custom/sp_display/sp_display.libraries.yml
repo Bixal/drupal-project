@@ -1,0 +1,10 @@
+display.plan:
+  version: 1.x
+  css:
+    theme:
+      css/display-plan.css: {}
+  js:
+    js/jquery.stickybits.3.6.4.min.js: { minified: true }
+    js/display-plan.js: {}
+  dependencies:
+    - core/jquery

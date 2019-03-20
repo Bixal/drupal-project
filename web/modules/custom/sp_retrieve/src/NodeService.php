@@ -10,7 +10,6 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\group\Entity\GroupContent;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
-use Drupal\taxonomy\Entity\Term;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
 
 /**
@@ -540,7 +539,7 @@ class NodeService {
           $orphans[] = $state_plan_year_answer_nid;
           continue;
         }
-        $state_plan_year_content_info = $this->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
+        $state_plan_year_content_info = $this->taxonomyService->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
         // Ensure that the node type matches between the node and the term.
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $plan_year_field */
         $plan_year_field = $state_plan_year_answer->get('field_plan_year');
@@ -599,35 +598,6 @@ class NodeService {
     };
     $this->cache->set($cid, $orphans, Cache::PERMANENT, $this->getMissingContentCacheTags());
     return $orphans;
-  }
-
-  /**
-   * Retrieve pertinent info to identify state plan content creation info.
-   *
-   * Each section term can be used to create many, none, or one piece of state
-   * plan year content.
-   *
-   * @param \Drupal\taxonomy\Entity\Term $section_year_term
-   *   A section year term.
-   *
-   * @return array
-   *   An array with common elements in the top and individual items in the
-   *   content key.
-   */
-  public function getStatePlanYearContentInfoFromSectionYearTerm(Term $section_year_term) {
-    $plan_year_id_and_section_id = PlanYearInfo::getPlanYearIdAndSectionIdFromVid($section_year_term->bundle());
-    $return['plan_year_id'] = !empty($plan_year_id_and_section_id['plan_year_id']) ? $plan_year_id_and_section_id['plan_year_id'] : '';
-    $return['section_id'] = !empty($plan_year_id_and_section_id['section_id']) ? $plan_year_id_and_section_id['section_id'] : '';
-    $return['content'] = [];
-    if (!$section_year_term->get('field_input_from_state')->isEmpty()) {
-      /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
-      foreach ($section_year_term->get('field_input_from_state') as $item) {
-        $value = $item->getValue();
-        $return['content'][$value['term_field_uuid']] = $value;
-
-      }
-    }
-    return $return;
   }
 
   /**
@@ -702,7 +672,7 @@ class NodeService {
       foreach ($this->taxonomyService->getVocabularyTids($plan_year_vid) as $tid) {
         /** @var \Drupal\taxonomy\Entity\Term $section_year_term */
         $section_year_term = $this->customEntitiesRetrieval->single('taxonomy_term', $tid);
-        $state_plan_year_content_info = $this->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
+        $state_plan_year_content_info = $this->taxonomyService->getStatePlanYearContentInfoFromSectionYearTerm($section_year_term);
         $section_id = $state_plan_year_content_info['section_id'];
         // The 'content' key holds which nodes need to be created.
         foreach ($state_plan_year_content_info['content'] as $content_info) {

@@ -14,12 +14,12 @@ status:
     value: true
 name:
   -
-    value: 'Title I-b Assurances'
+    value: 'Title I-B Assurances'
 description:
   -
-    value: 'The State Plan must include assurances that:'
+    value: "<p>The State Plan must include assurances that:</p>\r\n"
     format: basic_html
-    processed: 'The State Plan must include assurances that:'
+    processed: '<p>The State Plan must include assurances that:</p>'
 weight:
   -
     value: 5
@@ -32,7 +32,7 @@ parent:
     target_uuid: 3e26350c-6b60-4da0-b5a3-1383439f9093
 changed:
   -
-    value: '2019-03-12T13:29:34+00:00'
+    value: '2019-03-19T15:52:22+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -168,7 +168,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: '11. The State has taken appropriate action to secure compliance with the Uniform Guidance at 2 CFR 200 and 2 CFR 2900, including that the State will annually monitor local areas to ensure compliance and otherwise take appropriate action to secure compliance with the Uniform Guidance under section WIOA 184(a)(3);'
+      value: "<p>11. The State has taken appropriate action to secure compliance with the Uniform Guidance at 2 CFR 200 and 2 CFR 2900, including that the State will annually monitor local areas to ensure compliance and otherwise take appropriate action to secure compliance with the Uniform Guidance under section WIOA 184(a)(3);</p>\r\n"
       format: basic_html
     term_field_uuid: c8580895-4231-49ba-b407-9b4dc934d36f
     access_option: ''

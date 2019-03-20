@@ -7,3 +7,4 @@ dependencies:
   - sp_create
   - sp_plan_year
   - sp_expire
+  - sp_display

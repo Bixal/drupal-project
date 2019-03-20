@@ -32,7 +32,7 @@ parent:
     target_uuid: d98bd3c9-6f55-4db2-9731-861bde800389
 changed:
   -
-    value: '2019-03-11T18:55:59+00:00'
+    value: '2019-03-19T13:58:03+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -51,7 +51,7 @@ field_hide_hierarchical_heading:
     value: false
 field_hide_name:
   -
-    value: true
+    value: false
 field_input_from_state:
   -
     node_bundle: ''

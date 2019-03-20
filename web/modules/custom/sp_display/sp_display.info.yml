@@ -1,0 +1,7 @@
+name: 'State Plan - Display'
+type: module
+description: 'Handles displaying content.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - sp_retrieve

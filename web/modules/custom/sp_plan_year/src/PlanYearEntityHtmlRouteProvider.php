@@ -24,8 +24,8 @@ class PlanYearEntityHtmlRouteProvider extends AdminHtmlRouteProvider {
       $collection->add("entity.plan_year.wizard", $wizard_route);
     }
 
-    if ($wizard_route = $this->getContentRoute($entity_type)) {
-      $collection->add("entity.plan_year.content", $wizard_route);
+    if ($content_route = $this->getContentRoute($entity_type)) {
+      $collection->add("entity.plan_year.content", $content_route);
     }
 
     /** @var \Symfony\Component\Routing\Route $route */

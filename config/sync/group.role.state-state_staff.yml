@@ -12,5 +12,7 @@ audience: member
 group_type: state
 permissions_ui: true
 permissions:
-  1: 'update any group_node:text_sp_content entity'
-  2: 'update any group_node:bool_sp_content entity'
+  1: 'update any group_node:text_sp_answer_optional entity'
+  2: 'update any group_node:text_sp_answer_required entity'
+  3: 'update any group_node:bool_sp_answer_optional entity'
+  4: 'update any group_node:bool_sp_answer_required entity'

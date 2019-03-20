@@ -42,6 +42,7 @@ init:
 roles:
   - authenticated
   - sys_admin
+  - group_content_viewer
 default_langcode:
   -
     value: true

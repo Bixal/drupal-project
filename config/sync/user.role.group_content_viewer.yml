@@ -1,0 +1,9 @@
+uuid: f9da3bf5-ae8a-49a2-b141-3c7a0b5b944a
+langcode: en
+status: true
+dependencies: {  }
+id: group_content_viewer
+label: 'Group Content Viewer'
+weight: 12
+is_admin: null
+permissions: {  }

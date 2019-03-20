@@ -1,0 +1,14 @@
+uuid: 4b2377ea-c271-42df-9ab9-dbc271da4cc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_content_viewer
+  module:
+    - user
+id: user_add_role_action.group_content_viewer
+label: 'Add the Group Content Viewer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: group_content_viewer

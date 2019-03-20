@@ -1,0 +1,36 @@
+uuid: d819a9c6-8145-4cfa-ab7c-f04ad5844ef3
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.state
+  enforced:
+    config:
+      - user.role.group_content_viewer
+id: state-68ecdb0b9
+label: 'Group Content Viewer'
+weight: 12
+internal: true
+audience: outsider
+group_type: state
+permissions_ui: false
+permissions:
+  1: 'view group_node:state_plan_year_section entity'
+  2: 'view revisions group_node:state_plan_year_section entity'
+  3: 'view unpublished group_node:state_plan_year_section entity'
+  4: 'view group_node:state_plan_year entity'
+  5: 'view revisions group_node:state_plan_year entity'
+  6: 'view unpublished group_node:state_plan_year entity'
+  7: 'view group_node:text_sp_answer_optional entity'
+  8: 'view revisions group_node:text_sp_answer_optional entity'
+  9: 'view unpublished group_node:text_sp_answer_optional entity'
+  10: 'view group_node:text_sp_answer_required entity'
+  11: 'view revisions group_node:text_sp_answer_required entity'
+  12: 'view unpublished group_node:text_sp_answer_required entity'
+  13: 'view group_node:bool_sp_answer_optional entity'
+  14: 'view revisions group_node:bool_sp_answer_optional entity'
+  15: 'view unpublished group_node:bool_sp_answer_optional entity'
+  16: 'view group_node:bool_sp_answer_required entity'
+  17: 'view revisions group_node:bool_sp_answer_required entity'
+  18: 'view unpublished group_node:bool_sp_answer_required entity'
+  19: 'access group_node overview'

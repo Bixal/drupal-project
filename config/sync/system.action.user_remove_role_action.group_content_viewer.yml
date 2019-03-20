@@ -1,0 +1,14 @@
+uuid: 1c2fea6c-881e-411e-b3af-0f288d51ad80
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_content_viewer
+  module:
+    - user
+id: user_remove_role_action.group_content_viewer
+label: 'Remove the Group Content Viewer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: group_content_viewer

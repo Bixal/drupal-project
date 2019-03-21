@@ -14,7 +14,7 @@ status:
     value: true
 name:
   -
-    value: 'Section Reference - Adult, Dislocated Worker, and Youth Activities under Title I-B'
+    value: 'Section References - Core Programs'
 description:
   -
     value: null
@@ -32,7 +32,7 @@ parent:
     target_uuid: d98bd3c9-6f55-4db2-9731-861bde800389
 changed:
   -
-    value: '2019-03-19T13:58:03+00:00'
+    value: '2019-03-20T19:53:35+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -61,6 +61,39 @@ field_input_from_state:
       value: ''
       format: basic_html
     term_field_uuid: bd8a12bb-7dbb-4f0e-a89a-473ecfab3c6d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: ''
+    section: y7xiphzykzqvnfabz6d
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1b83c6fc-7cd2-4bac-b88f-6a6f9723cffd
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: ''
+    section: gkbqr1drr8sgqljwzrz
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7e9332cd-5f76-400f-9191-955b19c13869
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: ''
+    section: egbagtdxzruwsciloj1
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 359f0344-1a7c-418a-a56a-e11df27f02e2
     access_option: ''
     access_term_field_uuid: ''
     access_value: ''

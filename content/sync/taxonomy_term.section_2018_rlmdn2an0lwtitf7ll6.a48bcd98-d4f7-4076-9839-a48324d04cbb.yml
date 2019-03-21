@@ -1,0 +1,185 @@
+uuid:
+  -
+    value: a48bcd98-d4f7-4076-9839-a48324d04cbb
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Section Reference - Combined State Plan Partner Programs'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: ace4d971-d500-4abb-ad9b-4f6ff944687c
+  -
+    target_type: taxonomy_term
+    target_uuid: ace4d971-d500-4abb-ad9b-4f6ff944687c
+changed:
+  -
+    value: '2019-03-21T13:50:58+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e5242321-c4f2-4c05-badc-6500fddff590
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: ''
+    section: mif9i0wjjmfkttcit8b
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 51c72909-ea5a-4c89-aa7e-419708c0c05b
+    access_option: shown
+    access_term_field_uuid: 4e96d7ad-5df9-4056-968e-c8f77317c71b
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: rvnjkuz2gvxltemle2g
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c5a38245-56a9-4b5f-9ecd-8ebfbde2d02a
+    access_option: shown
+    access_term_field_uuid: 3af040c6-2ceb-437e-983c-8696d492022f
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: f95aj6tkj237yjyiteh
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7e27575d-87e4-4c8d-ab0a-672b10f135fd
+    access_option: shown
+    access_term_field_uuid: 423327b4-d7a9-4e27-adfb-3bb39987432a
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: ce0jmz255rxsfzka2x2
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 2b08fd92-8d37-499b-b86b-8e6069272bf3
+    access_option: shown
+    access_term_field_uuid: 05b8911f-6b18-48ba-94c5-7df84c79eb75
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: inarmesdkjqlpfc1m6i
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: dcd704de-17b9-492c-b424-50a6956252cb
+    access_option: shown
+    access_term_field_uuid: ded76656-d647-4416-85a7-f7e40655933c
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: fq8ppbs0ykuktneabkb
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b46dab58-3dc1-4c28-b781-0e9280551867
+    access_option: shown
+    access_term_field_uuid: 7eae9556-ab74-4e3e-8706-7f8e2937b33f
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: m3ylcuki7swg2h1e0qy
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3403809e-525a-40e0-a9d6-f6960c933e0d
+    access_option: shown
+    access_term_field_uuid: ddcbf8c4-4ca1-4a7b-83c5-5edc968ffd39
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: zc7dly7x0kyzn6csbvj
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 68cd74f7-8acf-4a6e-80cc-17b91b5618f0
+    access_option: shown
+    access_term_field_uuid: 348e0c94-9769-45e8-ac70-8c2f02b8474f
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: ni9wu0ci0udj9bdycse
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ea695f67-3144-417b-be8b-7554b692d81b
+    access_option: shown
+    access_term_field_uuid: 86c77dce-b676-4484-ba68-67f38a86b630
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: uxg6ljgvsmpionwig20
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: a9afca8d-149c-4009-ac87-a69062a506f1
+    access_option: shown
+    access_term_field_uuid: bb22f462-41f4-4c8a-ad8d-1d001621628b
+    access_value: 'yes'
+  -
+    node_bundle: ''
+    section: qkfdkropatpqxgqbdxj
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f984b525-15ea-421c-b445-509f1c2ae3e0
+    access_option: shown
+    access_term_field_uuid: b91614b2-3193-40bd-add3-b99ec56793c9
+    access_value: 'yes'
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.ace4d971-d500-4abb-ad9b-4f6ff944687c
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.ace4d971-d500-4abb-ad9b-4f6ff944687c

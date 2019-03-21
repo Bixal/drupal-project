@@ -17,18 +17,18 @@ name:
     value: 'WIOA State Plan Type'
 description:
   -
-    value: "<p><span><span><span><strong><span><span><span>Unified or Combined State Plan</span></span></span></strong><span><span>. Select whether the State is submitting a Unified or Combined State Plan. At a minimum, a State must submit a Unified State Plan that covers the six core programs. </span></span></span></span></span></p>\r\n"
+    value: "<p><strong>Unified or Combined State Plan</strong>. Select whether the State is submitting a Unified or Combined State Plan. At a minimum, a State must submit a Unified State Plan that covers the six core programs. </p>\r\n"
     format: basic_html
-    processed: '<p><span><span><span><strong><span><span><span>Unified or Combined State Plan</span></span></span></strong><span><span>. Select whether the State is submitting a Unified or Combined State Plan. At a minimum, a State must submit a Unified State Plan that covers the six core programs. </span></span></span></span></span></p>'
+    processed: '<p><strong>Unified or Combined State Plan</strong>. Select whether the State is submitting a Unified or Combined State Plan. At a minimum, a State must submit a Unified State Plan that covers the six core programs. </p>'
 weight:
   -
-    value: 62
+    value: 2
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-11T18:55:59+00:00'
+    value: '2019-03-20T19:37:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

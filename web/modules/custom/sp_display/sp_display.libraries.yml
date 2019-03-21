@@ -3,8 +3,10 @@ display.plan:
   css:
     theme:
       css/display-plan.css: {}
-  js:
-    js/jquery.stickybits.3.6.4.min.js: { minified: true }
-    js/display-plan.js: {}
+  # Disabling for now, it really breaks stuff without it being smart
+  # enough to only make parents and siblings sticky.
+  # js:
+    # js/jquery.stickybits.3.6.4.min.js: { minified: true }
+    # js/display-plan.js: {}
   dependencies:
     - core/jquery

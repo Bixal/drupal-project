@@ -1,0 +1,23 @@
+uuid: 15dc8abe-893a-41e5-8199-3e6c620d2487
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_shown_on_toc
+    - taxonomy.vocabulary.section_2018_f95aj6tkj237yjyiteh
+id: taxonomy_term.section_2018_f95aj6tkj237yjyiteh.field_shown_on_toc
+field_name: field_shown_on_toc
+entity_type: taxonomy_term
+bundle: section_2018_f95aj6tkj237yjyiteh
+label: 'Shown on TOC'
+description: 'Select this value if this section should be linked to in the TOC when the entire plan is exported to view.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

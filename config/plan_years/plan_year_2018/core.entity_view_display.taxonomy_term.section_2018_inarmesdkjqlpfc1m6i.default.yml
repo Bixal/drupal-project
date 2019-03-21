@@ -1,0 +1,40 @@
+uuid: 925e18b0-3131-4568-adad-f382cf6e343e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.field_cross_year_uuid
+    - field.field.taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.field_display_name
+    - field.field.taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.field_hide_hierarchical_heading
+    - field.field.taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.field_hide_name
+    - field.field.taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.field_input_from_state
+    - field.field.taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.field_shown_on_toc
+    - taxonomy.vocabulary.section_2018_inarmesdkjqlpfc1m6i
+  module:
+    - text
+id: taxonomy_term.section_2018_inarmesdkjqlpfc1m6i.default
+targetEntityType: taxonomy_term
+bundle: section_2018_inarmesdkjqlpfc1m6i
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_cross_year_uuid: true
+  field_hide_hierarchical_heading: true
+  field_hide_name: true
+  field_input_from_state: true
+  field_shown_on_toc: true

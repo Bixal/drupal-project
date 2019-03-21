@@ -1,0 +1,40 @@
+uuid: 7f097c47-3e09-45c1-bed3-df4da932f13e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_cross_year_uuid
+    - field.field.taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_display_name
+    - field.field.taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_hide_hierarchical_heading
+    - field.field.taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_hide_name
+    - field.field.taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_input_from_state
+    - field.field.taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_shown_on_toc
+    - taxonomy.vocabulary.section_2018_rvnjkuz2gvxltemle2g
+  module:
+    - text
+id: taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.default
+targetEntityType: taxonomy_term
+bundle: section_2018_rvnjkuz2gvxltemle2g
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_cross_year_uuid: true
+  field_hide_hierarchical_heading: true
+  field_hide_name: true
+  field_input_from_state: true
+  field_shown_on_toc: true

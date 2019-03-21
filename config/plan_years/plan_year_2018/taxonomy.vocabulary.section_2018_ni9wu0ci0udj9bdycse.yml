@@ -1,9 +1,9 @@
-uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+uuid: 44336c15-55d7-4d64-a480-4b543e448dde
 langcode: en
 status: true
 dependencies: {  }
-name: '2018 - WIOA State Plan Common Elements'
-vid: section_2018_rlmdn2an0lwtitf7ll6
+name: '2018 - HUD Employment and training activities'
+vid: section_2018_ni9wu0ci0udj9bdycse
 description: 'Comes with the all the fields and functionality that can be copied into the next plan year.'
 hierarchy: 0
 weight: 0

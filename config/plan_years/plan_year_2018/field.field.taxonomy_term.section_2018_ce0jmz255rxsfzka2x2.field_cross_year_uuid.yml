@@ -1,0 +1,23 @@
+uuid: 5617d04b-c02f-4cb2-b5e8-4f13df72c160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cross_year_uuid
+    - taxonomy.vocabulary.section_2018_ce0jmz255rxsfzka2x2
+  module:
+    - sp_field
+id: taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.field_cross_year_uuid
+field_name: field_cross_year_uuid
+entity_type: taxonomy_term
+bundle: section_2018_ce0jmz255rxsfzka2x2
+label: 'Cross Year UUID'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: c877e4f3-7621-4da8-a648-f771350a2c02
+default_value_callback: ''
+settings: {  }
+field_type: field_uuid_additional

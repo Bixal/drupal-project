@@ -1,0 +1,21 @@
+uuid: f09e4236-a805-4053-994b-1f33d859066b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_input_from_state
+    - taxonomy.vocabulary.section_2018_rvnjkuz2gvxltemle2g
+  module:
+    - sp_field
+id: taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.field_input_from_state
+field_name: field_input_from_state
+entity_type: taxonomy_term
+bundle: section_2018_rvnjkuz2gvxltemle2g
+label: 'Input from state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_section_entry

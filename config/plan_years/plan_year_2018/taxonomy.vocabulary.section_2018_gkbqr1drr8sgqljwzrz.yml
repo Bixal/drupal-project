@@ -1,9 +1,9 @@
-uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+uuid: a7193002-0ab7-422c-855e-590b3323ed25
 langcode: en
 status: true
 dependencies: {  }
-name: '2018 - WIOA State Plan Common Elements'
-vid: section_2018_rlmdn2an0lwtitf7ll6
+name: '2018 - Adult Education and Family Literacy Act program'
+vid: section_2018_gkbqr1drr8sgqljwzrz
 description: 'Comes with the all the fields and functionality that can be copied into the next plan year.'
 hierarchy: 0
 weight: 0

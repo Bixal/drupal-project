@@ -17,9 +17,9 @@ name:
     value: 'Program-Specific Requirements for Vocational Rehabilitation'
 description:
   -
-    value: "<p>The Vocational Rehabilitation (VR) Services Portion of the Unified or Combined State Plan* must include the following descriptions and estimates, as required by section 101(a) of the Rehabilitation Act of 1973, as amended by WIOA:</p>\r\n\r\n<p>__________</p>\r\n\r\n<p>* Sec. 102(b)(D)(iii) of WIOA</p>\r\n"
+    value: "<p>The Vocational Rehabilitation (VR) Services Portion of the Unified or Combined State Plan* must include the following descriptions and estimates, as required by section 101(a) of the Rehabilitation Act of 1973, as amended by WIOA:</p><p>__________</p><p>* Sec. 102(b)(D)(iii) of WIOA</p>"
     format: basic_html
-    processed: "<p>The Vocational Rehabilitation (VR) Services Portion of the Unified or Combined State Plan* must include the following descriptions and estimates, as required by section 101(a) of the Rehabilitation Act of 1973, as amended by WIOA:</p>\n\n<p>__________</p>\n\n<p>* Sec. 102(b)(D)(iii) of WIOA</p>"
+    processed: "<p>The Vocational Rehabilitation (VR) Services Portion of the Unified or Combined State Plan* must include the following descriptions and estimates, as required by section 101(a) of the Rehabilitation Act of 1973, as amended by WIOA:</p><p>__________</p><p>* Sec. 102(b)(D)(iii) of WIOA</p>"
 weight:
   -
     value: 0
@@ -51,7 +51,7 @@ field_hide_name:
 field_input_from_state: {  }
 field_shown_on_toc:
   -
-    value: false
+    value: true
 _content_sync:
   entity_type: taxonomy_term
   entity_dependencies: {  }

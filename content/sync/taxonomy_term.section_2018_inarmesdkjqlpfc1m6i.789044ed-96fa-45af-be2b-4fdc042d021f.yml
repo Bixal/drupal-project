@@ -17,9 +17,9 @@ name:
     value: 'Trade Adjustment Assistance (TAA)'
 description:
   -
-    value: "<p>This is a huge mess, i have no idea what's going on here.</p>\r\n\r\n<p>I went through the ad-hoc looking for states with this section&nbsp;https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p>\r\n\r\n<p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p>\r\n\r\n<p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p>\r\n\r\n<p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p>\r\n\r\n<p>The formatting is hurting my brain trying to figure out what needs to be here.</p>\r\n"
+    value: "<p>This is a huge mess, i have no idea what's going on here.</p><p>I went through the ad-hoc looking for states with this section&nbsp;https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p><p>The formatting is hurting my brain trying to figure out what needs to be here.</p>"
     format: basic_html
-    processed: "<p>This is a huge mess, i have no idea what's going on here.</p>\n\n<p>I went through the ad-hoc looking for states with this section\_https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p>\n\n<p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p>\n\n<p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p>\n\n<p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p>\n\n<p>The formatting is hurting my brain trying to figure out what needs to be here.</p>"
+    processed: "<p>This is a huge mess, i have no idea what's going on here.</p><p>I went through the ad-hoc looking for states with this section\_https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p><p>The formatting is hurting my brain trying to figure out what needs to be here.</p>"
 weight:
   -
     value: 0

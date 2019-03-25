@@ -17,7 +17,7 @@ name:
     value: 'Economic Analysis'
 description:
   -
-    value: "<p>The Unified or Combined State Plan must include an analysis of the economic conditions and trends in the State, including sub-State regions and any specific economic areas identified by the State. This must include-</p>\r\n"
+    value: "<p>The Unified or Combined State Plan must include an analysis of the economic conditions and trends in the State, including sub-State regions and any specific economic areas identified by the State. This must include-</p>"
     format: basic_html
     processed: '<p>The Unified or Combined State Plan must include an analysis of the economic conditions and trends in the State, including sub-State regions and any specific economic areas identified by the State. This must include-</p>'
 weight:

@@ -17,7 +17,7 @@ name:
     value: 'Temporary Assistance for Needy Families (TANF)'
 description:
   -
-    value: "<p>States that include TANF in the Combined State Plan must outline how the State will meet the requirements of section 402 of the Social Security Act including how it will:</p>\r\n"
+    value: "<p>States that include TANF in the Combined State Plan must outline how the State will meet the requirements of section 402 of the Social Security Act including how it will:</p>"
     format: basic_html
     processed: '<p>States that include TANF in the Combined State Plan must outline how the State will meet the requirements of section 402 of the Social Security Act including how it will:</p>'
 weight:

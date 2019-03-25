@@ -17,7 +17,7 @@ name:
     value: 'Education and Skill Levels of the Workforce'
 description:
   -
-    value: "<p>Provide an analysis of the educational and skill levels of the workforce.</p>\r\n"
+    value: "<p>Provide an analysis of the educational and skill levels of the workforce.</p>"
     format: basic_html
     processed: '<p>Provide an analysis of the educational and skill levels of the workforce.</p>'
 weight:

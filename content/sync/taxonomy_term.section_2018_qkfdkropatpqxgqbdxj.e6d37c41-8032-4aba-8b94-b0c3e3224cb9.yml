@@ -17,9 +17,9 @@ name:
     value: 'Reintegration of Ex-Offenders Program (RExO)'
 description:
   -
-    value: "<p>NOTE: PLEASE NOTE THAT THE DEPARTMENT OF LABOR HAS UPDATED THE NAME OF THE REXO PROGRAM. THIS PROGRAM IS NOW THE REENTRY EMPLOYMENT OPPORTUNITIES PROGRAM (REO).</p>\r\n\r\n<p>There are no program-specific state planning requirements for RExO. If the state includes RExO in a Combined State Plan, the state must incorporate RExO in its responses to the common planning elements in sections II, III, IV, and V WIOA State Plan requirements instrument.</p>\r\n"
+    value: "<p>NOTE: PLEASE NOTE THAT THE DEPARTMENT OF LABOR HAS UPDATED THE NAME OF THE REXO PROGRAM. THIS PROGRAM IS NOW THE REENTRY EMPLOYMENT OPPORTUNITIES PROGRAM (REO).</p><p>There are no program-specific state planning requirements for RExO. If the state includes RExO in a Combined State Plan, the state must incorporate RExO in its responses to the common planning elements in sections II, III, IV, and V WIOA State Plan requirements instrument.</p>"
     format: basic_html
-    processed: "<p>NOTE: PLEASE NOTE THAT THE DEPARTMENT OF LABOR HAS UPDATED THE NAME OF THE REXO PROGRAM. THIS PROGRAM IS NOW THE REENTRY EMPLOYMENT OPPORTUNITIES PROGRAM (REO).</p>\n\n<p>There are no program-specific state planning requirements for RExO. If the state includes RExO in a Combined State Plan, the state must incorporate RExO in its responses to the common planning elements in sections II, III, IV, and V WIOA State Plan requirements instrument.</p>"
+    processed: "<p>NOTE: PLEASE NOTE THAT THE DEPARTMENT OF LABOR HAS UPDATED THE NAME OF THE REXO PROGRAM. THIS PROGRAM IS NOW THE REENTRY EMPLOYMENT OPPORTUNITIES PROGRAM (REO).</p><p>There are no program-specific state planning requirements for RExO. If the state includes RExO in a Combined State Plan, the state must incorporate RExO in its responses to the common planning elements in sections II, III, IV, and V WIOA State Plan requirements instrument.</p>"
 weight:
   -
     value: 0

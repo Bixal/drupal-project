@@ -17,7 +17,7 @@ name:
     value: 'Program-specific Requirements for Adult, Dislocated Worker, and Youth Activities under Title I-B'
 description:
   -
-    value: "<p>The Unified or Combined State Plan must include the following with respect to activities carried out under subtitle B--</p>\r\n"
+    value: "<p>The Unified or Combined State Plan must include the following with respect to activities carried out under subtitle B--</p>"
     format: basic_html
     processed: '<p>The Unified or Combined State Plan must include the following with respect to activities carried out under subtitle B--</p>'
 weight:

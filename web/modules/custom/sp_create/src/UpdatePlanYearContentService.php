@@ -3,7 +3,6 @@
 namespace Drupal\sp_create;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\group\Entity\GroupContent;
 use Drupal\node\Entity\Node;
 use Drupal\sp_expire\ContentService;
 use Drupal\sp_retrieve\NodeService;
@@ -557,9 +556,7 @@ class UpdatePlanYearContentService {
     if (NULL === $state_plan_year_section) {
       throw new \Exception('The state plan year answer to be created had an invalid state plan year section saved to it.');
     }
-    $group_content = GroupContent::loadByEntity($state_plan_year_section);
-    $group_content = current($group_content);
-    $group_id = $group_content->getGroup()->id();
+    $group_id = $this->customEntitiesRetrieval->getGroupId($state_plan_year_section);
     /** @var \Drupal\node\Entity\Node $state_plan_year_answer */
     $state_plan_year_answer = $node_storage->create([
       'type' => $node_bundle,

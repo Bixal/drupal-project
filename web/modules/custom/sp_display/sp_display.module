@@ -34,6 +34,9 @@ function sp_display_theme() {
     'sp_display_plan_year_view' => [
       'variables' => ['node' => NULL],
     ],
+    'sp_display_plan_year_toc' => [
+      'variables' => ['node' => NULL],
+    ],
     'sp_display_plan_year_section_view' => [
       'variables' => ['node' => NULL],
     ],

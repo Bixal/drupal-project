@@ -7,7 +7,6 @@ use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\group\Entity\GroupContent;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
@@ -239,10 +238,7 @@ class NodeService {
     foreach ($state_plan_year_nids as $state_plan_year_nid) {
       /** @var \Drupal\node\Entity\Node $state_plan_year */
       $state_plan_year = $node_storage->load($state_plan_year_nid);
-      /** @var \Drupal\group\Entity\GroupContent $group_content */
-      $group_content = GroupContent::loadByEntity($state_plan_year);
-      $group_content = current($group_content);
-      $group_ids[] = $group_content->getGroup()->id();
+      $group_ids[] = $this->customEntitiesRetrieval->getGroupId($state_plan_year);
     }
 
     return array_diff($all_group_ids, $group_ids);
@@ -372,11 +368,7 @@ class NodeService {
       foreach ($state_plan_year_nids as $state_plan_year_nid) {
         /** @var \Drupal\node\Entity\Node $state_plan_year */
         $state_plan_year = $node_storage->load($state_plan_year_nid);
-        /** @var \Drupal\group\Entity\GroupContent $group_content */
-        $group_content = GroupContent::loadByEntity($state_plan_year);
-        $group_content = current($group_content);
-        $group_ids_with_plans[$plan_year_id][] = $group_content->getGroup()
-          ->id();
+        $group_ids_with_plans[$plan_year_id][] = $this->customEntitiesRetrieval->getGroupId($state_plan_year);
       }
       $return['group_ids_without_plans'] = array_diff($all_group_ids, $group_ids_with_plans[$plan_year_id]);
       if (!empty($return['group_ids_without_plans'])) {
@@ -393,11 +385,7 @@ class NodeService {
           foreach ($state_plan_year_section_nids as $state_plan_year_section_nid) {
             /** @var \Drupal\node\Entity\Node $state_plan_year_section */
             $state_plan_year_section = $node_storage->load($state_plan_year_section_nid);
-            /** @var \Drupal\group\Entity\GroupContent $group_content */
-            $group_content = GroupContent::loadByEntity($state_plan_year_section);
-            $group_content = current($group_content);
-            $group_ids_with_sections[$plan_year_id][$section->id()][] = $group_content->getGroup()
-              ->id();
+            $group_ids_with_sections[$plan_year_id][$section->id()][] = $this->customEntitiesRetrieval->getGroupId($state_plan_year_section);
           }
           $return['group_ids_without_sections'][$section->id()] = array_diff($all_group_ids, $group_ids_with_sections[$plan_year_id][$section->id()]);
           // Remove all groups that are missing entire plans, there is no need
@@ -438,10 +426,8 @@ class NodeService {
       if ($moderation_state !== ContentService::MODERATION_STATE_PUBLISHED) {
         continue;
       }
-      /** @var \Drupal\group\Entity\GroupContent $group_content */
-      $group_content = GroupContent::loadByEntity($state_plan_year);
-      $group_content = current($group_content);
-      $group_moderation_states[$group_content->getGroup()->id()] = $moderation_state;
+      $gid = $this->customEntitiesRetrieval->getGroupId($state_plan_year);
+      $group_moderation_states[$gid] = $moderation_state;
     }
     return $group_moderation_states;
   }
@@ -480,10 +466,9 @@ class NodeService {
       $node_storage = $this->entityTypeManager->getStorage('node');
       $groups_with_section_ids = [];
       foreach ($state_plan_year_section_nids as $state_plan_year_section_nid) {
-        /** @var \Drupal\group\Entity\GroupContent $group_content */
-        $group_content = GroupContent::loadByEntity($node_storage->load($state_plan_year_section_nid));
-        $group_content = current($group_content);
-        $groups_with_section_ids[] = $group_content->getGroup()->id();
+        /** @var \Drupal\node\Entity\Node $state_plan_plan_year_section */
+        $state_plan_plan_year_section = $node_storage->load($state_plan_year_section_nid);
+        $groups_with_section_ids[] = $this->customEntitiesRetrieval->getGroupId($state_plan_plan_year_section);
       }
       // Out of all the groups that have plans, get ones that are missing
       // the given section.
@@ -986,10 +971,7 @@ class NodeService {
       return $cache->data;
     }
     if (!empty($plan_year_copy_to[$plan_year_id])) {
-      /** @var \Drupal\group\Entity\GroupContent $group_content */
-      $group_content = GroupContent::loadByEntity($state_plan_year);
-      $group_content = current($group_content);
-      $group_id = $group_content->getGroup()->id();
+      $group_id = $this->customEntitiesRetrieval->getGroupId($state_plan_year);
       foreach ($plan_year_copy_to[$plan_year_id] as $plan_year_id_to) {
         $state_plan_year_copy_to[] = $this->getStatePlanYearByPlanYearAndGroupId($plan_year_id_to, $group_id);
       }
@@ -1010,7 +992,6 @@ class NodeService {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
-   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    */
   public function getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid) {
     $return = [
@@ -1083,10 +1064,7 @@ class NodeService {
       return $return;
     }
     // Use the state plan year node to determine what group this is.
-    /** @var \Drupal\group\Entity\GroupContent $group_content */
-    $group_content = GroupContent::loadByEntity($state_plan_year);
-    $group_content = current($group_content);
-    $group_id = $group_content->getGroup()->id();
+    $group_id = $this->customEntitiesRetrieval->getGroupId($state_plan_year);
     foreach ($copy_from_plan_year_section as $section_id => $plan_year_id_from) {
       $state_plan_year_section_nid = $this->getStatePlanYearSectionByStatePlanYearAndSection($state_plan_year_nid, $section_id);
       if (empty($state_plan_year_section_nid)) {

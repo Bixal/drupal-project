@@ -1,37 +1,37 @@
-div.item-list.display-plan ul li {
+div.item-list.display-plan-year ul li {
   /* Add a small padding to every li so the backgrounds don't butt so harshly on the text. */
   padding: 0.2em 0.5em 0 9px;
 }
 
-div.item-list.display-plan ul.wrapper__items ul li {
+div.item-list.display-plan-year ul.wrapper__items ul li {
   /* Add a big margin to every li past the first. */
   margin: 0 0 0 20px;
 }
 
-div.item-list.display-plan {
+div.item-list.display-plan-year {
   background-color: #fff;
 }
 
-div.item-list.display-plan li.depth-0 {
+div.item-list.display-plan-year.depth-gradient li.depth-0 {
   background-color: #e8e8e8;
 }
 
-div.item-list.display-plan li.depth-1 {
+div.item-list.display-plan-year.depth-gradient li.depth-1 {
   background-color: #d3d3d3;
 }
 
-div.item-list.display-plan li .depth-2 {
+div.item-list.display-plan-year.depth-gradient li .depth-2 {
   background-color: #c0c0c0;
 }
 
-div.item-list.display-plan li .depth-3 {
+div.item-list.display-plan-year.depth-gradient li .depth-3 {
   background-color: #a9a9a9;
 }
 
-div.item-list.display-plan li .depth-4 {
+div.item-list.display-plan-year.depth-gradient li .depth-4 {
   background-color: #a0a0a0;
 }
 
-div.item-list.display-plan li .depth-5 {
+div.item-list.display-plan-year.depth-gradient li .depth-5 {
   background-color: #888;
 }

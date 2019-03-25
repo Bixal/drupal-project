@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: bb2105fd-01f9-43a7-9943-edd266114d14
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_fq8ppbs0ykuktneabkb
+    target_type: taxonomy_vocabulary
+    target_uuid: a790954f-27f1-4169-a3ed-0c82d9895fce
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Jobs for Veterans’ State Grants'
+description:
+  -
+    value: "<p>The Jobs for Veterans’ State Grants (JVSG) are mandatory, formula-based staffing grants to (including DC, PR, VI and Guam). The JVSG is funded annually in accordance with a funding formula defined in the statute (38 U.S.C. 4102A (c) (2) (B) and regulation and operates on a fiscal year (not program year) basis, however, performance metrics are collected and reported (VETS-200 Series Reports) quarterly (using four “rolling quarters”) on a Program Year basis (as with the ETA- 9002 Series). Currently, VETS JVSG operates on a five-year (FY 2015-2019), multi-year grant approval cycle modified and funded annually.</p>\r\n\r\n<p>In accordance with 38 U.S.C. § 4102A(b)(5) and § 4102A(c), the Assistant Secretary for Veterans' Employment and Training (ASVET) makes grant funds available for use in each State to support Disabled Veterans' Outreach Program (DVOP) specialists and Local Veterans' Employment Representatives (LVER) staff. As a condition to receive funding, 38 U.S.C. § 4102A(c)(2) requires States to submit an application for a grant that contains a State Plan narrative, which includes:</p>\r\n"
+    format: basic_html
+    processed: "<p>The Jobs for Veterans’ State Grants (JVSG) are mandatory, formula-based staffing grants to (including DC, PR, VI and Guam). The JVSG is funded annually in accordance with a funding formula defined in the statute (38 U.S.C. 4102A (c) (2) (B) and regulation and operates on a fiscal year (not program year) basis, however, performance metrics are collected and reported (VETS-200 Series Reports) quarterly (using four “rolling quarters”) on a Program Year basis (as with the ETA- 9002 Series). Currently, VETS JVSG operates on a five-year (FY 2015-2019), multi-year grant approval cycle modified and funded annually.</p>\n\n<p>In accordance with 38 U.S.C. § 4102A(b)(5) and § 4102A(c), the Assistant Secretary for Veterans' Employment and Training (ASVET) makes grant funds available for use in each State to support Disabled Veterans' Outreach Program (DVOP) specialists and Local Veterans' Employment Representatives (LVER) staff. As a condition to receive funding, 38 U.S.C. § 4102A(c)(2) requires States to submit an application for a grant that contains a State Plan narrative, which includes:</p>"
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T21:04:21+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: bf0319cb-8368-408d-8b44-679d988ed785
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

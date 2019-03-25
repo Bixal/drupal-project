@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Work Programs Under the Supplemental Nutrition Assistance Program (Programs Authorized Under Section 6(o) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(o))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T20:38:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c9d4df33-d7a8-4727-a7ad-3e734e17557b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

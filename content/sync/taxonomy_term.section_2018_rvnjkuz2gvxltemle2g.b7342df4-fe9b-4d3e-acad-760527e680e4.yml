@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: b7342df4-fe9b-4d3e-acad-760527e680e4
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Temporary Assistance for Needy Families (TANF)'
+description:
+  -
+    value: "<p>States that include TANF in the Combined State Plan must outline how the State will meet the requirements of section 402 of the Social Security Act including how it will:</p>\r\n"
+    format: basic_html
+    processed: '<p>States that include TANF in the Combined State Plan must outline how the State will meet the requirements of section 402 of the Social Security Act including how it will:</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T20:10:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a2318701-e082-4399-9692-80b0489447de
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

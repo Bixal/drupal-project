@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Career and Technical Education Programs Authorized Under the Carl D. Perkins Career and Technical Education Act of 2006'
+description:
+  -
+    value: "<p><em>NOTE: Unless otherwise noted, statutory references in this section are to P.L.109-270—Carl D. Perkins Career and Technical Education Improvement Act of 2006 (Perkins IV or the Act). (20 U.S.C. 2301 et seq.) </em>Please provide your Perkins IV State Plan, including any revisions for the upcoming program year, in the text boxes below. Please note the following as you make this submission:</p>\r\n\r\n<ul>\r\n\t<li>Use bold text to denote revisions to your plan.</li>\r\n\t<li>You are not required to provide or revise portions of your State’s Perkins State Plan that are no longer relevant, for example, items pertaining to a transition year under Perkins IV. Accordingly, text boxes are not provided for those items below.</li>\r\n\t<li>You are not required to hold separate hearings for the Perkins portion of your WIOA Combined State Plan, unless your State determines that there is a “significant and relevant” change in: (1) the information or assurances in the Perkins plan; (2) the administration or operation of the Perkins plan; or (3) the organization, policies, or operations of the State agency that received the grant, if the change materially affects the information or assurances in the Perkins plan. See Question A.12 in the Department’s Perkins IV Non-Regulatory Guidance Q&amp;A -Version 4.0, released April 24, 2015. Accordingly, if your State determines that no significant or relevant change is being made, you are not required to provide or revise Section I, Planning, Coordination, and Collaboration Prior to State Plan Submission, unless your State chooses to do so.</li>\r\n\t<li>Congress eliminated a separate allocation for Title II, Tech Prep Programs under Perkins IV in the 2011 Continuing Resolution. Accordingly, States are not required to provide or revise Section V, Tech Prep Programs, or other items of their Perkins State Plan pertaining to tech prep programs unless your State chooses to do so.</li>\r\n\t<li>You are not required to provide or revise your EDGAR certifications and assurances unless your State determines that a significant or relevant change needs to be made. Once you have entered your plan, please click on the link below to the Perkins State Plan Portal. There you must enter your request to extend your Perkins State Plan, an updated budget, performance levels for the upcoming program year, and, if applicable, updated EDGAR certifications and assurances.</li>\r\n</ul>\r\n\r\n<p>Once you have entered your plan, please click on the link below to the Perkins State Plan Portal. There you must enter your request to extend your Perkins State Plan, an updated budget, performance levels for the upcoming program year, and, if applicable, updated EDGAR certifications and assurances.</p>\r\n"
+    format: basic_html
+    processed: "<p><em>NOTE: Unless otherwise noted, statutory references in this section are to P.L.109-270—Carl D. Perkins Career and Technical Education Improvement Act of 2006 (Perkins IV or the Act). (20 U.S.C. 2301 et seq.) </em>Please provide your Perkins IV State Plan, including any revisions for the upcoming program year, in the text boxes below. Please note the following as you make this submission:</p>\n\n<ul>\n\t<li>Use bold text to denote revisions to your plan.</li>\n\t<li>You are not required to provide or revise portions of your State’s Perkins State Plan that are no longer relevant, for example, items pertaining to a transition year under Perkins IV. Accordingly, text boxes are not provided for those items below.</li>\n\t<li>You are not required to hold separate hearings for the Perkins portion of your WIOA Combined State Plan, unless your State determines that there is a “significant and relevant” change in: (1) the information or assurances in the Perkins plan; (2) the administration or operation of the Perkins plan; or (3) the organization, policies, or operations of the State agency that received the grant, if the change materially affects the information or assurances in the Perkins plan. See Question A.12 in the Department’s Perkins IV Non-Regulatory Guidance Q&amp;A -Version 4.0, released April 24, 2015. Accordingly, if your State determines that no significant or relevant change is being made, you are not required to provide or revise Section I, Planning, Coordination, and Collaboration Prior to State Plan Submission, unless your State chooses to do so.</li>\n\t<li>Congress eliminated a separate allocation for Title II, Tech Prep Programs under Perkins IV in the 2011 Continuing Resolution. Accordingly, States are not required to provide or revise Section V, Tech Prep Programs, or other items of their Perkins State Plan pertaining to tech prep programs unless your State chooses to do so.</li>\n\t<li>You are not required to provide or revise your EDGAR certifications and assurances unless your State determines that a significant or relevant change needs to be made. Once you have entered your plan, please click on the link below to the Perkins State Plan Portal. There you must enter your request to extend your Perkins State Plan, an updated budget, performance levels for the upcoming program year, and, if applicable, updated EDGAR certifications and assurances.</li>\n</ul>\n\n<p>Once you have entered your plan, please click on the link below to the Perkins State Plan Portal. There you must enter your request to extend your Perkins State Plan, an updated budget, performance levels for the upcoming program year, and, if applicable, updated EDGAR certifications and assurances.</p>"
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T20:10:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e90fe8be-22f7-4baf-a754-f5a2dcf21cdf
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

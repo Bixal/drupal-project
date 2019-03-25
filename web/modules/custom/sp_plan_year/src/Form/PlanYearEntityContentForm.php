@@ -119,6 +119,10 @@ class PlanYearEntityContentForm extends EntityBatchForm {
    * This usually has the submit and delete button.
    */
   protected function actions(array $form, FormStateInterface $form_state) {
+    // Don't show the submit button if an error occurred in building the form.
+    if (empty($form['create_plans_and_sections'])) {
+      return [];
+    }
     $actions['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),

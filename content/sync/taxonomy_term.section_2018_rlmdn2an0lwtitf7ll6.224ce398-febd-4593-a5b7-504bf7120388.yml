@@ -22,13 +22,13 @@ description:
     processed: '<p>The Unified or Combined State Plan must include a Strategic Planning Elements section that analyzes the State’s current economic environment and identifies the State’s overall vision for its workforce development system. The required elements in this section allow the State to develop data-driven goals for preparing an educated and skilled workforce and to identify successful strategies for aligning workforce development programs. Unless otherwise noted, all Strategic Planning Elements apply to Combined State Plan partner programs included in the plan as well as to core programs.</p>'
 weight:
   -
-    value: 71
+    value: 3
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-11T18:55:59+00:00'
+    value: '2019-03-20T19:37:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

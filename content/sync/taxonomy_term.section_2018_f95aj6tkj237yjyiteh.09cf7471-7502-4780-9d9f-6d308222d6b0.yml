@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: 09cf7471-7502-4780-9d9f-6d308222d6b0
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Employment and Training Programs Under the Supplemental Nutrition Assistance Program (Programs Authorized Under Section 6(d)(4) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(d)(4)))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T20:14:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 63af6e28-4551-4b6a-b113-ba8c22435615
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

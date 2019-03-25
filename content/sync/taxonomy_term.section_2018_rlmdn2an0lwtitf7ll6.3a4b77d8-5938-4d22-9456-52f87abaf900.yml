@@ -22,13 +22,13 @@ description:
     processed: '<p>The Unified or Combined State Plan must include assurances that—</p>'
 weight:
   -
-    value: 82
+    value: 6
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-11T18:55:59+00:00'
+    value: '2019-03-20T19:37:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

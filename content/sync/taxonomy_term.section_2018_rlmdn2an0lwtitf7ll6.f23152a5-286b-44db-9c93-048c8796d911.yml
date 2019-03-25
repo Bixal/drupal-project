@@ -22,13 +22,13 @@ description:
     processed: 'Describe the methods used for joint planning and coordination among the core programs, and with the required one-stop partner programs and other programs and activities included in the Unified or Combined State Plan.'
 weight:
   -
-    value: 81
+    value: 5
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-11T18:55:59+00:00'
+    value: '2019-03-20T19:37:56+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

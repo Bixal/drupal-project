@@ -40,6 +40,9 @@ function sp_display_theme() {
     'sp_display_plan_year_section_view' => [
       'variables' => ['node' => NULL],
     ],
+    'sp_display_download_plan_form' => [
+      'variables' => ['node' => NULL, 'orientation' => NULL],
+    ],
   ];
   foreach ($themes as &$theme) {
     $theme += $base;

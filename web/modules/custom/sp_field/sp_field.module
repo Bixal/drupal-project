@@ -49,6 +49,18 @@ function sp_field_entity_extra_field_info() {
     'weight' => 101,
     'visible' => TRUE,
   ];
+  $extra['node']['homepage']['display']['download_plan_form_vertical'] = [
+    'label' => t('Download a State Plan - Vertical'),
+    'description' => t('Allows users to filter and download state plans.'),
+    'weight' => 100,
+    'visible' => TRUE,
+  ];
+  $extra['node']['homepage']['display']['download_plan_form_horizontal'] = [
+    'label' => t('Download a State Plan - Horizontal'),
+    'description' => t('Allows users to filter and download state plans.'),
+    'weight' => 101,
+    'visible' => TRUE,
+  ];
 
   return $extra;
 }
@@ -73,6 +85,19 @@ function sp_field_node_view(array &$build, EntityInterface $entity, EntityViewDi
     $build['plan_year_section_view'] = [
       '#theme' => 'sp_display_plan_year_section_view',
       '#node' => $entity,
+    ];
+  }
+  if ($display->getComponent('download_plan_form_vertical')) {
+    $build['download_plan_form_vertical'] = [
+      '#theme' => 'sp_display_download_plan_form',
+      '#orientation' => 'vertical',
+    ];
+  }
+  if ($display->getComponent('download_plan_form_horizontal')) {
+    $build['download_plan_form_horizontal'] = [
+      '#theme' => 'sp_display_download_plan_form',
+      '#node' => $entity,
+      '#orientation' => 'horizontal',
     ];
   }
 }

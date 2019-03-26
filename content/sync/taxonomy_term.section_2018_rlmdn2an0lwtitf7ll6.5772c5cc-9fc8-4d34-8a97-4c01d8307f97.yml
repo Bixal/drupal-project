@@ -17,7 +17,7 @@ name:
     value: 'The State’s Workforce Development Activities'
 description:
   -
-    value: "<p>Provide an analysis of the State’s workforce development activities, including education and training activities of the core programs, Combined State Plan partner programs included in this plan, and required and optional one-stop delivery system partners.*</p>\r\n"
+    value: "<p>Provide an analysis of the State’s workforce development activities, including education and training activities of the core programs, Combined State Plan partner programs included in this plan, and required and optional one-stop delivery system partners.*</p>"
     format: basic_html
     processed: '<p>Provide an analysis of the State’s workforce development activities, including education and training activities of the core programs, Combined State Plan partner programs included in this plan, and required and optional one-stop delivery system partners.*</p>'
 weight:

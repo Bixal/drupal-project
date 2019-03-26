@@ -17,7 +17,7 @@ name:
     value: 'Program-Specific Requirements for Wagner-Peyser Program (Employment Services)'
 description:
   -
-    value: "<p>All program-specific requirements provided for the WIOA core programs in this section must be addressed for either a Unified or Combined State Plan.</p>\r\n"
+    value: "<p>All program-specific requirements provided for the WIOA core programs in this section must be addressed for either a Unified or Combined State Plan.</p>"
     format: basic_html
     processed: '<p>All program-specific requirements provided for the WIOA core programs in this section must be addressed for either a Unified or Combined State Plan.</p>'
 weight:

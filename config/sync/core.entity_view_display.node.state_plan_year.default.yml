@@ -13,17 +13,22 @@ bundle: state_plan_year
 mode: default
 content:
   content_moderation_control:
-    weight: -20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  plan_year_toc:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   plan_year_view:
-    weight: 100
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }

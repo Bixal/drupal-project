@@ -17,7 +17,7 @@ name:
     value: 'Employers’ Employment Needs'
 description:
   -
-    value: "<p>With regard to the industry sectors and occupations identified in 1 and 2 above, provide an assessment of the employment needs of employers, including a description of the knowledge, skills, and abilities required, including credentials and licenses.</p>\r\n"
+    value: "<p>With regard to the industry sectors and occupations identified in 1 and 2 above, provide an assessment of the employment needs of employers, including a description of the knowledge, skills, and abilities required, including credentials and licenses.</p>"
     format: basic_html
     processed: '<p>With regard to the industry sectors and occupations identified in 1 and 2 above, provide an assessment of the employment needs of employers, including a description of the knowledge, skills, and abilities required, including credentials and licenses.</p>'
 weight:

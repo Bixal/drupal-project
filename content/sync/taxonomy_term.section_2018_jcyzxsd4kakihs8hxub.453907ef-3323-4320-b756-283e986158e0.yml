@@ -17,9 +17,9 @@ name:
     value: 'Waiver Requests (optional)'
 description:
   -
-    value: "States wanting to request waivers as part of their title I-B Operational Plan must include a waiver plan that\r\nincludes the following information for each waiver requested:"
+    value: "States wanting to request waivers as part of their title I-B Operational Plan must include a waiver plan that includes the following information for each waiver requested:"
     format: basic_html
-    processed: "States wanting to request waivers as part of their title I-B Operational Plan must include a waiver plan that\nincludes the following information for each waiver requested:"
+    processed: "States wanting to request waivers as part of their title I-B Operational Plan must include a waiver plan that includes the following information for each waiver requested:"
 weight:
   -
     value: 4

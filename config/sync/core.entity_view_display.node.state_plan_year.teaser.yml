@@ -25,4 +25,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_state_plans_year: true
+  plan_year_toc: true
   plan_year_view: true

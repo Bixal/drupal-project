@@ -2,9 +2,11 @@
 
 namespace Drupal\sp_retrieve;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
+use Drupal\group\Entity\GroupContent;
 
 /**
  * Class CustomEntitiesService.
@@ -278,6 +280,24 @@ class CustomEntitiesService {
       }
     }
     return $return;
+  }
+
+  /**
+   * Retrieve the group ID that the $group_content entity belongs to.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $group_content
+   *   An entity that belongs to a group.
+   *
+   * @return string|bool
+   *   False if the entity does not belong to a group otherwise the group ID.
+   */
+  public function getGroupId(ContentEntityInterface $group_content) {
+    $group_contents = GroupContent::loadByEntity($group_content);
+    if (empty($group_contents)) {
+      return FALSE;
+    }
+    $group_content = current($group_contents);
+    return $group_content->getGroup()->id();
   }
 
 }

@@ -189,7 +189,7 @@ class TaxonomyService {
     // Don't show the number but it takes up the same place with the same
     // formatting.
     $return['hide_hierarchical_heading'] = !empty($return['hide_name']) || $section_year_term->get('field_hide_hierarchical_heading')->getString();
-    $return['shown_on_toc'] = $section_year_term->get('field_hide_name')->getString();
+    $return['shown_on_toc'] = $section_year_term->get('field_shown_on_toc')->getString();
     $return['section_references'] = [];
     $return['weight'] = $section_year_term->getWeight();
     $return['tid'] = $section_year_term->id();

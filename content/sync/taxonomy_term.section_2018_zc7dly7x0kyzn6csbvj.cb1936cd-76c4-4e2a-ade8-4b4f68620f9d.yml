@@ -17,7 +17,7 @@ name:
     value: 'Senior Community Service Employment Program (SCSEP)'
 description:
   -
-    value: "<p>At minimum, in the SCSEP stand-alone submission and the SCSEP portion of the Combined State Plan, States should comprehensively cover the following elements.</p>\r\n"
+    value: "<p>At minimum, in the SCSEP stand-alone submission and the SCSEP portion of the Combined State Plan, States should comprehensively cover the following elements.</p>"
     format: basic_html
     processed: '<p>At minimum, in the SCSEP stand-alone submission and the SCSEP portion of the Combined State Plan, States should comprehensively cover the following elements.</p>'
 weight:

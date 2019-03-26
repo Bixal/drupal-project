@@ -17,7 +17,7 @@ name:
     value: 'Title IV Vocational Rehabilitation'
 description:
   -
-    value: "<p>In the case of a State that, under section 101(a)(2)(A)(i)of the Rehabilitation Act designates a State agency to administer the part of the Vocational Rehabilitation (VR) services portion of the Unified or Combined State Plan under which VR services are provided for individuals who are blind, describe the process and the factors used by the State to determine the distribution of funds among the two VR agencies in the State.</p>\r\n"
+    value: "<p>In the case of a State that, under section 101(a)(2)(A)(i)of the Rehabilitation Act designates a State agency to administer the part of the Vocational Rehabilitation (VR) services portion of the Unified or Combined State Plan under which VR services are provided for individuals who are blind, describe the process and the factors used by the State to determine the distribution of funds among the two VR agencies in the State.</p>"
     format: basic_html
     processed: '<p>In the case of a State that, under section 101(a)(2)(A)(i)of the Rehabilitation Act designates a State agency to administer the part of the Vocational Rehabilitation (VR) services portion of the Unified or Combined State Plan under which VR services are provided for individuals who are blind, describe the process and the factors used by the State to determine the distribution of funds among the two VR agencies in the State.</p>'
 weight:

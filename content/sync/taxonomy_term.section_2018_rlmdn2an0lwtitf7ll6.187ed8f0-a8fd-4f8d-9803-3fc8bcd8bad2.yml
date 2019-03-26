@@ -17,7 +17,7 @@ name:
     value: 'Combined Plan Partner Program(s)'
 description:
   -
-    value: "<p>Indicate which Combined Plan partner program(s) the state is electing to include in the plan.</p>\r\n"
+    value: "<p>Indicate which Combined Plan partner program(s) the state is electing to include in the plan.</p>"
     format: basic_html
     processed: '<p>Indicate which Combined Plan partner program(s) the state is electing to include in the plan.</p>'
 weight:
@@ -58,7 +58,7 @@ field_input_from_state:
     section: ''
     default_value: 'no'
     extra_text:
-      value: "Career and technical education programs authorized under the Carl D. Perkins Career and Technical Education Act of 2006 (20 U.S.C. 2301 et seq.)\r\n"
+      value: "Career and technical education programs authorized under the Carl D. Perkins Career and Technical Education Act of 2006 (20 U.S.C. 2301 et seq.)"
       format: restricted_html
     term_field_uuid: 4e96d7ad-5df9-4056-968e-c8f77317c71b
     access_option: allow
@@ -69,7 +69,7 @@ field_input_from_state:
     section: ''
     default_value: 'no'
     extra_text:
-      value: "Temporary Assistance for Needy Families Program (42 U.S.C. 601 et seq.)\r\n"
+      value: "Temporary Assistance for Needy Families Program (42 U.S.C. 601 et seq.)"
       format: restricted_html
     term_field_uuid: 3af040c6-2ceb-437e-983c-8696d492022f
     access_option: allow
@@ -80,7 +80,7 @@ field_input_from_state:
     section: ''
     default_value: 'no'
     extra_text:
-      value: "Employment and Training Programs under the Supplemental Nutrition Assistance Program (Programs authorized under section 6(d)(4) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(d)(4)))\r\n"
+      value: "Employment and Training Programs under the Supplemental Nutrition Assistance Program (Programs authorized under section 6(d)(4) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(d)(4)))"
       format: restricted_html
     term_field_uuid: 423327b4-d7a9-4e27-adfb-3bb39987432a
     access_option: allow

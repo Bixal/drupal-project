@@ -37,6 +37,12 @@ function sp_field_entity_extra_field_info() {
     'weight' => 100,
     'visible' => TRUE,
   ];
+  $extra['node'][PlanYearInfo::SPY_BUNDLE]['display']['plan_year_toc'] = [
+    'label' => t('View a plan year TOC'),
+    'description' => t('Allows the display of a plan year table of contents.'),
+    'weight' => 101,
+    'visible' => TRUE,
+  ];
   $extra['node'][PlanYearInfo::SPYS_BUNDLE]['display']['plan_year_section_view'] = [
     'label' => t('View a plan year section'),
     'description' => t('Allows the display of a plan year section.'),
@@ -54,6 +60,12 @@ function sp_field_node_view(array &$build, EntityInterface $entity, EntityViewDi
   if ($display->getComponent('plan_year_view')) {
     $build['plan_year_view'] = [
       '#theme' => 'sp_display_plan_year_view',
+      '#node' => $entity,
+    ];
+  }
+  if ($display->getComponent('plan_year_toc')) {
+    $build['plan_year_toc'] = [
+      '#theme' => 'sp_display_plan_year_toc',
       '#node' => $entity,
     ];
   }

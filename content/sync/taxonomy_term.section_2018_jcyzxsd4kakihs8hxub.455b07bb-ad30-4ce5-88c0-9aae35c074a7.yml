@@ -17,7 +17,7 @@ name:
     value: 'Title I-B Assurances'
 description:
   -
-    value: "<p>The State Plan must include assurances that:</p>\r\n"
+    value: "<p>The State Plan must include assurances that:</p>"
     format: basic_html
     processed: '<p>The State Plan must include assurances that:</p>'
 weight:
@@ -58,7 +58,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>1. The State has implemented a policy to ensure Adult program funds provide a priority in the delivery of training services and individualized career services to individuals who are low income, public assistance recipients and basic skills deficient;</p>\r\n"
+      value: "<p>1. The State has implemented a policy to ensure Adult program funds provide a priority in the delivery of training services and individualized career services to individuals who are low income, public assistance recipients and basic skills deficient;</p>"
       format: basic_html
     term_field_uuid: dc3cc25e-379a-48a0-b0a4-8fc6fb324bef
     access_option: ''
@@ -69,7 +69,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>2. The state has implemented a policy to ensure local areas have a process in place for referring veterans with significant barriers to employment to career services provided by the JVSG program’s Disabled Veterans’ Outreach Program (DVOP) specialist;</p>\r\n"
+      value: "<p>2. The state has implemented a policy to ensure local areas have a process in place for referring veterans with significant barriers to employment to career services provided by the JVSG program’s Disabled Veterans’ Outreach Program (DVOP) specialist;</p>"
       format: basic_html
     term_field_uuid: 9d7e83c2-93b4-4f92-bf6e-a31bf7146dd7
     access_option: ''
@@ -80,7 +80,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>3. The state established a written policy and procedure that set forth criteria to be used by chief elected officials for the appointment of local workforce investment board members.</p>\r\n"
+      value: "<p>3. The state established a written policy and procedure that set forth criteria to be used by chief elected officials for the appointment of local workforce investment board members.</p>"
       format: basic_html
     term_field_uuid: 95c007cd-f1b7-4430-bcb0-221b0a223099
     access_option: ''
@@ -91,7 +91,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>4. The state established written policy and procedures to ensure local workforce investment boards are certified by the governor every two years in accordance with WIOA section 107(c)(2).</p>\r\n"
+      value: "<p>4. The state established written policy and procedures to ensure local workforce investment boards are certified by the governor every two years in accordance with WIOA section 107(c)(2).</p>"
       format: basic_html
     term_field_uuid: d2dde466-7f93-4e63-8d12-b53ae2c2ed7d
     access_option: ''
@@ -102,7 +102,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>5. Where an alternative entity takes the place of a State Board, the State has written policy and procedures to ensure the alternative entity meets the definition under WIOA section 101(e) and the legal requirements for membership.</p>\r\n"
+      value: "<p>5. Where an alternative entity takes the place of a State Board, the State has written policy and procedures to ensure the alternative entity meets the definition under WIOA section 101(e) and the legal requirements for membership.</p>"
       format: basic_html
     term_field_uuid: 83245679-d98d-46fc-ab35-640ca686b1a3
     access_option: ''
@@ -113,7 +113,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>6. The State established a written policy and procedure for how the individuals and entities represented on the State Workforce Development Board help to determine the methods and factors of distribution, and how the state consults with chief elected officials in local areas throughout the state in determining the distributions.</p>\r\n"
+      value: "<p>6. The State established a written policy and procedure for how the individuals and entities represented on the State Workforce Development Board help to determine the methods and factors of distribution, and how the state consults with chief elected officials in local areas throughout the state in determining the distributions.</p>"
       format: basic_html
     term_field_uuid: f7d587ba-627e-4c92-8523-c82261cb9eec
     access_option: ''
@@ -124,7 +124,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>7. The State will not use funds received under WIOA Title I to assist, promote, or deter union organizing in accordance with WIOA section 181(b)(7).</p>\r\n"
+      value: "<p>7. The State will not use funds received under WIOA Title I to assist, promote, or deter union organizing in accordance with WIOA section 181(b)(7).</p>"
       format: basic_html
     term_field_uuid: b33e81cd-220f-4506-93a5-86580009d1bd
     access_option: ''
@@ -135,7 +135,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>8. The State distributes adult and youth funds received under WIOA equitably throughout the State, and no local area suffers significant shifts in funding from year-to-year during the period covered by this plan.</p>\r\n"
+      value: "<p>8. The State distributes adult and youth funds received under WIOA equitably throughout the State, and no local area suffers significant shifts in funding from year-to-year during the period covered by this plan.</p>"
       format: basic_html
     term_field_uuid: c93ca318-b676-40df-a594-0d6bbbd0c8d1
     access_option: ''
@@ -146,7 +146,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>9. If a State Workforce Development Board, department, or agency administers state laws for vocational rehabilitation of persons with disabilities, that board, department, or agency cooperates with the agency that administers Wagner-Peyser services, Adult and Dislocated Worker programs and Youth Programs under Title I.</p>\r\n"
+      value: "<p>9. If a State Workforce Development Board, department, or agency administers state laws for vocational rehabilitation of persons with disabilities, that board, department, or agency cooperates with the agency that administers Wagner-Peyser services, Adult and Dislocated Worker programs and Youth Programs under Title I.</p>"
       format: basic_html
     term_field_uuid: 4d059212-930f-4dc9-bba6-b62fe0023914
     access_option: ''
@@ -157,7 +157,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>10. The State agrees to report on the impact and outcomes of its approved waivers in its WIOA Annual Report.</p>\r\n"
+      value: "<p>10. The State agrees to report on the impact and outcomes of its approved waivers in its WIOA Annual Report.</p>"
       format: basic_html
     term_field_uuid: 3348f944-b458-432f-8dd8-57b215ae8a50
     access_option: ''
@@ -168,7 +168,7 @@ field_input_from_state:
     section: ''
     default_value: ''
     extra_text:
-      value: "<p>11. The State has taken appropriate action to secure compliance with the Uniform Guidance at 2 CFR 200 and 2 CFR 2900, including that the State will annually monitor local areas to ensure compliance and otherwise take appropriate action to secure compliance with the Uniform Guidance under section WIOA 184(a)(3);</p>\r\n"
+      value: "<p>11. The State has taken appropriate action to secure compliance with the Uniform Guidance at 2 CFR 200 and 2 CFR 2900, including that the State will annually monitor local areas to ensure compliance and otherwise take appropriate action to secure compliance with the Uniform Guidance under section WIOA 184(a)(3);</p>"
       format: basic_html
     term_field_uuid: c8580895-4231-49ba-b407-9b4dc934d36f
     access_option: ''

@@ -17,7 +17,7 @@ name:
     value: 'State Strategy'
 description:
   -
-    value: "<p>The Unified or Combined State Plan must include the State's strategies to achieve its strategic vision and goals. These strategies must take into account the State’s economic, workforce, and workforce development, education and training activities and analysis provided in Section (a) above. Include discussion of specific strategies to address the needs of populations provided in Section (a).</p>\r\n"
+    value: "<p>The Unified or Combined State Plan must include the State's strategies to achieve its strategic vision and goals. These strategies must take into account the State’s economic, workforce, and workforce development, education and training activities and analysis provided in Section (a) above. Include discussion of specific strategies to address the needs of populations provided in Section (a).</p>"
     format: basic_html
     processed: '<p>The Unified or Combined State Plan must include the State''s strategies to achieve its strategic vision and goals. These strategies must take into account the State’s economic, workforce, and workforce development, education and training activities and analysis provided in Section (a) above. Include discussion of specific strategies to address the needs of populations provided in Section (a).</p>'
 weight:

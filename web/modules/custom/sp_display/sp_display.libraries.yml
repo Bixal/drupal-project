@@ -17,4 +17,6 @@ download.plan.form:
     js/download-plan-form.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
+    - core/drupal
     - core/drupalSettings

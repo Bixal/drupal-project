@@ -405,12 +405,9 @@ class UpdatePlanYearContentService {
         $node->set('moderation_state', ContentService::MODERATION_STATE_NEW);
       }
     }
-    // Owner should ALWAYS be admin. Grab the revision user as the currently
-    // logged in user if available. It won't be in CLI.
-    $owner_user = $revision_user = $this->customEntitiesRetrieval->uuid('user', PlanYearInfo::UUID_USER_AUTOMATED);
-    if (NULL === $owner_user) {
-      throw new \Exception('The automated user has not been created yet. Please import user content before using this feature.');
-    }
+    // Owner should ALWAYS be the automated user. Grab the revision user as the
+    // currently logged in user if available. It won't be in CLI.
+    $owner_user = $revision_user = $this->nodeService->getAutomatedNodeOwner();
     if (!$this->currentUser->isAnonymous()) {
       $revision_user = User::load($this->currentUser->id());
     }

@@ -1,0 +1,6 @@
+description: 'Initialize content that should always be in place.'
+options: {}
+arguments: {}
+messages:
+    success: 'Finished initializing content.'
+    start: 'Initializing content now.'

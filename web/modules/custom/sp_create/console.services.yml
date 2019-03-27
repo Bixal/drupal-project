@@ -19,3 +19,8 @@ services:
     arguments: ['@sp_retrieve.custom_entities']
     tags:
       - { name: drupal.command }
+  sp_create.sp_create_init:
+    class: Drupal\sp_create\Command\InitCommand
+    arguments: ['@sp_create.init']
+    tags:
+      - { name: drupal.command }

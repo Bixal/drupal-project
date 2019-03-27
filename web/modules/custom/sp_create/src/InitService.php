@@ -4,9 +4,8 @@ namespace Drupal\sp_create;
 
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\node\Entity\Node;
 use Drupal\sp_retrieve\NodeService;
-use Drupal\Core\Entity\EntityStorageException;
+use Drupal\user\Entity\User;
 
 /**
  * Class CustomEntitiesService.
@@ -50,17 +49,17 @@ class InitService {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function init() {
     $messages = [];
     /** @var \Drupal\node\Entity\Node $homepageNode */
     $homepageNid = $this->nodeService->getHomepageNid();
     if ($homepageNid === FALSE) {
-      $homepageNode = $this->createHomepage();
-      $messages[] = $this->t('Homepage created');
+      $messages[] = $this->t('Homepage has not been created yet, please import content first.');
     }
     else {
-      $messages[] = $this->t('Homepage already exists');
+      $messages[] = $this->t('Homepage exists');
       $homepageNode = $this->nodeService->load($homepageNid);
     }
     if (NULL === $homepageNode) {
@@ -68,43 +67,31 @@ class InitService {
     }
     else {
       $homepageUrl = $homepageNode->url('canonical');
-      var_dump($homepageUrl);
       $front = $this->config->get('system.site')->get('page.front');
-      var_dump($front);
       if ($front !== $homepageUrl) {
-        $this->config->getEditable('system.site')->set('page.front', $homepageUrl)->save();
-        $messages[] = $this->t('Front URL updated from @old to @new', ['@old' => $front, '@new' => $homepageUrl]);
+        $this->config->getEditable('system.site')
+          ->set('page.front', $homepageUrl)
+          ->save();
+        $messages[] = $this->t('Front URL updated from @old to @new', [
+          '@old' => $front,
+          '@new' => $homepageUrl,
+        ]);
       }
       else {
-        $messages[] = $this->t('The front page URL did not need to be updated');
+        $messages[] = $this->t('Success, the front page URL did not need to be updated');
       }
     }
+    // User 1 needs the administrator role for admin search menu.
+    $admin = User::load(1);
+    if (!$admin->hasRole('administrator')) {
+      $admin->addRole('administrator');
+      $admin->save();
+      $messages[] = $this->t('User 1 given the administrator role');
+    }
+    else {
+      $messages[] = $this->t('Success, user 1 already has the administrator role');
+    }
     return $messages;
-  }
-
-  /**
-   * Create a homepage node.
-   *
-   * @return \Drupal\node\Entity\Node|null
-   *   Returns the created homepage node or null.
-   *
-   * @throws \Drupal\Core\Entity\EntityStorageException
-   */
-  public function createHomepage() {
-    $node = Node::create([
-      'type' => 'homepage',
-      'title' => 'Homepage',
-      'status' => 1,
-    ]);
-    $node->setOwner($this->nodeService->getAutomatedNodeOwner());
-    try {
-      $node->save();
-      return $node;
-    }
-    catch (EntityStorageException $exception) {
-      return NULL;
-    }
-
   }
 
 }

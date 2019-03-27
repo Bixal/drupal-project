@@ -1113,4 +1113,57 @@ class NodeService {
     return $return;
   }
 
+  /**
+   * Get the user that should be the creator for automatically created nodes.
+   *
+   * @return \Drupal\user\UserInterface
+   *   The user.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
+   */
+  public function getAutomatedNodeOwner() {
+    // Owner should ALWAYS be admin. Grab the revision user as the currently
+    // logged in user if available. It won't be in CLI.
+    /** @var \Drupal\user\UserInterface $owner_user */
+    $owner_user = $this->customEntitiesRetrieval->uuid('user', PlanYearInfo::UUID_USER_AUTOMATED);
+    if (NULL === $owner_user) {
+      throw new \Exception('The automated user has not been created yet. Please import user content before using this feature.');
+    }
+    return $owner_user;
+  }
+
+  /**
+   * Retrieve the homepage NID.
+   *
+   * @return string|bool
+   *   False is no homepage exists.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getHomepageNid() {
+    $query = $this->entityTypeManager->getStorage('node')->getQuery();
+    return current($query->condition('type', 'homepage')
+      ->range(0, 1)
+      ->accessCheck(FALSE)
+      ->execute());
+  }
+
+  /**
+   * Load a node.
+   *
+   * @param string $nid
+   *   The node ID.
+   *
+   * @return \Drupal\node\Entity\Node|null
+   *   The node or null.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function load($nid) {
+    return $this->entityTypeManager->getStorage('node')->load($nid);
+  }
+
 }

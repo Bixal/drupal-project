@@ -1,0 +1,31 @@
+uuid: e63c5cad-4f4a-40cd-8eaa-aabebdf84c16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.body
+    - node.type.homepage
+  module:
+    - user
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  download_plan_form_horizontal:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  download_plan_form_vertical:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true

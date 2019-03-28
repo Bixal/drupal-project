@@ -10,3 +10,13 @@ display.plan:
     # js/display-plan.js: {}
   dependencies:
     - core/jquery
+
+download.plan.form:
+  version: 1.x
+  js:
+    js/download-plan-form.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

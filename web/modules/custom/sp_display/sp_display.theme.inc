@@ -121,3 +121,115 @@ function template_preprocess_sp_display_plan_year_section_view(array &$variables
   $output->setSectionId($variables['node']->get('field_section')->getString());
   $variables['content'] = $output->getItemList();
 }
+
+/**
+ * Prepares variables the download plan form template.
+ *
+ * Default template: sp-display-download-plan-form.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - orientation: Horizontal or vertical.
+ *   - node: The homepage node.
+ *
+ * @throws \Exception
+ */
+function template_preprocess_sp_display_download_plan_form(array &$variables) {
+  $content = _sp_dispay_fake_content();
+  $variables['#attached'] = [
+    'library' => ['sp_display/download.plan.form'],
+    'drupalSettings' => [
+      'sp_display' => ['download_plan_form' => $content],
+    ],
+  ];
+  $variables['state_options'] = '<option value="" selected>' . t('Choose a state') . '</option>';
+  if (!empty($content['state_plans'])) {
+    foreach ($content['state_plans'] as $group_id => $state) {
+      $variables['state_options'] .= '<option value="' . $group_id . '">' . $state['name'] . '</option>';
+    }
+  }
+  $variables['years_options'] = '<option value="" selected>' . t('Choose a year') . '</option>';
+  if (!empty($content['all_plan_years'])) {
+    foreach ($content['all_plan_years'] as $plan_year_id => $plan_year_label) {
+      $variables['years_options'] .= '<option value="' . $plan_year_id . '">' . $plan_year_label . '</option>';
+    }
+  }
+}
+
+/**
+ * Temp function to return fake content for display form.
+ *
+ * @return array
+ *   An array for drupal settings.
+ */
+function _sp_dispay_fake_content() {
+  return [
+    // These are all plan years that have been created. These are the options
+    // for 'years' for all states. The key is the value of the option and the
+    // value is the display of the option. When a user clicks a state, enable
+    // the 'years' option if the 'state_plans' group ID has a plan with this
+    // plan year ID.
+    'all_plan_years' => [
+      '2016' => 'FY 2016-2017',
+      '2018' => 'FY 2018-2019',
+      '2020' => 'FY 2020-2021',
+    ],
+    // Keyed by the states group ID, this will be the value of the state option.
+    // Use this value to determine what plans that state has to populate years.
+    'state_plans' => [
+      '1' => [
+        // Only used as the display for the state option.
+        'name' => 'Washington',
+        // There will always be a key here for each of the above
+        // 'all_plan_years'. The key corresponds to the key in the
+        // 'all_plan_years' and the value will be populated if this state has
+        // a plan for that year.
+        'plans' => ['2016' => '', '2018' => '', '2020' => ''],
+      ],
+      '3' => [
+        'name' => 'Virginia',
+        'plans' => ['2016' => '/virginia/2016.pdf', '2018' => '', '2020' => ''],
+      ],
+      '7' => [
+        'name' => 'Illinois',
+        'plans' => [
+          '2016' => '/illinois/2016.pdf',
+          '2018' => '/illinois/2018.pdf',
+          '2020' => '',
+        ],
+      ],
+      '20' => [
+        'name' => 'Iowa',
+        'plans' => [
+          '2016' => '/iowa/2016.pdf',
+          '2018' => '/iowa/2018.pdf',
+          '2020' => '/iowa/2020.pdf',
+        ],
+      ],
+      '21' => [
+        'name' => 'Florida',
+        'plans' => [
+          '2016' => '/florida/2016.pdf',
+          '2018' => '',
+          '2020' => '/florida/2020.pdf',
+        ],
+      ],
+      '27' => [
+        'name' => 'Georgia',
+        'plans' => [
+          '2016' => '',
+          '2018' => '',
+          '2020' => '/georgia/2020.pdf',
+        ],
+      ],
+      '33' => [
+        'name' => 'Tennessee',
+        'plans' => [
+          '2016' => '',
+          '2018' => '/tennessee/2018.pdf',
+          '2020' => '',
+        ],
+      ],
+    ],
+  ];
+}

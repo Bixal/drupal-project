@@ -1,0 +1,23 @@
+uuid: 6ff323f6-c23a-47b2-8e46-6bb2c3975533
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - link
+    - node
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: node.field_home_image_banner_link
+field_name: field_home_image_banner_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

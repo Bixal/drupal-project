@@ -1,0 +1,21 @@
+uuid: fcac7327-afc8-4acf-8065-b6ba6ab3fda5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_card_subsection_snippet_2
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_card_subsection_snippet_2
+field_name: field_card_subsection_snippet_2
+entity_type: node
+bundle: homepage
+label: 'Card Subsection Snippet 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

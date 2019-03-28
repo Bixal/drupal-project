@@ -1,0 +1,21 @@
+uuid: 37481a7e-95ab-4615-b8ac-b650f5470750
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_card_subsection_body_1
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_card_subsection_body_1
+field_name: field_card_subsection_body_1
+entity_type: node
+bundle: homepage
+label: 'Card Subsection Body 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

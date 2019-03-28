@@ -1,0 +1,21 @@
+uuid: 342fb72e-d0b6-4269-b5c0-465ca5d7e5ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_image_banner_copy
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_home_image_banner_copy
+field_name: field_home_image_banner_copy
+entity_type: node
+bundle: homepage
+label: 'Image Banner Copy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

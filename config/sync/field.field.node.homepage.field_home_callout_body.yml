@@ -1,0 +1,21 @@
+uuid: aaed494a-184f-4f84-a800-166178b4d35e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_callout_body
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_home_callout_body
+field_name: field_home_callout_body
+entity_type: node
+bundle: homepage
+label: 'Callout Body'
+description: 'Descriptive text for the callout.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

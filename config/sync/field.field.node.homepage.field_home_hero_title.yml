@@ -1,0 +1,19 @@
+uuid: f131597a-fed6-4ed0-8a31-f1b96d185286
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_hero_title
+    - node.type.homepage
+id: node.homepage.field_home_hero_title
+field_name: field_home_hero_title
+entity_type: node
+bundle: homepage
+label: 'Hero Title'
+description: 'Title that''s displayed at the top of the page in the hero.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

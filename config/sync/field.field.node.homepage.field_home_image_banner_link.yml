@@ -1,0 +1,23 @@
+uuid: 85aead20-f1ce-4c44-a1ff-e3506a8156ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_image_banner_link
+    - node.type.homepage
+  module:
+    - link
+id: node.homepage.field_home_image_banner_link
+field_name: field_home_image_banner_link
+entity_type: node
+bundle: homepage
+label: 'Image Banner Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

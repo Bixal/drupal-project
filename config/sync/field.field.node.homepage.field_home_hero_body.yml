@@ -1,0 +1,21 @@
+uuid: e768f4c3-b50c-4471-b953-e9f343cba123
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_hero_body
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_home_hero_body
+field_name: field_home_hero_body
+entity_type: node
+bundle: homepage
+label: 'Hero Body'
+description: 'Description text under the hero title.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

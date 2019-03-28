@@ -47,9 +47,7 @@ cim:
 
 cex:
 	@echo "Exporting Configuration"
-	docker-compose run php drupal config:export -y
-	@echo "Exporting Configuration Splits"
-	docker-compose run php drupal csex -y
+	docker-compose run php csex -y
 
 gm:
 	@echo "Displaying Generate Module UI"
@@ -100,6 +98,8 @@ fresh:
 	docker-compose run --rm php drupal config:import
 	@echo "Installing configuration splits from file"
 	docker-compose run --rm php drupal csim -y
+	@echo "Running initialization script"
+	docker-compose run --rm php drupal sp_create:init
 	@echo "Rebuilding content access"
 	docker-compose run --rm php drupal node:access:rebuild
 	make cr

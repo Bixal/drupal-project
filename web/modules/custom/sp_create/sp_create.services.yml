@@ -15,3 +15,6 @@ services:
   sp_create.clone:
     class: Drupal\sp_create\CloneService
     arguments: ['@entity_type.manager', '@entity_type.bundle.info']
+  sp_create.init:
+    class: Drupal\sp_create\InitService
+    arguments: ['@sp_retrieve.node', '@config.factory']

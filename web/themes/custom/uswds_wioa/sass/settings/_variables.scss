@@ -17,7 +17,7 @@ $social-colors: (
   instagram: #fb3958
 );
 
-$font-family-icons: "wioa-icons";
+$font-family-icons: 'wioa-icons';
 $font-size-base: 17; // The default font size for your site. This gets used in
 // the px-to-em() function used sitewide.
 
@@ -48,16 +48,16 @@ $z-layers: (
 );
 
 // Overriding USWDS Variables
+$asset-path: '../';
+$image-path: '#{$asset-path}images';
+$font-path: '#{$asset-path}fonts/uswds';
+
 $site-max-width: 1024px;
 $site-margins: 2rem;
 
 $grid-columns-medium: 16;
 $grid-columns-large: 16;
 
-// Imported from USWDS
-$font-sans: "Source Sans Pro", $helvetica !default;
-$font-serif: "Merriweather", $georgia !default;
-
-$text-max-width: 75ch !default; // 66 characters per line
+$text-max-width: 75ch; // 66 characters per line
 
 $color-focus: #aeb0b5;

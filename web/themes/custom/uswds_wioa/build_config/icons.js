@@ -1,24 +1,27 @@
-const gulp = require("gulp");
-const imagemin = require("gulp-imagemin");
-const iconfont = require("gulp-iconfont");
-const iconfontCSS = require("gulp-iconfont-css");
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin');
+const iconfont = require('gulp-iconfont');
+const iconfontCSS = require('gulp-iconfont-css');
 
 const runTimestamp = Math.round(Date.now() / 1000);
-const fontName = "wioa-icons";
+const fontName = 'wioa-icons';
 
-gulp.task("optimize-images", () => {
-  return gulp.src("./images/**/*", { base: "." }).pipe(imagemin());
+gulp.task('optimize-images', () => {
+  return gulp
+    .src('./images/**/*', { base: '.' })
+    .pipe(imagemin())
+    .pipe(gulp.dest('./images'));
 });
 
-gulp.task("iconfont", () => {
+gulp.task('iconfont', () => {
   return gulp
-    .src("./images/svg/*.svg")
+    .src('./images/svg/*.svg')
     .pipe(
       iconfontCSS({
         fontName: fontName,
-        path: "./sass/templates/icons.scss",
-        targetPath: "../../../sass/global/_icons.scss",
-        fontPath: "../assets/dist/fonts/",
+        path: './sass/templates/icons.scss',
+        targetPath: '../../../sass/global/_icons.scss',
+        fontPath: `../fonts`,
         cacheBuster: runTimestamp
       })
     )
@@ -26,12 +29,12 @@ gulp.task("iconfont", () => {
       iconfont({
         fontName: fontName,
         // Remove woff2 if you get an ext error on compile
-        formats: ["svg", "ttf", "eot", "woff", "woff2"],
+        formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
         normalize: true,
         fontHeight: 1001,
         prependUnicode: true,
         timestamp: runTimestamp
       })
     )
-    .pipe(gulp.dest("./assets/dist/fonts/"));
+    .pipe(gulp.dest(`./fonts/${fontName}`));
 });

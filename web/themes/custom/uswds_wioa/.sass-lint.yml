@@ -14,6 +14,7 @@ files:
   include: 'sass/**/*.scss'
   ignore:
     - 'sass/templates/**/*.*'
+    - 'sass/vendor/**/*.*'
     - 'sass/global/_icons.scss'
 # Rule Configuration
 rules:

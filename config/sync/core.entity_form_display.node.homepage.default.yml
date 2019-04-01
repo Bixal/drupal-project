@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.homepage.field_card_subsection_snippet_2
     - field.field.node.homepage.field_card_subsection_title_1
     - field.field.node.homepage.field_card_subsection_title_2
+    - field.field.node.homepage.field_hero_form_body
+    - field.field.node.homepage.field_hero_form_title
     - field.field.node.homepage.field_home_callout_body
     - field.field.node.homepage.field_home_callout_link
     - field.field.node.homepage.field_home_callout_title
@@ -78,6 +80,22 @@ content:
     region: content
   field_card_subsection_title_2:
     weight: 131
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_form_body:
+    weight: 138
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_hero_form_title:
+    weight: 137
     settings:
       size: 60
       placeholder: ''

@@ -55,6 +55,7 @@ h6,
 h1,
 %h1-style {
   font-size: px-to-rem(44);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(25);
   line-height: 1.113;
 }
@@ -62,6 +63,7 @@ h1,
 h2,
 %h2-style {
   font-size: px-to-rem(34);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(32);
   margin-top: px-to-rem(48);
   line-height: 1.176;
@@ -70,6 +72,7 @@ h2,
 h3,
 %h3-style {
   font-size: px-to-rem(24);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(20);
   margin-top: px-to-rem(32);
   line-height: 1.291;
@@ -78,6 +81,7 @@ h3,
 h4,
 %h4-style {
   font-size: px-to-rem(19);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(20);
   margin-top: px-to-rem(32);
   line-height: 1.315;
@@ -86,6 +90,7 @@ h4,
 h5,
 %h5-style {
   font-size: px-to-rem(15);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(20);
   margin-top: px-to-rem(37);
   line-height: 1.333;

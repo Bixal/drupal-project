@@ -1,10 +1,16 @@
 //
 // Color Variables
+// Default USWDS colors are prefixed with `$color-`
+// Custom colors are prefixed with `$c-` for short.
 //
 
 $c-black: #000; // rgb(0, 0, 0)
 $c-white: #fff; // rgb(255, 255, 255)
 $c-blue-darkest: #1f5593; // rgb(31, 85, 147)
+$c-blue-lt: #f0fdff;
+$c-offwhite: #fbfafa;
+$c-gray-md: #cacbc6;
+$c-gray-lt: #ebebeb;
 
 // Commonly used - social media colors
 $social-colors: (

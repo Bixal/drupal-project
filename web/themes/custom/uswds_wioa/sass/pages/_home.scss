@@ -1,0 +1,130 @@
+//
+// Hero
+//
+.hero {
+  background-image: linear-gradient(to bottom, $c-gray-md, $c-gray-lt);
+}
+
+.hero__inner {
+  padding-top: px-to-rem(50);
+  padding-bottom: px-to-rem(44);
+}
+
+.hero__title {
+  color: $color-blue-darkest;
+}
+
+.hero__form {
+  background-color: $c-offwhite;
+  box-shadow: 0 0 5px 3px $color-shadow;
+  border: 1px solid $color-primary-darker;
+  color: $color-primary-darkest;
+  padding: px-to-rem(31);
+}
+
+.hero__form .form__title {
+  @extend %h2-style;
+  color: $color-secondary;
+  margin-top: 0;
+}
+
+.hero__form select,
+.hero__form button {
+  max-width: 100%;
+  width: 100%;
+}
+
+//
+// Callout
+//
+.callout--section {
+  background-color: $color-primary-darker;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($c-black, 0.2),
+    transparent 30px
+  );
+  text-align: center;
+  padding-bottom: px-to-rem(290);
+}
+
+.callout--section h1.callout__title {
+  @extend %display-2;
+  color: $c-white;
+}
+
+.callout--section .callout__link a {
+  @include button-unstyled;
+  border: 2px solid $c-white;
+  border-radius: px-to-rem(6);
+}
+
+//
+// Card Section
+//
+.card--section {
+  background-color: $c-blue-lt;
+}
+
+.card--section .card__inner {
+  background-color: $c-white;
+  box-shadow: 0 2px 5px 3px rgba($c-black, 0.08);
+  max-width: px-to-rem(992);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: px-to-rem(-240);
+  position: relative;
+  top: px-to-rem(-240);
+  z-index: z(layer-2);
+
+  // Triangle
+  &::before {
+    content: '';
+    border: 19px solid transparent;
+    border-left-width: 16.5px;
+    border-right-width: 16.5px;
+    border-top-color: $color-red;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.card--section .card__content {
+  padding: px-to-rem(64) px-to-rem(64) px-to-rem(175);
+}
+
+.card--section .card__title,
+.card--section .card__description {
+  text-align: center;
+}
+
+.card--section .card__title {
+  color: $color-blue-darkest;
+}
+
+.plan-subsection__title {
+  color: $color-primary-darker;
+  border-bottom: 2px solid $color-primary-alt-dark;
+  padding-bottom: px-to-rem(12);
+}
+
+.card__form-plan-title {
+  color: $c-white;
+  margin-top: 0;
+}
+
+.card--section .card__footer {
+  background-color: $color-primary;
+  padding: px-to-rem(16) px-to-rem(87);
+}
+
+//
+// Image Banner
+//
+.img-banner {
+  background-color: $c-blue-lt;
+  padding-top: px-to-rem(50);
+  padding-bottom: px-to-rem(91);
+}

@@ -31,8 +31,9 @@ gulp.task('sass', () => {
     .pipe(
       postcss([
         prefix({
-          browsers: ['last 3 versions'],
-          cascade: false
+          browsers: ['last 3 versions', 'ie 11'],
+          cascade: false,
+          grid: true
         })
       ])
     )

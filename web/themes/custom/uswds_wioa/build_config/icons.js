@@ -10,7 +10,7 @@ gulp.task('optimize-images', () => {
   return gulp
     .src('./images/**/*', { base: '.' })
     .pipe(imagemin())
-    .pipe(gulp.dest('./images'));
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('iconfont', () => {
@@ -19,8 +19,8 @@ gulp.task('iconfont', () => {
     .pipe(
       iconfontCSS({
         fontName: fontName,
-        path: './sass/templates/icons.scss',
-        targetPath: '../../../sass/global/_icons.scss',
+        path: 'sass/templates/icons.scss',
+        targetPath: '../../sass/global/_icons.scss',
         fontPath: `../fonts`,
         cacheBuster: runTimestamp
       })

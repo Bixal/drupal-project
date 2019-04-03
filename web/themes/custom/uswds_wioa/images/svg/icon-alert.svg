@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title> copy</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="UI-element-/-Icons-/-Error---black" fill="#000000">
-            <path d="M8,2 C8.55228475,2 9,2.44771525 9,3 L9,9 C9,9.55228475 8.55228475,10 8,10 C7.44771525,10 7,9.55228475 7,9 L7,3 C7,2.44771525 7.44771525,2 8,2 Z M8,11 C8.55228475,11 9,11.4477153 9,12 C9,12.5522847 8.55228475,13 8,13 C7.44771525,13 7,12.5522847 7,12 C7,11.4477153 7.44771525,11 8,11 Z M8,0 C12.4166667,0 16,3.58333333 16,8 C16,12.4166667 12.4166667,16 8,16 C3.58333333,16 0,12.4166667 0,8 C0,3.58333333 3.58333333,0 8,0 Z" id="-copy"></path>
-        </g>
-    </g>
-</svg>
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 2a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 9a1 1 0 1 1 0 2 1 1 0 0 1 0-2zM8 0c4.417 0 8 3.583 8 8s-3.583 8-8 8-8-3.583-8-8 3.583-8 8-8z" fill-rule="evenodd"/></svg>

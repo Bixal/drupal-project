@@ -21,7 +21,7 @@ gulp.task('iconfont', () => {
         fontName: fontName,
         path: 'sass/templates/icons.scss',
         targetPath: '../../sass/global/_icons.scss',
-        fontPath: `../fonts`,
+        fontPath: `../fonts/${fontName}/`,
         cacheBuster: runTimestamp
       })
     )

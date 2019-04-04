@@ -22,6 +22,9 @@ use Drupal\sp_retrieve\PlanYearOutputItemListSection;
  *
  * @return bool|\Drupal\sp_retrieve\PlanYearDisplay
  *   False on error else the PlanYearDisplay object.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
 function sp_display_display_plan_common($content_type, array &$variables) {
   $variables['content'] = 'Could not load a plan year.';
@@ -38,7 +41,7 @@ function sp_display_display_plan_common($content_type, array &$variables) {
   if (NULL !== $plan_year_display) {
     return $plan_year_display;
   }
-  /** @var \Drupal\sp_retrieve\TaxonomyService $node_service */
+  /** @var \Drupal\sp_retrieve\TaxonomyService $taxonomy_service */
   $taxonomy_service = \Drupal::getContainer()->get('sp_retrieve.taxonomy');
   $plan_year_display_info = $taxonomy_service->getPlanYearDisplayInfo($plan_year_id);
   if (empty($plan_year_display_info)) {
@@ -60,9 +63,8 @@ function sp_display_display_plan_common($content_type, array &$variables) {
  *
  * Default template: sp-display-plan-year-view.html.twig.
  *
- * @param array $variables
- *   An associative array containing:
- *   - node: The plan year node.
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
  */
 function template_preprocess_sp_display_plan_year_view(array &$variables) {
   $plan_year_display = sp_display_display_plan_common(PlanYearInfo::SPY_BUNDLE, $variables);

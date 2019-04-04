@@ -56,7 +56,7 @@ class ContentService {
    * The workflow state for a brand new piece of content.
    *
    * Applies for workflows: state_plan_year, state_plan_year_section, or
-   * state_plan_content.
+   * state_plan_answer.
    *
    * @var string
    */
@@ -66,11 +66,58 @@ class ContentService {
    * The workflow state for a piece of content ready for editorial.
    *
    * Applies for workflows: state_plans_year, state_plan_year,
-   * state_plan_year_section, or state_plan_content.
+   * state_plan_year_section, or state_plan_answer.
    *
    * @var string
    */
   public const MODERATION_STATE_DRAFT = 'draft';
+
+  /**
+   * The workflow state for an answer that should be hidden.
+   *
+   * Answers in this state are not shown anywhere.
+   *
+   * Applies for workflows: state_plan_answer, state_plan_year_section.
+   *
+   * @var string
+   */
+  public const MODERATION_STATE_HIDDEN = 'hidden';
+
+  /**
+   * The workflow state for an answer that should be disallowed for entry.
+   *
+   * Answers in this state are shown but not allowed to have values entered.
+   *
+   * Applies for workflows: state_plan_answer, state_plan_year_section.
+   *
+   * @var string
+   */
+  public const MODERATION_STATE_DISALLOW = 'disallow';
+
+  /**
+   * The workflow state for an answer that was hidden while being published.
+   *
+   * Answers in this state are not shown anywhere. This needs its own status
+   * because a plan could be re-opened and this answer triggered to be shown
+   * while the 'published' version still remaining 'hidden'.
+   *
+   * Applies for workflows: state_plan_answer, state_plan_year_section.
+   *
+   * @var string
+   */
+  public const MODERATION_STATE_HIDDEN_PUBLISHED = 'hidden_published';
+
+  /**
+   * The workflow state for an answer that was disallowed while being published.
+   *
+   * Answers in this state are shown but not allowed to have values entered.
+   * These will show the default value on an answer.
+   *
+   * Applies for workflows: state_plan_answer, state_plan_year_section.
+   *
+   * @var string
+   */
+  public const MODERATION_STATE_DISALLOW_PUBLISHED = 'disallow_published';
 
   /**
    * Entity type manager.

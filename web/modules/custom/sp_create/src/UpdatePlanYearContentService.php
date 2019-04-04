@@ -570,4 +570,74 @@ class UpdatePlanYearContentService {
     return $state_plan_year_answer;
   }
 
+  /**
+   * Update state plan year section moderation status when answers are changed.
+   *
+   * @param string $state_plan_year_section_nid
+   *   A state plan section node ID.
+   * @param string $revision_log_message
+   *   A revision log message to enter that describes what started this call.
+   * @param string $default_moderation_state
+   *   The moderation state to set if there are no answer nodes in the section.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function updateStatePlanYearSectionModerationStateBasedOnAnswers($state_plan_year_section_nid, $revision_log_message, $default_moderation_state) {
+    // Retrieve the moderation state of all answers in this section.
+    $answers_moderation_states = $this->nodeService->getStatePlanYearAnswersModerationStateByStatePlanYearSectionNid($state_plan_year_section_nid);
+    if (empty($answers_moderation_states)) {
+      $state_plan_year_section_new_moderation_state = $default_moderation_state;
+    }
+    else {
+      // Don't care how many of each are a status only if the status is
+      // set.
+      $answers_moderation_states = array_unique($answers_moderation_states);
+      $state_plan_year_section_new_moderation_state = NULL;
+      // At least a single answer in draft.
+      if (in_array(ContentService::MODERATION_STATE_DRAFT, $answers_moderation_states)) {
+        $state_plan_year_section_new_moderation_state = ContentService::MODERATION_STATE_DRAFT;
+      }
+      // At least a single answer is disallowed.
+      elseif (in_array(ContentService::MODERATION_STATE_DISALLOW, $answers_moderation_states)) {
+        $state_plan_year_section_new_moderation_state = ContentService::MODERATION_STATE_DISALLOW;
+      }
+      // At least a single answer is hidden.
+      elseif (in_array(ContentService::MODERATION_STATE_HIDDEN, $answers_moderation_states)) {
+        $state_plan_year_section_new_moderation_state = ContentService::MODERATION_STATE_HIDDEN;
+      }
+    }
+    $this->updateNodeModerationState($state_plan_year_section_nid, $revision_log_message, $state_plan_year_section_new_moderation_state);
+  }
+
+  /**
+   * Update a node's moderation state.
+   *
+   * @param string $nid
+   *   A node ID.
+   * @param string $revision_log_message
+   *   A revision log message to enter that describes what started this call.
+   * @param string $new_moderation_state
+   *   The new moderation state.
+   *
+   * @return bool
+   *   True if the current moderation state was different the new.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   */
+  public function updateNodeModerationState($nid, $revision_log_message, $new_moderation_state) {
+    // Only update if there is a new moderation state and it
+    // is different from the current.
+    $node = $this->nodeService->load($nid);
+    if (!empty($node) && !empty($new_moderation_state) && $new_moderation_state !== $node->get('moderation_state')) {
+      $node->set('moderation_state', $new_moderation_state);
+      $this->nodeSave($node, FALSE, $revision_log_message);
+      return TRUE;
+    }
+    return FALSE;
+  }
+
 }

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 3da798be-dc66-4d5f-a1e0-cd18d5f8bb45
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: Process
+description:
+  -
+    value: 'The State agency must submit amendments to the SNAP E&T segment of the Combined Plan for FNS approval at least 30 days prior to the planned implementation in order to receive federal SNAP E&T funding for the activities not covered by the approved Combined Plan.* *7 CFR § 273.7(c)(8)'
+    format: basic_html
+    processed: 'The State agency must submit amendments to the SNAP E&amp;T segment of the Combined Plan for FNS approval at least 30 days prior to the planned implementation in order to receive federal SNAP E&amp;T funding for the activities not covered by the approved Combined Plan.* *7 CFR § 273.7(c)(8)'
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+changed:
+  -
+    value: '2019-04-03T14:01:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 72919764-34ff-4826-b5d9-69f192ae8f42
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230

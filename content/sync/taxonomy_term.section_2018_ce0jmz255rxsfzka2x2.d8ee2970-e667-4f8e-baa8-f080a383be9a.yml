@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: d8ee2970-e667-4f8e-baa8-f080a383be9a
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Comparable Workfare'
+description:
+  -
+    value: 'The State agency or political subdivision must provide a description of its program, including a methodology for ensuring compliance with 7 C.F.R §273.7(m)(9)(ii) for each Federal fiscal year covered by the Combined Plan under WIOA.* *7 CFR § 273.7(m)(9)'
+    format: basic_html
+    processed: 'The State agency or political subdivision must provide a description of its program, including a methodology for ensuring compliance with 7 C.F.R §273.7(m)(9)(ii) for each Federal fiscal year covered by the Combined Plan under WIOA.* *7 CFR § 273.7(m)(9)'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+changed:
+  -
+    value: '2019-04-03T14:01:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: df3cddaa-6b00-4829-81df-6c7990fa0dab
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 11719d75-145b-40c9-a123-b4d7801bad43
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230

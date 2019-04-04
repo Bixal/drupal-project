@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 80b7130e-20eb-4862-a964-e9b29c17d9a8
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'FNS Will Determine Which Political Subdivision Will Have Its Plan Approved'
+description:
+  -
+    value: "<p>If workfare plans are submitted by more than one political subdivision, each representing the same population (such as a city within a county), FNS will determine which political subdivision will have its plan approved. Under no circumstances will a SNAP recipient be subject to more than one SNAP workfare program. If a political subdivision chooses to operate a workfare program and represents a population which is already, at least in part, subject to a SNAP workfare program administered by another political subdivision, it must establish in its workfare plan how SNAP recipients will not be subject to more than one SNAP workfare program.</p>\r\n"
+    format: basic_html
+    processed: '<p>If workfare plans are submitted by more than one political subdivision, each representing the same population (such as a city within a county), FNS will determine which political subdivision will have its plan approved. Under no circumstances will a SNAP recipient be subject to more than one SNAP workfare program. If a political subdivision chooses to operate a workfare program and represents a population which is already, at least in part, subject to a SNAP workfare program administered by another political subdivision, it must establish in its workfare plan how SNAP recipients will not be subject to more than one SNAP workfare program.</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2349774a-4a2a-497c-9c91-b307bba1c405
+  -
+    target_type: taxonomy_term
+    target_uuid: 2349774a-4a2a-497c-9c91-b307bba1c405
+changed:
+  -
+    value: '2019-04-03T14:02:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5426abe7-a085-4cf8-a97c-4bbafdd789be
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1f2adf1c-9dd2-42b8-a03d-9d6f9f02af18
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.2349774a-4a2a-497c-9c91-b307bba1c405
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.2349774a-4a2a-497c-9c91-b307bba1c405

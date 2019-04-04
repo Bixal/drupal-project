@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 7c119a3d-d758-4da3-a0d4-8be631f3d338
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Submitting a Workfare Plan Must Submit with the Plan an Operating Budget'
+description:
+  -
+    value: 'State agencies or political subdivisions submitting a workfare plan must submit with the plan an operating budget covering the period from the initiation of the workfare program''s implementation schedule to the close of the Federal fiscal year for each year covered by the combined plan. In addition, an estimate of the cost for one full year of operation must be submitted together with the workfare plan for each Federal fiscal year covered by the combined plan.'
+    format: basic_html
+    processed: 'State agencies or political subdivisions submitting a workfare plan must submit with the plan an operating budget covering the period from the initiation of the workfare program''s implementation schedule to the close of the Federal fiscal year for each year covered by the combined plan. In addition, an estimate of the cost for one full year of operation must be submitted together with the workfare plan for each Federal fiscal year covered by the combined plan.'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2349774a-4a2a-497c-9c91-b307bba1c405
+  -
+    target_type: taxonomy_term
+    target_uuid: 2349774a-4a2a-497c-9c91-b307bba1c405
+changed:
+  -
+    value: '2019-04-03T14:01:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1898a149-d7e3-44b7-88c2-a32cff861bb7
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 66f11283-8579-405f-a384-4e175c0896ef
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.2349774a-4a2a-497c-9c91-b307bba1c405
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.2349774a-4a2a-497c-9c91-b307bba1c405

@@ -10,6 +10,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
+use Exception;
 
 /**
  * Class CustomEntitiesService.
@@ -136,14 +137,14 @@ class NodeService {
    * @param string $state_plan_year_nid
    *   A state plan year node ID.
    *
-   * @return int|null
+   * @return array|null
    *   All state plan year section node IDs for the given state
    *   plan year.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function getStatePlanYearSectionsByStatePlanYearAndSection($state_plan_year_nid) {
+  public function getStatePlanYearSectionsByStatePlanYear($state_plan_year_nid) {
     return $this->entityTypeManager->getStorage('node')->getQuery()
       ->condition('type', PlanYearInfo::SPYS_BUNDLE)
       ->condition('field_state_plan_year', $state_plan_year_nid)
@@ -736,6 +737,44 @@ class NodeService {
   }
 
   /**
+   * Get a single state plan year answer by state plan year and unique field ID.
+   *
+   * This will get a single state's content.
+   *
+   * @param string $state_plan_year_nid
+   *   A state plan year node ID.
+   * @param string $field_unique_id
+   *   The Field Unique ID value of a content reference.
+   *
+   * @return string|null
+   *   A state plan year answer node ID.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Exception
+   */
+  public function getStatePlanYearAnswerByStatePlanYearAndFieldUniqueId($state_plan_year_nid, $field_unique_id) {
+    $state_plan_year = $this->load($state_plan_year_nid);
+    if (NULL === $state_plan_year || $state_plan_year->getType() !== PlanYearInfo::SPY_BUNDLE) {
+      throw new Exception(sprintf('There is no state plan year node with node ID %s', $state_plan_year_nid));
+    }
+    $state_plan_year_section_nids = $this->getStatePlanYearSectionsByStatePlanYear($state_plan_year_nid);
+    if (empty($state_plan_year_section_nids)) {
+      throw new Exception(sprintf('There are no state plan year sections in state plan year %s', $state_plan_year_nid));
+    }
+    // Since field unique ID is unique per all state plan year sections
+    // (group content), this will only return a single row without knowing
+    // which section it actually belongs to.
+    $query = $this->entityTypeManager->getStorage('node')->getQuery();
+    return current($query->condition('field_field_unique_id_reference', $field_unique_id)
+      ->condition('type', PlanYearInfo::getSpyaNodeBundles(), 'in')
+      ->condition('field_state_plan_year_section', $state_plan_year_section_nids, 'in')
+      ->accessCheck(FALSE)
+      ->range(0, 1)
+      ->execute());
+  }
+
+  /**
    * Get a state plan year answer assigned to a section and unique ID.
    *
    * This will get a single state's plan year answer.
@@ -1164,6 +1203,48 @@ class NodeService {
    */
   public function load($nid) {
     return $this->entityTypeManager->getStorage('node')->load($nid);
+  }
+
+  /**
+   * Retrieve all the moderation states of all answers in a section.
+   *
+   * @param string $state_plan_year_section_nid
+   *   A plan year section node ID.
+   *
+   * @return array
+   *   An array of moderation states.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getStatePlanYearAnswersModerationStateByStatePlanYearSectionNid($state_plan_year_section_nid) {
+    $moderation_states = [];
+    foreach ($this->getStatePlanYearAnswersByStatePlanYearSection($state_plan_year_section_nid) as $state_plan_year_answer_nid) {
+      $state_plan_year_answer = $this->load($state_plan_year_answer_nid);
+      $moderation_states[] = $state_plan_year_answer->get('moderation_state')->getString();
+    }
+    return $moderation_states;
+  }
+
+  /**
+   * Retrieve all the moderation states of all sections in a plan year.
+   *
+   * @param string $state_plan_year_nid
+   *   A plan year node ID.
+   *
+   * @return array
+   *   An array of moderation states.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getStatePlanYearSectionsModerationStateByStatePlanYearNid($state_plan_year_nid) {
+    $moderation_states = [];
+    foreach ($this->getStatePlanYearSectionsByStatePlanYear($state_plan_year_nid) as $state_plan_year_section_nid) {
+      $state_plan_year_section = $this->load($state_plan_year_section_nid);
+      $moderation_states[] = $state_plan_year_section->get('moderation_state')->getString();
+    }
+    return $moderation_states;
   }
 
 }

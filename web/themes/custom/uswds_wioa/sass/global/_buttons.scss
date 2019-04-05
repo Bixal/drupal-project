@@ -1,11 +1,11 @@
 .usa-button,
 button,
-[type="button"],
-[type="submit"],
-[type="reset"],
-[type="image"] {
-  padding-top: px-to-rem(11);
-  padding-bottom: px-to-rem(12);
+[type='button'],
+[type='submit'],
+[type='reset'],
+[type='image'] {
+  padding-top: px-to-rem(13);
+  padding-bottom: px-to-rem(14);
 
   &:focus {
     outline: 2px dotted $color-focus;

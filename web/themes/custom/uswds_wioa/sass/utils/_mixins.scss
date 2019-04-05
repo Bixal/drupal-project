@@ -10,14 +10,11 @@
 @mixin bp($breakpoint) {
   // Goes to $breakpoints map and gets each $breakpoint value (if it has any)
   @if map-has-key($breakpoints, $breakpoint) {
-
     // Create media query based on that $breakpoint value
     @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
       @content;
     }
-
-  }
-  @else {
+  } @else {
     // sass-lint:disable no-warn
     // Preventing the linter from interpretting this as a warning just
     // beacuse it exists in this file, haha.
@@ -44,7 +41,36 @@
 
 // Placeholder text
 @mixin placeholder {
-  &:-moz-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin uswds-icon($icon-name, $position: after, $path: $image-path) {
+  @if $position after or before {
+    &::#{$position} {
+      content: '';
+      background-image: url('#{$path}/#{$icon-name}.png');
+      background-image: url('#{$path}/#{$icon-name}.svg');
+    }
+  }
+  else {
+    background-image: url('#{$path}/#{$icon-name}.png');
+    background-image: url('#{$path}/#{$icon-name}.svg');
+  }
+}
+
+@mixin is-active {
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active {
+    @content;
+  }
 }

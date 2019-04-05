@@ -10,7 +10,7 @@
    * @type {Drupal~behavior}
    */
   Drupal.behaviors.displayPlan = {
-    attach(context, settings) {
+    attach: function attach(context, settings) {
       var $form;
       var $state;
       var $year;
@@ -31,7 +31,7 @@
       // Enable years based on selected State or Territory.
       var toggleYearOptions = function(yearsSelect, selectedPlan) {
         for (var key in selectedPlan) {
-          var $options = yearsSelect.find(`option[value="${key}"]`);
+          var $options = yearsSelect.find('option[value="' + key + '"]');
 
           yearsSelect.val('');
 
@@ -76,7 +76,7 @@
 
       var getStatePlan = function(e) {
         e.preventDefault();
-        window.location = `${selectedStatePlans[selectedYear]}`;
+        window.location = selectedStatePlans[selectedYear];
       };
 
       $('.download-plan-form', context)

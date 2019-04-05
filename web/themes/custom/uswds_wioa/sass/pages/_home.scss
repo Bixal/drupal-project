@@ -1,3 +1,17 @@
+%home-callout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    @include icon($i-icon-chevron-right);
+    font-size: px-to-rem(13);
+    margin-left: px-to-rem(8);
+    position: relative;
+    bottom: px-to-rem(-1); // Optical alignment.
+  }
+}
+
 //
 // Hero
 //
@@ -53,48 +67,6 @@
 }
 
 //
-// Select2 Overrides
-// Seen on: State dropdowns
-.select2-container--default .select2-selection--single {
-  @extend %uswds-input-styles;
-  @extend %uswds-select-styles;
-  max-width: 100%;
-}
-
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__arrow
-  b {
-  display: none;
-}
-
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__rendered {
-  color: inherit;
-  line-height: inherit;
-}
-
-.select2-container--open .select2-dropdown--below {
-  transform: translateY(-4px);
-}
-
-.select2-container--open .select2-dropdown--above {
-  transform: translateY(4px);
-}
-
-.select2-container--default .select2-results__option[data-selected='true'] {
-  background-color: transparent;
-  color: $color-gray-medium;
-}
-
-.select2-container--default
-  .select2-results__option--highlighted[data-selected] {
-  background-color: $color-primary;
-  color: $c-white;
-}
-
-//
 // Callout
 //
 .callout--section {
@@ -103,7 +75,8 @@
     to bottom,
     rgba($c-black, 0.2),
     transparent 30px
-  );
+    ),
+    url('../images/pattern_01.svg');
   text-align: center;
   padding-bottom: px-to-rem(290);
 }
@@ -113,10 +86,9 @@
   color: $c-white;
 }
 
-.callout--section .callout__link a {
-  @include button-unstyled;
-  border: 2px solid $c-white;
-  border-radius: px-to-rem(6);
+.callout--section .usa-button-field-home-callout-link {
+  @extend %usa-button;
+  @extend %usa-button-secondary-inverse;
 }
 
 //

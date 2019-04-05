@@ -21,6 +21,9 @@ libraries-override:
     js:
       assets/js/uswds.min.js: js/vendor/uswds/uswds.min.js
 
+libraries:
+  - uswds_wioa/theme
+
 # Add the CSS to CKEditor, so that custom entries in "Style" will work.
 ckeditor_stylesheets:
 - assets/dist/css/styles.css

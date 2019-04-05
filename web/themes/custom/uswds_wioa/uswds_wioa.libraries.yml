@@ -1,0 +1,7 @@
+theme:
+  version: 1.x
+  js:
+    js/dist/simple-toggle.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

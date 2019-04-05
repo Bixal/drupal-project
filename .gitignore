@@ -41,3 +41,6 @@
 
 # Ignore Docker-Sync log
 .docker-sync
+
+# Ignore the site.uuid.yml content export.
+/content/sync/entities/site.uuid.yml

@@ -15,7 +15,7 @@ gulp.task('optimize-images', () => {
 
 gulp.task('iconfont', () => {
   return gulp
-    .src('./images/svg/*.svg')
+    .src(`./images/${fontName}/*.svg`)
     .pipe(
       iconfontCSS({
         fontName: fontName,

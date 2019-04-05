@@ -1,6 +1,5 @@
 <article {{ attributes }}>
-{{ kpr() }}
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="hero__inner usa-grid">
       <header class="hero__header">
         <h1 class="hero__title">{{ content.field_home_hero_title }}</h1>
@@ -13,43 +12,52 @@
       </div>
     </div>
   </section>
-  <section class="callout--section usa-section usa-section-dark">
+  <section id="callout" class="callout--section usa-section usa-section-dark">
     <div class="callout__inner usa-grid">
       <h1 class="callout__title">{{ content.field_home_callout_title }}</h1>
       <div class="callout__body">{{ content.field_home_callout_body }}</div>
       <div class="callout__link">{{ content.field_home_callout_link }}</div>
     </div>
   </section>
-  <section class="card card--section">
+  <section id="plans-summary" class="card card--section">
     <div class="card__inner">
       <div class="card__content">
         <h1 class="card__title">{{ content.field_home_card_title }}</h1>
         <div class="card__description">{{ content.field_home_card_description }}</div>
+        <a href="#resources-section" class="visually-hidden focusable skip-link">{{ 'Skip to Resources Section'|t }}</a>
 
-        <div class="plans">
-            <section class="plan">
+        <div id="plans" class="plans">
+            <section id="unified-plan" class="plan">
               <h2 class="plan-subsection__title">{{ content.field_card_subsection_title_1 }}</h2>
               <div class="plan-subsection__snippet">{{ content.field_card_subsection_snippet_1 }}</div>
               <div class="plan-subsection__body">{{ content.field_card_subsection_body_1 }}</div>
             </section>
-            <section class="plan">
+            <section id="combined-plan" class="plan">
               <h2 class="plan-subsection__title">{{ content.field_card_subsection_title_2 }}</h2>
               <div class="plan-subsection__snippet">{{ content.field_card_subsection_snippet_2 }}</div>
               <div class="plan-subsection__body">{{ content.field_card_subsection_body_2 }}</div>
             </section>
         </div>
       </div>
+      <button class="js-simple-toggle card__toggle" aria-expanded="false" aria-controls="plans">
+        <span class="text-toggle">
+          <span class="text-toggle--old">{{ 'Read More on State Plans'|t }}</span>
+          <span class="text-toggle--new">{{ 'Read Less on State Plans'|t }}</span>
+        </span>
+      </button>
       <footer class="card__footer">
         <h3 class="card__form-plan-title">{{ 'Find Your State Plan'|t }}</h3>
         {{ content.download_plan_form_horizontal }}
       </footer>
     </div>
   </section>
-  <section class="img-banner">
+  <section id="resources-section" class="img-banner">
     <div class="img-banner__inner usa-grid">
-      <h1 class="img-banner__title">{{ content.field_home_image_banner_title }}</h1>
-      <div class="image-banner__body">{{ content.field_home_image_banner_copy }}</div>
-      <div class="image-banner__link">{{ content.field_home_image_banner_link }}</div>
+      <div class="img-banner__content">
+        <h1 class="img-banner__title">{{ content.field_home_image_banner_title }}</h1>
+        <div class="image-banner__body">{{ content.field_home_image_banner_copy }}</div>
+        <div class="image-banner__link">{{ content.field_home_image_banner_link }}</div>
+      </div>
     </div>
   </section>
 </article>

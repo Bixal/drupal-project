@@ -1,0 +1,79 @@
+uuid:
+  -
+    value: 6a524283-61bb-458e-aba7-38f6d79b0591
+langcode:
+  -
+    value: en
+type:
+  -
+    target_id: homepage
+    target_type: node_type
+    target_uuid: a642634a-73d6-4ed6-8b14-c4a75671152f
+revision_timestamp:
+  -
+    value: '2019-03-27T19:13:58+00:00'
+    format: 'Y-m-d\TH:i:sP'
+revision_uid:
+  -
+    target_type: user
+    target_uuid: cd0e9470-88d2-4291-86a7-b8a2d9baed4e
+revision_log: {  }
+status:
+  -
+    value: true
+title:
+  -
+    value: Homepage
+uid:
+  -
+    target_type: user
+    target_uuid: cd0e9470-88d2-4291-86a7-b8a2d9baed4e
+created:
+  -
+    value: '2019-03-27T19:13:07+00:00'
+    format: 'Y-m-d\TH:i:sP'
+changed:
+  -
+    value: '2019-03-27T19:13:58+00:00'
+    format: 'Y-m-d\TH:i:sP'
+promote:
+  -
+    value: false
+sticky:
+  -
+    value: false
+default_langcode:
+  -
+    value: true
+revision_translation_affected:
+  -
+    value: true
+moderation_state: {  }
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+menu_link: {  }
+field_card_subsection_body_1: {  }
+field_card_subsection_body_2: {  }
+field_card_subsection_snippet_1: {  }
+field_card_subsection_snippet_2: {  }
+field_card_subsection_title_1: {  }
+field_card_subsection_title_2: {  }
+field_home_callout_body: {  }
+field_home_callout_link: {  }
+field_home_callout_title: {  }
+field_home_card_description: {  }
+field_home_card_title: {  }
+field_home_hero_body: {  }
+field_home_hero_title: {  }
+field_home_image_banner_copy: {  }
+field_home_image_banner_link: {  }
+field_home_image_banner_title: {  }
+_content_sync:
+  entity_type: node
+  entity_dependencies:
+    user:
+      - user.user.cd0e9470-88d2-4291-86a7-b8a2d9baed4e
+      - user.user.cd0e9470-88d2-4291-86a7-b8a2d9baed4e

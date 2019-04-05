@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: fbe3eaca-a87a-4b23-af70-2a6606b8c1d5
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_uxg6ljgvsmpionwig20
+    target_type: taxonomy_vocabulary
+    target_uuid: 703ff1d2-2178-4853-8e8d-e62e39eb26fa
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Community Services Block Grant (CSBG)'
+description:
+  -
+    value: '<p>Note: Below is information about the employment and training activities carried out under the Community Services Block Grant (CSBG) (42 U.S.C. 9901 et seq.) that is included in the WIOA Combined State Plan. The complete CSBG State Plan is submitted directly to the Federal agency that administers that program and is collected under OMB Control Number: 0970-0382.</p><p>Where CSBG is included in the Combined State Plan, the State CSBG Lead Agency (as designated by the chief executive of the State under the requirements of section 676(a) of the CSBG Act (42 U.S.C. 9908(a)) will coordinate plans for employment and training activities under CSBG as part of a larger antipoverty and workforce development strategy.</p><p>As part of the Combined State Plan, the State CSBG Lead Agency must:</p>'
+    format: basic_html
+    processed: '<p>Note: Below is information about the employment and training activities carried out under the Community Services Block Grant (CSBG) (42 U.S.C. 9901 et seq.) that is included in the WIOA Combined State Plan. The complete CSBG State Plan is submitted directly to the Federal agency that administers that program and is collected under OMB Control Number: 0970-0382.</p><p>Where CSBG is included in the Combined State Plan, the State CSBG Lead Agency (as designated by the chief executive of the State under the requirements of section 676(a) of the CSBG Act (42 U.S.C. 9908(a)) will coordinate plans for employment and training activities under CSBG as part of a larger antipoverty and workforce development strategy.</p><p>As part of the Combined State Plan, the State CSBG Lead Agency must:</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T21:16:10+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 630f402c-0520-43b4-a829-488a1c152385
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

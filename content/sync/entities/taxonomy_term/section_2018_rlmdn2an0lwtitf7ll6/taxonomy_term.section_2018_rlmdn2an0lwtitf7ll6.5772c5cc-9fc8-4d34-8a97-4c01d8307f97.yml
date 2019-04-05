@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 5772c5cc-9fc8-4d34-8a97-4c01d8307f97
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State’s Workforce Development Activities'
+description:
+  -
+    value: '<p>Provide an analysis of the State’s workforce development activities, including education and training activities of the core programs, Combined State Plan partner programs included in this plan, and required and optional one-stop delivery system partners.*</p>'
+    format: basic_html
+    processed: '<p>Provide an analysis of the State’s workforce development activities, including education and training activities of the core programs, Combined State Plan partner programs included in this plan, and required and optional one-stop delivery system partners.*</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: fef9add7-ed39-4f86-a751-844a52956a77
+  -
+    target_type: taxonomy_term
+    target_uuid: fef9add7-ed39-4f86-a751-844a52956a77
+changed:
+  -
+    value: '2019-03-06T22:09:29+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2682dca6-6576-4c85-8ac2-e0463c388742
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 5a35f04b-5245-40aa-b7cb-ca1f50dd4682
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.fef9add7-ed39-4f86-a751-844a52956a77
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.fef9add7-ed39-4f86-a751-844a52956a77

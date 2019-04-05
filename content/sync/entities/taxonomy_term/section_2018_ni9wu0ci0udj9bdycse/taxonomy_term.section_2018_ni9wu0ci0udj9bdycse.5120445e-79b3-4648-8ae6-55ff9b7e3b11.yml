@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: 5120445e-79b3-4648-8ae6-55ff9b7e3b11
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ni9wu0ci0udj9bdycse
+    target_type: taxonomy_vocabulary
+    target_uuid: 44336c15-55d7-4d64-a480-4b543e448dde
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Housing and Urban Development (HUD) Employment and Training Activities'
+description:
+  -
+    value: '<p>There are no program-specific state planning requirements for HUD employment and training programs. If the state includes HUD employment and training programs in a Combined State Plan, the state must incorporate such HUD programs in its responses to the common planning elements in sections II, III and IV of the WIOA State Plan requirements instrument.</p>'
+    format: basic_html
+    processed: '<p>There are no program-specific state planning requirements for HUD employment and training programs. If the state includes HUD employment and training programs in a Combined State Plan, the state must incorporate such HUD programs in its responses to the common planning elements in sections II, III and IV of the WIOA State Plan requirements instrument.</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T21:12:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a030be40-1998-4f75-a2a7-0311ef49de80
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

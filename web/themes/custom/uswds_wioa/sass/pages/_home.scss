@@ -3,11 +3,23 @@
 //
 .hero {
   background-image: linear-gradient(to bottom, $c-gray-md, $c-gray-lt);
+
+  @include bp(md-lg) {
+    background-image: url('../images/pages/home/hero_homepagefinal.png');
+    background-size: cover;
+    background-position: 50% 50%;
+}
 }
 
 .hero__inner {
   padding-top: px-to-rem(50);
   padding-bottom: px-to-rem(44);
+}
+
+.hero__header {
+  @include bp(md) {
+    max-width: px-to-rem(590);
+  }
 }
 
 .hero__title {
@@ -20,6 +32,10 @@
   border: 1px solid $color-primary-darker;
   color: $color-primary-darkest;
   padding: px-to-rem(31);
+
+  @include bp(md) {
+    max-width: px-to-rem(320);
+}
 }
 
 .hero__form .form__title {

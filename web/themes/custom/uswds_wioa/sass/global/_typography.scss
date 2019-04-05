@@ -184,3 +184,13 @@ a {
   &:focus {
   }
 }
+
+.text-toggle--new,
+.is-active .text-toggle--old {
+  display: none;
+}
+
+.text-toggle--old,
+.is-active .text-toggle--new {
+  display: inherit; // Initial doesn't work on IE11.
+}

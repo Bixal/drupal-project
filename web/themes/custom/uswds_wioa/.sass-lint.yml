@@ -8,7 +8,7 @@ options:
   # Set the formatter to 'stylish'
   formatter: stylish
   # Raise an error if more than 50 warnings are generated
-  max-warnings: 1
+  max-warnings: 8
 # File Options
 files:
   include: 'sass/**/*.scss'
@@ -23,6 +23,10 @@ rules:
   placeholder-in-extend: 2
   one-declaration-per-line: 1
   url-quotes: 1
+  max-line-length:
+    - 1
+    -
+      length: 80
   mixins-before-declarations:
     - 2
     -
@@ -38,7 +42,7 @@ rules:
   no-ids: 2
   no-important: 2
   indentation:
-    - 2
+    - 1
     -
       size: 2
   property-sort-order:

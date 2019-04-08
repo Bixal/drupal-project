@@ -98,12 +98,22 @@ fresh:
 	docker-compose run --rm php drupal config:import
 	@echo "Installing configuration splits from file"
 	docker-compose run --rm php drupal csim -y
+	@echo "Importing content"
+	docker-compose run --rm php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage
 	@echo "Running initialization script"
 	docker-compose run --rm php drupal sp_create:init
 	@echo "Rebuilding content access"
 	docker-compose run --rm php drupal node:access:rebuild
 	make cr
 	make uli
+
+# This does not include 'users' as an exported type because the 'changed'
+# field will be updated on insert and we don't care about it and user 1
+# and 0 should not be included in this list because they cause error on
+# import.
+export_content:
+	@echo "Exporting plan year terms, states, and the homepage"
+	docker-compose run --rm php drush content-sync:export --entity-types=taxonomy_term,group.state,node.homepage
 
 standards:
 	@echo "Running coding standards checks on host machine"

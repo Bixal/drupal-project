@@ -1,0 +1,327 @@
+%home-callout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    @include icon($i-icon-chevron-right);
+    font-size: px-to-rem(13);
+    margin-left: px-to-rem(8);
+    position: relative;
+    bottom: px-to-rem(-1); // Optical alignment.
+  }
+}
+
+//
+// Hero
+//
+.hero {
+  background-image: linear-gradient(to bottom, $c-gray-md, $c-gray-lt);
+
+  @include bp(md-lg) {
+    background-image: url('../images/pages/home/hero_homepagefinal.png');
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+}
+
+.hero__inner {
+  padding-top: px-to-rem(50);
+  padding-bottom: px-to-rem(44);
+}
+
+.hero__header {
+  @include bp(md) {
+    max-width: px-to-rem(590);
+  }
+}
+
+.hero__title {
+  color: $color-blue-darkest;
+}
+
+.hero__form {
+  background-color: $c-offwhite;
+  box-shadow: 0 0 5px 3px $color-shadow;
+  border: 1px solid $color-primary-darker;
+  color: $color-primary-darkest;
+  padding: px-to-rem(31);
+
+  @include bp(md) {
+    max-width: px-to-rem(320);
+  }
+}
+
+.hero__form .form__title {
+  @extend %h2-style;
+  color: $color-secondary;
+  margin-top: 0;
+}
+
+.hero__form select,
+.hero__form button,
+.hero__form .selection,
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  max-width: 100%;
+  width: 100%;
+}
+
+//
+// Callout
+//
+.callout--section {
+  background-color: $color-primary-darker;
+  background-image: linear-gradient(
+      to bottom,
+      rgba($c-black, 0.2),
+      transparent 30px
+    ),
+    url('../images/pattern_01.svg');
+  text-align: center;
+  padding-bottom: px-to-rem(290);
+}
+
+.callout--section h1.callout__title {
+  @extend %display-2;
+  color: $c-white;
+}
+
+.callout--section .usa-button-field-home-callout-link {
+  @extend %usa-button;
+  @extend %usa-button-secondary-inverse;
+}
+
+//
+// Card Section
+// Contains Plans
+//
+.card--section {
+  background-color: $c-blue-lt;
+
+  @include bp(md-lg) {
+    background-image: linear-gradient(
+      to bottom,
+      $c-blue-lt,
+      $home-resources-blue 80%
+    );
+  }
+}
+
+.card--section .card__inner {
+  background-color: $c-white;
+  box-shadow: 0 2px 5px 3px rgba($c-black, 0.08);
+  max-width: px-to-rem(992);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: px-to-rem(-240);
+  position: relative;
+  top: px-to-rem(-240);
+  z-index: z(layer-2);
+
+  // Triangle
+  &::before {
+    content: '';
+    border: 19px solid transparent;
+    border-left-width: 16.5px;
+    border-right-width: 16.5px;
+    border-top-color: $color-red;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.card--section .card__content {
+  padding: px-to-rem(64) px-to-rem(64) px-to-rem(175);
+}
+
+.card--section .card__title,
+.card--section .card__description {
+  text-align: center;
+}
+
+.card--section .card__title {
+  color: $color-blue-darkest;
+}
+
+.plan-subsection__title {
+  color: $color-primary-darker;
+  border-bottom: 2px solid $color-primary-alt-dark;
+  padding-bottom: px-to-rem(12);
+}
+
+// Hide plan details if not expanded and JS is enabled.
+.js .plans:not(.is-active) .plan-subsection__body {
+  @extend %visuallyhidden;
+}
+
+.card__toggle {
+  background-color: $c-white;
+  border-radius: 0;
+  border-top: 2px solid $color-gray-lighter;
+  color: $color-primary;
+  display: flex;
+  align-items: center;
+  font-weight: $font-weight-normal;
+  justify-content: center;
+  height: px-to-rem(60);
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding-top: px-to-rem(28);
+  padding-bottom: px-to-rem(25);
+  position: relative;
+  transition: $ease-primary;
+
+  @include is-active {
+    color: $c-white;
+    background-color: $color-primary-darker;
+
+    &::before {
+      background-color: inherit;
+      border-color: $color-primary-darker;
+      transform: translateX(-50%) rotate(-180deg);
+    }
+  }
+}
+
+// Circle w/ icon in button
+.card__toggle::before {
+  @include icon($i-icon-chevron-down);
+  background-color: $color-primary;
+  border-radius: 100%;
+  border: 2px solid $color-primary;
+  color: $c-white;
+  font-size: px-to-rem(13);
+  height: px-to-rem(31);
+  width: px-to-rem(31);
+  position: absolute;
+  z-index: z(default);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: px-to-rem(-17); // Half of button height.
+  transition: inherit;
+}
+
+// Plans
+.plans {
+  @include bp(md-lg) {
+    display: grid;
+    grid-template-areas: 'unified-plan . combined-plan';
+    grid-template-columns: minmax(300px, 1fr) 94px minmax(300px, 1fr);
+  }
+}
+
+.plan {
+  @include bp(md-lg) {
+    &:first-of-type {
+      grid-area: unified-plan;
+    }
+    &:last-of-type {
+      grid-area: combined-plan;
+    }
+  }
+}
+
+.card--section .card__footer {
+  background-color: $color-primary;
+  padding: px-to-rem(16) px-to-rem(64);
+
+  @include bp(md-lg) {
+    padding-left: px-to-rem(87);
+    padding-right: px-to-rem(87);
+  }
+  @include bp(lg) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
+
+.card__form-plan-title {
+  color: $c-white;
+  margin-top: 0;
+
+  @include bp(lg) {
+    margin-bottom: 0;
+    padding-right: px-to-rem(9);
+  }
+}
+
+.card--section .download-plan-form--horizontal {
+  @include bp(md-lg) {
+    display: grid;
+    grid-template-areas: 'state-form . year-form . submit-btn';
+    grid-template-columns: 3fr minmax(5px, 15px) 2fr minmax(5px, 15px) 2fr;
+    align-items: center;
+  }
+}
+
+.card--section .download-plan-form__states,
+.card--section .select2 {
+  @include bp(md-lg) {
+    grid-area: state-form;
+  }
+}
+
+// sass-lint:disable no-important
+.card--section .select2 {
+  width: 100% !important; // Overrides inline style.
+}
+
+.card--section .download-plan-form__years {
+  max-width: 100%;
+  width: 100%;
+
+  @include bp(md-lg) {
+    grid-area: year-form;
+  }
+}
+
+.card__footer .download-plan-form__btn {
+  @include bp(md-lg) {
+    grid-area: submit-btn;
+  }
+}
+
+.card__footer .download-plan-form__btn {
+  width: 100%;
+}
+
+//
+// Image Banner
+//
+.img-banner {
+  background-color: $c-blue-lt;
+  padding-top: px-to-rem(50);
+  padding-bottom: px-to-rem(91);
+
+  @include bp(md-lg) {
+    background-image: url('../images/pages/home/bottomimage_homepagefinal.png');
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: px-to-rem(740);
+    padding-top: px-to-rem(170);
+  }
+
+  @include bp(lg) {
+    background-position: 50% 50%;
+  }
+}
+
+.img-banner__content {
+  @include bp(md-lg) {
+    max-width: px-to-rem(380);
+  }
+}
+
+.usa-button-field-home-image-banner-link,
+.usa-button-field-home-callout-link {
+  @extend %home-callout-btn;
+}

@@ -13,7 +13,11 @@ display.plan:
 
 download.plan.form:
   version: 1.x
+  css:
+    theme:
+      css/vendor/select2.min.css: {}
   js:
+    js/vendor/select2.min.js: {}
     js/download-plan-form.js: {}
   dependencies:
     - core/jquery

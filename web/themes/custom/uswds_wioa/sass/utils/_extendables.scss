@@ -1,7 +1,7 @@
 %clearfix {
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: table;
   }
   &:after {
@@ -12,12 +12,14 @@
 %visuallyhidden {
   position: absolute;
   clip: rect(0 0 0 0);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   width: 1px;
   height: 1px;
   padding: 0;
   margin: -1px;
   border: 0;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 // Icons
@@ -31,4 +33,211 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   speak: none;
+}
+
+//
+// USWDS Buttons
+// Allows for extending properly with partials, instead of actual classes.
+//
+// Buttons variables
+
+$button-stroke: inset 0 0 0 2px;
+
+// Buttons
+
+/* sass-lint:disable selector-no-qualifying-type mixins-before-declarations */
+%usa-button,
+%usa-button-primary,
+%usa-button:visited,
+%usa-button-primary:visited {
+  @include font-smoothing;
+  @include margin(0.5em 0.5em 0.5em null);
+  appearance: none;
+  background-color: $color-primary;
+  border: 0;
+  border-radius: $button-border-radius;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-sans;
+  font-size: $base-font-size;
+  font-weight: $font-bold;
+  line-height: 1;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+  @include media($small-screen) {
+    width: auto;
+  }
+}
+
+%usa-button-hover {
+  background-color: $color-primary-darker;
+  border-bottom: 0;
+  color: $color-white;
+  text-decoration: none;
+}
+
+%usa-button-active {
+  background-color: $color-primary-darkest;
+}
+
+%usa-button-primary-alt {
+  background-color: $color-primary-alt;
+  color: $color-base;
+
+  &:hover {
+    background-color: $color-primary-alt-dark;
+  }
+
+  &:active {
+    background-color: $color-primary-alt-darkest;
+    color: $color-white;
+  }
+}
+
+%usa-button-secondary {
+  background-color: $color-white;
+  box-shadow: $button-stroke $color-primary;
+  color: $color-primary;
+
+  &:hover {
+    box-shadow: $button-stroke $color-primary-darker;
+    color: $color-primary-darker;
+  }
+
+  &:active {
+    box-shadow: $button-stroke $color-primary-darkest;
+    color: $color-primary-darkest;
+  }
+}
+
+%usa-button-secondary-inverse {
+  background: transparent;
+  box-shadow: $button-stroke $color-white;
+  color: $color-white;
+
+  &:hover {
+    box-shadow: $button-stroke $color-gray-lighter;
+    color: $color-gray-lighter;
+  }
+
+  &:active {
+    box-shadow: $button-stroke $color-gray-light;
+    color: $color-gray-lighter;
+  }
+}
+
+%usa-button-gray {
+  background-color: $color-gray;
+
+  &:hover {
+    background-color: $color-gray-dark;
+  }
+
+  &:active {
+    background-color: $color-base;
+  }
+}
+
+%usa-button-red {
+  background-color: $color-secondary;
+
+  &:hover {
+    background-color: $color-secondary-dark;
+  }
+
+  &:active {
+    background-color: $color-secondary-darkest;
+  }
+}
+
+%usa-button-big {
+  border-radius: 8px;
+  font-size: 2.4rem;
+  padding: 1.5rem 3rem;
+}
+
+%usa-button-secondary:disabled,
+%usa-button-secondary-inverse:disabled,
+%usa-button-outline-inverse:disabled {
+  box-shadow: $button-stroke $color-gray-lighter;
+  pointer-events: none;
+  color: $color-gray-lighter;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-white;
+    border: 0;
+  }
+}
+
+%usa-button-secondary:disabled {
+  background-color: $color-white;
+}
+
+%usa-button-secondary-inverse:disabled {
+  background-color: transparent;
+  color: $color-gray;
+  box-shadow: $button-stroke $color-gray;
+}
+
+%usa-button-unstyled {
+  @include button-unstyled;
+}
+
+//
+// Forms
+//
+
+%uswds-select-styles {
+  appearance: none;
+  border: $input-border-width solid $color-gray;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: $color-base; // standardize on firefox
+  display: block;
+  font-size: $base-font-size;
+  height: $input-height;
+  line-height: $input-line-height;
+  margin: 0.2em 0;
+  max-width: $input-max-width;
+  padding: $input-padding-vertical 0.7em;
+  width: 100%;
+
+  &.usa-input-success {
+    border: 3px solid $color-green-light;
+  }
+}
+
+%uswds-input-styles {
+  appearance: none;
+  background-color: $color-white;
+  background-image: url('#{$image-path}/arrow-both.png');
+  // Ensure browsers that don't support SVG in background-image (IE 11 and below) fall back to PNG.
+  // See https://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/
+  background-image: none, url('#{$image-path}/arrow-both.svg'),
+    url('#{$image-path}/arrow-both.png');
+  background-position: right 1.3rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  padding-right: 3rem;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  // Show default webkit style on select element when autofilled to show icon
+  &:-webkit-autofill {
+    appearance: menulist;
+  }
+
+  // Remove dotted outline from select element on focus in Firefox
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $color-black;
+  }
 }

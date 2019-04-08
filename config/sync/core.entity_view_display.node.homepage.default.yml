@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.homepage.field_card_subsection_snippet_2
     - field.field.node.homepage.field_card_subsection_title_1
     - field.field.node.homepage.field_card_subsection_title_2
+    - field.field.node.homepage.field_hero_form_body
+    - field.field.node.homepage.field_hero_form_title
     - field.field.node.homepage.field_home_callout_body
     - field.field.node.homepage.field_home_callout_link
     - field.field.node.homepage.field_home_callout_title
@@ -40,59 +42,74 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_card_subsection_body_1:
-    weight: 12
-    label: above
+    weight: 14
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_card_subsection_body_2:
-    weight: 15
-    label: above
+    weight: 17
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_card_subsection_snippet_1:
-    weight: 11
-    label: above
+    weight: 13
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_card_subsection_snippet_2:
-    weight: 14
-    label: above
+    weight: 16
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_card_subsection_title_1:
-    weight: 10
-    label: above
+    weight: 12
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_card_subsection_title_2:
-    weight: 13
-    label: above
+    weight: 15
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_form_body:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hero_form_title:
+    weight: 5
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_home_callout_body:
-    weight: 6
-    label: above
+    weight: 8
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_home_callout_link:
-    weight: 7
-    label: above
+    weight: 9
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -103,23 +120,23 @@ content:
     type: link
     region: content
   field_home_callout_title:
-    weight: 5
-    label: above
+    weight: 7
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_home_card_description:
-    weight: 9
-    label: above
+    weight: 11
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_home_card_title:
-    weight: 8
-    label: above
+    weight: 10
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -127,29 +144,29 @@ content:
     region: content
   field_home_hero_body:
     weight: 4
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_home_hero_title:
     weight: 3
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_home_image_banner_copy:
-    weight: 17
-    label: above
+    weight: 19
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_home_image_banner_link:
-    weight: 18
-    label: above
+    weight: 20
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -160,8 +177,8 @@ content:
     type: link
     region: content
   field_home_image_banner_title:
-    weight: 16
-    label: above
+    weight: 18
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

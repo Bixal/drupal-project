@@ -1,0 +1,21 @@
+uuid: 0f7384bd-26eb-40c7-97d1-aa45a3ac5b01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_form_body
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_hero_form_body
+field_name: field_hero_form_body
+entity_type: node
+bundle: homepage
+label: 'Hero Form Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

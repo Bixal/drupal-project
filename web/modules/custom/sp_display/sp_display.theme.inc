@@ -144,13 +144,13 @@ function template_preprocess_sp_display_download_plan_form(array &$variables) {
       'sp_display' => ['download_plan_form' => $content],
     ],
   ];
-  $variables['state_options'] = '<option value="" selected>' . t('Choose a state') . '</option>';
+  $variables['state_options'] = '<option value="" selected>' . t('State or Territory') . '</option>';
   if (!empty($content['state_plans'])) {
     foreach ($content['state_plans'] as $group_id => $state) {
       $variables['state_options'] .= '<option value="' . $group_id . '">' . $state['name'] . '</option>';
     }
   }
-  $variables['years_options'] = '<option value="" selected>' . t('Choose a year') . '</option>';
+  $variables['years_options'] = '<option value="" selected>' . t('Select a Year') . '</option>';
   if (!empty($content['all_plan_years'])) {
     foreach ($content['all_plan_years'] as $plan_year_id => $plan_year_label) {
       $variables['years_options'] .= '<option value="' . $plan_year_id . '">' . $plan_year_label . '</option>';

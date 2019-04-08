@@ -1,5 +1,17 @@
-<div class="download-plan-form {{ orientation }}">
-    <select name="states">{{ state_options|raw }}</select>
-    <select name="years" disabled="disabled">{{ years_options|raw }}</select>
-    <button name="download" disabled="disabled">Download Plan</button>
-</div>
+{%
+  set form_classes, state_id, year_id, btn_id = [
+    'download-plan-form',
+    'download-plan-form--' ~ orientation|clean_class,
+  ],
+  'download-plan-form--' ~ orientation ~ '-state',
+  'download-plan-form--' ~ orientation ~ '-years',
+  'download-plan-form--' ~ orientation ~ '-btn'
+%}
+
+<form {{ attributes.addClass(form_classes) }}>
+  <label for="{{ state_id }}" class="visually-hidden">{{ 'State'|t }}</label>
+  <select name="states" id="{{ state_id }}" class="download-plan-form__states">{{ state_options|raw }}</select>
+  <label for="{{ year_id }}" class="visually-hidden">{{ 'Year'|t }}</label>
+  <select name="years" id="{{ year_id }}" class="download-plan-form__years" disabled="disabled">{{ years_options|raw }}</select>
+  <button name="download" id="{{ btn_id }}" class="download-plan-form__btn" disabled="disabled">{{ 'Download Plan'|t }}</button>
+</form>

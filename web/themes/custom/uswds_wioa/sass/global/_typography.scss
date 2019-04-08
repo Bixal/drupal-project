@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  line-height: 1.5;
+  line-height: 1.412;
 }
 
 h1,
@@ -36,14 +36,18 @@ h6,
   margin-top: 0;
 }
 
-%display-1 {
+%display-1,
+.display-1 {
   font-size: px-to-rem(52);
   font-weight: $font-weight-bold;
+  line-height: 1.307;
 }
 
-%display-2 {
+%display-2,
+.display-2 {
   font-weight: $font-weight-light;
   font-size: px-to-rem(44);
+  line-height: 1.09;
 }
 
 // Adding the h1-style, etc. classes for use in cases when the design doesn't
@@ -51,35 +55,45 @@ h6,
 h1,
 %h1-style {
   font-size: px-to-rem(44);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(25);
+  line-height: 1.113;
 }
 
 h2,
 %h2-style {
   font-size: px-to-rem(34);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(32);
   margin-top: px-to-rem(48);
+  line-height: 1.176;
 }
 
 h3,
 %h3-style {
   font-size: px-to-rem(24);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(20);
   margin-top: px-to-rem(32);
+  line-height: 1.291;
 }
 
 h4,
 %h4-style {
   font-size: px-to-rem(19);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(20);
   margin-top: px-to-rem(32);
+  line-height: 1.315;
 }
 
 h5,
 %h5-style {
   font-size: px-to-rem(15);
+  font-weight: $font-weight-bold;
   margin-bottom: px-to-rem(20);
   margin-top: px-to-rem(37);
+  line-height: 1.333;
 }
 
 h6,
@@ -169,4 +183,14 @@ a {
 
   &:focus {
   }
+}
+
+.text-toggle--new,
+.is-active .text-toggle--old {
+  display: none;
+}
+
+.text-toggle--old,
+.is-active .text-toggle--new {
+  display: inherit; // Initial doesn't work on IE11.
 }

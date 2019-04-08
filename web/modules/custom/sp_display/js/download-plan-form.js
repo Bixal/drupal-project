@@ -3,39 +3,88 @@
  * Dynamic select options for download plan form.
  */
 
-(function ($, Drupal, drupalSettings) {
+(function($, Drupal, drupalSettings) {
+  /**
+   * Add sticky headers to display plan lists.
+   *
+   * @type {Drupal~behavior}
+   */
+  Drupal.behaviors.displayPlan = {
+    attach: function attach(context, settings) {
+      var $form;
+      var $state;
+      var $year;
+      var $button;
+      var selectedState;
+      var selectedYear;
+      var selectedStatePlans;
 
-    /**
-     * Add sticky headers to display plan lists.
-     *
-     * @type {Drupal~behavior}
-     */
-    Drupal.behaviors.displayPlan = {
-        attach(context, settings) {
-            $('.download-plan-form', context).once().each(function () {
-                var $downloadPlanForm = $(this);
-                var $orientation = $downloadPlanForm.hasClass('horizontal') ? 'horizontal' : 'vertical';
-                // Horizontal or vertical.
-                console.log($orientation);
-                // The object to use for lookups.
-                console.log(settings.sp_display);
-                var $statesSelect = $downloadPlanForm.find('[name=states]');
-                var $yearsSelect = $downloadPlanForm.find('[name=years]');
-                var $downloadButton = $downloadPlanForm.find('button[name=download]');
-                $statesSelect.on('change', function () {
-                    var selectedStateID = $('option:selected', $(this)).val();
-                    var selectedStatePlans = settings.sp_display.download_plan_form.state_plans[selectedStateID].plans;
-                    for (var key in selectedStatePlans) {
-                        if (selectedStatePlans.hasOwnProperty(key)) {
-                            console.log('This has a value if this year for this state has a URL: ' + key + " -> " + selectedStatePlans[key]);
-                            console.log('This is the year select option: ' + $yearsSelect.find('option[value=' + key + ']').val())
-                        }
-                    }
-                })
+      var getSelectedStatePlans = function(stateID) {
+        if (!stateID) {
+          console.log('No valid State selected.');
+          return;
+        }
+        return settings.sp_display.download_plan_form.state_plans[stateID]
+          .plans;
+      };
 
-            });
+      // Enable years based on selected State or Territory.
+      var toggleYearOptions = function(yearsSelect, selectedPlan) {
+        for (var key in selectedPlan) {
+          var $options = yearsSelect.find('option[value="' + key + '"]');
 
-        },
-    };
+          yearsSelect.val('');
 
+          if (selectedPlan.hasOwnProperty(key) && selectedPlan[key] !== '') {
+            $options.prop('disabled', false);
+          } else {
+            $options.prop('disabled', true);
+          }
+        }
+      };
+
+      // Enable year select if a State or Territory selected.
+      var toggleYearSelect = function(yearsSelect, selectedPlan) {
+        if (selectedPlan) {
+          yearsSelect.prop('disabled', false);
+          toggleYearOptions(yearsSelect, selectedPlan);
+        } else {
+          yearsSelect.prop('disabled', true);
+          yearsSelect.val('');
+        }
+      };
+
+      var toggleDownload = function(e) {
+        $form = $(e.currentTarget);
+        $state = $form.find('[name=states]');
+        $year = $form.find('[name=years]');
+        $button = $form.find('[name=download]');
+        selectedState = $state.val();
+        selectedYear = $year.val();
+        selectedStatePlans = getSelectedStatePlans(selectedState);
+
+        if ($(e.target).is('.download-plan-form__states')) {
+          toggleYearSelect($year, selectedStatePlans);
+        }
+
+        if (selectedState.length && selectedYear.length) {
+          $button.prop('disabled', false);
+        } else {
+          $button.prop('disabled', true);
+        }
+      };
+
+      var getStatePlan = function(e) {
+        e.preventDefault();
+        window.location = selectedStatePlans[selectedYear];
+      };
+
+      $('.download-plan-form', context)
+        .find('[name=states]')
+        .select2();
+
+      $('.download-plan-form', context).on('change', toggleDownload);
+      $('.download-plan-form', context).on('submit', getStatePlan);
+    }
+  };
 })(jQuery, Drupal, drupalSettings);

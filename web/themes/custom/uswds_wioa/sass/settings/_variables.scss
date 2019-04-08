@@ -1,10 +1,18 @@
 //
 // Color Variables
+// Default USWDS colors are prefixed with `$color-`
+// Custom colors are prefixed with `$c-` for short.
 //
 
 $c-black: #000; // rgb(0, 0, 0)
 $c-white: #fff; // rgb(255, 255, 255)
 $c-blue-darkest: #1f5593; // rgb(31, 85, 147)
+$c-blue-lt: #f0fdff;
+$c-offwhite: #fbfafa;
+$c-gray-md: #cacbc6;
+$c-gray-lt: #ebebeb;
+
+$home-resources-blue: #d6f2fb;
 
 // Commonly used - social media colors
 $social-colors: (
@@ -17,7 +25,7 @@ $social-colors: (
   instagram: #fb3958
 );
 
-$font-family-icons: "wioa-icons";
+$font-family-icons: 'wioa-icons';
 $font-size-base: 17; // The default font size for your site. This gets used in
 // the px-to-em() function used sitewide.
 
@@ -25,15 +33,19 @@ $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
+// For BP calculation only. Otherwise use REM.
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
 // Breakpoints
 // Used in bp mixin in _mixins.scss
-// sm - 481px
-// md - 600px
-// lg - 1201px
 $breakpoints: (
-  sm: 30.0625em,
-  md: 37.5em,
-  lg: 75.0625em
+  sm: em(481),
+  md: em(600),
+  md-lg: em(850),
+  lg: em(1201)
 );
 
 // Z-index variables
@@ -48,16 +60,23 @@ $z-layers: (
 );
 
 // Overriding USWDS Variables
+$asset-path: '../';
+$image-path: '#{$asset-path}images';
+$font-path: '#{$asset-path}fonts/uswds';
+
 $site-max-width: 1024px;
 $site-margins: 2rem;
 
 $grid-columns-medium: 16;
 $grid-columns-large: 16;
 
-// Imported from USWDS
-$font-sans: "Source Sans Pro", $helvetica !default;
-$font-serif: "Merriweather", $georgia !default;
-
-$text-max-width: 75ch !default; // 66 characters per line
+$text-max-width: 75ch; // 66 characters per line
 
 $color-focus: #aeb0b5;
+
+//
+// Easing
+//
+
+// easeOutBack
+$ease-primary: 0.26s cubic-bezier(0.175, 0.885, 0.32, 1.275);

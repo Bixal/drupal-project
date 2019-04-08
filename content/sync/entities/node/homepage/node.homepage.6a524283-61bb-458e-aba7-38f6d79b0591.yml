@@ -1,6 +1,6 @@
 uuid:
   -
-    value: 6a524283-61bb-458e-aba7-38f6d79b0591
+    value: 0167fb22-9d5c-4d62-bad1-efa0f31e8836
 langcode:
   -
     value: en
@@ -8,10 +8,10 @@ type:
   -
     target_id: homepage
     target_type: node_type
-    target_uuid: a642634a-73d6-4ed6-8b14-c4a75671152f
+    target_uuid: 6a524283-61bb-458e-aba7-38f6d79b0591
 revision_timestamp:
   -
-    value: '2019-03-27T19:13:58+00:00'
+    value: '2019-04-01T14:03:26+00:00'
     format: 'Y-m-d\TH:i:sP'
 revision_uid:
   -
@@ -30,11 +30,11 @@ uid:
     target_uuid: cd0e9470-88d2-4291-86a7-b8a2d9baed4e
 created:
   -
-    value: '2019-03-27T19:13:07+00:00'
+    value: '2019-03-26T13:48:55+00:00'
     format: 'Y-m-d\TH:i:sP'
 changed:
   -
-    value: '2019-03-27T19:13:58+00:00'
+    value: '2019-04-01T14:03:26+00:00'
     format: 'Y-m-d\TH:i:sP'
 promote:
   -
@@ -55,22 +55,82 @@ path:
     pid: null
     langcode: en
 menu_link: {  }
-field_card_subsection_body_1: {  }
-field_card_subsection_body_2: {  }
-field_card_subsection_snippet_1: {  }
-field_card_subsection_snippet_2: {  }
-field_card_subsection_title_1: {  }
-field_card_subsection_title_2: {  }
-field_home_callout_body: {  }
-field_home_callout_link: {  }
-field_home_callout_title: {  }
-field_home_card_description: {  }
-field_home_card_title: {  }
-field_home_hero_body: {  }
-field_home_hero_title: {  }
-field_home_image_banner_copy: {  }
-field_home_image_banner_link: {  }
-field_home_image_banner_title: {  }
+field_card_subsection_body_1:
+  -
+    value: "<ul>\r\n\t<li>the Adult Program</li>\r\n\t<li>the Dislocated Worker Program</li>\r\n\t<li>the Youth Program</li>\r\n\t<li>the Adult Education and Family Literacy Act Program</li>\r\n\t<li>the Wagner-Peyser Act program</li>\r\n\t<li>the Vocational Rehabilitation Program</li>\r\n</ul>\r\n\r\n<p>The Unified State Plan must also have Strategic Plannning Elements and Operational Planning Elements.</p>\r\n\r\n<h5>Strategic Planning Elements</h5>\r\n\r\n<p>This section includes analyses of the State's economic conditions, workforce characteristics, and workforce development activities that inform the vision and goals for the State's workforce development system.</p>\r\n\r\n<h5>Operational Planning Elements</h5>\r\n\r\n<p>This section identifies the State's efforts to support the State's strategic vision and goals that are identified the Strategic Planning Elements section. Operational planning elements include:</p>\r\n\r\n<ul>\r\n\t<li>State Strategy Implementation</li>\r\n\t<li>State Operating Systems and Policies</li>\r\n\t<li>Assurances</li>\r\n\t<li>Program-Specific Requirements for the Core Programs</li>\r\n\t<li>Program-Specific Requirements for the Combined State Plan partner programs.</li>\r\n</ul>\r\n"
+    format: basic_html
+    processed: "<ul>\n\t<li>the Adult Program</li>\n\t<li>the Dislocated Worker Program</li>\n\t<li>the Youth Program</li>\n\t<li>the Adult Education and Family Literacy Act Program</li>\n\t<li>the Wagner-Peyser Act program</li>\n\t<li>the Vocational Rehabilitation Program</li>\n</ul>\n\n<p>The Unified State Plan must also have Strategic Plannning Elements and Operational Planning Elements.</p>\n\n<h5>Strategic Planning Elements</h5>\n\n<p>This section includes analyses of the State's economic conditions, workforce characteristics, and workforce development activities that inform the vision and goals for the State's workforce development system.</p>\n\n<h5>Operational Planning Elements</h5>\n\n<p>This section identifies the State's efforts to support the State's strategic vision and goals that are identified the Strategic Planning Elements section. Operational planning elements include:</p>\n\n<ul>\n\t<li>State Strategy Implementation</li>\n\t<li>State Operating Systems and Policies</li>\n\t<li>Assurances</li>\n\t<li>Program-Specific Requirements for the Core Programs</li>\n\t<li>Program-Specific Requirements for the Combined State Plan partner programs.</li>\n</ul>"
+field_card_subsection_body_2:
+  -
+    value: "<ul>\r\n\t<li>Career and technical education programs authorized under the Carl D. Perkins Career and Technical Education Act of 2006</li>\r\n\t<li>Temporary Assitance for Needy Families Program</li>\r\n\t<li>Employment and Training programs under the Supplemental Nutrition Assistance Program</li>\r\n\t<li>Work programs authorized under section 6(o) of the Food and Nutrition Act of 2008</li>\r\n\t<li>Trade Adjustment&nbsp; Assistance for Workers programs</li>\r\n\t<li>Jobs for Veterans State Grants Program</li>\r\n\t<li>Unemployment Insurance programs</li>\r\n\t<li>Senior Community Service Employment Program</li>\r\n\t<li>Employment and training activities carried out by the Department of Housing and Urban development</li>\r\n\t<li>Community Services Block Grant</li>\r\n\t<li>Reintegration of Ex-Offenders program (programs authorized under section 212 of the Second Chance act of 2007)</li>\r\n</ul>\r\n"
+    format: basic_html
+    processed: "<ul>\n\t<li>Career and technical education programs authorized under the Carl D. Perkins Career and Technical Education Act of 2006</li>\n\t<li>Temporary Assitance for Needy Families Program</li>\n\t<li>Employment and Training programs under the Supplemental Nutrition Assistance Program</li>\n\t<li>Work programs authorized under section 6(o) of the Food and Nutrition Act of 2008</li>\n\t<li>Trade Adjustment\_ Assistance for Workers programs</li>\n\t<li>Jobs for Veterans State Grants Program</li>\n\t<li>Unemployment Insurance programs</li>\n\t<li>Senior Community Service Employment Program</li>\n\t<li>Employment and training activities carried out by the Department of Housing and Urban development</li>\n\t<li>Community Services Block Grant</li>\n\t<li>Reintegration of Ex-Offenders program (programs authorized under section 212 of the Second Chance act of 2007)</li>\n</ul>"
+field_card_subsection_snippet_1:
+  -
+    value: "<p>At a minimum, States and Territories must submit a four-year WIOA Unified State Plan that includes the six core WIOA programs. The core programs are:</p>\r\n"
+    format: basic_html
+    processed: '<p>At a minimum, States and Territories must submit a four-year WIOA Unified State Plan that includes the six core WIOA programs. The core programs are:</p>'
+field_card_subsection_snippet_2:
+  -
+    value: "<p>The Combined State Plan has everything that is in a Unified State Plan, plus information on one or more of the Combined State Plan parner programs listed below:</p>\r\n"
+    format: basic_html
+    processed: '<p>The Combined State Plan has everything that is in a Unified State Plan, plus information on one or more of the Combined State Plan parner programs listed below:</p>'
+field_card_subsection_title_1:
+  -
+    value: 'Unified State Plan'
+field_card_subsection_title_2:
+  -
+    value: 'Combined State Plan'
+field_hero_form_body:
+  -
+    value: "<p>Select a U.S. State or Territory and year to download the PDF file<br />\r\nof your WIOA State Plan.</p>\r\n"
+    format: basic_html
+    processed: "<p>Select a U.S. State or Territory and year to download the PDF file<br />\nof your WIOA State Plan.</p>"
+field_hero_form_title:
+  -
+    value: 'Find Your State Plan'
+field_home_callout_body:
+  -
+    value: "<p>Use the Advanced Search to do a keyword search across all State plans. You can limit the search to a single State or group of States, and you can also search for specific portions of the plans.</p>\r\n"
+    format: basic_html
+    processed: '<p>Use the Advanced Search to do a keyword search across all State plans. You can limit the search to a single State or group of States, and you can also search for specific portions of the plans.</p>'
+field_home_callout_link:
+  -
+    uri: 'internal:#'
+    title: 'Try the advanced search'
+    options: {  }
+field_home_callout_title:
+  -
+    value: 'Looking for something more specific?'
+field_home_card_description:
+  -
+    value: "<p>Each U.S. State and Territory submits a Unified or Combined State Plan to the U.S. Department of Labor and Department of Education that outlines its workforce development system's four-year strategy, and updates the plan as required after two years.</p>\r\n"
+    format: basic_html
+    processed: '<p>Each U.S. State and Territory submits a Unified or Combined State Plan to the U.S. Department of Labor and Department of Education that outlines its workforce development system''s four-year strategy, and updates the plan as required after two years.</p>'
+field_home_card_title:
+  -
+    value: 'Types of WIOA Plans'
+field_home_hero_body:
+  -
+    value: "<p>WIOA State Plans outline what your State or Territory is doing to help Americans into high-quality careers and help employers hire and retain skilled workers.</p>\r\n"
+    format: basic_html
+    processed: '<p>WIOA State Plans outline what your State or Territory is doing to help Americans into high-quality careers and help employers hire and retain skilled workers.</p>'
+field_home_hero_title:
+  -
+    value: 'The Workforce Innovation and Opportunity Act State Plan'
+field_home_image_banner_copy:
+  -
+    value: "<p>There are a variety of materials available to the public about the WIOA State Plans and the organizations that work together to create them.</p>\r\n"
+    format: basic_html
+    processed: '<p>There are a variety of materials available to the public about the WIOA State Plans and the organizations that work together to create them.</p>'
+field_home_image_banner_link:
+  -
+    uri: 'internal:#'
+    title: 'Learn More'
+    options: {  }
+field_home_image_banner_title:
+  -
+    value: 'Our Resources'
 _content_sync:
   entity_type: node
   entity_dependencies:

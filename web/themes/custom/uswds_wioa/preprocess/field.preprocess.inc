@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Preprocess function for field.
+ */
+
 use Drupal\Component\Utility\Html;
 
 /**

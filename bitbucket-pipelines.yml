@@ -14,11 +14,11 @@ pipelines:
           - composer global require dealerdirect/phpcodesniffer-composer-installer
           - export PATH="$PATH:$HOME/.composer/vendor/bin"
           - composer install
-          - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components, vendor, web/modules/custom
-          - phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components, vendor, web/modules/custom
-          - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components, vendor, web/themes/custom
+          - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore= *node_modules/*, *bower_components/*, *vendor/*, *web/modules/custom/*, *.min.js, *.min.css
+          - phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*, *vendor/*, *web/modules/custom/*, *.min.js, *.min.css
+          - phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*, *vendor/*, *web/themes/custom*, *.min.js, *.min.css
   branches:
-    integration:
+    integration:  
       - step:
           name: Create development image.
           caches:

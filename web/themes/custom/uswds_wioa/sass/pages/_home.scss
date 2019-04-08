@@ -198,7 +198,7 @@
   height: px-to-rem(31);
   width: px-to-rem(31);
   position: absolute;
-  z-index: z(layer-1);
+  z-index: z(default);
   left: 50%;
   transform: translateX(-50%);
   display: flex;

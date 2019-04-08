@@ -9,6 +9,7 @@ const sassGlob = require('gulp-sass-glob');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('gulp-cssnano');
+const rename = require('gulp-rename');
 const reload = browserSync.reload;
 
 gulp.task('sass', () => {
@@ -38,6 +39,7 @@ gulp.task('sass', () => {
       ])
     )
     .pipe(sourcemaps.write())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('css'))
     .pipe(reload({ stream: true }));
 });

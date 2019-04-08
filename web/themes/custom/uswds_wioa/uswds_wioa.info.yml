@@ -17,7 +17,7 @@ libraries-override:
   uswds/uswds:
     css:
       theme:
-        assets/css/uswds.css: css/styles.css
+        assets/css/uswds.css: css/styles.min.css
     js:
       assets/js/uswds.min.js: js/vendor/uswds/uswds.min.js
 
@@ -26,7 +26,7 @@ libraries:
 
 # Add the CSS to CKEditor, so that custom entries in "Style" will work.
 ckeditor_stylesheets:
-- assets/dist/css/styles.css
+- assets/dist/css/styles.min.css
 
 regions:
   header_top: 'Above Header'

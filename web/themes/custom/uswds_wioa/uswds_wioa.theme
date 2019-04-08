@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the USWDS WIOA theme.
+ */
+
+require_once dirname(__FILE__) . '/includes/edge_to_edge.inc';
+
+/**
+ * Implements hook_theme().
+ *
+ * Adding in the theme function, add new theme functions here, if needed.
+ */
+function uswds_wioa_theme($existing, $type, $theme, $path) {
+  return [];
+}

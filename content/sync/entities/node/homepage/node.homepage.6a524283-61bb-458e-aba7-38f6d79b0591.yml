@@ -1,6 +1,6 @@
 uuid:
   -
-    value: 0167fb22-9d5c-4d62-bad1-efa0f31e8836
+    value: 6a524283-61bb-458e-aba7-38f6d79b0591
 langcode:
   -
     value: en
@@ -8,7 +8,7 @@ type:
   -
     target_id: homepage
     target_type: node_type
-    target_uuid: 6a524283-61bb-458e-aba7-38f6d79b0591
+    target_uuid: a642634a-73d6-4ed6-8b14-c4a75671152f
 revision_timestamp:
   -
     value: '2019-04-01T14:03:26+00:00'

@@ -99,7 +99,8 @@
                 "Added group permission for revision access per content type": "./patches/group-restrict-node-revisions-across-groups.patch"
             },
             "drupal/content_sync": {
-                "Dependency resolver fix": "https://www.drupal.org/files/issues/2018-06-19/content_sync-dependency_resolver-0-D8.patch"
+                "Drush commands": "https://www.drupal.org/files/issues/2019-03-12/content_sync-drush_commands-2873074-36-D8.patch",
+                "Installation causes error (v2)": "https://www.drupal.org/files/issues/2019-03-13/content_sync-Installation_causes_error_v2-2982986-10-D8.patch"
             }
         }
     }

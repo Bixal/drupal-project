@@ -406,9 +406,10 @@ class UpdatePlanYearContentService {
       }
     }
     // Owner should ALWAYS be the automated user. Grab the revision user as the
-    // currently logged in user if available. It won't be in CLI.
+    // currently logged in user if available. It won't be in CLI. If the current
+    // user is the user 1, don't allow it to be the revision user.
     $owner_user = $revision_user = $this->nodeService->getAutomatedNodeOwner();
-    if (!$this->currentUser->isAnonymous()) {
+    if ($this->currentUser->id() != '1' && !$this->currentUser->isAnonymous()) {
       $revision_user = User::load($this->currentUser->id());
     }
     $node->setOwner($owner_user);

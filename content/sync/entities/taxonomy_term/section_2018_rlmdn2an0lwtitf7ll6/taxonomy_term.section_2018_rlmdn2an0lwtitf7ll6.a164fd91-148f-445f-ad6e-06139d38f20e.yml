@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: a164fd91-148f-445f-ad6e-06139d38f20e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Existing Demand Industry Sectors and Occupations'
+description:
+  -
+    value: '<p>Provide an analysis of the industries and occupations for which there is existing demand.</p>'
+    format: basic_html
+    processed: '<p>Provide an analysis of the industries and occupations for which there is existing demand.</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2b06c318-3106-4313-82d1-4f3f347cf772
+  -
+    target_type: taxonomy_term
+    target_uuid: 2b06c318-3106-4313-82d1-4f3f347cf772
+changed:
+  -
+    value: '2019-03-06T20:53:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 61f6f0f2-5b31-4bd1-8e06-0aa46850f44e
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.2b06c318-3106-4313-82d1-4f3f347cf772
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.2b06c318-3106-4313-82d1-4f3f347cf772

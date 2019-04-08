@@ -1,0 +1,57 @@
+uuid:
+  -
+    value: 789044ed-96fa-45af-be2b-4fdc042d021f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_inarmesdkjqlpfc1m6i
+    target_type: taxonomy_vocabulary
+    target_uuid: 0a9a157f-0e6c-4311-ad24-1c8883525c4a
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Trade Adjustment Assistance (TAA)'
+description:
+  -
+    value: '<p>This is a huge mess, i have no idea what''s going on here.</p><p>I went through the ad-hoc looking for states with this section&nbsp;https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p><p>The formatting is hurting my brain trying to figure out what needs to be here.</p>'
+    format: basic_html
+    processed: "<p>This is a huge mess, i have no idea what's going on here.</p><p>I went through the ad-hoc looking for states with this section\_https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p><p>The formatting is hurting my brain trying to figure out what needs to be here.</p>"
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_id: 0
+changed:
+  -
+    value: '2019-03-20T21:02:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 74abae8c-cc1c-4c04-ac77-a4feb6ec283a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies: {  }

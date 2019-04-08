@@ -1,0 +1,185 @@
+uuid:
+  -
+    value: 187ed8f0-a8fd-4f8d-9803-3fc8bcd8bad2
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rlmdn2an0lwtitf7ll6
+    target_type: taxonomy_vocabulary
+    target_uuid: 7075f6b5-35eb-44d0-b81d-969df9826543
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Combined Plan Partner Program(s)'
+description:
+  -
+    value: '<p>Indicate which Combined Plan partner program(s) the state is electing to include in the plan.</p>'
+    format: basic_html
+    processed: '<p>Indicate which Combined Plan partner program(s) the state is electing to include in the plan.</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: d659c913-258b-4d27-a1a4-389d532cae3d
+  -
+    target_type: taxonomy_term
+    target_uuid: d659c913-258b-4d27-a1a4-389d532cae3d
+changed:
+  -
+    value: '2019-03-06T20:40:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3571d99f-1dda-4c96-92a8-c8b30840de81
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Career and technical education programs authorized under the Carl D. Perkins Career and Technical Education Act of 2006 (20 U.S.C. 2301 et seq.)'
+      format: restricted_html
+    term_field_uuid: 4e96d7ad-5df9-4056-968e-c8f77317c71b
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Temporary Assistance for Needy Families Program (42 U.S.C. 601 et seq.)'
+      format: restricted_html
+    term_field_uuid: 3af040c6-2ceb-437e-983c-8696d492022f
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Employment and Training Programs under the Supplemental Nutrition Assistance Program (Programs authorized under section 6(d)(4) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(d)(4)))'
+      format: restricted_html
+    term_field_uuid: 423327b4-d7a9-4e27-adfb-3bb39987432a
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Work programs authorized under section 6(o) of the Food and Nutrition Act of 2008 (7 U.S.C. 2015(o)))'
+      format: restricted_html
+    term_field_uuid: 05b8911f-6b18-48ba-94c5-7df84c79eb75
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Trade Adjustment Assistance for Workers Programs (Activities authorized under chapter 2 of title II of the Trade Act of 1974 (19 U.S.C. 2271 et seq.))'
+      format: restricted_html
+    term_field_uuid: ded76656-d647-4416-85a7-f7e40655933c
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Jobs for Veterans State Grants Program (programs authorized under 38, U.S.C. 4100 et. seq.)'
+      format: restricted_html
+    term_field_uuid: 7eae9556-ab74-4e3e-8706-7f8e2937b33f
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Unemployment Insurance Programs (Programs authorized under State unemployment compensation laws in accordance with applicable Federal law)'
+      format: restricted_html
+    term_field_uuid: ddcbf8c4-4ca1-4a7b-83c5-5edc968ffd39
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Senior Community Service Employment Program (Programs authorized under title V of the Older Americans Act of 1965 (42 U.S.C. 3056 et seq.))'
+      format: restricted_html
+    term_field_uuid: 348e0c94-9769-45e8-ac70-8c2f02b8474f
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Employment and training activities carried out by the Department of Housing and Urban Development'
+      format: restricted_html
+    term_field_uuid: 86c77dce-b676-4484-ba68-67f38a86b630
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Community Services Block Grant Program (Employment and training activities carried out under the Community Services Block Grant Act (42 U.S.C. 9901 et seq.))'
+      format: restricted_html
+    term_field_uuid: bb22f462-41f4-4c8a-ad8d-1d001621628b
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: 'no'
+    extra_text:
+      value: 'Reintegration of Ex-Offenders Program (Programs authorized under section 212 of the Second Chance Act of 2007 (42 U.S.C. 17532))]'
+      format: restricted_html
+    term_field_uuid: b91614b2-3193-40bd-add3-b99ec56793c9
+    access_option: allow
+    access_term_field_uuid: c91c4cbd-6c06-4d28-9f40-c9d6474114ab
+    access_value: 'yes'
+field_shown_on_toc:
+  -
+    value: true
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.d659c913-258b-4d27-a1a4-389d532cae3d
+      - taxonomy_term.section_2018_rlmdn2an0lwtitf7ll6.d659c913-258b-4d27-a1a4-389d532cae3d

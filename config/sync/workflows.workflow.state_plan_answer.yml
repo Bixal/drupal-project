@@ -14,11 +14,31 @@ label: 'State Plan Answer'
 type: content_moderation
 type_settings:
   states:
+    disallow:
+      published: false
+      default_revision: false
+      label: 'Editorial Disallowed'
+      weight: 2
+    disallow_published:
+      published: true
+      default_revision: true
+      label: 'Editorial Disallowed - Published'
+      weight: 3
     draft:
       label: Draft
       published: false
       default_revision: false
       weight: -1
+    hidden:
+      published: false
+      default_revision: false
+      label: 'Hidden from Editorial'
+      weight: 4
+    hidden_published:
+      published: true
+      default_revision: true
+      label: 'Hidden from Editorial - Published'
+      weight: 5
     new_not_available:
       published: false
       default_revision: false

@@ -14,6 +14,7 @@ use Drupal\content_moderation\Entity\ContentModerationState;
 use Drupal\node\Entity\Node;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
+use Drupal\sp_retrieve\PlanYearTriggers;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -72,7 +73,8 @@ function sp_create_page_top(array &$page_top) {
  * Implements hook_ENTITY_TYPE_insert().
  */
 function sp_create_content_moderation_state_insert($entity) {
-  sp_create_moderation_state_was_changed($entity);
+  // sp_create_moderation_state_was_changed($entity);
+  // As of now, we do not act on any inserts.
 }
 
 /**
@@ -169,28 +171,21 @@ function sp_create_taxonomy_term_presave(Term $entity) {
  * @see https://www.drupal.org/project/drupal/issues/2873287#comment-12619624
  */
 function sp_create_moderation_state_was_changed(ContentModerationState $entity) {
-  $language = $entity->language()->getId();
-  $moderated_entity = \Drupal::entityTypeManager()
-    ->getStorage($entity->content_entity_type_id->value)
-    ->loadRevision($entity->content_entity_revision_id->value);
-  if ($moderated_entity instanceof TranslatableInterface) {
-    $moderated_entity = $moderated_entity->getTranslation($language);
+  // The entity that the moderation state is acting on.
+  $moderated_entity = sp_create_get_moderated_entity($entity);
+  // The entity revision that the moderation state was acting on before it was
+  // changed.
+  $moderated_entity_original = NULL;
+  // Get the original moderation state before the change.
+  $original_state = FALSE;
+  if ($moderated_entity->getEntityType()->isRevisionable() && isset($entity->original)) {
+    $moderated_entity_original = sp_create_get_moderated_entity($entity->original);
+    $original_state = $moderated_entity_original->get('moderation_state')->getString();
   }
-
-  if (!$entity->getLoadedRevisionId()) {
-    $original_state = FALSE;
-  }
-  else {
-    $original_content_moderation_state = \Drupal::entityTypeManager()
-      ->getStorage($entity->getEntityTypeId())
-      ->loadRevision($entity->getLoadedRevisionId());
-    if (!$entity->isDefaultTranslation() && $original_content_moderation_state->hasTranslation($language)) {
-      $original_content_moderation_state = $original_content_moderation_state->getTranslation($language);
-    }
-    $original_state = $original_content_moderation_state->moderation_state->value;
-  }
-  $new_state = $entity->moderation_state->value;
-  $workflow = $entity->workflow->target_id;
+  // The new moderation state.
+  $new_state = $entity->get('moderation_state')->getString();
+  // The workflow ID.
+  $workflow = $entity->get('workflow')->getString();
   // When a state plan year is started, move all it's children content to
   // started as well.
   if (
@@ -200,28 +195,240 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
     $new_state === ContentService::MODERATION_STATE_DRAFT &&
     $workflow === ContentService::WORKFLOW_ID_STATE_PLAN_YEAR
   ) {
+    /** @var \Drupal\sp_retrieve\TaxonomyService $taxonomy_service */
+    $taxonomy_service = Drupal::getContainer()->get('sp_retrieve.taxonomy');
+    $triggers = $taxonomy_service->getPlanYearTriggers(PlanYearInfo::getPlanYearIdFromEntity($moderated_entity));
+    $triggers_object = new PlanYearTriggers($triggers, TRUE);
+    $triggers_object->validate();
+    // @TODO check if there are errors and alert if are and don't continue.
+    // @TODO don't forget to set the state plan back to 'new'.
     $revision_log_message = $moderated_entity->getRevisionLogMessage();
     if (empty($revision_log_message)) {
       $revision_log_message = 'Starting Plan Year';
     }
+    // The new state of all answers.
+    $node_answers_new_moderation_states = [];
+    // The new state of all sections.
+    $node_sections_new_moderation_states = [];
+    // All node answers with their triggered moderation state changes.
+    $node_answers_targets = [];
+    // A handy lookup array where the key is the field_unique_id_reference and
+    // the value is the answer's node ID.
+    $node_answers_field_unique_id_reference_lookup = [];
     /** @var \Drupal\sp_retrieve\NodeService $node_service */
-    $node_service = \Drupal::getContainer()->get('sp_retrieve.node');
+    $node_service = Drupal::getContainer()->get('sp_retrieve.node');
+    /** @var \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_service */
+    $custom_entities_service = Drupal::getContainer()->get('sp_retrieve.custom_entities');
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content_service */
-    $update_plan_year_content_service = \Drupal::getContainer()->get('sp_create.update_plan_year_content');
-    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
-    foreach ($node_service->getStatePlanYearSectionsByStatePlanYearAndSection($moderated_entity->id()) as $state_plan_year_section_nid) {
-      /** @var \Drupal\node\Entity\Node $state_plan_year_section */
-      $state_plan_year_section = $node_storage->load($state_plan_year_section_nid);
-      $state_plan_year_section->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
-      $update_plan_year_content_service->nodeSave($state_plan_year_section, FALSE, $revision_log_message);
+    $update_plan_year_content_service = Drupal::getContainer()->get('sp_create.update_plan_year_content');
+    $state_plan_year_section_nids = $node_service->getStatePlanYearSectionsByStatePlanYear($moderated_entity->id());
+    foreach ($state_plan_year_section_nids as $state_plan_year_section_nid) {
+      // Default every section to go to draft.
+      $node_sections_new_moderation_states[$state_plan_year_section_nid] = ContentService::MODERATION_STATE_DRAFT;
+      // Initialize the answers array for this section.
+      $node_answers_new_moderation_states[$state_plan_year_section_nid] = [];
       foreach ($node_service->getStatePlanYearAnswersByStatePlanYearSection($state_plan_year_section_nid) as $state_plan_year_answer_nid) {
         /** @var \Drupal\node\Entity\Node $state_plan_year_answer */
-        $state_plan_year_answer = $node_storage->load($state_plan_year_answer_nid);
-        $state_plan_year_answer->set('moderation_state', ContentService::MODERATION_STATE_DRAFT);
-        $update_plan_year_content_service->nodeSave($state_plan_year_answer, FALSE, $revision_log_message);
+        $state_plan_year_answer = $node_service->load($state_plan_year_answer_nid);
+        $field_unique_id_reference = $state_plan_year_answer->get('field_field_unique_id_reference')->getString();
+        // All node answers default to be in 'draft'.
+        $node_answers_new_moderation_states[$state_plan_year_section_nid][$field_unique_id_reference] = ContentService::MODERATION_STATE_DRAFT;
+        // Determine if this answers triggers any changes in other
+        // answers when being initialized (new -> draft). Note that the answer
+        // value given does not matter, it always goes to the initial moderation
+        // state for the access option on the term that creates the answer.
+        $triggered = $triggers_object
+          ->answer($state_plan_year_answer)
+          ->getTriggered();
+        if (!empty($triggered)) {
+          $node_answers_targets[$field_unique_id_reference] = $triggered;
+        }
+        $node_answers_field_unique_id_reference_lookup[$field_unique_id_reference] = $state_plan_year_answer_nid;
+      }
+    }
+    /*
+     * Return the triggered moderation state if it is valid.
+     *
+     * Instead of just setting all triggered answers to their initial state,
+     * make sure that a hidden answer is not overridden by by a disallowed
+     * answer. For example, if a section is hidden by a trigger and that section
+     * also has a single disallowed answer base on two different triggers,
+     * depending on what trigger is processed first the answer might be
+     * initialized as disallowed while every other answer in the section is
+     * hidden.
+     *
+     * @param string $triggered_moderation_state
+     *   The latest moderation state that should be set.
+     * @param string $new_moderation_state
+     *   The current moderation state.
+     *
+     * @return mixed
+     */
+    $moderation_state_to_set = function ($triggered_moderation_state, $new_moderation_state) {
+      // The answer's moderation state is already 'hidden', do not allow
+      // it to be switched to 'disallow'.
+      if (
+        ContentService::MODERATION_STATE_HIDDEN === $new_moderation_state &&
+        ContentService::MODERATION_STATE_DISALLOW === $triggered_moderation_state) {
+        return $new_moderation_state;
+      }
+      // Set this answer to the initialized triggered moderation state.
+      return $triggered_moderation_state;
+    };
+    // Go through each answer's targets that are triggered to changed when
+    // initialized and change the moderation state to the triggered value.
+    // The state is not change, only captured because the triggered state
+    // is not always the final initial state.
+    foreach ($node_answers_targets as $field_unique_id_reference => $triggered) {
+      foreach ($triggered as $triggered_item) {
+        switch ($triggered_item['target']['type']) {
+          case 'section_vocabulary':
+            // For section vocabularies, ID is the target's section vocab ID.
+            $section_vocabulary_id = $triggered_item['target']['id'];
+            // Get the state plan year section node that this answer belongs to.
+            $plan_year_info = PlanYearInfo::getPlanYearIdAndSectionIdFromVid($section_vocabulary_id);
+            $group_id = $custom_entities_service->getGroupId($moderated_entity);
+            $state_plan_year_section_nid = $node_service->getStatePlanYearSectionByPlanYearGroupAndSection($plan_year_info['plan_year_id'], $group_id, $plan_year_info['section_id']);
+            // Change every answer in this vocabulary to the new triggered
+            // initial moderation state.
+            foreach ($node_answers_new_moderation_states[$state_plan_year_section_nid] as &$new_moderation_state) {
+              $new_moderation_state = $moderation_state_to_set($triggered_item['new_moderation_state'], $new_moderation_state);
+            }
+            // Change the moderation state of the section as well. Make sure
+            // $moderation_state_to_set is respected in case this section was
+            // triggered for hidden the disallowed.
+            $node_sections_new_moderation_states[$state_plan_year_section_nid] = $moderation_state_to_set(
+              $triggered_item['new_moderation_state'],
+              $node_sections_new_moderation_states[$state_plan_year_section_nid]
+            );
+            break;
+
+          case 'content':
+            // For content, ID is the target's field_unique_id_reference.
+            $target_field_unique_id_reference = $triggered_item['target']['id'];
+            // $node_answers_new_moderation_states is all moderation states
+            // but with an outer key of section vocab IDs. Find the target
+            // in the interior array.
+            foreach ($node_answers_new_moderation_states as &$section_new_moderation_states) {
+              // This is the target in the section array, change only its
+              // moderation state.
+              if (!empty($section_new_moderation_states[$target_field_unique_id_reference])) {
+                $new_moderation_state = &$section_new_moderation_states[$target_field_unique_id_reference];
+                $new_moderation_state = $moderation_state_to_set($triggered_item['new_moderation_state'], $new_moderation_state);
+              }
+            }
+            break;
+
+        }
+      }
+    }
+    // Now that $node_answers_new_moderation_states has been updated with the
+    // final moderation state to be initialized at, set each node's moderation
+    // state. This will always be from 'new' to either 'draft', 'hidden', or
+    // 'disallow'.
+    foreach ($node_answers_new_moderation_states as $section_new_moderation_states) {
+      foreach ($section_new_moderation_states as $field_unique_id_reference => $new_moderation_state) {
+        $state_plan_year_answer_nid = $node_answers_field_unique_id_reference_lookup[$field_unique_id_reference];
+        $update_plan_year_content_service->updateNodeModerationState($state_plan_year_answer_nid, $revision_log_message, $new_moderation_state);
+      }
+    }
+    // Now that all answers have gone from new to draft / hidden / disallow,
+    // set the moderation states of all sections. Usually this is done when
+    // an answer is changed but the initializing of a plan year does not trigger
+    // a change.
+    foreach ($state_plan_year_section_nids as $state_plan_year_section_nid) {
+      $update_plan_year_content_service->updateStatePlanYearSectionModerationStateBasedOnAnswers(
+        $state_plan_year_section_nid,
+        $revision_log_message,
+        $node_sections_new_moderation_states[$state_plan_year_section_nid]
+      );
+    }
+  }
+  // A yes or no answer node is being updated.
+  elseif ($moderated_entity instanceof Node &&
+    (NULL === $moderated_entity_original || $moderated_entity_original instanceof Node) &&
+    in_array($moderated_entity->getType(), [
+      PlanYearInfo::SPYA_BOOL_BUNDLE_REQUIRED,
+      PlanYearInfo::SPYA_BOOL_BUNDLE_OPTIONAL,
+    ])) {
+    /** @var \Drupal\sp_retrieve\NodeService $node_service */
+    $node_service = Drupal::getContainer()->get('sp_retrieve.node');
+    /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content_service */
+    $update_plan_year_content_service = Drupal::getContainer()->get('sp_create.update_plan_year_content');
+    /** @var \Drupal\sp_retrieve\TaxonomyService $taxonomy_service */
+    $taxonomy_service = Drupal::getContainer()->get('sp_retrieve.taxonomy');
+    /** @var \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_service */
+    $custom_entities_service = Drupal::getContainer()->get('sp_retrieve.custom_entities');
+    $triggers = $taxonomy_service->getPlanYearTriggers(PlanYearInfo::getPlanYearIdFromEntity($moderated_entity));
+    // These triggers are not 'initialized', they will check that new value
+    // is different from the old value (going from yes -> no or vice versa).
+    $triggers_object = new PlanYearTriggers($triggers, FALSE);
+    $triggers_object->validate();
+    $revision_log_message = 'Answer "' . $moderated_entity->getTitle() . '" caused an automatic change.';
+    // Not every answer will trigger changes in other answers.
+    foreach ($triggers_object
+      ->answer($moderated_entity, $moderated_entity_original)
+      ->getTriggered() as $triggered) {
+      $group_id = $custom_entities_service->getGroupId($moderated_entity);
+      switch ($triggered['target']['type']) {
+        case 'section_vocabulary':
+          $plan_year_info = PlanYearInfo::getPlanYearIdAndSectionIdFromVid($triggered['target']['id']);
+          // Get the state plan year section node that this answer belongs to.
+          $state_plan_year_section_nid = $node_service->getStatePlanYearSectionByPlanYearGroupAndSection($plan_year_info['plan_year_id'], $group_id, $plan_year_info['section_id']);
+          // Update all answers in this section to new_moderation_state.
+          foreach ($node_service->getStatePlanYearAnswersByStatePlanYearSection($state_plan_year_section_nid) as $state_plan_year_answer_nid) {
+            $update_plan_year_content_service->updateNodeModerationState($state_plan_year_answer_nid, $revision_log_message, $triggered['new_moderation_state']);
+          }
+          // Update this section to new_moderation_state.
+          $update_plan_year_content_service->updateNodeModerationState($state_plan_year_section_nid, $revision_log_message, $triggered['new_moderation_state']);
+          break;
+
+        // A single answer's moderation state is changing.
+        case 'content':
+          // The content that triggers the change the the target should belong
+          // to the same group. Get the state plan year node ID they share.
+          $state_plan_year_nid = PlanYearInfo::getStatePlanYearNidFromEntity($moderated_entity);
+          $target_answer_nid = $node_service->getStatePlanYearAnswerByStatePlanYearAndFieldUniqueId($state_plan_year_nid, $triggered['target']['id']);
+          $target_answer = $node_service->load($target_answer_nid);
+          // Update the target answer to new_moderation_state.
+          $update_plan_year_content_service->updateNodeModerationState($target_answer->id(), $revision_log_message, $triggered['new_moderation_state']);
+          // Get the section node that this answer belongs to.
+          $state_plan_year_section_nid = $target_answer->get('field_state_plan_year_section')
+            ->getString();
+          // Since this is a single item being changed, check to see if the
+          // section node will need to be updated too. It should be draft
+          // if all or one is draft. If all
+          // are disallowed or hidden, it should be disallowed. If all are
+          // hidden, it's hidden.
+          $update_plan_year_content_service->updateStatePlanYearSectionModerationStateBasedOnAnswers($state_plan_year_section_nid, $revision_log_message, $triggered['new_moderation_state']);
+          break;
+
       }
     }
   }
+}
+
+/**
+ * Get the entity that the content moderation state entity moderates.
+ *
+ * @param \Drupal\content_moderation\Entity\ContentModerationState $entity
+ *   The content moderation state entity.
+ *
+ * @return \Drupal\Core\Entity\ContentEntityInterface|\Drupal\Core\Entity\TranslatableInterface|null
+ *   The entity that the content moderation state entity moderates
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function sp_create_get_moderated_entity(ContentModerationState $entity) {
+  $language = $entity->language()->getId();
+  $moderated_entity = Drupal::entityTypeManager()
+    ->getStorage($entity->get('content_entity_type_id')->getString())
+    ->loadRevision($entity->get('content_entity_revision_id')->getString());
+  if ($moderated_entity instanceof TranslatableInterface) {
+    $moderated_entity = $moderated_entity->getTranslation($language);
+  }
+  return $moderated_entity;
 }
 
 /**

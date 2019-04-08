@@ -192,7 +192,6 @@ class TaxonomyService {
     $return['shown_on_toc'] = $section_year_term->get('field_shown_on_toc')->getString();
     $return['section_references'] = [];
     $return['weight'] = $section_year_term->getWeight();
-    $return['tid'] = $section_year_term->id();
     $return['name'] = $section_year_term->get('field_display_name')->isEmpty() ? $section_year_term->getName() : $section_year_term->get('field_display_name')->getString();
     if (!$section_year_term->get('field_input_from_state')->isEmpty()) {
       /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
@@ -203,6 +202,60 @@ class TaxonomyService {
         }
         $return['section_references'][$value['term_field_uuid']] = $value['section'];
       }
+    }
+    return $return;
+  }
+
+  /**
+   * Retrieve the triggers for section term in a plan year.
+   *
+   * @param \Drupal\taxonomy\Entity\Term $section_year_term
+   *   A section year term.
+   *
+   * @return array
+   *   An array of fields that can be used to display a section year term.
+   */
+  public function getTriggerInfoFromSectionYearTerm(Term $section_year_term) {
+    $return = [];
+    $plan_year_id_and_section_id = PlanYearInfo::getPlanYearIdAndSectionIdFromVid($section_year_term->bundle());
+    $plan_year_id = PlanYearInfo::getPlanYearIdFromEntity($section_year_term);
+    if (FALSE === $plan_year_id_and_section_id) {
+      return $return;
+    }
+    if ($section_year_term->get('field_input_from_state')->isEmpty()) {
+      return $return;
+    }
+    /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
+    foreach ($section_year_term->get('field_input_from_state') as $item) {
+      $value = $item->getValue();
+      // All values are required for a proper trigger.
+      if (empty($value['access_term_field_uuid']) || empty($value['access_option']) || empty($value['access_value'])) {
+        continue;
+      }
+      // The target can be either a complete section or a single piece of
+      // content.
+      $type = !empty($value['section']) ? 'section_vocabulary' : 'content';
+      // The ID is a section vocab ID or the content's term_field_uuid.
+      $id = $type === 'section_vocabulary' ? PlanYearInfo::createSectionVocabularyId($plan_year_id, $value['section']) : $value['term_field_uuid'];
+      $return[] = [
+        // This is a reference to a section or answer node filled out by the
+        // state that has its status conditionally changed based on the
+        // 'condition'.
+        // Only valid if: The section is enabled and has a vocab in the
+        // current year.
+        'target' => [
+          'type' => $type,
+          'id' => $id,
+        ],
+        // This is a reference to a yes / no node filled out by the state that
+        // will determine the status of the 'target'.
+        // Only valid if: The referenced node is a yes / no answer node.
+        'condition' => [
+          'option' => $value['access_option'],
+          'term_field_uuid' => $value['access_term_field_uuid'],
+          'value' => $value['access_value'],
+        ],
+      ];
     }
     return $return;
   }
@@ -236,6 +289,36 @@ class TaxonomyService {
   }
 
   /**
+   * Get all triggers that change the access of content or sections.
+   *
+   * @param string $plan_year_id
+   *   A plan year ID.
+   *
+   * @return array
+   *   An array of triggers.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getPlanYearTriggers($plan_year_id) {
+    $return = [];
+    /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
+    $plan_year = $this->customEntitiesRetrieval->single('plan_year', $plan_year_id);
+    if (NULL === $plan_year) {
+      return $return;
+    }
+    foreach ($plan_year->getSections() as $section) {
+      foreach ($this->getVocabularyTids(
+        PlanYearInfo::createSectionVocabularyId($plan_year->id(), $section->id()), FALSE
+      ) as $tid) {
+        $section_term = $this->load($tid);
+        $return = array_merge($return, $this->getTriggerInfoFromSectionYearTerm($section_term));
+      }
+    }
+    return $return;
+  }
+
+  /**
    * Retrieve the plan year section display info.
    *
    * @param array $nested_sorted_terms
@@ -252,7 +335,7 @@ class TaxonomyService {
     $return = [];
     foreach ($nested_sorted_terms as $nested_sorted_term) {
       /** @var \Drupal\taxonomy\Entity\Term $term */
-      $term = $this->entityTypeManager->getStorage('taxonomy_term')->load($nested_sorted_term['tid']);
+      $term = $this->load($nested_sorted_term['tid']);
       $display_info = $this->getDisplayInfoFromSectionYearTerm($term);
       if (!empty($nested_sorted_term['children'])) {
         $display_info['children'] = $this->getSectionVocabDisplayInfo($nested_sorted_term['children']);
@@ -260,6 +343,22 @@ class TaxonomyService {
       $return[] = $display_info;
     }
     return $return;
+  }
+
+  /**
+   * Load a term.
+   *
+   * @param string $tid
+   *   The term ID.
+   *
+   * @return \Drupal\taxonomy\Entity\Term|null
+   *   The term or null.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function load($tid) {
+    return $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
   }
 
 }

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 31377838-779e-415a-85c5-cc4198284a45
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Voluntary Workfare'
+description:
+  -
+    value: 'State agencies and political subdivisions may operate workfare programs whereby participation by SNAP recipients is voluntary. In such a program, the penalties for failure to comply, as provided in 7 C.F.R. §273.7(f), will not apply for noncompliance. The amount of hours to be worked will be negotiated between the household and the operating agency, though not to exceed the limits provided under 7 C.F.R. §273.7(m)(5)(ii). In addition, all protections provided under 7 C.F.R. §273.7(m)(6)(i) shall continue to apply. Those State agencies and political subdivisions choosing to operate such a program shall indicate in their workfare plan how their staffing will adapt to anticipated and unanticipated levels of participation for each Federal fiscal year covered by the Combined Plan under WIOA. FNS will not approve plans which do not show that the benefits of the workfare program, in terms of hours worked by participants and reduced SNAP allotments due to successful job attainment, are expected to exceed the costs of such a program. In addition, if FNS finds that an approved voluntary program does not meet this criterion, FNS reserves the right to withdraw approval.* * 7 CFR § 273.7(m)(8)'
+    format: basic_html
+    processed: 'State agencies and political subdivisions may operate workfare programs whereby participation by SNAP recipients is voluntary. In such a program, the penalties for failure to comply, as provided in 7 C.F.R. §273.7(f), will not apply for noncompliance. The amount of hours to be worked will be negotiated between the household and the operating agency, though not to exceed the limits provided under 7 C.F.R. §273.7(m)(5)(ii). In addition, all protections provided under 7 C.F.R. §273.7(m)(6)(i) shall continue to apply. Those State agencies and political subdivisions choosing to operate such a program shall indicate in their workfare plan how their staffing will adapt to anticipated and unanticipated levels of participation for each Federal fiscal year covered by the Combined Plan under WIOA. FNS will not approve plans which do not show that the benefits of the workfare program, in terms of hours worked by participants and reduced SNAP allotments due to successful job attainment, are expected to exceed the costs of such a program. In addition, if FNS finds that an approved voluntary program does not meet this criterion, FNS reserves the right to withdraw approval.* * 7 CFR § 273.7(m)(8)'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+changed:
+  -
+    value: '2019-04-03T14:01:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5685cf05-9719-4811-b380-96d723208a0a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 9e464537-f340-4562-8a63-8c884473787f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230

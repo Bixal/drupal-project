@@ -41,13 +41,13 @@ uli:
 
 cim:
 	@echo "Importing Configuration"
-	docker-compose run php drupal config:import -y
+	docker-compose run php drupal csim -y
 	@echo "Importing Configuration Splits"
 	docker-compose run php drupal csim -y
 
 cex:
 	@echo "Exporting Configuration"
-	docker-compose run php csex -y
+	docker-compose run php drupal csex -y
 
 gm:
 	@echo "Displaying Generate Module UI"

@@ -292,6 +292,10 @@ class CustomEntitiesService {
    *   False if the entity does not belong to a group otherwise the group ID.
    */
   public function getGroupId(ContentEntityInterface $group_content) {
+    $group_id = &drupal_static(__FUNCTION__ . $group_content->uuid());
+    if (NULL !== $group_id) {
+      return $group_id;
+    }
     $group_contents = GroupContent::loadByEntity($group_content);
     if (empty($group_contents)) {
       return FALSE;

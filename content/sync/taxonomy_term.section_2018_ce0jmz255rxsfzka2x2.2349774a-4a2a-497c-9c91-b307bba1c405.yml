@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 2349774a-4a2a-497c-9c91-b307bba1c405
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_ce0jmz255rxsfzka2x2
+    target_type: taxonomy_vocabulary
+    target_uuid: 28657ce1-31fc-49c3-b59b-faa785fe637f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Optional Workfare'
+description:
+  -
+    value: 'State agencies or other political subdivisions must describe in detail in the plan how the political subdivision, working with the State agency and any other cooperating agencies that may be involved in the program, will fulfill the provisions of 7 C.F.R. §273.7(m). If a State opts to operate an optional workfare program or modify an existing optional workfare program, through a combined plan under WIOA, it must provide the following:* *7 CFR § 273.7(m)'
+    format: basic_html
+    processed: 'State agencies or other political subdivisions must describe in detail in the plan how the political subdivision, working with the State agency and any other cooperating agencies that may be involved in the program, will fulfill the provisions of 7 C.F.R. §273.7(m). If a State opts to operate an optional workfare program or modify an existing optional workfare program, through a combined plan under WIOA, it must provide the following:* *7 CFR § 273.7(m)'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+  -
+    target_type: taxonomy_term
+    target_uuid: 5e9b543e-f13e-446f-918d-a1d6af6e5230
+changed:
+  -
+    value: '2019-04-03T14:01:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6b8d162d-e0ff-4d77-94b6-761792ba21d0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230
+      - taxonomy_term.section_2018_ce0jmz255rxsfzka2x2.5e9b543e-f13e-446f-918d-a1d6af6e5230

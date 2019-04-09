@@ -220,7 +220,7 @@ class PlanYearEntityContentForm extends EntityBatchForm {
       $this->messenger()->addMessage($this->t('The plan year %label has had content added successfully.', [
         '%label' => $this->entity->label(),
       ]));
-      if ($this->isDrush) {
+      if (!$this->isDrush) {
         // Send them back to the listing page.
         $form_state->setRedirectUrl($this->entity->toUrl('content'));
       }

@@ -1,0 +1,6 @@
+services:
+  sp_create.commands:
+    class: \Drupal\sp_create\Commands\CreateContentCommand
+    arguments: ['@sp_retrieve.custom_entities', '@entity_type.manager', '@messenger', '@form_builder']
+    tags:
+      - { name: drush.command }

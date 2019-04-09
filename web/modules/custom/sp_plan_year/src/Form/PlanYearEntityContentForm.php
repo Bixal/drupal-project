@@ -21,6 +21,13 @@ class PlanYearEntityContentForm extends EntityBatchForm {
   protected $nodeRetrieval;
 
   /**
+   * True if Drush submitted this form.
+   *
+   * @var bool
+   */
+  protected $isDrush;
+
+  /**
    * PlanYearEntityWizardForm constructor.
    *
    * @param \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_retrieval
@@ -31,6 +38,7 @@ class PlanYearEntityContentForm extends EntityBatchForm {
   public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_retrieval) {
     parent::__construct($custom_entities_retrieval);
     $this->nodeRetrieval = $node_retrieval;
+    $this->isDrush = function_exists('drush_backend_batch_process');
   }
 
   /**
@@ -89,7 +97,8 @@ class PlanYearEntityContentForm extends EntityBatchForm {
       '#type' => 'checkbox',
       '#title' => $this->t('Create missing plans and sections'),
       '#description' => $group_content_message ? '<ul><li>' . $group_content_message . '</li></ul>' : $this->t('All plans and sections have been created.'),
-      '#disabled' => !strlen($group_content_message),
+      // Make sure not to disable this for Drush only for the GUI.
+      '#disabled' => !strlen($group_content_message) && !$this->isDrush,
       '#default_value' => !empty($group_content_message),
     ];
     $orphans = [];
@@ -106,7 +115,8 @@ class PlanYearEntityContentForm extends EntityBatchForm {
       '#type' => 'checkbox',
       '#title' => $this->t('Remove or create answers'),
       '#description' => '<li>' . implode('</li><li>', $modify_answers_message) . '</li>',
-      '#disabled' => empty($orphans) && empty($missing_answers),
+      // Make sure not to disable this for Drush only for the GUI.
+      '#disabled' => empty($orphans) && empty($missing_answers) && !$this->isDrush,
       '#default_value' => !empty($orphans) || !empty($missing_answers),
     ];
 
@@ -172,7 +182,7 @@ class PlanYearEntityContentForm extends EntityBatchForm {
     }
     elseif ($form_state->getValue('modify_answers')) {
       $batch = [
-        'title' => $this->t('Updating state plan year content'),
+        'title' => $this->t('Updating answers for plan year %label', ['%label' => $this->entity->label()]),
         'operations' => [],
         'finished' => [UpdatePlanYearBatch::class, 'finished'],
       ];
@@ -192,18 +202,28 @@ class PlanYearEntityContentForm extends EntityBatchForm {
         );
       }
     }
+    else {
+      $this->messenger()->addError($this->t('Invalid option chosen.'));
+      return;
+    }
 
     if (empty($batch['operations'])) {
-      $this->messenger()->addError($this->t('No operations were set.'));
+      $this->messenger()->addWarning($batch['title']);
+      $this->messenger()->addWarning($this->t('The previous operation failed, there was nothing that needed to be modified.'), TRUE);
     }
     else {
       batch_set($batch);
+      if ($this->isDrush) {
+        drush_backend_batch_process();
+      }
       // Clear out the current saved stepped data and reload the first step.
       $this->messenger()->addMessage($this->t('The plan year %label has had content added successfully.', [
         '%label' => $this->entity->label(),
       ]));
-      // Send them back to the listing page.
-      $form_state->setRedirectUrl($this->entity->toUrl('content'));
+      if ($this->isDrush) {
+        // Send them back to the listing page.
+        $form_state->setRedirectUrl($this->entity->toUrl('content'));
+      }
     }
 
   }

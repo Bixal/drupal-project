@@ -102,6 +102,10 @@ fresh:
 	docker-compose run --rm php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage
 	@echo "Running initialization script"
 	docker-compose run --rm php drupal sp_create:init
+	@echo "Creating state plan year 2018 state plans year, state plan years, and state plan year sections"
+	docker-compose run --rm php drush sp_create:content_and_answers 2018 create_plans_and_sections
+	@echo "Creating state plan year 2018 state plan year answers"
+	docker-compose run --rm php drush sp_create:content_and_answers 2018 modify_answers
 	@echo "Rebuilding content access"
 	docker-compose run --rm php drupal node:access:rebuild
 	make cr

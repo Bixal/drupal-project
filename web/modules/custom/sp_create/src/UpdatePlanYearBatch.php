@@ -19,14 +19,14 @@ class UpdatePlanYearBatch {
    *   A section ID.
    * @param string $section_label
    *   The section label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeSectionHierarchy($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function removeSectionHierarchy($plan_year_id, $section_id, $section_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->removeSectionHierarchy($plan_year_id, $section_id);
@@ -47,7 +47,7 @@ class UpdatePlanYearBatch {
    *   The section label.
    * @param string $plan_year_id_to_copy
    *   The plan year to copy hierarchy from to this section.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
@@ -55,7 +55,7 @@ class UpdatePlanYearBatch {
    * @throws \Drupal\Core\Entity\EntityStorageException
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    */
-  public static function copySectionHierarchy($plan_year_id, $section_id, $section_label, $plan_year_id_to_copy, array &$context = []) {
+  public static function copySectionHierarchy($plan_year_id, $section_id, $section_label, $plan_year_id_to_copy, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->copySectionHierarchy($plan_year_id, $section_id, $plan_year_id_to_copy);
@@ -71,14 +71,14 @@ class UpdatePlanYearBatch {
    *   A section ID.
    * @param string $section_label
    *   The section label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeSectionMeta($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function removeSectionMeta($plan_year_id, $section_id, $section_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearConfigService $update_plan_year_config */
     $update_plan_year_config = \Drupal::service('sp_create.update_plan_year_config');
     $update_plan_year_config->removeSectionMeta($plan_year_id, $section_id);
@@ -96,14 +96,14 @@ class UpdatePlanYearBatch {
    *   The section label.
    * @param string $plan_year_id_to_copy
    *   The plan year to copy hierarchy from to this section.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function updateSectionMeta($plan_year_id, $section_id, $section_label, $plan_year_id_to_copy = '', array &$context = []) {
+  public static function updateSectionMeta($plan_year_id, $section_id, $section_label, $plan_year_id_to_copy = '', &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearConfigService $update_plan_year_config */
     $update_plan_year_config = \Drupal::service('sp_create.update_plan_year_config');
     $update_plan_year_config->updateSectionMeta($plan_year_id, $section_id, $plan_year_id_to_copy);
@@ -119,14 +119,14 @@ class UpdatePlanYearBatch {
    *   A section ID.
    * @param string $section_label
    *   The section label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeSection($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function removeSection($plan_year_id, $section_id, $section_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearConfigService $update_plan_year_config */
     $update_plan_year_config = \Drupal::service('sp_create.update_plan_year_config');
     $update_plan_year_config->removeSection($plan_year_id, $section_id);
@@ -142,13 +142,13 @@ class UpdatePlanYearBatch {
    *   A section ID.
    * @param string $section_label
    *   The section label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public static function addSection($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function addSection($plan_year_id, $section_id, $section_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearConfigService $update_plan_year_config */
     $update_plan_year_config = \Drupal::service('sp_create.update_plan_year_config');
     $update_plan_year_config->addSection($plan_year_id, $section_id);
@@ -160,14 +160,14 @@ class UpdatePlanYearBatch {
    *
    * @param string $plan_year_id
    *   A plan year ID.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function addStatePlansYear($plan_year_id, array &$context = []) {
+  public static function addStatePlansYear($plan_year_id, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->createStatePlansYear($plan_year_id);
@@ -183,14 +183,14 @@ class UpdatePlanYearBatch {
    *   A group ID.
    * @param string $group_label
    *   The group label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function addStatePlanYear($plan_year_id, $group_id, $group_label, array &$context = []) {
+  public static function addStatePlanYear($plan_year_id, $group_id, $group_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->addStatePlanYear($plan_year_id, $group_id);
@@ -206,14 +206,14 @@ class UpdatePlanYearBatch {
    *   A section ID.
    * @param string $section_label
    *   The section label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeStatePlanYearSection($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function removeStatePlanYearSection($plan_year_id, $section_id, $section_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->removeStatePlanYearSection($plan_year_id, $section_id);
@@ -233,14 +233,14 @@ class UpdatePlanYearBatch {
    *   A group ID.
    * @param string $group_label
    *   The group label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeStatePlanYearSectionGroup($plan_year_id, $section_id, $section_label, $group_id, $group_label, array &$context = []) {
+  public static function removeStatePlanYearSectionGroup($plan_year_id, $section_id, $section_label, $group_id, $group_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->removeStatePlanYearSectionGroup($plan_year_id, $group_id, $section_id);
@@ -256,14 +256,14 @@ class UpdatePlanYearBatch {
    *   A section ID.
    * @param string $section_label
    *   The section label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeStatePlanYearAnswersBySection($plan_year_id, $section_id, $section_label, array &$context = []) {
+  public static function removeStatePlanYearAnswersBySection($plan_year_id, $section_id, $section_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->removeStatePlanYearAnswersBySection($plan_year_id, $section_id);
@@ -283,14 +283,14 @@ class UpdatePlanYearBatch {
    *   A group ID.
    * @param string $group_label
    *   The group label.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function addStatePlanYearSection($plan_year_id, $section_id, $section_label, $group_id, $group_label, array &$context = []) {
+  public static function addStatePlanYearSection($plan_year_id, $section_id, $section_label, $group_id, $group_label, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $update_plan_year_content->addStatePlanYearSection($plan_year_id, $group_id, $section_id);
@@ -302,14 +302,14 @@ class UpdatePlanYearBatch {
    *
    * @param string $state_plan_year_answer_nid
    *   A state plan year answer node ID.
-   * @param array $context
+   * @param array|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function removeStatePlanYearAnswer($state_plan_year_answer_nid, array &$context = []) {
+  public static function removeStatePlanYearAnswer($state_plan_year_answer_nid, &$context = []) {
     /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     $title = $update_plan_year_content->removeStatePlanYearAnswer($state_plan_year_answer_nid);
@@ -331,14 +331,14 @@ class UpdatePlanYearBatch {
    *   The term that this piece of content is based on.
    * @param string $state_plan_year_section_nid
    *   The state plan year section NID that this piece of content belongs to.
-   * @param array $context
+   * @param array|\DrushBatchContext|\DrushBatchContext $context
    *   Keys of message and results to communicate with batch.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public static function addStatePlanYearAnswer($node_bundle, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid, array &$context = []) {
+  public static function addStatePlanYearAnswer($node_bundle, $field_unique_id_reference, $plan_year_id, $section_id, $section_year_term_tid, $state_plan_year_section_nid, &$context = []) {
     /* @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content */
     $update_plan_year_content = \Drupal::service('sp_create.update_plan_year_content');
     /* @var \Drupal\node\Entity\Node */
@@ -353,7 +353,7 @@ class UpdatePlanYearBatch {
    *   True if no exceptions thrown.
    * @param array $results
    *   The $context['results'] array passed in from all operations.
-   * @param array $operations
+   * @param array|\DrushBatchContext $operations
    *   An array of function calls (not used in this function).
    */
   public static function finished($success, array $results, array $operations) {

@@ -1,0 +1,12 @@
+{
+  "name": "drupal/sp_create",
+  "description": "Handles the creation of content.",
+  "type": "drupal-module",
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": "^9"
+      }
+    }
+  }
+}

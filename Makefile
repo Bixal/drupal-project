@@ -8,6 +8,9 @@ up:
 	@echo "Starting up containers for for $(PROJECT_NAME)..."
 	docker-compose pull
 	docker-compose up -d --remove-orphans
+	@echo "-------------------------------------------------"
+	@echo "Visit http://$(PROJECT_BASE_URL):$(PROJECT_PORT)"
+	@echo "-------------------------------------------------"
 
 down:
 	@echo "Removing containers."
@@ -26,6 +29,12 @@ ps:
 
 shell:
 	docker exec -ti $(shell docker ps --filter name='$(PROJECT_NAME)_php' --format "{{ .ID }}") sh
+
+nginx:
+	docker exec  -u 0 -ti $(shell docker ps --filter name='$(PROJECT_NAME)_nginx' --format '{{ .ID }}') sh
+
+rsync:
+	docker exec -u 0 -ti $(shell docker ps --filter name='$(PROJECT_NAME)_nginx' --format '{{ .ID }}') sh -c  'apk add rsync && while true ; do rsync -avW --inplace --no-compress --delete --exclude node_modules --exclude .git --exclude vendor/bin/phpcbf --exclude vendor/bin/phpcs --exclude vendor/bin/phpunit --exclude vendor/bin/simple-phpunit /var/www/html/web /rsync;  done'
 
 dbdump:
 	@echo "Creating Database Dump for $(PROJECT_NAME)..."

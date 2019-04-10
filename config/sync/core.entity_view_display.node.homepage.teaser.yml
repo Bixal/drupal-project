@@ -27,4 +27,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_card_subsection_body_1: true
+  field_card_subsection_body_2: true
+  field_card_subsection_snippet_1: true
+  field_card_subsection_snippet_2: true
+  field_card_subsection_title_1: true
+  field_card_subsection_title_2: true
+  field_hero_form_body: true
+  field_hero_form_title: true
+  field_home_callout_body: true
+  field_home_callout_link: true
+  field_home_callout_title: true
+  field_home_card_description: true
+  field_home_card_title: true
+  field_home_hero_body: true
+  field_home_hero_title: true
+  field_home_image_banner_copy: true
+  field_home_image_banner_link: true
+  field_home_image_banner_title: true

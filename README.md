@@ -51,16 +51,22 @@ Installing from source can take several minutes or more depending on your networ
 
 Edit your /etc/hosts file:
 ```
-sudo sh -c "echo '127.0.0.1 mysitename' >> /etc/hosts"
+sudo sh -c "echo '127.0.0.1 local.projectname.com' >> /etc/hosts"
 ```
-Replace mysitename with PROJECT_BASE_URL in .env
+Replace local.projectname.com with PROJECT_BASE_URL in .env
 
-Finally make up:
+Then make up:
 ```
 make up
 ```
 
-You should be able to navigate to mysitename.localhost:8000
+And finally run rsync - this is done for performance reasons as docker shared volumes have a hard time with large numbers of files.
+Keep this running, there is a second or two delay when changing any code 
+```
+make rsync
+```
+
+You should be able to navigate to local.projectname.com:8000
 
 With `docker-compose run php composer require ...` you can download new dependencies to your 
 installation.
@@ -180,3 +186,12 @@ To prevent this you can add this code to specify the PHP version you want to use
     "platform": {"php": "5.5.9"}
 },
 ```
+
+
+## Windows support?
+
+If you are using Windows Subsystem use '.exe' in the .env file for WINDOWS_SUPPORT. Everything else should work right out of the box assuming you are running bash
+
+
+
+

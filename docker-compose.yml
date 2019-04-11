@@ -12,7 +12,19 @@ services:
       MYSQL_PASSWORD: $DB_PASSWORD
     volumes:
       - ./db:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
-#      - /path/to/mariadb/data/on/host:/var/lib/mysql # Use bind mount
+  #      - /path/to/mariadb/data/on/host:/var/lib/mysql # Use bind mount
+    image: wodby/mariadb:$MARIADB_TAG
+    container_name: "${PROJECT_NAME}_legacydb"
+    stop_grace_period: 30s
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+    volumes:
+      - ./legacydb:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+      - ./:/var/www/html:cached
+  #      - /path/to/mariadb/data/on/host:/var/lib/mysql # Use bind mount
 
   php:
     image: wodby/drupal-php:$PHP_TAG

@@ -199,9 +199,12 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
     $taxonomy_service = Drupal::getContainer()->get('sp_retrieve.taxonomy');
     $triggers = $taxonomy_service->getPlanYearTriggers(PlanYearInfo::getPlanYearIdFromEntity($moderated_entity));
     $triggers_object = new PlanYearTriggers($triggers, TRUE);
-    $triggers_object->validate();
-    // @TODO check if there are errors and alert if are and don't continue.
-    // @TODO don't forget to set the state plan back to 'new'.
+    if (!empty($triggers_object->getErrors())) {
+      /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content_service */
+      $update_plan_year_content_service = Drupal::getContainer()->get('sp_create.update_plan_year_content');
+      $update_plan_year_content_service->updateNodeModerationState($moderated_entity->id(), 'Unable to change status, an error occurred.', $original_state);
+      return;
+    }
     $revision_log_message = $moderated_entity->getRevisionLogMessage();
     if (empty($revision_log_message)) {
       $revision_log_message = 'Starting Plan Year';
@@ -363,7 +366,12 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
     // These triggers are not 'initialized', they will check that new value
     // is different from the old value (going from yes -> no or vice versa).
     $triggers_object = new PlanYearTriggers($triggers, FALSE);
-    $triggers_object->validate();
+    if (!empty($triggers_object->getErrors())) {
+      /** @var \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content_service */
+      $update_plan_year_content_service = Drupal::getContainer()->get('sp_create.update_plan_year_content');
+      $update_plan_year_content_service->updateNodeModerationState($moderated_entity->id(), 'Unable to change status, an error occurred.', $original_state);
+      return;
+    }
     $revision_log_message = 'Answer "' . $moderated_entity->getTitle() . '" caused an automatic change.';
     // Not every answer will trigger changes in other answers.
     foreach ($triggers_object

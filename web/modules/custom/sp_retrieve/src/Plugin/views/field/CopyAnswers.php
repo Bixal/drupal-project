@@ -4,7 +4,7 @@ namespace Drupal\sp_retrieve\Plugin\views\field;
 
 use Drupal\sp_retrieve\CustomEntitiesService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\sp_retrieve\NodeService;
+use Drupal\sp_retrieve\MixedEntityService;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 use Drupal\content_moderation\ModerationInformationInterface;
@@ -21,11 +21,11 @@ use Drupal\content_moderation\ModerationInformationInterface;
 class CopyAnswers extends FieldPluginBase {
 
   /**
-   * The node retrieval service.
+   * The mixed entity retrieval service.
    *
-   * @var \Drupal\sp_retrieve\NodeService
+   * @var \Drupal\sp_retrieve\MixedEntityService
    */
-  protected $nodeService;
+  protected $mixedService;
 
   /**
    * Retrieve custom entities.
@@ -50,15 +50,15 @@ class CopyAnswers extends FieldPluginBase {
    *   The plugin_id for the plugin instance.
    * @param mixed $plugin_definition
    *   The plugin implementation definition.
-   * @param \Drupal\sp_retrieve\NodeService $node_service
-   *   The node retrieval service.
+   * @param \Drupal\sp_retrieve\MixedEntityService $mixed_service
+   *   The mixed entity retrieval service.
    * @param \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_retrieval
    *   Retrieve custom entities.
    * @param \Drupal\content_moderation\ModerationInformationInterface $moderation_info
    *   The moderation information service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, NodeService $node_service, CustomEntitiesService $custom_entities_retrieval, ModerationInformationInterface $moderation_info) {
-    $this->nodeService = $node_service;
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MixedEntityService $mixed_service, CustomEntitiesService $custom_entities_retrieval, ModerationInformationInterface $moderation_info) {
+    $this->mixedService = $mixed_service;
     $this->customEntitiesRetrieval = $custom_entities_retrieval;
     $this->moderationInfo = $moderation_info;
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -72,7 +72,7 @@ class CopyAnswers extends FieldPluginBase {
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('sp_retrieve.node'),
+      $container->get('sp_retrieve.mixed'),
       $container->get('sp_retrieve.custom_entities'),
       $container->get('content_moderation.moderation_information')
     );
@@ -91,7 +91,7 @@ class CopyAnswers extends FieldPluginBase {
   public function render(ResultRow $values) {
     /** @var \Drupal\node\Entity\Node $node */
     $state_plan_year = $values->_entity;
-    $summary = $this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year->id());
+    $summary = $this->mixedService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year->id());
     if (empty($summary['count'])) {
       return $summary['message'];
     }
@@ -105,7 +105,7 @@ class CopyAnswers extends FieldPluginBase {
       ],
     ];
 
-    foreach ($this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($state_plan_year->id()) as $section_id => $copiable_answers_section) {
+    foreach ($this->mixedService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($state_plan_year->id()) as $section_id => $copiable_answers_section) {
       $state_plan_year_section = $this->customEntitiesRetrieval->single('node', $copiable_answers_section['state_plan_year_section_from']);
       $plan_year_label = $state_plan_year_section->get('field_state_plan_year')->entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label();
       $section_label = $state_plan_year_section->get('field_section')->entity->label();

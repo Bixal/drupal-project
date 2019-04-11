@@ -2,12 +2,15 @@ services:
   sp_retrieve.custom_entities:
     class: Drupal\sp_retrieve\CustomEntitiesService
     arguments: ['@entity_type.manager', '@entity.repository']
+  sp_retrieve.mixed:
+    class: Drupal\sp_retrieve\MixedEntityService
+    arguments: ['@sp_retrieve.node', '@sp_retrieve.custom_entities', '@sp_retrieve.taxonomy', '@cache.sp_retrieve']
   sp_retrieve.taxonomy:
     class: Drupal\sp_retrieve\TaxonomyService
     arguments: ['@entity_type.manager', '@sp_retrieve.custom_entities']
   sp_retrieve.node:
     class: Drupal\sp_retrieve\NodeService
-    arguments: ['@entity_type.manager', '@sp_expire.content', '@sp_retrieve.custom_entities', '@sp_retrieve.taxonomy', '@cache.sp_retrieve']
+    arguments: ['@entity_type.manager', '@sp_retrieve.custom_entities', '@cache.sp_retrieve']
   cache.sp_retrieve:
     class: Drupal\Core\Cache\CacheBackendInterface
     tags:

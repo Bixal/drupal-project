@@ -771,6 +771,17 @@ try {
     'namespace' => 'Drupal\\Core\\Database\\Driver\\' . $db_driver,
     'driver' => $db_driver,
   );
+  // Legacy DB where all content from wioa 2016 and 2018 plans resides
+  $databases['legacy_db']['default'] = array (
+    'database' => getenv('DB_LEGACY_NAME'),
+    'username' => getenv('DB_USER'),
+    'password' => getenv('DB_PASSWORD'),
+    'prefix' => '',
+    'host' => getenv('DB__LEGACY_HOST'),
+    'port' => '3306',
+    'namespace' => 'Drupal\\Core\\Database\\Driver\\' . $db_driver,
+    'driver' => $db_driver,
+  );
   $settings['trusted_host_patterns'] = [getenv('TRUSTED_HOST_PATTERNS')];
   $settings['hash_salt'] = getenv('HASH_SALT');
 } catch(Exception $e) {

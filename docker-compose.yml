@@ -23,7 +23,6 @@ services:
       MYSQL_PASSWORD: $DB_PASSWORD
     volumes:
       - ./legacydb:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
-      - ./:/var/www/html:cached
   #      - /path/to/mariadb/data/on/host:/var/lib/mysql # Use bind mount
 
   php:

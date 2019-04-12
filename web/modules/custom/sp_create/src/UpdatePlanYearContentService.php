@@ -278,8 +278,8 @@ class UpdatePlanYearContentService {
   /**
    * Copy a state plan year answer value from one year to another.
    *
-   * Make sure to run NodeService::canCopyStatePlanYearAnswer() before calling
-   * this method.
+   * Make sure to run MixedEntityService::canCopyStatePlanYearAnswer() before
+   * calling this method.
    *
    * @param string $from_state_plan_year_answer_nid
    *   A state plan year answer node ID to copy the value from.

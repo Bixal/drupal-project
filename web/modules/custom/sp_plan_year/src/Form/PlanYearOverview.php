@@ -5,12 +5,16 @@ namespace Drupal\sp_plan_year\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_retrieve\CustomEntitiesService;
+use Drupal\sp_retrieve\MixedEntityService;
 use Drupal\sp_retrieve\NodeService;
+use Drupal\sp_retrieve\TaxonomyService;
+use Drupal\sp_retrieve\PlanYearDisplay;
+use Drupal\sp_retrieve\PlanYearTriggers;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\sp_plan_year\Entity\PlanYearEntity;
-use Drupal\sp_retrieve\TaxonomyService;
 
 /**
  * Class PlanYearOverview.
@@ -39,6 +43,20 @@ class PlanYearOverview extends FormBase {
   protected $taxonomyService;
 
   /**
+   * The messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
+   * The mixed entity service.
+   *
+   * @var \Drupal\sp_retrieve\MixedEntityService
+   */
+  protected $mixedService;
+
+  /**
    * PlanYearEntityWizardForm constructor.
    *
    * @param \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_retrieval
@@ -47,11 +65,17 @@ class PlanYearOverview extends FormBase {
    *   The node retrieval service.
    * @param \Drupal\sp_retrieve\TaxonomyService $taxonomy_service
    *   The taxonomy service.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
+   * @param \Drupal\sp_retrieve\MixedEntityService $mixed_service
+   *   The mixed entity retrieval service.
    */
-  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_service, TaxonomyService $taxonomy_service) {
+  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_service, TaxonomyService $taxonomy_service, MessengerInterface $messenger, MixedEntityService $mixed_service) {
     $this->customEntitiesRetrieval = $custom_entities_retrieval;
     $this->nodeService = $node_service;
     $this->taxonomyService = $taxonomy_service;
+    $this->messenger = $messenger;
+    $this->mixedService = $mixed_service;
   }
 
   /**
@@ -61,7 +85,9 @@ class PlanYearOverview extends FormBase {
     return new static(
       $container->get('sp_retrieve.custom_entities'),
       $container->get('sp_retrieve.node'),
-      $container->get('sp_retrieve.taxonomy')
+      $container->get('sp_retrieve.taxonomy'),
+      $container->get('messenger'),
+      $container->get('sp_retrieve.mixed')
     );
   }
 
@@ -146,7 +172,7 @@ class PlanYearOverview extends FormBase {
       $quick_links[] = Link::createFromRoute($link_text, 'entity.plan_year.wizard', [PlanYearEntity::ENTITY => $plan_year->id()], empty($sections) ? $red_link : [])->toString();
       // @TODO: Create a method canCreateStatePlanContent() that encompasses
       // all the logic below, just like
-      // nodeService->canCopyStatePlanYearAnswer().
+      // mixedEntityService::canCopyStatePlanYearAnswer().
       $show_remove_orphans_links = FALSE;
       $show_missing_answers = FALSE;
       $missing_plans_and_sections = $this->nodeService->getGroupsMissingStatePlanYearsAndStatePlanYearSections($plan_year->id());
@@ -155,11 +181,11 @@ class PlanYearOverview extends FormBase {
       $show_missing_plans_and_sections_link = empty($missing_plans_and_sections) ? TRUE : !empty($missing_plans_and_sections) && $missing_plans_and_sections['at_least_one_missing'];
       // Don't show orphans or answers if content is not created yet.
       if (FALSE === $show_missing_plans_and_sections_link) {
-        $orphans = $this->nodeService->getOrphansStatePlanYearAnswers();
+        $orphans = $this->mixedService->getOrphansStatePlanYearAnswers();
         if (!empty($orphans)) {
           $show_remove_orphans_links = TRUE;
         }
-        $missing_answers = $this->nodeService->getMissingPlanYearAnswers($plan_year->id());
+        $missing_answers = $this->mixedService->getMissingPlanYearAnswers($plan_year->id());
         if (!empty($missing_answers)) {
           $show_missing_answers = TRUE;
         }
@@ -177,6 +203,33 @@ class PlanYearOverview extends FormBase {
       // plans view.
       if (empty($show_missing_plans_and_sections_link) && empty($show_remove_orphans_links) && empty($show_missing_answers) && $state_plans_year_nid = $this->nodeService->getStatePlansYearByPlanYear($plan_year->id())) {
         $quick_links[] = Link::createFromRoute($this->t('Manage State Plans'), 'view.manage_plans.moderated_content', [], ['query' => ['plan-year' => $state_plans_year_nid]])->toString();
+      }
+
+      // This functionality is not needed here, it is simply to get errors in
+      // displaying plans before plans are attempted to be displayed.
+      $plan_year_display_info = $this->taxonomyService->getPlanYearDisplayInfo($plan_year->id());
+      if (empty($plan_year_display_info)) {
+        return FALSE;
+      }
+      $plan_year_display = new PlanYearDisplay($plan_year_display_info);
+      if ($errors = $plan_year_display->getErrors()) {
+        $this->messenger->addError($this->t('Plans will be unable to be displayed till the following issues are resolved:'));
+        foreach ($errors as $error) {
+          $this->messenger->addError($error);
+        }
+      }
+
+      // This functionality is not needed here, it is simply to get errors in
+      // conditions before plan conditions are triggered.
+      $triggers = $this->taxonomyService->getPlanYearTriggers($plan_year->id());
+      // These triggers are not 'initialized', they will check that new value
+      // is different from the old value (going from yes -> no or vice versa).
+      $triggers_object = new PlanYearTriggers($triggers, FALSE);
+      if ($errors = $triggers_object->getErrors()) {
+        $this->messenger->addError($this->t('Plans cannot change status correctly till the following issues are resolved:'));
+        foreach ($errors as $error) {
+          $this->messenger->addError($error);
+        }
       }
 
     }

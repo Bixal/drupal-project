@@ -11,7 +11,7 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\sp_create\UpdatePlanYearContentService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\sp_retrieve\NodeService;
+use Drupal\sp_retrieve\MixedEntityService;
 
 /**
  * Change the moderation state of entities.
@@ -32,11 +32,11 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
   protected $messenger;
 
   /**
-   * The node retrieval service.
+   * The mixed entity retrieval service.
    *
-   * @var \Drupal\sp_retrieve\NodeService
+   * @var \Drupal\sp_retrieve\MixedEntityService
    */
-  protected $nodeService;
+  protected $mixedService;
 
   /**
    * The update plan year content service.
@@ -56,15 +56,15 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
    *   The plugin implementation definition.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   Messenger service.
-   * @param \Drupal\sp_retrieve\NodeService $node_service
-   *   The node retrieval service.
+   * @param \Drupal\sp_retrieve\MixedEntityService $mixed_service
+   *   The mixed entity retrieval service.
    * @param \Drupal\sp_create\UpdatePlanYearContentService $update_plan_year_content_service
    *   The update plan year content service.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, MessengerInterface $messenger, NodeService $node_service, UpdatePlanYearContentService $update_plan_year_content_service) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, MessengerInterface $messenger, MixedEntityService $mixed_service, UpdatePlanYearContentService $update_plan_year_content_service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->messenger = $messenger;
-    $this->nodeService = $node_service;
+    $this->mixedService = $mixed_service;
     $this->updatePlanYearContentService = $update_plan_year_content_service;
   }
 
@@ -75,7 +75,7 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
     return new static(
       $configuration, $plugin_id, $plugin_definition,
       $container->get('messenger'),
-      $container->get('sp_retrieve.node'),
+      $container->get('sp_retrieve.mixed'),
       $container->get('sp_create.update_plan_year_content')
     );
   }
@@ -86,14 +86,14 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
   public function execute(Node $entity = NULL) {
     // Since ALL entities are still passed to execute, they need to be checked
     // that they can still be copied to.
-    $summary = $this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($entity->id());
+    $summary = $this->mixedService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($entity->id());
     if (empty($summary['count'])) {
       return;
     }
 
     // Go through each state plan year section and then all content in that
     // section that can be copied to.
-    foreach ($this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($entity->id()) as $copiable_answers_section) {
+    foreach ($this->mixedService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYear($entity->id()) as $copiable_answers_section) {
       if (empty($copiable_answers_section['state_plan_year_answers'])) {
         continue;
       }
@@ -149,7 +149,7 @@ class CopyAnswers extends ConfigurableActionBase implements ContainerFactoryPlug
       $entity_ids_to_load[] = $entity_ids[3];
     }
     foreach ($entity_ids_to_load as $state_plan_year_nid) {
-      $summary = $this->nodeService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid);
+      $summary = $this->mixedService->getStatePlanYearAnswersWithCopiableAnswersByStatePlanYearSummary($state_plan_year_nid);
       if (!empty($summary['count'])) {
         $supported[] = $summary['message'];
       }

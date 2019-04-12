@@ -2,6 +2,8 @@
 
 namespace Drupal\sp_retrieve;
 
+use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\Entity\Node;
 
 /**
@@ -11,8 +13,10 @@ use Drupal\node\Entity\Node;
  */
 class PlanYearTriggers {
 
+  use StringTranslationTrait;
+
   /**
-   * The return of \Drupal\sp_retrieve\TaxonomyService::getPlanYearTriggers().
+   * Return of \Drupal\sp_retrieve\TaxonomyService::getPlanYearTriggers().
    *
    * These are all the triggers in a plan year.
    *
@@ -28,10 +32,18 @@ class PlanYearTriggers {
   protected $init = FALSE;
 
   /**
+   * Errors that have occurred.
+   *
+   * @var array
+   *   An array of error strings.
+   */
+  protected $errors = [];
+
+  /**
    * PlanYearTriggers constructor.
    *
    * @param array $triggers
-   *   The return of \Drupal\sp_retrieve\TaxonomyService::getPlanYearTriggers().
+   *   Return of \Drupal\sp_retrieve\TaxonomyService::getPlanYearTriggers().
    * @param bool $init
    *   If the state plan year is going from new to draft.
    */
@@ -44,16 +56,72 @@ class PlanYearTriggers {
   }
 
   /**
+   * Errors that might have occurred when the object is instantiated.
+   *
+   * @return array
+   *   An array of string errors.
+   */
+  public function getErrors() {
+    return $this->errors;
+  }
+
+  /**
    * Tests the triggers to make sure they are sound.
    *
-   * @todo
+   * @return bool
+   *   True if validation passes.
    */
-  public function validate() {
-    // Make sure a target is is only referenced one.
-    // Make sure if the target is a section that the section vocab exists.
-    // Make sure that the UUID in the condition that references a yes / no
-    // question is actually a yes or no piece of content, not itself, and
-    // exists.
+  protected function validate() {
+    if (empty($this->triggers)) {
+      return TRUE;
+    }
+    $errors = [];
+    foreach ($this->triggers as $trigger) {
+      $term_link = Link::createFromRoute(
+        $this->t('"Access Term Field ID"'),
+        'entity.taxonomy_term.edit_form',
+        ['taxonomy_term' => $trigger['validation']['tid']]
+      )->toString();
+      if (!empty($trigger['validation']['target_section_missing'])) {
+        $errors[] = $this->t(
+          'The section referenced in @link @field_uuid no longer exists.',
+          [
+            '@link' => $term_link,
+            '@field_uuid' => $trigger['validation']['target_term_field_uuid'],
+          ]
+        );
+      }
+      if (!empty($trigger['validation']['condition_source_missing'])) {
+        $errors[] = $this->t(
+          'The condition reference for access in @link @field_uuid no longer exists.',
+          [
+            '@link' => $term_link,
+            '@field_uuid' => $trigger['validation']['target_term_field_uuid'],
+          ]
+        );
+      }
+      if (!empty($trigger['validation']['condition_source_not_a_yes_no'])) {
+        $errors[] = $this->t(
+          'The condition reference for access in @link @field_uuid does not reference a @yes_or_no_term.',
+          [
+            '@link' => $term_link,
+            '@field_uuid' => $trigger['validation']['target_term_field_uuid'],
+            '@yes_or_no_term' => Link::createFromRoute(
+              'yes / no question',
+              'entity.taxonomy_term.edit_form',
+              ['taxonomy_term' => $trigger['validation']['condition_source_not_a_yes_no']]
+            )->toString(),
+          ]
+        );
+      }
+      if (!empty($trigger['validation']['target_and_condition_same'])) {
+        $errors[] = sprintf('The condition reference in %s at "Access Term Field ID" %s can not have the same "Access Term Field ID" as the target.', $term_link, $trigger['validation']['target_term_field_uuid']);
+      }
+    }
+    if (!empty($errors)) {
+      $this->errors = array_merge($this->errors, $errors);
+      return FALSE;
+    }
     return TRUE;
   }
 

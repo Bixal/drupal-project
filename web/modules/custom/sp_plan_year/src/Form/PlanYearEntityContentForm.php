@@ -5,6 +5,7 @@ namespace Drupal\sp_plan_year\Form;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\sp_create\UpdatePlanYearBatch;
 use Drupal\sp_retrieve\CustomEntitiesService;
+use Drupal\sp_retrieve\MixedEntityService;
 use Drupal\sp_retrieve\NodeService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -28,17 +29,27 @@ class PlanYearEntityContentForm extends EntityBatchForm {
   protected $isDrush;
 
   /**
+   * The mixed entity service.
+   *
+   * @var \Drupal\sp_retrieve\MixedEntityService
+   */
+  protected $mixedService;
+
+  /**
    * PlanYearEntityWizardForm constructor.
    *
    * @param \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_retrieval
    *   Service used to retrieve data on custom entities.
    * @param \Drupal\sp_retrieve\NodeService $node_retrieval
    *   The node retrieval service.
+   * @param \Drupal\sp_retrieve\MixedEntityService $mixed_service
+   *   The mixed entity service.
    */
-  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_retrieval) {
+  public function __construct(CustomEntitiesService $custom_entities_retrieval, NodeService $node_retrieval, MixedEntityService $mixed_service) {
     parent::__construct($custom_entities_retrieval);
     $this->nodeRetrieval = $node_retrieval;
     $this->isDrush = function_exists('drush_backend_batch_process');
+    $this->mixedService = $mixed_service;
   }
 
   /**
@@ -47,7 +58,8 @@ class PlanYearEntityContentForm extends EntityBatchForm {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('sp_retrieve.custom_entities'),
-      $container->get('sp_retrieve.node')
+      $container->get('sp_retrieve.node'),
+      $container->get('sp_retrieve.mixed')
     );
   }
 
@@ -106,8 +118,8 @@ class PlanYearEntityContentForm extends EntityBatchForm {
     $modify_answers_message['orphans'] = $this->t('Plans and sections must be created before checking for answer orphans.');
     $modify_answers_message['missing_answers'] = $this->t('Plans and sections must be created before creating answers.');
     if (empty($group_content_message)) {
-      $orphans = $this->nodeRetrieval->getOrphansStatePlanYearAnswers();
-      $missing_answers = $this->nodeRetrieval->getMissingPlanYearAnswers($current_plan_year->id());
+      $orphans = $this->mixedService->getOrphansStatePlanYearAnswers();
+      $missing_answers = $this->mixedService->getMissingPlanYearAnswers($current_plan_year->id());
       $modify_answers_message['orphans'] = $this->t('There are %orphans orphan answers to be deleted.', ['%orphans' => count($orphans)]);
       $modify_answers_message['missing_answers'] = $this->t('There are %create answers to be created.', ['%create' => count($missing_answers)]);
     }
@@ -186,11 +198,11 @@ class PlanYearEntityContentForm extends EntityBatchForm {
         'operations' => [],
         'finished' => [UpdatePlanYearBatch::class, 'finished'],
       ];
-      $orphan_answers = $this->nodeRetrieval->getOrphansStatePlanYearAnswers();
+      $orphan_answers = $this->mixedService->getOrphansStatePlanYearAnswers();
       foreach ($orphan_answers as $orphan_answer_nid) {
         $batch['operations'][] = $this->batchRemoveStatePlanYearAnswer($orphan_answer_nid);
       }
-      $missing_answers = $this->nodeRetrieval->getMissingPlanYearAnswers($current_plan_year->id());
+      $missing_answers = $this->mixedService->getMissingPlanYearAnswers($current_plan_year->id());
       foreach ($missing_answers as $info) {
         $batch['operations'][] = $this->batchAddStatePlanYearAnswer(
           $info['node_bundle'],

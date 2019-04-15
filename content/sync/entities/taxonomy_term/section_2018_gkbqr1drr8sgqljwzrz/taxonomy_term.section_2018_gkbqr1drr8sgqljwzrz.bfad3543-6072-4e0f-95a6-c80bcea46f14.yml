@@ -1,0 +1,141 @@
+uuid:
+  -
+    value: bfad3543-6072-4e0f-95a6-c80bcea46f14
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: Assurances
+description:
+  -
+    value: "<p>The State Plan must include assurances that:</p>\r\n"
+    format: basic_html
+    processed: '<p>The State Plan must include assurances that:</p>'
+weight:
+  -
+    value: 9
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T20:21:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3ad9c3f8-fcb0-4129-ad28-2abbabd8316d
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>1. The eligible agency will expend funds appropriated to carry out title II of the Workforce Innovation and Opportunity Act (WIOA) only in a manner consistent with fiscal requirements under section 241(a) of WIOA (regarding supplement and not supplant provisions).</p>\r\n"
+      format: basic_html
+    term_field_uuid: c43436d4-56cd-46b8-bd7b-289ea6c19ffa
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>2. The eligible agency will ensure that there is at least one eligible provider serving each local area, as defined in section 3(32) of WIOA.</p>\r\n"
+      format: basic_html
+    term_field_uuid: a7a6a81c-b19e-4deb-934a-cef2cb04af06
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>3. The eligible agency will not use any funds made available under title II of WIOA for the purpose of supporting or providing programs, services, or activities for individuals who are not “eligible individuals” within the meaning of section 203(4) of WIOA, unless it is providing programs, services or activities related to family literacy activities, as defined in section 203(9) of WIOA.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 211c2561-b450-42e4-9acf-b84a9868c0d8
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>4. The Integrated English Literacy and Civics Education program under section 243(a) of WIOA will be delivered in combination with integrated education and training activities;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 6931ad50-1c59-41c5-972b-c6c28483f002
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>5. The Integrated English Literacy and Civics Education program under section 243(a) of WIOA will be designed to (1) prepare adults who are English language learners for, and place such adults in, unsubsidized employment in in-demand industries and occupations Page 233 that lead to economic self-sufficiency and (2) integrate with the local workforce development system and its functions to carry out the activities of the program; and</p>\r\n"
+      format: basic_html
+    term_field_uuid: f6492c30-64bc-4883-a517-3de36ca62fb7
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>6. Using funds made available under title II of WIOA to carry out a program for criminal offenders within a correctional institution, the eligible agency will give priority to serving individuals who are likely to leave the correctional institution within five years of participation in the program.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 14017166-c4be-45cb-8788-61b2b10e542f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>7. The eligible agency agrees that in expending funds made available under title II of WIOA, the eligible agency will comply with sections 8301 through 8303 of the Buy American Act (41 U.S.C. 8301-8303 ).</p>\r\n"
+      format: basic_html
+    term_field_uuid: e64ed7c6-364a-43f1-9604-34cf2b338672
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

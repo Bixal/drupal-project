@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 9341cb44-ccef-4b37-80e1-002e96911143
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Aligning of Content Standards'
+description:
+  -
+    value: '<p>Describe how the eligible agency will, by July 1, 2016, align its content standards for adult education with State-adopted challenging academic content standards, as adopted under section 1111(b)(1) of the Elementary and Secondary Education Act of 1965, as amended (20 U.S.C. 6311(b)(1)).</p>'
+    format: basic_html
+    processed: '<p>Describe how the eligible agency will, by July 1, 2016, align its content standards for adult education with State-adopted challenging academic content standards, as adopted under section 1111(b)(1) of the Elementary and Secondary Education Act of 1965, as amended (20 U.S.C. 6311(b)(1)).</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T18:54:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 37dd803b-678d-4cf1-83f6-438fcedbb759
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 14f2339b-4287-4aa8-81ce-90cf692716a3
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

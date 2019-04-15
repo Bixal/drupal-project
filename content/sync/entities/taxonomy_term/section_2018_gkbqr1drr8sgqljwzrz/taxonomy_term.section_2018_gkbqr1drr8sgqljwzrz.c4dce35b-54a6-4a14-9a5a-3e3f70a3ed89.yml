@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c4dce35b-54a6-4a14-9a5a-3e3f70a3ed89
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Corrections Education and Other Education of Institutionalized Individuals'
+description:
+  -
+    value: "<p>Describe how the State will establish and operate programs under section 225 of WIOA for corrections education and education of other institutionalized individuals, including how it will fund, in accordance with the requirements of title II, subtitle C, any of the following academic programs for:</p>\r\n\r\n<ul>\r\n\t<li>Adult education and literacy activities;</li>\r\n\t<li>Special education, as determined by the eligible agency;</li>\r\n\t<li>Secondary school credit;</li>\r\n\t<li>Integrated education and training;</li>\r\n\t<li>Career pathways;</li>\r\n\t<li>Concurrent enrollment;</li>\r\n\t<li>Peer tutoring; and</li>\r\n\t<li>Transition to re-entry initiatives and other post release services with the goal of reducing recidivism.</li>\r\n</ul>\r\n\r\n<p>Each eligible agency using funds provided under Programs for Corrections Education and Other Institutionalized Individuals to carry out a program for criminal offenders within a correctional institution must give priority to serving individuals who are likely to leave the correctional institution within 5 years of participation in the program.</p>\r\n"
+    format: basic_html
+    processed: "<p>Describe how the State will establish and operate programs under section 225 of WIOA for corrections education and education of other institutionalized individuals, including how it will fund, in accordance with the requirements of title II, subtitle C, any of the following academic programs for:</p>\n\n<ul>\n\t<li>Adult education and literacy activities;</li>\n\t<li>Special education, as determined by the eligible agency;</li>\n\t<li>Secondary school credit;</li>\n\t<li>Integrated education and training;</li>\n\t<li>Career pathways;</li>\n\t<li>Concurrent enrollment;</li>\n\t<li>Peer tutoring; and</li>\n\t<li>Transition to re-entry initiatives and other post release services with the goal of reducing recidivism.</li>\n</ul>\n\n<p>Each eligible agency using funds provided under Programs for Corrections Education and Other Institutionalized Individuals to carry out a program for criminal offenders within a correctional institution must give priority to serving individuals who are likely to leave the correctional institution within 5 years of participation in the program.</p>"
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T20:00:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d8bc7bc7-43a9-40ef-930e-23133f6bffd0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 2f346c7a-5988-4855-aa1f-cc9c9869e80e
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

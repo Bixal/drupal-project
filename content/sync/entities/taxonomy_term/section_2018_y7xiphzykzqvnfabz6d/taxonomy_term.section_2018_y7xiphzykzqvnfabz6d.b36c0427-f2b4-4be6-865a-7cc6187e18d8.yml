@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: b36c0427-f2b4-4be6-865a-7cc6187e18d8
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Monitor Advocate'
+description:
+  -
+    value: 'The plan must contain a statement confirming the State Monitor Advocate has reviewed and approved the AOP.'
+    format: basic_html
+    processed: 'The plan must contain a statement confirming the State Monitor Advocate has reviewed and approved the AOP.'
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 16b13004-d331-4679-87e8-9d04c63c044e
+  -
+    target_type: taxonomy_term
+    target_uuid: 16b13004-d331-4679-87e8-9d04c63c044e
+changed:
+  -
+    value: '2019-04-15T18:09:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f96aafd8-0e2d-4fac-837f-5bf6577825a8
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 07a74fac-0595-4404-8e8c-5140cd02f53c
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.16b13004-d331-4679-87e8-9d04c63c044e
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.16b13004-d331-4679-87e8-9d04c63c044e

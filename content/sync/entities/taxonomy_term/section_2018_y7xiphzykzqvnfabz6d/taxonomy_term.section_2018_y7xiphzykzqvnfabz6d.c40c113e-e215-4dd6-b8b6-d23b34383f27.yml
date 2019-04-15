@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: c40c113e-e215-4dd6-b8b6-d23b34383f27
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How the State Serves Agricultural Employers and How it Intends to Improve Such Services.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4fcc60dc-47c6-41a2-879f-660772a34247
+  -
+    target_type: taxonomy_term
+    target_uuid: 4fcc60dc-47c6-41a2-879f-660772a34247
+changed:
+  -
+    value: '2019-04-15T17:49:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ea970a6b-b4ab-4422-91c0-6383c0797211
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.4fcc60dc-47c6-41a2-879f-660772a34247
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.4fcc60dc-47c6-41a2-879f-660772a34247

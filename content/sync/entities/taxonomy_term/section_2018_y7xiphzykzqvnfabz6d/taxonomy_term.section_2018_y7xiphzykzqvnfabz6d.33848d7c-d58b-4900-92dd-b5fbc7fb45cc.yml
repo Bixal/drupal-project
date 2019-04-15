@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 33848d7c-d58b-4900-92dd-b5fbc7fb45cc
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessment of Need 1'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 46ab958a-722d-4b94-90ec-db332c8cd980
+  -
+    target_type: taxonomy_term
+    target_uuid: 46ab958a-722d-4b94-90ec-db332c8cd980
+changed:
+  -
+    value: '2019-04-15T16:00:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 56f48b9a-71d5-4f86-94ff-6f37e3df0050
+field_display_name:
+  -
+    value: 'An Assessment of the Agricultural Activity in the State Means: 1) Identifying the Top Five Labor-intensive Crops, the Months of Heavy Activity, and the Geographic Area of Prime Activity; 2) Summarize the Agricultural Employers’ Needs in the State (i.e. Are They Predominantly Hiring Local or Foreign Workers, Are They Expressing That There is a Scarcity in the Agricultural Workforce); and 3) Identifying Any Economic, Natural, or Other Factors That Are Affecting Agriculture in the State or Any Projected Factors That Will Affect Agriculture in the State.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1f3a8b1e-cb65-44d7-98d4-7f6ea7f4590a
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.46ab958a-722d-4b94-90ec-db332c8cd980
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.46ab958a-722d-4b94-90ec-db332c8cd980

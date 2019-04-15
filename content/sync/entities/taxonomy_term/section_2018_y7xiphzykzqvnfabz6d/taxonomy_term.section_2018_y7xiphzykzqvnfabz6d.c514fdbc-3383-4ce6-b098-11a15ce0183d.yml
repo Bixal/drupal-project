@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c514fdbc-3383-4ce6-b098-11a15ce0183d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessment of Progress'
+description:
+  -
+    value: 'The plan must include an explanation of what was achieved based on the previous AOP, what was not achieved and an explanation as to why the State believes the goals were not achieved, and how the State intends to remedy the gaps of achievement in the coming year.'
+    format: basic_html
+    processed: 'The plan must include an explanation of what was achieved based on the previous AOP, what was not achieved and an explanation as to why the State believes the goals were not achieved, and how the State intends to remedy the gaps of achievement in the coming year.'
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 16b13004-d331-4679-87e8-9d04c63c044e
+  -
+    target_type: taxonomy_term
+    target_uuid: 16b13004-d331-4679-87e8-9d04c63c044e
+changed:
+  -
+    value: '2019-04-15T18:09:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 162d77a9-55af-4190-a8a6-7cb309c88de8
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1951f5ba-a6ae-44e6-89f1-51527478cf64
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.16b13004-d331-4679-87e8-9d04c63c044e
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.16b13004-d331-4679-87e8-9d04c63c044e

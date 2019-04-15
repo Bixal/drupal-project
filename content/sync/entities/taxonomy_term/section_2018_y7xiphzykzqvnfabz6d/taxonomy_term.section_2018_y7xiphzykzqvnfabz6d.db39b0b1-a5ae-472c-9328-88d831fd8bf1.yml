@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: db39b0b1-a5ae-472c-9328-88d831fd8bf1
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Providing State Merit Staff Outreach Workers Professional Development Activities to Ensure They Are Able to Provide High Quality Services to Both Jobseekers and Employers.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 348b3402-8848-4ea2-a157-6a85cb351550
+  -
+    target_type: taxonomy_term
+    target_uuid: 348b3402-8848-4ea2-a157-6a85cb351550
+changed:
+  -
+    value: '2019-04-15T17:40:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c8268054-12d5-4801-bb95-f5fbd237a3f0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b67f7d71-c872-4ade-8394-28553744be82
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.348b3402-8848-4ea2-a157-6a85cb351550
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.348b3402-8848-4ea2-a157-6a85cb351550

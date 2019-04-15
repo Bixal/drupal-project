@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 46ab958a-722d-4b94-90ec-db332c8cd980
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessment of Need'
+description:
+  -
+    value: 'Provide an assessment of the unique needs of farmworkers in the area based on past and projected agricultural and farmworker activity in the State. Such needs may include but are not limited to: employment, training, and housing.'
+    format: basic_html
+    processed: 'Provide an assessment of the unique needs of farmworkers in the area based on past and projected agricultural and farmworker activity in the State. Such needs may include but are not limited to: employment, training, and housing.'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+  -
+    target_type: taxonomy_term
+    target_uuid: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+changed:
+  -
+    value: '2019-04-15T16:00:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2f9f5110-a914-40cc-a21d-3836aa7e0668
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c42e42c2-6a20-4b9e-9f29-baee5badd9c6
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413

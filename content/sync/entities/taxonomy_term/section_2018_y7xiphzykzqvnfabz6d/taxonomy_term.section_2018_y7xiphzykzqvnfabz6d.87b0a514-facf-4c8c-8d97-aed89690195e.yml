@@ -1,0 +1,108 @@
+uuid:
+  -
+    value: 87b0a514-facf-4c8c-8d97-aed89690195e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Wagner-peyser Assurances'
+description:
+  -
+    value: "<p>The State Plan must include assurances that:</p>\r\n"
+    format: basic_html
+    processed: '<p>The State Plan must include assurances that:</p>'
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0e310c66-4063-4b46-be25-ec8f6f8982d4
+  -
+    target_type: taxonomy_term
+    target_uuid: 0e310c66-4063-4b46-be25-ec8f6f8982d4
+changed:
+  -
+    value: '2019-04-15T18:18:56+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 0e35def3-3639-4d80-920f-3380a077f95c
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>1. The Wagner-Peyser Employment Service is co-located with one-stop centers or a plan and timeline has been developed to comply with this requirement within a reasonable amount of time. (sec 121(e)(3));</p>\r\n"
+      format: basic_html
+    term_field_uuid: dd655d00-dcef-4d56-9bdf-ecfa7a775893
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>The State agency is complying with the requirements under 20 CFR 653.111 (State agency staffing requirements) if the State has significant MSFW one-stop centers;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 2245d7f9-7070-42a6-8a86-2d6459c87e3f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>3. If a State Workforce Development Board, department, or agency administers State laws for vocational rehabilitation of persons with disabilities, that board, department, or agency cooperates with the agency that administers Wagner-Peyser services, Adult and Dislocated Worker programs and Youth Programs under Title I; and</p>\r\n"
+      format: basic_html
+    term_field_uuid: e2b59259-557f-420a-9e49-d06c0267e6ae
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>4. State agency merit-based public employees provide Wagner-Peyser Act-funded labor exchange activities in accordance with Department of Labor regulations.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 80dfe3f2-46b0-4815-b75e-2336a91baa4e
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.0e310c66-4063-4b46-be25-ec8f6f8982d4
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.0e310c66-4063-4b46-be25-ec8f6f8982d4

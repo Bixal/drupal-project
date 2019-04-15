@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: c9f01bbe-50e5-44e2-83a9-c06d41dd162e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessment of Need 2'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 46ab958a-722d-4b94-90ec-db332c8cd980
+  -
+    target_type: taxonomy_term
+    target_uuid: 46ab958a-722d-4b94-90ec-db332c8cd980
+changed:
+  -
+    value: '2019-04-15T16:00:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1ebe3761-0bb7-46d2-ac60-cc47ec5d0931
+field_display_name:
+  -
+    value: 'An Assessment of the Unique Needs of Farmworkers Means Summarizing Migrant and Seasonal Farm Worker (msfw) Characteristics (including if They Are Predominantly from Certain Countries, What Language(s) They Speak, the Approximate Number of Msfws in the State During Peak Season and During Low Season, and Whether They Tend to Be Migrant, Seasonal, or Year-round Farmworkers). This Information Must Take into Account Data Supplied by WIOA Section 167 National Farmworker Jobs Program (nfjp) Grantees, Other Msfw Organizations, Employer Organizations, and State And/or Federal Agency Data Sources Such as the U.s. Department of Agriculture and the U.s. Department of Labor (dol) Employment and Training Administration.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 0f7f15b6-cb11-4233-a23d-53da907a9206
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.46ab958a-722d-4b94-90ec-db332c8cd980
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.46ab958a-722d-4b94-90ec-db332c8cd980

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 8676c422-0441-4dab-840f-b9868a3af0ac
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How Career and Training Services Required Under WIOA Title I Will Be Provided to Msfws Through the One-stop Centers;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4fcc60dc-47c6-41a2-879f-660772a34247
+  -
+    target_type: taxonomy_term
+    target_uuid: 4fcc60dc-47c6-41a2-879f-660772a34247
+changed:
+  -
+    value: '2019-04-15T17:49:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ae0c2070-50f7-4312-a863-7f3473d14dc1
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.4fcc60dc-47c6-41a2-879f-660772a34247
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.4fcc60dc-47c6-41a2-879f-660772a34247

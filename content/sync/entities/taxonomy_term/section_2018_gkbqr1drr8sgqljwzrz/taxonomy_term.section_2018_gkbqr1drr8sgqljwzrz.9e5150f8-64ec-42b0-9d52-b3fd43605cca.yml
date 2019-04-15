@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 9e5150f8-64ec-42b0-9d52-b3fd43605cca
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Assessing Quality'
+description:
+  -
+    value: 'Describe how the eligible agency will assess the quality of providers of adult education and literacy activities under title II and take actions to improve such quality, including providing the activities described in section 223(a)(1)(B) of WIOA.'
+    format: basic_html
+    processed: 'Describe how the eligible agency will assess the quality of providers of adult education and literacy activities under title II and take actions to improve such quality, including providing the activities described in section 223(a)(1)(B) of WIOA.'
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T20:00:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8d10305d-cf4a-4220-82fb-ea87d81fcc34
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: a8d9e879-50f9-4d43-a01c-43609b876d20
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

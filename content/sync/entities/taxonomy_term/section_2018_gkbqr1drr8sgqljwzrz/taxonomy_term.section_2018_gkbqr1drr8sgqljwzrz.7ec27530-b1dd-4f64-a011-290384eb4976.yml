@@ -1,0 +1,152 @@
+uuid:
+  -
+    value: 7ec27530-b1dd-4f64-a011-290384eb4976
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: Certifications
+description:
+  -
+    value: "<p>States must provide written and signed certifications that</p>\r\n"
+    format: basic_html
+    processed: '<p>States must provide written and signed certifications that</p>'
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T20:22:38+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6c6d1268-7c2b-4e21-8211-7a4b6fae8084
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>1. The plan is submitted by the State agency that is eligible to submit the plan.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 6bca6c7c-eb54-41d9-b91e-76982d9f2873
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>2. The State agency has authority under State law to perform the functions of the State under the program.</p>\r\n"
+      format: basic_html
+    term_field_uuid: b785b771-7460-472a-a1d7-2c7bde304827
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>3. The State legally may carry out each provision of the plan.</p>\r\n"
+      format: basic_html
+    term_field_uuid: e993cee9-bde0-4e50-96e0-b1b091d73be0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>4. All provisions of the plan are consistent with State law.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 9ae86904-d163-4753-aef9-bf0e22e468c5
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>5. A State officer, specified by title in the certification, has authority under State law to receive, hold, and disburse Federal funds made available under the plan.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 9d563809-91c0-4a12-bcb4-07865ee50e26
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>6. The State officer who is submitting the plan, specified by the title in the certification, has authority to submit the plan.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 3a092645-5011-43ae-acf4-fd3a34e19c91
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>7. The agency that is submitting the plan has adopted or otherwise formally approved the plan.</p>\r\n"
+      format: basic_html
+    term_field_uuid: c5af9871-55fa-4169-92a8-26642226546b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>8. The plan is the basis for State operation and administration of the program.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 60b33517-2985-49d6-a577-23b4233bd3b2
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

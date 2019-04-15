@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: b27a2a98-8cbe-47a7-83ea-3f5641bb8030
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Special Rule'
+description:
+  -
+    value: "<p>Each eligible agency awarding a grant or contract under this section shall not use any funds made available under this title for adult education and literacy activities for the purpose of supporting or providing programs, services, or activities for individuals who are under the age of 16 and are enrolled or required to be enrolled in secondary school under State law, except that such agency may use such funds for such purpose if such programs, services, or activities are related to family literacy activities. In providing family literacy activities under this title, an eligible provider shall attempt to coordinate with programs and services that are not assisted under this title prior to using funds for adult education and literacy activities under this title for activities other than activities for eligible individuals.</p>\r\n"
+    format: basic_html
+    processed: '<p>Each eligible agency awarding a grant or contract under this section shall not use any funds made available under this title for adult education and literacy activities for the purpose of supporting or providing programs, services, or activities for individuals who are under the age of 16 and are enrolled or required to be enrolled in secondary school under State law, except that such agency may use such funds for such purpose if such programs, services, or activities are related to family literacy activities. In providing family literacy activities under this title, an eligible provider shall attempt to coordinate with programs and services that are not assisted under this title prior to using funds for adult education and literacy activities under this title for activities other than activities for eligible individuals.</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 02e6c14e-907e-4d02-ab43-4e2ec52009ef
+  -
+    target_type: taxonomy_term
+    target_uuid: 02e6c14e-907e-4d02-ab43-4e2ec52009ef
+changed:
+  -
+    value: '2019-04-15T18:54:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 01ffd47c-0ab1-4767-978d-5789b0994a93
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.02e6c14e-907e-4d02-ab43-4e2ec52009ef
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.02e6c14e-907e-4d02-ab43-4e2ec52009ef

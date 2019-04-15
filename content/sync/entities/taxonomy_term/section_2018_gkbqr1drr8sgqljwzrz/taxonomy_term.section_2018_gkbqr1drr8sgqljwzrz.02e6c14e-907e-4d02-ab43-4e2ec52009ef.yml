@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 02e6c14e-907e-4d02-ab43-4e2ec52009ef
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Local Activities'
+description:
+  -
+    value: "<p>Describe how the State will, using the considerations specified in section 231(e) of WIOA, fund each eligible provider to establish or operate programs that provide any of the following adult education and literacy activities identified in section 203 of WIOA, including programs that provide such activities concurrently. The Unified or Combined State Plan must include at a minimum the scope, content, and organization of these local activities.</p>\r\n"
+    format: basic_html
+    processed: '<p>Describe how the State will, using the considerations specified in section 231(e) of WIOA, fund each eligible provider to establish or operate programs that provide any of the following adult education and literacy activities identified in section 203 of WIOA, including programs that provide such activities concurrently. The Unified or Combined State Plan must include at a minimum the scope, content, and organization of these local activities.</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T18:54:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7433bf0d-b459-4c1a-9848-4fe1aa009772
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

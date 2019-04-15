@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 7d6310b0-b40a-4d98-8161-41435a37e505
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describe How the State Will Use the Funds to Carry Out the Required State Leadership Activities Under Section 223 of Wioa.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b156c744-f852-474c-8011-3bfdaeb77663
+  -
+    target_type: taxonomy_term
+    target_uuid: b156c744-f852-474c-8011-3bfdaeb77663
+changed:
+  -
+    value: '2019-04-15T20:00:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a6a287ad-913b-4c52-a520-f1bfceea6754
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7362e372-b6c8-4b81-a086-0c8c3a4fa555
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.b156c744-f852-474c-8011-3bfdaeb77663
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.b156c744-f852-474c-8011-3bfdaeb77663

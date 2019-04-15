@@ -22,13 +22,13 @@ description:
     processed: 'The Unified or Combined State Plan must include a description of the following as it pertains to Adult Education and Literacy programs under title II, the Adult Education and Family Literacy Act (AEFLA).'
 weight:
   -
-    value: 0
+    value: 17
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-20T19:56:36+00:00'
+    value: '2019-04-15T20:21:10+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

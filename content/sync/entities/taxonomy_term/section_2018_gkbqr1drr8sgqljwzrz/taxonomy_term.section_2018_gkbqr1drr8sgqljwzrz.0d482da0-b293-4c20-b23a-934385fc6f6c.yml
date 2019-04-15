@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 0d482da0-b293-4c20-b23a-934385fc6f6c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Certification Regarding Lobbying - Contact'
+description:
+  -
+    value: "<p>SF LLL Form – Disclosure of Lobbying Activities (only if applicable) (http://www2.ed.gov/fund/grant/apply/appforms/appforms.html). If applicable, please print, sign, and email to <a href=\"mailto:OCTAE_MAT@ed.gov\">OCTAE_MAT@ed.gov</a></p>\r\n"
+    format: basic_html
+    processed: '<p>SF LLL Form – Disclosure of Lobbying Activities (only if applicable) (http://www2.ed.gov/fund/grant/apply/appforms/appforms.html). If applicable, please print, sign, and email to <a href="mailto:OCTAE_MAT@ed.gov">OCTAE_MAT@ed.gov</a></p>'
+weight:
+  -
+    value: 8
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+  -
+    target_type: taxonomy_term
+    target_uuid: 924400d4-4cad-4b7f-8990-6571ea2c020d
+changed:
+  -
+    value: '2019-04-15T20:15:21+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: eb55fb82-f3f8-4295-bae0-0669f8118aad
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: true
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.924400d4-4cad-4b7f-8990-6571ea2c020d

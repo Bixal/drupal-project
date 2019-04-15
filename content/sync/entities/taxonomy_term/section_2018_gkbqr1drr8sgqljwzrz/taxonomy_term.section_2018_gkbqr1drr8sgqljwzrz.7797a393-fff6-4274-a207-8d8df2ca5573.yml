@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 7797a393-fff6-4274-a207-8d8df2ca5573
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_gkbqr1drr8sgqljwzrz
+    target_type: taxonomy_vocabulary
+    target_uuid: a7193002-0ab7-422c-855e-590b3323ed25
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Adult Education and Literacy Activities (section 203 of Wioa)'
+description:
+  -
+    value: "<ul>\r\n\t<li>Adult education;</li>\r\n\t<li>Literacy;</li>\r\n\t<li>Workplace adult education and literacy activities;</li>\r\n\t<li>Family literacy activities;</li>\r\n\t<li>English language acquisition activities;</li>\r\n\t<li>Integrated English literacy and civics education;</li>\r\n\t<li>Workforce preparation activities; or</li>\r\n\t<li>Integrated education and training that— Page 219\r\n\t<ol>\r\n\t\t<li>Provides adult education and literacy activities, concurrently and contextually with both, workforce preparation activities, and workforce training for a specific occupation or occupational cluster, and</li>\r\n\t\t<li>Is for the purpose of educational and career advancement.</li>\r\n\t</ol>\r\n\t</li>\r\n</ul>\r\n"
+    format: basic_html
+    processed: "<ul>\n\t<li>Adult education;</li>\n\t<li>Literacy;</li>\n\t<li>Workplace adult education and literacy activities;</li>\n\t<li>Family literacy activities;</li>\n\t<li>English language acquisition activities;</li>\n\t<li>Integrated English literacy and civics education;</li>\n\t<li>Workforce preparation activities; or</li>\n\t<li>Integrated education and training that— Page 219\n\t<ol>\n\t\t<li>Provides adult education and literacy activities, concurrently and contextually with both, workforce preparation activities, and workforce training for a specific occupation or occupational cluster, and</li>\n\t\t<li>Is for the purpose of educational and career advancement.</li>\n\t</ol>\n\t</li>\n</ul>"
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 02e6c14e-907e-4d02-ab43-4e2ec52009ef
+  -
+    target_type: taxonomy_term
+    target_uuid: 02e6c14e-907e-4d02-ab43-4e2ec52009ef
+changed:
+  -
+    value: '2019-04-15T18:54:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 63b75f79-386a-43fa-b9de-e8b50caf48d0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 8ef39103-73d5-4028-bcd5-85b0e2b8d2b9
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.02e6c14e-907e-4d02-ab43-4e2ec52009ef
+      - taxonomy_term.section_2018_gkbqr1drr8sgqljwzrz.02e6c14e-907e-4d02-ab43-4e2ec52009ef

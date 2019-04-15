@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 85dc9788-ec9a-4e60-b788-d3e304778eaf
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Registration of Ui Claimants with the State''s Employment Service if Required by State Law;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 93547e95-0dd0-4f9f-8a72-14fdc644f99e
+  -
+    target_type: taxonomy_term
+    target_uuid: 93547e95-0dd0-4f9f-8a72-14fdc644f99e
+changed:
+  -
+    value: '2019-04-15T15:56:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a13d5683-3cfe-48ff-b096-76be15b15cd7
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 59d4ca31-fe1e-475f-8a6b-b8dd0e8fb77f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.93547e95-0dd0-4f9f-8a72-14fdc644f99e
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.93547e95-0dd0-4f9f-8a72-14fdc644f99e

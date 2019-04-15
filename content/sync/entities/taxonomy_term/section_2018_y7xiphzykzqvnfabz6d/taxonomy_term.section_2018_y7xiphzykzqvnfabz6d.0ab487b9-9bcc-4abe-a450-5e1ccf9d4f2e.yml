@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 0ab487b9-9bcc-4abe-a450-5e1ccf9d4f2e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Services Provided to Farmworkers and Agricultural Employers Through the One-stop Delivery System.'
+description:
+  -
+    value: 'Describe the State agency''s proposed strategies for:'
+    format: basic_html
+    processed: 'Describe the State agency''s proposed strategies for:'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+  -
+    target_type: taxonomy_term
+    target_uuid: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+changed:
+  -
+    value: '2019-04-15T17:49:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 0d94bb13-2f37-4b26-837a-b2c5fc5fee0b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413

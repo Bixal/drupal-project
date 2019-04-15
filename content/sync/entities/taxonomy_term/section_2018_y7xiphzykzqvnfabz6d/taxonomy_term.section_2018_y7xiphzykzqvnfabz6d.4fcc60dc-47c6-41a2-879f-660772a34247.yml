@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 4fcc60dc-47c6-41a2-879f-660772a34247
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Providing the Full Range of Employment and Training Services to the Agricultural Community, Both Farmworkers and Agricultural Employers, Through the One-stop Delivery System. This Includes:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0ab487b9-9bcc-4abe-a450-5e1ccf9d4f2e
+  -
+    target_type: taxonomy_term
+    target_uuid: 0ab487b9-9bcc-4abe-a450-5e1ccf9d4f2e
+changed:
+  -
+    value: '2019-04-15T17:49:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 89d936d7-c1cb-4afb-8227-6a6f3fced23f
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.0ab487b9-9bcc-4abe-a450-5e1ccf9d4f2e
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.0ab487b9-9bcc-4abe-a450-5e1ccf9d4f2e

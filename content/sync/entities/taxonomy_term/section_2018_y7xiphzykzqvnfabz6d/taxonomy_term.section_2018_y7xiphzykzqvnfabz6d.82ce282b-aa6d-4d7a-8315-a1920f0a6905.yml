@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 82ce282b-aa6d-4d7a-8315-a1920f0a6905
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Outreach Activities B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 348b3402-8848-4ea2-a157-6a85cb351550
+  -
+    target_type: taxonomy_term
+    target_uuid: 348b3402-8848-4ea2-a157-6a85cb351550
+changed:
+  -
+    value: '2019-04-15T17:40:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e9a9b791-c074-4b4c-b225-b278e85e7e08
+field_display_name:
+  -
+    value: 'Providing Technical Assistance to Outreach Workers. Technical Assistance Must Include Trainings, Conferences, Additional Resources, and Increased Collaboration with Other Organizations on Topics Such as One-stop Center Services (i.e. Availability of Referrals to Training, Supportive Services, and Career Services, as Well as Specific Employment Opportunities), the Employment Service Complaint System, Information on the Other Organizations Serving Msfws in the Area, and a Basic Summary of Farmworker Rights, Including Their Rights with Respect to the Terms and Conditions of Employment.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 4116010c-e82b-411b-b573-38c4ad33b2de
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.348b3402-8848-4ea2-a157-6a85cb351550
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.348b3402-8848-4ea2-a157-6a85cb351550

@@ -22,13 +22,13 @@ description:
     processed: '<p>All program-specific requirements provided for the WIOA core programs in this section must be addressed for either a Unified or Combined State Plan.</p>'
 weight:
   -
-    value: 0
+    value: 34
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-20T19:47:23+00:00'
+    value: '2019-04-15T18:13:48+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

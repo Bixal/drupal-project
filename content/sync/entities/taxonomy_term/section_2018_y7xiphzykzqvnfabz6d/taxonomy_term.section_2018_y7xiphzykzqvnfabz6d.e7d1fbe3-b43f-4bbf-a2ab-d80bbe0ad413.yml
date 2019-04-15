@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Agricultural Outreach Plan (aop). Each State Agency Must Develop an Aop Every Four Years as Part of the Unified or Combined State Plan Required Under Sections 102 or 103 of Wioa. the Aop Must Include--'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0e310c66-4063-4b46-be25-ec8f6f8982d4
+  -
+    target_type: taxonomy_term
+    target_uuid: 0e310c66-4063-4b46-be25-ec8f6f8982d4
+changed:
+  -
+    value: '2019-04-15T16:00:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7ff52447-a761-4264-873f-113a0801e646
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.0e310c66-4063-4b46-be25-ec8f6f8982d4
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.0e310c66-4063-4b46-be25-ec8f6f8982d4

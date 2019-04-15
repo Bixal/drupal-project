@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 348b3402-8848-4ea2-a157-6a85cb351550
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Outreach Activities'
+description:
+  -
+    value: 'The local offices outreach activities must be designed to meet the needs of MSFWs in the State and to locate and contact MSFWs who are not being reached through normal intake activities. Describe the State agency''s proposed strategies for:'
+    format: basic_html
+    processed: 'The local offices outreach activities must be designed to meet the needs of MSFWs in the State and to locate and contact MSFWs who are not being reached through normal intake activities. Describe the State agency''s proposed strategies for:'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+  -
+    target_type: taxonomy_term
+    target_uuid: e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+changed:
+  -
+    value: '2019-04-15T17:36:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 09628b10-9786-47bb-ad77-fc7a10c6f06c
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 0c71c9f7-2816-499b-8610-3d459d76921f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.e7d1fbe3-b43f-4bbf-a2ab-d80bbe0ad413

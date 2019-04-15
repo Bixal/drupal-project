@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 9bed98f6-5a1e-427d-b93c-e7dc33b24080
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describe How the State Will Utilize Professional Development Activities for Employment Service Staff to Ensure Staff is Able to Provide High Quality Services to Both Jobseekers and Employers.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: aad57288-634f-4409-a839-179ca889bfa9
+  -
+    target_type: taxonomy_term
+    target_uuid: aad57288-634f-4409-a839-179ca889bfa9
+changed:
+  -
+    value: '2019-04-15T15:51:05+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8a3da861-3cd5-4884-8510-ecf63f48f0c0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c8fa569c-2f43-4398-a5a8-630aeb712f94
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.aad57288-634f-4409-a839-179ca889bfa9
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.aad57288-634f-4409-a839-179ca889bfa9

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: fc9b7747-f870-4bb0-87da-7a8e4eda4a1e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_y7xiphzykzqvnfabz6d
+    target_type: taxonomy_vocabulary
+    target_uuid: 4b78630e-52ef-4927-ba17-fae67466ff2b
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Review and Public Comment.'
+description:
+  -
+    value: 'In developing the AOP, the SWA must solicit information and suggestions from NFJP grantees, other appropriate MSFW groups, public agencies, agricultural employer organizations, and other interested organizations. In addition, at least 45 calendar days before submitting its final AOP, the SWA must provide a proposed plan to NFJP grantees, public agencies, agricultural employer organizations, and other organizations expressing an interest and allow at least 30 days for review and comment. The SWA must: 1) Consider any comments received in formulating its final proposed AOP; 2) Inform all commenting parties in writing whether their comments have been incorporated and, if not, the reasons therefore; and 3) Transmit the comments and recommendations received and its responses with the submission of the AOP. The AOP must include a statement confirming NFJP grantees, other appropriate MSFW groups, public agencies, agricultural employer organizations and other interested employer organizations have been given an opportunity to comment on the AOP. Include the list of organizations from which information and suggestions were solicited, any comments received, and responses to those comments.'
+    format: basic_html
+    processed: 'In developing the AOP, the SWA must solicit information and suggestions from NFJP grantees, other appropriate MSFW groups, public agencies, agricultural employer organizations, and other interested organizations. In addition, at least 45 calendar days before submitting its final AOP, the SWA must provide a proposed plan to NFJP grantees, public agencies, agricultural employer organizations, and other organizations expressing an interest and allow at least 30 days for review and comment. The SWA must: 1) Consider any comments received in formulating its final proposed AOP; 2) Inform all commenting parties in writing whether their comments have been incorporated and, if not, the reasons therefore; and 3) Transmit the comments and recommendations received and its responses with the submission of the AOP. The AOP must include a statement confirming NFJP grantees, other appropriate MSFW groups, public agencies, agricultural employer organizations and other interested employer organizations have been given an opportunity to comment on the AOP. Include the list of organizations from which information and suggestions were solicited, any comments received, and responses to those comments.'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 16b13004-d331-4679-87e8-9d04c63c044e
+  -
+    target_type: taxonomy_term
+    target_uuid: 16b13004-d331-4679-87e8-9d04c63c044e
+changed:
+  -
+    value: '2019-04-15T18:09:03+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 19c29880-d4db-450d-98d3-286609c71109
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f58aed8d-41f3-4562-becf-6855def0343f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.16b13004-d331-4679-87e8-9d04c63c044e
+      - taxonomy_term.section_2018_y7xiphzykzqvnfabz6d.16b13004-d331-4679-87e8-9d04c63c044e

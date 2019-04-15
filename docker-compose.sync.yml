@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  php:
+    # Use the Linux image that runs as user 1000.
+    image: wodby/drupal-php:7.1-dev-4.6.3
+    environment:
+      # Run PHP-FPM as wodby (1000) instead of www-data (82).
+      PHP_FPM_USER: wodby
+    volumes:
+      - wioa-sp-php-sync:/var/www/html:nocopy
+
+  nginx:
+    volumes:
+      - wioa-sp-php-sync:/var/www/html:nocopy
+
+volumes:
+  wioa-sp-php-sync:
+    external: true

@@ -39,8 +39,11 @@
 # Ignore generated directories from USWDS
 /web/themes/custom/uswds_wioa/assets
 
-# Ignore Docker-Sync log
-.docker-sync
-
 # Ignore the site.uuid.yml content export.
 /content/sync/entities/site.uuid.yml
+
+# Ignore docker-sync log files
+/.docker-sync
+
+# Ignore local overrides for Make
+/.env.make.local

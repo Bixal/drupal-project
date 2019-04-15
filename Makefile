@@ -16,17 +16,17 @@ up:
 down:
 	${DOWN_PREFIX}
 	@echo "Removing containers."
-	docker-compose down
+	$(DC) down
 
 stop:
 	${STOP_PREFIX}
 	@echo "Stopping containers for $(PROJECT_NAME)..."
-	@docker-compose stop
+	$(DC) stop
 
 prune:
 	${PRUNE_PREFIX}
 	@echo "Removing containers for $(PROJECT_NAME)..."
-	@docker-compose down -v
+	$(DC) down -v
 
 ps:
 	@docker ps --filter name="$(PROJECT_NAME)*"

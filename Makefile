@@ -1,23 +1,30 @@
 include .env
+# This is only for Makefile environment variables. Specifying multiple .env files for docker-compose.yml is not supported yet.
+# Includes directives inside .env are NOT processed when docker-compose is run.
+include .env.make
 
 .PHONY: up down stop prune ps shell dbdump dbrestore uli cim cex
 
 default: up
 
 up:
+	$(UP_PREFIX)
 	@echo "Starting up containers for for $(PROJECT_NAME)..."
-	docker-compose pull
-	docker-compose up -d --remove-orphans
+	$(DC) pull
+	$(DC) up -d --remove-orphans
 
 down:
+	${DOWN_PREFIX}
 	@echo "Removing containers."
 	docker-compose down
 
 stop:
+	${STOP_PREFIX}
 	@echo "Stopping containers for $(PROJECT_NAME)..."
 	@docker-compose stop
 
 prune:
+	${PRUNE_PREFIX}
 	@echo "Removing containers for $(PROJECT_NAME)..."
 	@docker-compose down -v
 
@@ -29,41 +36,41 @@ shell:
 
 dbdump:
 	@echo "Creating Database Dump for $(PROJECT_NAME)..."
-	docker-compose run --rm php drupal database:dump --file=../db/restore.sql --gz
+	${DC_RUN} php drupal database:dump --file=../db/restore.sql --gz
 
 dbrestore:
 	@echo "Restoring database..."
-	docker-compose run --rm php drupal database:restore --file='/var/www/html/db/restore.sql.gz'
+	${DC_RUN} php drupal database:restore --file='/var/www/html/db/restore.sql.gz'
 
 uli:
 	@echo "Getting admin login"
-	docker-compose run --rm php drush user:login --uri="$(PROJECT_BASE_URL)":8000
+	${DC_RUN} php drush user:login --uri="$(PROJECT_BASE_URL)":8000
 
 cim:
 	@echo "Importing Configuration"
-	docker-compose run --rm php drupal csim -y
+	${DC_RUN} php drupal csim -y
 	@echo "Importing Configuration Splits"
-	docker-compose run --rm php drupal csim -y
+	${DC_RUN} php drupal csim -y
 
 cex:
 	@echo "Exporting Configuration"
-	docker-compose run --rm php drupal csex -y
+	${DC_RUN} php drupal csex -y
 
 gm:
 	@echo "Displaying Generate Module UI"
-	docker-compose run --rm php drupal generate:module
+	${DC_RUN} php drupal generate:module
 
 install-source:
 	@echo "Installing dependencies"
-	docker-compose run --rm php composer install --prefer-source
+	${DC_RUN} php composer install --prefer-source
 
 install:
 	@echo "Installing dependencies"
-	docker-compose run --rm php composer install
+	${DC_RUN} php composer install
 
 cr:
 	@echo "Clearing Drupal Caches"
-	docker-compose run --rm php drupal cache:rebuild all
+	${DC_RUN} php drupal cache:rebuild all
 
 logs:
 	@echo "Displaying past containers logs"
@@ -75,39 +82,39 @@ logsf:
 
 dbclient:
 	@echo "Opening DB client"
-	docker-compose run --rm php drupal database:client
+	${DC_RUN} php drupal database:client
 
 behat:
 	@echo "Running behat tests"
-	docker-compose run --rm php vendor/bin/behat
+	${DC_RUN} php vendor/bin/behat
 
 phpcs:
 	@echo "Running coding standards on custom code"
-	docker-compose run --rm php vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal web/modules/custom --ignore=*.min.js --ignore=*.min.css
+	${DC_RUN} php vendor/bin/phpcs --standard=vendor/drupal/coder/coder_sniffer/Drupal web/modules/custom --ignore=*.min.js --ignore=*.min.css
 
 phpcbf:
 	@echo "Beautifying custom code"
-	docker-compose run --rm php vendor/bin/phpcbf --standard=vendor/drupal/coder/coder_sniffer/Drupal web/modules/custom --ignore=*.min.js --ignore=*.min.css
+	${DC_RUN} php vendor/bin/phpcbf --standard=vendor/drupal/coder/coder_sniffer/Drupal web/modules/custom --ignore=*.min.js --ignore=*.min.css
 
 fresh:
 	@echo "Ensure composer is up to date"
-	docker-compose run --rm php composer install
+	${DC_RUN} php composer install
 	@echo "Installing a fresh Drupal 8 site"
-	docker-compose run --rm php drupal si --force --no-interaction standard --account-pass="admin"
+	${DC_RUN} php drupal si --force --no-interaction standard --account-pass="admin"
 	@echo "Installing configuration from file"
-	docker-compose run --rm php drupal config:import
+	${DC_RUN} php drupal config:import
 	@echo "Installing configuration splits from file"
-	docker-compose run --rm php drupal csim -y
+	${DC_RUN} php drupal csim -y
 	@echo "Importing content"
-	docker-compose run --rm php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage
+	${DC_RUN} php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage
 	@echo "Running initialization script"
-	docker-compose run --rm php drupal sp_create:init
+	${DC_RUN} php drupal sp_create:init
 	@echo "Creating state plan year 2018 state plans year, state plan years, and state plan year sections"
-	docker-compose run --rm php drush sp_create:content_and_answers 2018 create_plans_and_sections
+	${DC_RUN} php drush sp_create:content_and_answers 2018 create_plans_and_sections
 	@echo "Creating state plan year 2018 state plan year answers"
-	docker-compose run --rm php drush sp_create:content_and_answers 2018 modify_answers
+	${DC_RUN} php drush sp_create:content_and_answers 2018 modify_answers
 	@echo "Rebuilding content access"
-	docker-compose run --rm php drupal node:access:rebuild
+	${DC_RUN} php drupal node:access:rebuild
 	make cr
 	make uli
 
@@ -117,33 +124,27 @@ fresh:
 # import.
 export_content:
 	@echo "Exporting plan year terms, states, and the homepage"
-	docker-compose run --rm php drush content-sync:export --entity-types=taxonomy_term,group.state,node.homepage
+	${DC_RUN} php drush content-sync:export --entity-types=taxonomy_term,group.state,node.homepage
 
 standards:
 	@echo "Running coding standards checks on host machine"
 	phpcs --standard=DrupalPractice --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*,*vendor/*,*.min.js,*.min.css web/modules/custom & phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*,*vendor/*,*.min.js,*.min.css web/themes/custom & phpcs --standard=Drupal --colors --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=*node_modules/*,*bower_components/*,*vendor/*,*.min.js,*.min.css web/modules/custom
 
-sync-stop:
+docker-sync-stop:
 	@echo "Stopping synced directories"
 	@echo "See http://docker-sync.io/ for more information (Easy install: gem install docker-sync). Make any changes to docker-sync.yml? Run docker-sync clean."
 	docker-sync stop
 
-up-sync:
-	make sync-stop
+docker-sync-start:
 	@echo "Starting docker-sync directories, this can take a while..."
 	docker-sync start
-	@echo "Starting up containers for for $(PROJECT_NAME)..."
-	docker-compose pull
-	docker-compose -f docker-compose.yml -f docker-compose.sync.yml up -d --remove-orphans
-
-down-sync:
-	make sync-stop
-	make down
-
-stop-sync:
-	make sync-stop
-	make stop
 
 prune-sync:
-	make sync-stop
+	make docker-sync-stop
 	make prune
+
+dc-echo:
+	@echo "${DC}"
+
+dc-run-echo:
+	@echo "${DC_RUN}"

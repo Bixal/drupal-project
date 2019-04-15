@@ -31,6 +31,9 @@ options:
 
 syncs:
   wioa-sp-php-sync:
+    # Match up to the nginx and php container that have files owned by the 1000
+    # user instead of www-data (82).
+    sync_userid: '1000'
     # os aware sync strategy, default to native_osx under MacOS (except with docker-machine which use unison), and native docker volume under linux
     sync_strategy: 'native_osx'
     # which folder to watch / sync from - you can use tilde, it will get expanded.
@@ -43,4 +46,5 @@ syncs:
 
     # optional, a list of excludes. These patterns will not be synced
     # see http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#ignore for the possible syntax and see sync_excludes_type below
-    sync_excludes: ['db', '.docker-sync', '.idea', '.gitignore', '.git', '.DS_Store', '.env', '.env.example', '.editorconfig', '.dockerignore', '.gitattributes', '.gitignore', 'behat.yml', 'bitbucket-pipelines.yml', 'docker-compose*', 'Makefile', 'traefix.yml', '.circleci', '.github', 'docker']
+    sync_excludes: ['.docker-sync', '.idea', '.gitignore', '.git', '.DS_Store', '.env', '.env.example', '.editorconfig', '.dockerignore', '.gitattributes', '.gitignore', 'behat.yml', 'bitbucket-pipelines.yml', 'docker-compose*', 'Makefile', 'traefix.yml', '.circleci', '.github', 'docker']
+

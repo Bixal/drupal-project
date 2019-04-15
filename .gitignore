@@ -44,3 +44,6 @@
 
 # Ignore docker-sync log files
 /.docker-sync
+
+# Ignore local overrides for Make
+/.env.make.local

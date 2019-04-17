@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: fbcb4b24-fc18-4560-9c68-851ada350a98
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How a Broad Range of Assistive Technology Services and Devices Will Be Provided to Individuals with Disabilities at Each Stage of the Rehabilitation Process and on a Statewide Basis.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b46c3edb-d134-4112-ac47-220cc4b49a7c
+  -
+    target_type: taxonomy_term
+    target_uuid: b46c3edb-d134-4112-ac47-220cc4b49a7c
+changed:
+  -
+    value: '2019-04-16T20:37:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 25dfc06b-7681-4320-87c6-b4e064c49a77
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 37ee7b23-91bc-45d4-b4cb-6283887a6242
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b46c3edb-d134-4112-ac47-220cc4b49a7c
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b46c3edb-d134-4112-ac47-220cc4b49a7c

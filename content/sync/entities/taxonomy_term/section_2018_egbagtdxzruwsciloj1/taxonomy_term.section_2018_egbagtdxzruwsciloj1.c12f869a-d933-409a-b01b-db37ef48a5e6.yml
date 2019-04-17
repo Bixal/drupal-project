@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: c12f869a-d933-409a-b01b-db37ef48a5e6
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'QUALIFIED PERSONNEL NEEDS. iii'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 884290d0-4a0a-4940-91f5-f4845840a0cf
+  -
+    target_type: taxonomy_term
+    target_uuid: 884290d0-4a0a-4940-91f5-f4845840a0cf
+changed:
+  -
+    value: '2019-04-16T18:05:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a0d67e65-d542-418d-94eb-bd0be1567148
+field_display_name:
+  -
+    value: 'Projections of the number of personnel, broken down by personnel category, who will be needed by the State agency to provide VR services in 5 years based on projections of the number of individuals to be served, including individuals with significant disabilities, the number of personnel expected to retire or leave the field, and other relevant factors.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ee431546-7a24-45ac-a00d-8f24ecdf0acc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.884290d0-4a0a-4940-91f5-f4845840a0cf
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.884290d0-4a0a-4940-91f5-f4845840a0cf

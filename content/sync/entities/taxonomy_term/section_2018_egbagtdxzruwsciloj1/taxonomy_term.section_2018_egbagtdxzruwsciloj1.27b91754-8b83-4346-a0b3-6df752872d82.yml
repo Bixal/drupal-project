@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 27b91754-8b83-4346-a0b3-6df752872d82
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Each Priority Category, if Under an Order of Selection;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9d0b2897-4212-4358-8547-d7d178f68b84
+  -
+    target_type: taxonomy_term
+    target_uuid: 9d0b2897-4212-4358-8547-d7d178f68b84
+changed:
+  -
+    value: '2019-04-16T20:25:27+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 12c79586-ba87-4e9b-a6eb-685cbc0535b2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1899b095-bfcf-4478-834f-3553b0650572
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9d0b2897-4212-4358-8547-d7d178f68b84
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9d0b2897-4212-4358-8547-d7d178f68b84

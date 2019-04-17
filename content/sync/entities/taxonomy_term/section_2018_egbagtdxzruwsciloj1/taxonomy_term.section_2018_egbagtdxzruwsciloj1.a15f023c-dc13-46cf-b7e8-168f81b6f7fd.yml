@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: a15f023c-dc13-46cf-b7e8-168f81b6f7fd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Comply with All Requirements Regarding Information and Referral Services in Accordance with Sections 101(a)(5)(d) and (20) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+changed:
+  -
+    value: '2019-04-17T15:15:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 653eb5af-e707-44d0-9ba4-08e7f2297649
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232

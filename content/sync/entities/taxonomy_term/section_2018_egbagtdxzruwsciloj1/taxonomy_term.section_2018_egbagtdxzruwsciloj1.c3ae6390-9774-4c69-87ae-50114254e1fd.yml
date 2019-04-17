@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: c3ae6390-9774-4c69-87ae-50114254e1fd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Designated State Agency Assures That:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2
+  -
+    target_type: taxonomy_term
+    target_uuid: f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2
+changed:
+  -
+    value: '2019-04-17T18:00:27+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 9fa3ab3e-5575-4f20-96bd-8ffdb63580f5
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2

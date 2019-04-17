@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: db31f5fb-0b45-4910-b8d3-d719ded32b8a
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: "The Vr Program's Performance on the Performance Accountability Indicators Under Section 116 of Wioa.\_"
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5839dcef-89a7-4317-a2ca-a7372843bd45
+  -
+    target_type: taxonomy_term
+    target_uuid: 5839dcef-89a7-4317-a2ca-a7372843bd45
+changed:
+  -
+    value: '2019-04-16T20:45:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d22f06b5-b11b-434d-bc42-16fb4ea9c096
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 9607276f-c73c-457a-8f5f-a5a2e7d09173
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.5839dcef-89a7-4317-a2ca-a7372843bd45
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.5839dcef-89a7-4317-a2ca-a7372843bd45

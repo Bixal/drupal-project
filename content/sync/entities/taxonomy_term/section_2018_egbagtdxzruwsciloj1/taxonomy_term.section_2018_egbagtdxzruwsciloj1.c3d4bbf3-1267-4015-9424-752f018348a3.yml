@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c3d4bbf3-1267-4015-9424-752f018348a3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Procedures for Outreach to and Identification of Students with Disabilities Who Need Transition Services.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+changed:
+  -
+    value: '2019-04-16T17:46:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ca3da7b0-bd44-4736-b975-f1d31f4dfb1b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: d1d71d71-600a-4eb4-b90c-e2e0b48a7113
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a

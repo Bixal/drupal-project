@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: e3c1479d-dc19-4033-95d8-cda0f3fc8602
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'An Individualized Plan for Employment That Meets the Requirements of Section 102(b) of the Rehabilitation Act , Which is Developed and Updated with Title I Funds, in Accordance with Sections 102(b)(3)(f) and 606(b)(6)(c) and (e) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c3ae6390-9774-4c69-87ae-50114254e1fd
+  -
+    target_type: taxonomy_term
+    target_uuid: c3ae6390-9774-4c69-87ae-50114254e1fd
+changed:
+  -
+    value: '2019-04-17T18:02:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 79471017-4e1b-48d3-a218-9a7d5d3be014
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c3ae6390-9774-4c69-87ae-50114254e1fd
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c3ae6390-9774-4c69-87ae-50114254e1fd

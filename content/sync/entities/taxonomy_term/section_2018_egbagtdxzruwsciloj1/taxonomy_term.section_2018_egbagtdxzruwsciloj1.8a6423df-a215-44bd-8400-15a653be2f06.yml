@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 8a6423df-a215-44bd-8400-15a653be2f06
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Consultation and Technical Assistance to Assist Educational Agencies in Planning for the Transition of Students with Disabilities from School to Post-school Activities, Including Vr Services;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+changed:
+  -
+    value: '2019-04-16T17:43:57+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7b7bfff7-ec20-493f-aa75-206c345769f1
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 052be993-bedd-441e-8512-ce815ce47c82
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a

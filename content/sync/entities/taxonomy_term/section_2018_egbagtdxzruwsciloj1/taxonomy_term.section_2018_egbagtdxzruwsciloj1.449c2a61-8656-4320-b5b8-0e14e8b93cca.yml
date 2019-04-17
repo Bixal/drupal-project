@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 449c2a61-8656-4320-b5b8-0e14e8b93cca
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Comply with the Requirements for the Development of an Individualized Plan for Employment in Accordance with Section 102(b) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+changed:
+  -
+    value: '2019-04-17T15:19:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ffff88c8-e9ee-4a7a-9f67-b8a980106512
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232

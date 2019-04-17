@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 66565e9b-717d-4106-9bc7-31b08890488c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'PERSONNEL DEVELOPMENT iii'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0d9043f7-68ed-4ff9-974c-56a1dd7e08bd
+  -
+    target_type: taxonomy_term
+    target_uuid: 0d9043f7-68ed-4ff9-974c-56a1dd7e08bd
+changed:
+  -
+    value: '2019-04-16T18:48:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8f60c2af-e004-494a-8501-84a6af801997
+field_display_name:
+  -
+    value: ' the number of students who graduated during the prior year from each of theose institutions with certification or licensure, or with the credentials for certification or licensure, broken down by the personnel category for which they have received, or have the credentials to receive, certification or licensure.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 981a077d-16aa-4988-8f2b-aed2ee2167fd
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.0d9043f7-68ed-4ff9-974c-56a1dd7e08bd
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.0d9043f7-68ed-4ff9-974c-56a1dd7e08bd

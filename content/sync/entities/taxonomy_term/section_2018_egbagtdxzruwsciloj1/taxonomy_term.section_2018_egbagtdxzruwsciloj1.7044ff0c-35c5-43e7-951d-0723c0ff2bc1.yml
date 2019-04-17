@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 7044ff0c-35c5-43e7-951d-0723c0ff2bc1
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Submission of the Vr Services Portion of the Unified or Combined State Plan and Its Supplement:'
+description:
+  -
+    value: 'The designated State unit assures it will comply with all requirements pertaining to the submission and revisions of the VR services portion of the Unified or Combined State Plan and its supplement for the State Supported Employment Services program, as required by sections 101(a)(1), (22), (23), and 606(a) of the Rehabilitation Act; section 102 of WIOA in the case of the submission of a unified plan; section 103 of WIOA in the case of a submission of a Combined State Plan; 34 CFR 76.140.'
+    format: basic_html
+    processed: 'The designated State unit assures it will comply with all requirements pertaining to the submission and revisions of the VR services portion of the Unified or Combined State Plan and its supplement for the State Supported Employment Services program, as required by sections 101(a)(1), (22), (23), and 606(a) of the Rehabilitation Act; section 102 of WIOA in the case of the submission of a unified plan; section 103 of WIOA in the case of a submission of a Combined State Plan; 34 CFR 76.140.'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+  -
+    target_type: taxonomy_term
+    target_uuid: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+changed:
+  -
+    value: '2019-04-17T14:47:39+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e457fc33-3896-44d5-a2c0-4bd71b7e7630
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c0905fdb-b597-4082-88f7-7210e2c5c2fc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c0905fdb-b597-4082-88f7-7210e2c5c2fc

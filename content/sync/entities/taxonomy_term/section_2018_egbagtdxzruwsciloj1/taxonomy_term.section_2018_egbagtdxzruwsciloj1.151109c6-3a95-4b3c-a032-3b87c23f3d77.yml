@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: 151109c6-3a95-4b3c-a032-3b87c23f3d77
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Program Administration for the Supported Employment Title Vi Supplement - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9584814e-0502-468f-8941-b6e7646a2eef
+  -
+    target_type: taxonomy_term
+    target_uuid: 9584814e-0502-468f-8941-b6e7646a2eef
+changed:
+  -
+    value: '2019-04-17T17:56:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: cf105449-7185-450f-a43d-a6fb9ef1c4c9
+field_display_name:
+  -
+    value: 'The Designated State Agency Assures That it Will Submit Reports in Such Form and in Accordance with Such Procedures as the Commissioner May Require and Collects the Information Required by Section 101(a)(10) of the Rehabilitation Act Separately for Individuals Receiving Supported Employment Services Under Title I and Individuals Receiving Supported Employment Services Under Title Vi of the Rehabilitation Act.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9584814e-0502-468f-8941-b6e7646a2eef
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9584814e-0502-468f-8941-b6e7646a2eef

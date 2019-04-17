@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 581afd80-1ec2-44f6-90e8-fc203293812a
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Information on the Formal Interagency Agreement with the State Educational Agency with Respect To:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f864acaa-81e6-4e67-9384-4376206ff1fc
+  -
+    target_type: taxonomy_term
+    target_uuid: f864acaa-81e6-4e67-9384-4376206ff1fc
+changed:
+  -
+    value: '2019-04-16T17:42:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 992d4ded-8527-4ad1-ae7d-eefbc30579cf
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.f864acaa-81e6-4e67-9384-4376206ff1fc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.f864acaa-81e6-4e67-9384-4376206ff1fc

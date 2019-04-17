@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 9470264e-3ff9-4f14-beae-e595d4b09810
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Cooperative Agreements with Agencies Not Carrying Out Activities Under the Statewide Workforce Development System.'
+description:
+  -
+    value: "<p>Describe interagency cooperation with and utilization of the services and facilities of agencies and programs that are not carrying out activities through the statewide workforce development system with respect to:</p>\r\n"
+    format: basic_html
+    processed: '<p>Describe interagency cooperation with and utilization of the services and facilities of agencies and programs that are not carrying out activities through the statewide workforce development system with respect to:</p>'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+changed:
+  -
+    value: '2019-04-16T13:44:05+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3bce70d2-4f8c-4b3b-9a44-d713454d9bd2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9

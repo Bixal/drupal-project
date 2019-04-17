@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 035e8683-8eb8-461d-b91a-5bdb9c856f00
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Who Are Minorities;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40acff8c-3de6-4663-9f6e-63961071e505
+  -
+    target_type: taxonomy_term
+    target_uuid: 40acff8c-3de6-4663-9f6e-63961071e505
+changed:
+  -
+    value: '2019-04-16T20:15:35+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d520a767-549f-4099-9865-e0f14fdfe6d8
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 987a9bd9-b99f-48b4-91a8-57bd178fdc47
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.40acff8c-3de6-4663-9f6e-63961071e505
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.40acff8c-3de6-4663-9f6e-63961071e505

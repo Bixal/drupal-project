@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: 72d8294c-9711-4292-9678-b082bda7846f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Administration of the Provision of Vr Services - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+changed:
+  -
+    value: '2019-04-17T15:16:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 11d1f8c8-bb21-4e4b-885e-3f676d20eb9c
+field_display_name:
+  -
+    value: 'Impose No Duration of Residence Requirement as Part of Determining an Individual’s Eligibility for Vr Services or That Excludes from Services Under the Plan Any Individual Who is Present in the State in Accordance with Section 101(a)(12) of the Rehabilitation Act . '
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232

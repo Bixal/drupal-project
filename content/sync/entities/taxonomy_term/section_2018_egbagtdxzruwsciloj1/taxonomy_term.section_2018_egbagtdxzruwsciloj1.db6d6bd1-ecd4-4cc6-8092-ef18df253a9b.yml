@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: db6d6bd1-ecd4-4cc6-8092-ef18df253a9b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Plan for Recruitment, Preparation and Retention of Qualified Personnel'
+description:
+  -
+    value: 'Describe the development and implementation of a plan to address the current and projected needs for qualified personnel including, the coordination and facilitation of efforts between the designated State unit and institutions of higher education and professional associations to recruit, prepare, and retain personnel who are qualified, including personnel from minority backgrounds and personnel who are individuals with disabilities.'
+    format: basic_html
+    processed: 'Describe the development and implementation of a plan to address the current and projected needs for qualified personnel including, the coordination and facilitation of efforts between the designated State unit and institutions of higher education and professional associations to recruit, prepare, and retain personnel who are qualified, including personnel from minority backgrounds and personnel who are individuals with disabilities.'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+changed:
+  -
+    value: '2019-04-16T18:50:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e70f9910-774f-4ef5-aa77-017092a52e86
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c316131b-4883-4135-b567-82036fc3090b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc

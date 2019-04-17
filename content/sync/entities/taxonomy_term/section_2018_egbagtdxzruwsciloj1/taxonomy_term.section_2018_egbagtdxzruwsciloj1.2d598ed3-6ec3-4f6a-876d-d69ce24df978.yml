@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 2d598ed3-6ec3-4f6a-876d-d69ce24df978
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Coordination of Personnel Development Under the Individuals with Disabilities Education Act'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+changed:
+  -
+    value: '2019-04-16T19:20:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2b373e7d-e790-4cca-bc7f-4be57dcf46f3
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 8b98d8bb-6035-4c02-8f66-bf4c6ebaac5b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 6bcd8d15-280b-4996-a8f5-b5a10fd16e85
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Designated State Agency Assures That it Will Provide Supported Employment Services as Defined in Section 7(39) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2
+  -
+    target_type: taxonomy_term
+    target_uuid: f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2
+changed:
+  -
+    value: '2019-04-17T17:59:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 57b6fac3-83eb-44eb-a596-d4a955e2bffb
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.f2f1a4e0-ea9d-4734-a6cf-2e6312f714a2

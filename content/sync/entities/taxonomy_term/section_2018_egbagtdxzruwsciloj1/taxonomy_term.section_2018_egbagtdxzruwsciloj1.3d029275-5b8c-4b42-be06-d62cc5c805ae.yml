@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 3d029275-5b8c-4b42-be06-d62cc5c805ae
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Determine Whether Comparable Services and Benefits Are Available to the Individual in Accordance with Section 101(a)(8) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+changed:
+  -
+    value: '2019-04-17T15:18:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 61f7ca93-ad2c-4a8c-99fa-194602bada95
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232

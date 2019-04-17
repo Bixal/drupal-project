@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 2ad185c6-ac6d-4e77-ac5a-026cef537a02
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Programs Carried Out by the Under Secretary for Rural Development of the United States Department of Agriculture;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9470264e-3ff9-4f14-beae-e595d4b09810
+  -
+    target_type: taxonomy_term
+    target_uuid: 9470264e-3ff9-4f14-beae-e595d4b09810
+changed:
+  -
+    value: '2019-04-16T13:44:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 73270b91-1c4a-4005-a16b-fd08273925d9
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b7eca944-f86b-4d9e-8903-6ac97a4e6cf7
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9470264e-3ff9-4f14-beae-e595d4b09810
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9470264e-3ff9-4f14-beae-e595d4b09810

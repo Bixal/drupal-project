@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 32ad9081-0c5a-4919-b89a-f39a61e76150
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Public Comment on Policies and Procedures:'
+description:
+  -
+    value: "The designated State agency assures it will comply with all statutory and regulatory\r\nrequirements for public participation in the VR Services Portion of the Unified or Combined\r\nState Plan, as required by section 101(a)(16)(A) of the Rehabilitation Act."
+    format: basic_html
+    processed: "The designated State agency assures it will comply with all statutory and regulatory\nrequirements for public participation in the VR Services Portion of the Unified or Combined\nState Plan, as required by section 101(a)(16)(A) of the Rehabilitation Act."
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+  -
+    target_type: taxonomy_term
+    target_uuid: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+changed:
+  -
+    value: '2019-04-17T14:45:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d8c5ab66-5ea1-4feb-a7f4-58ce3a1eabea
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c0905fdb-b597-4082-88f7-7210e2c5c2fc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c0905fdb-b597-4082-88f7-7210e2c5c2fc

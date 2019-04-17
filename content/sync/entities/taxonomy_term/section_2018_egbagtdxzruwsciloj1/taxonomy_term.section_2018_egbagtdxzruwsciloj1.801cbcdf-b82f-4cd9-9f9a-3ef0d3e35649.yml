@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 801cbcdf-b82f-4cd9-9f9a-3ef0d3e35649
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Meet the Requirements in Sections 101(a)(17) and 103(b)(2) of the Rehabilitation Act if the State Elects to Construct, Under Special Circumstances, Facilities for Community Rehabilitation Programs'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 8
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+  -
+    target_type: taxonomy_term
+    target_uuid: c977ad15-2856-4e7f-9358-c9e95cc30232
+changed:
+  -
+    value: '2019-04-17T15:31:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ebe77ec4-b667-4904-8d2e-944e1d0160d4
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c977ad15-2856-4e7f-9358-c9e95cc30232

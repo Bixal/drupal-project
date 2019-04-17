@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Financial Administration of the Supported Employment Program:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+  -
+    target_type: taxonomy_term
+    target_uuid: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+changed:
+  -
+    value: '2019-04-17T17:57:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 50759694-2cc6-4c28-9f61-a6ad6c0b8318
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c0905fdb-b597-4082-88f7-7210e2c5c2fc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c0905fdb-b597-4082-88f7-7210e2c5c2fc

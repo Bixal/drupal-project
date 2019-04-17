@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 1660f05d-486b-40ae-80ba-e4197c6e1942
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Strategies to Achieve the Goals and Priorities Identified by the State, to Improve and Expand Vocational Rehabilitation Services for Students with Disabilities on a Statewide Basis; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 50563651-ab0d-483d-bacc-e3b7b943cf46
+  -
+    target_type: taxonomy_term
+    target_uuid: 50563651-ab0d-483d-bacc-e3b7b943cf46
+changed:
+  -
+    value: '2019-04-17T15:35:55+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7dc003b6-94fb-44ac-affc-17e36f900d04
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.50563651-ab0d-483d-bacc-e3b7b943cf46
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.50563651-ab0d-483d-bacc-e3b7b943cf46

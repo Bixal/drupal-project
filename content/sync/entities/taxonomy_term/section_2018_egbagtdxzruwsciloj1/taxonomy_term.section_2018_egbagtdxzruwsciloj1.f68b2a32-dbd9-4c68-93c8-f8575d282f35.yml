@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: f68b2a32-dbd9-4c68-93c8-f8575d282f35
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Roles and Responsibilities, Including Financial Responsibilities, of Each Agency, Including Provisions for Determining State Lead Agencies and Qualified Personnel Responsible for Transition Services;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+changed:
+  -
+    value: '2019-04-16T17:45:47+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 613a8c32-d5ca-4cb6-808d-10360285de97
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1bc668f5-088f-4000-a9f4-5830dcf594ac
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a

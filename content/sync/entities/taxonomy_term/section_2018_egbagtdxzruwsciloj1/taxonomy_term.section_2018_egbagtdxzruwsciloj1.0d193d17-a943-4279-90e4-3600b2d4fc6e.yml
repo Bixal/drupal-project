@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 0d193d17-a943-4279-90e4-3600b2d4fc6e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The number of personnel currently needed by the State agency to provide VR services, broken down by personnel category; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 884290d0-4a0a-4940-91f5-f4845840a0cf
+  -
+    target_type: taxonomy_term
+    target_uuid: 884290d0-4a0a-4940-91f5-f4845840a0cf
+changed:
+  -
+    value: '2019-04-16T18:04:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a11e05a6-78cd-49d1-a0f0-39afeb812acb
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: eae8b59e-95e6-458c-8c9e-7615995395a0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.884290d0-4a0a-4940-91f5-f4845840a0cf
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.884290d0-4a0a-4940-91f5-f4845840a0cf

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 42736bc8-e21b-454a-a9a0-d87dbe87ad98
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How the State Will Leverage Other Public and Private Funds to Increase Resources for Extended Services and Expanded Supported Employment Opportunities for Youth with the Most Significant Disabilities.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9552ad57-7765-4c39-9001-d9160bf2d300
+  -
+    target_type: taxonomy_term
+    target_uuid: 9552ad57-7765-4c39-9001-d9160bf2d300
+changed:
+  -
+    value: '2019-04-16T20:35:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 837cb949-d5ec-49e3-9232-5e1b618f1253
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 8ff9ec04-2525-4be9-8155-7e7106566633
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9552ad57-7765-4c39-9001-d9160bf2d300
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9552ad57-7765-4c39-9001-d9160bf2d300

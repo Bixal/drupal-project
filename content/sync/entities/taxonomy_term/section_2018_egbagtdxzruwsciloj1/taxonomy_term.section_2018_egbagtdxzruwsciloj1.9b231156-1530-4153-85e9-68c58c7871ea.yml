@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 9b231156-1530-4153-85e9-68c58c7871ea
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Input of State Rehabilitation Council 1'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 6509c722-f4f9-46e5-be97-027e102e3780
+  -
+    target_type: taxonomy_term
+    target_uuid: 6509c722-f4f9-46e5-be97-027e102e3780
+changed:
+  -
+    value: '2019-04-16T13:32:25+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ec223ba2-b80d-4b91-bcb9-2d64d135e8cb
+field_display_name:
+  -
+    value: 'Input Provided by the State Rehabilitation Council, Including Input and Recommendations on the Vr Services Portion of the Unified or Combined State Plan, Recommendations from the Council''s Report, the Review and Analysis of Consumer Satisfaction, and Other Council Reports That May Have Been Developed as Part of the Council’s Functions;'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 0e99b3f4-7178-403f-86a5-a31879477772
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.6509c722-f4f9-46e5-be97-027e102e3780
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.6509c722-f4f9-46e5-be97-027e102e3780

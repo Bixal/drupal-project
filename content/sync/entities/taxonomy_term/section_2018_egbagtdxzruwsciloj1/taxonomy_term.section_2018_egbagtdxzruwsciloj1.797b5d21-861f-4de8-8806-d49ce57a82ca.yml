@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 797b5d21-861f-4de8-8806-d49ce57a82ca
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Request for Waiver of Statewideness'
+description:
+  -
+    value: 'When requesting a waiver of the statewideness requirement, the designated State unit must identify the types of services to be provided by the program on a non-statewide basis. The waiver request must also include written assurances that:'
+    format: basic_html
+    processed: 'When requesting a waiver of the statewideness requirement, the designated State unit must identify the types of services to be provided by the program on a non-statewide basis. The waiver request must also include written assurances that:'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+changed:
+  -
+    value: '2019-04-16T13:37:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 688957bc-6186-4db2-90ca-576d11c186ab
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9

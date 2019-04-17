@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 82921c84-9976-43b9-82e1-0fba0a9ef967
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Specify the State''s Goals and Priorities for Funds Received Under Section 603 of the Rehabilitation Act for the Provision of Supported Employment Services.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: bfd428e9-ca49-4f90-ad39-48ab6d40d1a9
+  -
+    target_type: taxonomy_term
+    target_uuid: bfd428e9-ca49-4f90-ad39-48ab6d40d1a9
+changed:
+  -
+    value: '2019-04-16T20:34:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d8f3e74c-8da8-4448-b6ba-a8bf0560f890
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: bb1223cf-5a70-4afe-987d-984c018ecdd1
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.bfd428e9-ca49-4f90-ad39-48ab6d40d1a9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.bfd428e9-ca49-4f90-ad39-48ab6d40d1a9

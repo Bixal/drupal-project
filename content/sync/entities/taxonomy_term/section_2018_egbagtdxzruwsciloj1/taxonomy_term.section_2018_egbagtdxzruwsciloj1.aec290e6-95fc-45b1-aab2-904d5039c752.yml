@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: aec290e6-95fc-45b1-aab2-904d5039c752
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'System of Staff Development'
+description:
+  -
+    value: 'a system of staff development for professionals and paraprofessionals within the designated State unit, particularly with respect to assessment, vocational counseling, job placement, and rehabilitation technology, including training implemented in coordination with entities carrying out State programs under section 4 of the Assistive Technology Act of 1998; and'
+    format: basic_html
+    processed: 'a system of staff development for professionals and paraprofessionals within the designated State unit, particularly with respect to assessment, vocational counseling, job placement, and rehabilitation technology, including training implemented in coordination with entities carrying out State programs under section 4 of the Assistive Technology Act of 1998; and'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 8a17edd7-5c4d-45e8-8984-3431d7556417
+  -
+    target_type: taxonomy_term
+    target_uuid: 8a17edd7-5c4d-45e8-8984-3431d7556417
+changed:
+  -
+    value: '2019-04-16T19:17:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c5509448-2e51-4202-9bd7-71318b1f5f69
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: fe7379a6-948d-49bf-8b3a-5a1097b74fc2
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.8a17edd7-5c4d-45e8-8984-3431d7556417
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.8a17edd7-5c4d-45e8-8984-3431d7556417

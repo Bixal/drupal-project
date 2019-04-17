@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 95074033-d96f-44b8-a0a6-f632381517d9
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How the Agency''s Strategies Will Be Used To:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b46c3edb-d134-4112-ac47-220cc4b49a7c
+  -
+    target_type: taxonomy_term
+    target_uuid: b46c3edb-d134-4112-ac47-220cc4b49a7c
+changed:
+  -
+    value: '2019-04-16T20:40:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c9ac2540-5401-498f-a577-1c170f86b68b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b46c3edb-d134-4112-ac47-220cc4b49a7c
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b46c3edb-d134-4112-ac47-220cc4b49a7c

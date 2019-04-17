@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 686fc68a-a0a8-4c35-b921-e5c0d90cb142
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Able-bodied Adults Without Dependents (abawd)'
+description:
+  -
+    value: "<p>A State agency interested in receiving additional funding for serving able-bodied adults without dependents (ABAWDs)* subject to the 3-month time limit, in accordance with 7 C.F.R. §273.7(d)(3), must include the following for each Federal fiscal year covered by the Combined Plan under WIOA: *7 CFR § 273.7(c)(7)</p>\r\n"
+    format: basic_html
+    processed: '<p>A State agency interested in receiving additional funding for serving able-bodied adults without dependents (ABAWDs)* subject to the 3-month time limit, in accordance with 7 C.F.R. §273.7(d)(3), must include the following for each Federal fiscal year covered by the Combined Plan under WIOA: *7 CFR § 273.7(c)(7)</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+changed:
+  -
+    value: '2019-04-17T20:30:04+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3f034e31-e25d-4339-9e01-7926a73cbafd
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0

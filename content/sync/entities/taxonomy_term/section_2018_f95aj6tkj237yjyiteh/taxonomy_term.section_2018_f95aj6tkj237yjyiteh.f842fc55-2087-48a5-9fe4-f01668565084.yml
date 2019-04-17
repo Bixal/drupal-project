@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: f842fc55-2087-48a5-9fe4-f01668565084
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Estimated Costs of Fulfilling Its Pledge'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 686fc68a-a0a8-4c35-b921-e5c0d90cb142
+  -
+    target_type: taxonomy_term
+    target_uuid: 686fc68a-a0a8-4c35-b921-e5c0d90cb142
+changed:
+  -
+    value: '2019-04-17T20:31:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3625077b-0d99-476a-a9e6-a8b267d463b4
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7d9b0b26-3a70-41ab-9dee-b83e506be0ae
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.686fc68a-a0a8-4c35-b921-e5c0d90cb142
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.686fc68a-a0a8-4c35-b921-e5c0d90cb142

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 997ed804-9fc7-404d-b70a-952c59fad638
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Payment Rates for Child Care Established in Accordance with the Child Care and Development Block Grant Provisions of 45 Cfr 98.43, and Based on Local Market Rate Surveys.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 13
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+changed:
+  -
+    value: '2019-04-17T20:39:28+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5e44694d-3f15-4cac-b964-e648bb77d069
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 25baa7a2-c34b-436c-91b2-5970d0f8a54f
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49

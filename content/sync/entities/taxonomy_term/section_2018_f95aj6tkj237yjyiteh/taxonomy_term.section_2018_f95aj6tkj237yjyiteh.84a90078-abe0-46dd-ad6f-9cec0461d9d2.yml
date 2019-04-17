@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 84a90078-abe0-46dd-ad6f-9cec0461d9d2
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'General Requirements - 2'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+changed:
+  -
+    value: '2019-04-17T20:39:28+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 9e442f67-8996-4467-8294-26dff9eaa99e
+field_display_name:
+  -
+    value: 'AN OPERATING BUDGET FOR THE FEDERAL FISCAL YEAR WITH AN ESTIMATE OF THE COST OF OPERATION FOR EACH FEDERAL FISCAL YEAR COVERED BY THE COMBINED PLAN. ANY STATE AGENCY THAT REQUESTS 50 PERCENT FEDERAL REIMBURSEMENT FOR STATE AGENCY E&T ADMINISTRATIVE COSTS, OTHER THAN FOR PARTICIPANT REIMBURSEMENTS, MUST INCLUDE IN ITS PLAN, OR AMENDMENTS TO ITS PLAN, AN ITEMIZED LIST OF ALL ACTIVITIES AND COSTS  Page 280 FOR WHICH THOSE FEDERAL FUNDS WILL BE CLAIMED, INCLUDING THE COSTS FOR CASE MANAGEMENT AND CASEWORK TO FACILITATE THE TRANSITION FROM ECONOMIC DEPENDENCY TO SELF-SUFFICIENCY THROUGH WORK. COSTS IN EXCESS OF THE FEDERAL GRANT WILL BE ALLOWED ONLY WITH THE PRIOR APPROVAL OF FNS AND MUST BE ADEQUATELY DOCUMENTED TO ASSURE THAT THEY ARE NECESSARY, REASONABLE AND PROPERLY ALLOCATED. A STATE MUST SUBMIT A PLAN AMENDMENT TO REQUEST BUDGET ADJUSTMENTS AT LEAST 30 DAYS PRIOR TO PLANNED IMPLEMENTATION;'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 78a26837-0377-4c08-b7a7-fa812720b2cf
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49

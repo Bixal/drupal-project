@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: eb6c4681-9e75-462f-8f26-da897884bf2d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'If a Conciliation Process is Planned, the Procedures That Will Be Used when an Individual Fails to Comply with an E&t Program Requirement. Include the Length of the Conciliation Period'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 12
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+changed:
+  -
+    value: '2019-04-17T20:27:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a4e4f17e-0d79-4c89-bcda-5de782d1eb50
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 36a3549b-d9b6-4c36-bd81-af685e7c1e47
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49

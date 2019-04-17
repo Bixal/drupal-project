@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'General Requirements'
+description:
+  -
+    value: 'The State agency must prepare and submit an Employment and Training (E&T) Plan to its appropriate Food and Nutrition Service (FNS) Regional Office. The E&T Plan must be available for public inspection at the State agency headquarters. A State agency may include its plan for the SNAP E&T program in a Combined Plan under WIOA but will require FNS approval prior to implementation and must continue to make a copy of the plan available for public inspection. If a State includes SNAP E&T in a Combined Plan under WIOA, the State agency will detail the following for each year covered by the Combined Plan:'
+    format: basic_html
+    processed: 'The State agency must prepare and submit an Employment and Training (E&amp;T) Plan to its appropriate Food and Nutrition Service (FNS) Regional Office. The E&amp;T Plan must be available for public inspection at the State agency headquarters. A State agency may include its plan for the SNAP E&amp;T program in a Combined Plan under WIOA but will require FNS approval prior to implementation and must continue to make a copy of the plan available for public inspection. If a State includes SNAP E&amp;T in a Combined Plan under WIOA, the State agency will detail the following for each year covered by the Combined Plan:'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+changed:
+  -
+    value: '2019-04-17T20:16:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f9e3343a-7901-446c-814a-61fadb19663a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0

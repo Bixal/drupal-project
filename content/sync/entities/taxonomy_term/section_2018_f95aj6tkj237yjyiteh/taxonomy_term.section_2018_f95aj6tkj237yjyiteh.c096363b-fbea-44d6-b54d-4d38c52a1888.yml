@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c096363b-fbea-44d6-b54d-4d38c52a1888
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Its Pledge to Offer a Qualifying Activity to All At-risk Abawd Applicants and Recipients'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 686fc68a-a0a8-4c35-b921-e5c0d90cb142
+  -
+    target_type: taxonomy_term
+    target_uuid: 686fc68a-a0a8-4c35-b921-e5c0d90cb142
+changed:
+  -
+    value: '2019-04-17T20:30:33+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7cd2e671-9997-474f-a591-c82cca60cf01
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f9236b00-53bb-456e-8d4e-894cfba2687d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.686fc68a-a0a8-4c35-b921-e5c0d90cb142
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.686fc68a-a0a8-4c35-b921-e5c0d90cb142

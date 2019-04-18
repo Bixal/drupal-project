@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: d041dbec-4ab2-43e8-a915-597e1db834fe
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: "General Requirements\_- 9"
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 8
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+changed:
+  -
+    value: '2019-04-17T20:24:34+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7aaaa63b-b25b-45d9-a822-368dd7b8e138
+field_display_name:
+  -
+    value: 'The Method the State Agency Uses to Prevent Work Registrants from Being Counted Twice Within a Federal Fiscal Year. if the State Agency Universally Work Registers All Snap Applicants, This Method Must Specify How the State Agency Excludes Those Exempt from Work Registration Under 7 C.f.r. §273.7(b)(1). if the State Agency Work Registers Nonexempt Participants Whenever a New Application is Submitted, This Method Must Also Specify How the State Agency Excludes Those Participants Who May Have Already Been Registered Within the Past 12 Months as Specified Under 7 C.f.r. §273.7(a)(1)(i);'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 6ab0671a-b417-414c-b0bf-2851f5f94690
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49

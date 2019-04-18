@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 2fac3113-509b-489d-88c0-7794042b83c4
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Method the State Agency Uses to Report Work Registrant Information on the Quarterly Form Fns–583'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+changed:
+  -
+    value: '2019-04-17T20:23:40+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1be5e87a-63a6-4e53-bff1-e711554ae66e
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 915f5108-c09e-4437-9154-2c0646201a29
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49

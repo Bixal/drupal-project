@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: d5b3839c-c074-416e-807c-deb6f34ecc05
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: "General Requirements\_- 15"
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 14
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+  -
+    target_type: taxonomy_term
+    target_uuid: cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+changed:
+  -
+    value: '2019-04-17T20:27:49+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e7ceb56a-956c-4352-86db-1601f55c92e8
+field_display_name:
+  -
+    value: 'The Combined (federal/state) State Agency Reimbursement Rate for Transportation Costs and Other Expenses Reasonably Necessary and Directly Related to Participation Incurred by E&t Participants. if the State Agency Proposes to Provide Different Reimbursement Amounts to Account for Varying Levels of Expenses, for Instance for Greater or Lesser Costs of Transportation in Different Areas of the State, it Must Include Them Here.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.cc9bb318-01fe-46ff-a3e7-fa43b197ff49

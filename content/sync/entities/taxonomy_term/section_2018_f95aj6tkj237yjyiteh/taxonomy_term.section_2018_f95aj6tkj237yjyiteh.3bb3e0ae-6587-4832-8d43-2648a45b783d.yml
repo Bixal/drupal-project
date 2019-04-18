@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 3bb3e0ae-6587-4832-8d43-2648a45b783d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Plan Modification'
+description:
+  -
+    value: "<p>If FNS determines that the performance of a State agency with respect to employment and training outcomes is inadequate, FNS may require the State agency to make modifications to the State E&amp;T plan to improve the outcomes.*</p>\r\n\r\n<p>_____</p>\r\n\r\n<p>*7 U.S.C. 2025(h)(5)(E) as amended by Agricultural Act of 2014 .</p>\r\n"
+    format: basic_html
+    processed: "<p>If FNS determines that the performance of a State agency with respect to employment and training outcomes is inadequate, FNS may require the State agency to make modifications to the State E&amp;T plan to improve the outcomes.*</p>\n\n<p>_____</p>\n\n<p>*7 U.S.C. 2025(h)(5)(E) as amended by Agricultural Act of 2014 .</p>"
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+changed:
+  -
+    value: '2019-04-17T20:34:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: aca175ad-6acc-4392-8ec9-1545a4276347
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 548a9ad4-00c6-4e30-9398-0abe60f1c52d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_f95aj6tkj237yjyiteh
+    target_type: taxonomy_vocabulary
+    target_uuid: 37ade088-4fb0-40ed-ab7a-29bba40dd10f
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Funding Disclaimer'
+description:
+  -
+    value: "<p>Funds may not be available when SNAP E&amp;T portions of a Combined State Plan under WIOA are approved. FNS’s obligation after approving a SNAP E&amp;T plan submitted as part of a Combined State Plan is contingent upon the availability of an appropriation from which payment can be made. Any FNS funding resulting from an approval of a SNAP E&amp;T plan submitted as part of a Combined State Plan is subject to FNS receiving sufficient funds (in the Program Financial Control System for FNS) to fund this and all prior approved SNAP E&amp;T plans submitted as part of a Combined State Plan in their entirety in the time and date order received. Federal reimbursement to States for 50 percent of State administrative expenditures and for participant reimbursements is subject to the above conditions</p>\r\n"
+    format: basic_html
+    processed: '<p>Funds may not be available when SNAP E&amp;T portions of a Combined State Plan under WIOA are approved. FNS’s obligation after approving a SNAP E&amp;T plan submitted as part of a Combined State Plan is contingent upon the availability of an appropriation from which payment can be made. Any FNS funding resulting from an approval of a SNAP E&amp;T plan submitted as part of a Combined State Plan is subject to FNS receiving sufficient funds (in the Program Financial Control System for FNS) to fund this and all prior approved SNAP E&amp;T plans submitted as part of a Combined State Plan in their entirety in the time and date order received. Federal reimbursement to States for 50 percent of State administrative expenditures and for participant reimbursements is subject to the above conditions</p>'
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+  -
+    target_type: taxonomy_term
+    target_uuid: 09cf7471-7502-4780-9d9f-6d308222d6b0
+changed:
+  -
+    value: '2019-04-17T20:37:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 11944092-473b-4cec-a5ff-2f80c6cb38df
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0
+      - taxonomy_term.section_2018_f95aj6tkj237yjyiteh.09cf7471-7502-4780-9d9f-6d308222d6b0

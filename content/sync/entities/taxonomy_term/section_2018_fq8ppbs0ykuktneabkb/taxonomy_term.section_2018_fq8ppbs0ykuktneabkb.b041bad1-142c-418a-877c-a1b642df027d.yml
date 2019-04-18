@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: b041bad1-142c-418a-877c-a1b642df027d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_fq8ppbs0ykuktneabkb
+    target_type: taxonomy_vocabulary
+    target_uuid: a790954f-27f1-4169-a3ed-0c82d9895fce
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How the State Implements and Monitors the Administration of Priority of Service to Covered Persons;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: bb2105fd-01f9-43a7-9943-edd266114d14
+  -
+    target_type: taxonomy_term
+    target_uuid: bb2105fd-01f9-43a7-9943-edd266114d14
+changed:
+  -
+    value: '2019-04-18T13:54:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f2c31074-9eb0-456c-bc3d-45f9b380af90
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 16b86db1-94cf-4717-9899-408fe38009ad
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_fq8ppbs0ykuktneabkb.bb2105fd-01f9-43a7-9943-edd266114d14
+      - taxonomy_term.section_2018_fq8ppbs0ykuktneabkb.bb2105fd-01f9-43a7-9943-edd266114d14

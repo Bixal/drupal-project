@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: a98de245-7b91-4b93-be77-2119135726e1
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_fq8ppbs0ykuktneabkb
+    target_type: taxonomy_vocabulary
+    target_uuid: a790954f-27f1-4169-a3ed-0c82d9895fce
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Job-driven Training and Subsequent Placement Service Program for Eligible Veterans and Eligible Persons;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 752b0e28-7b57-4e7a-8d43-2375b9962fed
+  -
+    target_type: taxonomy_term
+    target_uuid: 752b0e28-7b57-4e7a-8d43-2375b9962fed
+changed:
+  -
+    value: '2019-04-18T13:56:39+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 75f9eb51-f6cc-433a-8d68-525f867acbb3
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c1ee45e1-317b-4372-9bef-1cfd520276f7
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_fq8ppbs0ykuktneabkb.752b0e28-7b57-4e7a-8d43-2375b9962fed
+      - taxonomy_term.section_2018_fq8ppbs0ykuktneabkb.752b0e28-7b57-4e7a-8d43-2375b9962fed

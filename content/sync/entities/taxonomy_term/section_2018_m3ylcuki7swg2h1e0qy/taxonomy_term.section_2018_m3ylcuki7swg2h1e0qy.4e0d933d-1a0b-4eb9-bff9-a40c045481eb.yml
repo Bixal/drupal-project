@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 4e0d933d-1a0b-4eb9-bff9-a40c045481eb
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_m3ylcuki7swg2h1e0qy
+    target_type: taxonomy_vocabulary
+    target_uuid: 6a5f03dd-b840-4da4-afa7-cd80ec748e45
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Contents of a Complete Ui Sqsp Package'
+description:
+  -
+    value: "<p>A complete UI SQSP package includes the following documents, as described in Chapter 1, ETA Handbook 336, 18th Edition:</p>\r\n"
+    format: basic_html
+    processed: '<p>A complete UI SQSP package includes the following documents, as described in Chapter 1, ETA Handbook 336, 18th Edition:</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5ae10923-40b9-4813-9c8f-dee072bf0c78
+  -
+    target_type: taxonomy_term
+    target_uuid: 5ae10923-40b9-4813-9c8f-dee072bf0c78
+changed:
+  -
+    value: '2019-04-18T14:24:56+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f19cc21f-5b23-499d-96f2-bb69eb0f211a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.5ae10923-40b9-4813-9c8f-dee072bf0c78
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.5ae10923-40b9-4813-9c8f-dee072bf0c78

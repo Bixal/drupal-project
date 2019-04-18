@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 50fca8d1-8dec-42ad-80ab-2152162913e6
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_m3ylcuki7swg2h1e0qy
+    target_type: taxonomy_vocabulary
+    target_uuid: 6a5f03dd-b840-4da4-afa7-cd80ec748e45
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Submit the Required Off-year Sqsp Components as a Modification to the Combined State Plan on the Same Cycle as the Regular Sqsp Process Which Must Be Approved by September 30th Each Year.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 358e86e3-8dda-4749-9a47-d88fb6a60f66
+  -
+    target_type: taxonomy_term
+    target_uuid: 358e86e3-8dda-4749-9a47-d88fb6a60f66
+changed:
+  -
+    value: '2019-04-18T14:45:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 28415f44-232f-44c8-af3c-a8489ddeb7e2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 2b616e6e-c001-4d31-83b4-c2de57efa9b6
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.358e86e3-8dda-4749-9a47-d88fb6a60f66
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.358e86e3-8dda-4749-9a47-d88fb6a60f66

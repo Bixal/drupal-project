@@ -17,9 +17,9 @@ name:
     value: 'Trade Adjustment Assistance (TAA)'
 description:
   -
-    value: '<p>This is a huge mess, i have no idea what''s going on here.</p><p>I went through the ad-hoc looking for states with this section&nbsp;https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p><p>The formatting is hurting my brain trying to figure out what needs to be here.</p>'
+    value: "<p>There are no program-specific state planning requirements for TAA. If the state includes TAA in a Combined State Plan, the state must incorporate TAA in its responses to the common planning elements in sections II, III, IV, and V of the WIOA State Plan requirements instrument.</p>\r\n"
     format: basic_html
-    processed: "<p>This is a huge mess, i have no idea what's going on here.</p><p>I went through the ad-hoc looking for states with this section\_https://rsa.ed.gov/ad-hoc-query-wioa.cfm</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/ar.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/de.pdf</p><p>https://www2.ed.gov/about/offices/list/osers/rsa/wioa/state-plans/id.pdf</p><p>The formatting is hurting my brain trying to figure out what needs to be here.</p>"
+    processed: '<p>There are no program-specific state planning requirements for TAA. If the state includes TAA in a Combined State Plan, the state must incorporate TAA in its responses to the common planning elements in sections II, III, IV, and V of the WIOA State Plan requirements instrument.</p>'
 weight:
   -
     value: 0
@@ -28,7 +28,7 @@ parent:
     target_id: 0
 changed:
   -
-    value: '2019-03-20T21:02:43+00:00'
+    value: '2019-04-18T14:17:40+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -48,7 +48,29 @@ field_hide_hierarchical_heading:
 field_hide_name:
   -
     value: false
-field_input_from_state: {  }
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 195b83ed-cea3-4490-998b-ff5f23b6afef
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Has the state incorporated TAA into the sections indicated above?</p>\r\n"
+      format: basic_html
+    term_field_uuid: 92bd1eb6-ebbf-46ba-856e-8c98f4af6756
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
 field_shown_on_toc:
   -
     value: true

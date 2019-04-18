@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 870306e6-e190-41c4-b7e7-f5bce9cacb24
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Who Have Been Unserved or Underserved by the Vr Program;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40acff8c-3de6-4663-9f6e-63961071e505
+  -
+    target_type: taxonomy_term
+    target_uuid: 40acff8c-3de6-4663-9f6e-63961071e505
+changed:
+  -
+    value: '2019-04-16T20:18:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6b803335-71fe-4c06-a202-32d6f0273bc0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3d83d01a-e3ac-4a7e-ad91-a3b397af48f0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.40acff8c-3de6-4663-9f6e-63961071e505
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.40acff8c-3de6-4663-9f6e-63961071e505

@@ -22,13 +22,13 @@ description:
     processed: '<p>The Vocational Rehabilitation (VR) Services Portion of the Unified or Combined State Plan* must include the following descriptions and estimates, as required by section 101(a) of the Rehabilitation Act of 1973, as amended by WIOA:</p><p>__________</p><p>* Sec. 102(b)(D)(iii) of WIOA</p>'
 weight:
   -
-    value: 0
+    value: 152
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-20T20:01:20+00:00'
+    value: '2019-04-17T15:35:55+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

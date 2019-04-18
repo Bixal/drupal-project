@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: 87cf8577-5f1d-48ee-8e3a-db3c92e0ac00
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Financial Administration of the Supported Employment Program - a'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+  -
+    target_type: taxonomy_term
+    target_uuid: 5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+changed:
+  -
+    value: '2019-04-17T17:57:55+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8faa03be-667b-4a69-8e88-549e44b4db75
+field_display_name:
+  -
+    value: 'The Designated State Agency Assures That it Will Expend No More Than 2.5 Percent of the State’s Allotment Under Title Vi for Administrative Costs of Carrying Out This Program; And, the Designated State Agency or Agencies Will Provide, Directly or Indirectly Through Public or Private Entities, Non-federal Contributions in an Amount That is Not Less Than 10 Percent of the Costs of Carrying Out Supported Employment Services Provided to Youth with the Most Significant Disabilities with the Funds Reserved for Such Purpose Under Section 603(d) of the Rehabilitation Act, in Accordance with Section 606(b)(7)(g) and (h) of the Rehabilitation Act.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.5b7724dc-1622-47b0-9a47-75fb93f1f0fd

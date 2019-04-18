@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: cdaec09f-e72b-49fd-a68d-4ac935f3d35e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Identify the Goals and Priorities in Carrying Out the Vr and Supported Employment Programs.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 8634e7d8-5dce-4dc0-a7e6-a639fab63b1e
+  -
+    target_type: taxonomy_term
+    target_uuid: 8634e7d8-5dce-4dc0-a7e6-a639fab63b1e
+changed:
+  -
+    value: '2019-04-16T20:28:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 94c6d51e-1a8d-4497-a767-39bcd4aaee30
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 73a1c887-7170-4520-90fc-8abb7b721dbf
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.8634e7d8-5dce-4dc0-a7e6-a639fab63b1e
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.8634e7d8-5dce-4dc0-a7e6-a639fab63b1e

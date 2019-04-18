@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: f02bd575-1ffb-4e6f-935f-de1416c1d447
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Identify the Need to Establish, Develop, or Improve Community Rehabilitation Programs Within the State; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 08587b42-4fa8-48a3-91c9-2da41a6daf85
+  -
+    target_type: taxonomy_term
+    target_uuid: 08587b42-4fa8-48a3-91c9-2da41a6daf85
+changed:
+  -
+    value: '2019-04-16T20:20:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 13ed6680-8046-43b9-884c-188a6c8ae398
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b430a956-16c7-4af0-8b4d-ae1c4743a8cc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.08587b42-4fa8-48a3-91c9-2da41a6daf85
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.08587b42-4fa8-48a3-91c9-2da41a6daf85

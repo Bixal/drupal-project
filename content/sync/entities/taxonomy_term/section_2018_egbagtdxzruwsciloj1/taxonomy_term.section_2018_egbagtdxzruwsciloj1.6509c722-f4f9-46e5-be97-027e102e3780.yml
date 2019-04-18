@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 6509c722-f4f9-46e5-be97-027e102e3780
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Input of State Rehabilitation Council'
+description:
+  -
+    value: 'All agencies, except for those that are independent consumer-controlled commissions, must describe the following:'
+    format: basic_html
+    processed: 'All agencies, except for those that are independent consumer-controlled commissions, must describe the following:'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+changed:
+  -
+    value: '2019-04-16T13:36:06+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c123ffe6-2100-412e-b3ae-58abe1e7ec5e
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9

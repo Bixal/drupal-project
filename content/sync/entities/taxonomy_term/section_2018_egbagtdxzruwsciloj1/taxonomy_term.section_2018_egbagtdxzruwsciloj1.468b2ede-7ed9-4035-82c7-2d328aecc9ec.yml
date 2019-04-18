@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 468b2ede-7ed9-4035-82c7-2d328aecc9ec
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Personnel Standards'
+description:
+  -
+    value: 'Describe the State agency''s policies and procedures for the establishment and maintenance of personnel standards consistent with section 101(a)(7)(B) and 34 CFR 361.18(c) to ensure that designated State unit professional and paraprofessional personnel are adequately trained and prepared, including:'
+    format: basic_html
+    processed: 'Describe the State agency''s policies and procedures for the establishment and maintenance of personnel standards consistent with section 101(a)(7)(B) and 34 CFR 361.18(c) to ensure that designated State unit professional and paraprofessional personnel are adequately trained and prepared, including:'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+changed:
+  -
+    value: '2019-04-16T18:52:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4030cc69-ddc2-4087-9f5c-beefb4f55cf2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc

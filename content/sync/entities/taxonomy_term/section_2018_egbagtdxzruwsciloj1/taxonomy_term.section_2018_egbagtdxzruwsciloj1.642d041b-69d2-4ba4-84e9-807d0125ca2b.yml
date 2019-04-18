@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 642d041b-69d2-4ba4-84e9-807d0125ca2b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: Footnotes
+description:
+  -
+    value: "<p>__________</p>\r\n\r\n<p><strong>Certification 1 Footnotes</strong></p>\r\n\r\n<p>* Public Law 113-128.</p>\r\n\r\n<p>** Unless otherwise stated, \"Rehabilitation Act\" means the Rehabilitation Act of 1973, as amended by WIOA, signed into law on July 22, 2014.</p>\r\n\r\n<p><strong>Certification 2 Footnotes</strong></p>\r\n\r\n<p>* All references in this plan to \"designated State agency\" or to \"the State agency\" relate to the agency identified in this paragraph.</p>\r\n\r\n<p>** No funds under title 1 of the Rehabilitation Act may be awarded without an approved VR services portion of the Unified or Combined State Plan in accordance with section 101(a) of the Rehabilitation Act.</p>\r\n\r\n<p>*** Applicable regulations, in part, include the Education Department General Administrative Regulations (EDGAR) in 34 CFR parts 76,77,79,81, and 82; 2 CFR part 200 as adopted by 2 CFR part 3485; and the State VR Services Program regulations.</p>\r\n\r\n<p><strong>Certification 3 Footnotes</strong></p>\r\n\r\n<p>* No funds under title VI of the Rehabilitation Act may be awarded without an approved supplement to the VR services portion of the Unified or Combined State Plan in accordance with section 606(a) of the Rehabilitation Act.</p>\r\n\r\n<p>** Applicable regulations, in part, include the citations in</p>\r\n\r\n<p>*** under Certification 2 footnotes</p>\r\n"
+    format: basic_html
+    processed: "<p>__________</p>\n\n<p><strong>Certification 1 Footnotes</strong></p>\n\n<p>* Public Law 113-128.</p>\n\n<p>** Unless otherwise stated, \"Rehabilitation Act\" means the Rehabilitation Act of 1973, as amended by WIOA, signed into law on July 22, 2014.</p>\n\n<p><strong>Certification 2 Footnotes</strong></p>\n\n<p>* All references in this plan to \"designated State agency\" or to \"the State agency\" relate to the agency identified in this paragraph.</p>\n\n<p>** No funds under title 1 of the Rehabilitation Act may be awarded without an approved VR services portion of the Unified or Combined State Plan in accordance with section 101(a) of the Rehabilitation Act.</p>\n\n<p>*** Applicable regulations, in part, include the Education Department General Administrative Regulations (EDGAR) in 34 CFR parts 76,77,79,81, and 82; 2 CFR part 200 as adopted by 2 CFR part 3485; and the State VR Services Program regulations.</p>\n\n<p><strong>Certification 3 Footnotes</strong></p>\n\n<p>* No funds under title VI of the Rehabilitation Act may be awarded without an approved supplement to the VR services portion of the Unified or Combined State Plan in accordance with section 606(a) of the Rehabilitation Act.</p>\n\n<p>** Applicable regulations, in part, include the citations in</p>\n\n<p>*** under Certification 2 footnotes</p>"
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 11273c36-8c77-4906-95e3-50a3449935e0
+  -
+    target_type: taxonomy_term
+    target_uuid: 11273c36-8c77-4906-95e3-50a3449935e0
+changed:
+  -
+    value: '2019-04-17T19:29:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6bc6631d-0671-4ae9-8b90-1f86eca161f4
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.11273c36-8c77-4906-95e3-50a3449935e0
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.11273c36-8c77-4906-95e3-50a3449935e0

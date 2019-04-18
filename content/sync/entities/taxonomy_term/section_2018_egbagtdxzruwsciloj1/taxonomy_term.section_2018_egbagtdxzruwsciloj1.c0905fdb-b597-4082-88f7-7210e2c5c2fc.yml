@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: c0905fdb-b597-4082-88f7-7210e2c5c2fc
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: Assurances
+description:
+  -
+    value: "<p>The designated State agency or designated State unit, as appropriate and identified in the State certifications included with this VR services portion of the Unified or Combined State Plan and its supplement, through signature of the authorized individual, assures the Commissioner of the Rehabilitation Services Administration (RSA), that it will comply with all of the requirements of the VR services portion of the Unified or Combined State Plan and its supplement, as set forth in sections 101(a) and 606 of the Rehabilitation Act. The individual authorized to submit the VR services portion of the Unified or Combined State Plan and its supplement makes the following assurances:<strong>The State Plan must provide assurances that:</strong></p>\r\n"
+    format: basic_html
+    processed: '<p>The designated State agency or designated State unit, as appropriate and identified in the State certifications included with this VR services portion of the Unified or Combined State Plan and its supplement, through signature of the authorized individual, assures the Commissioner of the Rehabilitation Services Administration (RSA), that it will comply with all of the requirements of the VR services portion of the Unified or Combined State Plan and its supplement, as set forth in sections 101(a) and 606 of the Rehabilitation Act. The individual authorized to submit the VR services portion of the Unified or Combined State Plan and its supplement makes the following assurances:<strong>The State Plan must provide assurances that:</strong></p>'
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+changed:
+  -
+    value: '2019-04-17T15:20:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7e6a95ba-37ff-4bb5-af43-b213a77009e2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9

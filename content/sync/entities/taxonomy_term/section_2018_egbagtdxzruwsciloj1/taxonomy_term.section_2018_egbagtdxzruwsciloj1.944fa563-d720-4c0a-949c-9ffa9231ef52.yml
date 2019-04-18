@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 944fa563-d720-4c0a-949c-9ffa9231ef52
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Provision of Extended Services for a Period Not to Exceed 4 Years; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 9552ad57-7765-4c39-9001-d9160bf2d300
+  -
+    target_type: taxonomy_term
+    target_uuid: 9552ad57-7765-4c39-9001-d9160bf2d300
+changed:
+  -
+    value: '2019-04-16T20:35:12+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3676654c-139b-4b3f-8a46-e5ce9933e9e3
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 86796431-28a5-478e-8a0b-a913dad6a895
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9552ad57-7765-4c39-9001-d9160bf2d300
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.9552ad57-7765-4c39-9001-d9160bf2d300

@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: aa4c290d-f66e-47d1-b684-1fdceeea21ff
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Shared Funding and Administration of Joint Programs, in Accordance with Section 101(a)(2)(a)(ii) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+changed:
+  -
+    value: '2019-04-17T15:01:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 06b7bb2e-e659-4328-9d01-d6e7de925a14
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: 'The designated State agency allows for the shared funding and administration of joint programs:'
+      format: basic_html
+    term_field_uuid: 776163d0-063b-41de-941f-c36e6f488ffe
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272

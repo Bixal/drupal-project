@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: d6ff33ba-044a-4410-85bb-8dcd1c60d16f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Data System on Personnel and Personnel Development'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+  -
+    target_type: taxonomy_term
+    target_uuid: 253f4949-2eb8-4701-9d53-26f09942a9cc
+changed:
+  -
+    value: '2019-04-16T18:01:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 550a659b-9716-419c-8b8f-f59cc83bec4a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.253f4949-2eb8-4701-9d53-26f09942a9cc

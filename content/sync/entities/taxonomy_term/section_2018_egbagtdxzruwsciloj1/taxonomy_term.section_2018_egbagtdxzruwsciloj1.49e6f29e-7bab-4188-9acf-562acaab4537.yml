@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 49e6f29e-7bab-4188-9acf-562acaab4537
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statement for Loan Guarantees and Loan Insurance - Form'
+description:
+  -
+    value: "<p>SF LLL Form – Disclosure of Lobbying Activities (only if applicable) (<a href=\"http://www2.ed.gov/fund/grant/apply/appforms/appforms.html\">http://www2.ed.gov/fund/grant/apply/appforms/appforms.html</a>). If applicable, please print, sign, and email to <a href=\"mailto:MAT_OCTAE@ed.gov\">MAT_OCTAE@ed.gov</a></p>\r\n"
+    format: basic_html
+    processed: '<p>SF LLL Form – Disclosure of Lobbying Activities (only if applicable) (<a href="http://www2.ed.gov/fund/grant/apply/appforms/appforms.html">http://www2.ed.gov/fund/grant/apply/appforms/appforms.html</a>). If applicable, please print, sign, and email to <a href="mailto:MAT_OCTAE@ed.gov">MAT_OCTAE@ed.gov</a></p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 722b70ba-e456-46ac-a11a-87a30333047a
+  -
+    target_type: taxonomy_term
+    target_uuid: 722b70ba-e456-46ac-a11a-87a30333047a
+changed:
+  -
+    value: '2019-04-17T14:08:34+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4e8fc2e6-fdf7-4cc2-a355-97c89506f412
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: true
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.722b70ba-e456-46ac-a11a-87a30333047a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.722b70ba-e456-46ac-a11a-87a30333047a

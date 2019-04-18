@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 5af695a6-6755-4645-b6ad-1dfded22afba
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Agency Responsible for Providing Services for Individuals with Developmental Disabilities; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4658f18f-2dd1-46d1-ad6a-05778aa618a5
+  -
+    target_type: taxonomy_term
+    target_uuid: 4658f18f-2dd1-46d1-ad6a-05778aa618a5
+changed:
+  -
+    value: '2019-04-16T17:57:45+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7ec677b1-4d88-4d8c-8a8f-9bb88c87846e
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1956c98e-259a-40aa-b6ae-fb05552a4817
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.4658f18f-2dd1-46d1-ad6a-05778aa618a5
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.4658f18f-2dd1-46d1-ad6a-05778aa618a5

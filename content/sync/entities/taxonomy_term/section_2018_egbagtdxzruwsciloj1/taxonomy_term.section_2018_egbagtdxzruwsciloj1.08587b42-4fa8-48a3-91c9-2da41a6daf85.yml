@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 08587b42-4fa8-48a3-91c9-2da41a6daf85
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statewide Assessment'
+description:
+  -
+    value: '(Formerly known as Attachment 4.11(a)).'
+    format: basic_html
+    processed: '(Formerly known as Attachment 4.11(a)).'
+weight:
+  -
+    value: 9
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+changed:
+  -
+    value: '2019-04-16T19:21:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 04e7a549-33d6-4221-bb8a-2e17b8cc1f11
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a

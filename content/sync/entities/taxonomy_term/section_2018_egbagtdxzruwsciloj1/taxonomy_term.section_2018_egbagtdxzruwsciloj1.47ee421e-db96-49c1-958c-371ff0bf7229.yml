@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 47ee421e-db96-49c1-958c-371ff0bf7229
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Other Available Information on the Operation and Effectiveness of the Vr Program, Including Any Reports Received from the State Rehabilitation Council and Finding and Recommendations from Monitoring Activities Conducted Under Section 107.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 663d1120-4b3d-4fd2-955c-94238b7e1d77
+  -
+    target_type: taxonomy_term
+    target_uuid: 663d1120-4b3d-4fd2-955c-94238b7e1d77
+changed:
+  -
+    value: '2019-04-16T20:30:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2c95b876-1a7d-4ed9-81d3-753994267145
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 26eb5f93-df4a-4b8e-a1db-d3eb0c4c1210
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.663d1120-4b3d-4fd2-955c-94238b7e1d77
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.663d1120-4b3d-4fd2-955c-94238b7e1d77

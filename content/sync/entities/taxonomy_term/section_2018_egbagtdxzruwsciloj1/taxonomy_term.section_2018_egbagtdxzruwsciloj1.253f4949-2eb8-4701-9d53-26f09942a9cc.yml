@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 253f4949-2eb8-4701-9d53-26f09942a9cc
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Comprehensive System of Personnel Development; Data System on Personnel and Personnel Development'
+description:
+  -
+    value: '(Formerly known as Attachment 4.10)). Describe the designated State agency''s procedures and activities to establish and maintain a comprehensive system of personnel development designed to ensure an adequate supply of qualified State rehabilitation professional and paraprofessional personnel for the designated State unit, including the following:'
+    format: basic_html
+    processed: '(Formerly known as Attachment 4.10)). Describe the designated State agency''s procedures and activities to establish and maintain a comprehensive system of personnel development designed to ensure an adequate supply of qualified State rehabilitation professional and paraprofessional personnel for the designated State unit, including the following:'
+weight:
+  -
+    value: 8
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+  -
+    target_type: taxonomy_term
+    target_uuid: 581afd80-1ec2-44f6-90e8-fc203293812a
+changed:
+  -
+    value: '2019-04-16T17:59:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8f1ab9ed-16ac-4e59-8300-6547a0ef9b58
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.581afd80-1ec2-44f6-90e8-fc203293812a

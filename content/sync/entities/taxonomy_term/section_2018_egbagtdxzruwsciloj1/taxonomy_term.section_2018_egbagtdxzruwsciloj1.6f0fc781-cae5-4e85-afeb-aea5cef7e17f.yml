@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 6f0fc781-cae5-4e85-afeb-aea5cef7e17f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Strategies to Address the Needs Identified in the Assessments; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: ce483897-8c65-4426-ba7a-e5016730d7c5
+  -
+    target_type: taxonomy_term
+    target_uuid: ce483897-8c65-4426-ba7a-e5016730d7c5
+changed:
+  -
+    value: '2019-04-17T15:32:39+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2541469e-3250-4057-9c1e-2581497a0ccd
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.ce483897-8c65-4426-ba7a-e5016730d7c5
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.ce483897-8c65-4426-ba7a-e5016730d7c5

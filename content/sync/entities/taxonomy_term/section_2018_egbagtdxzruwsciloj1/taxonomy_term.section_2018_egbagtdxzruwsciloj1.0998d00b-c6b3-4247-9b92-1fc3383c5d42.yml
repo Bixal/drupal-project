@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: 0998d00b-c6b3-4247-9b92-1fc3383c5d42
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Financial Administration of the Supported Employment Program - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+  -
+    target_type: taxonomy_term
+    target_uuid: 5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+changed:
+  -
+    value: '2019-04-17T17:58:25+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e20eb790-c40f-4b0e-a49c-09a5c09b030c
+field_display_name:
+  -
+    value: 'The Designated State Agency Assures That it Will Use Funds Made Available Under Title Vi of the Rehabilitation Act Only to Provide Supported Employment Services to Individuals with the Most Significant Disabilities, Including Extended Services to Youth with the Most Significant Disabilities, Who Are Eligible to Receive Such Services; And, That Such Funds Are Used Only to Supplement and Not Supplant the Funds Provided Under Title I of the Rehabilitation Act, when Providing Supported Employment Services Specified in the Individualized Plan for Employment, in Accordance with Section 606(b)(7)(a) and (d), of the Rehabilitation Act.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.5b7724dc-1622-47b0-9a47-75fb93f1f0fd
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.5b7724dc-1622-47b0-9a47-75fb93f1f0fd

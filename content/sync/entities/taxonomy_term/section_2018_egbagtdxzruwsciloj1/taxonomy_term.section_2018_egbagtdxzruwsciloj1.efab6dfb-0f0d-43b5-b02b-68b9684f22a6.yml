@@ -1,0 +1,163 @@
+uuid:
+  -
+    value: efab6dfb-0f0d-43b5-b02b-68b9684f22a6
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Certifications - Written and signed certifications'
+description:
+  -
+    value: "<p><strong>States must provide written and signed certifications that:</strong></p>\r\n"
+    format: basic_html
+    processed: '<p><strong>States must provide written and signed certifications that:</strong></p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 11273c36-8c77-4906-95e3-50a3449935e0
+  -
+    target_type: taxonomy_term
+    target_uuid: 11273c36-8c77-4906-95e3-50a3449935e0
+changed:
+  -
+    value: '2019-04-16T20:58:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 18006756-60d6-45db-85cc-bf09dc2cf95e
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: true
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>1. The designated State agency or designated State unit (as appropriate) listed above is authorized to submit the VR services portion of the Unified or Combined State Plan under title 1 of the Rehabilitation Act of 1973 (Rehabilitation Act), as amended by WIOA*, and its supplement under title VI of the Rehabilitation Act.**</p>\r\n"
+      format: basic_html
+    term_field_uuid: d486ab3e-0289-46ba-91c6-227caaef0ee1
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>2. As a condition for the receipt of Federal funds under title I of the Rehabilitation Act for the provision of VR services, the designated State agency listed above agrees to operate and administer the State VR Services Program in accordance with the VR services portion of the Unified or Combined State Plan , the Rehabilitation Act, and all applicable regulations , policies, and procedures established by the Secretary of Education. Funds made available under section 111 of the Rehabilitation Act are used solely for the provision of VR services and the administration of the VR services portion of the Unified or Combined State Plan;</p>\r\n"
+      format: basic_html
+    term_field_uuid: fa90d896-499c-4261-9f63-a944fe66e0b0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>3. As a condition for the receipt of Federal funds under title VI of the Rehabilitation Act for supported employment services, the designated State agency agrees to operate and administer the State Supported Employment Services Program in accordance with the supplement to the VR services portion of the Unified or Combined State Plan* , the Rehabilitation Act, and all applicable regulations , policies, and procedures established by the Secretary of Education. Funds made available under title VI are used solely for the provision of supported employment services and the administration of the supplement to the VR services portion of the Unified or Combined State Plan;**</p>\r\n"
+      format: basic_html
+    term_field_uuid: 2b545f7b-5e03-4eda-a6f4-2c58d2bdf292
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>4. The designated State agency and/or the designated State unit has the authority under State law to perform the functions of the State regarding the VR services portion of the Unified or Combined State Plan and its supplement;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 25c0c8e2-d7f8-4211-ae67-4443d15a20c3
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>5. The State legally may carry out each provision of the VR services portion of the Unified or Combined State Plan and its supplement.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 1b102d15-010a-4f5a-b73c-72c307862b2a
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>6. All provisions of the VR services portion of the Unified or Combined State Plan and its supplement are consistent with State law.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 181d793f-ad51-45de-96a1-5a32ec0c6ece
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>7. The <strong>Authorized Representative listed above</strong> has the authority under State law to receive, hold, and disburse Federal funds made available under the VR services portion of the Unified or Combined State Plan and its supplement;</p>\r\n"
+      format: basic_html
+    term_field_uuid: c735f295-0cbe-4892-bdd5-88f960ff9451
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>8. The <strong>Authorized Representative listed above</strong> has the authority to submit the VR services portion of the Unified or Combined State Plan and the supplement for Supported Employment services;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 73018841-2fd8-4a80-a448-7a3283f50332
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: '9. The agency that submits the VR services portion of the Unified or Combined State Plan and its supplement has adopted or otherwise formally approved the plan and its supplement.'
+      format: basic_html
+    term_field_uuid: 6968a0fc-c74c-4b45-9fa4-c6210bf02558
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.11273c36-8c77-4906-95e3-50a3449935e0
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.11273c36-8c77-4906-95e3-50a3449935e0

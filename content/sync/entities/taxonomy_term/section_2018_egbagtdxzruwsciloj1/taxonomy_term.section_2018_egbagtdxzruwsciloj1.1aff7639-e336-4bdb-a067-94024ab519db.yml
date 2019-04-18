@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 1aff7639-e336-4bdb-a067-94024ab519db
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Outreach Procedures That Will Be Used to Identify and Serve Individuals with Disabilities Who Are Minorities, Including Those with the Most Significant Disabilities, as Well as Those Who Have Been Unserved or Underserved by the Vr Program.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b46c3edb-d134-4112-ac47-220cc4b49a7c
+  -
+    target_type: taxonomy_term
+    target_uuid: b46c3edb-d134-4112-ac47-220cc4b49a7c
+changed:
+  -
+    value: '2019-04-16T20:37:49+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: eee47543-c29d-485f-960c-1701bfa122c0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3700a9be-c194-4dba-b85a-106de3015d13
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b46c3edb-d134-4112-ac47-220cc4b49a7c
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b46c3edb-d134-4112-ac47-220cc4b49a7c

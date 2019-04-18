@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: ddccde68-078c-419c-a488-a58687b454d5
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Designated State Unit''s Response to the Council’s Input and Recommendations; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 6509c722-f4f9-46e5-be97-027e102e3780
+  -
+    target_type: taxonomy_term
+    target_uuid: 6509c722-f4f9-46e5-be97-027e102e3780
+changed:
+  -
+    value: '2019-04-16T13:33:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 61e5b6ec-3847-49da-a72a-8457607278b4
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 26766fe7-6570-4635-8414-d7ccdbacafcc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.6509c722-f4f9-46e5-be97-027e102e3780
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.6509c722-f4f9-46e5-be97-027e102e3780

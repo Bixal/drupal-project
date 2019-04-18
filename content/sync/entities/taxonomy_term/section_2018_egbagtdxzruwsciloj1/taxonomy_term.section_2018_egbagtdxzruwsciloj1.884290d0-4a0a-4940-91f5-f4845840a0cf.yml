@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 884290d0-4a0a-4940-91f5-f4845840a0cf
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Qualified Personnel Needs.'
+description:
+  -
+    value: 'Describe the development and maintenance of a system for collecting and analyzing on an annual basis data on qualified personnel needs with respect to:'
+    format: basic_html
+    processed: 'Describe the development and maintenance of a system for collecting and analyzing on an annual basis data on qualified personnel needs with respect to:'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: d6ff33ba-044a-4410-85bb-8dcd1c60d16f
+  -
+    target_type: taxonomy_term
+    target_uuid: d6ff33ba-044a-4410-85bb-8dcd1c60d16f
+changed:
+  -
+    value: '2019-04-16T18:01:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ee9db95d-38d1-44f0-8fcd-2a840932e2f3
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.d6ff33ba-044a-4410-85bb-8dcd1c60d16f
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.d6ff33ba-044a-4410-85bb-8dcd1c60d16f

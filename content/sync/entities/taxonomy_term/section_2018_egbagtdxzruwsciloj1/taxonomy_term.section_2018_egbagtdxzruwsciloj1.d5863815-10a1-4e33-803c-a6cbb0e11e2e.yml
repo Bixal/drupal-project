@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: d5863815-10a1-4e33-803c-a6cbb0e11e2e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Transition Services, Including Pre-employment Transition Services, for Students and Youth with Disabilities.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: ed8335ee-3f39-417a-8d06-5da688909745
+  -
+    target_type: taxonomy_term
+    target_uuid: ed8335ee-3f39-417a-8d06-5da688909745
+changed:
+  -
+    value: '2019-04-16T17:54:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3314b0bd-8d5b-4d36-a1f6-83f87c88e53f
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 66cec6ee-f06d-4a71-9ee3-0af21700583d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.ed8335ee-3f39-417a-8d06-5da688909745
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.ed8335ee-3f39-417a-8d06-5da688909745

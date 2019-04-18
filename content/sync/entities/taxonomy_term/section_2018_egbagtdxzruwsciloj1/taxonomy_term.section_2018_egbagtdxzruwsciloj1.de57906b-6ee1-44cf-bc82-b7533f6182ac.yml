@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: de57906b-6ee1-44cf-bc82-b7533f6182ac
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: "If the Designated State Unit Has Elected to Serve Eligible Individuals, Regardless of Any Established Order of Selection, Who Require Specific Services or Equipment to Maintain Employment.\_"
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: af17b668-dcf4-44c3-96e9-bfb31d1c0a79
+  -
+    target_type: taxonomy_term
+    target_uuid: af17b668-dcf4-44c3-96e9-bfb31d1c0a79
+changed:
+  -
+    value: '2019-04-16T20:33:33+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7cd83a1c-7ca9-4c6a-8150-51bfe818d355
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: a1c7f805-4354-4717-81a2-eed2b7cc6692
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.af17b668-dcf4-44c3-96e9-bfb31d1c0a79
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.af17b668-dcf4-44c3-96e9-bfb31d1c0a79

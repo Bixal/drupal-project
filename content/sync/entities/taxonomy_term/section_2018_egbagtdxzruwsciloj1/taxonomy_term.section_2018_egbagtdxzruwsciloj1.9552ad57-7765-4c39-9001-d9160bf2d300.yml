@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 9552ad57-7765-4c39-9001-d9160bf2d300
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describe the Activities to Be Conducted, with Funds Reserved Pursuant to Section 603(d), for Youth with the Most Significant Disabilities, Including:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: bfd428e9-ca49-4f90-ad39-48ab6d40d1a9
+  -
+    target_type: taxonomy_term
+    target_uuid: bfd428e9-ca49-4f90-ad39-48ab6d40d1a9
+changed:
+  -
+    value: '2019-04-16T20:34:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 57bd5374-b1a8-402b-9b12-1f3d9725e103
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.bfd428e9-ca49-4f90-ad39-48ab6d40d1a9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.bfd428e9-ca49-4f90-ad39-48ab6d40d1a9

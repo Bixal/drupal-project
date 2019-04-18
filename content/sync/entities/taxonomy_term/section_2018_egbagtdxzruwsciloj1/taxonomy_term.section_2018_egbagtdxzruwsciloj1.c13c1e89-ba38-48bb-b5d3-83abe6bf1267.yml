@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c13c1e89-ba38-48bb-b5d3-83abe6bf1267
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Establishment of Either a State Independent Commission or State Rehabilitation Council, as Required by Section 101(a)(21) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+changed:
+  -
+    value: '2019-04-17T14:54:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1ba189ec-6c1a-416f-a6a4-7982c35f86ac
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>The designated State agency or designated State unit, as applicable</p>\r\n"
+      format: basic_html
+    term_field_uuid: fcb62c85-4d81-4999-8899-cba0a7cc21f3
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272

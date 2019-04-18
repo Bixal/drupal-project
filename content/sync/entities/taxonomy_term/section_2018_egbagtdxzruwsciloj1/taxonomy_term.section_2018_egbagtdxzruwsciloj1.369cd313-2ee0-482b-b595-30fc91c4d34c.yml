@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 369cd313-2ee0-482b-b595-30fc91c4d34c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Support Innovation and Expansion Activities; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 95074033-d96f-44b8-a0a6-f632381517d9
+  -
+    target_type: taxonomy_term
+    target_uuid: 95074033-d96f-44b8-a0a6-f632381517d9
+changed:
+  -
+    value: '2019-04-16T20:41:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 917773be-117b-440f-94d2-33018ecb4f69
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ee2a6a5e-7127-4239-98de-520ed215cc87
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.95074033-d96f-44b8-a0a6-f632381517d9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.95074033-d96f-44b8-a0a6-f632381517d9

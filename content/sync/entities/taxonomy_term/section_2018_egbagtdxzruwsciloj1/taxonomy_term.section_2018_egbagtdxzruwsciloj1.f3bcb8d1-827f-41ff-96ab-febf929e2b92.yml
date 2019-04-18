@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: f3bcb8d1-827f-41ff-96ab-febf929e2b92
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Service and Outcome Goals.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: af2b314a-039c-4824-91e7-16c44ecde829
+  -
+    target_type: taxonomy_term
+    target_uuid: af2b314a-039c-4824-91e7-16c44ecde829
+changed:
+  -
+    value: '2019-04-16T20:32:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 56540e4f-7439-4a92-9a35-df345885041a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b57738b7-4071-4a4f-a886-cfba9f3286d5
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.af2b314a-039c-4824-91e7-16c44ecde829
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.af2b314a-039c-4824-91e7-16c44ecde829

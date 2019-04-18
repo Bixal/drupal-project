@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 7ae69019-30d9-4235-a944-3b9ecb86519c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Standards That Are Consistent with Any National or State- Approved or -recognized Certification, Licensing, Registration, or Other Comparable Requirements That Apply to the Profession or Discipline in Which Such Personnel Are Providing Vr Services; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 468b2ede-7ed9-4035-82c7-2d328aecc9ec
+  -
+    target_type: taxonomy_term
+    target_uuid: 468b2ede-7ed9-4035-82c7-2d328aecc9ec
+changed:
+  -
+    value: '2019-04-16T18:52:27+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 080e9875-b3e3-46a1-8c06-dd5c8c1f973a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 92977d23-469f-43b6-8f13-966ed889e1ff
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.468b2ede-7ed9-4035-82c7-2d328aecc9ec
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.468b2ede-7ed9-4035-82c7-2d328aecc9ec

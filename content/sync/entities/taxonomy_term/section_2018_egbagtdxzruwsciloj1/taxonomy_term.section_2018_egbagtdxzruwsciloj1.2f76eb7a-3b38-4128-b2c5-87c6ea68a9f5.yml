@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 2f76eb7a-3b38-4128-b2c5-87c6ea68a9f5
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Local Administration of the Vr Services Portion of the Unified or Combined State Plan, in Accordance with Section 101(a)(2)(a) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+changed:
+  -
+    value: '2019-04-17T14:56:30+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: fccad1a0-b8d4-43ee-ba55-aadccf543b7f
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: 'The designated State agency allows for the local administration of VR funds.'
+      format: basic_html
+    term_field_uuid: de61838c-2539-4872-b351-f011e031751d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272

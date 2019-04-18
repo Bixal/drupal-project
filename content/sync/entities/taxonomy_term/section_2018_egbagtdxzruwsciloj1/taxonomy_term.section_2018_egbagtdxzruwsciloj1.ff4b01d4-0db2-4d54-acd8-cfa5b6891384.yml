@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: ff4b01d4-0db2-4d54-acd8-cfa5b6891384
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Administration of the Vr Services Portion of the Unified or Combined State Plan - K'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 10
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+changed:
+  -
+    value: '2019-04-17T15:05:50+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: da7ffae1-09c1-4da2-9037-06f76127d212
+field_display_name:
+  -
+    value: "The Compilation and Submission to the Commissioner of Statewide Assessments, Estimates, State Goals and Priorities, Strategies, and Progress Reports, as Appropriate, and as Required by Sections 101(a)(15), 105(c)(2), and 606(b)(8) of the Rehabilitation Act.\_"
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272

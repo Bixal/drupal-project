@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 3572f0d9-0217-4686-909b-24d8e5bd4b4b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Submission of Reports as Required by Section 101(a)(10) of the Rehabilitation Act.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 12
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+  -
+    target_type: taxonomy_term
+    target_uuid: b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+changed:
+  -
+    value: '2019-04-17T15:10:42+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: bc49469d-bfde-45fb-a062-6930ba5e94cd
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.b1c3dea0-a8d9-477c-9bf7-c71abab1d272

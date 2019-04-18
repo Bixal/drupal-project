@@ -1,0 +1,97 @@
+uuid:
+  -
+    value: c9f2e6e9-743f-4eaf-abe0-e1eddabea5b7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statement for Loan Guarantees and Loan Insurance'
+description:
+  -
+    value: "<p>The undersigned states, to the best of his or her knowledge and belief, that: If any funds have been paid or will be paid to any person for influencing or attempting to influence an officer or employee of any agency, a Member of Congress, an officer or employee of Congress, or an employee of a Member of Congress in connection with this commitment providing for the United States to insure or guarantee a loan, the undersigned shall complete and submit Standard Form-LLL, ''Disclosure of Lobbying Activities,'' in accordance with its instructions. Submission of this statement is a prerequisite for making or entering into this transaction imposed by section 1352, title 31, U.S. Code. Any person who fails to file the required statement shall be subject to a civil penalty of not less than $10,000 and not more than $100,000 for each such failure.</p>\r\n"
+    format: basic_html
+    processed: '<p>The undersigned states, to the best of his or her knowledge and belief, that: If any funds have been paid or will be paid to any person for influencing or attempting to influence an officer or employee of any agency, a Member of Congress, an officer or employee of Congress, or an employee of a Member of Congress in connection with this commitment providing for the United States to insure or guarantee a loan, the undersigned shall complete and submit Standard Form-LLL, ''''Disclosure of Lobbying Activities,'''' in accordance with its instructions. Submission of this statement is a prerequisite for making or entering into this transaction imposed by section 1352, title 31, U.S. Code. Any person who fails to file the required statement shall be subject to a civil penalty of not less than $10,000 and not more than $100,000 for each such failure.</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 8d5fe59f-2cfe-4b79-aa47-f7af3112c12a
+  -
+    target_type: taxonomy_term
+    target_uuid: 8d5fe59f-2cfe-4b79-aa47-f7af3112c12a
+changed:
+  -
+    value: '2019-04-17T19:29:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2a8b0601-241c-4a8d-a5dd-c6fd37ce4167
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Applicant’s Organization</p>\r\n"
+      format: basic_html
+    term_field_uuid: 32686251-2f67-4985-a128-ac4ea52f241e
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Full Name of Authorized Representative:</p>\r\n"
+      format: basic_html
+    term_field_uuid: 9940edc0-f4ef-4fa0-bd3b-b086eaefc619
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Title of Authorized Representative:</p>\r\n"
+      format: basic_html
+    term_field_uuid: 68c7231e-429f-4c45-9164-aff6dcb50f2c
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.8d5fe59f-2cfe-4b79-aa47-f7af3112c12a
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.8d5fe59f-2cfe-4b79-aa47-f7af3112c12a

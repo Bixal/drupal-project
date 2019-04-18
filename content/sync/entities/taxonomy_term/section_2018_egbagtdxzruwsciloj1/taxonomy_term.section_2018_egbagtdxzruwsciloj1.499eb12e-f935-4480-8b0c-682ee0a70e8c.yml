@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: 499eb12e-f935-4480-8b0c-682ee0a70e8c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Designated State Agency Assures That - I'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c3ae6390-9774-4c69-87ae-50114254e1fd
+  -
+    target_type: taxonomy_term
+    target_uuid: c3ae6390-9774-4c69-87ae-50114254e1fd
+changed:
+  -
+    value: '2019-04-17T18:01:46+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 185ae50e-6ee2-45af-8c6a-c1fee850a1fd
+field_display_name:
+  -
+    value: 'The Comprehensive Assessment of Individuals with Significant Disabilities Conducted Under Section 102(b)(1) of the Rehabilitation Act and Funded Under Title I of the Rehabilitation Act Includes Consideration of Supported Employment as an Appropriate Employment Outcome, in Accordance with the Requirements of Section 606(b)(7)(b) of the Rehabilitation Act'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c3ae6390-9774-4c69-87ae-50114254e1fd
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.c3ae6390-9774-4c69-87ae-50114254e1fd

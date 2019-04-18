@@ -1,0 +1,108 @@
+uuid:
+  -
+    value: 11273c36-8c77-4906-95e3-50a3449935e0
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_egbagtdxzruwsciloj1
+    target_type: taxonomy_vocabulary
+    target_uuid: 068bd0fc-5144-46dd-bb45-473daf6134c3
+status:
+  -
+    value: true
+name:
+  -
+    value: Certifications
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+  -
+    target_type: taxonomy_term
+    target_uuid: 05815ac6-6138-45e9-a825-f3f22643dfc9
+changed:
+  -
+    value: '2019-04-16T20:51:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: b6b7a4cb-6661-4a14-af57-0533b5b3d614
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Name of designated State agency or designated State unit, as appropriate</p>\r\n"
+      format: basic_html
+    term_field_uuid: 9b85aa3c-5ef4-4782-ab03-ccb799b0da41
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Name of designated State agency</p>\r\n"
+      format: basic_html
+    term_field_uuid: b98d7a98-904f-4bca-b9fd-0c4aee47fb91
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Full Name of Authorized Representative:</p>\r\n"
+      format: basic_html
+    term_field_uuid: 44b78284-9a40-4328-8df0-f2cdf6cb1e76
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: 'Title of Authorized Representative:'
+      format: basic_html
+    term_field_uuid: 14a1554a-c6e9-4d58-b00e-e1f12e279ad1
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9
+      - taxonomy_term.section_2018_egbagtdxzruwsciloj1.05815ac6-6138-45e9-a825-f3f22643dfc9

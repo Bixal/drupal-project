@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 3a40d7cb-5c00-471e-ad0b-c18b1fe81a09
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Discuss How the Long-term Job Projections Discussed in the Economic Analysis Section of Strategic Plan Relate to the Types of Unsubsidized Jobs for Which Scsep Participants Will Be Trained and the Types of Skill Training to Be Provided. (20 Cfr 641.302(d)'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b1d346b0-2517-4e69-8534-0980022a9807
+  -
+    target_type: taxonomy_term
+    target_uuid: b1d346b0-2517-4e69-8534-0980022a9807
+changed:
+  -
+    value: '2019-04-19T20:17:27+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 87a0f407-ad10-482e-aec5-60a76cf4c4e0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 9d379784-dd05-4f4d-a0cb-c8fcb5740c46
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.b1d346b0-2517-4e69-8534-0980022a9807
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.b1d346b0-2517-4e69-8534-0980022a9807

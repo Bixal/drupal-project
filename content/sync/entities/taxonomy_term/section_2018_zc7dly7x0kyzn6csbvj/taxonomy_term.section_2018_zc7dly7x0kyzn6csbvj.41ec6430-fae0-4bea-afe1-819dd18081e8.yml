@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 41ec6430-fae0-4bea-afe1-819dd18081e8
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Have the Greatest Economic Need'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: e0b2bd00-989c-4316-bd2a-04cd0595033f
+  -
+    target_type: taxonomy_term
+    target_uuid: e0b2bd00-989c-4316-bd2a-04cd0595033f
+changed:
+  -
+    value: '2019-04-19T20:29:24+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 42855e09-c7ed-4e93-9107-3d85e080156b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 66a075b0-e151-49b0-a3d1-6d89e9fa51d4
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.e0b2bd00-989c-4316-bd2a-04cd0595033f
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.e0b2bd00-989c-4316-bd2a-04cd0595033f

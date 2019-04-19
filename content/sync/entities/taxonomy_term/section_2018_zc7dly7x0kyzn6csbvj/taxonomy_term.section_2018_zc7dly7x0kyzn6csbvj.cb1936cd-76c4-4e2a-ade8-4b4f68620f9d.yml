@@ -22,13 +22,13 @@ description:
     processed: '<p>At minimum, in the SCSEP stand-alone submission and the SCSEP portion of the Combined State Plan, States should comprehensively cover the following elements.</p>'
 weight:
   -
-    value: 0
+    value: 5
 parent:
   -
     target_id: 0
 changed:
   -
-    value: '2019-03-20T21:10:26+00:00'
+    value: '2019-04-19T20:41:11+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -

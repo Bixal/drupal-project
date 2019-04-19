@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 8fdbc13b-90e7-4e23-80bb-a58f88368a8e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Actions to Coordinate Activities of Scsep Grantees with the Activities to Be Carried Out in the State Under the Other Titles of the Oaa. (20 Cfr 641.302(h))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+  -
+    target_type: taxonomy_term
+    target_uuid: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+changed:
+  -
+    value: '2019-04-19T20:19:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: b634b6f8-ece2-43b4-b550-0b5d065d23a6
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 856fe093-87bb-4dac-bfed-d101d6125d45
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2

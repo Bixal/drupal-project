@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 71f8658f-3748-4afb-8123-77c5020a0f5d
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Location and Population Served, Including Equitable Distribution'
+description:
+  -
+    value: "<p>States must:</p>\r\n"
+    format: basic_html
+    processed: '<p>States must:</p>'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+  -
+    target_type: taxonomy_term
+    target_uuid: cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+changed:
+  -
+    value: '2019-04-19T20:25:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 0e6bdaf4-944e-44dd-8f6c-28ef32a41508
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.cb1936cd-76c4-4e2a-ade8-4b4f68620f9d

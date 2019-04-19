@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c680d688-3a55-4149-bd14-415156717fbe
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provide the Ratio of Eligible Individuals in Each Service Area to the Total Eligible Population in the State. (20 Cfr 641.325(a))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+changed:
+  -
+    value: '2019-04-19T20:28:25+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e44cc52f-55cf-4c41-8770-e74794ab5e7b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 08ed8d71-5d61-4e8a-8a0c-38c527952329
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d

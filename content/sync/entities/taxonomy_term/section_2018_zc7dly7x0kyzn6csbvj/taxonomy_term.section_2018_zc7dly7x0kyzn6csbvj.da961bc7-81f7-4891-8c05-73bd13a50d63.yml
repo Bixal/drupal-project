@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: da961bc7-81f7-4891-8c05-73bd13a50d63
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provide a Description of Actions to Coordinate Scsep with Other Programs - C'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+  -
+    target_type: taxonomy_term
+    target_uuid: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+changed:
+  -
+    value: '2019-04-19T20:20:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 72420d9a-0df8-4657-80fc-9578f2d8edbe
+field_display_name:
+  -
+    value: 'Actions to Coordinate Scsep with Other Private and Public Entities and Programs That Provide Services to Older Americans, Such as Community and Faith-based Organizations, Transportation Programs, and Programs for Those with Special Needs or Disabilities. (20 Cfr 641.302(i))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 20099238-5689-430b-80f4-3d5d0d1acb66
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2

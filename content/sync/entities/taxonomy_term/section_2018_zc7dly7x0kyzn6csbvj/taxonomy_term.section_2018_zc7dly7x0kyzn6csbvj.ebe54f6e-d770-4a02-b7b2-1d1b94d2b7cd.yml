@@ -1,0 +1,174 @@
+uuid:
+  -
+    value: ebe54f6e-d770-4a02-b7b2-1d1b94d2b7cd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Scsep Assurances'
+description:
+  -
+    value: "<p>The State Plan must include assurances that where SCSEP is included in the Combined Workforce Plan, the State has established a written policy and procedure to obtain advice and recommendations on the State Plan from:</p>\r\n"
+    format: basic_html
+    processed: '<p>The State Plan must include assurances that where SCSEP is included in the Combined Workforce Plan, the State has established a written policy and procedure to obtain advice and recommendations on the State Plan from:</p>'
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+  -
+    target_type: taxonomy_term
+    target_uuid: cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+changed:
+  -
+    value: '2019-04-19T20:39:16+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 0a05dfaa-2e56-4c57-bde5-623cd2a8e8ab
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Representatives of the State and area agencies on aging;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 6152228a-08c4-404c-a71e-10d8ca616608
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>State and local boards under WIOA;</p>\r\n"
+      format: basic_html
+    term_field_uuid: ccb4b090-3d69-4117-8137-b1425d940084
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Public and private nonprofit agencies and organizations providing employment services, including each grantee operating a SCSEP project within the State, except as provided under section 506(a)(3) of OAA and 20 CFR 641.320(b);</p>\r\n"
+      format: basic_html
+    term_field_uuid: 1819c897-465f-4f8b-896b-8f002ade2650
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Social service organizations providing services to older individuals;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 7c58425c-a29f-4cff-92c7-26bc08678127
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Grantees under Title III of OAA;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 6045a7cb-7916-460b-a55b-bc5feb5b1104
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Affected Communities;</p>\r\n"
+      format: basic_html
+    term_field_uuid: ae1fbe1f-3014-45f6-9983-e1544d97ab0e
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Unemployed older individuals;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 702f5c69-4e3a-45a9-9db3-267e77440996
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Community-based organizations serving older individuals;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 1e137a8e-8291-418b-a8d8-81ab9557f3ec
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Business organizations; and</p>\r\n"
+      format: basic_html
+    term_field_uuid: 0e845961-a80b-4b44-bdb1-655454d39675
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Labor organizations.</p>\r\n"
+      format: basic_html
+    term_field_uuid: 870128b1-2ad7-4722-8e56-bb93060e850b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.cb1936cd-76c4-4e2a-ade8-4b4f68620f9d

@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: e8350141-4439-43a3-9bc5-cc9722a5e143
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tanf - G'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+changed:
+  -
+    value: '2019-04-19T18:12:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 874977f6-8a7c-416a-8a9f-bec2304a9ca7
+field_display_name:
+  -
+    value: 'Implement Policies and Procedures as Necessary to Prevent Access to Assistance Provided Under the State Program Funded Under This Part Through Any Electronic Fund Transaction in an Automated Teller Machine or Point-of-sale Device Located in a Place Described in Section 408(a)(12), Including a Plan to Ensure That Recipients of the Assistance Have Adequate Access to Their Cash Assistance (section 402(a)(1)(a)(vii) of the Social Security Act)'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4

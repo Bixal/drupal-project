@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 59216419-9ec6-459f-8bcf-879cad25b6cb
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Providing Direct Care in a Long-term Care Facility (as Such Terms Are Defined Under Section 1397j of This Title); or'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4c3ab8d7-cbca-4294-a4b1-6d397abaa008
+  -
+    target_type: taxonomy_term
+    target_uuid: 4c3ab8d7-cbca-4294-a4b1-6d397abaa008
+changed:
+  -
+    value: '2019-04-19T18:18:05+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 29982b9b-c0d3-40d1-b8fc-2c9d16a2249d
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.4c3ab8d7-cbca-4294-a4b1-6d397abaa008
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.4c3ab8d7-cbca-4294-a4b1-6d397abaa008

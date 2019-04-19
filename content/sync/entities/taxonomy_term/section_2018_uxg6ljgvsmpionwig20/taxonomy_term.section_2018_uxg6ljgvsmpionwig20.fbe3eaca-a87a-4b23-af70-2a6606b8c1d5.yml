@@ -17,9 +17,9 @@ name:
     value: 'Community Services Block Grant (CSBG)'
 description:
   -
-    value: '<p>Note: Below is information about the employment and training activities carried out under the Community Services Block Grant (CSBG) (42 U.S.C. 9901 et seq.) that is included in the WIOA Combined State Plan. The complete CSBG State Plan is submitted directly to the Federal agency that administers that program and is collected under OMB Control Number: 0970-0382.</p><p>Where CSBG is included in the Combined State Plan, the State CSBG Lead Agency (as designated by the chief executive of the State under the requirements of section 676(a) of the CSBG Act (42 U.S.C. 9908(a)) will coordinate plans for employment and training activities under CSBG as part of a larger antipoverty and workforce development strategy.</p><p>As part of the Combined State Plan, the State CSBG Lead Agency must:</p>'
+    value: "<p>Note: Below is information about the employment and training activities carried out under the Community Services Block Grant (CSBG) (42 U.S.C. 9901 et seq.) that is included in the WIOA Combined State Plan. The complete CSBG State Plan is submitted directly to the Federal agency that administers that program and is collected under OMB Control Number: 0970-0382.</p>\r\n\r\n<p>Where CSBG is included in the Combined State Plan, the State CSBG Lead Agency (as designated by the chief executive of the State under the requirements of section 676(a) of the CSBG Act (42 U.S.C. 9908(a)) will coordinate plans for employment and training activities under CSBG as part of a larger antipoverty and workforce development strategy.</p>\r\n\r\n<p>As part of the Combined State Plan, the State CSBG Lead Agency must:</p>\r\n\r\n<p>(a) Describe how the State and the eligible entities will coordinate the provision of employment and training activities through Statewide and local WIOA workforce development systems; and may</p>\r\n\r\n<p>(b) Provide examples of innovative employment and training programs and activities Page 302 conducted by eligible entities or other neighborhood-based organizations as part of a community antipoverty strategy.</p>\r\n"
     format: basic_html
-    processed: '<p>Note: Below is information about the employment and training activities carried out under the Community Services Block Grant (CSBG) (42 U.S.C. 9901 et seq.) that is included in the WIOA Combined State Plan. The complete CSBG State Plan is submitted directly to the Federal agency that administers that program and is collected under OMB Control Number: 0970-0382.</p><p>Where CSBG is included in the Combined State Plan, the State CSBG Lead Agency (as designated by the chief executive of the State under the requirements of section 676(a) of the CSBG Act (42 U.S.C. 9908(a)) will coordinate plans for employment and training activities under CSBG as part of a larger antipoverty and workforce development strategy.</p><p>As part of the Combined State Plan, the State CSBG Lead Agency must:</p>'
+    processed: "<p>Note: Below is information about the employment and training activities carried out under the Community Services Block Grant (CSBG) (42 U.S.C. 9901 et seq.) that is included in the WIOA Combined State Plan. The complete CSBG State Plan is submitted directly to the Federal agency that administers that program and is collected under OMB Control Number: 0970-0382.</p>\n\n<p>Where CSBG is included in the Combined State Plan, the State CSBG Lead Agency (as designated by the chief executive of the State under the requirements of section 676(a) of the CSBG Act (42 U.S.C. 9908(a)) will coordinate plans for employment and training activities under CSBG as part of a larger antipoverty and workforce development strategy.</p>\n\n<p>As part of the Combined State Plan, the State CSBG Lead Agency must:</p>\n\n<p>(a) Describe how the State and the eligible entities will coordinate the provision of employment and training activities through Statewide and local WIOA workforce development systems; and may</p>\n\n<p>(b) Provide examples of innovative employment and training programs and activities Page 302 conducted by eligible entities or other neighborhood-based organizations as part of a community antipoverty strategy.</p>"
 weight:
   -
     value: 0
@@ -28,7 +28,7 @@ parent:
     target_id: 0
 changed:
   -
-    value: '2019-03-20T21:16:10+00:00'
+    value: '2019-04-19T20:05:30+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -48,7 +48,18 @@ field_hide_hierarchical_heading:
 field_hide_name:
   -
     value: false
-field_input_from_state: {  }
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f5dc44ac-747a-4a28-9951-786898b0e9f1
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
 field_shown_on_toc:
   -
     value: true

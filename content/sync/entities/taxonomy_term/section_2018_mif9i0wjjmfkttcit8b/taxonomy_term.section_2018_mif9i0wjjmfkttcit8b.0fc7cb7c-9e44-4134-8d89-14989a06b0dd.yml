@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 0fc7cb7c-9e44-4134-8d89-14989a06b0dd
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How the State, in Consultation with Eligible Recipients, Will Develop and Implement the Career and Technical Programs of Study Described in (a) Above;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T15:42:51+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 58a1b878-83ab-4887-9c62-c71d4cebe19c
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 4b164250-9d73-4963-a037-0037a64fa2c3
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

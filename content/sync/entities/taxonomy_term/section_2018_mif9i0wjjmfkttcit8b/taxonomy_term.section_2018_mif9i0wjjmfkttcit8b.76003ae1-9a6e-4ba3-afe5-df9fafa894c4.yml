@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 76003ae1-9a6e-4ba3-afe5-df9fafa894c4
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Other Assurances'
+description:
+  -
+    value: "<ol start=\"1\">\r\n\t<li>\r\n\t<p>You must submit a copy of the State plan to the State office responsible for the Intergovernmental Review Process if your State implements that review process under Executive Order 12372. [See 34 CFR Part 79]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"2\">\r\n\t<li>\r\n\t<p>You must provide a complete and signed ED Form 80-0013 for certifications regarding lobbying; [See 34 CFR Part 82. To download ED Form 80-0013, and the SF LLL Form (Disclosure of Lobbying Activities) referred therein, See: http://www.ed.gov/fund/grant/apply/appforms/appforms.html]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"3\">\r\n\t<li>\r\n\t<p>You must provide a complete and signed Assurance for Non-Construction Programs Form. [See http://www.ed.gov/fund/grant/apply/appforms/appforms.html]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"4\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that you will comply with the requirements of the Act and the provisions of the State plan, including the provision of a financial audit of funds received under the Act which may be included as part of an audit of other Federal or State programs. [Sec. 122(c)(11)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"5\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that none of the funds expended under the Act will be used to acquire equipment (including computer software) in any instance in which such acquisition results in a direct financial benefit to any organization representing the interests of the acquiring entity or the employees of the acquiring entity, or any affiliate of such an organization. [Sec. 122(c)(12)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"6\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that your State will waive the minimum allocation as required in section 131(c)(1) in any case in which the local educational agency is located in a rural, sparsely populated area or is a public charter school operating secondary school career and technical education programs and demonstrates that it is unable to enter into a consortium for purposes of providing services under the Act. [Section 131(c)(2)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"7\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that your State will provide, from non-Federal sources for the costs the eligible agency incurs for the administration of programs under this Act, an amount that is not less than the amount provided by the eligible agency from non-Federal sources for such costs for the preceding fiscal year. [Sec. 323(a)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"8\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that your State and eligible recipients that use funds under this Act for in-service and preservice career and technical education professional development programs for career and technical education teachers, administrators, and other personnel shall, to the extent practicable, upon written request, permit the participation in such programs of career and technical education secondary&nbsp;school teachers, administrators, and other personnel in nonprofit private schools offering career and technical secondary education programs located in the geographical area served by such eligible agency or eligible recipient. [Sec. 317(a)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"9\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that, except as prohibited by State or local law, that an eligible recipient may, upon written request, use funds made available under this Act to provide for the meaningful participation, in career and technical education programs and activities receiving funds under this Act, of secondary school students attending nonprofit private schools who reside in the geographical area served by the eligible recipient. [Sec. 317(b)(1)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n\r\n<ol start=\"10\">\r\n\t<li>\r\n\t<p>You must provide a signed assurance that eligible recipients that receive an allotment under this Act will consult, upon written request, in a timely and meaningful manner with representatives of nonprofit private schools in the geographical area served by the eligible recipient regarding the meaningful participation, in career and technical education programs and activities receiving funding under this Act, of secondary school students attending nonprofit private schools. [Sec. 317(b)(2)]&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ol>\r\n"
+    format: basic_html
+    processed: "<ol start=\"1\">\n\t<li>\n\t<p>You must submit a copy of the State plan to the State office responsible for the Intergovernmental Review Process if your State implements that review process under Executive Order 12372. [See 34 CFR Part 79]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"2\">\n\t<li>\n\t<p>You must provide a complete and signed ED Form 80-0013 for certifications regarding lobbying; [See 34 CFR Part 82. To download ED Form 80-0013, and the SF LLL Form (Disclosure of Lobbying Activities) referred therein, See: http://www.ed.gov/fund/grant/apply/appforms/appforms.html]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"3\">\n\t<li>\n\t<p>You must provide a complete and signed Assurance for Non-Construction Programs Form. [See http://www.ed.gov/fund/grant/apply/appforms/appforms.html]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"4\">\n\t<li>\n\t<p>You must provide a signed assurance that you will comply with the requirements of the Act and the provisions of the State plan, including the provision of a financial audit of funds received under the Act which may be included as part of an audit of other Federal or State programs. [Sec. 122(c)(11)]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"5\">\n\t<li>\n\t<p>You must provide a signed assurance that none of the funds expended under the Act will be used to acquire equipment (including computer software) in any instance in which such acquisition results in a direct financial benefit to any organization representing the interests of the acquiring entity or the employees of the acquiring entity, or any affiliate of such an organization. [Sec. 122(c)(12)]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"6\">\n\t<li>\n\t<p>You must provide a signed assurance that your State will waive the minimum allocation as required in section 131(c)(1) in any case in which the local educational agency is located in a rural, sparsely populated area or is a public charter school operating secondary school career and technical education programs and demonstrates that it is unable to enter into a consortium for purposes of providing services under the Act. [Section 131(c)(2)]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"7\">\n\t<li>\n\t<p>You must provide a signed assurance that your State will provide, from non-Federal sources for the costs the eligible agency incurs for the administration of programs under this Act, an amount that is not less than the amount provided by the eligible agency from non-Federal sources for such costs for the preceding fiscal year. [Sec. 323(a)]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"8\">\n\t<li>\n\t<p>You must provide a signed assurance that your State and eligible recipients that use funds under this Act for in-service and preservice career and technical education professional development programs for career and technical education teachers, administrators, and other personnel shall, to the extent practicable, upon written request, permit the participation in such programs of career and technical education secondary\_school teachers, administrators, and other personnel in nonprofit private schools offering career and technical secondary education programs located in the geographical area served by such eligible agency or eligible recipient. [Sec. 317(a)]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"9\">\n\t<li>\n\t<p>You must provide a signed assurance that, except as prohibited by State or local law, that an eligible recipient may, upon written request, use funds made available under this Act to provide for the meaningful participation, in career and technical education programs and activities receiving funds under this Act, of secondary school students attending nonprofit private schools who reside in the geographical area served by the eligible recipient. [Sec. 317(b)(1)]\_\_</p>\n\t</li>\n</ol>\n\n<ol start=\"10\">\n\t<li>\n\t<p>You must provide a signed assurance that eligible recipients that receive an allotment under this Act will consult, upon written request, in a timely and meaningful manner with representatives of nonprofit private schools in the geographical area served by the eligible recipient regarding the meaningful participation, in career and technical education programs and activities receiving funding under this Act, of secondary school students attending nonprofit private schools. [Sec. 317(b)(2)]\_\_</p>\n\t</li>\n</ol>"
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f899defe-6007-4e87-90ea-22df657e2a32
+  -
+    target_type: taxonomy_term
+    target_uuid: f899defe-6007-4e87-90ea-22df657e2a32
+changed:
+  -
+    value: '2019-04-19T15:19:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5215d95b-af28-4e71-b4f1-5f496e138621
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f899defe-6007-4e87-90ea-22df657e2a32
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f899defe-6007-4e87-90ea-22df657e2a32

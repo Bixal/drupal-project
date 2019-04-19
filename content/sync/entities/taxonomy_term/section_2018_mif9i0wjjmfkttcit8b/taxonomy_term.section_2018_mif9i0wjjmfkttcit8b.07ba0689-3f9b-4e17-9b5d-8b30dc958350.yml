@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 07ba0689-3f9b-4e17-9b5d-8b30dc958350
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Ensure That Students Who Participate in Career and Technical Education Programs Are Taught to the Same Challenging Academic Proficiencies as Taught to All Other Students. (section 122(c)(7)(a)- (c))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 6b5402c9-494c-46df-bb36-e8fe0a16b799
+  -
+    target_type: taxonomy_term
+    target_uuid: 6b5402c9-494c-46df-bb36-e8fe0a16b799
+changed:
+  -
+    value: '2019-04-19T13:28:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 68167df5-5c8c-422d-a4b4-30ead73fd620
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 49370c3c-1470-4058-a55f-5fba815c23f0
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.6b5402c9-494c-46df-bb36-e8fe0a16b799
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.6b5402c9-494c-46df-bb36-e8fe0a16b799

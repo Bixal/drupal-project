@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: bb72652f-3a05-4cbf-80d5-d7f8bffecb8a
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 5'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 95b1ae33-74a7-4f5c-a36e-a2aab452283a
+  -
+    target_type: taxonomy_term
+    target_uuid: 95b1ae33-74a7-4f5c-a36e-a2aab452283a
+changed:
+  -
+    value: '2019-04-19T14:19:22+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: b7f1f4bc-fb2e-43be-8708-a8fa429e9abe
+field_display_name:
+  -
+    value: 'You Must Describe How Your State Plans to Enter into an Agreement with Each Consortium Receiving a Grant Under Perkins Iv to Meet a Minimum Level of Performance for Each of the Performance Indicators Described in Sections 113(b) and 203(e). (section 204(e)(1))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c64db89a-041d-4f45-b459-a4b6937da8ad
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.95b1ae33-74a7-4f5c-a36e-a2aab452283a
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.95b1ae33-74a7-4f5c-a36e-a2aab452283a

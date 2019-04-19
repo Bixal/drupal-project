@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: c493cba8-d38b-4bbe-848c-74a12ea7c727
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Plan Must Describe the Methods the Eligible State Agency Proposes for the Joint Planning and Coordination of Programs Carried Out Under This Legislation with Other Federal Education Programs. (section 122(c)(17))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 9
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+changed:
+  -
+    value: '2019-04-19T13:30:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 50ec3ae8-a750-4ae0-9664-9350f6c6dc63
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 207f7f58-c913-46bd-91c1-56c249862c72
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22

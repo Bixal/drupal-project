@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 63590686-aeec-4a69-884f-bee9ec4316d7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Must Describe the Career and Technical Education Activities to Be Assisted That Are Designed to Meet or Exceed the State Adjusted Levels of Performance, Including a Description Of— H'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T15:47:13+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 748be74e-4e02-48b7-b2e4-dc552e8010b1
+field_display_name:
+  -
+    value: 'How Such Programs Will Prepare Career and Technical Education Students, Including Special Populations, Academically and Technically for Opportunities in Postsecondary Education or Entry into High-skill, High-wage, or High-demand Occupations in Current or Emerging Occupations, and How Participating Students Will Be Made Aware of Such Opportunities;'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c6d6653e-9919-4efb-a8d4-9e1f75c807ce
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

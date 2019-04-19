@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: de5545c3-42fd-4323-826c-bf67746b9dc3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 8'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+changed:
+  -
+    value: '2019-04-19T13:56:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5a2530dd-a4ce-4c31-b3e9-88151da6119b
+field_display_name:
+  -
+    value: 'You Must Describe How You Will Report Data Relating to Students Participating in Career and Technical Education Programs in Order to Adequately Measure the Progress of the Students, Including Special Populations and Students Participating in Tech Prep Programs, if Applicable, and How You Will Ensure That the Data Reported to You from Local Educational Agencies and Eligible Institutions, and the Data That You Report to the Secretary, Are Complete, Accurate, and Reliable. (section 122(c)(13); Section 205).'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 952ec697-dea3-4aa8-90ed-4b28cc27578d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69

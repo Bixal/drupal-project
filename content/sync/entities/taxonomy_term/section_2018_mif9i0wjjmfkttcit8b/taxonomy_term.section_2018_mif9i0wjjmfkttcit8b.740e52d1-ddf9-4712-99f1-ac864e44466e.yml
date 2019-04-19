@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 740e52d1-ddf9-4712-99f1-ac864e44466e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 1'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+changed:
+  -
+    value: '2019-04-19T14:23:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c1320eb1-bd0a-4658-9690-b0864bc55bd0
+field_display_name:
+  -
+    value: 'You Must Describe How Your Agency Will Allocate Funds it Receives Through the Allotment Made Under Section 111, Including Any Funds That You Choose to Consolidate Under Section 202(a), Will Be Allocated Among Career and Technical Education at the Secondary Level, or Career and Technical Education at the Postsecondary and Adult Level, or Both, Including the Rationale for Such Allocation. (section 122(c)(6)(a); Section 202(c))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 375245fd-4e08-4dc7-91f0-d9dc467d3263
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb

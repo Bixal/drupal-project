@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: a757fc89-33a2-4870-9843-6e2d48c9a38b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provision of Services for Special Populations - 5'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+  -
+    target_type: taxonomy_term
+    target_uuid: 88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+changed:
+  -
+    value: '2019-04-19T13:49:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: e0bb60e4-3b5f-4da0-9574-f3df2f34b0f5
+field_display_name:
+  -
+    value: 'You Must Describe How You Will Require Each Applicant for Funds to Include in Its Application a Description of the Steps the Applicant Proposes to Take to Ensure Equitable Access To, and Participation In, Its Federally-assisted Program for Students, Teachers, and Other Program Beneficiaries with Special Needs as Contained in Section 427(b) of the General Education Provisions Act as Amended. for Further Guidance and Examples, See the Notice to All Applicants at Http://www.ed.gov/fund/gran/apply/appforms/gepa427.doc'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 040ae825-9389-4453-8608-01e7b11be531
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.88c0c273-2a7a-4048-9bb7-0e98e08f7a75

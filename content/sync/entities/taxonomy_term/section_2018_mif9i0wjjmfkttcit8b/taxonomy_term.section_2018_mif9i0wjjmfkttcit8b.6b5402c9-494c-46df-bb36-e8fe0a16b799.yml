@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 6b5402c9-494c-46df-bb36-e8fe0a16b799
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Plan Must Describe Efforts That the Eligible State Agency and Eligible Recipients Will Make To—'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+changed:
+  -
+    value: '2019-04-18T17:37:27+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: b3a88cb8-4e42-4e3f-85fa-e1dcadb0a31f
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22

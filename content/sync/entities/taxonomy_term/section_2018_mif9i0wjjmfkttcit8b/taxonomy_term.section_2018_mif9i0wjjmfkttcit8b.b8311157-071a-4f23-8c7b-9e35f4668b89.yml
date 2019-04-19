@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: b8311157-071a-4f23-8c7b-9e35f4668b89
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describe the Competitive Basis or Formula You Will Use to Award Grants to Tech-prep Consortia. (section 203(a)(1))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 95b1ae33-74a7-4f5c-a36e-a2aab452283a
+  -
+    target_type: taxonomy_term
+    target_uuid: 95b1ae33-74a7-4f5c-a36e-a2aab452283a
+changed:
+  -
+    value: '2019-04-19T14:10:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: c13e61de-7362-49f5-8e41-6c1e0ff792e9
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c5f967db-3bcd-41ec-8fd5-9e319ab5e2fe
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.95b1ae33-74a7-4f5c-a36e-a2aab452283a
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.95b1ae33-74a7-4f5c-a36e-a2aab452283a

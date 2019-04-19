@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: b0226b75-ae09-451b-b0fb-8485f3b0da68
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 7'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+changed:
+  -
+    value: '2019-04-19T13:56:04+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1db660d8-3d04-48da-972c-44c4eaaeb280
+field_display_name:
+  -
+    value: 'You Must Describe the Objective Criteria and Methods You Will Use to Allow an Eligible Recipient to Request Revisions to Its Local Adjusted Levels of Performance if Unanticipated Circumstances Arise with Respect to an Eligible Recipient. (section 113(b)(4)(a)(vi))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 19d3bfea-47bf-43a3-8602-22c600024d24
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69

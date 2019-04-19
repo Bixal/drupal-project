@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: ee1a900a-26e6-454b-b829-5ba546c2dd82
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 6'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+changed:
+  -
+    value: '2019-04-19T14:25:19+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4e2608d0-82c4-4790-8a70-6845c597468b
+field_display_name:
+  -
+    value: 'You Must Describe How You Will Adjust the Data Used to Make the Allocations to Reflect Any Change in School District Boundaries That May Have Occurred Since the Population And/or Enrollment Data Was Collected, and Include Local Educational Agencies Without Geographical Boundaries, Such as Charter Schools and Secondary Schools Funded by the Bureau of Indian Affairs. (section 131(a)(3))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3423a20a-8aaa-4344-b5e5-77c538f38710
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb

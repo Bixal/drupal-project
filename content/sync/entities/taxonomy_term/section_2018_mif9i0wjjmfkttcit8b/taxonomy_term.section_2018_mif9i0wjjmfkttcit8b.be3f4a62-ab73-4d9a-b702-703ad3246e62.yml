@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: be3f4a62-ab73-4d9a-b702-703ad3246e62
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'You Must Describe the Secondary and Postsecondary Formulas Used to Allocate Funds Available Under Section 112(a), as Required by Section 131(a) and 132(a).'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2334915b-719d-47a3-8f76-a536c3c6a6a7
+  -
+    target_type: taxonomy_term
+    target_uuid: 2334915b-719d-47a3-8f76-a536c3c6a6a7
+changed:
+  -
+    value: '2019-04-19T14:32:59+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: fa9ed631-01d5-4d4b-9bf2-79a8d14a29e2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ffb0def4-1957-4b7d-ab91-0e17952abdbb
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2334915b-719d-47a3-8f76-a536c3c6a6a7
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2334915b-719d-47a3-8f76-a536c3c6a6a7

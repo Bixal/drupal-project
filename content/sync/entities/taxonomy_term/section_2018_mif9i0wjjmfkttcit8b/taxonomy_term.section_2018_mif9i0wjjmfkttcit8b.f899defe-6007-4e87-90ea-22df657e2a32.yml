@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: f899defe-6007-4e87-90ea-22df657e2a32
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Edgar Certification Table'
+description:
+  -
+    value: "<p>Please review the EDGAR certifications and assurances below. If your State determines that any updates are necessary, you may submit them, along with your request to extend your State plan, via the link to the Perkins State Plan Portal below.</p>\r\n"
+    format: basic_html
+    processed: '<p>Please review the EDGAR certifications and assurances below. If your State determines that any updates are necessary, you may submit them, along with your request to extend your State plan, via the link to the Perkins State Plan Portal below.</p>'
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+changed:
+  -
+    value: '2019-04-19T15:18:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: bf21a62c-714c-4faa-bbb6-747166ba0043
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941

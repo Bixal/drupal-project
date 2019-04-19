@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 0cd0876b-ab49-4014-9b71-964387521639
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Recruitment and Retention of Career and Technical Education Teachers, Faculty, and Career Guidance and Academic Counselors, Including Individuals in Groups Underrepresented in the Teaching Profession; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b18326a5-80fd-43c8-8141-02cb0d595268
+  -
+    target_type: taxonomy_term
+    target_uuid: b18326a5-80fd-43c8-8141-02cb0d595268
+changed:
+  -
+    value: '2019-04-18T17:27:04+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 05bacf72-4651-43a4-8958-2011edb12a78
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: a6298a3f-d3d1-4316-8925-54363929e900
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.b18326a5-80fd-43c8-8141-02cb0d595268
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.b18326a5-80fd-43c8-8141-02cb0d595268

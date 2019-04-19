@@ -1,6 +1,6 @@
 uuid:
   -
-    value: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+    value: faa5a9cd-ec74-4dc3-b2ad-fbc53e2a7e1d
 langcode:
   -
     value: en
@@ -14,7 +14,7 @@ status:
     value: true
 name:
   -
-    value: 'Career and Technical Education Programs Authorized Under the Carl D. Perkins Career and Technical Education Act of 2006'
+    value: 'Program Administration'
 description:
   -
     value: null
@@ -22,13 +22,17 @@ description:
     processed: ''
 weight:
   -
-    value: 105
+    value: 11
 parent:
   -
-    target_id: 0
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
 changed:
   -
-    value: '2019-04-19T15:46:11+00:00'
+    value: '2019-04-19T13:42:13+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -40,18 +44,21 @@ path:
     langcode: en
 field_cross_year_uuid:
   -
-    value: e90fe8be-22f7-4baf-a754-f5a2dcf21cdf
+    value: eb87a00c-ba20-4f3a-ba92-12d5a07c38cd
 field_display_name: {  }
 field_hide_hierarchical_heading:
   -
-    value: true
+    value: false
 field_hide_name:
   -
     value: false
 field_input_from_state: {  }
 field_shown_on_toc:
   -
-    value: true
+    value: false
 _content_sync:
   entity_type: taxonomy_term
-  entity_dependencies: {  }
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22

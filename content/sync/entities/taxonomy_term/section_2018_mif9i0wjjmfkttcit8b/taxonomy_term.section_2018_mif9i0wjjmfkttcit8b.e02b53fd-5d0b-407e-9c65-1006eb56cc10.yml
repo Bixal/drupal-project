@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: e02b53fd-5d0b-407e-9c65-1006eb56cc10
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Plan Must Describe How Comprehensive Professional Development - a'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f3373d38-d77e-4cf7-9398-99fa0dee22df
+  -
+    target_type: taxonomy_term
+    target_uuid: f3373d38-d77e-4cf7-9398-99fa0dee22df
+changed:
+  -
+    value: '2019-04-18T17:34:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: af252197-ae3d-48a9-8bc9-97beccf6ffc4
+field_display_name:
+  -
+    value: 'Promotes the Integration of Coherent and Rigorous Academic Content Standards and Career and Technical Education Curricula, Including Through Opportunities for Academic and Career and Technical Teachers to Jointly Develop and Implement Curricula and Pedagogical Strategies;'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 4041d478-2f0b-4e1c-9e53-7282ae797d6a
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f3373d38-d77e-4cf7-9398-99fa0dee22df
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f3373d38-d77e-4cf7-9398-99fa0dee22df

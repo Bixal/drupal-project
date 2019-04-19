@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 7b56ea1e-7c46-4e11-bec5-755a74b9f718
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 3'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+changed:
+  -
+    value: '2019-04-19T14:24:01+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 09a690e7-5c83-41f8-966b-d672ac0e94bf
+field_display_name:
+  -
+    value: 'You Must Provide the Specific Dollar Allocations Made Available by the Eligible Agency for Career and Technical Education Programs Under Section 132(a) of the Act and How These Allocations Are Distributed to Postsecondary Institutions Within the State. (section 122(c)(6)(a); Section 202(c))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 6f4c5659-5b5b-482f-b0c7-e0f23b18361b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb

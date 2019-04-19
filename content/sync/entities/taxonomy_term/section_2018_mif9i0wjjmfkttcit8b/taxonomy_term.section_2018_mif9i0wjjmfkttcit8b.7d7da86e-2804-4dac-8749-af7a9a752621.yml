@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 7d7da86e-2804-4dac-8749-af7a9a752621
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Will Not Be Discriminated Against on the Basis of Their Status as Members of Special Populations; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 03da1e5e-8478-46b2-8d88-cd35b781bd20
+  -
+    target_type: taxonomy_term
+    target_uuid: 03da1e5e-8478-46b2-8d88-cd35b781bd20
+changed:
+  -
+    value: '2019-04-19T13:45:32+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ef17ff14-5615-4b3b-a437-46ede07e52dc
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f319fde2-225f-4826-bf8a-29e09e05085d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.03da1e5e-8478-46b2-8d88-cd35b781bd20
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.03da1e5e-8478-46b2-8d88-cd35b781bd20

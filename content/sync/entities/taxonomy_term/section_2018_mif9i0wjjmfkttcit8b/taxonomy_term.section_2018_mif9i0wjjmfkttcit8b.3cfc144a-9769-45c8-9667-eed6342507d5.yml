@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 3cfc144a-9769-45c8-9667-eed6342507d5
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How You Will Facilitate and Coordinate Communications on Best Practices Among Successful Recipients of Tech Prep Program Grants Under Title Ii and Other Eligible Recipients to Improve Program Quality and Student Achievement'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 9
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T15:48:07+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 3bb798d6-7444-4157-9e08-cc3ced06d1fc
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ba89c0fd-947e-46fe-9269-3bda198a22e8
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

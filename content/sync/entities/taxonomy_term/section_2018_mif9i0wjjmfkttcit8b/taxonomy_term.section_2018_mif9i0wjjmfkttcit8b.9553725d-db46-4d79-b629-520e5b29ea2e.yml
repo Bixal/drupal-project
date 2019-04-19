@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 9553725d-db46-4d79-b629-520e5b29ea2e
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provision of Services for Special Populations - C'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 03da1e5e-8478-46b2-8d88-cd35b781bd20
+  -
+    target_type: taxonomy_term
+    target_uuid: 03da1e5e-8478-46b2-8d88-cd35b781bd20
+changed:
+  -
+    value: '2019-04-19T13:46:09+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 51102e1d-685f-4b3a-aa71-b90253870bf6
+field_display_name:
+  -
+    value: 'Will Be Provided with Programs Designed to Enable the Special Populations to Meet or Exceed State Adjusted Levels of Performance, and How You Will Prepare Special Populations for Further Learning and for High-skill, High-wage, or High-demand Occupations. (section 122(c)(9)(a)-(c))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7a3e6e3e-8d1f-43b5-a2ca-ce9954ad8ab6
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.03da1e5e-8478-46b2-8d88-cd35b781bd20
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.03da1e5e-8478-46b2-8d88-cd35b781bd20

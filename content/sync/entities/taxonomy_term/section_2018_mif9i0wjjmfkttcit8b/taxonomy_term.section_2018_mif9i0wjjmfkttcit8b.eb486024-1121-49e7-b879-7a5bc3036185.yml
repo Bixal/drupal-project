@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: eb486024-1121-49e7-b879-7a5bc3036185
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Encourages Applied Learning That Contributes to the Academic and Career and Technical Knowledge of the Student;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f3373d38-d77e-4cf7-9398-99fa0dee22df
+  -
+    target_type: taxonomy_term
+    target_uuid: f3373d38-d77e-4cf7-9398-99fa0dee22df
+changed:
+  -
+    value: '2019-04-18T17:34:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1051731b-d1a4-4e16-9673-8ba5e5a30ad0
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 8b2bca64-b5c2-4806-9ae5-344d13f52a28
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f3373d38-d77e-4cf7-9398-99fa0dee22df
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f3373d38-d77e-4cf7-9398-99fa0dee22df

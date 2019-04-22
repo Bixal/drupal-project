@@ -1,3 +1,11 @@
+div.item-list.display-plan-year ul {
+  /* We create our own hierarchy headings */
+  list-style: none;
+  /* Make this very compact */
+  margin: 0;
+  padding: 0;
+}
+
 div.item-list.display-plan-year ul li {
   /* Add a small padding to every li so the backgrounds don't butt so harshly on the text. */
   padding: 0.2em 0.5em 0 9px;

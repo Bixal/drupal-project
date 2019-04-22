@@ -5,5 +5,5 @@ dependencies: {  }
 name: '2018 - Unemployment Insurance Programs'
 vid: section_2018_m3ylcuki7swg2h1e0qy
 description: 'Comes with the all the fields and functionality that can be copied into the next plan year.'
-hierarchy: 0
+hierarchy: 1
 weight: 0

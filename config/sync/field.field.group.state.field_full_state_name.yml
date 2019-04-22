@@ -1,0 +1,19 @@
+uuid: 9fb53629-8c50-4c6f-978d-1d2d543d2bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_full_state_name
+    - group.type.state
+id: group.state.field_full_state_name
+field_name: field_full_state_name
+entity_type: group
+bundle: state
+label: 'Full State Name'
+description: "For example:\r\n<ul>\r\n<li>Republic of Palau</li>\r\n<li>Commonwealth of Puerto Rico</li>\r\n<li>State of Wyoming</li>\r\n</ul>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -147,6 +147,16 @@ class PlanYearEntity extends ConfigEntityBase implements PlanYearEntityInterface
     if (FALSE !== $key) {
       unset($this->sections[$key]);
     }
+    $this->stopCopyingSection($section_id);
+  }
+
+  /**
+   * Stop copying this section from another year.
+   *
+   * @param string $section_id
+   *   The section ID to remove.
+   */
+  public function stopCopyingSection($section_id) {
     $copy_from_plan_year_section_array = $this->getCopyFromPlanYearSectionArray();
     // Remove this section from the plan year IDs to copy.
     if (!empty($copy_from_plan_year_section_array[$section_id])) {

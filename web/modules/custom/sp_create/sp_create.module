@@ -16,6 +16,7 @@ use Drupal\sp_create\PlanYearInfo;
 use Drupal\sp_expire\ContentService;
 use Drupal\sp_retrieve\PlanYearTriggers;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\sp_create\EntityClone\SpCreateTaxonomyTermEntityClone;
 
 /**
  * Implements hook_help().
@@ -37,12 +38,16 @@ function sp_create_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_entity_info_alter().
  */
 function sp_create_entity_type_build(array &$entity_types) {
-  // Taxonomy vocabulary was not set in the entity_build module to be a config
-  // with field entity, so fields are not copied over.
   $specific_handler = [
+    // Taxonomy vocabulary was not set in the entity_build module to be a config
+    // with field entity, so fields are not copied over.
     'taxonomy_vocabulary' => [
       'entity_clone' => ConfigWithFieldEntityClone::class,
       'entity_clone_form' => ConfigEntityCloneFormBase::class,
+    ],
+    // Stop adding '- Cloned' to term names.
+    'taxonomy_term' => [
+      'entity_clone' => SpCreateTaxonomyTermEntityClone::class,
     ],
   ];
 

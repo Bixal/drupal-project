@@ -306,7 +306,7 @@ class PlanYearDisplay {
       }
     }
     if (count($referenced_sections) < (count($this->sectionIds) - 1)) {
-      $errors[] = 'Not every section is referenced, except one root section, are referenced.';
+      $errors[] = 'Not every section (excluding the one root section) is referenced.';
     }
     elseif (count($referenced_sections) === (count($this->sectionIds))) {
       $errors[] = 'You must leave one section that is not referenced as the root section.';

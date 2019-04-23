@@ -5,5 +5,5 @@ dependencies: {  }
 name: '2018 - Jobs for Veterans State Grants Program'
 vid: section_2018_fq8ppbs0ykuktneabkb
 description: 'Comes with the all the fields and functionality that can be copied into the next plan year.'
-hierarchy: 0
+hierarchy: 1
 weight: 0

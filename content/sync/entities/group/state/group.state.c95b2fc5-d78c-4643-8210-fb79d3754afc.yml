@@ -22,7 +22,7 @@ created:
     format: 'Y-m-d\TH:i:sP'
 changed:
   -
-    value: '2019-02-27T21:52:18+00:00'
+    value: '2019-04-22T15:08:19+00:00'
     format: 'Y-m-d\TH:i:sP'
 path:
   -
@@ -32,6 +32,9 @@ path:
 default_langcode:
   -
     value: true
+field_full_state_name:
+  -
+    value: 'State of Illinois'
 _content_sync:
   entity_type: group
   entity_dependencies:

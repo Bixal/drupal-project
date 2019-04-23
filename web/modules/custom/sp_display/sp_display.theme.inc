@@ -95,11 +95,10 @@ function template_preprocess_sp_display_plan_year_toc(array &$variables) {
   /** @var \Drupal\sp_retrieve\CustomEntitiesService $custom_entities_service */
   $custom_entities_service = \Drupal::getContainer()->get('sp_retrieve.custom_entities');
   /** @var \Drupal\group\Entity\Group $group */
-  // @TODO: This should be a new 'State Full Name' field instead of group label.
   $group = $custom_entities_service->single('group', $custom_entities_service->getGroupId($variables['node']));
   $plan_year_name = $custom_entities_service->getLabel('plan_year', PlanYearInfo::getPlanYearIdFromEntity($variables['node']));
   $output = new PlanYearOutputItemListToc($plan_year_display);
-  $output->setPlanName(t('WIOA State Plan for @state_name FY-@year', ['@state_name' => $group->label(), '@year' => $plan_year_name]));
+  $output->setPlanName(t('WIOA State Plan for @state_name FY-@year', ['@state_name' => $group->get('field_full_state_name')->getString(), '@year' => $plan_year_name]));
   $variables['content'] = $output->getItemList();
 }
 

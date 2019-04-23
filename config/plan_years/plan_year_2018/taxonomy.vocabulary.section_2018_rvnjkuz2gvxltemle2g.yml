@@ -5,5 +5,5 @@ dependencies: {  }
 name: '2018 - Temporary Assistance for Needy Families Program'
 vid: section_2018_rvnjkuz2gvxltemle2g
 description: 'Comes with the all the fields and functionality that can be copied into the next plan year.'
-hierarchy: 0
+hierarchy: 1
 weight: 0

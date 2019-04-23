@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 70537847-1a79-4c6a-9480-03ee8a520608
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_m3ylcuki7swg2h1e0qy
+    target_type: taxonomy_vocabulary
+    target_uuid: 6a5f03dd-b840-4da4-afa7-cd80ec748e45
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Submit an Sqsp in the Following Manner Depending on Their Timing in the Sqsp Cycle:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 358e86e3-8dda-4749-9a47-d88fb6a60f66
+  -
+    target_type: taxonomy_term
+    target_uuid: 358e86e3-8dda-4749-9a47-d88fb6a60f66
+changed:
+  -
+    value: '2019-04-18T14:42:55+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 6b3ad38c-d07c-4e1e-b114-75b575f423ba
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.358e86e3-8dda-4749-9a47-d88fb6a60f66
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.358e86e3-8dda-4749-9a47-d88fb6a60f66

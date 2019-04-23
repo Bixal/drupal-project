@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 83612842-36c6-4c71-8fc3-948dcc565a2f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_m3ylcuki7swg2h1e0qy
+    target_type: taxonomy_vocabulary
+    target_uuid: 6a5f03dd-b840-4da4-afa7-cd80ec748e45
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Plan Narrative'
+description:
+  -
+    value: "<p>The State Plan Narrative is a vital element of the SQSP that provides a vehicle for sharing with the Federal partner State-specific efforts that affect the administration of the UI Program. The State Plan Narrative allows the State to describe in a single narrative: a) State performance in comparison to the Government Performance Review Act goals; b) actions planned to correct deficiencies regarding UI programs, UI program reviews and reporting requirements; and c) results of customer satisfaction surveys (optional).</p>\r\n"
+    format: basic_html
+    processed: '<p>The State Plan Narrative is a vital element of the SQSP that provides a vehicle for sharing with the Federal partner State-specific efforts that affect the administration of the UI Program. The State Plan Narrative allows the State to describe in a single narrative: a) State performance in comparison to the Government Performance Review Act goals; b) actions planned to correct deficiencies regarding UI programs, UI program reviews and reporting requirements; and c) results of customer satisfaction surveys (optional).</p>'
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4e0d933d-1a0b-4eb9-bff9-a40c045481eb
+  -
+    target_type: taxonomy_term
+    target_uuid: 4e0d933d-1a0b-4eb9-bff9-a40c045481eb
+changed:
+  -
+    value: '2019-04-18T14:26:30+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5674cad5-6819-4e48-93ad-4d8dd54c4f03
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 20935d22-ae76-486e-8fe8-8ce5fd70263b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.4e0d933d-1a0b-4eb9-bff9-a40c045481eb
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.4e0d933d-1a0b-4eb9-bff9-a40c045481eb

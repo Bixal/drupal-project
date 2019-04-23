@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 358e86e3-8dda-4749-9a47-d88fb6a60f66
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_m3ylcuki7swg2h1e0qy
+    target_type: taxonomy_vocabulary
+    target_uuid: 6a5f03dd-b840-4da4-afa7-cd80ec748e45
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Requirements for States Electing to Include Ui in the Combined State Plan'
+description:
+  -
+    value: "<p>States that elect to include UI in the Combined State Plan must:</p>\r\n"
+    format: basic_html
+    processed: '<p>States that elect to include UI in the Combined State Plan must:</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 5ae10923-40b9-4813-9c8f-dee072bf0c78
+  -
+    target_type: taxonomy_term
+    target_uuid: 5ae10923-40b9-4813-9c8f-dee072bf0c78
+changed:
+  -
+    value: '2019-04-18T14:41:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 76c23da1-1aad-40c5-bd52-7d1f45ff7d03
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.5ae10923-40b9-4813-9c8f-dee072bf0c78
+      - taxonomy_term.section_2018_m3ylcuki7swg2h1e0qy.5ae10923-40b9-4813-9c8f-dee072bf0c78

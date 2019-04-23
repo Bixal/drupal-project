@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 26e8dc9c-2249-4fb0-8fe2-a2f21d39dce6
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'State Comments on Scsep Assurances'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+  -
+    target_type: taxonomy_term
+    target_uuid: cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+changed:
+  -
+    value: '2019-04-19T20:41:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5db70010-3a6f-458d-a06c-12b836a40a26
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_optional
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: fdb80cd3-d137-4353-9262-e57b27ff3c2a
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.cb1936cd-76c4-4e2a-ade8-4b4f68620f9d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.cb1936cd-76c4-4e2a-ade8-4b4f68620f9d

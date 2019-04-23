@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 3b3523f7-d18e-4a98-a2d8-f7514c117653
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Location and Population Served, Including Equitable Distribution - 7'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+changed:
+  -
+    value: '2019-04-19T20:31:35+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: d373e250-7329-45fc-bd45-749522d9ff75
+field_display_name:
+  -
+    value: 'Describe the Steps Taken to Avoid Disruptions to Service for Participants to the Greatest Extent Possible, when Positions Are Redistributed, as Provided in 20 Cfr 641.365; when New Census or Other Reliable Data Becomes Available; or when There is Over- Enrollment for Any Other Reason. (20 Cfr 641.325(i), 641.302(b))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c5fec76d-0260-4140-bf11-0d0eeefc9818
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d

@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: d92dbe22-89c8-4c19-9fe0-6623497add0a
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Service Delivery and Coordination - 4'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 701017ee-b7c7-4037-9788-572b290505ea
+  -
+    target_type: taxonomy_term
+    target_uuid: 701017ee-b7c7-4037-9788-572b290505ea
+changed:
+  -
+    value: '2019-04-19T20:23:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: ef35c26f-243c-4cdb-b3c4-21f7e83517de
+field_display_name:
+  -
+    value: 'List Needed Community Services and the Exact Places Where These Services Are Most Needed. Specifically, the Plan Must Address the Needs and Location(s) of Those Individuals Most in Need of Community Services and the Groups Working to Meet Their Needs. (20 Cfr 641.330)'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: d439274e-18b4-4ff3-b74a-622ca40bc402
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.701017ee-b7c7-4037-9788-572b290505ea
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.701017ee-b7c7-4037-9788-572b290505ea

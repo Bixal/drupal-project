@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: a877c720-f1bf-472b-a4b5-dd5f90353ebe
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Actions to Coordinate Activities of Scsep Grantees with WIOA Title I Programs, Including Plans for Using the WIOA One-stop Delivery System and Its Partners to Serve Individuals Aged 55 and Older. (20 Cfr 641.302(g), 641.325(e))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+  -
+    target_type: taxonomy_term
+    target_uuid: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+changed:
+  -
+    value: '2019-04-19T20:19:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4e65a32d-7afe-4f02-929f-be6e42d84eab
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: d6b9d3d6-5b24-40a9-a9ec-631d733d0227
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2

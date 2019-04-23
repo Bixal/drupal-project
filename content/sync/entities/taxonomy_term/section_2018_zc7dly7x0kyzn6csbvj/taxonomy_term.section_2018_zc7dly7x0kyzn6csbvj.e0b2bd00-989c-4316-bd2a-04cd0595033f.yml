@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: e0b2bd00-989c-4316-bd2a-04cd0595033f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provide the Relative Distribution of Eligible Individuals Who:'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+changed:
+  -
+    value: '2019-04-19T20:28:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 13eb7f19-ff2f-494f-9bbe-6df80093b877
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d

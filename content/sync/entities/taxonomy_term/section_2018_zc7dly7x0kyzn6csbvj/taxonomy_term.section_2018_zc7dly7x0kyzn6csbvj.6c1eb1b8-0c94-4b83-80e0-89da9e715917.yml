@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 6c1eb1b8-0c94-4b83-80e0-89da9e715917
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Moves Positions from Over-served to Underserved Locations Within the State in Compliance with 20 Cfr 641.365.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: fd2f67ea-bbca-4619-94a3-3f6c9f97f6f6
+  -
+    target_type: taxonomy_term
+    target_uuid: fd2f67ea-bbca-4619-94a3-3f6c9f97f6f6
+changed:
+  -
+    value: '2019-04-19T20:27:07+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8206b461-39cf-4832-a2fb-867ac44523f2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: f1ef432a-d925-449a-bbf9-b161fb4da0f6
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.fd2f67ea-bbca-4619-94a3-3f6c9f97f6f6
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.fd2f67ea-bbca-4619-94a3-3f6c9f97f6f6

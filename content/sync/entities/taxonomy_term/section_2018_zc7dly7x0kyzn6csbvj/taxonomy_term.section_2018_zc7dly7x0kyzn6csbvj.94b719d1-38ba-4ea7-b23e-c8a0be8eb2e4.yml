@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 94b719d1-38ba-4ea7-b23e-c8a0be8eb2e4
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Describe Any Current Slot Imbalances and Proposed Steps to Correct Inequities to Achieve Equitable Distribution.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+changed:
+  -
+    value: '2019-04-19T20:26:31+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5d249b0a-81de-44d9-bda5-d599aa1ace75
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: b17ce852-4699-4c2c-8139-4cb4867281cb
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d

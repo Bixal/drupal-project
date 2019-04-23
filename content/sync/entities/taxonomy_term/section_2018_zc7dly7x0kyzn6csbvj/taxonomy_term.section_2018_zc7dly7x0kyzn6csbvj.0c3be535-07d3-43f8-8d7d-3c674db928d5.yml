@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 0c3be535-07d3-43f8-8d7d-3c674db928d5
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'List the Cities and Counties Where the Scsep Project Will Take Place. Include the Number of Scsep Authorized Positions and Indicate if and Where the Positions Changed from the Prior Year.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+  -
+    target_type: taxonomy_term
+    target_uuid: 71f8658f-3748-4afb-8123-77c5020a0f5d
+changed:
+  -
+    value: '2019-04-19T20:26:13+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5ffa425c-ead7-428c-bc24-a4b1490fd9e6
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 7f344999-9c4b-40e4-b309-94bf9d47ff0e
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.71f8658f-3748-4afb-8123-77c5020a0f5d

@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: c1f612ca-5ef4-4fda-a99d-ae5b4a78e0f2
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_zc7dly7x0kyzn6csbvj
+    target_type: taxonomy_vocabulary
+    target_uuid: e382d49e-7a40-4443-ae5c-6a22ec412d17
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provide a Description of Actions to Coordinate Scsep with Other Programs'
+description:
+  -
+    value: "<p>This may alternatively be discussed in the State strategies section of the strategic plan, but regardless of placement in document, must include:</p>\r\n"
+    format: basic_html
+    processed: '<p>This may alternatively be discussed in the State strategies section of the strategic plan, but regardless of placement in document, must include:</p>'
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 701017ee-b7c7-4037-9788-572b290505ea
+  -
+    target_type: taxonomy_term
+    target_uuid: 701017ee-b7c7-4037-9788-572b290505ea
+changed:
+  -
+    value: '2019-04-19T20:18:55+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a6d079e0-548a-417a-b3c7-69ba66996a96
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.701017ee-b7c7-4037-9788-572b290505ea
+      - taxonomy_term.section_2018_zc7dly7x0kyzn6csbvj.701017ee-b7c7-4037-9788-572b290505ea

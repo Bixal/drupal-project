@@ -2,11 +2,13 @@
 
 namespace Drupal\sp_create;
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\sp_expire\ContentService;
 use Drupal\sp_retrieve\NodeService;
 use Drupal\sp_retrieve\TaxonomyService;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\user\Entity\User;
 use Psr\Log\LoggerInterface;
 use Drupal\sp_retrieve\CustomEntitiesService;
@@ -169,8 +171,12 @@ class UpdatePlanYearContentService {
     foreach ($this->taxonomyService->getVocabularyTids($plan_year_to_copy_section_vid) as $tid) {
       /** @var \Drupal\taxonomy\Entity\Term $source_term */
       $source_term = $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
+      // Create an empty term that is in the new section year.
       /** @var \Drupal\taxonomy\Entity\Term $cloned_term */
-      $cloned_term = $this->clone->cloneEntity('taxonomy_term', $plan_year_to_copy_section_vid, $tid);
+      $cloned_term = Term::create(['vid' => $plan_year_vid]);
+      $this->cloneFields($source_term, $cloned_term, 'clone', [
+        'tid', 'uuid', 'langcode', 'vid', 'status', 'parent', 'changed', 'default_langcode', 'path',
+      ]);
       $source_mapping[] = [
         'source_tid' => $source_term->id(),
         'source_tid_parent' => $source_term->get('parent')->first()->getValue()['target_id'],
@@ -178,7 +184,7 @@ class UpdatePlanYearContentService {
       ];
     }
     // Now that all terms have been saved, they need to have the hierarchy set
-    // again and saved to the new vocabulary.
+    // again.
     foreach ($source_mapping as $item) {
       $cloned_term = $this->entityTypeManager->getStorage('taxonomy_term')
         ->load($item['cloned_tid']);
@@ -191,10 +197,59 @@ class UpdatePlanYearContentService {
         }
         $cloned_term->set('parent', $cloned_tid_parent);
       }
-      // Move the cloned term to the new section year.
-      $cloned_term->set('vid', $plan_year_vid);
       $cloned_term->save();
     }
+  }
+
+  /**
+   * Copy the fields from one entity to another.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $source
+   *   The entity to copy from.
+   * @param \Drupal\Core\Entity\ContentEntityInterface $destination
+   *   The entity to copy to.
+   * @param string $mode
+   *   Can be 'keep', 'overwrite' and 'clone'.
+   * @param array $skip_fields
+   *   An array of fields not to be cloned into the destination entity.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   *
+   * @see https://gbyte.co/blog/clone-entity-data-into-existing-entities-drupal-8
+   */
+  public function cloneFields(ContentEntityInterface $source, ContentEntityInterface &$destination, $mode, array $skip_fields = []) {
+    foreach ($source->getFields() as $name => $field) {
+
+      // Leave out certain fields.
+      if (!in_array($name, $skip_fields)) {
+
+        switch ($mode) {
+
+          // Import only those fields from source that are empty in destination.
+          case 'keep':
+          default:
+            if (!$destination->get($name)->isEmpty()) {
+              continue 2;
+            }
+            break;
+
+          // Import field data from source overwriting all destination fields.
+          // Do not empty fields in destination if they are empty in source.
+          case 'overwrite':
+            if ($source->get($name)->isEmpty()) {
+              continue 2;
+            }
+            break;
+
+          // Import field data from source overwriting all destination fields.
+          // Empty fields in destination if they are empty in source.
+          case 'clone':
+            break;
+        }
+        $destination->set($name, $field->getValue());
+      }
+    }
+    $destination->save();
   }
 
   /**

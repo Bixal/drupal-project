@@ -48,7 +48,7 @@ function sp_create_entity_type_build(array &$entity_types) {
     // Stop adding '- Cloned' to term names.
     'taxonomy_term' => [
       'entity_clone' => SpCreateTaxonomyTermEntityClone::class,
-    ]
+    ],
   ];
 
   /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */

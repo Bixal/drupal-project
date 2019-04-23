@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 505f3fb6-5d4b-4468-84e7-901aeb5d647b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 2'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+changed:
+  -
+    value: '2019-04-19T13:52:08+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7f0dda66-13f9-4041-9245-b5835a69ce37
+field_display_name:
+  -
+    value: 'You Must Describe the Procedures You Will Use to Obtain Input from Eligible Recipients in Establishing a State Adjusted Level of Performance for Each of the Core Indicators of Performance for Career and Technical Education Students at the Secondary and Postsecondary Levels, as Well as State Levels of Performance for Any Additional Indicators of Performance Identified by the Eligible Agency. (section 122(c)(10)(a), Sec. 113(b)(3)(b))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: db59e223-1560-405c-ac91-56b712faee3b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69

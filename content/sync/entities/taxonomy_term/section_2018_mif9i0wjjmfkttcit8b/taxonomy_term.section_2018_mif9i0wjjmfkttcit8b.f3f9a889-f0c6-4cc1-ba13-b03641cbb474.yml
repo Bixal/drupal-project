@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: f3f9a889-f0c6-4cc1-ba13-b03641cbb474
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Must Prepare and Submit to the Secretary a State Plan for a 6-year Period; or You May Prepare and Submit a Transition Plan for the First Year of Operation of Programs Under the Act. (section 122(a)(1))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+changed:
+  -
+    value: '2019-04-18T15:39:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a8e3f68c-481a-472c-8647-44c0bb0f784b
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22

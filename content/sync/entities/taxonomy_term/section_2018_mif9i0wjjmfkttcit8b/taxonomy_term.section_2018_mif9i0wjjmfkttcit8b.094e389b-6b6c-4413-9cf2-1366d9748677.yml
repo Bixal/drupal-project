@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 094e389b-6b6c-4413-9cf2-1366d9748677
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Provide, for the First Two Years Covered by the State Plan, Performance Levels'
+description:
+  -
+    value: "<p>You must provide, for the first two years covered by the State plan, performance levels for each of the core indicators of performance, except that States submitting one-year transition plans are only required to submit performance levels for part of the indicators as discussed above. For performance levels that are required, the States’ performance levels, at a minimum, must be expressed in a percentage or numerical form, so&nbsp;as to be objective, quantifiable, and measurable; and require the State to continually make progress toward improving the performance of career and technical education students. (Section 113(b)(3)(A)(i)-(II)) Section 113(b)(2) of the Perkins Act requires a State to develop valid and reliable core indicators of performance, to propose performance levels in its State plan, and to reach agreement with the Department on “adjusted performance levels” for each of the core indicators. In so doing, the Perkins Act prescribes the measures that a State must use for some of the core indicators.</p>\r\n"
+    format: basic_html
+    processed: "<p>You must provide, for the first two years covered by the State plan, performance levels for each of the core indicators of performance, except that States submitting one-year transition plans are only required to submit performance levels for part of the indicators as discussed above. For performance levels that are required, the States’ performance levels, at a minimum, must be expressed in a percentage or numerical form, so\_as to be objective, quantifiable, and measurable; and require the State to continually make progress toward improving the performance of career and technical education students. (Section 113(b)(3)(A)(i)-(II)) Section 113(b)(2) of the Perkins Act requires a State to develop valid and reliable core indicators of performance, to propose performance levels in its State plan, and to reach agreement with the Department on “adjusted performance levels” for each of the core indicators. In so doing, the Perkins Act prescribes the measures that a State must use for some of the core indicators.</p>"
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+changed:
+  -
+    value: '2019-04-19T13:53:41+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f0b15b5e-4f7c-4d05-abe9-e0576e96f394
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69

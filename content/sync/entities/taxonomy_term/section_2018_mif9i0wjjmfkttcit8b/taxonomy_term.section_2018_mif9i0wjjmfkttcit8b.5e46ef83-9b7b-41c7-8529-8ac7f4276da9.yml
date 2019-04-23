@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 5e46ef83-9b7b-41c7-8529-8ac7f4276da9
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How Funds Will Be Used Effectively to Link Academic and Career and Technical Education at the Secondary Level and at the Postsecondary Level in a Manner That Increases Student Academic and Career and Technical Achievement; and'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 10
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T15:48:29+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 8dec6354-4f7e-4f4b-8380-5e82d57922ae
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: c4e3a91c-7cce-4586-a0d5-e68ff34876b9
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

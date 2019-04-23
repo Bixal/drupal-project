@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 00361db7-9941-4d25-a148-9aa9c32653a6
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 6'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+changed:
+  -
+    value: '2019-04-19T13:55:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 79907679-676d-4e3f-97d1-4ea61a9d4c01
+field_display_name:
+  -
+    value: 'You Must Describe Your Process for Reaching Agreement on Local Adjusted Levels of Performance if an Eligible Recipient Does Not Accept the State Adjusted Levels of Performance Under Section 113(b)(3) of the Act and Ensuring That the Established Performance Levels Will Require the Eligible Recipient to Continually Make Progress Toward Improving the Performance of Career and Technical Education Students. (section 113(b)(4)(a)(ii); Sec. 122(c)(10)(b))    7. You Must Describe the Objective Criteria and Methods You Will Use to Allow an Eligible Recipient to Request Revisions to Its Local Adjusted Levels of Performance if Unanticipated Circumstances Arise with Respect to an Eligible Recipient. (section 113(b)(4)(a)(vi))'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 31d4d49d-57fc-4f83-9578-e448003b2073
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69

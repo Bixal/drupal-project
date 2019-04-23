@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 72fa6e1b-b497-4c8b-8d6a-953eb1e6393c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tech Prep Programs'
+description:
+  -
+    value: "<p>As noted above, Congress eliminated a separate allocation for Title II, Tech Prep under Perkins IV in the 2011 Continuing Resolution. States are not required to provide or revise this Section V, Tech Prep Programs, unless your State chooses to do so.</p>\r\n"
+    format: basic_html
+    processed: '<p>As noted above, Congress eliminated a separate allocation for Title II, Tech Prep under Perkins IV in the 2011 Continuing Resolution. States are not required to provide or revise this Section V, Tech Prep Programs, unless your State chooses to do so.</p>'
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+changed:
+  -
+    value: '2019-04-19T14:09:15+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: dad6b52d-fe4b-4869-ba50-9b7152e255df
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941

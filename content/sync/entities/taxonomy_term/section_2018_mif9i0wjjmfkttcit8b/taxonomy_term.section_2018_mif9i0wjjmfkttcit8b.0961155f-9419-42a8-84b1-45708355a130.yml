@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 0961155f-9419-42a8-84b1-45708355a130
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'States Submitting One-year Transition Plans'
+description:
+  -
+    value: "<p>Except as noted above with respect the States submitting one-year transition plans, you must provide all the information requested on the forms provided in Part C of this guide to report accountability data annually to the Secretary under section 113(c)(1)-(2), including:</p>\r\n"
+    format: basic_html
+    processed: '<p>Except as noted above with respect the States submitting one-year transition plans, you must provide all the information requested on the forms provided in Part C of this guide to report accountability data annually to the Secretary under section 113(c)(1)-(2), including:</p>'
+weight:
+  -
+    value: 10
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+  -
+    target_type: taxonomy_term
+    target_uuid: 012021d0-cb88-4411-837e-5731478e5f69
+changed:
+  -
+    value: '2019-04-19T14:00:18+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a4161c24-712e-4a5b-8b4e-99cbca41d93a
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.012021d0-cb88-4411-837e-5731478e5f69

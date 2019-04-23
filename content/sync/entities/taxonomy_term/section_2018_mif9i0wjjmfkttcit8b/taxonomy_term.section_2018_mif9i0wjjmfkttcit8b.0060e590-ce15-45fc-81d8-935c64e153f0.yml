@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 0060e590-ce15-45fc-81d8-935c64e153f0
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Edgar Certifications'
+description:
+  -
+    value: "<ol>\r\n\t<li>You must provide a written and signed certification that–&nbsp;&nbsp;\r\n\t<ol>\r\n\t\t<li>\r\n\t\t<p>The plan is submitted by the State agency that is eligible to submit the plan. [34 CFR 76.104(a)(1)] [Note: The term ‘eligible agency’ means a State board designated or created consistent with State law as the sole State agency responsible for the administration, or the supervision of the administration, of career and technical education in the State. See Sec. 3(12).]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>The State agency has authority under State law to perform the functions of the State under the program. [34 CFR 76.104(a)(2)]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>The State legally may carry out each provision of the plan. [34 CFR 76.104(a)(3)]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>All provisions of the plan are consistent with State law. [34 CFR 76.104(a)(4)]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>A State officer, specified by title in the certification, has authority under State law to receive, hold, and disburse Federal funds made available under the plan. [34 CFR 76.104(a)(5)] [Note: If a State wishes for the Department to continue sending the grant award documents directly to the State director, this individual’s title needs to be listed on this portion of the assurance.]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>The State officer who submits the plan, specified by title in the certification, has authority to submit the plan. [34 CFR 76.104(a)(6)]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>The agency that submits the plan has adopted or otherwise formally approved the plan. [34 CFR 76.104(a)(7)]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t<p>The plan is the basis for State operation and administration of the program. [34 CFR 76.104(a)(8)]&nbsp;&nbsp;</p>\r\n\t\t</li>\r\n\t</ol>\r\n\t</li>\r\n</ol>\r\n"
+    format: basic_html
+    processed: "<ol>\n\t<li>You must provide a written and signed certification that–\_\_\n\t<ol>\n\t\t<li>\n\t\t<p>The plan is submitted by the State agency that is eligible to submit the plan. [34 CFR 76.104(a)(1)] [Note: The term ‘eligible agency’ means a State board designated or created consistent with State law as the sole State agency responsible for the administration, or the supervision of the administration, of career and technical education in the State. See Sec. 3(12).]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>The State agency has authority under State law to perform the functions of the State under the program. [34 CFR 76.104(a)(2)]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>The State legally may carry out each provision of the plan. [34 CFR 76.104(a)(3)]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>All provisions of the plan are consistent with State law. [34 CFR 76.104(a)(4)]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>A State officer, specified by title in the certification, has authority under State law to receive, hold, and disburse Federal funds made available under the plan. [34 CFR 76.104(a)(5)] [Note: If a State wishes for the Department to continue sending the grant award documents directly to the State director, this individual’s title needs to be listed on this portion of the assurance.]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>The State officer who submits the plan, specified by title in the certification, has authority to submit the plan. [34 CFR 76.104(a)(6)]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>The agency that submits the plan has adopted or otherwise formally approved the plan. [34 CFR 76.104(a)(7)]\_\_</p>\n\t\t</li>\n\t\t<li>\n\t\t<p>The plan is the basis for State operation and administration of the program. [34 CFR 76.104(a)(8)]\_\_</p>\n\t\t</li>\n\t</ol>\n\t</li>\n</ol>"
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f899defe-6007-4e87-90ea-22df657e2a32
+  -
+    target_type: taxonomy_term
+    target_uuid: f899defe-6007-4e87-90ea-22df657e2a32
+changed:
+  -
+    value: '2019-04-19T15:18:06+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5f072dbc-94f3-433d-a6b3-7340676d1ac7
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f899defe-6007-4e87-90ea-22df657e2a32
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f899defe-6007-4e87-90ea-22df657e2a32

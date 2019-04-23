@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: ec3dd37a-2c38-49da-82c0-b243602c8f87
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Accountability and Evaluation'
+description:
+  -
+    value: "<p>In addition to the narrative information provided below, you must submit your measurement definitions (Items 3 and 11 below) and proposed performance levels (Items 5 and 11 below) for the upcoming program year using the link to the Perkins State Plan Portal below.</p>\r\n"
+    format: basic_html
+    processed: '<p>In addition to the narrative information provided below, you must submit your measurement definitions (Items 3 and 11 below) and proposed performance levels (Items 5 and 11 below) for the upcoming program year using the link to the Perkins State Plan Portal below.</p>'
+weight:
+  -
+    value: 4
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+changed:
+  -
+    value: '2019-04-19T13:50:14+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 55a333dd-ff3d-4ce1-92ee-d39f2e0cb31c
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941

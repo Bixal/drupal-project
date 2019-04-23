@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: 261d3330-0466-4e8e-b402-aa802ce4a7a3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'States Submitting One-year Transition Plans - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0961155f-9419-42a8-84b1-45708355a130
+  -
+    target_type: taxonomy_term
+    target_uuid: 0961155f-9419-42a8-84b1-45708355a130
+changed:
+  -
+    value: '2019-04-19T14:05:16+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5e95b68c-f433-408e-ac29-03a30d3cca0a
+field_display_name:
+  -
+    value: 'Baseline Data for the Core Indicators of Performance Under Section 113(b)(2) Using Data from the Most-recently Completed Program Year, Except That, for the Indicators for Which Your State Must Use Your State’s Standards, Assessment, and Graduation Rates Adopted Under Title I of the Esea, if Your State Chooses to Use Its Amos and Targets Under the Esea, You Will Not Need to Submit Baseline Data; and'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.0961155f-9419-42a8-84b1-45708355a130
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.0961155f-9419-42a8-84b1-45708355a130

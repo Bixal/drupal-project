@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: d23bb30f-bb38-4f95-9ce3-6d0246279997
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Procedural Suggestions and Planning Reminders'
+description:
+  -
+    value: "<ul>\r\n\t<li>\r\n\t<p>EDGAR regulations implementing the Drug-Free Workplace Act of 1988 (41 U.S.C. 701 et seq., as amended) are provided in 34 CFR Part 84, “Government-wide Requirements for Drug-Free Workplace (Financial Assistance).” Changes in this Government-wide requirement (adopted in the November 26, 2003 Federal Register Notice) now implement this as a condition of the award. See 34 CFR 84.400.&nbsp;&nbsp;</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>EDGAR regulations implementing Executive Orders 12549 and 12689 and Section. 2455 of the Federal Acquisition Regulation are provided in 34 CFR Part 85, “Government-wide Debarment and Suspension (Nonprocurement).” Changes in this Government-wide requirement (adopted in the November 26, 2003 Federal Register Notice) now implement this as a condition of the award. See 34 CFR 85.440. You are also responsible for including a condition in any subgrant and contract that meets the definition for a covered transaction a condition that the lower tier participant must comply with the regulations in part 85. See 34 CFR 85.330.&nbsp;&nbsp;</p>\r\n\t</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Under EDGAR regulations at 34CFR 85.320, your State is responsible for determining whether any of your principals of your covered transactions (i.e. subgrants or contracts) is excluded or disqualified from participating in the transaction. See 34 CFR 85.320. You may decide the method and frequency by which you do so. You may, but are not required to, check the Excluded Parties List System at the following site: http://www.epls.gov/.</p>\r\n\t</li>\r\n</ul>\r\n"
+    format: basic_html
+    processed: "<ul>\n\t<li>\n\t<p>EDGAR regulations implementing the Drug-Free Workplace Act of 1988 (41 U.S.C. 701 et seq., as amended) are provided in 34 CFR Part 84, “Government-wide Requirements for Drug-Free Workplace (Financial Assistance).” Changes in this Government-wide requirement (adopted in the November 26, 2003 Federal Register Notice) now implement this as a condition of the award. See 34 CFR 84.400.\_\_</p>\n\t</li>\n\t<li>\n\t<p>EDGAR regulations implementing Executive Orders 12549 and 12689 and Section. 2455 of the Federal Acquisition Regulation are provided in 34 CFR Part 85, “Government-wide Debarment and Suspension (Nonprocurement).” Changes in this Government-wide requirement (adopted in the November 26, 2003 Federal Register Notice) now implement this as a condition of the award. See 34 CFR 85.440. You are also responsible for including a condition in any subgrant and contract that meets the definition for a covered transaction a condition that the lower tier participant must comply with the regulations in part 85. See 34 CFR 85.330.\_\_</p>\n\t</li>\n</ul>\n\n<ul>\n\t<li>\n\t<p>Under EDGAR regulations at 34CFR 85.320, your State is responsible for determining whether any of your principals of your covered transactions (i.e. subgrants or contracts) is excluded or disqualified from participating in the transaction. See 34 CFR 85.320. You may decide the method and frequency by which you do so. You may, but are not required to, check the Excluded Parties List System at the following site: http://www.epls.gov/.</p>\n\t</li>\n</ul>"
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: f899defe-6007-4e87-90ea-22df657e2a32
+  -
+    target_type: taxonomy_term
+    target_uuid: f899defe-6007-4e87-90ea-22df657e2a32
+changed:
+  -
+    value: '2019-04-19T15:20:49+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 88fdd5af-b309-434e-bc8e-84f7f6ddc2c6
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f899defe-6007-4e87-90ea-22df657e2a32
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.f899defe-6007-4e87-90ea-22df657e2a32

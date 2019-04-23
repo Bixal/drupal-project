@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 2e16591b-5e0d-46f9-ab94-41199d7efe58
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How the State Will Report on the Integration of Coherent and Rigorous Content Aligned with Challenging Academic Standards in Career and Technical Education Programs in Order to Adequately Evaluate the Extent of Such Integration. (section 122(c)(1)(a)-(l))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 11
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T17:34:23+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 93d769bb-8dd0-40e4-80a2-6d66b5454213
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: dd9ad40e-3d4e-4db9-9289-4b66d307de93
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

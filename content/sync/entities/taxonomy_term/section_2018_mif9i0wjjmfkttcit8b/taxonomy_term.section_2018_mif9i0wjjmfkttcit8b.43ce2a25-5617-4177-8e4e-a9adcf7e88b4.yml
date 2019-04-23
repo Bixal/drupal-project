@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 43ce2a25-5617-4177-8e4e-a9adcf7e88b4
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'You Must Provide a Listing of Allocations Made to Consortia (secondary and Postsecondary) from Funds Available Under Sections 112(a) and (c).'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2334915b-719d-47a3-8f76-a536c3c6a6a7
+  -
+    target_type: taxonomy_term
+    target_uuid: 2334915b-719d-47a3-8f76-a536c3c6a6a7
+changed:
+  -
+    value: '2019-04-19T14:32:19+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a225ed91-b725-4855-9571-4ad2d71efe8c
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3fb691ab-de37-4e67-a71e-26ab326ad3e8
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2334915b-719d-47a3-8f76-a536c3c6a6a7
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2334915b-719d-47a3-8f76-a536c3c6a6a7

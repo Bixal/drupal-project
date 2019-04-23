@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: f8869303-ac16-4b6c-b3c5-22b01717885f
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'How Funds Will Be Used to Improve or Develop New Career and Technical Education Courses—'
+description:
+  -
+    value: "<p>i. At the secondary level that are aligned with rigorous and challenging academic content standards and student academic achievement standards adopted by the State under section 1111(b)(1) of the Elementary and Secondary Education Act of 1965, as amended;&nbsp;&nbsp;</p>\r\n\r\n<p>ii. At the postsecondary level that are relevant and challenging; and&nbsp;</p>\r\n\r\n<p>iii. That lead to employment in high-skill, high-wage, or high-demand occupations;</p>\r\n"
+    format: basic_html
+    processed: "<p>i. At the secondary level that are aligned with rigorous and challenging academic content standards and student academic achievement standards adopted by the State under section 1111(b)(1) of the Elementary and Secondary Education Act of 1965, as amended;\_\_</p>\n\n<p>ii. At the postsecondary level that are relevant and challenging; and\_</p>\n\n<p>iii. That lead to employment in high-skill, high-wage, or high-demand occupations;</p>"
+weight:
+  -
+    value: 8
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T15:47:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7a8fee84-cb94-4c18-8773-7b59c9c81969
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 588b8832-85ce-453c-a24a-487a827f4584
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

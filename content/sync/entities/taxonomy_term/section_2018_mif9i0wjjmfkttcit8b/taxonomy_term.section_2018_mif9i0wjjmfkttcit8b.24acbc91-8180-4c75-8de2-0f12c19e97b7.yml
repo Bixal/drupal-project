@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 24acbc91-8180-4c75-8de2-0f12c19e97b7
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'You must submit a detailed project budget, using the forms provided in Part B of this guide.'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2334915b-719d-47a3-8f76-a536c3c6a6a7
+  -
+    target_type: taxonomy_term
+    target_uuid: 2334915b-719d-47a3-8f76-a536c3c6a6a7
+changed:
+  -
+    value: '2019-04-19T14:31:41+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 28005145-2711-4ae7-aedb-ae0357e56931
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2334915b-719d-47a3-8f76-a536c3c6a6a7
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2334915b-719d-47a3-8f76-a536c3c6a6a7

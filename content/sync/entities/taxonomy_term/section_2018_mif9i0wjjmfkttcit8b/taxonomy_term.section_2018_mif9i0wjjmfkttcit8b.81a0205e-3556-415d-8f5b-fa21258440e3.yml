@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: 81a0205e-3556-415d-8f5b-fa21258440e3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'You Must Describe How Funds Will Be Used to Serve Individuals in State Correctional Institutions. (section 122(c)(19))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 3
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+  -
+    target_type: taxonomy_term
+    target_uuid: 88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+changed:
+  -
+    value: '2019-04-19T13:47:55+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 5ab5d1a1-25b3-44e2-b3b4-0e0e9e1deba2
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 81b3ba7b-8551-420c-b7d2-a0e9a418998d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.88c0c273-2a7a-4048-9bb7-0e98e08f7a75

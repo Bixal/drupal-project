@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 19dfd3ab-d2d9-46e2-a8f3-6f8902bcf9bb
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Must Describe the Career and Technical Education Activities to Be Assisted That Are Designed to Meet or Exceed the State Adjusted Levels of Performance, Including a Description Of— a'
+description:
+  -
+    value: "<p>a. Incorporate secondary education and postsecondary education elements;&nbsp;&nbsp;</p>\r\n\r\n<p>b. Include coherent and rigorous content, aligned with challenging academic standards, and relevant career and technical content in a coordinated, non-duplicative progression of courses that align secondary education with postsecondary education to adequately prepare students to succeed in postsecondary education&nbsp;&nbsp;</p>\r\n\r\n<p>c. May include the opportunity for secondary education students to participate in dual or concurrent enrollment programs or other ways to acquire postsecondary education credits; and&nbsp;&nbsp;</p>\r\n\r\n<p>d. Lead to an industry-recognized credential or certificate at the postsecondary level, or an associate or baccalaureate degree</p>\r\n"
+    format: basic_html
+    processed: "<p>a. Incorporate secondary education and postsecondary education elements;\_\_</p>\n\n<p>b. Include coherent and rigorous content, aligned with challenging academic standards, and relevant career and technical content in a coordinated, non-duplicative progression of courses that align secondary education with postsecondary education to adequately prepare students to succeed in postsecondary education\_\_</p>\n\n<p>c. May include the opportunity for secondary education students to participate in dual or concurrent enrollment programs or other ways to acquire postsecondary education credits; and\_\_</p>\n\n<p>d. Lead to an industry-recognized credential or certificate at the postsecondary level, or an associate or baccalaureate degree</p>"
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+  -
+    target_type: taxonomy_term
+    target_uuid: 7292650d-3b34-4b01-82db-3cc79270dfb9
+changed:
+  -
+    value: '2019-04-18T15:42:20+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2fc1290e-fd03-42ff-bac0-bb7c53b42bf3
+field_display_name:
+  -
+    value: 'The Career and Technical Education Programs of Study, That May Be Adopted by Local Educational Agencies and Postsecondary Institutions to Be Offered as an Option to Students (and Their Parents as Appropriate) when Planning for and Completing Future Coursework, for Career and Technical Content Areas That—'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: a633682e-a9f0-49cf-90b4-d0e89524295b
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.7292650d-3b34-4b01-82db-3cc79270dfb9

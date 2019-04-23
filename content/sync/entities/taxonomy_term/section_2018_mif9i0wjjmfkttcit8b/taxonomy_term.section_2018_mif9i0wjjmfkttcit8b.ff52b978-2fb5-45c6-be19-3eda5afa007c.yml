@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: ff52b978-2fb5-45c6-be19-3eda5afa007c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'States Submitting One-year Transition Plans - C'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 2
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0961155f-9419-42a8-84b1-45708355a130
+  -
+    target_type: taxonomy_term
+    target_uuid: 0961155f-9419-42a8-84b1-45708355a130
+changed:
+  -
+    value: '2019-04-19T14:05:54+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 7f2441bf-1fe3-4721-a366-ac98a9771658
+field_display_name:
+  -
+    value: 'Proposed Performance Levels as Discussed Above, Except That, for the Indicators for Which Your State Must Your State’s Standards, Assessments, and Graduation Rates Adopted Under Title I of the Esea, if Your State Chooses to Use Its Amos and Targets Under the Esea, You Will Only Have to Confirm This Information with Your Octae Regional Accountability Specialist. Upon Your Request, the Regional Accountability Specialist Will Pre-populate the Forms in Part C with Your State’s Amos and Targets for the 2007-08 and 2008-09 Program Years and Send the Forms for You to Finish Completing.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.0961155f-9419-42a8-84b1-45708355a130
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.0961155f-9419-42a8-84b1-45708355a130

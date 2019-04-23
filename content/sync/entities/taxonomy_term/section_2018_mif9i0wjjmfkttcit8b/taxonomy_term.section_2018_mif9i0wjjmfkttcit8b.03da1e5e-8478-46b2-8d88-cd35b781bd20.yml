@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 03da1e5e-8478-46b2-8d88-cd35b781bd20
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'You Must Describe Your Program Strategies for Special Populations Listed in Section 3(29) of the Act, Including a Description of How Individuals Who Are Members of the Special Populations—'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+  -
+    target_type: taxonomy_term
+    target_uuid: 88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+changed:
+  -
+    value: '2019-04-19T13:44:41+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 1bd6afad-c0f4-4327-9a09-5543845f2d52
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.88c0c273-2a7a-4048-9bb7-0e98e08f7a75
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.88c0c273-2a7a-4048-9bb7-0e98e08f7a75

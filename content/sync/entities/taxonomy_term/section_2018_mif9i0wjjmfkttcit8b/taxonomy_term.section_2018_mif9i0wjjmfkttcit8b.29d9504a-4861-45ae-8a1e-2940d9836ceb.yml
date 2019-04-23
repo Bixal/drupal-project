@@ -1,6 +1,6 @@
 uuid:
   -
-    value: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+    value: 29d9504a-4861-45ae-8a1e-2940d9836ceb
 langcode:
   -
     value: en
@@ -14,7 +14,7 @@ status:
     value: true
 name:
   -
-    value: 'Career and Technical Education Programs Authorized Under the Carl D. Perkins Career and Technical Education Act of 2006'
+    value: 'Statutory Requirements'
 description:
   -
     value: null
@@ -22,13 +22,17 @@ description:
     processed: ''
 weight:
   -
-    value: 105
+    value: 0
 parent:
   -
-    target_id: 0
+    target_type: taxonomy_term
+    target_uuid: a3e9d734-1717-49b9-b37b-7b050f800b12
+  -
+    target_type: taxonomy_term
+    target_uuid: a3e9d734-1717-49b9-b37b-7b050f800b12
 changed:
   -
-    value: '2019-04-19T15:46:11+00:00'
+    value: '2019-04-19T14:22:33+00:00'
     format: 'Y-m-d\TH:i:sP'
 default_langcode:
   -
@@ -40,18 +44,21 @@ path:
     langcode: en
 field_cross_year_uuid:
   -
-    value: e90fe8be-22f7-4baf-a754-f5a2dcf21cdf
+    value: ddc3ddd5-b706-4c2f-8851-164ea0086783
 field_display_name: {  }
 field_hide_hierarchical_heading:
   -
-    value: true
+    value: false
 field_hide_name:
   -
     value: false
 field_input_from_state: {  }
 field_shown_on_toc:
   -
-    value: true
+    value: false
 _content_sync:
   entity_type: taxonomy_term
-  entity_dependencies: {  }
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.a3e9d734-1717-49b9-b37b-7b050f800b12
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.a3e9d734-1717-49b9-b37b-7b050f800b12

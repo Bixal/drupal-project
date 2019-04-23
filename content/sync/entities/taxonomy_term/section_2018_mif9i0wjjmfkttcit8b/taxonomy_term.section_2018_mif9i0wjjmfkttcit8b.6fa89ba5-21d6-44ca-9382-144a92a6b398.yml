@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 6fa89ba5-21d6-44ca-9382-144a92a6b398
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 7'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 6
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+  -
+    target_type: taxonomy_term
+    target_uuid: 29d9504a-4861-45ae-8a1e-2940d9836ceb
+changed:
+  -
+    value: '2019-04-19T14:25:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f3bab83a-e795-4942-bb3e-21ff75818482
+field_display_name:
+  -
+    value: 'You Must Provide a Description of Any Proposed Alternative Allocation Formula(s) Requiring Approval by the Secretary as Described in Section 131(b) or 132(b). at a Minimum, You Must Provide an Allocation Run for Eligible Recipients Using the Required Elements Outlined in Section 131(a) And/or Section 132(a)(2), Together with an Allocation Run Using the Proposed Alternative Formula(s). Also You Must Include a Demonstration That the Alternative Secondary Formula More Effectively Targets Funds on the Basis of Poverty, as Described in Section 131(b)(1) of the Act; And/or, in the Case of an Alternative Postsecondary Formula, a Demonstration That the Formula Described in Section 132(a)(2) Does Not Result in a Distribution of Funds to Eligible Recipients That Have the Highest Numbers of Economically Disadvantaged Individuals and That an Alternative Formula Would Result in Such a Distribution.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 3da095a2-781d-4635-afe7-9063eed2c011
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.29d9504a-4861-45ae-8a1e-2940d9836ceb

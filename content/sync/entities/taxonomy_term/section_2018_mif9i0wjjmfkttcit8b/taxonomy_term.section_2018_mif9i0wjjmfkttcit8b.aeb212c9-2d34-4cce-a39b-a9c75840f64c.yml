@@ -1,0 +1,75 @@
+uuid:
+  -
+    value: aeb212c9-2d34-4cce-a39b-a9c75840f64c
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The State Plan Must Describe How the Eligible State Agency Will Provide Local Educational Agencies, Area Career and Technical Education Schools, and Eligible Institutions in the State with Technical Assistance. (section 122(c)(15))'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+changed:
+  -
+    value: '2019-04-19T13:29:27+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4ec655ac-8e84-4dd6-95f9-1f89a6a9d8e1
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: ffc6d388-d580-45b6-b13f-b52369068e2a
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22

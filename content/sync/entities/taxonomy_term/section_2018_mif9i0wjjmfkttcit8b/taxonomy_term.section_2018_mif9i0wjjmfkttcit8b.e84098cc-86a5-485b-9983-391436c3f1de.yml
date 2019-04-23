@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: e84098cc-86a5-485b-9983-391436c3f1de
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Planning, Coordination, and Collaboration Prior to State Plan Submission'
+description:
+  -
+    value: "<p>As noted above, in addition to entering your Perkins State Plan and any revisions for the upcoming year, you must submit a request to extend your Perkins State Plan using the link to the Perkins State Plan Portal below. You are not required to hold separate hearings for the Perkins portion of your WIOA Combined State Plan unless your State determines that there is a “significant and relevant” change in: (1) the information or assurances in the Perkins plan; (2) the administration or operation of the Perkins plan; or (3) the organization, policies, or operations of the State agency that received the grant, if the change materially affects the information or assurances in the Perkins plan. See Question A.12 in the Department’s Perkins IV Non-Regulatory Guidance Q&amp;A -Version 4.0, released April 24, 2015. Accordingly, if your State determines that no significant or relevant change is being made, you are not required to provide or revise this Section I, Planning, Coordination, and Collaboration Prior to State Plan Submission, unless your State chooses to do so.</p>\r\n"
+    format: basic_html
+    processed: '<p>As noted above, in addition to entering your Perkins State Plan and any revisions for the upcoming year, you must submit a request to extend your Perkins State Plan using the link to the Perkins State Plan Portal below. You are not required to hold separate hearings for the Perkins portion of your WIOA Combined State Plan unless your State determines that there is a “significant and relevant” change in: (1) the information or assurances in the Perkins plan; (2) the administration or operation of the Perkins plan; or (3) the organization, policies, or operations of the State agency that received the grant, if the change materially affects the information or assurances in the Perkins plan. See Question A.12 in the Department’s Perkins IV Non-Regulatory Guidance Q&amp;A -Version 4.0, released April 24, 2015. Accordingly, if your State determines that no significant or relevant change is being made, you are not required to provide or revise this Section I, Planning, Coordination, and Collaboration Prior to State Plan Submission, unless your State chooses to do so.</p>'
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+  -
+    target_type: taxonomy_term
+    target_uuid: cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+changed:
+  -
+    value: '2019-04-18T15:32:11+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 39fe5c6b-0a83-463d-8d75-73ece7ed47d8
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.cbd6dc47-f7e1-4d5c-bd8a-20a7a0e83941

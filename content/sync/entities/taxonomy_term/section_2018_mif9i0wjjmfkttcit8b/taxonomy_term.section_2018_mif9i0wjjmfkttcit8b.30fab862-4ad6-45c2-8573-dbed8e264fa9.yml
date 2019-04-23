@@ -1,0 +1,64 @@
+uuid:
+  -
+    value: 30fab862-4ad6-45c2-8573-dbed8e264fa9
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'The Student Definitions That You Will Use for the Secondary Core Indicators of Performance and the Postsecondary/adult Core Indicators of Performance;'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 0961155f-9419-42a8-84b1-45708355a130
+  -
+    target_type: taxonomy_term
+    target_uuid: 0961155f-9419-42a8-84b1-45708355a130
+changed:
+  -
+    value: '2019-04-19T14:04:44+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 708ea4d8-dd62-4f6a-87d6-7b2679068188
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.0961155f-9419-42a8-84b1-45708355a130
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.0961155f-9419-42a8-84b1-45708355a130

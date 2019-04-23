@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: bb756d35-d604-4750-aeb3-2718e48f2c21
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Program Administration - 11'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 10
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+  -
+    target_type: taxonomy_term
+    target_uuid: 40864be7-bb4e-4b57-a79a-46c54a026a22
+changed:
+  -
+    value: '2019-04-19T13:32:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2c4bbf77-6c77-4bd7-827a-8ebcc34b52be
+field_display_name:
+  -
+    value: "The State Plan Must Provide a Description and the Information Specified “in Subparagraphs (b) and (c)(iii) of Section 102(b)(2), And, as Appropriate, Section 103(b)(3)(a), and Section 121(c), of the Workforce Innovation and Opportunity Act (public Law 113-128) Concerning the Provisions of Services Only for Postsecondary Students and School Dropouts. (section 122(c)(20))\_"
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 865b073a-95ea-47a3-90c8-27ab72408a56
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.40864be7-bb4e-4b57-a79a-46c54a026a22

@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 9594aa66-5ec7-498d-bb92-aacc9213ef38
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'States Submitting One-year Transition Plans - C - 2'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: ff52b978-2fb5-45c6-be19-3eda5afa007c
+  -
+    target_type: taxonomy_term
+    target_uuid: ff52b978-2fb5-45c6-be19-3eda5afa007c
+changed:
+  -
+    value: '2019-04-19T14:07:26+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 36cfa0af-7ab3-40c7-a7c8-61459eaabdbd
+field_display_name:
+  -
+    value: 'You Must Identify the Program Areas for Which the State Has Technical Skill Assessments, the Estimated Percentage of Cte Students Who Take Technical Skill Assessments, and the State’s Plan for Increasing the Coverage of Programs and Students Reported in Future Program Years.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 02b53fc8-55eb-4c5b-91cd-6910b1acf796
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.ff52b978-2fb5-45c6-be19-3eda5afa007c
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.ff52b978-2fb5-45c6-be19-3eda5afa007c

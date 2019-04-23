@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 1477c2a7-2e6c-4f02-806e-dd30f7833aee
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_mif9i0wjjmfkttcit8b
+    target_type: taxonomy_vocabulary
+    target_uuid: f43a7ff9-7377-44fc-b41f-ad81729e18da
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Statutory Requirements - 1'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 0
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 2243475b-14c0-4cff-9467-4d690ad44d19
+  -
+    target_type: taxonomy_term
+    target_uuid: 2243475b-14c0-4cff-9467-4d690ad44d19
+changed:
+  -
+    value: '2019-04-18T15:35:01+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 229b6b67-c91a-42b0-8f73-eaad1ef5b374
+field_display_name:
+  -
+    value: "The State Must Conduct Public Hearings in the State, After Appropriate and Sufficient Notice, for the Purpose of Affording All Segments of the Public and Interested Organizations and Groups (including Charter School Authorizers and Organizers Consistent with State Law, Employers, Labor Organizations, Parents, Students, and Community Organizations), an Opportunity to Present Their Views and Make Recommendations Regarding the State Plan. (section 122(a)(3))\_"
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 1facf6fa-9b3d-4835-a267-5b14451f37ee
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2243475b-14c0-4cff-9467-4d690ad44d19
+      - taxonomy_term.section_2018_mif9i0wjjmfkttcit8b.2243475b-14c0-4cff-9467-4d690ad44d19

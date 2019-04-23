@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 83d85fb6-0493-4a9c-adb9-43c10fe16032
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tanf - F'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 5
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+changed:
+  -
+    value: '2019-04-19T18:12:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 9cb08d7f-5592-45c9-bc9a-c7c13a7a1445
+field_display_name:
+  -
+    value: 'Conduct a Program Designed to Reach State and Local Law Enforcement Officials, the Education System, and Relevant Counseling Services, That Provides Education and Training on the Problem of Statutory Rape So That Teenage Pregnancy Prevention Programs May Be Expanded to Include Men (section 402(a)(1)(a)(vi) of the Social Security Act)'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 6727caee-5a05-4091-83ef-8c5c94637a71
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4

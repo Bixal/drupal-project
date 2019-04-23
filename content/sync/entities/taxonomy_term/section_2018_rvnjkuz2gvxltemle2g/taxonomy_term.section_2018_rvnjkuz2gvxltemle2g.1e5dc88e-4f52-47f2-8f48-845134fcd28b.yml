@@ -1,0 +1,163 @@
+uuid:
+  -
+    value: 1e5dc88e-4f52-47f2-8f48-845134fcd28b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tanf Certifications'
+description:
+  -
+    value: "<p>States that include TANF in the Combined State Plan must provide a certification by the chief executive officer of that State, that during the fiscal year, the State will:</p>\r\n"
+    format: basic_html
+    processed: '<p>States that include TANF in the Combined State Plan must provide a certification by the chief executive officer of that State, that during the fiscal year, the State will:</p>'
+weight:
+  -
+    value: 13
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+changed:
+  -
+    value: '2019-04-19T18:29:07+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: a98bb711-d33e-4187-841d-20b11395d581
+field_display_name: {  }
+field_hide_hierarchical_heading:
+  -
+    value: true
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Operate a child support enforcement program under the State Plan approved under part D. (section 402(a)(2) of the Social Security Act)</p>\r\n"
+      format: basic_html
+    term_field_uuid: ccf1452b-54d4-44d2-927a-ec276dea2b02
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Operate a foster care and adoption assistance program under the State Plan approved under part E, and that the State will take such actions as are necessary to ensure that children receiving assistance under such part are eligible for medical assistance under The Unified or Combined State Plan under title XIX. (section 402(a)(3) of the Social Security Act)</p>\r\n"
+      format: basic_html
+    term_field_uuid: 4ce5239e-be51-4f7d-818d-ed2dbe2a995d
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Specify which State agency or agencies will administer and supervise the program referred to in paragraph (1) for the fiscal year, which shall include assurances that local governments and private sector organizations (section 402(a)(4) of the Social Security Act)—have been consulted regarding the plan and design of welfare services in the State so that services are provided in a manner appropriate to local populations;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 5e40b736-719f-4d3e-a677-756b22f27f13
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Specify which State agency or agencies will administer and supervise the program referred to in paragraph (1) for the fiscal year, which shall include assurances that local governments and private sector organizations (section 402(a)(4) of the Social Security Act)—have had at least 45 days to submit comments on the plan and the design of such services</p>\r\n"
+      format: basic_html
+    term_field_uuid: e5a52140-4779-41ae-8c26-7b644e604a06
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Provide each member of an Indian tribe, who is domiciled in the State and is not eligible for assistance under a tribal family assistance plan approved under section 412, with equitable access to assistance under the State program funded under this part attributable to funds provided by the Federal Government. (section 402(a)(5) of the Social Security Act)</p>\r\n"
+      format: basic_html
+    term_field_uuid: 81734998-89b9-442a-9613-799e50fe0dac
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>Establish and enforce standards and procedures to ensure against program fraud and abuse, including standards and procedures concerning nepotism, conflicts of interest among individuals responsible for the administration and supervision of the State program, kickbacks, and the use of political patronage. (section 402(a)(6) of the Social Security Act)</p>\r\n"
+      format: basic_html
+    term_field_uuid: 20993391-aa35-4dd5-ad7d-40b259aa3726
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>(optional) Establish and Enforcing standards and procedures to (section 402(a)(7) of the Social Security Act).— screen and identify individuals receiving assistance under this part with a history of domestic violence while maintaining the confidentiality of such individuals;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 14b9e7c0-793d-4cbc-9ff0-db0088225fd7
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>(optional) Establish and Enforcing standards and procedures to (section 402(a)(7) of the Social Security Act).— refer such individuals to counseling and supportive services;</p>\r\n"
+      format: basic_html
+    term_field_uuid: 1f5333d4-0a00-48d7-824f-b57d128d59dc
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+  -
+    node_bundle: bool_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: "<p>(optional) Establish and Enforcing standards and procedures to (section 402(a)(7) of the Social Security Act).—waive, pursuant to a determination of good cause, other program requirements such as time limits (for so long as necessary) for individuals receiving assistance, residency requirements, child support cooperation requirements, and family Page 428 cap provisions, in cases where compliance with such requirements would make it more difficult for individuals receiving assistance under this part to escape domestic violence or unfairly penalize such individuals who are or have been victimized by such violence, or individuals who are at risk of further domestic violence</p>\r\n"
+      format: basic_html
+    term_field_uuid: 5928582d-f3dd-4a07-ba72-6a66aefd22a4
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4

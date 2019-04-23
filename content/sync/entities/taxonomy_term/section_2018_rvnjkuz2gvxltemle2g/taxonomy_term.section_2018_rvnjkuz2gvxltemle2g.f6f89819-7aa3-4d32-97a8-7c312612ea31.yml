@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: f6f89819-7aa3-4d32-97a8-7c312612ea31
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tanf - H'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 7
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+changed:
+  -
+    value: '2019-04-19T18:13:00+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: f6e10527-9a35-44d2-b4e1-3d30c8e35d50
+field_display_name:
+  -
+    value: "Ensure That Recipients of Assistance Provided Under the State Program Funded Under This Part Have the Ability to Use or Withdraw Assistance with Minimal Fees or Charges, Including an Opportunity to Access Assistance with No Fee or Charges, and Are Provided Information on Applicable Fees and Surcharges That Apply to Electronic Fund Transactions Involving the Assistance, and That Such Information is Made Publicly Available (section 402(a)(1)(a)(viii) of the Social Security Act)\_"
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 5c0f7df6-c98a-4f6a-83da-869736e69f61
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4

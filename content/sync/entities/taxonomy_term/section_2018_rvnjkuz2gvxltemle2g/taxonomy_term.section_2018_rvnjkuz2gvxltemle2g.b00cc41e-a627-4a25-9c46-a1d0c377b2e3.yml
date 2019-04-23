@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: b00cc41e-a627-4a25-9c46-a1d0c377b2e3
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tanf - K'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 10
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+changed:
+  -
+    value: '2019-04-19T18:16:52+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 24d79818-b532-4649-b1d6-0df42002a39c
+field_display_name:
+  -
+    value: 'Set Forth Objective Criteria for the Delivery of Benefits and the Determination of Eligibility and for Fair and Equitable Treatment, Including an Explanation of How it Will Provide Opportunities for Recipients Who Have Been Adversely Affected to Be Heard in a State Administrative or Appeal Process (section 402(a)(1)(b)(iii) of the Social Security Act)'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 282c1910-9636-4457-9068-38f53cf1fbd6
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4

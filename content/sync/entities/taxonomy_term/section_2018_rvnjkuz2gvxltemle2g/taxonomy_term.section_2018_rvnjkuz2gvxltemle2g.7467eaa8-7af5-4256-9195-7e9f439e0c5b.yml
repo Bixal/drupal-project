@@ -1,0 +1,77 @@
+uuid:
+  -
+    value: 7467eaa8-7af5-4256-9195-7e9f439e0c5b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: 'Tanf - B'
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+  -
+    target_type: taxonomy_term
+    target_uuid: b7342df4-fe9b-4d3e-acad-760527e680e4
+changed:
+  -
+    value: '2019-04-19T18:04:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 4cd4d141-eab9-41b1-97bf-436fd4816bde
+field_display_name:
+  -
+    value: 'Require a Parent or Caretaker Receiving Assistance to Engage in Work (defined by the State) Once the State Determines the Parent or Caretaker is Ready to Engage in Work, or Once He or She Has Received 24 Months of Assistance, Whichever is Earlier, Consistent with the Child Care Exception at 407(e)(2) (section 402(a)(1)(a)(ii) of the Social Security Act)'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state:
+  -
+    node_bundle: text_sp_answer_required
+    section: ''
+    default_value: ''
+    extra_text:
+      value: ''
+      format: basic_html
+    term_field_uuid: 6f9911f9-94c5-4e61-a849-279b4a550235
+    access_option: ''
+    access_term_field_uuid: ''
+    access_value: ''
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.b7342df4-fe9b-4d3e-acad-760527e680e4

@@ -1,0 +1,66 @@
+uuid:
+  -
+    value: ed6cea46-41a5-4b89-82e2-5a6a9181f71b
+langcode:
+  -
+    value: en
+vid:
+  -
+    target_id: section_2018_rvnjkuz2gvxltemle2g
+    target_type: taxonomy_vocabulary
+    target_uuid: c13fdee7-f3a0-40eb-8e19-1a2d73b63c48
+status:
+  -
+    value: true
+name:
+  -
+    value: "Indicate Whether the State Intends to Assist Individuals to Train For, Seek, and Maintain Employment (section 402(a)(1)(b)(v) of the Social Security Act)—\_2"
+description:
+  -
+    value: null
+    format: null
+    processed: ''
+weight:
+  -
+    value: 1
+parent:
+  -
+    target_type: taxonomy_term
+    target_uuid: 4c3ab8d7-cbca-4294-a4b1-6d397abaa008
+  -
+    target_type: taxonomy_term
+    target_uuid: 4c3ab8d7-cbca-4294-a4b1-6d397abaa008
+changed:
+  -
+    value: '2019-04-19T18:18:43+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+path:
+  -
+    alias: null
+    pid: null
+    langcode: en
+field_cross_year_uuid:
+  -
+    value: 2f34e60c-e524-4626-9770-e9d6dfa3c853
+field_display_name:
+  -
+    value: 'In Other Occupations Related to Elder Care, High-demand Occupations, or Occupations Expected to Experience Labor Shortages As, Determined Appropriate by the State for Which the State Identifies an Unmet Need for Service Personnel, And, if So, Shall Include an Overview of Such Assistance.'
+field_hide_hierarchical_heading:
+  -
+    value: false
+field_hide_name:
+  -
+    value: false
+field_input_from_state: {  }
+field_shown_on_toc:
+  -
+    value: false
+_content_sync:
+  entity_type: taxonomy_term
+  entity_dependencies:
+    taxonomy_term:
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.4c3ab8d7-cbca-4294-a4b1-6d397abaa008
+      - taxonomy_term.section_2018_rvnjkuz2gvxltemle2g.4c3ab8d7-cbca-4294-a4b1-6d397abaa008

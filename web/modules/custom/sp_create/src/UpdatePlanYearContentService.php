@@ -191,8 +191,6 @@ class UpdatePlanYearContentService {
         }
         $cloned_term->set('parent', $cloned_tid_parent);
       }
-      // Remove - Cloned from the label of the term.
-      $cloned_term->set('name', str_replace(' - Cloned', '', $cloned_term->label()));
       // Move the cloned term to the new section year.
       $cloned_term->set('vid', $plan_year_vid);
       $cloned_term->save();

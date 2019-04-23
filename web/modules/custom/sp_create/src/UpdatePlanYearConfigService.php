@@ -108,11 +108,30 @@ class UpdatePlanYearConfigService {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function removeStatePlan($plan_year_id) {
-    // TODO: Use customEntitiesRetrieval->allPlanYearCopyTo() to figure out what
-    // other plan years are referencing this plan year and remove this plan year
-    // from their meta data (sections to copy + year).
-    // TODO: Remove config split and config split dir for this plan year if it
-    // was created.
+    // Determine if there are other plan years that are copying sections from
+    // the plan year being deleted. Update those plan years to stop copying
+    // sections from this year. This will not change modify the content created
+    // only the meta data. After this change, the hierarchy will just not be
+    // able to be copied any more.
+    $plan_year_id_being_deleted = $plan_year_id;
+    $plan_year_copy_to = $this->customEntitiesRetrieval->allPlanYearCopyTo();
+    if (!empty($plan_year_copy_to[$plan_year_id_being_deleted])) {
+      foreach ($plan_year_copy_to[$plan_year_id_being_deleted] as $plan_year_id_copying) {
+        // This is the plan year that is copying from the plan year being
+        // deleted.
+        /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year_copying */
+        $plan_year_copying = $this->customEntitiesRetrieval->single('plan_year', $plan_year_id_copying);
+        foreach ($plan_year_copying->getCopyFromPlanYearSectionArray() as $section_id_copying => $plan_year_id_copying_from) {
+          // If the plan year ID of the section section being copied belongs
+          // to the plan year being deleted, stop copying it.
+          if ($plan_year_id_copying_from == $plan_year_id_being_deleted) {
+            $plan_year_copying->stopCopyingSection($section_id_copying);
+          }
+        }
+        // Save the plan year after all copied sections have been removed.
+        $plan_year_copying->save();
+      }
+    }
     $node_storage = $this->entityTypeManager->getStorage('node');
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $plan_year */
     $plan_year = $this->customEntitiesRetrieval->single(PlanYearEntity::ENTITY, $plan_year_id);
@@ -145,8 +164,12 @@ class UpdatePlanYearConfigService {
 
     // Now that all configuration is removed for this plan year, remove the
     // configuration split.
+    // The config split may not have been created yet.
     /* @var \Drupal\config_split\Entity\ConfigSplitEntity $config_split */
-    $this->customEntitiesRetrieval->single('config_split', 'plan_year_' . $plan_year_id)->delete();
+    $config_split = $this->customEntitiesRetrieval->single('config_split', 'plan_year_' . $plan_year_id);
+    if (NULL !== $config_split) {
+      $config_split->delete();
+    }
   }
 
   /**

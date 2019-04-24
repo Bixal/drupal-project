@@ -19,6 +19,21 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyBlock
+            - JustifyRight
+        -
+          name: Tools
+          items:
+            - Undo
+            - Redo
+            - Copy
+            - Cut
+            - Paste
+            - PasteText
+            - PasteFromWord
         -
           name: Linking
           items:
@@ -32,17 +47,17 @@ settings:
         -
           name: Media
           items:
+            - Table
             - Blockquote
             - DrupalImage
         -
           name: 'Block Formatting'
           items:
             - Format
-        -
-          name: Tools
-          items:
-            - Source
+            - Styles
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: ''
 image_upload:
@@ -51,5 +66,5 @@ image_upload:
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

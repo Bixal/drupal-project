@@ -5,7 +5,6 @@ slogan: ''
 page:
   403: ''
   404: ''
-  # No need to update this variable. It should be set by sp_create:init.
   front: /node
 admin_compact_mode: false
 weight_select_max: 100

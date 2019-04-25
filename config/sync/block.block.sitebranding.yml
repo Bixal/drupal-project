@@ -1,0 +1,23 @@
+uuid: 5711ee1d-36fd-4e8c-8499-269f9bee366b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uswds_wioa
+id: sitebranding
+theme: uswds_wioa
+region: header
+weight: -1
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

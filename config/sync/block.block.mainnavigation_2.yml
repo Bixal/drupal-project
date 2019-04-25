@@ -1,0 +1,43 @@
+uuid: 6b713585-9b2b-443b-8617-e7aac2197d2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+    - user
+  theme:
+    - uswds_wioa
+id: mainnavigation_2
+theme: uswds_wioa
+region: mobile_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      state_staff: state_staff
+      completer: completer
+      big_submitter: big_submitter
+      federal_reviewer: federal_reviewer
+      federal_panel_lead: federal_panel_lead
+      steering_committee_member: steering_committee_member
+      system: system
+      sys_admin: sys_admin
+      creator: creator
+      group_content_viewer: group_content_viewer
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

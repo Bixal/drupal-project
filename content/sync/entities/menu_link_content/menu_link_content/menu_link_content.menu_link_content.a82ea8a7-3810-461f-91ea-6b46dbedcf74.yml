@@ -1,0 +1,46 @@
+uuid:
+  -
+    value: a82ea8a7-3810-461f-91ea-6b46dbedcf74
+langcode:
+  -
+    value: en
+bundle:
+  -
+    value: menu_link_content
+enabled:
+  -
+    value: true
+title:
+  -
+    value: 'U.S. Department of Housing and Urban Development'
+description: {  }
+menu_name:
+  -
+    value: footer-navigation
+link:
+  -
+    uri: 'internal:/'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: 0
+expanded:
+  -
+    value: false
+parent: {  }
+changed:
+  -
+    value: '2019-04-25T20:37:02+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content

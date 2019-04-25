@@ -1,0 +1,48 @@
+uuid:
+  -
+    value: 90f8a2ed-3c83-4c09-8a1d-ad8160878fdf
+langcode:
+  -
+    value: en
+bundle:
+  -
+    value: menu_link_content
+enabled:
+  -
+    value: true
+title:
+  -
+    value: Dashboard
+description:
+  -
+    value: 'Your Dashboard'
+menu_name:
+  -
+    value: main
+link:
+  -
+    uri: 'internal:/dashboard'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: -50
+expanded:
+  -
+    value: false
+parent: {  }
+changed:
+  -
+    value: '2019-04-25T16:40:30+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content

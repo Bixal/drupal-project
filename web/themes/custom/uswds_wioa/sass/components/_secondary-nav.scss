@@ -53,7 +53,9 @@
   }
 }
 
-.menu--account a[href='/search']::before {
+// Search icon for desktop & mobile search link.
+.menu--account a[href='/search']::before,
+.usa-sidenav-list a[href='/search']::before {
   @include icon($i-icon-search);
   color: $color-primary;
   display: inline-block;

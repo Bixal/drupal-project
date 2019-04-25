@@ -1,0 +1,19 @@
+// ==========================================================================
+// Header (Related: _secondary-nav.scss)
+// ==========================================================================
+.region-header {
+  @include bp(lg) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.usa-logo img {
+  width: px-to-rem(188);
+
+  @include bp(md-xl) {
+    width: px-to-rem(280);
+  }
+}

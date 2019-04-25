@@ -1,0 +1,31 @@
+.usa-nav-mobile .usa-sidenav-list,
+.usa-nav-mobile li {
+  border-color: $color-gray-light;
+}
+
+.usa-nav-mobile .usa-sidenav-list:not(:first-of-type) {
+  border-top: none;
+  color: $color-gray-medium;
+  margin-top: 0;
+}
+
+.usa-nav-mobile a {
+  color: inherit;
+  padding: 0;
+}
+
+.usa-nav-mobile span {
+  display: inline-block;
+  padding-top: px-to-rem(8.5);
+  padding-bottom: px-to-rem(8.5);
+}
+
+// Current active item.
+.usa-sidenav-list a.usa-current {
+  border-left: none;
+  padding-left: 0;
+}
+
+.usa-sidenav-list a.usa-current span {
+  border-bottom: 4px solid $color-primary;
+}

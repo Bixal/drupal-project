@@ -101,6 +101,16 @@ fresh:
 	${DC_RUN} php composer install
 	@echo "Installing a fresh Drupal 8 site"
 	${DC_RUN} php drupal si --force --no-interaction standard --account-pass="admin"
+	make import_latest
+
+update:
+	@echo "Ensure composer is up to date"
+	${DC_RUN} php composer install
+	@echo "Updating database"
+	${DC_RUN} php drupal update:execute all
+	make import_latest
+
+import_latest:
 	@echo "Installing configuration from file"
 	${DC_RUN} php drupal config:import
 	@echo "Installing configuration splits from file"

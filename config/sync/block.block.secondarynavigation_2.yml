@@ -1,0 +1,24 @@
+uuid: 3ac69bd0-44f6-486a-9622-1876a69c6b6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - uswds_wioa
+id: secondarynavigation_2
+theme: uswds_wioa
+region: mobile_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'Secondary Navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

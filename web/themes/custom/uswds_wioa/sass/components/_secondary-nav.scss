@@ -1,0 +1,66 @@
+// ==========================================================================
+// Secondary Nav (Next to logo in _header.scss)
+// ==========================================================================
+.menu--account {
+  display: none;
+
+  @include bp(lg) {
+    display: block;
+  }
+}
+
+.menu--account .menu {
+  @include bp(lg) {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.menu--account .menu-item {
+  margin-bottom: 0;
+}
+
+.menu--account .menu-item:not(:first-of-type) {
+  @include bp(lg) {
+    margin-left: px-to-rem(9);
+  }
+}
+
+.menu--account .menu-item:not(:first-of-type)::before {
+  background-color: $color-gray-light;
+  content: '';
+  display: inline-block;
+  height: px-to-rem(20);
+  width: px-to-rem(1);
+  visibility: hidden;
+  vertical-align: middle;
+
+  @include bp(lg) {
+    visibility: visible;
+    margin-right: px-to-rem(5);
+  }
+}
+
+.menu--account a {
+  color: $color-gray-medium;
+  text-decoration: none;
+  transition: color $ease-primary;
+
+  @include is-active {
+    color: $color-gray-dark;
+  }
+}
+
+// Search icon for desktop & mobile search link.
+.menu--account a[href='/search']::before,
+.usa-sidenav-list a[href='/search']::before {
+  @include icon($i-icon-search);
+  color: $color-primary;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: px-to-rem(-2); // Visually center.
+  margin-right: px-to-rem(5);
+}

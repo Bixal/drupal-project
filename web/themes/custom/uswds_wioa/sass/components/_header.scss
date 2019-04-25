@@ -1,6 +1,10 @@
 // ==========================================================================
 // Header (Related: _secondary-nav.scss)
 // ==========================================================================
+.usa-banner-button {
+  background-color: transparent;
+}
+
 .region-header {
   @include bp(lg) {
     display: flex;

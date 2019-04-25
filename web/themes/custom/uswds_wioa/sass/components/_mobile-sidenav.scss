@@ -1,3 +1,28 @@
+// Close Button
+.usa-nav-close {
+  &:active {
+    &::before {
+      color: $c-white;
+    }
+  }
+  &:hover::before,
+  &:focus::before {
+    color: $color-gray-dark;
+  }
+}
+
+.usa-nav-close::before {
+  @include icon($i-icon-close);
+  color: $color-gray;
+  font-size: px-to-rem(20);
+  transition: color $ease-primary;
+}
+
+.usa-nav-close img {
+  visibility: hidden;
+  position: absolute;
+}
+
 .usa-nav-mobile .usa-sidenav-list,
 .usa-nav-mobile li {
   border-color: $color-gray-light;

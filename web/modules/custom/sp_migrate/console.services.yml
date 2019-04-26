@@ -1,0 +1,6 @@
+services:
+  sp_migrate.sp_migrate_migrate:
+    class: Drupal\sp_migrate\Command\MigrateCommand
+    arguments: []
+    tags:
+      - { name: drupal.command }

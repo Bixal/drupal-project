@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains sp_migrate.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sp_migrate_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sp_migrate module.
+    case 'help.page.sp_migrate':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Migrate 2016 and 2018 State plans into Drupal') . '</p>';
+      return $output;
+
+    default:
+  }
+}

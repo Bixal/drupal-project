@@ -1,0 +1,5 @@
+name: 'State Plan - Migrate'
+type: module
+description: 'Migrate 2016 and 2018 State plans into Drupal'
+core: 8.x
+package: 'Custom'

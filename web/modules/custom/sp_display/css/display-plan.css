@@ -43,3 +43,13 @@ div.item-list.display-plan-year.depth-gradient li .depth-4 {
 div.item-list.display-plan-year.depth-gradient li .depth-5 {
   background-color: #888;
 }
+
+div.item-list.display-plan-year.depth-gradient li div.questions {
+  font-size: 70%;
+  background-color: green;
+}
+
+div.item-list.display-plan-year.depth-gradient li div.description {
+  font-size: 60%;
+  background-color: orange;
+}

@@ -1,0 +1,48 @@
+uuid:
+  -
+    value: 06b7cdd2-2e49-42d1-b43f-83156525212f
+langcode:
+  -
+    value: en
+bundle:
+  -
+    value: menu_link_content
+enabled:
+  -
+    value: true
+title:
+  -
+    value: Resources
+description:
+  -
+    value: 'Resources Page'
+menu_name:
+  -
+    value: main
+link:
+  -
+    uri: 'internal:/resources'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: -49
+expanded:
+  -
+    value: false
+parent: {  }
+changed:
+  -
+    value: '2019-04-25T16:42:48+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content

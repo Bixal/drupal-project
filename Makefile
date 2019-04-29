@@ -116,7 +116,7 @@ import_latest:
 	@echo "Installing configuration splits from file"
 	${DC_RUN} php drupal csim -y
 	@echo "Importing content"
-	${DC_RUN} php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage
+	${DC_RUN} php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage,menu_link_content
 	@echo "Running initialization script"
 	${DC_RUN} php drupal sp_create:init
 	@echo "Creating state plan year 2018 state plans year, state plan years, and state plan year sections"

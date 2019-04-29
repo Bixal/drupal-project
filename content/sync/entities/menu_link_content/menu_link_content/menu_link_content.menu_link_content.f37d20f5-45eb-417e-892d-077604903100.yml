@@ -1,0 +1,46 @@
+uuid:
+  -
+    value: f37d20f5-45eb-417e-892d-077604903100
+langcode:
+  -
+    value: en
+bundle:
+  -
+    value: menu_link_content
+enabled:
+  -
+    value: true
+title:
+  -
+    value: 'U.S. Department of Education: Office of Special Education and Rehabilitative Services'
+description: {  }
+menu_name:
+  -
+    value: footer-navigation
+link:
+  -
+    uri: 'internal:/'
+    title: ''
+    options: {  }
+external:
+  -
+    value: false
+rediscover:
+  -
+    value: true
+weight:
+  -
+    value: 0
+expanded:
+  -
+    value: false
+parent: {  }
+changed:
+  -
+    value: '2019-04-25T20:26:42+00:00'
+    format: 'Y-m-d\TH:i:sP'
+default_langcode:
+  -
+    value: true
+_content_sync:
+  entity_type: menu_link_content

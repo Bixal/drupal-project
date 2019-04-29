@@ -1,0 +1,8 @@
+uuid: 9b425ef4-2174-4621-9a3f-344e24c7a3c0
+langcode: en
+status: true
+dependencies: {  }
+id: footer-navigation
+label: 'Footer Navigation'
+description: 'Primary navigation found in footer.'
+locked: false

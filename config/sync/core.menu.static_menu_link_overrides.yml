@@ -1,3 +1,27 @@
-definitions: {  }
+definitions:
+  standard__front_page:
+    weight: -47
+    menu_name: main
+    parent: ''
+    enabled: false
+    expanded: false
+  user__page:
+    weight: -48
+    menu_name: account
+    parent: ''
+    enabled: true
+    expanded: false
+  user__logout:
+    weight: -47
+    menu_name: account
+    parent: ''
+    expanded: false
+    enabled: true
+  masquerade__unmasquerade:
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+    weight: -50
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

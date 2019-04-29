@@ -1,10 +1,10 @@
 %clearfix {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     display: table;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -213,14 +213,19 @@ $button-stroke: inset 0 0 0 2px;
   }
 }
 
+/* sass-lint:disable max-line-length indentation */
+//
+// 1.
+// Ensure browsers that don't support SVG in background-image
+// (IE 11 and below) fall back to PNG.
+// See https://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/
+//
 %uswds-input-styles {
   appearance: none;
   background-color: $color-white;
   background-image: url('#{$image-path}/arrow-both.png');
-  // Ensure browsers that don't support SVG in background-image (IE 11 and below) fall back to PNG.
-  // See https://www.broken-links.com/2010/06/14/using-svg-in-backgrounds-with-png-fallback/
   background-image: none, url('#{$image-path}/arrow-both.svg'),
-    url('#{$image-path}/arrow-both.png');
+    url('#{$image-path}/arrow-both.png'); // 1
   background-position: right 1.3rem center;
   background-repeat: no-repeat;
   background-size: 1rem;

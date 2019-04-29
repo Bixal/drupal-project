@@ -185,6 +185,11 @@
       border-color: $color-primary-darker;
     }
   }
+
+  // Transform arrow for clicked state only.
+  &.is-active::before {
+    transform: translateX(-50%) rotate(-180deg);
+  }
 }
 
 // Circle w/ icon in button

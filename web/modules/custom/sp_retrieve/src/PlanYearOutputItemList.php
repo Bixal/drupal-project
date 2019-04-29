@@ -2,6 +2,8 @@
 
 namespace Drupal\sp_retrieve;
 
+use Drupal\sp_create\PlanYearInfo;
+
 /**
  * Class PlanYearItemListAbstract.
  *
@@ -135,16 +137,41 @@ class PlanYearOutputItemList extends PlanYearOutputAbstract {
       }
     }
     else {
-      // @TODO: This shouldn't be skipped, right now it's just the titles but
-      // what this should do is keep the link / display the value without
-      // showing the title.
-      if (!empty($section_term['hide_name'])) {
-        return $items;
+      $description = '';
+      if (!empty($section_term['description']['value'])) {
+        $element = [
+          '#type' => 'processed_text',
+          '#text' => $section_term['description']['value'],
+          '#format' => $section_term['description']['format'],
+        ];
+        $description = '<div class="description">' . render($element) . '</div>';
       }
-      if (!empty($section_term['hierarchical_outline'])) {
+      if (!empty($section_term['questions'])) {
+        $questions = [];
+        foreach ($section_term['questions'] as $term_field_uuid => $question) {
+          $extra_text = '';
+          if (!empty($question['extra_text'])) {
+            $element = [
+              '#type' => 'processed_text',
+              '#text' => $question['extra_text']['value'],
+              '#format' => $question['extra_text']['format'],
+            ];
+            $extra_text = render($element);
+          }
+          $questions[] = $this->item($extra_text . '<p>' . PlanYearInfo::getSpyaLabels()[$question['node_bundle']] . '( <strong>' . $term_field_uuid . '</strong> )</p>');
+        }
+        $questions = render($this->itemList($questions, ['questions']));
+      }
+      if (!empty($section_term['hide_name'])) {
+        $title = '';
+      }
+      elseif (!empty($section_term['hierarchical_outline'])) {
         $title = $section_term['hierarchical_outline'] . '. ' . $title;
       }
-      $parent_content = '<span class="item-title">' . $title . '</span>';
+      if (!empty($title)) {
+        $title = '<span class="item-title">' . $title . '</span>';
+      }
+      $parent_content = $title . $description . $questions;
       $children_items = [];
       if (!empty($section_term['children'])) {
         $children_items = $this->getItems($section_term['section_id'], $section_term['children']);

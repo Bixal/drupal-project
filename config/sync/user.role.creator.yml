@@ -7,7 +7,6 @@ label: Creator
 weight: 11
 is_admin: null
 permissions:
-  - 'access content overview'
   - 'edit body'
   - 'use editorial transition create_new_draft'
   - 'view state_plan revisions'

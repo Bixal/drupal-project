@@ -8,7 +8,6 @@ weight: 3
 is_admin: null
 permissions:
   - 'access any state_plan workflow_transion overview'
-  - 'access content overview'
   - 'access state_plan workflow_transition form'
   - 'create body'
   - 'create state_plan workflow_transition'

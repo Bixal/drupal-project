@@ -36,7 +36,6 @@ visibility:
       steering_committee_member: steering_committee_member
       system: system
       sys_admin: sys_admin
-      creator: creator
       group_content_viewer: group_content_viewer
     negate: false
     context_mapping:

@@ -13,17 +13,14 @@ targetEntityType: node
 bundle: state_plan_year
 mode: teaser
 content:
-  content_moderation_control:
-    weight: 0
-    region: content
+  plan_type_badge:
+    weight: 99
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 1
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  content_moderation_control: true
   field_state_plans_year: true
+  links: true
   plan_year_toc: true
   plan_year_view: true

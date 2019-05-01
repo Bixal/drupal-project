@@ -72,7 +72,7 @@ class PlanYearEntityContentForm extends EntityBatchForm {
     /** @var \Drupal\sp_plan_year\Entity\PlanYearEntity $current_plan_year */
     $current_plan_year = $this->entity;
     // Find what plans are not created yet.
-    $all_group_ids = $this->customEntitiesRetrieval->all('group', 'ids');
+    $all_group_ids = $this->customEntitiesRetrieval->getAllStates('ids');
     if (empty($all_group_ids)) {
       $this->messenger()->addError($this->t('Please create the states and territories before creating the plan content.'));
       return $form;

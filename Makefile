@@ -111,12 +111,14 @@ update:
 	make import_latest
 
 import_latest:
+	@echo "Importing sys_admin role. This should be a dependency instead."
+	${DC_RUN} php drupal config:import --file=config/sync/user.role.sys_admin.yml
 	@echo "Installing configuration from file"
 	${DC_RUN} php drupal config:import
 	@echo "Installing configuration splits from file"
 	${DC_RUN} php drupal csim -y
 	@echo "Importing content"
-	${DC_RUN} php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage
+	${DC_RUN} php drush content-sync:import -y --skiplist --entity-types=taxonomy_term,group.state,user,node.homepage,menu_link_content
 	@echo "Running initialization script"
 	${DC_RUN} php drupal sp_create:init
 	@echo "Creating state plan year 2018 state plans year, state plan years, and state plan year sections"

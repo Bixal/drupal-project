@@ -1,0 +1,24 @@
+uuid: 9ca3b735-566b-4f06-88ee-bb85df6bd36b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-navigation
+  module:
+    - system
+  theme:
+    - uswds_wioa
+id: footernavigation
+theme: uswds_wioa
+region: footer_secondary
+weight: -2
+provider: null
+plugin: 'system_menu_block:footer-navigation'
+settings:
+  id: 'system_menu_block:footer-navigation'
+  label: 'Footer Navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

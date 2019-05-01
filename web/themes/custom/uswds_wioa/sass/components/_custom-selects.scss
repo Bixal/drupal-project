@@ -7,6 +7,8 @@
   max-width: 100%;
 }
 
+// Indents ignored for these long selectors
+/* sass-lint:disable indentation */
 .select2-container--default
   .select2-selection--single
   .select2-selection__arrow
@@ -14,6 +16,7 @@
   display: none;
 }
 
+/* sass-lint:disable indentation */
 .select2-container--default
   .select2-selection--single
   .select2-selection__rendered {
@@ -34,6 +37,8 @@
   color: $color-gray-medium;
 }
 
+// Indents ignored for these long selectors
+/* sass-lint:disable indentation */
 .select2-container--default
   .select2-results__option--highlighted[data-selected] {
   background-color: $color-primary;

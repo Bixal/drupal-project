@@ -11,6 +11,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\content_moderation\ModerationInformationInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\workflows\WorkflowInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\content_moderation\StateTransitionValidationInterface;
 
@@ -203,6 +204,21 @@ class ModerateEntities extends ConfigurableActionBase implements ContainerFactor
   }
 
   /**
+   * Retrieve the moderation state label.
+   *
+   * @param \Drupal\workflows\WorkflowInterface $workflow
+   *   A workflow entity.
+   * @param string $moderation_state_id
+   *   An ID of a moderation state.
+   *
+   * @return string
+   *   The label for a moderation state.
+   */
+  protected function getWorkFlowStateLabel(WorkflowInterface $workflow, $moderation_state_id) {
+    return $workflow->getTypePlugin()->getState($moderation_state_id)->label();
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
@@ -237,9 +253,8 @@ class ModerateEntities extends ConfigurableActionBase implements ContainerFactor
         // Any entity that makes it this far, is a revisionable and workflow
         // enabled entity.
         /** @var \Drupal\Core\Entity\EditorialContentEntityBase $entity */
-        $current_moderation_state_label = $workflow->getTypePlugin()->getState($current_moderation_state_id)->label();
-        $workflow->getTypePlugin()->getState($entity->moderation_state->value)->label();
-        $latest_moderation_state_label = $workflow->getTypePlugin()->getState($entity->moderation_state->value)->label();;
+        $current_moderation_state_label = $this->getWorkFlowStateLabel($workflow, $current_moderation_state_id);
+        $latest_moderation_state_label = $this->getWorkFlowStateLabel($workflow, $entity->get('moderation_state')->getString());
         // Determine what transitions this entity can make.
         $transition_entities = $this->validator->getValidTransitions($entity, $this->currentUser);
         /** @var \Drupal\workflows\Transition $transition */

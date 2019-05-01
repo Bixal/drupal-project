@@ -22,6 +22,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  plan_type_badge:
+    weight: 99
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   plan_year_toc:
     weight: 2
     region: content

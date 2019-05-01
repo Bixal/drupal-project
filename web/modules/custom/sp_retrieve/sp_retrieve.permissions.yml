@@ -1,2 +1,4 @@
 access manage state plans:
   title: 'Access Manage State Plans'
+access all plans:
+  title: 'Access All Plans'

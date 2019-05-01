@@ -204,16 +204,24 @@ class TaxonomyService {
     $return['hide_hierarchical_heading'] = !empty($return['hide_name']) || $section_year_term->get('field_hide_hierarchical_heading')->getString();
     $return['shown_on_toc'] = $section_year_term->get('field_shown_on_toc')->getString();
     $return['section_references'] = [];
+    $return['questions'] = [];
     $return['weight'] = $section_year_term->getWeight();
     $return['name'] = $section_year_term->get('field_display_name')->isEmpty() ? $section_year_term->getName() : $section_year_term->get('field_display_name')->getString();
+    $return['description'] = ['value' => $section_year_term->getDescription(), 'format' => $section_year_term->getFormat()];
     if (!$section_year_term->get('field_input_from_state')->isEmpty()) {
       /** @var \Drupal\sp_field\Plugin\Field\FieldType\SectionEntryItem $item */
       foreach ($section_year_term->get('field_input_from_state') as $item) {
         $value = $item->getValue();
-        if (empty($value['section'])) {
-          continue;
+        if (!empty($value['section'])) {
+          $return['section_references'][$value['term_field_uuid']] = $value['section'];
         }
-        $return['section_references'][$value['term_field_uuid']] = $value['section'];
+        if (!empty($value['node_bundle'])) {
+          $return['questions'][$value['term_field_uuid']] = [
+            'node_bundle' => $value['node_bundle'],
+            'default_value' => $value['default_value'],
+            'extra_text' => $value['extra_text'],
+          ];
+        }
       }
     }
     return $return;

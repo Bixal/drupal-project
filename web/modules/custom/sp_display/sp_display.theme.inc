@@ -158,6 +158,24 @@ function template_preprocess_sp_display_download_plan_form(array &$variables) {
 }
 
 /**
+ * Prepares variables the plan type badge template.
+ *
+ * Default template: sp-display-plan-type-badge.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - node: The state plan year node.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function template_preprocess_sp_display_plan_type_badge(array &$variables) {
+  /** @var \Drupal\sp_retrieve\NodeService $node_service */
+  $node_service = \Drupal::getContainer()->get('sp_retrieve.node');
+  $variables['is_combined_plan'] = $node_service->isCombinedPlan($variables['node']->id()) ? '1' : '0';
+}
+
+/**
  * Temp function to return fake content for display form.
  *
  * @return array

@@ -7,6 +7,7 @@
 $c-black: #000; // rgb(0, 0, 0)
 $c-white: #fff; // rgb(255, 255, 255)
 $c-blue-darkest: #1f5593; // rgb(31, 85, 147)
+$c-blue-black: #142e4f;
 $c-blue-lt: #f0fdff;
 $c-offwhite: #fbfafa;
 $c-gray-md: #cacbc6;
@@ -67,9 +68,6 @@ $font-path: '#{$asset-path}fonts/uswds';
 
 $site-max-width: 1024px;
 $site-margins: 2rem;
-
-$grid-columns-medium: 16;
-$grid-columns-large: 16;
 
 $text-max-width: 75ch; // 66 characters per line
 

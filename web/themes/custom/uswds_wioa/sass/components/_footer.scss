@@ -1,0 +1,60 @@
+// ==========================================================================
+// Main Footer
+// ==========================================================================
+
+// Global
+.usa-footer-secondary_section {
+  background-color: $c-white;
+  border-top: 4px solid $color-red;
+
+  @include bp(md-xl) {
+    padding-top: px-to-rem(64);
+  }
+}
+
+.usa-footer-secondary_section a {
+  color: $color-primary;
+  font-weight: inherit;
+}
+
+// Footer Logo
+.usa-footer-medium .usa-footer-logo {
+  padding-top: 0;
+}
+
+.usa-footer-logo-img {
+  max-width: none;
+  width: px-to-rem(275);
+}
+
+//
+// Contact Section
+// ==========================================================================
+.usa-footer-contact-heading {
+  @extend %h4-style;
+  color: $c-blue-black;
+}
+
+// Agency Telephone number
+.usa-footer-contact-links p {
+  font-weight: $font-weight-bold;
+  margin-bottom: 0;
+}
+
+.usa-footer-contact-links p a {
+  color: $color-blue-darker;
+}
+
+//
+// Navigation
+// ==========================================================================
+.region-footer-secondary .menu {
+  @include bp(md-xl) {
+    column-count: 2;
+    max-width: 68%;
+  }
+}
+
+.region-footer-secondary .menu-item {
+  break-inside: avoid;
+}

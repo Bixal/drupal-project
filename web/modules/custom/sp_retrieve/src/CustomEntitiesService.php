@@ -47,8 +47,12 @@ class CustomEntitiesService {
    *   The entity type.
    * @param string $entities_or_ids
    *   Either entities or ids.
+   * @param string $bundle
+   *   An optional bundle if the entity supports it.
+   * @param string $bundle_key
+   *   The bundle key that is the field name.
    *
-   * @return array|\Drupal\Core\Entity\EntityInterface[]|int
+   * @return array|\Drupal\Core\Entity\EntityInterface[]|int[]
    *   An array of entity IDs or entities.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
@@ -56,10 +60,14 @@ class CustomEntitiesService {
    *
    * @TODO: Move this to a new service that is more generic.
    */
-  public function all($entity_type, $entities_or_ids = 'entities') {
+  public function all($entity_type, $entities_or_ids = 'entities', $bundle = 'all', $bundle_key = 'type') {
     $storage = $this->entityTypeManager->getStorage($entity_type);
-    $entity_ids = $storage->getQuery()
-      ->accessCheck(FALSE)
+    $query = $storage->getQuery()
+      ->accessCheck(FALSE);
+    if ($bundle !== 'all') {
+      $query->condition($bundle_key, $bundle);
+    }
+    $entity_ids = $query
       ->execute();
     if (empty($entity_ids)) {
       return [];
@@ -75,6 +83,10 @@ class CustomEntitiesService {
    *
    * @param string $entity_type
    *   An entity type.
+   * @param string $bundle
+   *   An optional bundle if the entity supports it.
+   * @param string $bundle_key
+   *   The bundle key that is the field name.
    *
    * @return array
    *   An array of entity labels keyed by entity ID.
@@ -84,14 +96,14 @@ class CustomEntitiesService {
    *
    * @TODO: Move this to a new service that is more generic.
    */
-  public function labels($entity_type) {
+  public function labels($entity_type, $bundle = 'all', $bundle_key = 'type') {
     $key = md5(__CLASS__ . __METHOD__ . $entity_type);
     $labels = &drupal_static($key);
     if (NULL !== $labels) {
       return $labels;
     }
     $labels = [];
-    $entities = $this->all($entity_type, 'entities');
+    $entities = $this->all($entity_type, 'entities', $bundle, $bundle_key);
     foreach ($entities as $entity) {
       $labels[$entity->id()] = $entity->label();
     }
@@ -283,15 +295,15 @@ class CustomEntitiesService {
   }
 
   /**
-   * Retrieve the group ID that the $group_content entity belongs to.
+   * Retrieve the group that the $group_content entity belongs to.
    *
    * @param \Drupal\Core\Entity\ContentEntityInterface $group_content
    *   An entity that belongs to a group.
    *
-   * @return string|bool
-   *   False if the entity does not belong to a group otherwise the group ID.
+   * @return \Drupal\group\Entity\GroupInterface|bool
+   *   False if the entity does not belong to a group otherwise the group.
    */
-  public function getGroupId(ContentEntityInterface $group_content) {
+  public function getGroup(ContentEntityInterface $group_content) {
     $group_id = &drupal_static(__FUNCTION__ . $group_content->uuid());
     if (NULL !== $group_id) {
       return $group_id;
@@ -301,7 +313,50 @@ class CustomEntitiesService {
       return FALSE;
     }
     $group_content = current($group_contents);
-    return $group_content->getGroup()->id();
+    return $group_content->getGroup();
+  }
+
+  /**
+   * Retrieve the group ID that the $group_content entity belongs to.
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $group_content
+   *   An entity that belongs to a group.
+   *
+   * @return string|bool
+   *   False if the entity does not belong to a group otherwise the group ID.
+   */
+  public function getGroupId(ContentEntityInterface $group_content) {
+    $group = $this->getGroup($group_content);
+    return FALSE === $group ? FALSE : $group->id();
+  }
+
+  /**
+   * Retrieve all state groups.
+   *
+   * @param string $entities_or_ids
+   *   Either entities or ids.
+   *
+   * @return array|\Drupal\Core\Entity\EntityInterface[]|int[]
+   *   An array of all state groups.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getAllStates($entities_or_ids = 'entities') {
+    return $this->all('group', $entities_or_ids, 'state', 'type');
+  }
+
+  /**
+   * Retrieve all state group's labels.
+   *
+   * @return array
+   *   An array of group ID to group label.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function getAllStateLabels() {
+    return $this->labels('group', 'state', 'type');
   }
 
 }

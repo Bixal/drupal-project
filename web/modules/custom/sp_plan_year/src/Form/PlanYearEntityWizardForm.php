@@ -781,7 +781,7 @@ class PlanYearEntityWizardForm extends EntityBatchForm {
         if (empty($this->nodeService->getStatePlansYearByPlanYear($this->entity->id()))) {
           $batch['operations'][] = $this->batchAddStatePlansYear();
         }
-        $all_group_ids = $this->customEntitiesRetrieval->all('group', 'ids');
+        $all_group_ids = $this->customEntitiesRetrieval->getAllStates('ids');
         // Retrieve all groups without state plan year nodes created yet.
         foreach ($this->nodeService->getGroupsMissingPlanYear($this->entity->id()) as $group_id) {
           $batch['operations'][] = $this->batchAddStatePlanYear($group_id);

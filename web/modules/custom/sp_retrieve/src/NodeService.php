@@ -220,7 +220,7 @@ class NodeService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function getGroupsMissingPlanYear($plan_year_id) {
-    $all_group_ids = $this->customEntitiesRetrieval->all('group', 'ids');
+    $all_group_ids = $this->customEntitiesRetrieval->getAllStates('ids');
     $group_ids = [];
     $state_plan_year_nids = $this->getStatePlanYearsByPlansYear($plan_year_id);
     // If all groups have a state plan year, return.
@@ -330,7 +330,7 @@ class NodeService {
       return $cache->data;
     }
     $return = [];
-    $all_group_ids = $this->customEntitiesRetrieval->all('group', 'ids');
+    $all_group_ids = $this->customEntitiesRetrieval->getAllStates('ids');
     $group_ids_with_plans = [];
     $group_ids_with_sections = [];
     if (empty($all_group_ids)) {
@@ -446,7 +446,7 @@ class NodeService {
       return $cache->data;
     }
     $return = [];
-    $all_group_ids = $this->customEntitiesRetrieval->all('group', 'ids');
+    $all_group_ids = $this->customEntitiesRetrieval->getAllStates('ids');
     // Find what plans are not created yet.
     $groups_without_plans = $this->getGroupsMissingPlanYear($plan_year_id);
     // Get the groups that do have plans and see if they have missing section.
@@ -541,6 +541,27 @@ class NodeService {
       ->condition('field_section_year_term', $section_tid)
       ->accessCheck(FALSE)
       ->execute();
+  }
+
+  /**
+   * Is this a combined plan?
+   *
+   * @param string $state_plan_year_nid
+   *   A state plan node ID.
+   *
+   * @return bool
+   *   True if combined.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
+  public function isCombinedPlan($state_plan_year_nid) {
+    $state_plan_year_answer_nid = $this->getStatePlanYearAnswerByStatePlanYearAndFieldUniqueId($state_plan_year_nid, PlanYearInfo::COMBINED_QUESTION_FIELD_UNIQUE_ID);
+    if (empty($state_plan_year_answer_nid)) {
+      return FALSE;
+    }
+    $state_plan_year_answer = $this->load($state_plan_year_answer_nid);
+    return PlanYearInfo::getStatePlanYearAnswerValueField($state_plan_year_answer)->getString() === PlanYearInfo::SPYA_BOOL_YES;
   }
 
   /**

@@ -43,9 +43,31 @@ function sp_display_theme() {
     'sp_display_download_plan_form' => [
       'variables' => ['node' => NULL, 'orientation' => NULL],
     ],
+    'sp_display_plan_type_badge' => [
+      'variables' => ['node' => NULL],
+    ],
   ];
   foreach ($themes as &$theme) {
     $theme += $base;
   }
   return $themes;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @all_plans
+ */
+function sp_display_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() !== 'all_plans_6') {
+    return;
+  }
+  if (empty($variables['attachment_before'])) {
+    $variables['attachment_before'] = [];
+  }
+  $variables['attachment_before'][] = [
+    '#type' => 'markup',
+    '#markup' => '<div class="results-title"><h3>' . t('My Plans') . '</h3></div>',
+    '#weight' => 0,
+  ];
 }

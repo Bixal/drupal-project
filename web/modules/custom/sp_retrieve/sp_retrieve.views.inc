@@ -17,4 +17,13 @@ function sp_retrieve_views_data_alter(array &$data) {
       'id' => 'copy_answers',
     ],
   ];
+  // @all_plans.
+  $data['node']['plan_type'] = [
+    'title' => t('Display plan type'),
+    'field' => [
+      'title' => t('Display plan type'),
+      'help' => t('Shows either combined or unified.'),
+      'id' => 'plan_type',
+    ],
+  ];
 }

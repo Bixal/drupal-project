@@ -125,52 +125,140 @@ function sp_retrieve_invalidate_plan_content_cache(EntityInterface $entity, $op)
  */
 function sp_retrieve_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // If not the view we are looking, move on.
-  if ($form['#id'] != 'views-exposed-form-manage-plans-moderated-content') {
-    return FALSE;
+  switch ($form['#id']) {
+    case 'views-exposed-form-manage-plans-moderated-content':
+      _sp_retrieve_manage_plans_form_alter($form, $form_state);
+      break;
+
+    case 'views-exposed-form-all-plans-6-page-1':
+      _sp_retrieve_all_plans_form_alter($form, $form_state);
+      break;
+
   }
 
-  // Get all state plans year nodes.
-  /** @var \Drupal\node\NodeStorage $storage */
-  $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
-  $nids = $storage->getQuery()->condition('type', PlanYearInfo::SPZY_BUNDLE)
-    ->sort('title', 'DESC')
-    ->accessCheck(FALSE)
-    ->execute();
+}
 
-  /** @var \Drupal\Core\Messenger\Messenger $messenger */
-  $messenger = Drupal::getContainer()->get('messenger');
-  // If there are no nodes, move on.
-  if (!$nids) {
-    $messenger->addError('There are no state plan years created yet.');
-    return FALSE;
-  }
-
+/**
+ * Alter the all plans views exposed filters form.
+ *
+ * @param array $form
+ *   The form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ *
+ * @all_plans
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _sp_retrieve_all_plans_form_alter(array &$form, FormStateInterface $form_state) {
+  // Get all state plans year node labels.
+  $spzy_labels = _sp_retrieve_get_state_plans_year_options();
   // On initial load, set latest year.
   $input = $form_state->getUserInput();
-  if (empty($input['plan-year'])) {
-    $input['plan-year'] = current($nids);
+  if (empty($input['plans_year']) && !empty($spzy_labels)) {
+    $input['plans_year'] = key($spzy_labels);
     $form_state->setUserInput($input);
   }
+  _sp_retrieve_textfield_to_select($form['plans_year'], $spzy_labels, t('Plan Year'));
 
-  // Start building out the options for our select list.
-  $options = [];
-  $nodes = $storage->loadMultiple($nids);
+  // @TODO: This is the label of the workflow ID state_plan_year, load it and
+  // get the label instead.
+  $state_plan_year_workflow_label = 'State Plan Year';
+  // The easiest way to get only the state plan year moderation state in here
+  // is to do 'All' in the view, then remove the rest. Otherwise the view has
+  // to be updated every time a new moderation state is added.
+  $form['plan_status']['#options'] = $form['plan_status']['#options'][$state_plan_year_workflow_label];
+  $form['plan_status']['#options'] = array_merge(['All' => t('View All')], $form['plan_status']['#options']);
 
-  // Push titles into select list.
-  /** @var \Drupal\node\Entity\Node $node */
-  foreach ($nodes as $node) {
-    $options[$node->id()] = $node->getTitle();
+  $form['gid']['#autocomplete_route_name'] = 'sp_display.state_label.autocomplete';
+  $form['#validate'][] = '_sp_retrieve_all_plans_form_validate';
+}
+
+/**
+ * Validate the all plans views exposed filters form.
+ *
+ * @param array $form
+ *   The form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ *
+ * @all_plans
+ */
+function _sp_retrieve_all_plans_form_validate(array $form, FormStateInterface $form_state) {
+  if ($form_state->hasValue('gid')) {
+    // The value is submitted like: Illinois (33), where 33 is the group ID.
+    $group_with_state_label = $form_state->getValue('gid');
+    // Get the (33) portion.
+    if (preg_match('/\([0-9]*\)$/', $group_with_state_label, $matches)) {
+      // Remove the parens.
+      $gid = preg_replace('/[^0-9]/', '', current($matches));
+      // Set the value to search for as the actual group ID.
+      $form_state->setValue('gid', $gid);
+    }
   }
-  // Change the text input to a select.
+}
+
+/**
+ * Alter the manage plans views exposed filters form.
+ *
+ * @param array $form
+ *   The form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _sp_retrieve_manage_plans_form_alter(array &$form, FormStateInterface $form_state) {
   $field = 'plan-year';
-  $form[$field]['#type'] = 'select';
-  $form[$field]['#default_value'];
-  $form[$field]['#multiple'] = FALSE;
+  // Get all state plans year node labels.
+  $spzy_labels = _sp_retrieve_get_state_plans_year_options();
+  // On initial load, set latest year.
+  $input = $form_state->getUserInput();
+  if (empty($input[$field]) && !empty($spzy_labels)) {
+    $input[$field] = key($spzy_labels);
+    $form_state->setUserInput($input);
+  }
+  _sp_retrieve_textfield_to_select($form['plan-year'], $spzy_labels, t('Plan Year'));
+}
+
+/**
+ * Retrieve all state plan years labels.
+ *
+ * @return array
+ *   All state plan years labels.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _sp_retrieve_get_state_plans_year_options() {
+  /** @var \Drupal\sp_retrieve\CustomEntitiesService $custom_entities */
+  $custom_entities = Drupal::getContainer()->get('sp_retrieve.custom_entities');
+  return $custom_entities->labels('node', PlanYearInfo::SPZY_BUNDLE, 'type');
+}
+
+/**
+ * Turn a textfield into a select.
+ *
+ * @param array $form_element
+ *   The form element to turn into a select.
+ * @param array $options
+ *   The select options.
+ * @param string|int $default_option
+ *   The default value if there is no options.
+ */
+function _sp_retrieve_textfield_to_select(array &$form_element, array $options, $default_option) {
+  // Change the text input to a select.
+  $form_element['#type'] = 'select';
+  $form_element['#multiple'] = FALSE;
 
   // Specify the empty option for our select list.
-  $form[$field]['#empty_option'] = t('Plan Year');
+  if (empty($options)) {
+    $form_element['#empty_option'] = $default_option;
+  }
 
   // Add the $options from above to our select list.
-  $form[$field]['#options'] = $options;
-  unset($form[$field]['#size']);
+  $form_element['#options'] = $options;
+  unset($form_element['#size']);
 }

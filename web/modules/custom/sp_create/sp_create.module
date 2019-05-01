@@ -330,6 +330,7 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
         }
       }
     }
+    // DISABLED TEMPORARILY TILL WIOA-498 IS FIXED.
     // Now that $node_answers_new_moderation_states has been updated with the
     // final moderation state to be initialized at, set each node's moderation
     // state. This will always be from 'new' to either 'draft', 'hidden', or
@@ -463,14 +464,12 @@ function sp_create_auto_label(Node $entity) {
   else {
     switch ($entity->getType()) {
       case PlanYearInfo::SPY_BUNDLE:
-        return $entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label();
+      case PlanYearInfo::SPZY_BUNDLE:
+        return PlanYearInfo::getPlanYearDisplayFromEntity($entity);
 
       case PlanYearInfo::SPYS_BUNDLE:
         $string = sprintf('%s - %s', $entity->get('field_state_plan_year')->entity->get('field_state_plans_year')->entity->get('field_plan_year')->entity->label(), $entity->get('field_section')->entity->label());
         return substr($string, 0, 205);
-
-      case PlanYearInfo::SPZY_BUNDLE:
-        return $entity->get('field_plan_year')->entity->label();
 
     }
   }

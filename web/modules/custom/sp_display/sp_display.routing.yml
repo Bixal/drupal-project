@@ -1,0 +1,6 @@
+sp_display.state_label.autocomplete:
+  path: '/state-label/autocomplete'
+  defaults:
+    _controller: '\Drupal\sp_display\Controller\SpDisplayController::autocompleteStateLabel'
+  requirements:
+    _permission: 'access content'

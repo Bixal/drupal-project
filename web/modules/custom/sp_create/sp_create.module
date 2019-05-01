@@ -330,7 +330,7 @@ function sp_create_moderation_state_was_changed(ContentModerationState $entity) 
         }
       }
     }
-    // DISABLED TEMPORARILY TILL WIOA-498 IS FIXED.
+    // @TODO: This needs to be fixed by WIOA-498.
     // Now that $node_answers_new_moderation_states has been updated with the
     // final moderation state to be initialized at, set each node's moderation
     // state. This will always be from 'new' to either 'draft', 'hidden', or

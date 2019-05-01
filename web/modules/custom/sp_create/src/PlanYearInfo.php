@@ -77,6 +77,20 @@ class PlanYearInfo {
   const SPYA_TEXT_BUNDLE_OPTIONAL = 'text_sp_answer_optional';
 
   /**
+   * The actual value entered in the field for yes.
+   *
+   * @var string
+   */
+  const SPYA_BOOL_YES = 'yes';
+
+  /**
+   * The actual value entered in the field for no.
+   *
+   * @var string
+   */
+  const SPYA_BOOL_NO = 'no';
+
+  /**
    * Initialized to be hidden, shown if access value is met.
    *
    * @var string
@@ -110,6 +124,13 @@ class PlanYearInfo {
    * @var string
    */
   const UUID_USER_AUTOMATED = 'cd0e9470-88d2-4291-86a7-b8a2d9baed4e';
+
+  /**
+   * The field unique ID of the yes / no question that decides combined plan.
+   *
+   * @var string
+   */
+  const COMBINED_QUESTION_FIELD_UNIQUE_ID = 'c91c4cbd-6c06-4d28-9f40-c9d6474114ab';
 
   /**
    * Get node bundles for state plan answer nodes.
@@ -240,6 +261,23 @@ class PlanYearInfo {
       }
     }
     return $plan_year_id;
+  }
+
+  /**
+   * Get the plan year display that the entity belongs to.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   A term or node.
+   *
+   * @return bool|string
+   *   The plan year display otherwise false.
+   */
+  public static function getPlanYearDisplayFromEntity(EntityInterface $entity) {
+    $plan_year_id = self::getPlanYearIdFromEntity($entity);
+    if (FALSE !== $plan_year_id) {
+      return 'PYs ' . $plan_year_id . '-' . ($plan_year_id + 1);
+    }
+    return FALSE;
   }
 
   /**

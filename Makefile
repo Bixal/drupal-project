@@ -111,6 +111,8 @@ update:
 	make import_latest
 
 import_latest:
+	@echo "Importing sys_admin role. This should be a dependency instead."
+	${DC_RUN} php drupal config:import --file=config/sync/user.role.sys_admin.yml
 	@echo "Installing configuration from file"
 	${DC_RUN} php drupal config:import
 	@echo "Installing configuration splits from file"

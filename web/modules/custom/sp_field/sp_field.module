@@ -31,6 +31,12 @@ function sp_field_help($route_name, RouteMatchInterface $route_match) {
  */
 function sp_field_entity_extra_field_info() {
   $extra = [];
+  $extra['node'][PlanYearInfo::SPY_BUNDLE]['display']['plan_type_badge'] = [
+    'label' => t('Plan Type Badge'),
+    'description' => t('Shows whether or not this is a combined plan or unified plan.'),
+    'weight' => 99,
+    'visible' => TRUE,
+  ];
   $extra['node'][PlanYearInfo::SPY_BUNDLE]['display']['plan_year_view'] = [
     'label' => t('View a plan year'),
     'description' => t('Allows the display of an entire plan year.'),
@@ -69,6 +75,12 @@ function sp_field_entity_extra_field_info() {
  * Implements hook_ENTITY_TYPE_view().
  */
 function sp_field_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('plan_type_badge')) {
+    $build['plan_type_badge'] = [
+      '#theme' => 'sp_display_plan_type_badge',
+      '#node' => $entity,
+    ];
+  }
   if ($display->getComponent('plan_year_view')) {
     $build['plan_year_view'] = [
       '#theme' => 'sp_display_plan_year_view',

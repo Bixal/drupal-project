@@ -12,7 +12,12 @@ id: node.state_plan_year.teaser
 targetEntityType: node
 bundle: state_plan_year
 mode: teaser
-content: {  }
+content:
+  plan_type_badge:
+    weight: 99
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   content_moderation_control: true
   field_state_plans_year: true

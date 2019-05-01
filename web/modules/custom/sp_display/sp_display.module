@@ -67,7 +67,7 @@ function sp_display_preprocess_views_view(&$variables) {
   }
   $variables['attachment_before'][] = [
     '#type' => 'markup',
-    '#markup' => '<div class="results-title"><h3>' . t('My Plans') . '</h3></div>',
+    '#markup' => '<div class="results-title"><h3>' . t('All Plans') . '</h3></div>',
     '#weight' => 0,
   ];
 }

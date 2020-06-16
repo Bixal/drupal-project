@@ -29,6 +29,10 @@ After that you can create the project:
 ```
 composer create-project bixal/drupal-project:8.x-dev some-dir --stability dev --no-interaction
 ```
+or for Drupal 9:
+```
+composer create-project bixal/drupal-project:9.x-dev some-dir --stability dev --no-interaction
+```
 Where ```some-dir``` is the name you want to give to your project directory.
 
 Before proceeding, make sure you change directories by going into your new project directory:

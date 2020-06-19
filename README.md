@@ -1,6 +1,6 @@
 # Composer template for Drupal projects
 
-[![CircleCI](https://circleci.com/gh/Bixal/drupal-project/tree/8.x.svg?style=svg)](https://circleci.com/gh/Bixal/drupal-project/tree/8.x)
+[![CircleCI](https://circleci.com/gh/Bixal/drupal-project/tree/9.x.svg?style=svg)](https://circleci.com/gh/Bixal/drupal-project/tree/9.x)
 
 This project template provides a starter kit for managing your site and environment
 dependencies with [Composer](https://getcomposer.org/) and [Docker](https://www.docker.com/).
@@ -26,55 +26,60 @@ You might need to replace `composer` with `php composer.phar` (or similar)
 for your setup.
 
 After that you can create the project:
-```
-composer create-project bixal/drupal-project:8.x-dev some-dir --stability dev --no-interaction
-```
-or for Drupal 9:
-```
+
+``` bash
 composer create-project bixal/drupal-project:9.x-dev some-dir --stability dev --no-interaction
 ```
+
 Where ```some-dir``` is the name you want to give to your project directory.
 
 Before proceeding, make sure you change directories by going into your new project directory:
-```
+
+``` bash
 cd some-dir
 ```
 
 Copy .env.example to .env:
-```
+
+``` bash
 cp .env.example .env
 ```
 
 After that you can run make composer. The provided [Makefile](Makefile) has 2 commands you may run for
 installing composer dependencies:
-```
+
+```bash
 make install # To run a normal composer install.
 ```
-or
-```
-make install-source # To install composer dependencies with source to work on contributed projects.
 
+or
+
+```bash
+make install-source # To install composer dependencies with source to work on contributed projects.
 ```
+
 Installing from source can take several minutes or more depending on your network connection.
 
-
 Edit your /etc/hosts file:
-```
+
+```bash
 sudo sh -c "echo '127.0.0.1 mysitename' >> /etc/hosts"
 ```
+
 Replace mysitename with PROJECT_BASE_URL found in .env
 
 Finally, run the command 'make up' to start the container for the project:
-```
+
+```bash
 make up
 ```
 
 You should be able to navigate to mysitename.localhost:8000
 
-With `docker-compose run php composer require ...` you can download new dependencies to your 
+With `docker-compose run php composer require ...` you can download new dependencies to your
 installation.
 
-```
+```bash
 cd some-dir
 docker-compose run php composer require drupal/devel:~1.0
 ```
@@ -129,7 +134,6 @@ With using [the "Composer Generate" drush extension](https://www.drupal.org/proj
 you can now generate a basic `composer.json` file from an existing project. Note
 that the generated `composer.json` might differ from this project's file.
 
-
 ## FAQ
 
 ### Should I commit the contrib modules I download?
@@ -157,6 +161,7 @@ achieve that by registering `@composer drupal:scaffold` as post-install and post
     ]
 },
 ```
+
 ### How can I apply patches to downloaded modules?
 
 If you need to apply patches (depending on the project being modified, a pull
@@ -165,6 +170,7 @@ request is often a better solution), you can do so with the
 
 To add a patch to drupal module foobar insert the patches section in the extra
 section of composer.json:
+
 ```json
 "extra": {
     "patches": {
@@ -174,15 +180,17 @@ section of composer.json:
     }
 }
 ```
+
 ### How do I switch from packagist.drupal-composer.org to packages.drupal.org?
 
 Follow the instructions in the [documentation on drupal.org](https://www.drupal.org/docs/develop/using-composer/using-packagesdrupalorg).
 
-### How do I specify a PHP version ?
+### How do I specify a PHP version?
 
 This project supports PHP 7.0 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7+.
 
 To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
+
 ```json
 "config": {
     "sort-packages": true,
